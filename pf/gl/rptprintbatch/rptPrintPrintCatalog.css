@@ -1,0 +1,24 @@
+#rpps-data{
+	margin-bottom: 20px;
+}
+#rpps-data,#rpps-data th,#rpps-data td{
+	border: 1px solid #D9D9D9;
+}
+#rpps-data th{
+	text-align: center;
+}
+.text-center{
+	text-align: center;
+}
+.totalPage,.endPage,.pageAllNum{
+	width: 100%;
+    border: 0px;
+    background: none;
+}
+.pageinput{
+	width: 100px;
+}
+#titles{
+    text-align: center;
+	font-size: 26px;
+}

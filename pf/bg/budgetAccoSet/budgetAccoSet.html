@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>预算支出控制设置</title>
+    <meta
+      content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
+      name="viewport"
+    />
+    <script
+      src="../../pub/boot.js?rev=@@hash"
+      type="text/javascript"
+      charset="utf-8"
+    ></script>
+    <link rel="stylesheet" href="../../agla-trd/fileinput/fileinput.css" />
+    <script
+      src="../../agla-trd/fileinput/fileinput.js"
+      type="text/javascript"
+      charset="utf-8"
+    ></script>
+    <script
+      src="../../agla-trd/fileinput/zh.js"
+      type="text/javascript"
+      charset="utf-8"
+    ></script>
+    <link rel="stylesheet" href="../pub/bgPub.css?rev=@@hash" />
+    <link rel="stylesheet" href="../pub/bgPubImpAttachment.css?rev=@@hash" />
+    <link rel="stylesheet" href="../pub/bgPubAuditModal.css?rev=@@hash" />
+    <link rel="stylesheet" href="../pub/bgPubWait.css?rev=@@hash" />
+    <link rel="stylesheet" href="../pub/bgPubLog.css?rev=@@hash" />
+    <link rel="stylesheet" href="../pub/bgPubProgress1.css?rev=@@hash" />
+    <link rel="stylesheet" href="budgetAccoSet.css?rev=@@hash" />
+  </head>
+
+  <body>
+    <div id="budgetAccoSet" class="container-fluid ufma-container">
+      <!--工作区 begin-->
+      <div class="workspace bordered">
+        <!--工作区顶部 begin-->
+        <div class="workspace-top">
+          <!-- 左右间距增加 -->
+          <div class="container-fluid">
+            <!-- 上对齐，增加下间距 -->
+            <div class="ufma-portlet">
+              <div class="portlet-title">
+                <div class="caption">
+                  <span class="caption-subject font-dark uppercase"
+                    >预算支出控制设置</span
+                  >
+                </div>
+                <div class="bgPub-bgPlanTbl-blank-8"></div>
+                <!-- 增加单位的下拉框 -->
+                <ul class="ufma-list-col">
+                  <li class="ufma-list-col-item">
+                    <div
+                      id="cbb_Agency"
+                      class="ufma-combox ufma-combox2 bgPub-cbbAgency"
+                    ></div>
+                  </li>
+                  <li class="ufma-list-col-item">
+                    <div
+                      id="cbb_Acct"
+                      class="ufma-combox ufma-combox2 bgPub-cbbAgency"
+                    ></div>
+                  </li>
+                </ul>
+
+                <!-- 右侧新增按钮 -->
+                <div class="actions">
+                  <div class="btn-group">
+                    <button
+                      type="button"
+                      id="btn-add"
+                      class="btn btn-sm btn-primary btn-add btn-permission"
+                    >
+                      新增
+                    </button>
+                  </div>
+                </div>
+                <div style="clear: both;"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!--工作区中部 begin-->
+        <div class="workspace-center">
+          <div class="container-fluid">
+            <!-- 表格 -->
+            <div
+              class="ufma-layout ufma-layout-slider-sm ufma-layout-fixed-slider ufma-layout-fixed-slider-right"
+            >
+              <div class="tab-content">
+                <div class="tab-pane fade in active" id="all">
+                  <table
+                    id="bgAccoSet-data"
+                    tool-bar="#bgItems-tool-bar"
+                    class="ufma-table"
+                  ></table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!--工作区底 begin-->
+        <div class="workspace-bottom">
+          <div class="container-fluid"></div>
+        </div>
+      </div>
+
+      <!--新增模态框 弹出层-->
+      <!--<div class="modal fade bs-example-modal-lg" id="budgetAccoSet-edt"
+					tabindex="-1" role="dialog" aria-labelledby="vouTypeAddLabel">-->
+      <div class="ufma-modal" id="budgetAccoSet-edt">
+        <div class="u-msg-title">
+          <h4 id="budgetAccoSetLabel">新增指标编制</h4>
+        </div>
+        <div
+          class="u-msg-content modal-content-ModalMain"
+          id="bg-multiModal-content"
+        >
+          <!-- 进度条 -->
+          <div
+            class="ufma-layout ufma-layout-slider-sm ufma-layout-fixed-slider ufma-layout-fixed-slider-right modal-content-bgAccoset-title"
+            id="progress-bgaccoset"
+          ></div>
+          <div
+            class="ufma-layout ufma-layout-slider-sm ufma-layout-fixed-slider ufma-layout-fixed-slider-right"
+          >
+            <!-- page1 表格1, 控制方案列表 -->
+            <div class="tab-content" id="bgAccoSet-tab-content-modal-1">
+              <div class="tab-pane fade in active" id="all1">
+                <div class="bgItem-edt-tbl-scroll">
+                  <table
+                    id="bgAccoSet-data-modal-1"
+                    tool-bar="#bgItems-tool-bar"
+                    class="ufma-table"
+                  ></table>
+                </div>
+              </div>
+            </div>
+            <!-- page2 表格2, 科目列表-->
+            <div class="tab-content" id="bgAccoSet-tab-content-modal-2">
+              <div clss="tab-pane fade in active">
+                <div
+                  class="ufma-layout bgAccoSet-modal-page2-title-blank"
+                ></div>
+                <span class="bgAccoSet-modal-page2-title1">
+                  <strong id="bgAccoSet-modal-ctrlPlanName"
+                    >[控制方案名称]</strong
+                  >
+                </span>
+                <span class="bgAccoSet-modal-page2-title2">
+                  控制方案要素:
+                </span>
+                <span
+                  class="bgAccoSet-modal-page2-title3"
+                  id="bgAccoSet-modal-ctrlPlanEleName"
+                >
+                  [控制方案要素 ]</span
+                >
+                <div
+                  class="ufma-layout bgAccoSet-modal-page2-title-blank"
+                ></div>
+              </div>
+              <div class="tab-content">
+                <div class="tab-pane fade in active" id="all2">
+                  <div class="bgAcco-edt-tbl-scroll">
+                    <table
+                      id="bgAccoSet-data-modal-2-1"
+                      tool-bar="#bgItems-tool-bar"
+                      class="ufma-table"
+                    ></table>
+                  </div>
+                </div>
+              </div>
+              <div clss="tab-pane fade in active bgAccoSet-modal-divTextAlign">
+                <div
+                  class="ufma-layout bgAccoSet-modal-page2-title-blank"
+                ></div>
+                <div class="modal-btn-choiseAcco">
+                  <button
+                    type="button"
+                    class="btn btn-sm btn-default"
+                    id="btn-choiseAcco"
+                  >
+                    + 选择科目
+                  </button>
+                </div>
+                <div
+                  class="ufma-layout bgAccoSet-modal-page2-title-blank"
+                ></div>
+              </div>
+            </div>
+            <!-- page3  -->
+            <div
+              class="tab-content bgAccoSet-modal-divTextAlign"
+              id="bgAccoSet-tab-content-modal-3"
+            >
+              <div class="ufma-layout bgAccoSet-modal-title-center"></div>
+              <div class="bgDiv-align-horizontal-center">
+                恭喜您, 已完成预算支出控制设置
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="u-msg-footer">
+          <button
+            type="button"
+            class="btn btn-sm btn-primary btn-next btn-permission"
+            id="bgAccoSet-edt-button1"
+          >
+            下一步
+          </button>
+          <button
+            type="button"
+            class="btn btn-sm btn-primary btn-save btn-permission"
+            id="bgAccoSet-edt-button2"
+          ></button>
+          <button
+            type="button"
+            data-dismiss="modal"
+            class="btn btn-sm btn-default btn-cancel"
+            id="bgAccoSet-edt-button3"
+          >
+            取消
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <script
+      src="../pub/bgPub.js?rev=@@hash"
+      type="text/javascript"
+      charset="utf-8"
+    ></script>
+    <script
+      src="../pub/bgPubImpAttachment.js?rev=@@hash"
+      type="text/javascript"
+      charset="utf-8"
+    ></script>
+    <script
+      src="../pub/bgPubAuditModal.js?rev=@@hash"
+      type="text/javascript"
+      charset="utf-8"
+    ></script>
+    <script
+      src="../pub/bgPubWait.js?rev=@@hash"
+      type="text/javascript"
+      charset="utf-8"
+    ></script>
+    <script
+      src="../pub/bgPubLog.js?rev=@@hash"
+      type="text/javascript"
+      charset="utf-8"
+    ></script>
+    <script
+      src="../pub/bgPubProgress1.js?rev=@@hash"
+      type="text/javascript"
+      charset="utf-8"
+    ></script>
+    <script
+      src="../pub/bgPubItemManager.js?rev=@@hash"
+      type="text/javascript"
+      charset="utf-8"
+    ></script>
+    <script
+      src="budgetAccoSet.js?rev=@@hash"
+      type="text/javascript"
+      charset="utf-8"
+    ></script>
+  </body>
+</html>

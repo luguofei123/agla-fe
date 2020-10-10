@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>账簿管理</title>
+	<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+	<script src="../../pub/boot.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+	<style>
+		#gridGOV .check-style {
+			width: 37px;
+			padding: 0;
+		}
+		.ufma-tool-btns{
+			margin-left: 6px!important;
+		}
+		/* 后端分页 */
+		#bookManage .ufma-table-paginate{
+    		float: right;
+		}
+		.gridGOV-paginate .dataTables_info {
+   			display: none;
+		}
+		#bookManage .ufma-table-paginate select {padding: 8px;}
+		#bookManage .ufma-table-paginate .pull-left{line-height: 30px; margin: 0;}
+		#bookManage .ufma-table-paginate button.pull-left{line-height: 20px;}
+		#bookManage .ufma-table-paginate select,
+		#bookManage .ufma-table-paginate input{height: 30px; border-radius: 4px;}
+		#bookManage .ufma-table-paginate input{width: 34px;}
+		#bookManage .ufma-table-paginate .pagination-sm>li>a{font-size: 12px; line-height: 1.42857143;}
+		#bookManage .ufma-table-paginate .vbNumPage.active span{background-color: #108EE9;border-color: #108EE9;}
+		#bookManage .ufma-table-paginate .vbNumPage:hover a{background-color: #108EE9;border-color: #108EE9;color: #FFFFFF;}
+		#bookManage .ufma-table-paginate .vbPrevPage:hover a{background-color: #108EE9;border-color: #108EE9;color: #FFFFFF;}
+		#bookManage .ufma-table-paginate .vbNextPage:hover a{background-color: #108EE9;border-color: #108EE9;color: #FFFFFF;}
+		#bookManage .ufma-table-paginate #vbTable-pagination {
+    margin: 0 8px 0 0;
+}
+	</style>
+</head>
+
+<body id="bookManage">
+	<div class="container-fluid ufma-container">
+		<!--工作区 begin-->
+		<div class="workspace">
+			<!--工作区顶部 begin-->
+			<div class="workspace-top">
+				<div class="container-fluid">
+					<div class="ufma-portlet">
+						<div class="portlet-title">
+							<div class="caption">
+								<span class="caption-subject font-dark uppercase">账簿管理</span>
+							</div>
+							<!--单位选择 begin-->
+							<div class="inline-block absolute margin-left-15 margin-top-8">
+								<ul class='ufma-list-col clearfix padding-left-8'>
+									<li class="ufma-list-col-item">
+										<div id='cbAgency' name="agencyCode" class="uf-treecombox" style="width:230px"></div>
+									</li>
+									<li class="ufma-list-col-item hide" id="acct">
+										<div id='cbAcct' class="uf-combox ufma-combox-acct"></div>
+									</li>
+								</ul>
+							</div>
+							<!--单位选择 end-->
+							<div class="actions">
+								<div class="btn-group">
+									<button id="btnAdd" type="button" class="btn btn-sm btn-primary btn-add btn-permission">新增</button>
+								</div>
+							</div>
+						</div>
+
+						<!--查询条件-->
+						<div class="portlet-body bordered pr">
+							<form id="frmQuery" class="form-horizontal">
+								<div class="form-row" style="margin-bottom:0px">
+									<div class="form-group">
+										<label class="control-label auto">账簿类别：</label>
+										<div class="control-element pr10" style="padding-top:3px;">
+											<a name="period1" type="" class="moneyType label label-radio selected">全部</a>
+											<a name="period1" type="1" class="moneyType label label-radio">现金账簿</a>
+											<a name="period1" type="2" class="moneyType label label-radio">银行账簿</a>
+											<a name="period1" type="3" class="moneyType label label-radio">零余额账簿</a>
+										</div>
+									</div>
+									<div class="clearfix"></div>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!--工作区中部 begin-->
+			<div class="workspace-center" style="padding: 0 15px">
+				<div class="btn-body" style="height: 40px;">
+					<div class="iframeBtnsSearch fr" id="index-search" style="margin-right: 103px">
+						<input type="text" class="searchHide focusOff bordered" placeholder="请输入要搜索的关键词" style="right: 163px;">
+						<input type="hidden" class="searchValueHide">
+						<button class="btn btn-default btn-sm  btn-search" id="searchHideBtn">
+							<i class="glyphicon icon-search"></i>
+						</button>
+					</div>
+					<div class="rpt-box rpt-table-box pr">
+						<div id="dtToolbar" class="btn-group" style="position:absolute;right:0px;">
+						</div>
+					</div>
+
+				</div>
+				<!--表格 begin -->
+				<div class="rpt-table-tab">
+					<table class="ufma-table  uf-rpt-table" tool-bar="#tool-bar" id="gridGOV">
+					</table>
+				</div>
+			</div>
+			<!--工作区中部 end-->
+
+			<div id="tool-bar" class="ufma-tool-bar">
+				<div class="tool-bar-body">
+					<div class="ufma-tool-btns fl">
+						<label class="mt-checkbox mt-checkbox-outline margin-right-8">
+							<input class="checkAll" type="checkbox" name="" id="all"> 全选
+							<span></span>
+						</label>
+						<button type="button" class="btn btn-sm btn-default btn-start btn-permission" id="btnStart">启用</button>
+						<button type="button" class="btn btn-sm btn-default btn-stop btn-permission" id="btnStop">停用</button>
+						<button type="button" class="btn btn-sm btn-default btn-delete btn-permission" id="delete">删除</button>
+					</div>
+					<div class="ufma-table-paginate">
+						<!-- 分页 开始位置 -->
+					</div>
+				</div>
+			</div>
+
+
+
+		</div>
+	</div>
+
+	<script src="bookManage.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+
+</body>
+
+</html>

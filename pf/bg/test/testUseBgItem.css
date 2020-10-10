@@ -1,0 +1,9 @@
+tr{
+    height: 35px;
+}
+td.leftC{
+    text-align: left;
+}
+td.rightC{
+    text-align: right;
+}

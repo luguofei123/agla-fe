@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>新增/编辑</title>
+		<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+		<script src="../../pub/boot.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+		<link rel="stylesheet" type="text/css" href="../lpCommon/lpCommon.css?rev=@@hash" />
+		<link rel="stylesheet" type="text/css" href="billScheme.css?rev=@@hash" />
+		<style type="text/css">
+			.control-element {
+				display: inline-block;
+			}
+			
+			.w200 {
+				width: 200px !important;
+			}
+			
+			.form-group {
+				height: 33px;
+			}
+			
+			.col-xs-4 label {
+				font-weight: normal;
+				text-align: right;
+			}
+			
+			.em6 {
+				width: 7em !important;
+			}
+			
+			#showbase {
+				display: inline-block;
+				float: right;
+				cursor: pointer;
+				margin-right: 18px;
+				margin-top: 5px;
+			}
+			
+			#showbase span {
+				margin-right: 5px;
+			}
+			
+			.lp-edit-input .span-txt {
+				width: 100px;
+			}
+			
+			.marL {
+				margin-left: 60px;
+			}
+			
+			.marL10 {
+				margin-left: 10px;
+			}
+			
+			.nameform .control-label {
+				width: 100px;
+				font-weight: normal;
+				text-align: right;
+			}
+			
+			.nameform input {
+				width: 200px;
+			}
+			
+			.nameform .inputedit {
+				width: auto;
+			}
+			
+			.ufma-layout-updown input {
+				height: 30px;
+			}
+			
+			.uf-combox input {
+				height: 28px;
+			}
+			
+			.uf-grid-table-edit .uf-form-control,
+			.uf-grid-table-edit .uf-buttonedit-border,
+			.uf-grid-table-edit .uf-combox-border,
+			.uf-grid-table-edit .uf-buttonedit,
+			.uf-grid-table-edit .uf-combox,
+			.uf-grid-table-edit .uf-treecombox,
+			.uf-grid-table-edit .uf-datepicker {
+				height: 28px;
+			}
+			
+			#nameTable2comboxeleCode,
+			#nameTable2inputORD_SEQ {
+				border-right: 1px solid #d9d9d9;
+			}
+		</style>
+	</head>
+
+	<body id="edit">
+		<div class="ufma-layout-updown">
+			<div class="ufma-layout-up">
+				<div class="container-fluid margin-left-15 margin-right-15">
+					<!--所属单位 begin-->
+					<div class="includeAgency clearfix" style="padding-left:16px">
+						<!--<div class="agency-cont pull-left" id="dwcode">-->
+						<!--<label id="agencyAll" class="mt-radio mt-checkbox-single mt-checkbox-outline margin-right-20">-->
+						<!--<input type="radio" name="subUnits" value="*" checked="checked"/>-->
+						<!--系统级-->
+						<!--<span></span>-->
+						<!--</label>-->
+						<!--<label id="agency" class="mt-radio mt-checkbox-single mt-checkbox-outline">-->
+						<!--<input type="radio" name="subUnits"/>-->
+						<!--单位-->
+						<!--<span></span>-->
+						<!--</label>-->
+						<!--<span id="angecyName"></span>-->
+						<!--<div class="ufma-treecombox" id="bdAgencyEdit" style="vertical-align: bottom"></div>-->
+						<!--</div>-->
+						<div class="agency-cont pull-left" id="dwcode2" style="display: none;margin-top: 4px">
+							<span style="display: inline-block;width: 54px;text-align: right">系统级</span>
+						</div>
+						<div class="agency-cont pull-left" id="dwcode3" style="display: none;margin-top:4px">
+							<span style="display: inline-block;width: 68px;text-align: right">单位：</span>&nbsp;<span class="dw-name"></span>
+						</div>
+					</div>
+					<!--所属单位 end-->
+					<!--form区域 start-->
+					<div class="lp-edit-input">
+						<ul>
+							<li class="clearfix allAgency" style="display: none">
+								<div class="col-md-6" style="padding-left: 0px">
+									<label>
+                                <span class="span-txt" style="width: 80px">系统级&nbsp;&nbsp;</span>
+                            </label>
+								</div>
+							</li>
+							<li class="clearfix justAgency" style="display: none">
+								<div class="col-md-6" style="padding-left: 0px">
+									<label>
+                                <span class="span-txt" style="width: 84px">单位：</span>
+                                <div id="bdAgency"
+                                     style="margin-left: 0;font-weight: normal;display: inline-block;width: auto"></div>
+                            </label>
+								</div>
+							</li>
+							<li class="clearfix" style="margin-top: 16px;">
+								<form id="nameformBase" class="nameformBase">
+									<div class="row">
+										<div class="fl">
+											<div class="form-group" style="margin-bottom: 6px;">
+												<label class="control-label span-txt">方案名称：</label>
+												<div class="control-element">
+													<input id="scheme-name" class="bordered-input padding-3 w200 input-height" style="min-width: 200px;" value="" />
+												</div>
+											</div>
+										</div>
+										<div class="fl marL10">
+											<span class="span-txt">来源子系统：</span>
+											<div id="dataSonSystem" class="uf-combox  w200"></div>
+										</div>
+										<div class="fl marL10">
+											<span class="span-txt">单据类型：</span>
+											<div id="billType" class="uf-combox  w200"></div>
+										</div>
+										<div class="fl marL10">
+											<label class="rpt-check mt-checkbox mt-checkbox-outline"><input name="isUsed"
+													type="checkbox">启用挂接<span></span></label>
+										</div>
+										<div id= "isInternalSys" class="fl marL10 hide">
+											<label class="rpt-check mt-checkbox mt-checkbox-outline"><input name="isInternalSystem"
+													type="checkbox" disabled>内部子系统<span></span></label>
+										</div>
+									</div>
+								</form>
+							</li>
+							<li>
+								<form id="nameformBase2" class="nameformBase2">
+									<div class="row">
+										<label id="describeWrap1">
+                                <span class="span-txt">方案描述：</span>
+                                <textarea id="scheme-describe1" class="bordered-input padding-3 sqlControl w940"></textarea>
+                            </label>
+										<label id="describeWrap2" class="hide">
+                                <span class="span-txt">方案描述：</span>
+                                <textarea id="scheme-describe2" class="bordered-input padding-3 sqlControl w830"></textarea>
+                                <div style="display: inline-block;margin-left:6px;">
+                                    <label class="rpt-check mt-checkbox mt-checkbox-outline" style="margin-right: 0;"><input name="isAcctCode" 
+                                    type="checkbox">按账套取数<span></span></label>
+									</div>
+									</label>
+					</div>
+					</form>
+					</li>
+					<li>
+						<div class="row">
+							<span class="span-txt">数据源类型：</span>
+							<div id="data-type">
+
+								<label id="IsTurnedBtn" class="rpt-check mt-checkbox mt-checkbox-outline" style="display: inline;">
+                                    <input name="isTurned" type="checkbox">启用数据转换<span style="margin-top: 0;"></span>
+                                </label>
+								<label id="IsAllowBtn" class="rpt-check mt-checkbox mt-checkbox-outline" style="display: inline;">
+                                    <input name="isAllow" type="checkbox">转换失败允许导入<span style="margin-top: 0;"></span>
+                                </label>
+							</div>
+							<div style="display: inline-block;">
+								<button type="button" class="btn btn-sm btn-primary " id="vouConfig">凭证联查配置
+								</button>
+							</div>
+							<div id="showbase" style="display: none">
+								<span class="icon-angle-top"></span>收起
+							</div>
+						</div>
+					</li>
+					</ul>
+				</div>
+				<!--form区域 end-->
+				<div class="table-part">
+					<form id="nameform02" class="nameform" style="display: none;">
+						<div class="row">
+							<div class="fl">
+								<div class="form-group">
+									<label class="control-label">名称：</label>
+									<div class="control-element">
+										<input class="form-control" id="connectName" name="connectName" maxlength="200" />
+									</div>
+								</div>
+							</div>
+							<div class="fl marL">
+								<div class="form-group">
+									<label class="control-label">数据库类型：</label>
+									<div class="control-element">
+										<div id="databaseType" name="databaseType" class="uf-combox w200"></div>
+									</div>
+								</div>
+							</div>
+							<div class="fl marL">
+								<div class="form-group">
+									<label class="control-label">数据库名称：</label>
+									<div class="control-element">
+										<input class="form-control" id="databaseName" name="databaseName" maxlength="200" />
+									</div>
+								</div>
+							</div>
+							<div class="fl">
+								<div class="form-group">
+									<label class="control-label">主机名：</label>
+									<div class="control-element">
+										<input class="form-control" id="hostName" name="hostName" maxlength="200" />
+									</div>
+								</div>
+							</div>
+							<div class="fl marL">
+								<div class="form-group">
+									<label class="control-label">端口：</label>
+									<div class="control-element">
+										<input class="form-control" id="port" name="port" maxlength="200" />
+									</div>
+								</div>
+							</div>
+							<div class="fl marL">
+								<div class="form-group">
+									<label class="control-label">数据库用户名：</label>
+									<div class="control-element">
+										<input class="form-control" id="databaseUsername" name="databaseUsername" maxlength="200" />
+									</div>
+								</div>
+							</div>
+							<div class="fl">
+								<div class="form-group">
+									<label class="control-label">口令：</label>
+									<div class="control-element">
+										<input class="form-control" id="databasePassword" name="databasePassword" maxlength="200" />
+									</div>
+								</div>
+							</div>
+							<div class="fl marL">
+								<div class="form-group">
+									<label class="control-label">表名或视图名：</label>
+									<div class="control-element">
+										<input class="form-control" id="tableName" name="tableName" maxlength="200" />
+									</div>
+								</div>
+							</div>
+							<div class="fr marL" style="margin-right: 20px">
+								<div class="form-group">
+									<button type="button" class="btn btn-sm btn-primary btn-permission btn-test" style="display: none;margin-top: 5px" id="btn-test">测试配置
+                                </button>
+								</div>
+							</div>
+							<div class="fl">
+								<div class="form-group" style="height: 50px">
+									<label class="control-label">取数语句：</label>
+									<div class="control-element" style="width: 932px;vertical-align:text-top">
+										<textarea class="form-control sqlControl" rows="2" id="statements" name="statements" style="width: 932px;vertical-align:text-top"></textarea>
+									</div>
+								</div>
+							</div>
+							<div class="fl">
+								<div class="form-group" style="height: 50px">
+									<label class="control-label">回写语句：</label>
+									<div class="control-element" style="width: 932px;vertical-align:text-top">
+										<textarea class="form-control sqlControl" rows="2" id="reStatements" name="reStatements" style="width: 932px;vertical-align:text-top"></textarea>
+									</div>
+								</div>
+							</div>
+							<div class="fl">
+								<div class="form-group" style="height: 90px;">
+									<label class="control-label">提示：</label>
+									<div class="control-element" style="width: 932px;vertical-align:text-top; color:red">
+										只填写表或视图根据日期导入单据, 如果导入需要添加条件，请在语句填写: @agencyCode$$ 单位代码; @acctCode$$" 账套代码; @setYear$$"年度; @rgCode$$" 区域代码<br> 例如：select * from table where agency_code=@agencyCode$$ and acctCode=@acctCode$$<br> 如需回写请填写表名，回写时SQL语句主键为方案配置主键，以@mainKey$$代表，例如：
+										<br> update table set state='02' where bill_no=@mainKey$$
+									</div>
+								</div>
+							</div>
+						</div>
+					</form>
+					<form id="nameform03" class="nameform" style="display: none;">
+						<div class="row">
+							<div class="fl">
+								<div class="form-group">
+									<label class="control-label">用户名：</label>
+									<div class="control-element">
+										<input class="form-control" id="username" name="username" maxlength="200" />
+									</div>
+								</div>
+							</div>
+							<div class="fl marL">
+								<div class="form-group">
+									<label class="control-label">密码：</label>
+									<div class="control-element">
+										<input class="form-control" id="password" name="password" maxlength="200" />
+									</div>
+								</div>
+							</div>
+							<div class="fl marL">
+								<div class="form-group">
+									<label class="control-label">方法名：</label>
+									<div class="control-element">
+										<input class="form-control" id="method" name="method" maxlength="200" />
+									</div>
+								</div>
+							</div>
+							<div class="fl">
+								<div class="form-group" style="height: 50px">
+									<label class="control-label">WebService服务地址：</label>
+									<div class="control-element" style="vertical-align: middle">
+										<textarea class="form-control" id="url" name="url" rows="2" style="width: 930px">
+
+                                    </textarea>
+									</div>
+								</div>
+							</div>
+						</div>
+					</form>
+					<form id="nameform04" class="nameform" style="display: none;">
+						<div class="row">
+							<div class="fl">
+								<div class="form-group">
+									<label class="control-label">http地址：</label>
+									<div class="control-element">
+										<input class="form-control" id="httpUrl" name="httpUrl" maxlength="200" style="width: 930px" />
+									</div>
+								</div>
+							</div>
+							<div class="fl">
+								<div class="form-group">
+									<label class="control-label">请求方式：</label>
+									<div class="control-element">
+										<div id="requestType" name="requestType" class="uf-combox w200"></div>
+									</div>
+								</div>
+							</div>
+							<div class="fl">
+								<div class="form-group">
+									<label class="control-label">授权码：</label>
+									<div class="control-element">
+										<input class="form-control" id="authority" name="authority" maxlength="200" />
+									</div>
+								</div>
+							</div>
+							<div class="fl">
+								<div class="form-group" style="height: 50px">
+									<label class="control-label">参数：</label>
+									<div class="control-element" style="width: 932px;vertical-align:text-top">
+										<textarea class="form-control" rows="2" id="parameter" name="parameter" style="width: 932px;vertical-align:text-top"></textarea>
+									</div>
+								</div>
+							</div>
+							<div class="fl">
+								<div class="form-group" style="height: 88px;">
+									<label class="control-label">提示：</label>
+									<div class="control-element" style="width: 932px;vertical-align:text-top; color:red">
+										填写请求参数：@agencyCode单位代码,@setYear年度,@rgCode区划,@billTypeCode单据类型,@month月份,@monthStart起始月份,@monthEnd结束月份@dateStart 开始日期,@dateEnd 结束日期,@orgCode1 统一社会信用代码,@orgCode2 截取组织机构代码(必须写orgCode2Star与orgCode2End) 示例：{"businessType":@billTypeCode,"dateStart":@dateStart,"dateEnd":@dateEnd,"agencyCode":@agencyCode, "orgCode":@orgCode2,"orgCode2Star":9,"orgCode2End":17}
+									</div>
+								</div>
+							</div>
+						</div>
+					</form>
+					<!--新增需求导入xml--CWYXM-8433--展开面板部分--zsj-->
+					<form id="nameform06" class="nameform" style="display: none;">
+						<div class="row">
+							<div class="fl">
+								<div class="form-group">
+									<label class="control-label">表标签名：</label>
+									<div class="control-element">
+										<input class="form-control" id="labelName" name="labelName" maxlength="200" style="width: 150px;" />
+									</div>
+								</div>
+							</div>
+							<div class="fl" style="margin-left: 25px;">
+								<div class="form-group">
+									<label class="control-label">表标签属性：</label>
+									<div class="control-element">
+										<input class="form-control" id="labelProperties" name="labelProperties" maxlength="200" style="width: 150px;" />
+									</div>
+								</div>
+							</div>
+							<div class="fl" style="margin-left: 29px;">
+								<div class="form-group">
+									<label class="control-label">表标签属性值：</label>
+									<div class="control-element">
+										<input class="form-control" id="labelPropertiesValue" name="labelPropertiesValue" maxlength="200"style="width: 150px;" />
+									</div>
+								</div>
+							</div>
+							<div class="fl" style=" margin-left: -4px;">
+								<div class="form-group">
+									<label class="control-label">行标签：</label>
+									<div class="control-element">
+										<input class="form-control" id="lableTag" name="label" maxlength="200" style="width: 150px;"/>
+									</div>
+								</div>
+							</div>
+						</div>
+					</form>
+
+					<div style="padding-left: 58px;padding-bottom: 6px">注：<span style="color: red">field28至field32为预留大字段，当为公务之家联查报销凭证的时候才需要填写field32字段</span></div>
+					<table id="nameTable2" class="tableCommonStyle ufma-table" tool-bar="#rpt-tool-bar">
+					</table>
+				</div>
+			</div>
+		</div>
+
+		<div class="ufma-layout-down bordered-top">
+			<div class="text-right margin-right-30">
+				<button type="button" class="btn btn-sm btn-primary btn-permission btn-save" id="btn-save">保存</button>
+				<button type="button" class="btn btn-sm btn-default" id="btn-close">关闭</button>
+			</div>
+		</div>
+		</div>
+
+		<script src="edit.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+	</body>
+
+</html>

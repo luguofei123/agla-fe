@@ -1,0 +1,440 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>银行对账</title>
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <script src="../../../pub/boot.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+    <script src="colResizable-1.6.min.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+    <script src="fixedTableHead.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+    <link href="./bankBalanceAcc.css?rev=@@hash" rel="stylesheet" />
+</head>
+<style>
+</style>
+
+<body>
+    <div id="bankBalanceAcc" class="container-fluid ufma-container">
+        <!--工作区 begin-->
+        <div class="workspace">
+            <!--工作区顶部 begin-->
+            <div class="workspace-top">
+                <div class="container-fluid">
+                    <div class="ufma-portlet">
+                        <div class="portlet-title">
+                            <div class="caption">
+                                <span class="caption-subject font-dark uppercase">银行对账</span>
+                            </div>
+                            <div class="agencycom">
+                                <div id='cbAgency' name="agencyCode" class="ufma-treecombox ufma-combox-agency"></div>
+                            </div>
+                            <!-- <div class="table-sub-action pull-right" style="    margin-top: 7px;">
+                                <div class="actions pull-right">
+                                    <div class="btn-group" data-toggle="buttons">
+                                        <label id="heng" class="btn btn-default active">
+                                            <input type="radio" class="toggle">
+                                            <span class="icon-horizontal"></span>
+                                        </label>
+                                        <label id="zong" class="btn btn-default ">
+                                            <input type="radio" class="toggle">
+                                            <span class="icon-vertical"></span>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div> -->
+                            <div class="actions" style="    padding: 8px 10px;">
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-sm btn-primary btn-permission btn-auto" style="right: 20px;border-top-right-radius: 4px;border-bottom-right-radius: 4px;">自动对账</button>
+                                    <button id="viewBalAdjTable" style="float:right;border-top-left-radius: 4px;border-bottom-left-radius: 4px;" class="btn btn-primary btn-permission btn-preview">预览余额调节表</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="portlet-body form-horizontal bordered">
+                            <div class="more" style="width:100%">
+                                <form id="frmQuery" class="form-horizontal">
+                                    <div class="form-row">
+                                        <div class="form-group" style="width: 320px;">
+                                            <label class="control-label">对账方案：</label>
+                                            <div class="control-element">
+                                                <div id='BankReconSche' name="schemaGuid" class="uf-combox " style="width:224px"> </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group" style="width: 344px;">
+                                            <label class="control-label ">日期：</label>
+                                            <div class="control-element">
+                                                <div name="startDate" id="dateStart" class="uf-datepicker" style="width: 125px;">
+                                                </div>
+                                            </div>
+                                            <span class="split" style="margin: 5px 8px 5px 16px">至</span>
+                                            <div class="control-element">
+                                                <div name="endDate" id="dateEnd" class="uf-datepicker" style="width: 125px;">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group" style="margin-left:-15px;width: 282px;">
+                                            <label class="control-label " style="margin-left:16px;">对账状态：</label>
+                                            <div id="query-status" class="control-element pr10" style="padding-top:3px;">
+                                                <a name="isBalanceAcc" value="" class="label label-radio">全部</a>
+                                                <a name="isBalanceAcc" value="1" class="label label-radio ">已对账</a>
+                                                <a name="isBalanceAcc" value="0" class="label label-radio selected">未对账</a>
+                                            </div>
+                                        </div>
+                                        <!-- <div id= "groupGuidLike" class="form-group" style="margin-left: 20px;display: none;">
+                                            <label class="control-label">批次号：</label>
+                                            <div class="control-element" style="width: 222px;">
+                                                <input id= "pNo" type="text" name="groupGuidLike"  class="form-control">
+                                            </div>
+                                        </div> -->
+                                        <div class="clearfix"></div>
+                                    </div>
+                                </form>
+                                <form id="queryMore" class="form-horizontal mt10 hidden">
+                                    <div class="form-row">
+                                        <div class="form-group" style="width: 320px;">
+                                            <label class="control-label" style="display:inline-block;width:70px;text-align: right;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;">金额：</label>
+                                            <div class="control-element" style="width:100px;">
+                                                <input id="minMoney" type="text" name="minMoney" maxlength="20" class="form-control">
+                                            </div>
+                                            <span class="split">至</span>
+                                            <div class="control-element" style="width:100px;">
+                                                <!--<input id="maxMoney" type="text" name="maxMoney" class="form-control">-->
+                                                <input id="maxMoney" type="text" name="maxMoney" maxlength="20" class="form-control">
+                                                <!--修改输入框金额位数过大时报服务的异常的问题-->
+                                            </div>
+                                        </div>
+                                        <div class="form-group" style="width: 333px;">
+                                            <label class="control-label">票据类型：</label>
+                                            <div class="control-element">
+                                                <div id='billType' name="billType" class="uf-treecombox ufma-combox-billType " style="width: 249px;"></div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group" style="margin-left: 12px;">
+                                            <label class="control-label" style="display:inline-block;width:70px;text-align: right;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;">票据号：</label>
+                                            <div class="control-element" style="width: 222px;">
+                                                <input type="text" name="billNo" id="billNo" class="form-control">
+                                            </div>
+                                        </div>
+                                        <div class="clearfix"></div>
+                                    </div>
+                                    <div class="form-row" style="width:1000px;">
+										<div id="planItemMoreNew"></div>
+										<div class="clearfix"></div>
+									</div>
+                                </form>
+                            </div>
+
+                            <div class="btn-group lp-query-box" style="position: absolute;right:15px;top:70px;margin-right: 10px;">
+                                <span id="show" class=" tip-more" style=" cursor: pointer;">更多
+                                    <i class="glyphicon icon-angle-bottom"></i>
+                                </span>
+                                <span class=" hidden tip-more" id="hide" style="cursor: pointer;">收起
+                                    <i class="glyphicon icon-angle-top"></i>
+                                </span>
+                                <div class="cab-query-btn inline-block">
+                                    <button id="queryAll" class="btn btn-primary btn-query btn-permission">查询</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--工作区中部 begin-->
+                    <div class="workspace-center">
+                        <div style="padding:0px" class="container-fluid">
+                            <div class="table-sub clearfix">
+                                <div class="table-sub-info pull-left">
+                                </div>
+
+                            </div>
+                            <!--表格begin-->
+                            <div style="border:none;margin-top:0px" class="tab-content">
+                                <!--纵表-->
+                                <div class="hidden" id="zong-table">
+                                    <div class="container-fluid">
+                                        <div class="row">
+                                            <div style="padding-left:0px" class="col-md-6">
+                                                <div class="title-pointer">
+                                                </div>
+                                                <span>单位日记账</span>
+                                            </div>
+                                            <div style="padding-left:5px" class="col-md-6">
+                                                <div class="title-pointer">
+                                                </div>
+                                                <span>银行对账单</span>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div style="padding-left:0px;padding-right:0px;" class="col-md-6 table-border" id="zong-table1">
+                                                <table id="zong-dwrjz" class="ufma-table uf-rpt-table" style="width:240%">
+                                                    <thead>
+                                                        <tr>
+                                                            <th style="width:20px;">
+                                                                <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
+                                                                    <input type="checkbox" class="datatable-group-checkable" data-set="#data-table .checkboxes" />
+                                                                    <span></span>
+                                                                </label>
+                                                            </th>
+                                                            <th> 是否对账</th>
+                                                            <th> 凭证日期</th>
+                                                           
+                                                            <th> 摘要</th>
+                                                            <th> 借方金额</th>
+                                                            <th> 贷方金额</th>
+                                                            <!-- <th> 结算方式</th>
+                                                            <th> 票据类型</th> -->
+                                                            <th> 票据日期</th>
+                                                            <th> 票据号</th>
+                                                            <th> 凭证编号</th>
+                                                            <th> 对账时间</th>
+                                                            <th> 账套</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                            <div style="padding-right:0px;padding-left:5px;" class="col-md-6 table-border" id="zong-table2">
+                                                <table id="zong-yhdzd" class="ufma-table uf-rpt-table" style="width:220%">
+                                                    <thead>
+                                                        <tr>
+                                                            <th style="width:20px;">
+                                                                <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
+                                                                    <input type="checkbox" class="datatable-group-checkable" data-set="#data-table .checkboxes" />
+                                                                    <span></span>
+                                                                </label>
+                                                            </th>
+                                                            <th> 是否对账</th>
+                                                            <th> 记账日期</th>
+                                                            
+                                                            <th> 摘要</th>
+                                                            <th> 借方金额</th>
+                                                            <th> 贷方金额</th>
+                                                            <!-- <th> 结算方式</th>
+                                                            <th> 票据类型</th> -->
+                                                            <th> 票据日期</th>
+                                                            <th> 票据号</th>
+                                                            <th> 凭证编号</th>
+                                                            <th> 对账时间</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                                <div id="heng-table">
+                                    <div class="container-fluid">
+
+                                        <div class="heng-table">
+                                            <div class="heng-table-title">
+                                                <button id="rjzExport" class="btn btn-default btn-export " style="height: 36px;" data-toggle="tooltip" title="导出单位日记账">
+                                                    <span class="glyphicon icon-upload"></span>
+                                                </button>
+                                                <div class= "padding-style" >
+                                                    <p>单</p>
+                                                    <p>位</p>
+                                                    <p>日</p>
+                                                    <p>记</p>
+                                                    <p>账</p>
+                                                </div>
+                                            </div>
+                                            <div id="dwrjz" class="heng-table-table">
+                                                <table id="heng-dwrjz" class="ufma-table uf-rpt-table">
+                                                    <thead>
+                                                        <tr>
+                                                            <th style="width:38px;">
+                                                                <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
+                                                                    <input type="checkbox" class="datatable-group-checkable"
+                                                                        data-set="#data-table .checkboxes" />
+                                                                    <span></span>
+                                                                </label>
+                                                            </th>
+                                                            <th> 是否对账</th>
+                                                            <th> 凭证日期</th>
+                                                            <th> 摘要</th>
+                                                            <th> 借方金额</th>
+                                                            <th> 贷方金额</th>
+                                                            <!-- <th> 结算方式</th>
+                                                                                                    <th> 票据类型</th> -->
+                                                            <th> 票据日期</th>
+                                                            <th> 票据号</th>
+                                                            <th> 凭证编号</th>
+                                                            <th> 对账时间</th>
+                                                            <th> 账套</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                        <div style="margin-top:5px" class="heng-table">
+                                            <div class="heng-table-title">
+                                                <button id="dzdExport" class="btn btn-default btn-export " style="height: 36px;" data-toggle="tooltip" title="导出银行对账单">
+                                                    <span class="glyphicon icon-upload"></span>
+                                                </button>
+                                                <div class="padding-style">
+                                                    <p>银</p>
+                                                    <p>行</p>
+                                                    <p>对</p>
+                                                    <p>账</p>
+                                                    <p>单</p>
+                                                </div>
+                                            </div>
+                                            <div  id= "yhdzd" class="heng-table-table" >
+                                                <table id="heng-yhdzd" class="ufma-table  uf-rpt-table">
+                                                    <thead>
+                                                        <tr>
+                                                            <th style="width:38px;">
+                                                                <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
+                                                                    <input type="checkbox" class="datatable-group-checkable" data-set="#data-table .checkboxes" />
+                                                                    <span></span>
+                                                                </label>
+                                                            </th>
+                                                            <th> 是否对账</th>
+                                                            <th> 记账日期</th>
+                                                            
+                                                            <th> 摘要</th>
+                                                            <th> 借方金额</th>
+                                                            <th> 贷方金额</th>
+                                                            <!-- <th> 结算方式</th>
+                                                            <th> 票据类型</th> -->
+                                                            <th> 票据日期</th>
+                                                            <th> 票据号</th>
+                                                            <th> 凭证编号</th>
+                                                            <th> 对账时间</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--工作区底 begin-->
+                    <div style="margin-top:5px;bottom: 15px;" id="expfunc-tool-bar" class="ufma-tool-bar">
+                        <div style="margin-left:0px;margin-right:0px" class="tool-bar-body toolbar-height">
+                            <div class="my-tool-btns">
+                                <div class="toolbar-left">
+                                    <div class="toolbar-top">
+                                        <label class="tool-label">单位日记账借方：</label>
+                                        <label id="journalAmtDr" class="label-cash label-cash-croci">0.00</label>
+                                        <label id="statementAmtDr1" class="tool-label  neg-dir hide">银行对账单借方：</label>
+                                        <label id="statementAmtDr" class="label-cash label-cash-croci hide neg-dir">0.00</label>
+                                        <label id="statementAmtCr2" class="tool-label ">银行对账单贷方：</label>
+                                        <label id="statementAmtCr3" class="label-cash label-cash-croci  ">0.00</label>
+                                        <label class="tool-label">差额
+                                            <span class="label-tip">（银行对账单-单位日记账）</span>：</label>
+                                        <label id="balanceAmtDr" class="label-cash label-cash-black">0.00</label>
+                                    </div>
+                                    <div class="toolbar-bottom">
+                                        <label class="tool-label">单位日记账贷方：</label>
+                                        <label id="journalAmtCr" class="label-cash label-cash-croci">0.00</label>
+                                        <label id="statementAmtCr1" class="tool-label hide neg-dir">银行对账单贷方：</label>
+                                        <label id="statementAmtCr" class="label-cash label-cash-croci hide neg-dir">0.00</label>
+                                        <label id="statementAmtDr2" class="tool-label ">银行对账单借方：</label>
+                                        <label id="statementAmtDr3" class="label-cash label-cash-croci  ">0.00</label>
+                                        <label class="tool-label">差额
+                                            <span class="label-tip">（银行对账单-单位日记账）</span>：</label>
+                                        <label id="balanceAmtCr" class="label-cash label-cash-black">0.00</label>
+                                    </div>
+                                </div>
+                                <div class="toolbar-right">
+                                    <button type="button" class="btn btn-sm btn-default btn-permission btn-Manual">手工对账</button>
+                                    <button type="button" class="btn btn-sm btn-default btn-permission btn-auto"> 自动对账</button>
+                                    <button type="button" class="btn btn-sm btn-default btn-permission btn-cancelBalance" style="display: none;"> 取消对账</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="autoRule" class="ufma-modal">
+                    <div class="u-msg-title">
+                        <h4>自动对账规则</h4>
+                    </div>
+                    <div class="u-msg-content">
+                        <div class="rule-list">
+                            <ul class="list-unstyle" id="reconRules">
+                                <li>
+                                    <label class="mt-checkbox mt-checkbox-outline check-label">
+                                        <input type="checkbox" checked id="amount" disabled="disabled"> 金额相同
+                                        <span class="check-span"></span>
+                                    </label>
+                                </li>
+                                <li>
+                                    <label class="mt-checkbox mt-checkbox-outline check-label">
+                                        <input type="checkbox" data-journal="BILL_NO" data-statement="BILL_NO" data-isDate="false" id="BILL_NO"> 票据号相同
+                                        <span class="check-span"></span>
+                                    </label>
+                                </li>
+                                <li>
+                                    <label class="mt-checkbox mt-checkbox-outline check-label">
+                                        <input type="checkbox" data-journal="VOU_DATE" data-statement="STATEMENT_DATE" data-isDate="true" id=VOU_DATE> 日期相同（误差范围
+                                        <span class="check-span"></span>
+                                    </label>
+                                    <input id="error" value="2" class="my-input form-control" type="text" style="width:40px; height:18px;padding: 0"></input>
+                                    <label class="check-label my-label">天）</label>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="u-msg-footer">
+                        <button type="button" class="btn btn-sm btn-primary btn-permission btn-ajax btn-confirmAcc">开始对账</button>
+                        <button type="button" class="btn btn-sm btn-default btn-close"> 取消</button>
+                    </div>
+                </div>
+                <div id="reconResult" class="ufma-modal">
+                    <div class="u-msg-title">
+                        <h4>对账结果</h4>
+                    </div>
+                    <div class="u-msg-content">
+                        <div class="rule-list">
+                            <ul class="list-unstyle" id="reconRules">
+                                <li>
+                                    <label> 对账完成 </label>
+                                </li>
+                                &nbsp;&nbsp;
+                                <li>
+                                    <label> 日记账 </label>
+                                    &nbsp;&nbsp;
+                                    <lable>借方 :
+                                        <span id="jDrCount">0</span> 笔,共
+                                        <span id="jDrMoney">0.00</span> 元</label>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <label class="font-style"> 贷方 :
+                                            <span id="jCrCount">0</span> 笔,共
+                                            <span id="jCrMoney">0.00</span> 元</label>
+                                </li>
+                                <li>
+                                    <label> 对账单</label>
+                                    &nbsp;&nbsp;
+                                    <lable> 借方 :
+                                        <span id="sDrCount">0</span> 笔,共
+                                        <span id="sDrMoney">0.00</span> 元</label>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <label class="font-style"> 贷方 :
+                                            <span id="sCrCount">0</span> 笔,共
+                                            <span id="sCrMoney">0.00</span> 元</label>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="u-msg-footer">
+                        <button type="button" class="btn btn-sm btn-primary btn-permission btn-ajax btn-sure btn-confirmRecon">确定</button>
+                        <button type="button" class="btn btn-sm btn-default btn-close"> 取消</button>
+                    </div>
+                </div>
+            </div>
+            <script src="../../rpt/rptCommon/rptCommon.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+            <script src="bankBalanceAcc.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+</body>
+
+</html>

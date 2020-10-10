@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>公式编辑器</title>
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <script src="../../pub/boot.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+    <link rel="stylesheet" type="text/css" href="formulaEditor.css?rev=@@hash"/>
+    <style type="text/css">
+
+    </style>
+</head>
+
+<body>
+<div class="ufma-layout-updown">
+    <div class="ufma-layout-up">
+        <div class="container-fluid">
+            <!--<div id="FormulaEditor" style="width: 606px;height: 382px;padding:10px 0px 10px 0px;margin:0 auto;">-->
+            <div id="FormulaEditor" style="width: 606px;padding:10px 0px 10px 0px;margin:0 auto;">
+                <textarea style="width: 98%;height: 80px;margin:0 10px;border-radius: 4px;"
+                          id="FormulaEditorVal"></textarea>
+                <div class="FormulaEditorBtn" style="width:98%;height:28px;margin: 5px auto;">
+                    <button class="newbtn btn-default" data-code="+">+</button>
+                    <button class="newbtn btn-default" data-code="-">-</button>
+                    <button class="newbtn btn-default" data-code="*">*</button>
+                    <button class="newbtn btn-default" data-code="/">/</button>
+                    <button class="newbtn btn-default" data-code="(">(</button>
+                    <button class="newbtn btn-default" data-code=")">)</button>
+                    <button class="newbtn btn-default" data-code="=">=</button>
+                    <button class="newbtn btn-default" data-code="!=">!=</button>
+                    <button class="newbtn btn-default" data-code=">">></button>
+                    <button class="newbtn btn-default" data-code=">=">>=</button>
+                    <button class="newbtn btn-default" data-code="<"><</button>
+                    <button class="newbtn btn-default" data-code="<="><=</button>
+                    <button class="newbtn btn-default" data-code="&&" style="width: auto">并且</button>
+                    <button class="newbtn btn-default" data-code="||" style="width: auto">或者</button>
+                    <button class="newbtn btn-default" data-code="==">==</button>
+                </div>
+                <div class="workspace-center" style="width: 98%;margin: 0 auto;">
+                    <ul id="myTab" class="nav nav-tabs">
+                        <!--<li>-->
+                        <!--<a href="#dzgx" data-toggle="tab" data-code="0">对照关系</a>-->
+                        <!--</li>-->
+                        <li>
+                            <a href="#djxm" data-toggle="tab" data-code="1">单据项目</a>
+                        </li>
+                        <li>
+                            <a href="#ys" data-toggle="tab" data-code="2">要素</a>
+                        </li>
+                        <li>
+                            <a href="#hjbl" data-toggle="tab" data-code="3">环境变量</a>
+                        </li>
+                        <li>
+                            <a href="#hs" data-toggle="tab" data-code="4">函数</a>
+                        </li>
+                    </ul>
+                    <div id="myTabContent" class="tab-content table-bordered"
+                         style="margin-top:0px !important;border-radius: 4px;min-height:200px;overflow: hidden;">
+                        <div class="tab-pane fade position-relative backgroundcolorwhite" id="dzgx"></div>
+                        <div class="tab-pane fade position-relative backgroundcolorwhite" id="djxm" style="overflow-y: auto;padding-bottom: 40px">
+                            <div class="mytab-left bgf5"></div>
+                            <div class="mytab-right"></div>
+                        </div>
+                        <div class="tab-pane fade position-relative backgroundcolorwhite" id="ys">
+                            <div class="mytab-left bgf5"></div>
+                            <div class="mytab-right">
+                                <div class="right-con"></div>
+                            </div>
+                            <div class="input-box"><input type="text" class="yssearch"/></div>
+                            <span class="glyphicon icon-search search-btn"></span>
+                        </div>
+                        <div class="tab-pane fade position-relative backgroundcolorwhite" id="hjbl"></div>
+                        <div class="tab-pane fade position-relative backgroundcolorwhite" id="hs">
+                            <div class="mytab-left bgf5"></div>
+                            <div class="mytab-right">
+                                <div class="right-con"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="ufma-layout-down bordered-top">
+        <div class="text-right margin-right-30">
+            <button type="button" class="btn btn-sm btn-primary btn-save margin-bottom-5"
+                    id="btn-FormulaEditorsave">确定
+            </button>
+            <button type="button" class="btn btn-sm btn-primary btn-save margin-bottom-5"
+                    id="btn-FormulaEditorup">校验
+            </button>
+            <button type="button" class="btn btn-sm btn-default btn-save margin-bottom-5"
+                    id="btn-FormulaEditornone">清空
+            </button>
+        </div>
+    </div>
+</div>
+<div id="scmodal" class="ufma-modal"></div>
+<script src="formulaEditor.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+</body>
+
+</html>

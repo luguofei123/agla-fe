@@ -1,0 +1,4395 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+html{
+	min-width: 1200px;
+}
+body{
+	min-height: 100%;
+	background: #fff;
+}
+input::-ms-clear {
+  display: none;
+  width : 0;
+  height: 0;
+}
+select::-ms-expand {
+	display: none;
+}
+.font-min-size{
+	font-size: 12px !important;
+}
+.voucher-singelzybg .voucher-yc .voucher-close{
+	/*display: none !important;*/	
+	visibility: hidden !important;
+}
+.AssTree .ycbodys .noRange{
+	display: none !important;
+}
+.ycbody .ycbodys .allnoshow{
+	display: none !important;
+}
+.mobanhide .accountingye{
+	display: none !important;
+}
+.mobanhide .accountingmx{
+	display: none !important;
+}
+.accountinghead span{
+	cursor: pointer;	
+}
+.noshow{
+	display: none !important;
+}
+.datesno{
+    width: 142px;
+    height: 33px;
+    position: absolute;
+    left: 364px;
+    bottom: 16px;
+    /* display: none; */
+    z-index: 100;
+}
+#conghongleixingys {
+    float: left;
+    width: 130px;
+    height: 30px;
+    border-radius: 4px;
+    border: 1px solid #d9d9d9;
+    margin-left: 8px;
+    appearance: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    padding-right: 14px;
+    padding-left: 8px;
+}
+ul,
+li {
+	list-style: none;
+}
+
+body {
+	background: #F2F2F2;
+	overflow-y: auto;
+	overflow-x: hidden;
+	/*height: 580px;*/
+}
+
+
+/*头部选项*/
+
+
+#pzzhuantaidiv {
+	position: relative;
+	left: 50%;
+	top: 20px;
+	text-align: center;
+	border-radius: 4px;
+	color: #fff;
+	font-size: 10px;
+	padding-top: 4px;
+	padding-bottom: 4px;
+	cursor: pointer;
+	padding: 2px 8px;
+	float: left;
+	margin-left: 52px;
+}
+#pzzhuantai {
+	position: relative;
+	text-align: center;
+	background: #FF7100;
+	border-radius: 4px;
+	color: #fff;
+	font-size: 10px;
+	padding-top: 4px;
+	padding-bottom: 4px;
+	cursor: pointer;
+	padding: 2px 8px;
+	display: none;
+	float: left;
+	/* margin-left: 52px; */
+}
+
+#pzzhuantaiC {
+	position: relative;
+	text-align: center;
+	background: #FF7100;
+	border-radius: 4px;
+	color: #fff;
+	font-size: 10px;
+	padding-top: 4px;
+	padding-bottom: 4px;
+	cursor: pointer;
+	padding: 2px 8px;
+	float: left;
+	margin-left: 8px;
+}
+.iswriteoff{
+	position: relative;
+	left: 50%;
+	top: 27px;
+	text-align: center;
+	background: #feeee6;
+	border-radius: 4px;
+	color:#FE590D;
+	font-size: 10px;
+	padding-top: 4px;
+	padding-bottom: 4px;
+	cursor: pointer;
+	padding: 2px 8px;
+	display: none;
+	float: left;
+	margin-left: 8px;
+}
+.voucherleft {
+	width: 287px;
+	height: 436px;
+	position: fixed;
+	left: 0px;
+	top: 0px;
+	background: #fff;
+	border-top: 4px solid #108EE9;
+	display: none;
+	box-shadow: 2px 2px 5px 0 rgba(0,0,0,0.15);
+	z-index: 200;
+}
+
+.voucherlefthead {
+	width: 287px;
+	height: 40px;
+	float: left;
+	border-bottom: 1px solid #BBBBBB;
+	position: relative;
+}
+
+.voucherlefthead p {
+	line-height: 40px;
+	text-align: center;
+	font-size: 16px;
+	letter-spacing: 0.76px;
+	/*float: left;*/
+}
+
+.voucherlefthead .closeleft {
+	position: absolute;
+	right: 10px;
+	top: 10px;
+	cursor: pointer;
+}
+
+.voucherleftdatess {
+    width: 286px;
+    height: 30px;
+    margin-top: 9px;
+    margin-bottom: 9px;
+    position: relative;
+    float: left;
+    margin-left: 8px;
+}
+.voucherleftsearch {
+	width: 287px;
+	height: 30px;
+	margin-top: 9px;
+	margin-bottom: 9px;
+	position: relative;
+	float: left;
+}
+
+.voucherleftsearchinp {
+	width: 185px;
+	height: 28px;
+	margin-left: 16px;
+	padding-left: 8px;
+	background: #FFFFFF;
+	border: 1px solid #BBBBBB;
+}
+
+.btn-searchleft {
+	width: 43px;
+	height: 28px;
+	background: #FFFFFF;
+	border: 1px solid #BBBBBB;
+	border-left: none;
+	position: absolute;
+	right: 32px;
+	top: 0px;
+}
+
+.voucherleftbody {
+	width: 271px;
+	height: 290px;
+	float: left;
+	position: relative;
+	left: 16px;
+	overflow-y: scroll;
+	overflow-x: hidden;
+}
+
+.voucherleftbodyk {
+	width: 237px;
+	height: 104px;
+	border: 1px solid #D9D9D9;
+	position: relative;
+	margin-bottom: 8px;
+	cursor: pointer;
+	border-radius: 4px;
+}
+
+.voucherleftbodykdp {
+	width: 237px;
+	height: 120px;
+	border: 1px solid #D9D9D9;
+	position: relative;
+	margin-bottom: 8px;
+	cursor: pointer;
+	border-radius: 4px;
+}
+.voucherleftbodyk p:nth-of-type(1) {
+	margin-top: 10px;
+}
+
+.voucherleftbodyk p {
+	letter-spacing: 0.67px;
+	margin-left: 10px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+.voucherleftbodyk p span {
+	float: left;	
+	width: 60px;
+	text-align: right;
+}
+.voucherleftbodykdp p span {
+	float: left;	
+	width: 76px;
+	text-align: right;
+}
+.voucherright{
+	position: fixed;
+	right: 0px;
+	top: 48px;
+	background: #fff;
+	/* display: none; */
+	box-shadow: 2px 0 5px 2px rgba(0,0,0,0.15);
+	z-index: 1999;
+    width: 400px;
+	height: 100%;
+	display: none;
+}
+.voucherright .rclose{
+	position: absolute;
+    right: 16px;
+    top: 12px;
+    cursor: pointer;
+    z-index: 2;
+}
+.voucherrighthead{
+    height: 40px;
+    position: relative;
+    width: 100%;
+    background: #F3F3F3;
+}
+.voucherrighthead .headnav{
+	display: inline-block;
+	line-height: 40px;
+	width: 65px;
+	text-align: center;
+	cursor: pointer;
+}
+.voucherrighthead .active{
+	display: inline-block;
+	border-bottom: 2px solid #0066FF;
+	line-height: 38px;
+	background: none;
+	color: #0066ff;
+}
+.voucherrightbody{
+    position: relative;
+    width: 100%;
+    background: #ffffff;
+}
+.voucherrightbody .rightbodyPage{
+	display: none;
+	height: 100%;
+	overflow-y: auto;
+}
+.btn-searchleft img {
+	width: 16px;
+	height: 16px;
+	margin-left: 13px;
+	margin-top: 6px;
+}
+
+.leftcha {
+	width: 237px;
+	height: 74px;
+	background: rgba(0, 0, 0, 0.4);
+	color: #fff;
+	text-align: center;
+	line-height: 74px;
+	position: absolute;
+	top: 0;
+	left: 0;
+	display: none;
+}
+.voucherleftbodykdp .leftcha{
+	height: 90px;
+}
+.leftbtns {
+	width: 237px;
+	height: 30px;
+	position: absolute;
+	left: 0;
+	top: 74px;
+	background: #FFFFFF;
+	border: 1px solid #BBBBBB;
+	border-radius: 0 0 4px 4px;
+	display: none;
+}
+.voucherleftbodykdp .leftbtns{
+	top: 90px;
+} 
+.leftbtns .leftfz {
+	width: 79px;
+	height: 30px;
+	text-align: center;
+	line-height: 30px;
+	background: #fff;
+	float: left;
+}
+
+.leftbtns .leftcr {
+	width: 77px;
+	height: 30px;
+	text-align: center;
+	line-height: 30px;
+	background: #fff;
+	border-left: 1px solid #BBBBBB;
+	border-right: 1px solid #BBBBBB;
+	float: left;
+}
+
+.leftbtns .leftsc {
+	width: 79px;
+	height: 30px;
+	text-align: center;
+	line-height: 30px;
+	background: #fff;
+	float: left;
+}
+
+.voucherall {
+	width: 100%;
+	height: 573px;
+	position: relative;
+	/*left: 236px;
+	top: 113px;*/
+	left: 8px;
+	margin: 0px auto;
+	margin-top: 0px;
+	/*overflow: hidden;*/
+	background: #FFFFFF;
+}
+
+.voucherxz {
+	width: 100%;
+	height: 46px;
+	border-bottom: 1px solid #BBBBBB;
+	position: relative;
+}
+
+.voucherdw span {
+	width: 18px;
+	height: 16px;
+	float: left;
+	position: absolute;
+	left: 106px;
+	top: 15px;
+	background: #FFBF00;
+	color: #fff;
+	line-height: 16px;
+	text-align: center;
+	border-radius: 3px;
+}
+
+#voucherdwse {
+	width: 180px;
+	height: 30px;
+	float: left;
+	position: absolute;
+	left: 102px;
+	top: 8px;
+	background: #FFFFFF;
+	border: 1px solid #BBBBBB;
+	border-radius: 4px;
+	appearance: none;
+	-moz-appearance: none;
+	-webkit-appearance: none;
+	background: url('/pf/gl/vou/img/xialaxi.png') no-repeat scroll right center transparent;
+	padding-left: 22px;
+	padding-right: 8px;
+}
+
+#voucherdwse::-ms-expand {
+	display: none;
+}
+/*#voucherdwse option{
+	height: 20px;
+	line-height: 20px;
+	
+}
+#voucherztse option{
+	height: 20px;
+	line-height: 20px;
+	
+}*/
+/*#voucherdwse::selec
+{
+	background: #ddd;
+	
+}*/
+#pzlrbt {
+    font-size: 16px;
+    position: relative;
+    left: 17px;
+    line-height: 43px;
+    border-bottom: 3px solid #108EE9;
+    box-sizing: border-box;
+    display: inline-block;
+    margin-right: 20px;
+}
+
+.voucherzt span {
+	width: 18px;
+	height: 16px;
+	float: left;
+	position: absolute;
+	left: 324px;
+	top: 15px;
+	background: #FFBF00;
+	color: #fff;
+	line-height: 16px;
+	text-align: center;
+	border-radius: 3px;
+}
+
+#voucherztse {
+	width: 180px;
+	height: 30px;
+	float: left;
+	position: absolute;
+	left: 320px;
+	top: 8px;
+	background: #FFFFFF;
+	border: 1px solid #BBBBBB;
+	border-radius: 4px;
+	appearance: none;
+	-moz-appearance: none;
+	-webkit-appearance: none;
+	background: url('/pf/gl/vou/img/xialaxi.png') no-repeat scroll right center transparent;
+	padding-left: 22px;
+	padding-right: 8px;
+}
+
+#voucherztse::-ms-expand {
+	display: none;
+}
+
+.voucherkj {
+	width: 30px;
+	height: 23px;
+	position: relative;
+	right: 32px;
+	top: 10px;
+	background: #FFFFFF;
+	border: 1px solid #BBBBBB;
+	border-radius: 4px;
+	font-size: 18px;
+	text-align: center;
+	padding-top: 7px;
+	border-radius: 2px;
+	float: right;
+}
+
+.voucherkjxs {
+    width: 300px;
+    position: absolute;
+    right: 0px;
+    top: 30px;
+    z-index: 200;
+    background: #daedfb;
+    display: none;
+    box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.20);
+    padding: 0px 10px;
+    font-size: 12px;
+    color: #cec9e6;
+    border: 1px solid #7ebdfd;
+}
+
+.voucherkjxs p {
+    width: 50%;
+    height: 30px;
+    line-height: 30px;
+    font-size: 12px;
+    float: left;
+    text-align: left;
+}
+
+/*.voucherkjxs p:hover {
+	background: #c3e3fb;
+}*/
+
+.voucherkjxs p .xg {
+	float: left;
+	margin-right: 10px;
+	margin-left: 10px;
+}
+/*.voucherkjxs p .kj {
+	float: right;
+	margin-right: 10px;
+}*/
+
+.voucherkj img {
+	width: 18px;
+	height: 11.2px;
+	position: absolute;
+	left: 14px;
+	top: 9px;
+}
+.voubtnhead{
+	position: relative;
+	right: 10px;
+	float: right;
+}
+.currbtns{
+	position: relative;
+	right: 0px;
+	float: right;
+	/* padding-left: 16px; */
+}
+.xjll {
+	width: 30px;
+	height: 16px;
+	position: relative;
+	right: 0px;
+	top: 10px;
+	text-align: center;
+	border-radius: 4px;
+	font-size: 16px;
+	padding-top: 7px;
+	padding-bottom: 7px;
+	cursor: pointer;
+	display: none;
+	z-index: 100;
+	float: right;
+	background: #FFFFFF;
+	border: 1px solid #FF7100;
+	color: #FF7100;
+	margin-right:8px;
+}
+#xiaocuo {
+	position: relative;
+	top: 10px;
+	right: 0px;
+	display: none;
+	color: #fff;
+	line-height: 20px;
+	padding: 5px 7px;
+	border-radius: 4px;
+	font-size: 16px;
+	z-index: 20;
+	float: right;
+	background: #FFFFFF;
+	border: 1px solid red;
+	color: red;
+	margin-right:8px;
+	cursor: pointer;
+}
+#differBtn {
+	position: relative;
+	right: 0px;
+	top: 10px;
+	display: none;
+	line-height: 20px;
+	padding: 5px 8px;
+	border-radius: 4px;
+	font-size: 16px;
+	z-index: 20;
+	float: right;
+	background: #FFFFFF;
+	border: 1px solid  rgb(93,187,255);
+	color:  rgb(93,187,255);
+	margin-right:8px;
+	cursor: pointer;
+}
+#OtherBtn {
+	position: relative;
+	right: 0px;
+	top: 10px;
+	/* display: none; */
+	line-height: 20px;
+	padding: 5px 8px;
+	border-radius: 4px;
+	font-size: 16px;
+	z-index: 20;
+	float: right;
+	background-color: #fff;
+	border: 1px solid #BBBBBB;
+	cursor: pointer;
+	background-image:url(../img/qita.png);
+	background-repeat:no-repeat;
+	background-position:center;
+	width: 14px;
+	height: 20px;
+	/* color: #fff; */
+}
+.voucherqh {
+	width: 74px;
+	height: 30px;
+	position: relative;
+	right: 48px;
+	top: 10px;
+	background: #FFFFFF;
+	/* border: 1px solid #777777; */
+	/* border-radius: 4px; */
+	float: right;
+}
+
+.voucherqh .btn-prevvoucher {
+	width: 30px;
+	height: 30px;
+	cursor: pointer;
+	float: left;
+	border: 1px solid #BBBBBB;
+	position: relative;
+	left: 0;
+	top: 0;
+	/*background: url(../img/qhleft.png)no-repeat center center;*/
+	background-size: 5.8px 9px;
+	text-align: center;
+	line-height: 28px;
+	border-radius: 2px;
+}
+
+.voucherqh .btn-nextvoucher {
+	width: 30px;
+	height: 30px;
+	cursor: pointer;
+	float: right;
+	position: relative;
+	left: 0;
+	top: 0;
+	/*	background: url(../img/qhright.png)no-repeat center center;*/
+	background-size: 5.8px 9px;
+	text-align: center;
+	line-height: 28px;
+	border: 1px solid #BBBBBB;
+	border-radius: 2px;
+}
+
+.voucherqh .btn-onevoucher {
+	width: 37px;
+	height: 28px;
+	cursor: pointer;
+	float: left;
+	border-right: 1px solid #BBBBBB;
+	position: relative;
+	left: 0;
+	top: 0;
+	/*background: url(../img/qhleft.png)no-repeat center center;*/
+	background-size: 5.8px 9px;
+	text-align: center;
+	line-height: 28px;
+}
+
+.voucherqh .btn-lastvoucher {
+	width: 37px;
+	height: 28px;
+	cursor: pointer;
+	float: left;
+	border-left: 1px solid #BBBBBB;
+	position: relative;
+	left: 0;
+	top: 0;
+	/*background: url(../img/qhleft.png)no-repeat center center;*/
+	background-size: 5.8px 9px;
+	text-align: center;
+	line-height: 28px;
+}
+
+
+/*标题*/
+
+.btn-showleft {
+	width: 41px;
+	height: 25px;
+	position: absolute;
+	left: 0px;
+	top: 90px;
+	background: #fff;
+	border-right: 1px solid #BBBBBB;
+	border-top: 1px solid #BBBBBB;
+	border-bottom: 1px solid #BBBBBB;
+	border-top-right-radius: 20px;
+	border-bottom-right-radius: 20px;
+	z-index: 100;
+	font-size: 18px;
+	text-align: center;
+	line-height: 25px;
+	padding-top: 4px;
+	cursor: pointer;
+	padding-bottom: 4px;
+}
+.vouSource{
+	float: left;
+	float: left;
+	position: absolute;
+	right: 80px;
+	bottom: 20px;
+	color: #1E77FE;
+	margin-left: -488px;
+	background: #e5efff;
+}
+.vouchertitle p {
+    float: left;
+    width: 101px;
+    height: 31px;
+    line-height: 31px;
+    position: absolute;
+    left: 50%;
+    top: 63px;
+    font-size: 24px;
+    letter-spacing: 1.2px;
+    margin-left: -50px;
+}
+
+
+/*凭证选项*/
+
+.voucherhe {
+	height: 62px;
+	position: absolute;
+	top: 0px;
+	width: 1094px;
+	position: relative;
+	left: 50%;
+	margin-left: -557px;
+}
+.voutitle{
+    float: left;
+    width: 101px;
+    height: 31px;
+    line-height: 31px;
+    position: absolute;
+    left: 50%;
+    bottom: 15px;
+    font-size: 16px;
+    letter-spacing: 1.2px;
+    margin-left: -50px;
+    text-align: center;
+    font-weight: 500;
+    /* width: 56px; */
+    /* height:20px; */
+    /* font-size:14px; */
+    /* font-family:AlibabaPuHuiTi-Medium,AlibabaPuHuiTi; */
+    /* font-weight:500; */
+    /* color:rgba(51,51,51,1); */
+    /* line-height:20px; */
+}
+#leftbg .leftpzz {
+	width: 60px;
+	height: 19px;
+	position: absolute;
+	left: 69px;
+	bottom: 20px;
+}
+
+#leftbgselect {
+	float: left;
+	width: 48px;
+	height: 26px;
+	border: none;
+	position: absolute;
+	left: 127px;
+	bottom: 16px;
+	border-bottom: 1px solid #BBBBBB;
+	appearance: none;
+	-moz-appearance: none;
+	-webkit-appearance: none;
+	background: url('/pf/gl/vou/img/xialaxi.png') no-repeat scroll right center transparent;
+	padding-right: 14px;
+	padding-left:4px;
+	outline: none;
+}
+
+#leftbgselect option{
+	padding:2px 4px;
+}
+
+#leftbgselect::-ms-expand {
+	display: none;
+}
+
+#sppz {
+	width: 70px;
+	height: 28px;
+	position: absolute;
+	left: 196px;
+	bottom: 16px;
+	background: none;
+	border: none;
+	/* border-bottom: 1px solid #BBBBBB; */
+	text-align: right;
+}
+
+#leftbg .leftpzh {
+	width: 14px;
+	height: 19px;
+	position: absolute;
+	left: 274px;
+	bottom: 20px;
+}
+
+#bg {
+	width: 200px;
+}
+
+#bg .bgda {
+	width: 43px;
+	height: 19px;
+	position: absolute;
+	left: 332px;
+	bottom: 20px;
+}
+
+#dates {
+	width: 125px;
+	height: 28px;
+	position: absolute;
+	left: 368px;
+	bottom: 16px;
+	border: none;
+	box-shadow: none;
+	border-bottom: 1px solid #BBBBBB;
+}
+
+#bg .icondates {
+	width: 14px;
+	height: 15px;
+	position: absolute;
+	left: 413px;
+	top: 9px;
+	display: none;
+}
+
+#calendar {
+	width: 250px;
+	position: absolute;
+	left: 186px;
+	top: 30px;
+	display: none;
+	z-index: 100;
+	box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.20);
+	border-radius:4px ;
+}
+
+#bgsearch button {
+	width: 45px;
+	height: 30px;
+	float: left;
+	position: absolute;
+	left: 460px;
+	top: 1px;
+	background: #FFFFFF;
+	border: 1px solid #BBBBBB;
+	border-radius: 4px;
+	cursor: pointer;
+}
+
+#bgsearch button img {
+	width: 13px;
+	height: 13px;
+	position: absolute;
+	left: 16px;
+	top: 7px;
+}
+#rightbg .fjd {
+	width: 42px;
+	height: 19px;
+	position: absolute;
+	/*left: 872px;*/
+	right: 203px;
+	bottom: 20px;
+}
+#rightbg #fjd {
+	width: 33px;
+	height: 28px;
+	position: absolute;
+	/*left: 929px;*/
+	right: 162px;
+	bottom: 16px;
+	border: none;
+	box-shadow: none;
+	border-bottom: 1px solid #BBBBBB;
+}
+
+#rightbg .fjdz {
+	width: 14px;
+	height: 19px;
+	position: absolute;
+	/*left: 970px;*/
+	right: 146px;
+	bottom: 20px;
+}
+
+.btn-bgfj {
+	width: 45px;
+	height: 22px;
+	position: absolute;
+	/*left: 996px;*/
+	right: 62px;
+	bottom: 0px;
+	background: #FFFFFF;
+	border: 1px solid #BBBBBB;
+	border-radius: 4px;
+	cursor: pointer;
+	font-size: 16px;
+	text-align: center;
+	padding-top: 8px;
+}
+
+.btn-bgfj img {
+	width: 14px;
+	height: 16.1px;
+	position: absolute;
+	left: 15.5px;
+	top: 7px;
+}
+
+
+/*表格头部*/
+
+.voucher {    
+ 	width: 1114px;
+    /* height: 20px; */
+    position: relative;
+    /* float: left; */
+    left: 50%;
+	margin-left: -557px;
+	float: left;
+}
+
+
+.voucher-head {
+	width: 978px;
+	height: 61px;
+	border-top: 1px solid #BBBBBB;
+	border-left: 1px solid #BBBBBB;
+	border-right: 1px solid #BBBBBB;
+	background: #c3e3fb;
+	position: relative;
+	left: 69px;
+	box-sizing: border-box;
+}
+
+.voucher-head .abstracthead {
+	width: 280px;
+	height: 59px;
+	float: left;
+	border-bottom: 1px solid #FFFFFF;
+	border-right: 1px solid #FFFFFF;
+	line-height: 60px;
+	text-align: center;
+	position: relative;
+}
+.voucher-head .despcSearchBtn{
+	cursor: pointer;
+    background: url(/pf/gl/vou/img/icon-replace-t.svg) no-repeat 0px 0px;
+    width: 19px;
+    height: 15px;
+    display: inline-block;
+    background-size: 15px;
+    margin-top: 0px;
+	position: relative;
+	top: 4px;
+	background-size: 70%;
+}
+.voucher-head .allvoucherycshowzy{
+	cursor: pointer;
+	display: none !important;
+}
+.voucher-head .accountinghead {
+	width: 287px;
+	height: 59px;
+	float: left;
+	border-bottom: 1px solid #FFFFFF;
+	border-right: 1px solid #FFFFFF;
+	line-height: 60px;
+	text-align: center;
+	position: relative;
+}
+
+.voucher-head .jf {
+	width: 203px;
+	height: 59px;
+	float: left;
+	border-bottom: 1px solid #FFFFFF;
+	border-right: 1px solid #FFFFFF;
+	text-align: center;
+	position: relative;
+}
+
+.voucher-head .df {
+	width: 203px;
+	height: 59px;
+	float: left;
+	border-bottom: 1px solid #fff;
+	text-align: center;
+	position: relative;
+	top: 0;
+	left: 0px;
+}
+.voucher-head .fhead p {
+	line-height: 35px;
+}
+
+.voucher-head .fhead .moneydw {
+	height: 24px;
+	width: 100%;
+	border-top: 1px solid #FFFFFF;
+	background-size: 186px 23px;
+}
+
+.voucher-head .fhead .moneydw span {
+	width: 16px;
+	height: 24px;
+	float: left;
+	border-right: 1px solid #BBBBBB;
+	font-size: 12px;
+	line-height: 24px;
+}
+
+.voucher-head .fhead .moneydw span {
+	width: 16px;
+	height: 24px;
+	float: left;
+	border-right: 1px solid #BBBBBB;
+	font-size: 12px;
+	line-height: 24px;
+}
+
+.voucher-head .df .moneydw span {
+	position: relative;
+	left: 1px;
+}
+
+.voucher-head .fhead .moneydw .blues {
+	border-right: 1px solid #acdbf5;
+}
+
+.voucher-head .fhead .moneydw .reds {
+	border-right: 1px solid #edb9b9;
+}
+
+.voucher-head .fhead .moneydw .last {
+	border: none;
+}
+
+
+/*表格主题*/
+
+.voucher-body {
+	width: 1075px;
+	display: block;
+	position: relative;
+	left: 0px;
+	top: 0px;
+	box-sizing: border-box;
+	float: left;
+}
+
+.voucher-body .voucherjias {
+	width: 50px;
+	height: 50px;
+	float: left;
+	position: absolute;
+	left: 34px;
+}
+
+.voucher-body .voucherjia {
+   	position: relative;
+    top: 7px;
+    float: left;
+    visibility: hidden; 
+    width: 15px;
+    height: 15px;
+	cursor: pointer;
+	color: #333;
+    /* background: url(/pf/gl/vou/img/insert.png) no-repeat; */
+    background-size: 15px 15px;
+    left: -4px;
+}
+.voucher-body .voucherjia span{
+	font-size: 18px;
+}
+.voucher-body .voucherindex {
+    position: absolute;
+    top: 17px;
+    float: left;
+    width: 27px;
+    font-size: 12px;
+    overflow: hidden;
+    left: 11px;
+}
+.voucher-body .voucherjians {
+	width: 30px;
+	height: 50px;
+	position: relative;
+	left: 1070px;
+}
+
+.voucher-body .voucherjian {
+	position: absolute;
+	float: left;
+	left: -15px;
+	top: 17px;
+	visibility: hidden;
+	/*background: url(../img/jian.png) no-repeat;*/
+	background-size: 14px 14px;
+	width: 14px;
+	height: 14px;
+	color: #000000;
+	font-size: 16px;
+}
+
+.abstract {
+	width: 280px;
+	height: 49px;
+	border-left: 1px solid #BBBBBB;
+	border-bottom: 1px solid #BBBBBB;
+	border-right: 1px solid #BBBBBB;
+	float: left;
+	position: relative;
+	left: 69px;
+}
+
+.accounting {
+	width: 286px;
+	height: 49px;
+	float: left;
+	position: relative;
+	left: 69px;
+	border-bottom: 1px solid #BBBBBB;
+	border-right: 1px solid #BBBBBB;
+}
+.accounting .fuyan {
+	width: 24px;
+	height: 24px;
+	position: absolute;
+	top: -1px;
+	right: 0px;
+	display: none;
+	cursor: pointer;
+	border-left: 13px solid transparent;
+	border-right: 13px solid #fce3ce;
+	border-top: 13px solid #fce3ce;
+	border-bottom: 13px solid transparent;
+	box-sizing: border-box;
+}
+
+.accounting .fuyan span {
+	font-size: 10px;
+	color: #e78926;
+	letter-spacing: 0.42px;
+	position: absolute;
+	right: -12px;
+	top: -12px;
+	display: inline-block;
+}
+
+.heji {
+	width: 557px;
+	height: 48px;
+	border-left: 1px solid #BBBBBB;
+	border-bottom: 1px solid #BBBBBB;
+	border-right: 1px solid #BBBBBB;
+	float: left;
+	text-align: left;
+	padding-left: 10px;
+	line-height: 50px;
+	position: relative;
+	left: 69px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+.voucher-footer .money-jd {
+	border-bottom: 1px solid #bbbbbb;
+	height: 49px;
+}
+
+.voucher-footer .money-jd .money-xsbg {
+	height: 48px;
+}
+
+.moneyj {
+	width: 203px;
+	height: 50px;
+	position: relative;
+	left: 69px;
+	border-bottom: 1px solid #BBBBBB;
+	border-right: 1px solid #BBBBBB;
+	/*background: url(../img/money_rp.png) repeat-y;*/
+	float: left;
+	box-sizing: border-box;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+.moneyd {
+	width: 206px;
+	height: 50px;
+	position: relative;
+	left: 69px;
+	border-bottom: 1px solid #BBBBBB;
+	border-right: 1px solid #BBBBBB;
+	float: left;
+	box-sizing: border-box;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+.moneyj .money-sr {
+	width: 202px;
+	height: 48px;
+	float: left;
+	font-size: 20px;
+	border: none;
+	box-shadow: none;
+	text-align: right;
+	background: none;
+	display: none;
+}
+
+.moneyd .money-sr {
+	width: 205px;
+	height: 49px;
+	float: left;
+	font-size: 20px;
+	border: none;
+	box-shadow: none;
+	text-align: right;
+	background: none;
+	display: none;
+}
+
+.moneyj .money-xs {
+	width: 202px;
+	height: 49px;
+	float: left;
+	border: none;
+	box-shadow: none;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	font-family: 'tahoma';
+	font-weight: 100;
+	line-height: 49px;
+	overflow: hidden;
+	position: relative;
+	left: 4px;
+	text-align: right;
+	background: none;
+	background-size: 100% 49px;
+}
+
+.moneyj .money-xsbg {
+	width: 186px;
+	height: 49px;
+	float: left;
+	border: none;
+	box-shadow: none;
+	overflow: hidden;
+	font-family: 'tahoma';
+	font-weight: 100;
+	line-height: 49px;
+	overflow: hidden;
+	position: absolute;
+	right: 1px;
+	text-align: right;
+	background: url('/pf/gl/vou/img/money_rp.png');
+	background-size: 100% 49px;
+}
+
+.moneyd .money-xsbg {
+	width: 186px;
+	height: 49px;
+	float: left;
+	border: none;
+	box-shadow: none;
+	overflow: hidden;
+	font-family: 'tahoma';
+	font-weight: 100;
+	line-height: 49px;
+	overflow: hidden;
+	position: absolute;
+	right: 0px;
+	text-align: right;
+	background: url('/pf/gl/vou/img/money_rp.png');
+	background-size: 100% 49px;
+}
+
+.moneyd .money-xs {
+	width: 203px;
+	height: 49px;
+	float: left;
+	border: none;
+	box-shadow: none;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	font-family: 'tahoma';
+	font-weight: 100;
+	line-height: 49px;
+	overflow: hidden;
+	position: relative;
+	left: 4px;
+	text-align: right;
+	background: none;
+	background-size: 100% 49px;
+}
+
+.abstractinp {
+	float: left;
+	width: 271px;
+	height: 39px;
+	border: none;
+	box-shadow: none;
+	background: none;
+	font-size: 16px;
+	position: relative;
+	padding-left: 9px;
+	resize: none;
+	padding-top: 10px;
+}
+
+.bgblack {
+	background: rgba(0,102,255,0.1) !important;
+}
+
+.abstractinp::selection {
+	background: rgba(0,102,255,0.4) !important;
+}
+
+/*.abstractxs {
+	float: left;
+	width: 312px;
+	height: 48px;
+	border: none;
+	box-shadow: none;
+	text-align: center;
+	padding-left: 10px;
+	display: none;
+}*/
+.abstractinps {
+	float: left;
+	width: 280px;
+	overflow-x: hidden;
+	max-height: 230px;
+	overflow-y: scroll;
+	border: none;
+	z-index: 900;
+	box-shadow: none;
+	font-weight: initial;
+	background: #fff;
+	border: 1px solid #D9D9D9;
+	display: none;
+	position: absolute;
+	top: 50px;
+	box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.20);
+}
+
+.abstractinps li {
+	line-height: 30px;
+	text-align: left;
+	width: 253px;
+	height: 30px;
+	float: left;
+	padding-left: 10px;
+	cursor: pointer;
+	white-space: nowrap;
+}
+
+.abstractinps li:hover {
+	background: rgba(0,102,255,0.1) !important;
+}
+#abstract-container {
+	float: left;
+	width: 280px;
+	overflow-x: hidden;
+	max-height: 230px;
+	overflow-y: scroll;
+	border: none;
+	z-index: 900;
+	box-shadow: none;
+	font-weight: initial;
+	background: #fff;
+	border: 1px solid #D9D9D9;
+	display: none;
+	position: absolute;
+	top: 50px;
+	box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.20);
+}
+
+#abstract-container li {
+	line-height: 30px;
+	text-align: left;
+	width: 253px;
+	height: 30px;
+	float: left;
+	padding-left: 10px;
+	cursor: pointer;
+	white-space: nowrap;
+	min-width: 100%;
+}
+
+#abstract-container li:hover {
+	background: rgba(0,102,255,0.1) !important;
+}
+
+.accountinginp {
+	float: left;
+	width: 277px;
+	height: 49px;
+	position: relative;
+	top: -2px;
+	border: none;
+	box-shadow: none;
+	background: none;
+	font-size: 16px;
+	padding-left: 9px;
+	padding-top: 3px;
+	resize: none;
+}
+
+.accountinginps {
+	float: left;
+	max-height: 230px;
+	overflow-y: scroll;
+	overflow-x: hidden;
+	border: none;
+	z-index: 900;
+	box-shadow: none;
+	font-weight: initial;
+	background: #fff;
+	position: fixed;
+	/*top: 50px;*/
+	display: none;
+	max-width: 657px;
+	box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.20);
+	border: 1px solid #D9D9D9;
+}
+
+.accountingye {
+	float: left;
+    position: absolute;
+    left: 10px;
+    top: 34px;
+    font-size: 12px;
+    display: none;
+    line-height: 12px;
+    background:#fff;
+    overflow: hidden;
+    text-overflow: ellipsis;
+	white-space: nowrap;
+	cursor: pointer;
+	display: none;
+}
+
+.accountingmx {
+	float: left;
+	position: absolute;
+	left: 130px;
+	top: 27px;
+	font-size: 12px;
+	display: none;
+	background: #FFFFFF;
+	line-height: 20px;
+	cursor: pointer;
+	display: none;
+}
+
+.accountingyw {
+	float: left;
+	position: absolute;
+	left: 200px;
+	top: 28px;
+	font-size: 12px;
+	display: none;
+	background: #FFFFFF;
+	line-height: 20px;
+	cursor: pointer;
+}
+
+
+.selected {
+	background: rgba(0,102,255,0.1) !important;
+	/*color: #fff;*/
+}
+
+.noselected {
+	display: none;
+}
+
+.PopListBoxItem {
+	display: block !important;
+}
+
+.voucher .voucher-yc {
+	position: relative;
+	padding: 16px 0px;
+	left: 69px;
+	width: 978px;    
+	border-left: 1px solid #BBBBBB;
+    border-right: 1px solid #BBBBBB;
+	border-bottom: 1px solid #BBBBBB;
+	box-sizing: border-box;
+	overflow: hidden;
+}
+
+.voucher .voucher-yc-bg {
+	overflow-x: auto;
+	overflow-y: hidden;
+	width: 910px;
+	/*height: 185px;*/
+	border-left: 1px solid #BBBBBB;
+	float: left;
+}
+.voucher .bgheight {
+	overflow-y: scroll !important;
+	height: 455px;
+}
+.voucher .voucher-yc-addbtns {
+	overflow-x: auto;
+	overflow-y: hidden;
+	width: 20px;
+	position: relative;
+	float: left;
+	padding-top: 36px;
+	background-color: #fff;
+	z-index: 3;
+	/*padding-left: 20px;*/
+}
+.voucher .voucher-yc-deletebtns {
+	overflow-x: auto;
+	overflow-y: hidden;
+	width: 20px;
+	position: relative;
+	float: left;
+	padding-top: 36px;
+	background-color: #fff;
+	/*padding-left: 20px;*/
+}
+.voucher .voucher-yc-bt {
+	width: 1030px;
+	height: 35px;
+	position: relative;
+	/*padding-left: 20px;*/
+}
+.voucher .voucher-yc-bo {
+	width: 1030px;
+	height: 52px;
+	/*float: left;*/
+	position: relative;
+	display: block;
+	/*padding-left: 20px;*/
+}
+.ychead {
+    float: left;
+    width: 199px;
+    height: 33px;
+    text-align: center;
+    line-height: 36px;
+    border: 1px solid #BBBBBB;
+    border-top: 1px solid #BBBBBB;
+    border-bottom: 1px solid #BBBBBB;
+    background: #f3f3f3;
+    margin-left: -1px;
+}
+.ychead:nth-last-of-type(1) {
+	border-right: 1px solid #BBBBBB;
+}
+
+.ycbody {
+	width: 200px;
+	height: 50px;
+	float: left;
+	box-shadow: none;
+	border: none;
+	border-left: 1px solid #BBBBBB;
+	border-bottom: 1px solid #BBBBBB;
+	position: relative;
+	margin-left: -1px;
+}
+
+.ycbody .ycbodyinp {
+	width: 190px;
+	height: 50px;
+	padding-left:8px;
+	box-shadow: none;
+	border: none;
+    resize: none;
+    background: #fff;
+	/*border: 1px solid #BBBBBB;*/
+}
+.ycbody .ycbodyinp.daoqiri,.ycbody .ycbodyinp.billDateinp,.ycbody .ycbodyinp.bussDate,.ycbody .ycbodyinp.daoqiriend{
+	height: 20px;
+	padding-bottom: 29px;
+}
+.ycbody .vouopenbtn {
+	position: absolute;
+	right: 1px;
+	top: 3px;
+	letter-spacing: 4px;
+	height: 40px;
+	line-height: 40px;
+	cursor: pointer;
+	background: transparent;
+	z-index: 10;
+}
+.ycbody .vouopendel{
+	position: absolute;
+    right: 1px;
+    top: 3px;
+    letter-spacing: 4px;
+    cursor: pointer;
+	z-index: 15;
+	display: none;
+}
+.ycbody .ycbodys {
+	min-width: 200px;
+	max-width: 400px;
+	min-height: 100px;
+	max-height: 100px;
+	overflow-y: scroll;
+	overflow-x: hidden;
+	z-index: 100;
+	background: #fff;
+	border: 1px solid #D9D9D9;
+	/*float: left;*/
+	display: none;
+	position: absolute;
+	box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.20);
+}
+
+.ycbody .ycbodys li {
+	/*width: 100%;*/
+	height: 21px;
+	line-height: 21px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+.ycbody .ycbodys .fzlv0 {
+	padding-left: 4px;
+}
+
+.ycbody .ycbodys .fzlv1 {
+	padding-left: 8px;
+}
+
+.ycbody .ycbodys .fzlv2 {
+	padding-left: 12px;
+}
+
+.ycbody .ycbodys .fzlv3 {
+	padding-left: 16px;
+}
+
+.ycbody .ycbodys .fzlv4 {
+	padding-left: 20px;
+}
+
+.ycbody .ycbodys .fzlv5 {
+	padding-left: 24px;
+}
+
+.ycbody .ycbodys .fzlv6 {
+	padding-left: 28px;
+}
+
+.ycbody .ycbodys .fzlv7 {
+	padding-left: 32px;
+}
+
+.ycbody .ycbodys .dianji1 {
+	cursor: pointer;
+}
+
+.ycbody .ycbodys li .code {
+	line-height: 21px;
+	margin-left: 10px;
+	max-width: 100px;
+}
+
+.ycbody .ycbodys .dianji1 p{
+	padding-left: 8px;
+}
+
+.ycbody .ycbodys .dianji0 p{
+	background: url('/pf/gl/vou/img/xial.png') no-repeat -2px 2px;
+	padding-left: 8px;
+}
+
+.ycbody .ycbodys .dianji0 p.sq{
+	background: url('/pf/gl/vou/img/xiasq.png') no-repeat 0px 0px;
+	padding-left: 8px;
+}
+
+.ycbody .ycbodys li .name {
+	max-width: 300px;
+	line-height: 21px;
+	margin-left: 10px;
+	overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.ycbody .ycbodys .dianji1:hover {
+	background: #ACDBF5;
+}
+
+.voucher-yc-bg .voucher-yc-bo:nth-of-type(1) .ycbody .ycbodys {
+	top: 50px;
+}
+
+.voucher-yc-bg .voucher-yc-bo:nth-of-type(2) .ycbody .ycbodys {
+	top: 50px;
+}
+
+.voucher-yc-bg .voucher-yc-bo:nth-of-type(3) .ycbody .ycbodys {
+	top: 50px;
+}
+
+.ycbody .ycbodys {
+	bottom: 32px;
+}
+
+.rateInput,.curInput{
+	text-align: right;
+	width: 192px;
+	padding-right: 8px;
+}
+
+.voucher-yc-bo .yctz {
+	border-right: 1px solid #BBBBBB;
+	text-align: right;
+	width: 191px;
+	padding-right: 8px;
+}
+
+.voucher-yc-bo .Assaccbala {
+	position: absolute;
+	right: 0;
+	top: 30px;
+	display: none;
+	cursor: pointer;
+	color: #999;
+}
+.yctzyutext {
+	position: absolute;
+    right: 196px;
+    top: 0px;
+    font-size: 10px;
+    /* background: url(/pf/gl/vou/img/zhibiaoyusuan.png) no-repeat; */
+    width: 21px;
+    float: right;
+    height: 24px;
+    background-size: cover;
+    padding-left: 3px;
+    color: #0066FF;
+    z-index: 200;
+    border-right: 13px solid transparent;
+    border-left: 13px solid #E0ECFF;
+    border-top: 13px solid #E0ECFF;
+    border-bottom: 13px solid transparent;
+    box-sizing: border-box;
+}
+.yctzyutext span{
+	position: absolute;
+    top: -13px;
+    left: -10px;
+}
+.yctzyuer {
+	position: absolute;
+	right: 8px;
+	top: 34px;
+	width: 194px;
+	float: right;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	font-size: 12px;
+	color: #c2c2c2;
+	text-align: right;
+	cursor: pointer;
+	z-index: 200;
+}
+
+.ycadddiv{
+    width: 20px;
+    height: 52px;
+    float: left;
+    box-shadow: none;
+    border: none;
+    /*position: absolute;*/
+    left: 0px;
+}
+.ycadd {
+    width: 15px;
+    height: 15px;
+    float: left;
+    position: relative;
+    top: 16px;
+    left: 1px;
+    z-index: 1;
+	visibility: hidden;
+	cursor: pointer;
+}
+.ycaddopen{
+	width: 20px;
+    /* height: 52px; */
+    float: left;
+    position: absolute;
+    left: 0px;
+    cursor: pointer;
+    font-size: 16px;
+    bottom: 0px;
+	visibility: hidden;
+}
+.ycdeldiv{
+    width: 20px;
+    height: 52px;
+    float: left;
+    box-shadow: none;
+    border: none;
+    /*position: absolute;*/
+    left: 0px;
+}
+.ycdelect {
+	width: 14px;
+	height: 14px;
+	float: left;
+	position: relative;
+    top: 16px;
+    left: 1px;
+	visibility: hidden;
+	cursor: pointer;
+	font-size: 16px;
+}
+.voucher-yc-deletebtns .voucher-close{
+	float: left;
+	position: relative;
+}
+.voucherbtn {
+	/* width: 100%; */
+	height: 30px;
+	margin: 0 auto;
+	padding-top: 8px;
+	padding-bottom: 8px;
+	position: relative;
+	right: 64px;
+	top: 2px;
+	/* background: #fff; */
+	/* border: 1px solid #D9D9D9; */
+	z-index: 1;
+	float: right;
+}
+.voucherbtn div {
+	float: left;
+}
+.voucherbtnModal{
+	width: 100%;
+	height: 30px;
+	margin: 0 auto;
+	padding-top: 8px;
+	padding-bottom: 8px;
+	position: relative;
+	top: 2px;
+	background: #fff;
+	border: 1px solid #D9D9D9;
+	z-index: 1;
+	float: right;
+	display:none;
+}
+.voucherbtnModal div {
+	float: left;
+}
+.voucherbtnModal .voucherbtns{
+	left: 50%;
+}
+.voucherfo{
+    float: left;
+    height: 30px;
+	position: absolute;
+	left: 50%;
+    bottom: 16px;
+}
+.voucherfo .vfjz {
+	position: absolute;
+	left: 6%;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	max-width: 200px;
+	float: left;
+}
+.voucherfo .vfsh {
+	position: absolute;
+	left: 46%;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	max-width: 200px;
+	float: left;
+}
+.voucherfo .vfzd{
+	position: absolute;
+	left: 86%;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	max-width: 160px;
+	float: left;
+}
+.voucherfozy{
+	z-index: 4;
+	display: none;
+}
+.voucherfozy .vfjz{
+	float: left;
+	position: relative;
+	margin-left: 16px;
+	text-align: left;
+}
+.voucherfozy .vfsh{
+	float: left;
+	position: relative;
+	margin-left: 16px;
+	text-align: center;
+}
+.voucherfozy .vfzd{
+	float: left;
+	position: relative;
+	margin-left: 16px;
+	text-align: left;
+}
+.deleteclass {
+	display: none !important;
+}
+.biaocuo {
+	width: 100%;
+	height: 50px;
+	position: fixed;
+	bottom: 0;
+	background: #fff;
+	margin: 0 auto;
+}
+.biaocuos {
+	width: 100%;
+	height: 50px;
+	position: fixed;
+	bottom: 0;
+	background: #fff;
+	margin: 0 auto;
+}
+.bcbc {
+	width: 105px;
+	height: 30px;
+	text-align: center;
+	line-height: 30px;
+	background: #108EE9;
+	border: 1px solid #108EE9;
+	border-radius: 4px;
+	color: #FFFFFF;
+	letter-spacing: 0.58px;
+	float: left;
+	position: absolute;
+	left: 50%;
+	top: 10px;
+	margin-left: -110px;
+	cursor: pointer;
+}
+.quxiao {
+	width: 105px;
+	height: 30px;
+	text-align: center;
+	line-height: 30px;
+	background: #FFFFFF;
+	border: 1px solid #BBBBBB;
+	border-radius: 4px;
+	letter-spacing: 0.58px;
+	position: absolute;
+	left: 50%;
+	top: 10px;
+	margin-left: 5px;
+	cursor: pointer;
+}
+.closeerr{
+	width: 105px;
+	height: 30px;
+	text-align: center;
+	line-height: 30px;
+	background: #FFFFFF;
+	border: 1px solid #BBBBBB;
+	border-radius: 4px;
+	letter-spacing: 0.58px;
+	position: absolute;
+	left: 50%;
+	top: 10px;
+	margin-left: 5px;
+	cursor: pointer;
+}
+.textareawb {
+	position: absolute;
+	display: none;
+	left: 0;
+	top: 0;
+	resize: none;
+	background: none;
+	border: none;
+	color: red;
+	line-height: 20px;
+}
+.chaiwu {
+	width: 20px;
+	height: 110px;
+	position: absolute;
+	right: 0px;
+	top: 150px;
+	border-top-left-radius: 4px;
+	border-bottom-left-radius: 4px;
+	border: 1px solid #d9d9d9;
+	border-right: none;
+	padding-top: 10px;
+	line-height: 25px;
+	padding-bottom: 10px;
+	padding-left: 10px;
+	cursor: pointer;
+	padding-right: 5px;
+}
+.yusuan {
+	width: 20px;
+	height: 110px;
+	position: absolute;
+	right: 0px;
+	top: 290px;
+	border-top-left-radius: 4px;
+	border-bottom-left-radius: 4px;
+	border: 1px solid #d9d9d9;
+	border-right: none;
+	padding-top: 10px;
+	line-height: 25px;
+	padding-bottom: 10px;
+	padding-left: 10px;
+	cursor: pointer;
+	padding-right: 5px;
+}
+.xuanzhongcy {
+	background: #108be5;
+	color: #fff;
+}
+.times {
+	position: absolute;
+	left: 800px;
+	top: 15px;
+	color: red;
+	display: none;
+}
+
+#vouaccSearchs{
+	width: 280px;
+	height: 30px;
+	position: absolute;
+	top: 62px;
+	line-height: 20px;
+	font-size: 12px;
+	z-index: 20;
+	float: right;
+	background:rgba(255,255,255,1);
+	box-shadow:0px 2px 5px 0px rgba(221,234,255,1);
+	border-radius:4px;
+	border:1px solid rgba(202,223,255,1);
+}
+.vouaccSearchsinps{
+    width: 231px;
+    height: 30px;
+    padding-left: 8px;
+    background: #FFFFFF;
+    position: absolute;
+    right: 41px;
+    top: 0px;
+    line-height: 28px;
+    border-right: 0px;
+	border: none;
+	outline: none;
+}
+.btn-vouaccSearchs{
+	width: 40px;
+	height: 30px;
+	background: #FFFFFF;
+	border-left: none;
+	position: absolute;
+	right: 0px;
+	top: 0px;
+	cursor: pointer;
+    border: none;
+}
+.btn-vouaccSearchs img{
+	width: 16px;
+    height: 16px;
+    margin-left: 14px;
+    margin-top: 6px;
+}
+#vouaccSearchs .btn-vouaccSearchsclose{
+	width: 40px;
+	height: 30px;
+	background: #FFFFFF;
+	color: #999;
+	text-align: center;
+	line-height: 30px;
+	border-left: none;
+	position: absolute;
+	right: 0px;
+	top: 0px;
+	cursor: pointer;
+    border: none;
+}
+.searchvvoukecha{
+	width: 240px;
+    height: 200px;
+    background: #fff;
+    border: 1px solid #d8d8d8;
+    position: absolute;
+    top: 33px;
+    left: 0px;
+    overflow: auto;
+    display: none;
+}
+.searchvvoukecha li{
+    font-size: 12px;
+    padding-left: 8px;
+    height: 24px;
+	line-height: 24px;
+	cursor: pointer;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+.searchvvoukecha li .code{
+    margin-right: 8px;
+    color: #108EE9;
+}
+#xiaocuobj {
+	position: absolute;
+	left: 50%;
+	top: 20px;
+	/*margin-left: -557px;*/
+	
+	overflow: hidden;
+	z-index: 2000;
+	box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.05);
+}
+.leftbiaocuo {
+	position: fixed;
+	left: 50%;
+	top: 50%;
+	margin-left: -550px;
+	margin-top: -18px;
+	font-size: 36px;
+	color: #fff;
+	text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+	cursor: pointer;
+	z-index: 2002;
+}
+.rightbiaocuo {
+	position: fixed;
+	right: 50%;
+	top: 50%;
+	margin-top: -18px;
+	margin-right: -550px;
+	font-size: 36px;
+	color: #fff;
+	text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+	cursor: pointer;
+	z-index: 2002;
+}
+.bxd{
+    display: inline-block;
+    width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    padding-left: 16px;
+    line-height: 20px;
+    margin-top: 8px;
+
+}
+.bxd a{
+	cursor: pointer;
+    padding-left: 50px;
+    width: 330px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    box-sizing: content-box;
+    float: left;
+}
+.voucher-beizhu {
+	width: 100%;
+	position: relative;
+	margin: 0 auto;
+	background: #fff;
+	margin-top: 0px;
+}
+.voucher-beizhu-bt {
+	padding-left: 16px;
+	height: 43px;
+}
+.voucher-beizhu-biaoti {
+	line-height: 40px;
+	float: left;
+	height: 40px;
+}
+.voucher-beizhu-biaoti span{
+	border-left: 3px solid #108EE9;
+	padding-left: 8px;
+}
+.voucher-beizhu-zhankai {
+	float: right;
+	line-height: 40px;
+	font-family: PingFangSC-Regular;
+	color: #008FF0;
+	letter-spacing: 0;
+	cursor: pointer;
+}
+.voucher-beizhu-by {
+	min-height: 30px;
+}
+.voucher-beizhu-by .nowu {
+	font-family: PingFangSC-Regular;
+	color: #666666;
+	letter-spacing: 0.67px;
+	line-height: 30px;
+	margin-left: 16px;
+}
+.voucher-history {
+	width: 100%;
+	position: relative;
+	margin: 0 auto;
+	background: #fff;
+	margin-bottom: 50px;
+}
+.voucher-history-bt {
+	padding-left: 16px;
+	height: 43px;
+}
+.voucher-history-biaoti {
+	line-height: 40px;
+	float: left;
+	height: 40px;
+}
+.voucher-history-biaoti span{
+	border-left: 3px solid #108EE9;
+	padding-left: 8px;
+}
+.voucher-history-zhankai {
+	float: right;
+	line-height: 40px;
+	font-family: PingFangSC-Regular;
+	color: #008FF0;
+	letter-spacing: 0;
+	cursor: pointer;
+}
+.voucher-history-by {
+	margin-top: 10px;
+	overflow: hidden;
+	height: 0px;
+}
+.voucher-history-by-nr {
+	height: 30px;
+	cursor: pointer;
+}
+.voucher-history-by-time {
+	font-size: 12px;
+	color: #666666;
+	letter-spacing: 0.57px;
+	float: left;
+	line-height: 30px;
+	margin-left: 20px;
+	padding-right: 15px;
+	border-right: 1px solid #D9D9D9;
+}
+.jeiduan {
+	float: left;
+	width: 10px;
+	height: 10px;
+	border-radius: 10px;
+	background: #d8d8d8;
+	line-height: 30px;
+	margin-top: 11px;
+	margin-left: -5px;
+}
+.voucher-history-by-pz {
+	color: #666666;
+	letter-spacing: 0.67px;
+	float: left;
+	line-height: 30px;
+	margin-left: 36px;
+}
+.voucher-beizhu-by-queren {
+	background: #108EE9;
+	border: 1px solid #108EE9;
+	border-radius: 4px;
+	width: 62px;
+	height: 30px;
+	text-align: center;
+	line-height: 30px;
+	color: #fff;
+	color: #FFFFFF;
+	letter-spacing: 0.58px;
+	position: absolute;
+	right:8px;
+	bottom: 0px;
+	display: none;
+	cursor: pointer;
+}
+#voucherbiaozhu {
+	width: 305px;
+	height: 30px;
+	background: #FFFFFF;
+	border: 1px solid #D9D9D9;
+	border-radius: 4px;
+	display: none;
+	margin-left: 20px;
+	margin-top: 10px;
+}
+.voucherbtns {
+	position: relative;
+	/* left: 50%; */
+}
+.btn-voucher {
+	padding-left: 16px;
+	padding-right: 16px;
+	text-align: center;
+	line-height: 30px;
+	background: #FFFFFF;
+	border: 1px solid #e8e8e8;
+	border-radius: 4px;
+	letter-spacing: 0.58px;
+	cursor: pointer;
+	margin-right: 8px;
+	position: relative;
+}
+.btn-voucher-lang {
+	padding-left: 16px;
+	padding-right: 16px;
+	text-align: center;
+	line-height: 30px;
+	background: #FFFFFF;
+	border: 1px solid #e8e8e8;
+	border-radius: 4px;
+	letter-spacing: 0.58px;
+	cursor: pointer;
+	margin-right: 8px;
+	position: relative;
+}
+.btn-voucher-hover {
+	background: #fff;
+	color: #108EE9;
+	border: 1px solid #108EE9;
+}
+.all-no {
+	display: none;
+	width: 90px;
+	background: #fff;
+	position: absolute;
+	top: 31px;
+	left: 0px;
+	box-shadow: 2px 2px 4px 0 rgba(0, 0, 0, 0.20);
+}
+.all-no-fen {
+	width: 100%;
+	height: 30px;
+	border: 1px solid #D9D9D9;
+	border-bottom: none;
+}
+.btn-closehistory {
+	padding-left: 16px;
+	padding-right: 16px;
+	text-align: center;
+	line-height: 30px;
+	background: #108EE9;
+	border: 1px solid #BBBBBB;
+	border-radius: 4px;
+	color: #fff;
+	letter-spacing: 0.58px;
+	cursor: pointer;
+	margin-right: 8px;
+	position: fixed;
+	bottom: 20px;
+	left: 50%;
+	margin-left: -30px;
+	z-index: 3000;
+	/*display: none;*/
+}
+.conghongall {
+	width: 390px;
+	height: 310px;
+	position: fixed;
+	left: 50%;
+	top: 50%;
+	border-radius: 4px;
+	margin-left: -195px;
+	margin-top: -155px;
+	background: #fff;
+}
+.conghongall-head {
+	width: 100%;
+	height: 40px;
+	border-bottom: 1px solid #D9D9D9;
+	position: relative;
+}
+.conghongall-head-bt {
+	float: left;
+	position: absolute;
+	left: 16px;
+	top: 11px;
+}
+.conghongall-close {
+	color: #999;
+	float: right;
+	position: absolute;
+	right: 16px;
+	top: 17px;
+	font-size: 10px;
+}
+.conghongall-foot {
+	width: 100%;
+	height: 60px;
+	position: absolute;
+	bottom: 0px;
+	border-top: 1px solid #D9D9D9;
+}
+.btn-conghongall-close {
+	background: #FFFFFF;
+	border: 1px solid #D9D9D9;
+	border-radius: 4px;
+	float: left;
+	cursor: pointer;
+	width: 62px;
+	height: 30px;
+	text-align: center;
+	line-height: 30px;
+	position: absolute;
+	right: 16px;
+	bottom: 16px;
+}
+.btn-conghongall-submit {
+	background: #108EE9;
+	border: 1px solid #108EE9;
+	border-radius: 4px;
+	float: left;
+	cursor: pointer;
+	color: #fff;
+	width: 62px;
+	height: 30px;
+	text-align: center;
+	line-height: 30px;
+	position: absolute;
+	right: 88px;
+	bottom: 16px;
+}
+#conghongbg {
+	margin-left: 32px;
+	margin-top: 4px;
+}
+.conghongbgda {
+	line-height: 30px;
+	width: 100px;
+    text-align: right;
+    float: left;
+}
+#conghongdates {
+	border: 1px solid #D9D9D9;
+	border-radius: 4px;
+	box-shadow: none;
+	height: 30px;
+	margin: 0;
+	padding: 0;
+	margin-left: 8px;
+	padding-left: 8px;
+	width: 145px;
+}
+#conghongcalendar {
+	display: none;
+	width: 200px;
+	margin-left: 84px;
+	position: absolute;
+	z-index: 100;
+	top: 93px;
+}
+.conghongicondates {
+	width: 16px;
+	padding-left: 8px;
+	margin-left: -32px;
+	margin-top: 0px;
+	padding-right: 8px;
+	height: 18px;
+	display:none;
+}
+.conghongleixingbt {
+	float: left;
+	display: block;
+	line-height: 30px;
+	width: 100px;
+    text-align: right;
+}
+#conghongleixing {
+	float: left;
+	width: 130px;
+	height: 30px;
+	border-radius: 4px;
+	border: 1px solid #d9d9d9;
+	margin-left: 8px;
+	appearance: none;
+	-moz-appearance: none;
+	-webkit-appearance: none;
+	/*background: url(../img/xial.png) no-repeat scroll right center transparent;*/
+	padding-right: 14px;
+	padding-left: 8px;
+}
+.conghongall-biaoj {
+	width: 100%;
+	margin-left: 32px;
+	/*margin-top: 16px;*/
+	width: 100%;
+	height: 80px;
+}
+.conghongall-tishi {
+	font-size: 16px;
+	text-align: center;
+	line-height: 55px;
+	font-weight: 100;
+}
+.conghongall-xiao-bt {
+	/*margin-left: 16px;*/
+	float: left;
+	color: #108BE5;
+	position: absolute;
+	left: 35px;
+	font-size: 22px;
+	top: 60px;
+	width:36px;height:36px;border:2px solid #108be5;border-radius: 50%;
+	text-align: center;line-height: 36px;
+}
+.btn-disablesd {
+	color: #fff;
+	background: #bbbbbb !important;
+	border: 1px solid #bbb !important;
+	cursor: initial;
+}
+.btn-disablesd:hover {
+	color: #fff;
+	background: #bbbbbb !important;
+	border: 1px solid #bbb !important;
+	cursor: initial;
+}
+.zhibiaoall {
+	width: 790px;
+	height: 546px;
+	background: #FFFFFF;
+	box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.20);
+	border-radius: 4px;
+	position: fixed;
+	left: 50%;
+	top: 50%;
+	margin-left: -395px;
+	margin-top: -273px;
+}
+.zhibiaohead {
+	width: 100%;
+	height: 48px;
+	border-bottom: 1px solid #D9D9D9;
+	position: relative;
+}
+.zhibiaohead p {
+	line-height: 48px;
+	float: left;
+	margin-left: 16px;
+}
+.zhibiao-close {
+	float: right;
+	margin-right: 16px;
+	line-height: 48px;
+	color: #999999;
+	/*margin-top: 17px;*/
+	cursor: pointer;
+}
+.zhibiaobody {
+	width: 100%;
+	height: 432px;
+	overflow-y: scroll;
+}
+.zhibiao-center {
+	width: 710px;
+	height: 172px;
+	margin-top: 24px;
+	margin-left: 40px;
+	position: relative;
+}
+.zhibiaonum {
+	float: left;
+	margin-bottom: 8px;
+	position: absolute;
+	top: 0px;
+	left: 0px;
+}
+.zhibiaobt {
+	/*float: left;*/
+	
+	margin-bottom: 8px;
+	text-align: center;
+}
+.zhibiaohref {
+	float: right;
+	margin-bottom: 8px;
+	position: absolute;
+	top: 0px;
+	right: 0px;
+}
+.zhibiao-center-body {
+	width: 694px;
+	height: 89px;
+	background: #FFFFFF;
+	border: 1px solid #D9D9D9;
+	border-radius: 4px;
+	overflow-y: scroll;
+	padding: 8px;
+}
+.zhibiao-center-body-nr {
+	float: left;
+	width: 330px;
+	margin-left: 8px;
+	margin-top: 8px;
+}
+.zhibiao-center-body .zhibiaobbodybt {
+	width: 150px;
+	height: 19px;
+	text-align: right;
+	float: left;
+	color: #666666;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+.zhibiao-center-body .zhibiaobbodyby {
+	width: 180px;
+	height: 19px;
+	float: left;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+.zhibiao-center-body-bottom {
+	width: 710px;
+	height: 40px;
+	border: 1px solid #D9D9D9;
+	position: absolute;
+	bottom: 0;
+	background: #f3f3f3;
+	border-radius: 0 0 4px 4px;
+	left: 0px;
+}
+.zhibiao-center-body-kz {
+	/*margin-left: 16px;*/
+	
+	width: 120px;
+	line-height: 40px;
+	float: left;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	position: absolute;
+	left: 24px;
+}
+.zhibiao-center-body-yss {
+	width: 173px;
+	line-height: 40px;
+	float: left;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	position: absolute;
+	left: 163px;
+}
+.zhibiao-center-body-fss {
+	width: 173px;
+	line-height: 40px;
+	float: left;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	position: absolute;
+	left: 344px;
+}
+.zhibiao-center-body-ye {
+	width: 173px;
+	line-height: 40px;
+	float: left;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	position: absolute;
+	left: 525px;
+}
+.zhibiaofoot {
+	width: 100%;
+	height: 62px;
+	border-top: 1px solid #D9D9D9;
+	position: absolute;
+	bottom: 0px;
+}
+.btn-zhibiao-close {
+	float: left;
+	color: #FFFFFF;
+	padding: 4px 16px;
+	background: #108EE9;
+	border-radius: 4px;
+	position: absolute;
+	top: 16px;
+	right: 16px;
+	cursor: pointer;
+}
+.u-msg-dialog .u-msg-content {
+   overflow: hidden !important;
+}
+
+.voucher-close{
+	position: absolute;
+	right: 0;
+	top: 0;
+	cursor: pointer;
+	z-index: 2;
+	/* display: none; */
+}
+.voucher-close span{
+    display: block;
+    font-size: 16px;
+    height: 24px;
+    line-height: 24px;
+    width: 20px;
+    text-align: center;
+}
+/*.voucher-center-cw .abstract{
+	background:#84b9f1 !important;
+}
+.voucher-center-cw .accounting{
+	background:#84b9f1 !important;
+}
+.voucher-center-cw .money-jd{
+	background:#84b9f1 !important;
+}
+.voucher-center-ys .abstract{
+	background:#87f7ce !important;
+}
+.voucher-center-ys .accounting{
+	background:#87f7ce !important;
+}
+.voucher-center-ys .money-jd{
+	background:#87f7ce !important;
+}*/
+/*单凭证上下*/
+.voucher-singel .voucher-head {
+	width: 974px;
+	/*height: 61px;*/
+	height: 36px;
+	border-top: 1px solid #BBBBBB;
+	border-left: 1px solid #BBBBBB;
+	border-right: 1px solid #BBBBBB;
+	background: #f3f3f3;
+	position: relative;
+	left: 69px;
+	top: 0px;
+	box-sizing: border-box;
+}
+.voucher-singelzy .voucher-head {
+	width: 1010px;
+	/*height: 61px;*/
+	height: 60px;
+	border-top: 1px solid #BBBBBB;
+	border-left: 1px solid #BBBBBB;
+	border-right: 1px solid #BBBBBB;
+	background: #c3e3fb;
+	position: relative;
+	left: 49px;
+	top: 103px;
+	box-sizing: border-box;
+}
+
+.voucher-singel .voucher-head .voucherType{
+	width: 46px;
+	height: 34px;
+	float: left;
+	border-bottom: 1px solid #BBBBBB;
+	border-right: 1px solid #BBBBBB;
+	line-height: 34px;
+	text-align: center;
+	position: relative;
+}
+.voucher-singel .voucher-head .abstracthead {
+	width: 270px;
+	height: 34px;
+	border-bottom: 1px solid #BBBBBB;
+	border-right: 1px solid #BBBBBB;
+	line-height: 34px;
+}
+
+.voucher-singel .voucher-head .accountinghead {
+	width: 271px;
+	height: 34px;
+	border-bottom: 1px solid #BBBBBB;
+	border-right: 1px solid #BBBBBB;
+	line-height: 34px;
+}
+
+.voucher-singel .voucher-head .jf {
+	width: 189px;
+	height: 34px;
+	border-bottom: 1px solid #BBBBBB;
+	border-right: 1px solid #BBBBBB;
+}
+
+.voucher-singel .voucher-head .df {
+	width: 191px;
+	height: 34px;
+	border-bottom: 1px solid #BBBBBB;
+}
+
+.voucher-singel .voucher-head .fhead p {
+	line-height: 34px;
+}
+.voucher-singel .vouchertypebody{
+	width: 46px;
+	height: 49px;
+	border-left: 1px solid #BBBBBB;
+	border-bottom: 1px solid #BBBBBB;
+	border-right: 1px solid #BBBBBB;
+	float: left;
+	position: relative;
+	left: 69px;
+}
+.voucher-singel .vouchertypebodycw{
+    width: 22px;
+    height: 22px;
+    background: #00B38B;
+    border: 2px solid #78D7C8;
+    margin-top: 13px;
+    margin-left: 8.5px;
+    line-height: 22px;
+    text-align: center;
+    color: #fff;	
+}
+.voucher-singel .vouchertypebodyys{
+    width: 22px;
+    height: 22px;
+    background: #4990E2;
+    border: 2px solid #99C6FA;
+    margin-top: 13px;
+    margin-left: 8.5px;
+    line-height: 24px;
+    text-align: center;
+    color: #fff;	
+}
+.voucher-singel .abstract {
+	width: 270px;
+	height: 49px;    
+	 border-left: 0px solid #BBBBBB; 
+	border-bottom: 1px solid #BBBBBB;
+	border-right: 1px solid #BBBBBB;
+	float: left;
+	position: relative;
+	left: 69px;
+}
+
+.voucher-singel .accounting {
+	width: 271px;
+	height: 49px;
+	float: left;
+	position: relative;
+	left: 69px;
+	border-bottom: 1px solid #BBBBBB;
+	border-right: 1px solid #BBBBBB;
+}
+
+.voucher-singel .accounting .fuyan {
+	width: 24px;
+	height: 24px;
+	position: absolute;
+	top: 0;
+	right: 0;
+	display: none;
+	cursor: pointer;
+}
+
+.voucher-singel .accounting .fuyan span {
+    font-size: 10px;
+    color: #e78926;
+    letter-spacing: 0.42px;
+    position: absolute;
+    right: -12px;
+    top: -12px;
+}
+
+.voucher-singel .moneyj {
+	width: 190px;
+	height: 50px;
+	position: relative;
+	left: 69px;
+	border-bottom: 1px solid #BBBBBB;
+	border-right: 1px solid #BBBBBB;
+	/*background: url(../img/money_rp.png) repeat-y;*/
+	float: left;
+	box-sizing: border-box;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+.voucher-singel .moneyd {
+	width: 193px;
+	height: 50px;
+	position: relative;
+	left: 69px;
+	border-bottom: 1px solid #BBBBBB;
+	border-right: 1px solid #BBBBBB;
+	float: left;
+	box-sizing: border-box;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+.voucher-singel .moneyj .money-sr {
+	width: 189px;
+	height: 48px;
+	float: left;
+	font-size: 20px;
+	border: none;
+	box-shadow: none;
+	text-align: right;
+	background: none;
+	display: none;
+}
+
+.voucher-singel .moneyd .money-sr {
+	width: 190px;
+	height: 49px;
+	float: left;
+	font-size: 20px;
+	border: none;
+	box-shadow: none;
+	text-align: right;
+	background: none;
+	display: none;
+}
+
+.voucher-singel .moneyj .money-xs {
+	width: 182px;
+	height: 49px;
+	float: left;
+	border: none;
+	box-shadow: none;
+	overflow: hidden;
+	/*text-overflow: ellipsis;*/
+	white-space: nowrap;
+	font-family: 'tahoma';
+	font-weight: 100;
+	line-height: 49px;
+	letter-spacing: 0px !important;
+	overflow: hidden;
+	position: relative;
+	left: 4px;
+	text-align: right;
+	background: none;
+	background-size: 100% 49px;
+}
+
+.voucher-singel .moneyd .money-xs {
+	width: 185px;
+	height: 49px;
+	float: left;
+	border: none;
+	box-shadow: none;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	font-family: 'tahoma';
+	font-weight: 100;
+	line-height: 49px;
+	letter-spacing: 0px !important;
+	overflow: hidden;
+	position: relative;
+	left: 4px;
+	text-align: right;
+	background: none;
+	background-size: 100% 49px;
+}
+
+.voucher-singel .abstractinp {
+	float: left;
+	width: 260px;
+	height: 39px;
+	border: none;
+	box-shadow: none;
+	background: none;
+	font-size: 16px;
+	position: relative;
+	padding-left: 9px;
+	resize: none;
+	padding-top: 10px;
+}
+.voucher-singel .abstractinps {
+	float: left;
+	width: 270px;
+	max-height: 190px;
+	overflow-y: scroll;
+	border: none;
+	z-index: 900;
+	box-shadow: none;
+	font-weight: initial;
+	background: #fff;
+	border: 1px solid #D9D9D9;
+	display: none;
+	position: absolute;
+	top: 50px;
+	box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.20);
+}
+.voucher-singel #abstract-container {
+	float: left;
+	width: 270px;
+	max-height: 190px;
+	overflow-y: scroll;
+	border: none;
+	z-index: 900;
+	box-shadow: none;
+	font-weight: initial;
+	background: #fff;
+	border: 1px solid #D9D9D9;
+	display: none;
+	position: absolute;
+	top: 50px;
+	box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.20);
+}
+.voucher-singel .accountinginp {
+	float: left;
+	width: 263px;
+	height: 49px;
+	position: relative;
+	top: -2px;
+	border: none;
+	box-shadow: none;
+	background: none;
+	font-size: 16px;
+	padding-left: 9px;
+}
+
+.voucher-singel .accountinginps {
+	float: left;
+	max-height: 190px;
+	overflow-y: scroll;
+	overflow-x: hidden;
+	border: none;
+	z-index: 900;
+	box-shadow: none;
+	font-weight: initial;
+	background: #fff;
+	position: absolute;
+	top: 50px;
+	display: none;
+	max-width: 657px;
+	box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.20);
+	border: 1px solid #D9D9D9;
+}
+
+voucher-singelzy .accountingye {
+	float: left;
+	position: absolute;
+	left: 10px;
+	top: 30px;
+	font-size: 12px;
+	display: none;
+	line-height: 20px;
+	color: #959595;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+.accountingmx {
+	float: left;
+	position: absolute;
+	left: 230px;
+	top: 34px;
+	font-size: 12px;
+	display: none;
+	line-height: 12px;
+	cursor: pointer;
+	background: #fff;
+}
+.accountingmx:hover {
+	color: #108ee9;
+}
+
+.accountingyw {
+	float: left;
+	position: absolute;
+	left: 200px;
+	top: 30px;
+	font-size: 12px;
+	display: none;
+	line-height: 20px;
+	cursor: pointer;
+}
+
+
+.voucher-singel .heji {
+    width: 589px;
+    height: 73px;
+    border-left: 1px solid #BBBBBB;
+    border-bottom: 1px solid #BBBBBB;
+    border-right: 1px solid #BBBBBB;
+    float: left;
+    text-align: left;
+    padding-left: 0px;
+    line-height: 22px;
+    position: relative;
+    left: 69px;
+}
+.voucher-singel .heji,.voucher-singel .voucher-footer .money-jd{
+	background: #fefad5;
+}
+.voucher-singel .voucher-footer .money-jd {
+	border-bottom: 1px solid #BBBBBB;
+	height: 74px;
+	line-height: 23px;
+    padding-right: 8px;
+}
+
+.voucher-singel .voucher-footer .money-j {
+	border-bottom: 1px solid #BBBBBB;
+	height: 74px;
+	width: 190px;
+}
+.voucher-singel .voucher-footer .money-d {
+	height: 74px;
+	border-bottom: 1px solid #BBBBBB;
+	width: 192px;
+}
+.voucher-singel,.voucher{
+	top: 0px;
+}
+/*单凭证左右*/
+
+.voucher-singelzy{
+	top: 0px;
+	width: 1220px;
+	margin-left: -610px;
+}
+.voucher-singelzy .voucher-body {
+	width: 1195px;
+}
+.voucher-singelzy .voucher-head {
+	width: 1130px;
+	height: 60px;
+	border-top: 1px solid #BBBBBB;
+	border-left: 1px solid #bbbbbb;
+	border-right: 1px solid #bbbbbb;
+	background: #f3f3f3;
+	position: relative;
+	left: 48px;
+	top: 0px;
+	box-sizing: border-box;
+}
+.voucher-singelzy .voucher-head .abstracthead {
+    width: 120px;
+    height: 30px;
+    border-right: 1px solid #BBBBBB;
+    line-height: 30px;
+}
+.voucher-singelzy .voucher-head .accountinghead {
+ 	width: 152px;
+ 	height: 30px;
+ 	border-right: 1px solid #BBBBBB;
+ 	line-height: 30px;
+}
+.voucher-singelzy .voucher-head .voucherheadcw {
+    width: 563px;
+    height: 58px;
+    float: left;
+    border-bottom: 1px solid #BBBBBB;
+    border-right: 1px solid #bbbbbb;
+    line-height: 60px;
+    text-align: center;
+    position: relative;
+}
+.voucher-singelzy .voucher-head .abstractheadtwo {
+    width: 119px;
+	height: 30px;
+	position: relative;
+    float: left;
+    border-right: 1px solid #BBBBBB;
+    line-height: 30px;
+}
+.voucher-singelzy .voucher-head .voucherheadys {
+    width: 563px;
+    height: 58px;
+    float: left;
+    border-bottom: 1px solid #BBBBBB;
+    line-height: 30px;
+    text-align: center;
+    position: relative;
+}
+.voucher-singelzy .voucher-head .voucherheadtitle{
+	width:100%;
+	height: 30px;
+	line-height: 30px;
+	text-align: center;
+	border-bottom: 1px solid #BBBBBB;
+}
+.voucher-singelzy .voucher-head .jf {
+    width: 142px;
+    height: 30px;
+    border-right: 1px solid #BBBBBB;
+}
+.voucher-singelzy .voucher-head .df {
+   width: 143px;
+   height: 30px;
+}
+.voucher-singelzy .voucher-head .fhead p {
+    line-height: 30px;
+}
+.voucher-singelzy .voucher-centercw{
+    width: 613px;
+    border-right: 1px solid #BBBBBB;
+}
+.voucher-singelzy .voucher-centerys{
+    width: 583px;
+}
+.voucher-singelzy .voucher-body .voucherjias {
+   	width: 50px;
+    height: 50px;
+    float: left;
+    position: absolute;
+    left: 11px;
+}
+.voucher-singelzy .voucher-centercw .abstract {
+    width: 120px;
+    left: 48px;
+}
+.voucher-singelzy .voucher-centerys .abstract {
+    width: 119px;
+    left: 0px;
+    border-left: 0px;
+}
+.voucher-singelzy .abstractinp {
+    width: 111px;
+}
+.voucher-singelzy .voucher-centercw .accounting {
+    width: 153px;
+    left: 47px;
+}
+.voucher-singelzy .voucher-centercw .accountinginp {
+    width: 144px;
+}
+.voucher-singelzy .voucher-centercw .moneyj {
+    width: 143px;
+    left: 47px;
+}
+.voucher-singelzy .voucher-centercw .moneyj .money-xs {
+    width: 141px;
+}
+.voucher-singelzy .voucher-centercw .moneyj .money-sr {
+    width: 141px;
+} 
+.voucher-singelzy .voucher-centercw .moneyd {
+    width: 146px;
+    left: 47px;
+    border-right: 0px solid #BBBBBB;
+}
+.voucher-singelzy .voucher-centercw .moneyd .money-xs {
+    width: 146px;
+}
+.voucher-singelzy .voucher-centercw .moneyd .money-sr {
+    width: 145px;
+} 
+.voucher-singelzy .voucher-centerys .accounting {
+    width: 152px;
+    left: 0px;
+}
+.voucher-singelzy .voucher-centerys .accountinginp {
+    width: 143px;
+    left: 0px;
+}.voucher-singelzy .voucher-centerys .moneyj {
+    width: 143px;
+    left: 0px;
+}
+.voucher-singelzy .voucher-centerys .moneyj .money-xs {
+    width: 141px;
+}
+.voucher-singelzy .voucher-centerys .moneyj .money-sr {
+    width: 141px;
+} 
+.voucher-singelzy .voucher-centerys .moneyd {
+    width: 149px;
+    left: 0px;
+    border-right: 1px solid #bbbbbb;
+}
+.voucher-singelzy .voucher-centerys .moneyd .money-xs {
+    width: 146px;
+}
+.voucher-singelzy .voucher-centerys .moneyd .money-sr {
+    width: 147px;
+} 
+.voucher-singelzy .voucher-centerys .voucherjians {
+    left: 588px;
+}
+.voucher-singelzy .heji,.voucher-singelzy .voucher-footer .money-jd,.voucher-singelzy .voucher-footer .hejihz{
+	background: #fefad5;
+}
+.voucher-singelzy .heji{
+	left: 48px;
+	width: 263px;
+	border-bottom: 1px solid #bbbbbb;
+	border-left: 1px solid #bbbbbb;
+}
+.voucher-singelzy .voucher-footer .moneyhjcw .moneyj{
+    left: 48px;
+    width: 143px;
+}
+.voucher-singelzy .voucher-footer .moneyhjcw .moneyd{
+    width: 147px;
+    left: 48px
+}
+.voucher-singelzy .moneyhjys .hejihz{
+	width: 273px;
+    height: 49px;
+    position: relative;
+    left: 48px;
+    border-bottom: 1px solid #bbbbbb;
+    border-right: 1px solid #BBBBBB;
+    float: left;
+    line-height: 50px;
+    padding-left: 8px;
+    box-sizing: border-box;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.voucher-singelzy .voucher-footer .moneyhjys .moneyj{
+	left: 48px;
+    width: 143px;
+}
+.voucher-singelzy .voucher-footer .moneyhjys .moneyd{
+    width: 149px;
+    left: 48px
+}
+.voucher-singelzy .voucher-centercw .voucher-yc{
+	left: 48px;
+    width: 1130px;
+    position: relative;
+}
+.voucher-singelzy .voucher-centercw .voucher-yc-bg{
+	overflow-x: auto;
+    overflow-y: hidden;
+    width: 100%;
+}
+.voucher-singelzy .voucher-centerys .voucher-yc{
+    left: -565px;
+    width: 1130px;
+}
+
+.voucher-singelzy .accountingmx{
+	left:110px;
+}
+.voucher-singelzy .moneyj .money-xs{
+	width:141px;
+	left: 0px;
+}
+.voucher-singelzy .moneyd .money-xs{
+	width:141px;
+	left: 0px;
+}
+/*对大屏适应*/
+.voucher-singelzybg{
+    width: 1680px;
+    position: relative;
+    left: 50%;
+    margin-left: -820px;
+    top: 0px;
+}
+
+.voucher-singelzybg .accountingmx{
+	left:180px;
+}
+.voucher-singelzybg .voucherindex{
+    border-left: 1px solid #BBBBBB;
+    border-bottom: 1px solid #BBBBBB;
+    width: 40px;
+    height: 49px;
+    top: 0px;
+    left: 19px;
+    float: right;
+    line-height: 50px;
+    text-align: center;
+    color: #333 !important;
+}
+.voucher-singelzybg .voucher-centercw{
+	width: 845px;
+	border-right: 0px;
+	left: 17px;
+	top: 0px;
+}
+.voucher-singelzybg .voucher-body .voucherjias{
+	left: 700px;
+}
+.voucher-singelzybg .voucher-centerys .voucherjians{
+	left: 805px;	
+}
+.voucher-singelzyproject .voucher-centerys .voucherjians {
+    left: 582px;
+}
+.voucher-singelzybg .voucher-centerys{
+	width: 825px;
+	top: 0px;
+	left: 2px;
+}
+.voucher-singelzybg .voucher-centercw .abstract{
+    width: 225px;
+    left: 49px;
+    border-left: 1px solid #BBBBBB;
+}
+.voucher-singelzybg .voucher-centerys .abstract{
+    width: 225px;
+    left: 0px;
+    border-left: 1px solid #bbbbbb;
+}
+.voucher-singelzybg .voucher-head{
+    left: 0px;
+    width: 1600px;
+}
+.voucher-singelzybg .voucher-head .voucherheadindex{
+	width: 40PX;
+	height: 59px;
+	float: left;
+	border-bottom: 1px solid #BBBBBB;
+	border-right: 1px solid #BBBBBB;
+	border-top: 1px solid #BBBBBB;
+	line-height: 60px;
+	text-align: center;
+	position: relative;
+	left: 0px;
+	top: 0;
+}
+.voucher-singelzybg .voucher-head .voucherheadcw {
+    width: 780px;
+    height: 59px;
+    border-top: 1px solid #bbbbbb;
+}
+.voucher-singelzybg .voucher-head .voucherheadys {
+    width: 780px;
+    height: 59px;
+    border-top: 1px solid #bbbbbb;
+}
+.voucher-singelzybg .voucher-body .voucherjias {
+    left: -11px;
+    /* left: 0px; */
+    width: 75px;
+    /* position: relative; */
+}
+.voucher-singelzybg .voucher-head{
+	width: 1605px;
+	left: 20px;
+	top: 0px;
+	border-top: 0px;
+}
+.voucher-singelzybg .voucher-head .abstracthead {
+    width: 225px;
+}
+.voucher-singelzybg .voucher-head .accountinghead{
+	width: 230px;
+}
+.voucher-singelzybg .voucher-head .jf{
+	width: 160px;
+}
+.voucher-singelzybg .voucher-head .df{
+	width: 162px;
+}
+.voucher-singelzybg .voucher-center .accounting{
+	width: 230px;
+}
+.voucher-singelzybg .voucher-center .moneyj{
+	width: 161px;
+}
+.voucher-singelzybg .voucher-center .moneyd{
+	width: 163px;
+}
+.voucher-singelzybg .voucher-centercw .accounting{
+	width: 230px;
+	left: 49px;
+}
+.voucher-singelzybg .voucher-centercw .moneyj{
+	width: 161px;
+	left: 49px;
+}
+.voucher-singelzybg .voucher-centercw .moneyd{
+	width: 162px;
+	left: 49px;
+}
+.voucher-singelzybg .heji {
+    left: 5px;
+    width: 487px;
+    border-top: 1px solid #BBBBBB;
+    height: 47px;
+}
+.voucher-singelzybg .voucher-footer .moneyhjcw .moneyj {
+    left: 5px;
+    width: 161px;
+    border-top: 1px solid #BBBBBB;
+}
+.voucher-singelzybg .voucher-footer .moneyhjcw .moneyd{
+    left: 5px;
+    width: 163px;
+    border-top: 1px solid #BBBBBB;
+}
+.voucher-singelzybg .moneyj .money-xs{
+    width: 157px;
+}
+.voucher-singelzybg .moneyd .money-xs{
+    width: 157px;
+}
+.voucher-singelzybg .voucher-footer{
+    width: 1617px;
+    top: -1px;
+    left: 15px;
+}
+.voucher-singelzybg .moneyhjcw{
+	display: inline-block;
+}
+.voucher-singelzybg .moneyhjys{
+	display: inline-block;
+}
+.voucher-singelzybg .moneyhjys .hejihz{
+	width: 456px;
+	left: 5px;
+	border-top: 1px solid #BBBBBB;
+}
+.voucher-singelzybg .voucher-footer .moneyhjys .moneyj {
+    left: 5px;
+    width: 162px;
+    border-top: 1px solid #BBBBBB;
+}
+.voucher-singelzybg .voucher-footer .moneyhjys .moneyd{
+    left: 6px;
+    width: 163px;
+    border-top: 1px solid #BBBBBB;
+    border-right: 1px solid #bbbbbb;
+}
+.voucher-singelzybg .abstractinp{
+	width: 216px;
+}
+.voucher-singelzybg .voucher-centercw .accountinginp{
+	width: 222px;
+}
+.voucher-singelzybg .voucher-centerys .accountinginp{
+	width: 221px;
+}
+.voucher-singelzybg .voucher-centercw .moneyj .money-sr{
+	width: 160px;
+}
+.voucher-singelzybg .voucher-centercw .moneyj .money-xs{
+	width: 157px;
+}
+.voucher-singelzybg .voucher-centercw .moneyd .money-sr{
+	width: 162px;
+}
+.voucher-singelzybg .voucher-centercw .moneyd .money-xs{
+	width: 157px;
+}
+.voucher-singelzybg .voucher-centerys .moneyj .money-sr{
+	width: 160px;
+}
+.voucher-singelzybg .voucher-centerys .moneyj .money-xs{
+	width: 157px;
+}
+.voucher-singelzybg .voucher-centerys .moneyd .money-sr{
+	width: 163px;
+}
+.voucher-singelzybg .voucher-centerys .moneyd .money-xs{
+	width: 157px;
+}
+.voubodyscroll {
+    width: 1202px;
+    position: relative;
+    left: 50%;
+    margin-left: -597px;
+    height: auto; 
+    overflow-x: hidden;
+    overflow-y: auto; 
+    top: 70px;
+    max-height: 150px;
+}
+.voucher-singelzybg .voubodyscroll{
+    width: 1690px;
+    position: relative;
+    left: 50%;
+    margin-left: -845px;
+    height: auto;
+    overflow-x: hidden;
+    overflow-y: auto;
+    top: 0px;
+    max-height: 300px;
+}
+.voucher-singelzybg .voucher-centercw .voucher-yc{
+	position: fixed;
+    background: #fff;
+    width: 1660px;
+    margin-left: -812px;
+    z-index: 2;
+    left: 50%;
+    border: none;
+}
+.voucher-singelzybg .voucher-centercw .voucher-yc-bg{
+	background: #fff;
+    width: 100%;
+	border: 0px;
+}
+.voucher-singelzybg .voucher-centercw .voucher-yc-bt{
+	background: #fff;
+}
+.voucher-singelzybg .voucher-centercw .voucher-yc-bo{
+	background:#fff;
+}
+.voucher-singelzybg .voucher-centerys .voucher-yc{
+	position: fixed;
+    background: #fff;
+    border-right: 0px solid #BBBBBB;
+    border-bottom: 0px solid #BBBBBB;
+    border-left: 0px solid #BBBBBB;
+    width: 1680px;
+    margin-left: -812px;
+    z-index: 2;
+    left: 50%;
+}
+.voucher-singelzybg .voucher-centerys .voucher-yc-bg{
+	background: #fff;
+    width: 100%;
+	border: 0px;
+}
+.voucher-singelzybg .voucher-centerys .voucher-yc-bt{
+	background: #fff;
+}
+.voucher-singelzybg .voucher-centerys .voucher-yc-bo{
+	background: #fff;
+}
+.voucherkjclick{
+	position: relative;
+	right: 16px;
+	top: 10px;
+	/*width: 45px;
+    height: 22px;
+    background: #FFFFFF;
+    border: 1px solid #BBBBBB;
+    border-radius: 4px;
+    font-size: 20px;
+    text-align: center;
+    padding-top: 4px;
+    line-height: 20px;*/
+	/* width: 30px; */
+	padding: 5px 8px;
+	border: 1px solid #BBBBBB;
+	border-radius: 2px;
+	float: right;
+}
+.voucherkjclickxs p {
+    width: 100%;
+    height: 30px;
+    line-height: 30px;
+    font-size: 12px;
+    float: left;
+    text-align: left;
+    color: #777;
+}
+.voucherkjclickxs p .kj{
+	float: right;
+	width: 80px;
+	font-size: 12px;
+    text-align: left;
+}
+.voucherkjclickxs {
+    width: 275px;
+    padding: 0px 10px;
+    display: none;
+}
+.mt-checkbox>span, .mt-radio>span {
+    height: 16px;
+    width: 16px;
+}
+
+.voucher-singelzy .voucherycshow{
+    position: fixed;
+    background: #fff;
+    width: 1066px;
+    margin-left: -558px;
+    z-index: 1;
+    left: 50%;
+    border: 1px solid #BBBBBB;
+    height: 88px;
+    padding: 16px 32px;
+}
+.voucher-singelzybg .voucherycshow{
+	position: fixed;
+    background: #fff;
+    width: 1534px;
+    margin-left: -793px;
+    z-index: 1;
+    left: 50%;
+    border: none;    
+    height: 88px;
+    padding: 16px 32px;
+}
+.voucher-yc-title .titlemoney{
+	display: inline-block;
+}
+#mbsrcom{
+	display: none !important;	
+}
+.fontsmall .abstractinp,.voucher .abstractinp{
+	font-size: 12px !important;
+	padding-top: 0px;
+	height: 50px;
+}
+.fontsmall .accountinginp,.voucher .accountinginp{
+	font-size: 12px !important;
+	padding-top: 0px;
+	/*height: 50px;*/
+	height: 34px;
+	padding-bottom: 16px;
+	top: 0px;
+}
+.fontsmall .moneyj .money-xs,.voucher .moneyj .money-xs{
+    height: 31px;
+    line-height: 50px;
+    padding-bottom: 20px;
+}
+.fontsmall .moneyd .money-xs,.voucher .moneyd .money-xs{
+    height: 31px;
+    line-height: 50px;
+    padding-bottom: 20px;
+}
+.fontsmall .ycbody .ycbodyinp,.voucher .ycbody .ycbodyinp{
+    font-size: 12px !important;
+}
+.relationacc{
+	max-width: 300px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+.voucher .voucherjiass{
+	position: absolute;
+    top: 20px;
+    font-size: 18px;
+    cursor: pointer;
+	color: transparent;
+	left: 20px;
+	text-decoration: none;
+}
+.voucher-singel .voucherjiass{
+	top: 10px;
+    left: 22px;
+}
+.voucher-singelzy .voucherjiass{
+	top: 30px;
+    left: -3px;
+}
+.voucher-singelzybg .voucherjiass{
+	top: 20px;
+    left: -11px;
+}
+.voucher-body .voucherjiass {
+    position: relative;
+    top: 18px;
+    float: left;
+    visibility: hidden;
+    width: 15px;
+	height: 15px;
+	color: #333;
+    cursor: pointer;
+    left: -13px;
+ }
+.voucher-yc-title{
+  	margin-left: 20px;
+	margin-bottom: 10px;
+ }
+ 
+.voucher-singelzy .voucher-yc-title .maxwtitle {
+	max-width: 200px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+	white-space: nowrap;
+	float: left;
+}
+.voucher-singelzybg .voucher-yc-title .maxwtitle {
+	max-width: 500px;
+}
+.voucher-yc-title .ycbodyinp{
+	border: none;
+	border-bottom: 1px solid #BBBBBB;
+}
+.voucher-yc-title  .billDateinp{
+	width: 120px;
+}
+.voudeletediv{
+    float: left;
+    position: absolute;
+    right: 0px;
+    /* top: 12px; */
+    cursor: pointer;
+    width: 16px;
+    height: 50px;
+}
+.voucher-centerys .voudeletediv{
+	right: 19px;	
+}
+.voucher-singelzybg .voucher-centercw .voudeletediv{
+	right: 15px;
+}
+.voucher-singelzyproject .voucher-centercw .voudeletediv{
+	right: 0px;
+}
+.voucher-singelzybg .voucher-centerys .voudeletediv{
+	right: 42px;
+}
+.voucher-singelzyproject .voucher-centerys .voudeletediv{
+	right: 6px;
+}
+
+.voudelete{
+    float: left;
+    position: absolute;
+    top: 14px;
+    left: 1px;
+    visibility: hidden;
+    cursor: pointer;
+}
+.voudelete .icon-close{
+	position: relative;
+	right: 0px;
+}
+.errtextdiv{
+	display: none;
+    position: fixed;
+    bottom: 50px;
+    z-index: 20;
+    width: 100%;
+}
+#errtext{
+    width: 100%;
+    height: 150px;
+    border: 1px solid #c5c5c5;
+    box-shadow: none;
+    background: #fff;
+    font-size: 16px;
+    position: relative;
+    padding-left: 9px;
+    resize: none;
+	padding-top: 10px;
+}
+#accResearch{
+	width: 300px;
+	height:30px;
+	border:1px solid #D9D9D9;
+	border-radius:4px;
+	margin-right: -1px;
+	padding-left:8px;
+}
+#fzhsResearch{
+	width: 300px;
+	height:30px;
+	border:1px solid #D9D9D9;
+	border-radius:4px;
+	margin-right: -1px;
+	padding-left:8px;
+}
+.voucher-center-active .ycbodyinp,.voucher-center-active .accounting,.voucher-center-active .money-jd,.voucher-center-active .abstract{
+	background: #F0F3F9 !important;
+}
+.voucher-center-active .accountingye,.voucher-center-active .yctz{
+	background: #F0F3F9 !important;
+}
+.changemoneyjd{
+	background:#F0F3F9;
+}
+.voucher-singelzy .voucher-yc,.voucher-singel .voucher-yc{
+	background: #fff;
+}
+.voucher-singelzy .voucher-yc .voucher-yc-bg{
+	background: #fff;
+	border: none;
+    border-left: 1px solid #BBBBBB;
+}
+.voucher-singelzybg .voucher-yc .voucher-yc-bg,.voucher-singel .voucher-yc .voucher-yc-bg{
+	background: #fff;
+	border-left: 1px solid #BBBBBB;
+}
+.voucher-singelzy .voucher-yc .voucher-yc-bt,.voucher-singel .voucher-yc .voucher-yc-bt{
+	background: #fff;
+}
+.voucher-singelzy .voucher-yc .voucher-yc-bo,.voucher-singel .voucher-yc .voucher-yc-bo{
+	background: #fff;
+}
+.addtroracca{
+	float: left;
+	position: fixed;
+	width: 80px;
+	background: #fff;
+	border: 1px solid #ccc;
+	display: none;
+}
+.addtroracca p{
+	width: 80px;
+	line-height: 26px;
+	text-align: center;
+	cursor: pointer;
+	float: left;
+}
+.addtroracca .tip{
+	left: -3px;
+    top: 27px;
+    border-color: transparent #ccc transparent;
+    border-width: 6px 8px 6px 0;
+    margin-left: -6px;
+    margin-top: -8px;
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    line-height: 0px;
+}
+.addtroracca .tip span{
+	left: 8px;
+	top: 2px;
+	border-color: transparent #fff transparent;
+	border-width: 6px 8px 6px 0;
+	margin-left: -6px;
+	margin-top: -8px;
+	position: absolute;
+	width: 0;
+	height: 0;
+	border-style: solid;
+	line-height: 0px;
+}
+.voucher-singelzybg  .voucherycshow .voucher-yc-title{
+	margin-left: -30px;
+}
+
+/* 单凭证左右模式适应(为保留弹窗模式) */
+.voucher-singelzyx {
+    width: 1220px;
+    position: relative;
+    left: 50%;
+    margin-left: -620px;
+    top: 0px;
+}
+.voucher-singelzyx .voucher-head{
+    width: 1174px;
+}
+.voucher-singelzyx .voucher-head .voucherheadcw{
+    width: 565px;
+}
+.voucher-singelzyx .voucher-head .voucherheadys {
+    width: 565px;
+}
+.voucher-singelzyx .voucher-head .voucherheadcw .abstracthead{
+	width: 160px;
+}
+.voucher-singelzyx .voucher-head .voucherheadys .abstracthead{
+	width: 160px;
+}
+.voucher-singelzyx .voucher-head .voucherheadcw .accountinghead{
+	width: 189px;
+}
+.voucher-singelzyx .voucher-head .voucherheadys .accountinghead{
+	width: 188px;
+}
+.voucher-singelzyx .voucher-head .jf {
+    width: 107px;
+}
+.voucher-singelzyx .voucher-head .df {
+    width: 106px;
+}
+.voucher-singelzyx .voubodyscroll {
+    width: 1250px;
+    margin-left: -615px;
+}
+.voucher-singelzyx .voucher-centercw{
+	width: 630px;
+}
+.voucher-singelzyx .voucher-centerys{
+	width: 575px;
+}
+.voucher-singelzyx .voucher-centercw .abstract{
+    width: 160px;
+    left: 49px;
+    border-left: 1px solid #BBBBBB;
+}
+.voucher-singelzyx .abstractinp{
+    width: 151px;
+}
+.voucher-singelzyx .voucher-centercw .accounting{
+	width: 189px;
+}
+.voucher-singelzyx .voucher-centercw .accountinginp{
+	width: 180px;
+}
+.voucher-singelzyx .voucher-centerys .accounting{
+	width: 188px;
+}
+.voucher-singelzyx .voucher-centerys .accountinginp{
+	width: 179px;
+}
+.voucher-singelzyx .voucher-centercw .moneyj {
+    width: 143px;
+}
+.voucher-singelzyx .voucher-centercw .moneyj {
+    width: 108px;
+}
+.voucher-singelzyx .voucher-centercw .moneyj .money-xs{
+    width: 104px;
+}
+.voucher-singelzyx .voucher-centercw .moneyj .money-sr {
+    width: 106px;
+    font-size: 14px;
+}
+.voucher-singelzyx .voucher-centercw .moneyd {
+    width: 108px;
+}
+.voucher-singelzyx .voucher-centercw .moneyd .money-xs {
+    width: 104px;
+}
+.voucher-singelzyx .voucher-centercw .moneyd .money-sr {
+    width: 107px;
+    font-size: 14px;
+}
+.voucher-singelzyx .voucher-centerys .abstract {
+    width: 160px;
+}
+.voucher-singelzyx .voucher-centerys .moneyj {
+    width: 108px;
+}
+.voucher-singelzyx .voucher-centerys .moneyj .money-xs {
+    width: 104px;
+}
+.voucher-singelzyx .voucher-centerys .moneyj .money-sr {
+    width: 106px;
+    font-size: 14px;
+} 
+.voucher-singelzyx .voucher-centerys .moneyd {
+    width: 108px;
+}
+.voucher-singelzyx .voucher-centerys .moneyd .money-xs {
+    width: 104px;
+}
+.voucher-singelzyx .voucher-centerys .moneyd .money-sr {
+    width: 106px;
+    font-size: 14px;
+} 
+.voucher-singelzyx .voucherjian{
+	left: 0px;
+}
+.voucher-singelzyx .voucher-centerys .voucherjians {
+    left: 570px;
+}
+.voucher-singelzyx .voucher-centerys .voudeletediv {
+    right: 7px;
+}
+.voucher-singelzyx .heji{
+	width: 381px;
+}
+.voucher-singelzyx .voucher-footer .moneyhjcw .moneyj{
+	width: 108px;
+}
+.voucher-singelzyx .moneyj .money-xs {
+    width: 104px;
+}
+.voucher-singelzyx .voucher-footer .moneyhjcw .moneyd{
+	width: 107px;
+}
+.voucher-singelzyx .moneyd .money-xs{
+	width: 104px;
+}
+.voucher-singelzyx .moneyhjys .hejihz{
+	width: 350px;
+}
+.voucher-singelzyx .voucher-footer .moneyhjys .moneyj{
+	width: 108px;
+}
+.voucher-singelzyx .voucher-footer .moneyhjys .moneyd{
+    width: 107px;
+}
+.voucher-singelzyx .voucher-footer{
+	width: 1180px;
+}
+.voucher-singelzyx .voucherycshow{
+    width: 1134px;
+    margin-left: -593px;
+}
+.voucher-singelzyx .voucher-centercw .voucher-yc {
+    width: 1260px;
+    margin-left: -612px;
+}
+.voucher-singelzyx .voucher-centerys .voucher-yc {
+    width: 1280px;
+    margin-left: -612px;
+}
+.voucher-singelzyx .accountingmx{
+	left: 140px;
+}
+/* 单凭证左右模式按项目录入版本（高校用） */
+.voucher-singelzyproject .voucher-head .voucherheadcw{
+    width: 1007px;
+}
+.voucher-singelzyproject .voucher-head .voucherheadys {
+    width: 554px;
+}
+.voucher-singelzyproject .voucher-head .abstracthead{
+	width: 231px;
+}
+.voucher-singelzyproject .voucher-head .projecthead{
+	width: 220px;
+	height: 30px;
+	float: left;
+	border-bottom: 1px solid #FFFFFF;
+	border-right: 1px solid #BBBBBB;
+	line-height: 30px;
+	text-align: center;
+	position: relative;
+}
+.voucher-singelzyproject .voucher-head .accountinghead{
+	width: 230px;
+}
+.voucher-singelzyproject .voucher-centercw{
+	width: 1057px;
+}
+.voucher-singelzyproject .voucher-centerys{
+	width: 561px;
+	left: 17px;
+}
+.voucher-singelzyproject .voucher-centercw .abstract{
+    width: 231px;
+    left: 49px;
+    border-left: 1px solid #BBBBBB;
+}
+.voucher-singelzyproject .abstractinp{
+    width: 222px;
+}
+.voucher-singelzyproject .voucher-center .accounting{
+	width: 230px;
+}
+.voucher-singelzyproject .voucher-centerys .accounting{
+	width: 230px;
+	border-left: 1px solid #bbbbbb;
+}
+.voucher-singelzyproject .voucher-center .accountinginp{
+	width: 221px;
+}
+.voucher-singelzyproject .projectuniver{
+	width: 220px;
+	height: 49px;
+	border-bottom: 1px solid #BBBBBB;
+	border-right: 1px solid #BBBBBB;
+	float: left;
+	position: relative;
+	left: 49px;
+}
+.voucher-singelzyproject .voucher-centerys .projectuniver{
+	border-left: 1px solid #BBBBBB;
+    left: 0px;
+}
+.voucher-singelzyproject .projectuniverinp {
+    float: left;
+    width: 211px;
+    height: 49px;
+    border: none;
+    box-shadow: none;
+    background: none;
+    position: relative;
+    padding-left: 9px;
+    resize: none;
+    font-size: 12px;
+}
+.voucher-singelzyproject .heji{
+	width: 714px;
+}
+.voucher-singelzyproject .moneyhjys .hejihz{
+	width: 231px;
+}
+.voucher-singelzyproject .voucher-footer .moneyhjys .moneyj{
+	width: 161px;
+}
+.voucher-singelzyproject .accountingmx{
+	left: 180px;
+}
+/* 单凭证左右模式按项目录入版本小屏（高校用） */
+.voucher-singelzyprojectx .voucher-head .voucherheadcw{
+    width: 726px;
+}
+.voucher-singelzyprojectx .voucher-head .voucherheadys {
+    width: 404px;
+}
+.voucher-singelzyprojectx .voucher-head .voucherheadcw .abstracthead{
+	width: 156px;
+}
+.voucher-singelzyprojectx .voucher-head .projecthead{
+	width: 162px;
+	height: 30px;
+	float: left;
+	border-bottom: 1px solid #FFFFFF;
+	border-right: 1px solid #BBBBBB;
+	line-height: 30px;
+	text-align: center;
+	position: relative;
+}
+.voucher-singelzyprojectx .voucher-head .accountinghead{
+	width: 209px;
+}
+.voucher-singelzyprojectx .voucher-centercw{
+	width: 793px;
+}
+.voucher-singelzyprojectx .voucher-centerys{
+	width: 406px;
+	left: 0px;
+}
+.voucher-singelzyprojectx .voucher-centercw .abstract{
+    width: 156px;
+    left: 49px;
+    border-left: 1px solid #BBBBBB;
+}
+.voucher-singelzyprojectx .abstractinp{
+    width: 146px;
+}
+.voucher-singelzyprojectx .voucher-center .accounting{
+	width: 189px;
+}
+.voucher-singelzyprojectx .voucher-centerys .accounting{
+	width: 188px;
+	border-left: 1px solid #BBBBBB;
+}
+.voucher-singelzyprojectx .voucher-center .accountinginp{
+	width: 180px;
+}
+.voucher-singelzyprojectx .projectuniver{
+	width: 162px;
+	height: 49px;
+	border-bottom: 1px solid #BBBBBB;
+	border-right: 1px solid #BBBBBB;
+	float: left;
+	position: relative;
+	left: 49px;
+}
+.voucher-singelzyprojectx .voucher-centerys .projectuniver{
+	border-left: 1px solid #BBBBBB;
+    left: 0px;
+}
+.voucher-singelzyprojectx .projectuniverinp {
+    float: left;
+    width: 153px;
+    height: 49px;
+    border: none;
+    box-shadow: none;
+    background: none;
+    font-size: 16px;
+    position: relative;
+    padding-left: 9px;
+    resize: none;
+    font-size: 12px;
+}
+.voucher-singelzyprojectx .heji{
+	width: 540px;
+}
+.voucher-singelzyprojectx .moneyhjys .hejihz{
+	width: 189px;
+}
+.voucher-singelzyprojectx .voucher-footer .moneyhjys .moneyj{
+	width: 108px;
+}
+.voucher-singelzyprojectx .accountingmx {
+    left: 140px;
+}
+.voucher-singelzyprojectx .voucher-centerys .moneyd{
+	width: 108px;
+}
+.voucher-singelzyprojectx .voucher-footer .moneyhjcw .moneyd {
+    width: 109px;
+}
+.voucher-singelzyprojectx .moneyd .money-xs {
+    width: 104px;
+}
+.voucher-singelzyprojectx .voucher-centerys .voucherjians {
+    left: 414px;
+}
+.voucher-singelzyprojectx .voucher-centerys .voudeletediv{
+	right: 0px;
+}
+.voucher-singelzyprojectx .voucher-footer .moneyhjys .moneyd {
+    width: 107px;
+}
+.projectuniver .vouopenbtnbycenter{
+	position: absolute;
+    right: 8px;
+	top: 16px;
+	cursor: pointer;
+}
+.vouopenbtndetailbycenter{
+	float: left;
+	position: absolute;
+	left: 10px;
+	top: 34px;
+	font-size: 12px;
+	line-height: 12px;
+	background: #fff;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	cursor: pointer;
+	display: none;
+}
+.projectuniver .vouopendelbycenter{
+	display: none;
+	cursor: pointer;
+}
+.fielddetail{
+	position: absolute;
+    left: 8px;
+    top: 30px;
+    display: none;
+    cursor: pointer;
+    color: #999;
+}

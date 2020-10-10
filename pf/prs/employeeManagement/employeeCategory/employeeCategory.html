@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>人员属性分类</title>
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <script src="../../../pub/boot.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+    <link rel="stylesheet" type="text/css" href="employeeCategory.css?rev=@@hash"/>
+    <link rel="stylesheet" type="text/css" href="../../common/common.css?rev=@@hash"/>
+    <style>
+        .tooltip .tooltip-inner{
+            padding: 6px;
+        }
+    </style>
+</head>
+<body>
+<!--整个容器 begin-->
+<div id="value-set" class="container-fluid ufma-container">
+    <div class="workspace">
+        <div class="prs-workspace workspace-inner">
+            <div class="uf-selete-box bordered-bottom">
+                <div class="uf-title">人员属性分类</div>
+                <div class="method-tip clearfix">
+                    <div class="btn-group fr title-btns-group">
+                        <button id="btn-add-value" class="btn btn-primary btn-add btn-permission btn-add-value">新增</button>
+                    </div>
+                </div>
+            </div>
+            <div class="table-sub">
+                <div class="table-sub-action clearfix">
+                    <div id="dtToolbar" class="btn-group fr">
+                    </div>
+                </div>
+            </div>
+            <table id="category-table" tool-bar="#tool-bar" class="ufma-table uf-rpt-table">
+            </table>
+        </div>
+        <div id="tool-bar" class="ufma-tool-bar">
+            <div class="tool-bar-body">
+                <div class="ufma-tool-btns tool-btns-preGenerated">
+                    <button id="tool-bar-del" type="button" class="btn btn-default btn-delete btn-permission">删除</button>
+                </div>
+                <div class="ufma-tool-btns tool-btns-preGenerated">
+                    <button id="tool-bar-enable" type="button" class="btn btn-default btn-start btn-permission">启用</button>
+                </div>
+                <div class="ufma-tool-btns tool-btns-preGenerated">
+                    <button id="tool-bar-disable" type="button" class="btn btn-default btn-stop btn-permission">停用</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../../common/common.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+<script src="employeeCategory.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+</body>
+</html>

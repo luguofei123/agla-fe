@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+  		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>账簿打印-条件设置</title>
+  		<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+		<script src="../../pub/boot.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+		<link rel="stylesheet" type="text/css" href="rptPrintConditionSet.css?rev=@@hash"/>
+	</head>
+	<body id="rptPrintConditionSet">
+		<div class="ufma-layout-updown">
+            <div class="ufma-layout-up">
+            	<div class="container-fluid margin-left-15 margin-right-15">
+            		<div class="table-box">
+            			<!--搜索框 begin-->
+            			<div class="table-action clearfix">
+            				<div class="iframeBtnsSearch pull-right">
+								<input type="text" class="searchHide focusOff bordered-input" placeholder="请输入要搜索的关键词" style="right: 80px">
+								<button class="btn btn-default btn-sm btn-search" id="searchHideBtn"><span class='glyphicon icon-search'></span></button>
+							</div>
+            			</div>
+            			<!--搜索框 end-->
+            			
+            			<!--表格 begin-->
+            			<table id="rpcs-data" class="ufma-table dataTable">
+            				<thead>
+            					<th style="width: 20px;">
+    								<label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
+                                        <input type="checkbox" class="group-checkable" data-set="#data-table .checkboxes"/>&nbsp;
+                                        <span></span>
+                                    </label>
+    							</th>
+            					<th>编码</th>
+            					<th>名称</th>
+            				</thead>
+            				<tbody></tbody>
+            			</table>
+            			<!--表格 end-->
+            		</div>
+            	</div>
+            </div>
+            
+            <div class="ufma-layout-down bordered-top">	
+				<div class="text-right margin-right-30">
+					<button type="button" class="btn btn-sm btn-primary btn-confirm" id="btn-confirm">确定</button>
+					<button type="button" class="btn btn-sm btn-default btn-qx" id="btn-qx">取消</button>
+				</div>
+			</div>
+		</div>
+		
+		<script src="rptPrintConditionSet.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+	</body>
+</html>

@@ -1,0 +1,121 @@
+.rpt-acc-back{float: right;margin-right: 8px;}
+/*!*悬浮单位账套树*!*/
+.rpt-atree-btn {
+    position: absolute;
+    width: 40px;
+    height: 35px;
+    border: 1px solid #108ee9;
+    border-left: 0px solid #108ee9;
+    border-radius: 0 4px 4px 0;
+    text-align: center;
+    line-height: 32px;
+    font-size: 16px;
+    cursor: pointer;
+    top: 12px;
+    left: -15px;
+    background: #108ee9;
+    color: #fff;
+}
+
+.rpt-atree-box {
+    position: absolute;
+    width: 240px;
+    height: 460px;
+    overflow: hidden;
+    border: 1px solid #d9d9d9;
+    border-left: 0px solid #d9d9d9;
+    top: -122px;
+    left: -255px;
+    background: #fff;
+    z-index: 1001;
+}
+
+.rpt-input-group {
+    margin: 12px 10px 0 10px;
+}
+
+.rpt-input-group .form-control {
+    height: 30px;
+    outline: none;
+}
+
+.rpt-input-group .form-control:focus {
+    box-shadow: none;
+    border-color: #ccc;
+}
+
+.rpt-input-group .input-group-addon {
+    background: none;
+    padding: 6px 16px;
+    cursor: pointer;
+}
+
+.atree-ztree.ufmaTree.ztree li {
+    line-height: 30px;
+    margin-right: -5px;
+}
+
+.atree-ztree.ufmaTree.ztree li a {
+    height: 30px;
+    padding: 0;
+}
+
+.atree-ztree.ufmaTree.ztree li a.curSelectedNode {
+    height: 30px;
+    padding: 0;
+    width: 100%;
+}
+
+.atree-ztree.ufmaTree.ztree li span.button {
+    vertical-align: middle;
+    margin-top: -4px;
+}
+
+.atree-ztree.ufmaTree.ztree li span.button.noline_open {
+    margin-left: 4px;
+}
+
+.rpt-atree-box-body {
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    margin-top: 12px;
+    /*padding-bottom: 126px;*/
+}
+
+.rpt-acc-box {
+    position: relative;
+    padding-left: 252px;
+    /*min-height: 625px;*/
+    /*overflow: hidden;*/
+    margin-top: 12px;
+}
+
+.rpt-acc-box-left {
+    position: fixed;
+    border: 1px solid #d9d9d9;
+    width: 240px;
+    height: 100%;
+    left: 30px;
+    top: 58px;
+    z-index:1002;
+    overflow: hidden;
+}
+
+.rpt-acc-box-right {
+    width: 100%;
+}
+
+/***左侧树***/
+.rpt-atree-box-head-top {padding-top:12px}
+.uf-combox-wd {width: 218px;margin:0px 10px 0 10px;}
+.rpt-show-agency-acct {
+    margin-left: 40px;
+}
+
+.rpt-show-agency-acct label {
+    height: 20px;
+    line-height: 20px;
+    padding-left: 26px;
+    margin-right: 24px;
+}

@@ -1,0 +1,86 @@
+.budget-used {
+	float: right;
+	color: #F04134;
+}
+
+.rpt-li-active {
+	color: #108ee9 !important;
+}
+
+.budget-common {
+	border: 1px solid #FFBF00;
+	border-radius: 4px;
+	float: left;
+	font-size: 10px;
+	color: #FFBF00;
+	letter-spacing: 0;
+	width: 36px;
+	height: 22px;
+	margin: 1.2% 0.9%;
+	text-align: center;
+	line-height: 22px;
+	margin-left: 16px;
+	margin-top: 7px;
+}
+
+.budget-fams {
+
+	width: 604px !important;
+	height: 72px !important;
+}
+
+.card-gray {
+	background: #F9F9F9;
+}
+
+.circle-gray {
+	background: #E9E9E9 !important;
+}
+
+.font-gray,
+.name-gray,
+.icon-gray {
+	color: #999999 !important;
+}
+
+.card-height {
+	height: 96px !important;
+}
+
+.card-fams {
+	height: 50px;
+	width: 220px;
+	overflow: hidden;
+}
+
+.common-gray {
+	color: #999999 !important;
+	border: 1px solid #999999;
+}
+
+.compile-order {
+	width: 100%;
+	height: 100%;
+	border: 0px;
+}
+
+.items-color {
+	font-color: blue;
+	background-color: #008080"
+
+}
+
+
+
+.bgItemTbl {
+	/**transform : translateY(-8px);**/
+}
+
+.bgItemTbl tr td {
+	border: 1px #DFE6EC solid !important;
+}
+
+.bgItemTbl thead th {
+	border: 1px #DFE6EC solid !important;
+	text-align: center !important;
+}

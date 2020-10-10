@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>应收款坏账收回</title>
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <script src="../../pub/boot.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+    <link rel="stylesheet" href="common.css" />
+</head>
+
+<body>
+    <div id="coaAccEdit" class="ufma-layout-updown">
+        <div class="ufma-layout-up">
+            <form id="frmBookIn" class="container-fluid form-horizontal form-padding form-top-padding">
+                <div class="form-row" style="margin-top: 16px">
+                    <div class="form-group m0 p0">
+                        <label class="control-label">备查类型：</label>
+                        <div class="control-element">
+                            <input id="receivableType" type="text" name="receivableType" class="form-control" readonly="true" style="width:190px;background-color:#F2F2F2;color:#cccccc">
+                        </div>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+                <div class="panel ufma-panel" style="width:860px;height:230px;margin:0;">
+                    <div class="panel-heading">
+                        <div class="caption">应收款信息</div>
+                    </div>
+                    <div class="panel-collapse collapse in">
+                        <div class="panel-body" style="padding:16px;">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label class="control-label">凭证日期：</label>
+                                    <div class="control-element" style="width: 160px">
+                                        <!-- <div name="vouDate" id="vouDate" class="uf-datepicker"
+                                         style="width: 180px"></div>-->
+                                        <input type="text" name="vouDate" id="vouDate" class="form-control" style="width: 160px">
+                                        <!--bug79521--zsj--经海哥确认改为这种样式-->
+                                    </div>
+                                </div>
+                                <div class="form-group form-group-mar">
+                                    <label class="control-label">凭证号：</label>
+                                    <div class="control-element">
+                                        <input type="text" name="vouNo" class="form-control" style="width: 160px">
+                                    </div>
+                                </div>
+                                <div class="form-group form-group-mar">
+                                    <label class="control-label">摘要：</label>
+                                    <div class="control-element">
+                                        <input type="text" name="vouDesc" class="form-control" style="width: 160px">
+                                    </div>
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label class="control-label">科目：</label>
+                                    <div class="control-element">
+                                        <input type="text" name="acco" class="form-control" style="width: 160px">
+                                    </div>
+                                </div>
+                                <div class="form-group form-group-mar">
+                                    <label class="control-label">往来单位：</label>
+                                    <div class="control-element">
+                                        <div id="currentCode" class="uf-treecombox" idField="code" textField="codeName" leafRequire=true name="currentCode" style="width:160px"></div>
+                                    </div>
+                                </div>
+                                <div class="form-group form-group-mar">
+                                    <label class="control-label">票据类型：</label>
+                                    <div class="control-element">
+                                        <div id="billType" class="uf-treecombox" idField="code" textField="codeName" leafRequire=true name="billType" style="width:160px"></div>
+                                    </div>
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label class="control-label">票据号：</label>
+                                    <div class="control-element">
+                                        <input type="text" name="billNo" class="form-control" style="width: 160px">
+                                    </div>
+                                </div>
+                                <div class="form-group form-group-mar">
+                                    <label class="control-label">应收金额：</label>
+                                    <div class="control-element">
+                                        <input id="stadAmt" type="text" name="stadAmt" class="form-control" style="width: 160px">
+                                    </div>
+                                </div>
+                                <div class="form-group form-group-mar">
+                                    <label class="control-label">已核销金额：</label>
+                                    <div class="control-element">
+                                        <input id="cancelMoney" type="text" name="cancelMoney" class="form-control" style="width: 160px">
+                                    </div>
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label class="control-label">应收余额：</label>
+                                    <div class="control-element">
+                                        <input id="restMoney" type="text" name="restMoney" class="form-control" style="width: 160px">
+                                    </div>
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+
+            <div class="beishu-part" style="padding-bottom: 50px;padding-left: 16px;margin-top: 10px">
+                <div class="panel ufma-panel" style="width:860px;margin:0;">
+                    <div class="panel-heading">
+                        <div class="caption">坏账收回信息</div>
+                    </div>
+                    <div class="panel-collapse collapse in">
+                        <div class="panel-body" style="padding:16px;padding-bottom: 0px">
+                            <form id="frmBookIn2" class="container-fluid form-horizontal form-padding form-top-padding" style="padding: 0">
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label class="control-label" style="width: 100px">坏账收回日期：</label>
+                                        <div class="control-element">
+                                                <!-- guohx 修改 改为日期格式,与后端确认在js里面转换为voudate -->
+                                            <div name="badDate" id="businessDate" class="uf-datepicker" style="width: 160px"></div>
+                                            <!-- <input type="text" name="vouDate" id="vouDate" class="form-control" style="width: 160px">    -->
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-label" style="width: 100px">坏账收回金额：</label>
+                                        <div class="control-element">
+                                            <input type="text" name="badMoney" class="form-control" style="width: 160px">
+                                        </div>
+                                    </div>
+                                    <div class="clearfix"></div>
+                                </div>
+                                <div style="margin-top: 10px;padding-left: 16px;padding-left: 20px;margin-bottom: 10px">
+                                    <div class="form-group p0" style="margin-left: 0px;">
+                                        <label class="control-label" style="font-weight: normal">备注：</label>
+                                        <div class="control-element" style="display: inline-block">
+                                            <input type="text" name="remark" class="form-control" style="width:494px;">
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="ufma-layout-down bordered-top" style="background-color: #fff">
+                <div class="text-right  margin-right-30">
+                    <!--<button type="button" class="btn btn-sm btn-primary btn-permission btn-saveadd" id="coaAccSaveAddAll">-->
+                    <!--保存并新增-->
+                    <!--</button>-->
+                    <button type="button" class="btn btn-sm btn-primary" id="btnSave">保存</button>
+                    <button type="button" class="btn btn-sm btn-default" id="btnClose"> 关闭</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="dm.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+    <script src="badAccountsComBack.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+</body>
+
+</html>

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>凭证模板</title>
+	<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+	<script src="../../pub/boot.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+	<link rel="stylesheet" href="vouModel.css?rev=@@hash" />
+</head>
+
+<body data-code="agy">
+	<div>
+		<!--工作区 begin-->
+		<div class="workspace" style="min-height:516px">
+			<!--工作区顶部 begin-->
+
+			<!--工作区顶部 end-->
+			<!--工作区中部 begin-->
+			<div class="workspace-center" style="margin-top:-8px;">
+				<div class="container-fluid">
+					<div class="ufma-layout ufma-layout-slider-sm ufma-layout-fixed-slider ufma-layout-fixed-slider-left" style="margin-top: 20px;">
+						<!--工作区中左布局begin-->
+
+						<div class="ufma-layout-slider left padding-right-0" style="z-index:1002;padding-right: 0px;">
+							<div class="ma-cont-box bordered-input margin-right-8" style="margin-right: 0px;">
+								<div class="input-group ma-input-group">
+									<input type="text" id="key" value="" class="form-control empty" placeholder="请输入搜索关键词">
+									<span id="btn-search" class="input-group-addon">
+										<span class='glyphicon icon-search'></span>
+									</span>
+								</div>
+								<ul id="docTree" class="ufmaTree ztree doc-ztree" style="height: 360px;"></ul>
+							</div>
+						</div>
+
+						<!--工作区中左布局end-->
+
+						<!--工作区中右布局begin-->
+						<div class="ufma-layout-content" style="margin-top:10px">
+							<div>
+								<div>
+									<div class="query-left">
+										<div class="form-body">
+											<div style="padding-top:0px;padding-left: 0px;" class="form-group label-group">
+												<div class="query-element">
+													<div class="query-inline-bloc">
+														<div class="query-li-title">
+															模板名称:
+														</div>
+														<input class="bordered-input padding-3 w260 model-input-new" style="border-radius:4px;" type="text" id="modelName" />
+														<div class="query-li-title" style="margin-left: 70px;">
+															模板描述:
+														</div>
+														<input class="bordered-input padding-3 w282 model-input-new" style="border-radius:4px;" type="text" id="modelDescp" />
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="tab-content ac-table">
+								<div id="doubleModel">
+									<table id="modelTable" class="ufma-table table-thead-center" style="border-bottom: 1px #d9d9d9 solid;">
+										<thead id="modelTableThead">
+											<tr>
+												<th width="30" rowspan="2">序号</th>
+												<th width="100" rowspan="2">摘要</th>
+												<th colspan="3">财务会计</th>
+												<th colspan="3">预算会计</th>
+											</tr>
+											<tr>
+												<th width="40">借贷</th>
+												<th width="100">科目</th>
+												<th width="100">辅助核算</th>
+												<th width="40">借贷</th>
+												<th width="100">科目</th>
+												<th width="100">辅助核算</th>
+											</tr>
+										</thead>
+									</table>
+								</div>
+								<div class="hidden" id="singleModel">
+									<table id="singleTable" class="ufma-table table-thead-center">
+										<thead id="singleTableThead">
+											<tr>
+												<th>序号</th>
+												<th width="100">摘要</th>
+												<th width="40">借贷</th>
+												<th width="100">科目</th>
+												<th width="100">辅助核算</th>
+											</tr>
+										</thead>
+									</table>
+								</div>
+							</div>
+						</div>
+						<!--工作区中右布局end-->
+					</div>
+				</div>
+			</div>
+			<!--工作区中部end-->
+
+		</div>
+		<!--工作区 end-->
+	</div>
+	<div class="ufma-layout-down bordered-top">
+		<div class="text-right  margin-right-30">
+			<button type="button" class="btn btn-sm btn-primary  btn-ajax " id="btn-sure">确定</button>
+			<button type="button" class="btn btn-sm btn-default" id="btn-cancle">取消</button>
+		</div>
+	</div>
+	<!--整个容器 end-->
+
+	<script src="vouModel.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+</body>
+<style>
+	.dataTables_wrapper.no-footer .dataTables_scrollBody {
+		border-bottom: 0px solid #111;
+	}
+	#modelTable .dataTables_empty{
+		border-bottom-width: 0px !important
+	}
+	#singleTable_wrapper .dataTables_empty{
+		border-bottom-width: 0px !important
+	}
+	.dataTables_wrapper {
+		overflow: auto
+	}
+</style>
+
+</html>

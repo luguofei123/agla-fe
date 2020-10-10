@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>辅助分析表</title>
+	<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+	<script src="../../pub/boot.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+	<link rel="stylesheet" href="assAnalysis.css?rev=@@hash" />
+	<link rel="stylesheet" href="rptCommon.css?rev=@@hash" />
+</head>
+
+<body id="assAnalysis" style="overflow-x:hidden;">
+	<div class="container-fluid ufma-container">
+		<input type="hidden" value="GL_RPT_ASS_ANALYZE" data-name="assAnalysis" class="rptType" />
+
+		<!--工作区 begin-->
+		<div class="workspace">
+			<!--账表工作区 begin-->
+			<div class="rpt-workspace">
+				<div class="rpt-selete-box bordered-bottom" style="margin-top:-8px;">
+					<div class="rpt-title">辅助分析表</div>
+					<ul class="rpt-selete-list">
+						<li class="rpt-selete-list-li">
+							<div id='cbAgency' class="ufma-treecombox ufma-combox-agency"></div>
+						</li>
+						<li class="rpt-selete-list-li">
+							<div id='cbAcct' class="ufma-combox ufma-combox-acct"></div>
+						</li>
+					</ul>
+					<div class="rpt-method-tip" data-toggle="tooltip" data-placement="left" title="查询方案">
+						<button id="showMethodTip" class="btn btn-primary glyphicon icon-file"></button>
+						<div id="rptPlanList" style="display: none;">
+						</div>
+					</div>
+					<div class="rpt-clear"></div>
+				</div>
+
+				<div class="rpt-box rpt-query-box">
+					<div class="rpt-query-box-left">
+						<div class="form-row">
+							<div class="form-group">
+								<label class="control-label auto w100">期间：</label>
+								<div class="control-element pr10">
+									<a name="period" id="dateBn" class="label label-radio">本年</a>
+									<a name="period" id="dateBq" class="label label-radio selected">本期</a>
+									<!-- <a name="period" id="dateBr" class="label label-radio">本日</a> -->
+								</div>
+								<div class="control-element" style="width:120px;">
+									<div id="vbStartVouDate" class="uf-datepicker" style="width:120px;"></div>
+								</div>
+								<span class="split">-</span>
+								<div class="control-element">
+									<div id="vbEndVouDate" class="uf-datepicker" style="width:120px;"></div>
+								</div>
+							</div>
+							<!-- <div class="clearfix"></div> -->
+							<div class="form-tablesearch">
+								<div class="form-group hide ">
+								</div>
+								<div class="form-group hide">
+								</div>
+								<div class="form-group hide">
+								</div>
+								<div class="form-group hide">
+								</div>
+								<div class="form-group hide">
+								</div>
+							</div>
+						</div>
+						<div class="form-row">
+							<div class="form-group">
+								<label class="control-label auto w100">其他：</label>
+								<label class="mt-checkbox mt-checkbox-outline pr10" id="isShowDetail">
+									<input type="checkbox" checked name="zeroAmtNotShow" value="1" id="zeroAmtNotShow">金额为零不显示
+									<span></span>
+								</label>
+							</div>
+							<div class="clearfix"></div>
+						</div>
+					</div>
+					<div class="rpt-query-box-right">
+						<div class="rpt-query-btn">
+							<button id="saveMethod" class="btn btn-default btn-fanan btn-permission">查询方案设置</button>
+							<button class="btn btn-primary btn-query btn-permission" id="searchTableData">查询</button>
+						</div>
+					</div>
+				</div>
+				<div class="rpt-box rpt-table-box">
+					<div class="fanantitle"></div>
+					<div class="rpt-table-sub-action">
+						<div class="iframeBtnsSearch">
+							<input type="text" class="searchHide focusOff bordered-input" placeholder="请输入要搜索的关键词">
+							<button class="btn btn-default btn-sm btn-search" id="searchHideBtn"><span class='glyphicon icon-search'></span></button>
+						</div>
+						<div class="rpt-btn-group">
+							<button class="btn btn-default btn-print btn-permission" data-toggle="tooltip" title="打印">
+								<span class="glyphicon icon-print"></span>
+							</button>
+							<button class="btn btn-default btn-export" data-toggle="tooltip" title="导出">
+								<span class="glyphicon icon-upload"></span>
+							</button>
+						</div>
+						<div class="btn-group" id="printTableData">
+						</div>
+					</div>
+					<div class="rpt-clear"></div>
+				</div>
+				<div class="rpt-table-tab">
+					<table id="assAnalysisTable" class="ufma-table uf-rpt-table" tool-bar="#tool-bar">
+						<thead id="assAnalysisTablehead">
+						</thead>
+					</table>
+					<table id="assAnalysisTableleft" class="ufma-table uf-rpt-table dataTable" tool-bar="#tool-bar">
+						<thead>
+						</thead>
+						<tbody>
+						</tbody>
+					</table>
+				</div>
+			</div>
+			<div id="tool-bar" class="ufma-tool-bar">
+				<div class="tool-bar-body">
+				</div>
+			</div>
+		</div>
+		
+		<div id="tableprint" class="ufma-modal">
+			<div class="u-msg-title">
+				<h4>打印模板选择</h4>
+			</div>
+			<div class="u-msg-content">
+				<div class="container-fluid margin-left-15 margin-right-15">
+					<ul class="list-unstyled">
+						<li class="tips clearfix">
+							<div class="tips-icon pull-left">
+								<span class="glyphicon icon-point"></span>
+							</div>
+							<p class="pull-left">请选择打印模板！</p>
+						</li>
+						<!--<li class="setVouType clearfix">
+								<label class="pull-left" for="" style="width: 100px;text-align: right;margin-bottom: 8px;">账簿类型：</label>
+								<div class="pull-left">
+									<select name="" class="bordered-input padding-3" id="rptStyle">
+	
+									</select>
+								</div>
+							</li>-->
+							<li class="setVouTypecy clearfix">
+								<label class="pull-left" for="" style="width: 100px;text-align: right;margin-bottom: 8px;">打印模板：</label>
+								<div class="pull-left">
+									<select name="" class="bordered-input padding-3" id="rptTemplate">
+									</select>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="u-msg-footer">
+					<div class="text-right  margin-right-30">
+						<button type="button" class="btn btn-sm btn-primary btn-save" id="btn-tableprintsave">打印</button>
+						<button type="button" class="btn btn-sm btn-default btn-qx" id="btn-tableprintqx">取消</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!--工作区 end-->
+	<!--保存查询方案 modal start-->
+	
+	<!--保存查询方案 modal end-->
+	<script src="assAnalysis.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+	<script src="../rpt/rptCommon/dm.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+</body>
+</html>

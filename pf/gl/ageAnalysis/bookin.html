@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>待摊费用登记</title>
+		<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+		<script src="../../pub/boot.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+		<style>
+		.form-horizontal .form-group .control-label {
+			width:135px;
+			text-align: right;
+			margin-right: 5px;
+		}
+		.form-horizontal .form-row{margin:0}
+		.form-horizontal .form-row .form-group{
+			width:100%;
+		}
+		</style>
+	</head>
+
+	<body>
+		<div id="coaAccEdit" class="ufma-layout-updown">
+			<div class="ufma-layout-up">
+				<form id="frmBookBfr" class="container-fluid form-horizontal" style="padding:15px 30px 0px;">
+					<div class="form-row">
+						<div class="form-group m0 p0">
+							<label class="control-label auto">余额百分比法</label>
+						</div>
+						<div class="clearfix"></div>
+					</div>
+					<div class="panel ufma-panel" style="width:540px;height:185px;margin:0;">
+						<div class="panel-heading">
+							<div class="caption" id="setYear1"></div>
+						</div>
+						<div class="panel-collapse collapse in">
+							<div class="panel-body" style="padding:16px 16px;">
+								<div class="form-row">
+									<div class="form-group" style="width:60%">
+										<label class="control-label">应收款余额：</label>
+										<div class="control-element">
+											<div id="curBal1" style="width:140px;margin-top:3px"> </div>
+										</div>
+									</div>
+									<div class="form-group" style="width:40%;margin:0">
+										<label class="control-label"  style="width:110px">计提百分比(%)：</label>
+										<div class="control-element">
+											<div id="percent1" style="width:82px;margin-top:3px"> </div>
+										</div>
+									</div>
+									<div class="clearfix"></div>
+								</div>
+								<div class="form-row">
+									<div class="form-group">
+										<label class="control-label">应计提金额：</label>
+										<div class="control-element">
+											<div  id="provisionAmt1" style="margin-top:3px"> </div>
+										</div>
+									</div>
+									<div class="clearfix"></div>
+								</div>
+								<div class="form-row">
+									<div class="form-group">
+										<label class="control-label">坏账准备余额：</label>
+										<div class="control-element">
+											<div  id="curProAmt1" style="margin-top:3px"> </div>
+										</div>
+									</div>
+									<div class="clearfix"></div>
+								</div>
+								<div class="form-row">
+									<div class="form-group">
+										<label class="control-label">补提/冲减坏账准备：</label>
+										<div class="control-element">
+											<div  id="subAmt1" style="margin-top:3px"> </div>
+										</div>
+									</div>
+									<div class="clearfix"></div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</form>
+
+				<form id="frmBookCur" class="container-fluid form-horizontal" style="padding:15px 30px 0px;">
+					<div class="form-row">
+						<div class="form-group m0 p0">
+							<label class="control-label auto">余额百分比法</label>
+						</div>
+						<div class="clearfix"></div>
+					</div>
+					<div class="panel ufma-panel" style="width:540px;height:185px;margin:0;">
+						<div class="panel-heading">
+							<div class="caption" id="setYear2"></div>
+						</div>
+						<div class="panel-collapse collapse in">
+							<div class="panel-body" style="padding:16px 16px;">
+								<div class="form-row">
+									<div class="form-group" style="width:59%">
+										<label class="control-label">应收款余额：</label>
+										<div class="control-element">
+											<div  id="curBal2" style="width:140px;margin-top:3px"> </div>
+										</div>
+									</div>
+									<div class="form-group" style="width:40%;margin:0">
+										<label class="control-label" style="width:110px">计提百分比(%)：</label>
+										<div class="control-element">
+											<input type="text" id="percent2" style="width:82px;margin-top:3px" value="100" min="0" max="100">
+										</div>
+									</div>
+									<div class="clearfix"></div>
+								</div>
+								<div class="form-row">
+									<div class="form-group">
+										<label class="control-label">应计提金额：</label>
+										<div class="control-element">
+											<div  id="provisionAmt2" style="margin-top:3px"> </div>
+										</div>
+									</div>
+									<div class="clearfix"></div>
+								</div>
+								<div class="form-row">
+									<div class="form-group">
+										<label class="control-label">坏账准备余额：</label>
+										<div class="control-element">
+											<div id="curProAmt2" style="margin-top:3px"> </div>
+										</div>
+									</div>
+									<div class="clearfix"></div>
+								</div>
+								<div class="form-row">
+									<div class="form-group">
+										<label class="control-label">补提/冲减坏账准备：</label>
+										<div class="control-element">
+											<div  id="subAmt2" style="margin-top:3px"> </div>
+										</div>
+									</div>
+									<div class="clearfix"></div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</form>
+
+			</div>
+			<div class="ufma-layout-down bordered-top">
+				<div class="text-right margin-right-30">
+					<button type="button" class="btn btn-sm btn-primary btn-permission btn-gen-vou" id="coaAccSave">生成凭证</button>
+					<button type="button" class="btn btn-sm btn-primary btn-permission btn-save" id="btnSave">保存</button>
+					<button type="button" class="btn btn-sm btn-default btn-permission btn-cancel" id="btnClose"> 取消</button>
+				</div>
+			</div>
+		</div>
+		<script src="bookin.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+	</body>
+
+</html>

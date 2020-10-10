@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>要素定义（单位级）</title>
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <script src="../../pub/boot.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+    <link rel="stylesheet" href="element.css?rev=@@hash"/>
+</head>
+<body data-code="agy" >
+<div class="container-fluid ufma-container" >
+    <!--工作区 begin-->
+    <div class="workspace">
+        <!--工作区顶部 begin-->
+        <div class="workspace-top">
+            <div class="container-fluid">
+                <div class="ufma-portlet">
+                    <div class="portlet-title">
+                        <div class="caption">
+                            <span class="caption-subject font-dark uppercase">要素定义</span>
+                        </div>
+                        <!--单位选择 begin-->
+		                <ul class='ufma-list-col clearfix padding-left-8 pull-left'>
+							<li class="ufma-list-col-item">
+								<div id='cbAgency' name="agencyCode" class="ufma-treecombox ufma-combox-agency" icon="icon-unit"  valueField="id"  textField="codeName" readOnly=false placeholder="请选择单位"></div>
+							</li>
+						</ul>
+						<!--单位选择 end-->
+                        <div class="actions">
+                            <div class="btn-group">
+                                <a id="btn-add" class="btn btn-sm btn-primary btn-permission btn-add">新增</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="">
+                        <div class="form-body">
+                            <div class="form-group label-group">
+                                <!--<div class="control-label">模块：</div>
+                                <div class="control-element">
+                                    <a name="syzt" value="-1" class="label label-radio selected">公共</a>
+                                    <a name="syzt" value="0" class="label label-radio">总账</a>
+                                    <a name="syzt" value="1" class="label label-radio">指标</a>
+                                </div>-->
+
+                                    <a name="isSystem" data-code="*" class=" selected"></a>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--工作区中部 begin-->
+        <div class="workspace-center">
+            <!--按钮组begin-->
+            <div class="container-fluid">
+                <div class="table-sub clearfix">
+                    <div class="table-sub-info pull-left">
+                        <div id="ele-count">全部档案类型共 0个</div>
+                    </div>
+                    <div class="table-sub-action pull-right">
+                        <div class="actions pull-right">
+                            <div class="btn-group margin-left-15" data-toggle="buttons">
+                                <label id="cardBtn" class="btn btn-default active">
+                                    <input type="radio" class="toggle"><span class="icon-large-ul"></span>
+                                </label>
+                                <label id="listBtn" class="btn btn-default">
+                                    <input type="radio" class="toggle"><span class="icon-navicon"></span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="row imageList" id="imageList">
+                    </div>
+                    <div class="ElementList elementList" id="dyTable">
+                    </div>
+                    <div class="anchorAuto-all" id="dyTableAuto">
+                    </div>
+                </div>
+            </div>
+            <!--工作区 end-->
+        </div>
+    </div>
+</div>
+<script src="element.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+</body>
+</html>	

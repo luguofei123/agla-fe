@@ -1,0 +1,95 @@
+/*要素类型选择*/
+.link-ele-box{position:relative;width:100%;padding-right:70px!important;}
+.link-ele-box-left{width:100%;position:relative;padding-left:70px;}
+.link-ele-box-left-l{position: absolute;left:5px;top:10px;width:60px;}
+.link-ele-box-left-r{width:100%;height:36px;overflow: hidden;}
+.link-ele-box-right{position: absolute;right:0;top:18px;height:26px;line-height:26px;width:70px;text-align: center;cursor: pointer;}
+.link-ele-box-right i{font-style: normal;color:#108EE9;}
+.link-ele-box-right span{color:#108EE9;}
+.link-ele-box-left-r button{border: none;background:none;margin:6px 0;margin-right:8px;}
+
+
+.table-discoloration table th{text-align: center;}
+.table-discoloration .mt-checkbox{padding-left:12px;}
+
+.noData{display:none;width:100%;text-align:center;padding:65px 0;border:1px solid #d9d9d9;margin-top:-1px;}
+.noData img{width:116px;}
+.noData i{display:inline-block;margin-top:10px;font-style:normal;color:#999;}
+
+.pull-right{
+    margin-top: 5px;
+}
+
+.table-sub-info{
+    overflow: hidden;
+    margin-top: 5px;
+}
+.table-sub-info .btn_box{
+    white-space:nowrap;
+    width: 100%;
+    height: 35px;
+    overflow: hidden;
+}
+.table-sub-info .btn_box div{
+    position: relative;
+    padding: 3px 15px;
+    text-align: center;
+    margin-right: 5px;
+    margin-left: 2px;
+    margin-bottom: -1px;
+    cursor: pointer;
+}
+.table-sub-info .btn_box .active{
+    border-radius: 5px 5px 0 0;
+    background-color: #fff;
+    color:#108EE9
+}
+.table-sub-info .btn_box .unactive{
+    border-radius: 5px 5px 0 0;
+    background-color: #e8e8e8;
+}
+.table-sub-info .btn_box div i{
+    position: absolute;
+    font-style: normal;
+    top: 0px;
+    right: 3px;
+}
+.btn_box{
+    transition: transform 0.5s
+}
+/*弹窗工具栏不跟随，改为自己页面显示样式*/
+.ufma-tool-bar-new .tool-bar-body {
+    /*padding: 4px;*/
+    width: 1068px;
+	position: relative;
+	border: 1px #d9d9d9 solid;
+	height: 40px;
+	padding-top: 4px;
+	margin-right: 14px;
+	moz-user-select: -moz-none;
+	-moz-user-select: none;
+	-o-user-select: none;
+	-khtml-user-select: none;
+	-webkit-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+.ufma-tool-bar-new .tool-bar-body .ufma-tool-btns {
+	display: inline-block;
+	margin-left: 9px;
+}
+
+.ufma-tool-bar-new .tool-bar-body .info {
+	display: inline-block;
+	position: absolute;
+	right: 8px;
+	top: 4px;
+	font-size: 12px;
+	color: #333333;
+	line-height: 30px;
+	word-break: keep-all;
+	/* for ie */
+	white-space: nowrap;
+	/* for chrome */
+}

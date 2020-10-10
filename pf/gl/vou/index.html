@@ -1,0 +1,934 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>凭证录入</title>
+	<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+	<script src="../../pub/boot.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+	<link rel="stylesheet" type="text/css" href="Quote/fileinput.css?rev=@@hash" />
+	<link rel="stylesheet" type="text/css" href="css/main.css?rev=@@hash" />
+	<link rel="stylesheet" type="text/css" href="css/tree.css?rev=@@hash" />
+	<link rel="stylesheet" type="text/css" href="css/Accotree.css?rev=@@hash" />
+	<link rel="stylesheet" type="text/css" href="css/pzmb.css?rev=@@hash" />
+	<link rel="stylesheet" type="text/css" href="css/attach.css?rev=@@hash" />
+	<link rel="stylesheet" type="text/css" href="css/intelligenceAccount.css?rev=@@hash" />
+	<link rel="stylesheet" type="text/css" href="css/noQuote.css?rev=@@hash" />
+</head>
+
+<body class="ufma-container" style="height:auto;padding: 0 0px 0px 0px!important;background: #fff;">
+	<div id="abstract-container"></div>
+	<div id="accounting-container" class="AccoTree"></div>
+	<div id="accounting-container-cw" class="AccoTree"></div>
+	<div id="accounting-container-ys" class="AccoTree"></div>
+	<div id="accounting-container-ys" class="AccoTree"></div>
+	<div id="AssDataAll" class="AssTree"></div>
+	<div class="voucherall">
+		<div class="voucherleft">
+			<div class="voucherlefthead">
+				<p>凭证查询</p>
+				<div class="closeleft"><img src="img/sq.png" /></div>
+			</div>
+			<div class="voucherleftdatess">
+				<span id="leftstartdate" class="uf-datepicker" style="width:120px;"></span>-
+				<span id="leftenddate" class="uf-datepicker" style="width:120px;"></span>
+			</div>
+			<div class="voucherleftsearch">
+				<input type="text" class="voucherleftsearchinp" placeholder="请输入关键词">
+				<div class="btn-searchleft"><img src="img/search.png" /></div>
+			</div>
+			<div class="voucherleftbody"></div>
+		</div>
+		<div class="voucherright">
+			<span class="rclose icon-close"></span>
+			<div class="voucherrighthead">
+				<span class="headnav active" style="margin-left: 8px;">附件</span>
+				<span class="headnav">其他</span>
+			</div>
+			<div class="voucherrightbody">
+				<div class="rightbodyPage" style="display: block;">
+					<div class="attach-step1">
+						<div class="attach-toolbar">
+							<div class="attach-toolbar-btns">
+								<button class="btn btn-primary" id="attachUploadBtn">上传</button>
+								<button class="btn btn-primary" id="attachsaomiaoBtn">拍照</button>
+								<button class="btn btn-primary" id="attachgaopaiyiBtn">扫描</button>
+							</div>
+							<div class="attach-clear"></div>
+						</div>
+						<div class="attach-show">
+							<div class="attach-noData" style="display:none;">
+								<img src="../../images/noData.png" />
+								<p>目前还没有附件，请选择上传/扫描</p>
+							</div>
+							<ul class="attach-show-list">
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div class="rightbodyPage">
+					<div class="voucher-beizhu">
+						<div class="voucher-beizhu-bt">
+							<span class="voucher-beizhu-biaoti"><span>关联单据</span></span>
+						</div>
+						<div class="voucher-beizhu-by">
+							<span class="bxd">报销单</span>
+						</div>
+					</div>
+					<div class="voucher-beizhu">
+						<div class="voucher-beizhu-bt">
+							<span class="voucher-beizhu-biaoti"><span>备注</span></span>
+							<span class="voucher-beizhu-zhankai">添加备注 <b class="icon-plus"></b></span>
+						</div>
+						<div class="voucher-beizhu-by">
+							<p class="nowu">暂无信息</p>
+							<input type="text" id="voucherbiaozhu" maxlength="120" />
+							<div class="voucher-beizhu-by-queren">确认</div>
+						</div>
+					</div>
+					<div class="voucher-history">
+						<div class="voucher-history-bt">
+							<span class="voucher-history-biaoti"><span>历史记录</span></span>
+							<span class="voucher-history-zhankai">显示全部 <b class="icon-angle-bottom"></b></span>
+						</div>
+						<div class="voucher-history-by">
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="voucherxz">
+			<p id="pzlrbt">凭证录入</p>
+			<div id='cbAgency' style="margin-right: 10px;margin-top: 5px;" class="ufma-treecombox ufma-combox-agency">
+			</div>
+			<div id='cbAcct' style="margin-top: 5px;" class="ufma-combox ufma-combox-acct"></div>
+			<!-- <div class="times"></div>
+				<div class="btn-voucher intel-acc" id="intelAcc" style="display: none;">智能记账</div> -->
+			<!-- <button type="button" id="vouHangup" class="btn btn-sm btn-default btn-hangup"
+				style="display: none;">国库单据挂接</button> -->
+			<div class="voubtnhead">
+				<div class="currbtns">
+					<div id="OtherBtn" class="" title="其他"></div>
+					<div class="icon-cash-flow xjll" title="现金流量"></div>
+					<div id="xiaocuo" class="icon-supplement" title="查看标错"></div>
+					<div id="differBtn" class="icon-Certificate" title="查看差异项"></div>
+				</div>
+				<button id="showMethodTip" class="btn btn-default voucherkjclick icon-select"></button>
+				<div class="voucherkj icon-keyboard">
+					<div class="voucherkjxs">
+						<p><span class="xg">新增</span><span class="kj">Alt+N</span></p>
+						<p><span class="xg">保存</span><span class="kj">Ctrl+S</span></p>
+						<p><span class="xg">审核</span><span class="kj">Alt+A</span></p>
+						<p><span class="xg">记账</span><span class="kj">Alt+O</span></p>
+						<p><span class="xg">标错</span><span class="kj">Ctrl+E</span></p>
+						<p><span class="xg">调用模版</span><span class="kj">Ctrl+Q</span></p>
+						<p><span class="xg">上一行</span><span class="kj">shift+↑</span></p>
+						<p><span class="xg">下一行</span><span class="kj">shift+↓</span></p>
+						<p><span class="xg">上一个输入框</span><span class="kj">shift+←</span></p>
+						<p><span class="xg">下一个输入框</span><span class="kj">shift+→</span></p>
+						<p><span class="xg">搜索上一条</span><span class="kj">shift+PgUp</span></p>
+						<p><span class="xg">搜索下一条</span><span class="kj">shift+PgDn</span></p>
+						<p><span class="xg">切换焦点</span><span class="kj">Enter</span></p>
+						<p><span class="xg">切换借贷方</span><span class="kj">Space</span></p>
+						<p><span class="xg">分录行复制</span><span class="kj">Alt+C</span></p>
+						<p><span class="xg">分录行粘贴</span><span class="kj">Alt+V</span></p>
+						<p><span class="xg">保存并新增</span><span class="kj">Alt+S</span></p>
+						<p><span class="xg">保存为模版</span><span class="kj">Shift+S</span></p>
+						<p><span class="xg">上一张凭证</span><span class="kj">PgUp</span></p>
+						<p><span class="xg">下一张凭证</span><span class="kj">PgDn</span></p>
+						<!-- <p><span class="xg">第一张凭证</span><span class="kj">Alt+PgUp</span></p> -->
+						<p><span class="xg">关闭辅助项框</span><span class="kj">ESC</span></p>
+						<p><span class="xg">自动借贷平衡</span><span class="kj">=</span></p>
+						<p><span class="xg">凭证全称显示</span><span class="kj">f8</span></p>
+						<!-- <p style="width: 100%;"><span class="xg">最后一张凭证</span><span class="kj">Alt+PgDn</span></p> -->
+					</div>
+				</div>
+				<div class="voucherkjclickxs" id="rptPlanList">
+					<div class="voucherjcjt"></div>
+					<p id="vouislrud" class="vouisdouble zys" style="width: 100%;">
+						<span>凭证模式</span>
+						<span class="kj">
+							<label class="mt-radio">
+								<input type="radio" name="vouisdoublesingless"
+									id="vouisdoublesingles" />&nbsp;<span></span>
+							</label>上下平铺
+						</span>
+						<span class="kj">
+							<label class="mt-radio">
+								<input type="radio" name="vouisdoublesingless" id="vouisdoublesingle"
+									checked="true" />&nbsp;<span></span>
+							</label>左右平铺
+						</span>
+					</p>
+					<p id="vouisfullname" style="width: 100%;">
+						<span>显示全称</span>
+						<span class="kj">
+							<label class="mt-radio">
+								<input type="radio" name="vouisfullnamesingle"
+									id="vouisfullnamesingles" />&nbsp;<span></span>
+							</label>否
+						</span>
+						<span class="kj">
+							<label class="mt-radio">
+								<input type="radio" name="vouisfullnamesingle" id="vouisfullnamesingle"
+									checked="true" />&nbsp;<span></span>
+							</label>是
+						</span>
+					</p>
+					<p id="vouisfullname" style="width: 100%;">
+						<span>搜索选项</span>
+						<span class="kj">
+							<label class="mt-radio">
+								<input type="radio" name="vouisvaguesearch" id="vouisvaguesearchs" />&nbsp;<span></span>
+							</label>模糊匹配
+						</span>
+						<span class="kj">
+							<label class="mt-radio">
+								<input type="radio" name="vouisvaguesearch" id="vouisvaguesearch"
+									checked="true" />&nbsp;<span></span>
+							</label>头部匹配
+						</span>
+					</p>
+					<p id="vouiscopyprevAssdiv" style="width: 100%;">
+						<span>带入上行辅助分录</span>
+						<span class="kj">
+							<label class="mt-radio">
+								<input type="radio" name="vouiscopyprevAss" id="vouiscopyprevAsss" />&nbsp;<span></span>
+							</label>否
+						</span>
+						<span class="kj">
+							<label class="mt-radio">
+								<input type="radio" name="vouiscopyprevAss" id="vouiscopyprevAss"
+									checked="true" />&nbsp;<span></span>
+							</label>是
+						</span>
+					</p>
+					<p id="vouisaddDate" style="width: 100%;">
+						<span>带入上张凭证日期</span>
+						<span class="kj">
+							<label class="mt-radio">
+								<input type="radio" name="vouisaddDate" id="vouisaddDaten" />&nbsp;<span></span>
+							</label>否
+						</span>
+						<span class="kj">
+							<label class="mt-radio">
+								<input type="radio" name="vouisaddDate" id="vouisaddDatey"
+									checked="true" />&nbsp;<span></span>
+							</label>是
+						</span>
+					</p>
+					<p id="defalultOpens" style="width: 100%;">
+						<span>下拉模式</span>
+						<span class="kj">
+							<label class="mt-radio">
+								<input type="radio" name="defalultOpen" id="defalultOpenNo" />&nbsp;<span></span>
+							</label>默认收起
+						</span>
+						<span class="kj">
+							<label class="mt-radio">
+								<input type="radio" name="defalultOpen" id="defalultOpen"
+									checked="true" />&nbsp;<span></span>
+							</label>默认展开
+						</span>
+					</p>
+					<p id="ysorcws" style="width: 100%;">
+						<span>同步财务会计摘要</span>
+						<span class="kj">
+							<label class="mt-radio">
+								<input type="radio" name="ysorcw" id="ysorcw" />&nbsp;<span></span>
+							</label>否
+						</span>
+						<span class="kj">
+							<label class="mt-radio">
+								<input type="radio" name="ysorcw" id="ysorcwNo" checked="true" />&nbsp;<span></span>
+							</label>是
+						</span>
+					</p>
+					<p id="addindex" style="width: 100%;">
+						<span>新增凭证光标位置</span>
+						<span class="kj">
+							<label class="mt-radio">
+								<input type="radio" name="addindexzy" id="addindexzy" />&nbsp;<span></span>
+							</label>摘要
+						</span>
+						<span class="kj">
+							<label class="mt-radio">
+								<input type="radio" name="addindexzy" id="addindexfj"
+									checked="true" />&nbsp;<span></span>
+							</label>附件
+						</span>
+					</p>
+					<p id="iszysingleinsertYN" style="width: 100%;">
+						<span>分录行单独插入</span>
+						<span class="kj">
+							<label class="mt-radio">
+								<input type="radio" name="iszysingleinsert" id="iszysingleinsertN" checked="true" />&nbsp;<span></span>
+							</label>否
+						</span>
+						<span class="kj">
+							<label class="mt-radio">
+								<input type="radio" name="iszysingleinsert" id="iszysingleinsertY" />&nbsp;<span></span>
+							</label>是
+						</span>
+					</p>
+					<p id="iszysingleinsertYN" style="width: 100%;">
+						<span>自动找平分录行金额</span>
+						<span class="kj">
+							<label class="mt-radio">
+								<input type="radio" name="etcAmt" id="etcAmtN" />&nbsp;<span></span>
+							</label>否
+						</span>
+						<span class="kj">
+							<label class="mt-radio">
+								<input type="radio" name="etcAmt" id="etcAmtY"  checked="true"/>&nbsp;<span></span>
+							</label>是
+						</span>
+					</p>
+					<p id="iszysingleinsertYN" style="width: 100%;">
+						<span>汇总编辑模式</span>
+						<span class="kj">
+							<label class="mt-radio">
+								<input type="radio" name="isSummaryVou" id="isSummaryVouN" checked="true" />&nbsp;<span></span>
+							</label>否
+						</span>
+						<span class="kj">
+							<label class="mt-radio">
+								<input type="radio" name="isSummaryVou" id="isSummaryVouY" />&nbsp;<span></span>
+							</label>是
+						</span>
+					</p>
+				</div>
+				<div class="voucherqh">
+					<!-- <div class="btn-onevoucher  icon-fast-backward" title="首张"></div> -->
+					<div class="btn-prevvoucher icon-angle-left " title="上一张"></div>
+					<div class="btn-nextvoucher icon-angle-right " title="下一张"></div>
+					<!-- <div class="btn-lastvoucher  icon-fast-forward" title="末张"></div> -->
+				</div>
+				<div class="voucherbtn">
+				</div>
+			</div>
+		</div>
+		<div id="vouaccSearchs" style="display:none;">
+			<input type="text" class="vouaccSearchsinps" placeholder="请输入关键词">
+			<ul class="searchvvoukecha">
+				<li class="kechali active" data-type="despct"><span class="code" data-code="">摘要</span><span
+						class="name"></span></li>
+				<li class="kechali" data-type="acco"><span class="code" data-code="">会计科目</span><span
+						class="name"></span></li>
+			</ul>
+			<div class="btn-vouaccSearchs" style="display: none;"><img src="img/search.png" /></div>
+			<div class="btn-vouaccSearchsclose icon-close"></div>
+		</div>
+		<div class="btn-showleft icon-search"></div>
+		<div class="voucherhe">
+			<p class="voutitle">记账凭证</p>
+			<div id="pzzhuantaidiv">
+				<div id="pzzhuantai"></div>
+				<div id="pzzhuantaiC">未挂接</div>
+			</div>
+			<span class="iswriteoff"></span>
+			<div id="leftbg">
+				<span class="leftpzz">凭证字：</span>
+				<select name="" id="leftbgselect">
+				</select>
+				<input type="text" name="" id="sppz" value="*" />
+				<span class="leftpzh">号</span>
+			</div>
+			<div id="bg">
+				<span class="bgda">日期：</span>
+				<span class="datesno"></span>
+				<span id="dates" class="uf-datepicker" style="width:120px;"></span>
+			</div>
+			<div id="rightbg">
+				<span class="fjd">附单据</span>
+				<input type="text" name="" id="fjd" value="" />
+				<span class="fjdz">张</span>
+			</div>
+			<!-- <div class="btn-bgfj icon-paperclip">
+			</div> -->
+			<span class="vouSource">手工录入</span>
+		</div>
+		<div class="voucher">
+			<div class="voucher-head">
+				<div class="abstracthead">摘要</div>
+				<div class="accountinghead">会计科目</div>
+				<div class="fhead jf">
+					<p>借方金额</p>
+					<div class="moneydw">
+						<span class="blues">十</span>
+						<span>亿</span>
+						<span>千</span>
+						<span class="blues">百</span>
+						<span>十</span>
+						<span>万</span>
+						<span class="blues">千</span>
+						<span>百</span>
+						<span>十</span>
+						<span class="reds">元</span>
+						<span>角</span>
+						<span class="last">分</span>
+					</div>
+				</div>
+				<div class="fhead df">
+					<p>贷方金额</p>
+					<div class="moneydw">
+						<span class="blues">十</span>
+						<span>亿</span>
+						<span>千</span>
+						<span class="blues">百</span>
+						<span>十</span>
+						<span>万</span>
+						<span class="blues">千</span>
+						<span>百</span>
+						<span>十</span>
+						<span class="reds">元</span>
+						<span>角</span>
+						<span class="last">分</span>
+					</div>
+				</div>
+			</div>
+			<div class="voucher-body voucher-center">
+				<div class="voucherjias">
+					<a href="javascript:" class="voucherjia"></a>
+				</div>
+				<div class="abstract">
+					<textarea class="abstractinp"></textarea>
+					<!--<input type="text"  />-->
+					<ul class="abstractinps">
+					</ul>
+				</div>
+				<div class="accounting">
+					<input type="text" class="accountinginp" />
+					<ul class="accountinginps">
+					</ul>
+					<span class="accountingye">余额:200</span>
+					<span class="accountingmx">明细账</span>
+					<div class="fuyan"><span>辅</span></div>
+				</div>
+				<div class="money-jd moneyj">
+					<input type="text" class="money-sr" />
+					<div class="money-xs"></div>
+					<div class="money-xsbg"></div>
+				</div>
+				<div class="money-jd moneyd">
+					<input type="text" class="money-sr" />
+					<div class="money-xs"></div>
+					<div class="money-xsbg"></div>
+				</div>
+				<div class="voucherjians">
+					<a href="javascript:" class="voucherjian"></a>
+				</div>
+			</div>
+			<div class="voucher-body voucher-center">
+				<div class="voucherjias">
+					<a href="javascript:" class="voucherjia"></a>
+				</div>
+				<div class="abstract">
+					<textarea class="abstractinp"></textarea>
+					<!--<input type="text"  />-->
+					<ul class="abstractinps">
+					</ul>
+				</div>
+				<div class="accounting">
+					<input type="text" class="accountinginp" />
+					<ul class="accountinginps">
+					</ul>
+					<span class="accountingye">余额:200</span>
+					<span class="accountingmx">明细账</span>
+					<div class="fuyan"><span>辅</span></div>
+				</div>
+				<div class="money-jd moneyj">
+					<input type="text" class="money-sr" />
+					<div class="money-xs"></div>
+					<div class="money-xsbg"></div>
+				</div>
+				<div class="money-jd moneyd">
+					<input type="text" class="money-sr" />
+					<div class="money-xs"></div>
+					<div class="money-xsbg"></div>
+				</div>
+				<div class="voucherjians">
+					<a href="javascript:" class="voucherjian"></a>
+				</div>
+			</div>
+			<div class="voucher-body voucher-center">
+				<div class="voucherjias">
+					<a href="javascript:" class="voucherjia"></a>
+				</div>
+				<div class="abstract">
+					<textarea class="abstractinp"></textarea>
+					<!--<input type="text"  />-->
+					<ul class="abstractinps">
+					</ul>
+				</div>
+				<div class="accounting">
+					<input type="text" class="accountinginp" />
+					<ul class="accountinginps">
+					</ul>
+					<span class="accountingye">余额:200</span>
+					<span class="accountingmx">明细账</span>
+					<div class="fuyan"><span>辅</span></div>
+				</div>
+				<div class="money-jd moneyj">
+					<input type="text" class="money-sr" />
+					<div class="money-xs"></div>
+					<div class="money-xsbg"></div>
+				</div>
+				<div class="money-jd moneyd">
+					<input type="text" class="money-sr" />
+					<div class="money-xs"></div>
+					<div class="money-xsbg"></div>
+				</div>
+				<div class="voucherjians">
+					<a href="javascript:" class="voucherjian"></a>
+				</div>
+			</div>
+			<div class="voucher-body voucher-center">
+				<div class="voucherjias">
+					<a href="javascript:" class="voucherjia"></a>
+				</div>
+				<div class="abstract">
+					<textarea class="abstractinp"></textarea>
+					<!--<input type="text"  />-->
+					<ul class="abstractinps">
+					</ul>
+				</div>
+				<div class="accounting">
+					<input type="text" class="accountinginp" />
+					<ul class="accountinginps">
+					</ul>
+					<span class="accountingye">余额:200</span>
+					<span class="accountingmx">明细账</span>
+					<div class="fuyan"><span>辅</span></div>
+				</div>
+				<div class="money-jd moneyj">
+					<input type="text" class="money-sr" />
+					<div class="money-xs"></div>
+					<div class="money-xsbg"></div>
+				</div>
+				<div class="money-jd moneyd">
+					<input type="text" class="money-sr" />
+					<div class="money-xs"></div>
+					<div class="money-xsbg"></div>
+				</div>
+				<div class="voucherjians">
+					<a href="javascript:" class="voucherjian"></a>
+				</div>
+			</div>
+			<div class="voucher-body voucher-footer">
+				<div class="heji">合计</div>
+				<div class="money-jd moneyj">
+					<div class="money-xs"></div>
+					<div class="money-xsbg"></div>
+				</div>
+				<div class="money-jd moneyd">
+
+					<div class="money-xs"></div>
+					<div class="money-xsbg"></div>
+				</div>
+			</div>
+		</div>
+		<div class="voucherfo">
+			<span class="vfjz">记账人：<span></span></span>
+			<span class="vfsh">审核人：<span></span></span>
+			<span class="vfzd">制单人：<span></span></span>
+		</div>
+		<div class="voucherfozy">
+			<span class="vfjz">记账人：<span></span></span>
+			<span class="vfsh">审核人：<span></span></span>
+			<span class="vfzd">制单人：<span></span></span>
+		</div>
+		<div class="chaiwu xuanzhongcy">财务会计</div>
+		<div class="yusuan">预算会计</div>
+	</div>
+	<div class="addtroracca">
+		<span class="tip">
+			<span></span>
+		</span>
+		<p class="addtroraccaCw">财务</p>
+		<p class="addtroraccaYs">预算</p>
+	</div>
+	<div class="voucherbtnModal">
+	</div>
+	<div class="errtextdiv">
+		<textarea id="errtext" placeholder="请输入错误信息"></textarea>
+	</div>
+	<div class="despctsearchModal">
+		<span class="tip">
+			<span></span>
+		</span>
+		<div class="title">摘要替换</div>
+		<div class="titlebody">
+			<label class="mt-radio">
+				<input type="radio" name="searchdespcradio" class="searchdespc searchnowcw" />财务会计<span></span>
+			</label>
+			<label class="mt-radio hide">
+				<input type="radio" name="searchdespcradio" class="searchdespc searchnowys" />预算会计<span></span>
+			</label>
+			<label class="mt-radio">
+				<input type="radio" name="searchdespcradio" class="searchdespc searchall" />全部<span></span>
+			</label>
+			<span class="icon-close"></span>
+		</div>
+		<div class="searchbody">
+			<div class="form-row" style="margin-bottom: 0">
+				<div class="form-group " style="width:100%;">
+					<label class="control-label em6">查找内容：</label>
+					<div class="control-element" style="display: inline-block;">
+						<input type="text" id="serarchdespcinput" class="form-control" autocomplete="off">
+						<button class="btn btn-sm btn-default btn-searchdespc">查找</button>
+					</div>
+				</div>
+				<div class="form-group " style="width:100%;">
+					<label class="control-label em6">替换为：</label>
+					<div class="control-element" style="display: inline-block;">
+						<input type="text" id="replacedespcinput" class="form-control" autocomplete="off">
+						<button class="btn btn-sm btn-default btn-replacedespc">替换</button>
+						<button class="btn btn-sm btn-default btn-replacedespcAll">全部替换</button>
+					</div>
+				</div>
+				<div style="clear: both;"></div>
+			</div>
+		</div>
+	</div>
+
+
+	<div id="pingzengjiucuo" style="margin:20px auto;display: none;position: relative;"></div>
+	<div class="biaocuo" style="display: none;">
+		<div class="bcbc">保存标错</div>
+		<div class="quxiao">取消标错</div>
+	</div>
+	<div class="biaocuos" style="display: none;">
+		<div class="bcbc">保存标错</div>
+		<div class="closeerr">关闭标错信息</div>
+	</div>
+	<div id="zezhao">
+		<div class="yu">正在请求数据中，请稍等</div>
+	</div>
+	<div class="intel-acc-modal modal fade" id="intelAccModal" tabindex="-1" role="dialog"
+		aria-labelledby="intelAccModalLabel" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+						&times;
+					</button>
+					<div class="pull-left scan-box">
+						<img id="scan" class="intel-scan" src="./img/scan.png" alt="" style="display: none;">
+						<p style="display: none;">扫描中...</p>
+					</div>
+					<div class="scan-box">
+						<img id='scaner' style="width: 100px;height: 100px;" class="intel-scan" src='' alt="">
+					</div>
+					<div class="scan-box" style="display: none;">
+						<span>报销人：</span>
+						<!--<div class="ufma-combox ufma-combox-acct border" style="width: 200px !important;"></div>-->
+						<select id='intelAccModalone' class="scanselect" style="width: 150px;">
+							<option value="1">23123</option>
+						</select>
+					</div>
+					<div class="scan-box">
+						<span style="font-weight: bold;">费用部门：</span>
+						<!--<div id='' class="ufma-combox ufma-combox-acct border" style="width: 200px !important;"></div>-->
+						<select id='intelAccModaltwo' class="scanselect" style="width: 150px;">
+							<option value="001">财务部门</option>
+						</select>
+					</div>
+					<div class="scan-box">
+						<span style="font-weight: bold;">项目：</span>
+						<!--<div id='' class="ufma-combox ufma-combox-acct border" style="width: 200px !important;"></div>-->
+						<select id='intelAccModalthree' class="scanselect">
+							<option value="1002003">基于三维实景和精密GIS技术的道路全资产管理解决方案研究</option>
+							<option value="1002001">智慧公路建设关键技术研究</option>
+						</select>
+					</div>
+					<div class="scan-box">
+						<span style="font-weight: bold;">费用类型：</span>
+						<!--<div id='' class="ufma-combox ufma-combox-acct border" style="width: 200px !important;"></div>-->
+						<select id='intelAccModalfour' class="scanselect" style="width: 130px;">
+							<option value="30211">国内差旅费</option>
+							<option value="30216">培训费</option>
+						</select>
+					</div>
+				</div>
+				<div class="modal-body clearfix">
+					<div class="tickets-list pull-left">
+						<ul style="overflow: auto;height: 576px;" id="intelaccul">
+
+						</ul>
+					</div>
+					<div class="ticket-des pull-left">
+						<div class="bill-img">
+							<img src="./img/bill.jpg" alt="暂无图片" id="bigintell">
+						</div>
+						<div class="certificate">
+							<table id="intelltable" border="1" width="100%">
+								<tr>
+									<th>会计体系</th>
+									<th>摘要</th>
+									<th>科目</th>
+									<th>借方金额</th>
+									<th>贷方金额</th>
+									<th>辅助核算</th>
+								</tr>
+								<tr>
+									<td>Data</td>
+									<td>Data</td>
+									<td>Data</td>
+									<td>Data</td>
+									<td>Data</td>
+									<td>Data</td>
+								</tr>
+							</table>
+						</div>
+					</div>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">
+						取消
+					</button>
+					<button type="button" class="btn btn-primary" id="intelaccqued">
+						确定
+					</button>
+					<button type="button" class="btn btn-primary" id="intelaccupsta">
+						刷新
+					</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div id="vouaccRelation" class="ufma-modal">
+		<div class="u-msg-title">
+			<h4>选择关联科目</h4>
+		</div>
+		<div class="u-msg-content">
+			<div class="container-fluid margin-left-15 margin-right-15" style="height: 250px;">
+				<ul class="list-unstyled">
+					<!--提示 begin-->
+					<li class="tips clearfix">
+						<div class="tips-icon pull-left">
+							<span class="glyphicon icon-point"></span>
+						</div>
+						<p class="pull-left">请选择需要关联的科目！</p>
+						<div class="pull-right">
+							<input type="text" id="accResearch" placeholder="请输入要搜索的关键词">
+							<button class="btn btn-default btn-sm btn-search" id="accReserbtn"
+								style="float:right;width:16px;">
+								<i class="glyphicon icon-search"></i>
+							</button>
+						</div>
+					</li>
+					<!--提示 end-->
+
+					<!--凭证类型 begin-->
+					<li class="setVouType clearfix">
+						<div style="height: 200px;overflow: auto;">
+							<table id="vouaccRelationtable" width="100%" class="ufma-table dataTable bordered">
+								<thead>
+									<tr>
+										<th style="width:35px;">
+											<label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
+												<input type="checkbox" class="checkalls">&nbsp;<span></span>
+											</label>
+										</th>
+										<th>会计科目</th>
+									</tr>
+								</thead>
+								<tbody>
+								</tbody>
+							</table>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div class="u-msg-footer">
+			<div class="text-right">
+				<button type="button" class="btn btn-sm btn-primary btn-save" id="btn-Relationsave">保存</button>
+				<button type="button" class="btn btn-sm btn-default btn-qx" id="btn-Relationqx">取消</button>
+			</div>
+		</div>
+	</div>
+	<div id="voufzhsRelation" class="ufma-modal">
+		<div class="u-msg-title">
+			<h4>选择关联关系</h4>
+		</div>
+		<div class="u-msg-content">
+			<div class="container-fluid margin-left-15 margin-right-15">
+				<ul class="list-unstyled">
+					<!--提示 begin-->
+					<li class="tips clearfix">
+						<div class="tips-icon pull-left">
+							<span class="glyphicon icon-point"></span>
+						</div>
+						<p class="pull-left">请选择需要使用的关联关系！</p>
+						<div class="pull-right">
+							<input type="text" id="fzhsResearch" placeholder="请输入要搜索的关键词">
+							<button class="btn btn-default btn-sm btn-search" id="fzhsReserbtn"
+								style="float:right;width:16px;">
+								<i class="glyphicon icon-search"></i>
+							</button>
+						</div>
+					</li>
+					<!--提示 end-->
+
+					<!--凭证类型 begin-->
+					<li class="setVouType clearfix">
+						<div style="height: 200px;overflow: auto;">
+							<table id="voufzhsRelationtable" style="min-width:100%;width: auto;"
+								class="ufma-table dataTable bordered">
+								<thead>
+									<tr>
+										<th style="width:35px;">
+											<label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
+												<input type="checkbox" class="checkalls">&nbsp;<span></span>
+											</label>
+										</th>
+										<th>对应科目</th>
+									</tr>
+								</thead>
+								<tbody>
+								</tbody>
+							</table>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div class="u-msg-footer">
+			<div class="text-right">
+				<button type="button" class="btn btn-sm btn-primary btn-save" id="btn-Relationsavefz">确定</button>
+				<button type="button" class="btn btn-sm btn-default btn-qx" id="btn-Relationqxfz">取消</button>
+			</div>
+		</div>
+	</div>
+	<div id="vouaccBalRelation" class="ufma-modal">
+		<div class="u-msg-title">
+			<h4>余额查询</h4>
+		</div>
+		<div class="u-msg-content">
+			<div class="container-fluid margin-left-15 margin-right-15" style="margin-top: -12px;">
+				<ul class="list-unstyled">
+					<li class="setVouType clearfix searchAss" style="margin-bottom: 8px;padding-right: 80px;">
+					</li>
+					<li class="setVouType clearfix">
+						<div class="vouaccBalRelationtitle">
+							<p>科目:</p>
+						</div>
+						<p style="margin: 8px 0px 0px;font-weight: bold;">科目及辅助余额</p>
+						<div>
+							<table id="vouaccBaltab" style="min-width:100%;width: auto;border:1px solid #dddddd;"
+								class="ufma-table dataTable table-bordered">
+								<thead>
+									<tr>
+										<th>期初余额</th>
+										<th>本期借方</th>
+										<th>本期贷方</th>
+										<th>余额</th>
+									</tr>
+								</thead>
+								<tbody>
+								</tbody>
+							</table>
+						</div>
+						<label class="mt-checkbox mt-checkbox-outline">
+							<input type="checkbox" checked="" id="IS_INCLUDE_UNPOST">包含未记账凭证<span></span>
+						</label>
+						<a  class="vouaccBalRelationhref" style="margin-left: 24px;">联查余额表</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<div id="voumodalnamemodal" class="ufma-modal">
+		<div class="u-msg-title">
+			<h4>模板信息</h4>
+		</div>
+		<div class="u-msg-content">
+			<div class="container-fluid margin-left-15 margin-right-15">
+				<ul class="list-unstyled">
+					<!--凭证类型 begin-->
+					<li class="setVouType clearfix" style="margin-bottom: 20px;">
+						<label class="pull-left" for=""
+							style="width: 100px;text-align: right;margin-bottom: 8px;">模板分组：</label>
+						<div class="pull-left">
+							<div id="voumodallink" class="uf-treecombox ufma-combox" style="width:500px"></div>
+						</div>
+					</li>
+					<li class="setVouType clearfix" style="margin-bottom: 20px;">
+						<label class="pull-left" for=""
+							style="width: 100px;text-align: right;margin-bottom: 8px;">模板名称：</label>
+						<div class="pull-left">
+							<input type="text" class="form-control" style="width:500px" name="" id="voumodalname">
+						</div>
+					</li>
+					<li class="setVouType clearfix">
+						<label class="pull-left" for=""
+							style="width: 100px;text-align: right;margin-bottom: 8px;">模板描述：</label>
+						<div class="pull-left">
+							<input type="text" class="form-control" style="width:500px" name="" id="voumodalnamesel">
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div class="u-msg-footer">
+			<div class="text-right">
+				<button type="button" class="btn btn-sm btn-default btn-qx" id="btn-voumodalnamemodalsave">确认</button>
+				<button type="button" class="btn btn-sm btn-default btn-qx" id="btn-voumodalnamemodaldel">关闭</button>
+			</div>
+		</div>
+	</div>
+</body>
+<!--凭证自己的插件-->
+<script src="Quote/jquery.webcam.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+<script src="Quote/html2canvas.js?rev=@@hash" type="text/javascript" charset="UTF-8"></script>
+<script type="text/javascript">
+	document.write('<script src="' + bootPath + 'agla-trd/fileinput/fileinput.js" type="text/javascript"></sc' + 'ript>');
+	document.write('<script src="' + bootPath + 'agla-trd/fileinput/zh.js" type="text/javascript"></sc' + 'ript>');
+	document.write('<script src="' + bootPath + 'agla-trd/html2canvas/jcanvas.js" type="text/javascript"></sc' + 'ript>');
+	document.write('<script src="' + bootPath + 'agla-trd/html2canvas/canvas2image.js" type="text/javascript"></sc' + 'ript>');
+	document.write('<script src="' + bootPath + 'agla-trd/html2canvas/base64.js" type="text/javascript"></sc' + 'ript>');
+</script>
+<!--使用较多且多改动的公共方法-->
+<script type="text/javascript" charset="utf-8" src="js/PublicComponent.js?rev=@@hash"></script>
+<!--修改配置页面使用的内容-->
+<script type="text/javascript" charset="utf-8" src="js/PageContent.js?rev=@@hash"></script>
+<!--页面初始化-->
+<script type="text/javascript" charset="utf-8" src="js/pingjiequanju.js?rev=@@hash"></script>
+<!--较少使用的公共方法&全局的事件配置-->
+<script type="text/javascript" charset="utf-8" src="js/we.js?rev=@@hash"></script>
+<!--摘要-->
+<script type="text/javascript" charset="utf-8" src="js/voucher1.js?rev=@@hash"></script>
+<!--会计科目-->
+<script type="text/javascript" charset="utf-8" src="js/voucher2.js?rev=@@hash"></script>
+<!--借贷方金额-->
+<script type="text/javascript" charset="utf-8" src="js/voucher3.js?rev=@@hash"></script>
+<!--辅助核算项-->
+<script type="text/javascript" charset="utf-8" src="js/voucher4.js?rev=@@hash"></script>
+<script type="text/javascript" charset="utf-8" src="js/fzhsxl.js?rev=@@hash"></script>
+<!--左边搜索凭证列表列表-->
+<script type="text/javascript" charset="utf-8" src="js/voucherleft.js?rev=@@hash"></script>
+<!--凭证表头-->
+<script type="text/javascript" charset="utf-8" src="js/headorfoot.js?rev=@@hash"></script>
+<!--标错-->
+<script type="text/javascript" charset="utf-8" src="js/biaocuo.js?rev=@@hash"></script>
+<!--模板-->
+<script type="text/javascript" charset="utf-8" src="js/moban.js?rev=@@hash"></script>
+<!--国库挂接-->
+<script type="text/javascript" charset="utf-8" src="js/vouHangup.js?rev=@@hash"></script>
+<!--按钮方法-->
+<script type="text/javascript" charset="utf-8" src="js/kaishi.js?rev=@@hash"></script>
+<!--快捷键-->
+<script type="text/javascript" charset="utf-8" src="js/kuaijiejian.js?rev=@@hash"></script>
+<!--冲红-->
+<script type="text/javascript" charset="utf-8" src="js/conghong.js?rev=@@hash"></script>
+<!--附件-->
+<script type="text/javascript" charset="utf-8" src="js/attach.js?rev=@@hash"></script>
+<!--其他页面跳转的处理-->
+<script type="text/javascript" charset="utf-8" src="js/pzxcx.js?rev=@@hash"></script>
+<!--扫描生成凭证-->
+<script type="text/javascript" charset="utf-8" src="Quote/intelAcc.js?rev=@@hash"></script>
+
+</html>

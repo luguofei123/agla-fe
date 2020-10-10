@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>入账设置-预收账款</title>
+		<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+		<script src="../../../pub/boot.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+		<style>
+		.uf-buttonedit{width:395px}
+		.uf-buttonedit .uf-buttonedit-input{width:100%}
+		</style>
+	</head>
+
+	<body>
+		<div id="coaAccEdit" class="ufma-layout-updown">
+			<div class="ufma-layout-up">
+				<form id="frmBookBfr" class="container-fluid form-horizontal" style="padding:15px 30px 0px;">
+					<div class="form-row">
+						<div class="form-group m0 p0">
+							<label class="control-label">登记业务凭证模板：</label>
+                            <div class="uf-buttonedit" typeCode="01" id="dj" autocomplete="on" placeholder=""> </div> 
+						</div>
+						<div class="clearfix"></div>
+                    </div>
+                    <div class="form-row">
+						<div class="form-group m0 p0">
+							<label class="control-label">核销业务凭证模板：</label>
+                            <div class="uf-buttonedit" typeCode="07" id="hx" autocomplete="on" placeholder=""> </div> 
+						</div>
+						<div class="clearfix"></div>
+                    </div>
+
+				</form>
+
+			</div>
+			<div class="ufma-layout-down bordered-top">
+				<div class="text-right margin-right-30">
+					<button type="button" class="btn btn-sm btn-primary btn-save state-edit btn-ajax" id="btnSave">确定</button>
+					<button type="button" class="btn btn-sm btn-default" id="btnClose"> 取消</button>
+				</div>
+			</div>
+		</div>
+		<script src="preNotice.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+	</body>
+
+</html>

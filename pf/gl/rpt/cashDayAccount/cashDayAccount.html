@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>待摊费用登记簿</title>
+		<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+
+		<script src="../../../pub/boot.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<style>
+.form-row{
+    display: inline-block;
+}
+.datatable-toolbar{
+    display: inline-block;
+}
+.dt-buttons{
+	    float: none !important;
+}
+thead{
+    border: 1px solid #ccc;
+}
+thead th{
+    border: 1px solid #ccc;
+    text-align: center;
+
+}
+	</style>
+	<body>
+		<div class="container-fluid ufma-container">
+			<!--工作区 begin-->
+			<div class="workspace">
+				<!--工作区顶部 begin-->
+				<div class="workspace-top">
+					<div class="container-fluid">
+						<div class="ufma-portlet">
+							<div class="portlet-title">
+								<div class="caption">
+									<span class="caption-subject font-dark uppercase">现金日记账</span>
+								</div>
+								<!--单位&账套选择 begin-->
+								<div class="inline-block absolute margin-left-15 margin-top-8">
+									<ul class='ufma-list-col clearfix padding-left-8'>
+										<li class="ufma-list-col-item">
+											<div id='cbAgency' name="agencyCode" class="uf-treecombox ufma-combox-agency"></div>
+										</li>
+										<li class="ufma-list-col-item">
+											<div id='cbAcct' class="uf-combox ufma-combox-acct"></div>
+										</li>
+									</ul>
+								</div>
+								<!--单位&账套选择 end-->
+								<!--<div class="actions">
+									<div class="btn-group">
+										<button id="btnAdd" type="button" class="btn btn-sm btn-primary btn-permission">登记</button>
+									</div>
+								</div>-->
+							</div>
+
+							<!--查询条件-->
+							<div class="portlet-body bordered pr">
+								<!--按钮-->
+								<div class="btn-group" style="position: absolute;right:15px;top:15px;">
+									<button id="btnQuery" type="button" class="btn btn-sm btn-primary btn-permission">查询</button>
+								</div>
+								<form id="frmQuery" class="form-horizontal" style=" display: inline-block;">
+									<div class="form-row">
+										<div class="form-group">
+											<label class="control-label auto" style="margin-left:58px;">期间：</label>
+											<div class="control-element pr10" style="padding-top:3px;">
+												<a name="period" id="dateBn" class="label label-radio selected">本年</a>
+												<a name="period" id="dateBq" class="label label-radio">本期</a>
+											</div>
+											<div class="control-element" style="width:120px;">
+												<div id="dateStart" name="dateStart" class="uf-datepicker" style="width:120px;"></div>
+											</div>
+											<span class="split">-</span>
+											<div class="control-element">
+												<div id="dateEnd" name="dateEnd" class="uf-datepicker" style="width:120px;"></div>
+											</div>
+										</div>
+										<div class="clearfix"></div>
+									</div>
+
+								</form>
+								<div class="form-row ">
+									<div class="rpt-query-li-action">
+										<input type="hidden" value="-1">
+										<lable>是否回单：</lable>
+
+										<label class="mt-radio mt-radio-outline"><input type="radio" class="" name="treeShow1" value="全部" checked>全部<span></span></label>
+										<label class="mt-radio mt-radio-outline"><input type="radio" class="" name="treeShow1" value="是">是<span></span></label>
+										<label class="mt-radio mt-radio-outline"><input type="radio"  class="radioSelected" name="treeShow1" value="否">否<span></span></label>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!--工作区中部 begin-->
+				<div class="workspace-center">
+					<div class="rpt-box rpt-table-box pr" style="    height: 30px;">
+						<!--<div class="rpt-table-title">
+							现金日记账
+						</div>-->
+						<div id="dtToolbar" class="btn-group" style=" position: absolute;right: 68px; bottom: 3px;">
+							<div class="iframeBtnsSearch" >
+								<input type="text" class="searchHide focusOff bordered" placeholder="请输入要搜索的关键词">
+								<button class="btn btn-default btn-sm btn-search btn-permission" id="searchHideBtn"><span class='glyphicon icon-search'></span></button>
+							</div>
+						</div>
+						<div style="float: right; margin-top: -3px;">
+							<button class="btn btn-default" id="colAction">
+								<span class="glyphicon icon-list-all"></span>
+								<span class="glyphicon icon-angle-bottom"></span>
+							</button>
+							<div class="rpt-funnel rpt-funnelBox rpt-funnelBoxList" style="position: absolute;display:none;-index: 999;">
+								<div id="colList" class="rpt-colList">
+								</div>
+								<p class="rpt-colBtn"><button id="addCol" class="btn btn-primary">确定</button></p>
+							</div>
+						</div>
+					</div>
+					<div class="rpt-table-tab" style="padding: 0 15px;">
+						<table class="ufma-table uf-rpt-table" tool-bar="#tool-bar" id="gridDPE">
+						</table>
+
+					</div>
+				</div>
+
+				<div id="tool-bar" class="ufma-tool-bar">
+					<div class="tool-bar-body">
+						<!--toolbar-->
+					</div>
+				</div>
+			</div>
+		</div>
+		<script src="../rptCommon/dm.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+		<script src="../rptCommon/rptCommon_new.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+		<script src="dm.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+		<script src="cashDayAccount.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+
+	</body>
+
+</html>

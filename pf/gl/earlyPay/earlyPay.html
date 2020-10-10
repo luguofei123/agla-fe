@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>期初应付</title>
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <script src="../../pub/boot.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+    <link rel="stylesheet" href="earlyPay.css?rev=@@hash" />
+</head>
+
+<body>
+    <div  class="container-fluid ufma-container">
+        <!--工作区 begin-->
+        <div class="workspace">
+            <!--工作区顶部 begin-->
+            <div class="workspace-top">
+                <div class="container-fluid">
+                    <div class="ufma-portlet">
+                        <div class="portlet-title">
+                            <div class="caption fl">
+                                <span class="caption-subject font-dark uppercase">期初应付</span>
+                            </div>
+                            <div class="fl absolute margin-left-15" style="margin-top: 10px">
+                                <ul class='ufma-list-col clearfix padding-left-8'>
+                                    <li class="ufma-list-col-item">
+                                        <div id='cbAgency' class="uf-treecombox ufma-combox-agency"></div>
+                                    </li>
+                                    <li class="ufma-list-col-item">
+                                        <div id='cbAcct' class="uf-combox ufma-combox-acct"></div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="fr" style="margin-top: 8px">
+                                <button class="btn btn-primary btn-add btn-permission" id="login">登记</button>
+                            </div>
+                        </div>
+                  			<div class="portlet-body form-horizontal bordered">
+								<div class="rpt-box rpt-query-box ">
+									<div class="rpt-query-box-left">
+										<form id="frmQuery" class="form-horizontal">
+											<div class="form-row">
+												<div class="form-group" style="width:380px;position: relative">
+													<!--<label class="control-label">往来单位：</label>-->
+                                                    <div style="display: inline-block">
+                                                        <button class="btn btn-default" id="colAction" data-type="01" style="padding: 4px 11px">
+                                                            <span class="text">单位</span>
+                                                            <span class="glyphicon icon-angle-bottom"></span>
+                                                        </button>
+                                                        <div class="rpt-funnel rpt-funnelBox rpt-funnelBoxList" style="position: absolute;display: none">
+                                                            <div id="colList" class="rpt-colList">
+                                                                <span data-type="01">单位</span>
+                                                                <span data-type="02">个人</span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="control-element">
+														<div id='cbCurrent' name="cbCurrent" class="uf-treecombox"></div>
+													</div>
+												</div>
+												<div class="form-group">
+													<label class="control-label">业务日期：</label>
+													<div class="control-element" style="width:120px;">
+														<div name="billStartDate" id="billStartDate" class="uf-datepicker" style="width:120px;"></div>
+													</div>
+													<span class="split" style="margin-top: 5px;width: 16px;text-align: center;">-</span>
+													<div class="control-element" style="width:120px;">
+														<div name="billEndDate" id="billEndDate" class="uf-datepicker" style="width:120px;"></div>
+													</div>
+												</div>
+												<div class="clearfix"></div>
+											</div>
+										</form>
+										<form id="queryMore" class="form-horizontal none m10" >
+											<!--第二行-->
+											<div class="form-row" style="height:20px;">
+												<div class="form-group" style="width: 380px;margin-left:-10px;">
+													<label class="control-label">会计科目：</label>
+													<div class="control-element">
+														<div id='cbAcco' name="agencyCode" class="ufma-combox ufma-combox-acco" style="width: 192px"></div>
+													</div>
+												</div>
+												<div class="form-group">
+													<label class="control-label">票面金额：</label>
+													<div class="control-element" style="width:120px;">
+														<input id="billfaceStartAmount" type="text" name="billfaceStartAmount" class="form-control">
+													</div>
+													<span class="split" style="margin-top: 5px;width: 16px;text-align: center;">-</span>
+													<div class="control-element" style="width:120px;">
+														<input id="billfaceEndAmount" type="text" name="billfaceEndAmount" class="form-control">
+													</div>
+												</div>
+											</div>
+										</form>
+									</div>
+									<div class="rpt-query-box-right">
+										<label class="label label-more" data-target="#queryMore">更多<i class="glyphicon icon-angle-bottom"></i></label>
+										<div class="rpt-query-btn">
+											<button class="btn btn-primary btn-permission btn-query" id="query_table">查询</button>
+										</div>
+									</div>
+								</div>
+							</div>
+                    </div>
+                </div>
+            </div>
+            <!--工作区中部 begin-->
+            <div class="workspace-center" style="padding: 0 15px">
+                <!--表格 begin -->
+                <div class="rpt-box rpt-table-box pr">
+                    <div class="rpt-table-title">
+                        期初应付款
+                    </div>
+                    <!--根据高保真添加搜索按钮--bug75100--zsj-->
+						<div class="btn-body" style="height: 40px;">
+							<div class="iframeBtnsSearch fr" id="index-search" style="margin-right: 113px">
+								<input type="text" class="searchHide focusOff bordered" placeholder="请输入要搜索的关键词" style="right: 163px;">
+								<input type="hidden" class="searchValueHide">
+								<button class="btn btn-default btn-sm btn-search" id="searchHideBtn">
+						         	<i class="glyphicon icon-search"></i>
+						        </button>
+							</div>
+							<div class="rpt-box rpt-table-box pr">
+								<div id="dtToolbar" class="btn-group" style="position:absolute;right:15px;">
+								</div>
+							</div>
+						</div>
+                   <!-- <div id="dtToolbar" class="btn-group" style="position:absolute;right:15px;bottom:10px;">
+                    </div>-->
+                </div>
+                <div class="rpt-table-tab" >
+                    <table class="ufma-table table-bordered" tool-bar="#tool-bar" id="gridGOV" style="width:100%;"></table>
+                </div>
+            </div>
+            <!--工作区中部 end-->
+            <!--工作区底部 begin -->
+            <div id="tool-bar" class="ufma-tool-bar  info-top" style="width:100%;padding-right: 30px;">
+                <div class="tool-bar-body" style="width:100%;margin-top:-1px">
+                    <div class="ufma-tool-btns" style="padding-left: 11px" >
+                        <label class="mt-checkbox mt-checkbox-outline margin-right-8 compAllLa">
+                            <input type="checkbox" class="datatable-group-checkable" id="all"/> 全选
+                            <span></span>
+                        </label>
+                        <button type="button" class="btn btn-sm btn-default btn-permission btn-delete margin-right-8" id="delete">删除</button>
+                        <button type="button" class="btn btn-sm btn-default btn-permission btn-export"  style="display: none">导出</button>
+                    </div>
+                </div>
+            </div>
+            <!--工作区底部 end-->
+        
+        </div>
+    </div>
+   <!-- <script src="../maCommon/maCommon.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>-->
+    
+    <script src="earlyPay.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+    
+</body>
+
+</html>

@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>单位级公式定义</title>
+    <meta
+      content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
+      name="viewport"
+    />
+    <script
+      src="../../../pub/boot.js?rev=@@hash"
+      type="text/javascript"
+      charset="utf-8"
+    ></script>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="formulaDefinition.css?rev=@@hash"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="../../common/common.css?rev=@@hash"
+    />
+    <style>
+      /*.uf-grid-body {*/
+      /*height: 400px;*/
+      /*}*/
+      .tab-li.btn-default {
+        border: none;
+        background: none;
+      }
+      .uf-buttonedit .uf-buttonedit-input{
+        padding: 4px 24px 5px 8px;
+      }
+      .nulldatarow td{
+        border-right: 0 !important;
+      }
+    </style>
+  </head>
+  <body data-code="agy">
+    <!--整个容器 begin-->
+    <div id="formulaDefinition" class="container-fluid ufma-container">
+      <div class="workspace">
+        <div class="prs-workspace workspace-inner">
+          <div class="ufma-portlet" style="padding-bottom: 0">
+            <div class="uf-selete-box bordered-bottom">
+              <div class="uf-title">单位级公式定义</div>
+              <div class="method-tip clearfix">
+                <div class="btn-group fr title-btns-group">
+                  <button
+                    id="btn-save"
+                    class="btn btn-primary btn-save btn-permission"
+                  >
+                    保存
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div style="border-bottom: 1px solid #ddd">
+            <div
+              id="navTabBox"
+              class="table-sub-info uf-bf1"
+              style="overflow: hidden;margin-bottom: -1px"
+            >
+              <ul
+                class="nav nav-tabs"
+                id="itemTab"
+                style="height:33px;border:none!important"
+              ></ul>
+            </div>
+          </div>
+
+          <div class="clearfix" style="position:relative">
+            <div
+              class="fr"
+              style="margin-left:4px;position:relative;display:inline-block;"
+            >
+              <button
+                class="btn btn-default"
+                id="colAction"
+                style="position: absolute;right: 0px;top: -34px;"
+              >
+                <span class="glyphicon icon-list-all"></span>
+                <span class="glyphicon icon-angle-bottom"></span>
+              </button>
+              <div
+                class="rpt-funnel rpt-funnelBox rpt-funnelBoxList hidden"
+                style="position: absolute;z-index: 100"
+              >
+                <div id="colList" class="rpt-colList clearfix"></div>
+                <p class="rpt-colBtn" style="float: none;">
+                  <button id="addCol" class="btn btn-primary">确定</button>
+                </p>
+              </div>
+            </div>
+            <div
+              id="tabBtn"
+              class="btn-group none fr"
+              style="position: absolute;right:64px;top:-34px;margin-right: 10px"
+            >
+              <button
+                class="btn btn-default"
+                id="leftMove"
+                data-num="0"
+                style="padding:4px 8px;"
+              >
+                <i class="icon-angle-left"></i>
+              </button>
+              <button
+                class="btn btn-default"
+                id="rightMove"
+                data-num="0"
+                style="padding:4px 8px;"
+              >
+                <i class="icon-angle-right"></i>
+              </button>
+            </div>
+          </div>
+          <table id="nameTable" class="uf-datagrid" tool-bar="#rpt-tool-bar" style="margin-top: 5px"></table>
+        </div>
+      </div>
+    </div>
+    <script
+      src="../../common/common.js?rev=@@hash"
+      type="text/javascript"
+      charset="utf-8"
+    ></script>
+    <script
+      src="formulaDefinition.js?rev=@@hash"
+      type="text/javascript"
+      charset="utf-8"
+    ></script>
+  </body>
+</html>

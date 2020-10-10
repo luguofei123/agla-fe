@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>期末结账</title>
+    <meta
+      content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
+      name="viewport"
+    />
+    <script
+      src="../../../pub/boot.js?rev=@@hash"
+      type="text/javascript"
+      charset="utf-8"
+    ></script>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="periodEndClosing.css?rev=@@hash"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="../../common/common.css?rev=@@hash"
+    />
+  </head>
+  <body>
+    <!--整个容器 begin-->
+    <div id="period-end-closing" class="container-fluid ufma-container">
+      <div class="workspace">
+        <div class="prs-workspace">
+          <div class="ufma-portlet">
+            <div class="portlet-title">
+              <div class="caption">
+                <span class="caption-subject font-dark uppercase"
+                  >期末结账</span
+                >
+              </div>
+              <div class="actions">
+                <div>
+                  <button
+                    type="button"
+                    class="btn btn-sm btn-primary btn-permission btn-close-account"
+                  >
+                    结账
+                  </button>
+                  <button
+                    type="button"
+                    class="btn btn-sm btn-primary btn-permission btn-anti-settlement"
+                  >
+                    反结账
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="table-sub">
+            <div class="table-sub-action clearfix">
+              <div id="dtToolbar" class="btn-group fr"></div>
+            </div>
+          </div>
+          <table
+            id="period-end-closing-table"
+            tool-bar="#tool-bar"
+            class="uf-datagrid"
+          ></table>
+        </div>
+      </div>
+    </div>
+    <script
+      src="periodEndClosing.js?rev=@@hash"
+      type="text/javascript"
+      charset="utf-8"
+    ></script>
+  </body>
+</html>

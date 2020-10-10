@@ -1,0 +1,76 @@
+/*全局*/
+ body{
+	color: #333333;
+	letter-spacing: 0;
+}
+ /*头部*/
+ .tip-more{
+ color: #008FF0;
+ }
+ /*余额表头*/
+ .iGray{
+	color:#999999; 
+}
+/*余额表*/
+/*#LTBox th, #LTBox td, #RTBox th, #RTBox td, #LBBox th, #LBBox td, #RBBox th, #RBBox td {
+    border: 1px solid #DFE6EC;
+    text-align: center;
+    padding: 8px;
+    font-weight: normal;
+}*/
+
+.glReconTable{
+    border: 1px solid #DFE6EC;
+    width: 100%;
+}
+
+.glReconTable thead tr th{
+    border: 1px solid #DFE6EC;
+}
+
+.glReconTable tbody tr td{
+     border: 1px solid #DFE6EC;
+}
+
+.glReconTable tfoot tr th{
+    border: 1px solid #DFE6EC;
+}
+
+.headInfo {
+    background-color: #EEF1F6;
+}
+
+.showMoney {
+    font-family: PingFangSC-Medium;
+    font-size: 18px;
+    color: #FFBF00;
+    line-height: 17px;
+    text-align: right !important;
+}
+
+hr {
+    width: 30px;
+    color: #999999;
+    margin: 0 auto;
+}
+.money-right{
+    text-align: right !important;
+}
+.margin-top-10{
+    margin-top:10px;
+}
+.title-center{
+    margin:auto;
+    width:100px; 
+    position: absolute;  
+    top: 0; 
+    left: 0; 
+    bottom: 0;
+     right: 0;
+}
+@media print{
+    .headInfo{
+        font-weight:normal !important;
+    }
+}
+

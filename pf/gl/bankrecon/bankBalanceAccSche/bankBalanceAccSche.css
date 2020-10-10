@@ -1,0 +1,53 @@
+/*基础样式*/
+.w950{width:950px;}
+.bt{border-top:1px solid #d9d9d9;}
+.br{border-right:1px solid #d9d9d9;}
+.bb{border-bottom:1px solid #d9d9d9;}
+.bl{border-left:1px solid #d9d9d9;}
+
+/*左竖线标题*/
+.uf-line-title{position:relative;height:30px;line-height:30px;}
+.uf-line-title-font{
+	height:16px;line-height:16px;
+	border-left:3px solid #108ee9;
+	display:inline-block;margin:7px 0;
+	padding-left:8px;
+    font-weight: bold!important;}
+.uf-line-title-action{position:absolute;right:0;top:-1px;}
+
+/*短横虚线*/
+.uf-dashed-hr{border-top:1px dashed #d9d9d9;margin-top:12px;height:2px;width:100%;}
+
+
+/*自定义样式*/
+.uf-grid-head .uf-grid-head-lock,.uf-grid-body .uf-grid-body-lock{
+	border-right: #DFE6EC 0px solid;
+}
+.box-col{
+	border:1px solid #d9d9d9;position:absolute;background:#fff;right:2px;
+	box-shadow: 0 1px 4px 0 rgba(0,0,0,0.20);display:none;z-index:9;
+}
+.box-col-list{list-style:none;margin:8px 16px 0 -24px;}
+.box-col-list li{margin-bottom:8px;}
+.box-col-btns{height:36px;line-height:36px;border-top:1px solid #d9d9d9;}
+.box-col-btns span{margin-left:16px;cursor:pointer;}
+
+/*字段长度*/
+.ufma-card-header{
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+.ufma-card-header:hover{
+	text-overflow:inherit;
+	overflow:visible;
+}
+.icon-plus-color{
+	color : #d9d9d9;
+}
+#agencyData{
+	border-bottom: 1px solid #D9D9D9;
+}
+#bankData{
+	border-bottom: 1px solid #D9D9D9;
+}

@@ -1,0 +1,102 @@
+﻿<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>新年度初始化</title>
+		<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+		<script>
+			var bAgency = true; //单位级和系统级区分
+		</script>
+		<script src="../../../pub/boot.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+	</head>
+
+	<body>
+		<div class="container-fluid ufma-container">
+			<div class="workspace bordered">
+				<!--工作区顶部 begin-->
+				<div class="workspace-top">
+					<div class="container-fluid">
+						<div class="ufma-portlet">
+							<div class="portlet-title">
+								<div class="caption">
+									<span class="caption-subject font-dark uppercase">新年度初始化</span>
+								</div>
+								<div class="inline-block absolute margin-left-15 margin-top-8">
+									<ul class='ufma-list-col clearfix padding-left-8'>
+										<li class="ufma-list-col-item">
+											<div id='cbAgency' name="agencyCode" class="ufma-treecombox ufma-combox-agency" icon="icon-unit" url="/gl/eleAgency/getAgencyTree" valueField="id" textField="codeName" placeholder="请选择单位"></div>
+										</li>
+										<li class="ufma-list-col-item">
+											<div id='cbAcct' class="ufma-combox ufma-combox-acct"></div>
+										</li>
+									</ul>
+								</div>
+
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="workspace-center">
+					<div class="container-fluid">
+						<div id="initNewYearTimeline" class="margin-top-8" style="display:block;"> </div>
+						<div class="">
+							<div id="checkData" class="hide">
+								<h4 class="text-center font-size20"><span class="curYear"></span>年度数据检查</h4>
+								<div class="bordered-gray padding-15 font-size14">
+									<ul id="checkList" class="list-inline list-inline-horizontal margin-bottom-0">
+										<li class="h50 tc uf-box-center">请检查是否选择了单位和账套或者未设置检查项！</li>
+									</ul>
+								</div>
+							</div>
+							<div id="tranAcco" class="hide">
+								<h4 class="text-center font-size20"><span class="newYear"></span>年度期初数据预览</h4>
+								<div class="font-size-12">
+									<span class="ufma-gray">提示：</span><span class="ufma-gray margin-right-15">辅助核算</span><span class="ufma-gray margin-right-15">借方：0.00</span><span class="ufma-gray">贷方：0.00</span>
+									<span class="ufma-blue float-right hand" id="btnAdjBase">调整新年度基础资料</span>
+								</div>
+								<div id="accoYeb">
+									
+								</div>
+							</div>
+							<div id="initEnd" class="hide text-center">
+								<div class="inline-block" style="margin-top:65px;">
+									<div>您的2018年期初数据生成完成！</div>
+									<div class="text-center margin-top-30">
+										<a class="btn btn-sm btn-default" id="btnMakeVou">查看新年度期初余额</a>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="text-center margin-top-15">
+							<a class="btn btn-primary" id="btn-check">数据检查</a>
+							<a class="btn btn-default hide" id="btn-prev">上一步</a>
+							<a class="btn btn-default" id="btn-next">下一步</a>
+							<a class="btn btn-default hide  btn-permission btn-gen" id="btn-trans">生成</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!--调整新年度基础资料-->
+			<div id="adjNewYearBase" class="ufma-modal">
+				<div class="u-msg-title">
+					<h4>调整新年度基础资料</h4>
+				</div>
+				<div class="u-msg-content" style="position:relative">
+					<div class="ufma-gray font-size-12">
+						提示：上下级公用基础资料由系统级生成，单位级用户不需要生成。
+					</div>
+					<div id="newYearBase" style="height:280px;">
+
+					</div>
+				</div>
+				<div class="u-msg-footer">
+					<a class="btn btn-sm btn-default" id="btnCloseWind"> 退出</a>
+				</div>
+			</div>
+		</div>
+		<script src="newYear.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+	</body>
+
+</html>

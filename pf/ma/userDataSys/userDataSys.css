@@ -1,0 +1,148 @@
+.userData-anchor {
+    background: #fff;
+    padding: 15px 15px 5px 15px;
+}
+
+.userData-anchor ul {
+    margin-left: -35px;
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+.userData-anchor ul li.letter-able {
+    display: inline-block;
+    width: 28px;
+    height: 28px;
+    text-align: center;
+    line-height: 28px;
+    border: 1px solid #dfe6ec !important;
+    border-radius: 4px;
+    background-color: #fff !important;
+}
+
+.userData-anchor ul li.letter-able:hover {
+    border: 1px solid #108EE9 !important;
+    cursor: pointer !important;
+    background: #108EE9 !important;
+}
+
+.userData-anchor ul li.letter-able:hover a {
+    color: #fff !important;
+    text-decoration: none !important;
+}
+.userData-anchor ul li.letter-able a {
+    color: #333 !important;
+    cursor: pointer !important;
+    display:inline-block;
+    width:100%;
+}
+
+.userData-anchor ul li {
+    display: inline-block;
+    width: 28px;
+    height: 28px;
+    text-align: center;
+    line-height: 28px;
+    border: 1px solid #D9D9D9;
+    border-radius: 4px;
+    background-color: #f2f2f2;
+}
+
+
+.userData-anchor ul li:hover {
+    border: 1px solid #D9D9D9 ;
+    cursor: default;
+    background: #f2f2f2;
+}
+
+.userData-anchor ul li:hover a {
+    color: #d9d9d9 ;
+    text-decoration: none ;
+}
+
+.userData-anchor ul li a {
+    color: #d9d9d9;
+    cursor: not-allowed;
+}
+
+.userData-result {
+    background: #fff;
+/*    height: 289px;*/
+    overflow-y: auto;
+}
+
+.userData-result dl {
+    margin: 15px 0px 15px 15px;
+}
+
+.userData-result dl dt {
+    height: 25px;
+}
+
+.userData-result dl dd {
+    padding: 8px 0 8px 20px;
+}
+
+.userData-result dl dd:hover {
+    background-color: #ECF6FD;
+    cursor: pointer;
+}
+
+.userData-result dl dd p {
+    height: 20px;
+    line-height: 20px;
+    margin: 0px;
+}
+
+#userData .ufma-tool-bar .tool-bar-body {
+    padding: 4px;
+    position: relative;
+    border: 1px #d9d9d9 solid;
+    height: 40px;
+    padding-top: 4px;
+    margin-left: -1.5px;
+    margin-right: -1.5px;
+}
+
+.userData-anchor ul li.letter-able.letter-active{
+	border: 1px solid #108ee9!important;
+    background: #108ee9!important;}
+.userData-anchor ul li.letter-able.letter-active a{color: #fff!important;}
+.userData-result dl dd.result-active{background:#108ee9;}
+.userData-result dl dd.result-active span{color:#fff;}
+.userData-result dl dd.result-active:hover{background:#108ee9;}
+.userData-result dl dd.result-active:hover span{color:#fff;}
+.posUserdataResult{
+    position: fixed;
+    top: 70px;
+    left: 170px;
+    z-index: 1005;
+}
+.anchorAuto-no{
+	width:24px; 
+	height:24px; 
+	background-color:white; 
+	border-radius:25px;
+	border: 1px solid #d9d9d9;
+	margin-bottom: 2px;
+	text-decoration:none;
+}
+.anchorAuto-no:hover{
+	background-color:#00B38B;
+	border: 0px solid #d9d9d9;
+}
+.anchorAuto-no:hover a{
+	color:#fff;
+	text-decoration:none;
+}
+.anchorAuto-no a:hover{
+	text-decoration:none;
+}
+.anchorAuto-color{background-color:#00B38B;border: 0px solid #d9d9d9; }
+.anchorAuto-color a{color:#fff;text-decoration:none;}
+.anchorAuto-select-a{
+	height:30px; line-height:30px; display:block; color:white; text-align:center
+}
+.anchorAuto-no-a{
+	height:24px; line-height:24px; display:block; color:black; text-align:center;
+}

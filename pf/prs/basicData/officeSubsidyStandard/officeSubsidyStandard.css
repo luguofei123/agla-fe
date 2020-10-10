@@ -1,0 +1,25 @@
+/* 主页面 */
+
+#office-subsidy-standard .prs-workspace {
+  margin: 0 15px;
+  margin-bottom: -10px;
+}
+
+.office-subsidy-standard .data-label {
+  width: 115px;
+  text-align: left !important;
+}
+
+#add-office-subsidy-standard .form-group {
+  margin-left: 20px;
+  margin-bottom: 10px;
+}
+
+#typeItemTableBody,
+#prsDutyGradeTableBody {
+  height: auto !important;
+}
+
+#add-office-subsidy-standard .ufma-combox-border:hover .uf-combox-clear {
+  display: none;
+}

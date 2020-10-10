@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>基础数据维护</title>
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <script src="../../pub/boot.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+    <link rel="stylesheet" href="userData.css?rev=@@hash"/>
+</head>
+<body>
+<div id="userData" class="container-fluid ufma-container myuserData-data">
+    <!--工作区 begin-->
+    <div class="workspace" >
+        <!--工作区顶部 begin-->
+        <div class="workspace-top">
+            <div class="container-fluid">
+                <div class="ufma-portlet">
+                    <div class="portlet-title">
+                        <div class="caption">
+                            <span class="caption-subject font-dark uppercase">基础数据维护</span>
+                        </div>
+                        <div class="actions">
+                            <div class="btn-group">
+                                <button type="button" class="btn btn-sm btn-primary btn-permission btn-add">新增</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--工作区中部begin-->
+        <div class="workspace-center">
+			<ul class="posUserdataResult"></ul>
+            <div class="container-fluid">
+                <div class="ufma-layout ufma-layout-slider-sm ufma-layout-fixed-slider ufma-layout-fixed-slider-left">
+                    <div class="ufma-layout-slider left" id="letterLeft" style="position:absolute;z-index:1002;">
+                        <div class="userData-anchor bordered-input hidden">
+                            <ul>
+                                <li><a href="#letterA">A</a></li>
+                                <li><a href="#letterB">B</a></li>
+                                <li><a href="#letterC">C</a></li>
+                                <li><a href="#letterD">D</a></li>
+                                <li><a href="#letterE">E</a></li>
+                                <li><a href="#letterF">F</a></li>
+                            </ul>
+                            <ul>
+                                <li><a href="#letterG">G</a></li>
+                                <li><a href="#letterH">H</a></li>
+                                <li><a href="#letterI">I</a></li>
+                                <li><a href="#letterJ">J</a></li>
+                                <li><a href="#letterK">K</a></li>
+                                <li><a href="#letterL">L</a></li>
+                            </ul>
+                            <ul>
+                                <li><a href="#letterM">M</a></li>
+                                <li><a href="#letterN">N</a></li>
+                                <li><a href="#letterO">O</a></li>
+                                <li><a href="#letterP">P</a></li>
+                                <li><a href="#letterQ">Q</a></li>
+                                <li><a href="#letterR">R</a></li>
+                            </ul>
+                            <ul>
+                                <li><a href="#letterS">S</a></li>
+                                <li><a href="#letterT">T</a></li>
+                                <li><a href="#letterU">U</a></li>
+                                <li><a href="#letterV">V</a></li>
+                                <li><a href="#letterW">W</a></li>
+                                <li><a href="#letterX">X</a></li>
+                            </ul>
+                            <ul>
+                                <li><a href="#letterY">Y</a></li>
+                                <li><a href="#letterZ">Z</a></li>
+                            </ul>
+                        </div>
+                        <div class="userData-result bordered-input" style="margin-top:-1px;">
+                            <dl style="position: relative;">
+                                <!--
+                                <dd><p><span data-elecode ="1">部门</span></p></dd>
+                                <dd><p><span data-elecode ="2">部门预算经济分类</span></p></dd>
+                                -->
+                            </dl>
+                        </div>
+                    </div>
+                    <!--  style="margin-left:240px;position: fixed;top: 60px;width: 74.5%;padding-bottom: 40px;" -->
+                    <div class="ufma-layout-content" style="margin-top:-7px;position: relative;">
+                        <div class="ufma-portlet">
+                            <div class="portlet-body form-horizontal bordered">
+                                <div id="query-status" class="form-body">
+                                    <div class="form-group label-group">
+                                        <div class="control-label">状态：</div>
+                                        <div class="control-element">
+                                            <a name="enabled" class="label label-radio selected">全部</a>
+                                            <a name="enabled" value="1" class="label label-radio">启用</a>
+                                            <a name="enabled" value="0" class="label label-radio">停用</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="table-sub clearfix">
+                            <div class="table-sub-info pull-left">
+                            </div>
+                            <div class="table-sub-action pull-right">
+                                <div class="iframeBtnsSearch" id="index-search">
+									<input type="text" class="searchHide focusOff bordered" placeholder="请输入要搜索的关键词">
+									<input type="hidden" class="searchValueHide" >
+									<button class="btn btn-default btn-sm btn-search" id="searchHideBtn">
+										<i class="glyphicon icon-search"></i>
+									</button>
+								</div>
+								<div class="btn-group" id="printTableData">
+								</div>
+                            </div>
+                        </div>
+                        <div class="tab-content" id="outDiv" style="overflow-y: auto;"><!--CWYXM-8491--基础数据维护-左侧的字母筛选栏会和右侧的滚动条一起移动--改为局部滚动--zsj-->
+                            <table id="userData-data" tool-bar="#userData-tool-bar" class="ufma-table">
+                                <thead>
+                                <tr>
+                                    <th style="width:20px;">
+                                        <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
+                                            <input type="checkbox" class="group-checkable" data-set="#data-table .checkboxes"/>
+                                            <span></span>
+                                        </label>
+                                    </th>
+                                    <th> 编码</th>
+                                    <th> 名称</th>
+                                    <th> 控制方式</th>
+                                    <th> 状态</th>
+                                    <th> 操作</th>
+                                </tr>
+                                </thead>
+                            </table>
+                            
+                            
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        
+        <div id="userData-tool-bar" fixedwidth=true class="ufma-tool-bar" style="margin-left:263px;padding-right:16px;">
+            <div class="tool-bar-body" style="margin-right:-1px;">
+                <div class="ufma-tool-btns" style="margin-left:6px;">
+                    <label class="mt-checkbox mt-checkbox-outline margin-right-8">
+                        <input class="datatable-group-checkable" type="checkbox" name="test" value="1"> 全选
+                        <span></span>
+                    </label>
+                    <button type="button" class="btn btn-sm btn-default btn-permission btn-delete btn-del" id="delete">删除</button>
+                    <button type="button" class="btn btn-sm btn-default btn-permission btn-start btn-active"> 启用</button>
+                    <button type="button" class="btn btn-sm btn-default btn-permission btn-stop btn-unactive"> 停用</button>
+                    <button type="button" class="btn btn-sm btn-default btn-permission btn-senddown" id="userDataBtnDown"> 下发</button>
+                    <button type="button" class="btn btn-sm btn-permission btn-default btn-imp">导入</button>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+
+    <!--新增模态框 begin-->
+    <div id="userData-edt" class="ufma-modal">
+        <div class="u-msg-title">
+            <h4>新增部门</h4>
+        </div>
+        <div class="u-msg-content" style="position:relative">
+            <div class="container-fluid">
+                <div class="ufma-layout ufma-layout-slider-sm ufma-layout-fixed-slider ufma-layout-fixed-slider-right">
+                    <div class="ufma-layout-content">
+                        <form id="form-userData" class="form-horizontal bordered" style="padding: 20px 0">
+                            <input type="hidden" name="chrId" value=""/>
+                            <input type="hidden" name="lastVer" value=""/>
+                            <div class="form-group required">
+                                <label class="control-label em10 text-ov tab-paramcode">功能分类编码：</label>
+                                <div class="control-element">
+                                    <input type="text" name="chrCode" id="chrCode" class="form-control userDatachrCode">
+                                </div>
+                            </div>
+                            <div class="form-group  required">
+                                <label class="control-label em10 text-ov tab-paramname">功能分类名称：</label>
+                                <div class="control-element">
+                                    <input type="text" name="chrName" id="chrName" class="form-control"></span>
+                                </div>
+                            </div>
+                            <div class="form-group" id="protype" style="display: none;">
+                                <label class="em10 control-label">项目类别：</label>
+                                <div class="control-element">
+                                    <div id="protypeCode" name="protypeCode" class="uf-treecombox" style="width:166px"></div>
+                                </div>
+                            </div>
+                            <div class="form-group" id="upDepro" style="display: none;">
+                                <label class="em10 control-label">上级财政项目：</label>
+                                <div class="control-element">
+                                    <div id="upDeproCode" name="parentCode" class="uf-treecombox" style="width:166px"></div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label em10 text-ov">助记码：</label>
+                                <div class="control-element">
+                                    <input type="text" name="assCode" id="assCode" class="form-control" maxlength="42"></span>
+                                </div>
+                            </div>
+                            <div class="form-group ">
+                                <label class="control-label em10">允许增加下级：</label>
+                                <div class="control-element">
+                                    <div class="btn-group" data-toggle="buttons">
+                                        <label class="btn btn-default active">
+                                            <input type="radio" class="toggle" name="allowAddsub" value="1" checked> 允许 </label>
+                                        <label class="btn btn-default">
+                                            <input type="radio" class="toggle" name="allowAddsub" value="0"> 禁止 </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group ">
+                                <label class="control-label em10">是否启用：</label>
+                                <div class="control-element">
+                                    <div class="btn-group" data-toggle="buttons">
+                                        <label class="btn btn-default active">
+                                            <input type="radio" class="toggle" name="enabled" value="1" checked> 启用 </label>
+                                        <label class="btn btn-default">
+                                            <input type="radio" class="toggle" name="enabled" value="0"> 停用 </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--<div class="form-group margin-bottom-15 margin-bottom-15 field1" style="display:none">
+                                <label class="control-label em10"></label>
+                                <div class="control-element">
+                                    <div id='field1' name="field1" data-code="" class="ufma-treecombox" valueField="id" textField="name"></div>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group   field2" style="display:none">
+                                <label class="control-label em10"></label>
+                                <div class="control-element">
+                                    <div id='field2' name="field2" data-code="" class="ufma-treecombox" valueField="id" textField="name"></div>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group   field3" style="display:none">
+                                <label class="control-label em10"></label>
+                                <div class="control-element">
+                                    <div id='field3' name="field3" data-code="" class="ufma-treecombox" valueField="id" textField="name"></div>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group   field4" style="display:none">
+                                <label class="control-label em10"></label>
+                                <div class="control-element">
+                                    <div id='field4' name="field4" data-code="" class="ufma-treecombox" valueField="id" textField="name"></div>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group   field5" style="display:none">
+                                <label class="control-label em10"></label>
+                                <div class="control-element">
+                                    <div id='field5' name="field5" data-code="" class="ufma-treecombox" valueField="id" textField="name"></div>
+                                </div>
+                            </div>-->
+                            
+                        </form>
+                    </div>
+                    <div class="ufma-layout-slider right">
+                        <div class="panel ufma-panel ufma-panel-primary">
+                            <div class="panel-heading">
+                                    <div class="caption">参考信息</div>
+                            </div>
+                            <div class="panel-collapse collapse in">
+                                <div class="panel-body">
+                                    <div id="prompt" style="margin-bottom: 10px"></div>
+                                    <ul id="expfunc-help" class="list-inline list-inline-horizontal">
+                                        <li >请输入<span></span>编码获得参考信息</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="u-msg-footer">
+            <button type="button" class="btn btn-sm btn-primary btn-permission btn-saveadd">保存并新增</button>
+            <button type="button" class="btn btn-sm btn-default btn-permission btn-save">保存</button>
+            <button type="button" class="btn btn-sm btn-default btn-close">取消</button>
+        </div>
+    </div>
+
+    <!--购物车 begin-->
+    <div class="ufma-shopping-trolley right" data-target='#userData-shopp' style="bottom:50%;"><i class="glyphicon icon-supplement"></i></div>
+    <div class="ufma-shopp ufma-shopp-right" id="userData-shopp">
+        <div class="ufma-shopp-inner">
+            <div class="ufma-shopp-header">
+                <span class="glyphicon icon-angle-double-right"></span>已下发到以下单位
+            </div>
+            <div class="ufma-shopp-content">
+                <table id="userData-table" class="ufma-table" style="width:300px;">
+                    <!-- <thead>
+                    <tr>
+                        <th> 单位编码</th>
+                        <th> 单位名称</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td> 00101</td>
+                        <td> 用友网络科技股份有限公司</td>
+                    </tr>
+                    <tr>
+                        <td> 00102</td>
+                        <td> 用友政务有限公司</td>
+                    </tr>
+                    <tr>
+                        <td> 00102</td>
+                        <td> 用友有限公司</td>
+                    </tr>
+                    </tbody> -->
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../maCommon/maCommon.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+<script src="userData.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+</body>
+</html>

@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>人员工资类别</title>
+    <meta
+      content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
+      name="viewport"
+    />
+    <script
+      src="../../../pub/boot.js?rev=@@hash"
+      type="text/javascript"
+      charset="utf-8"
+    ></script>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="../../common/common.css?rev=@@hash"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="empPrsType.css?rev=@@hash"
+    />
+    <style>
+    .uf-sc-content{
+      border: 0;
+    }
+    </style>
+  </head>
+  <body>
+    <!--整个容器 begin-->
+    <div id="dep-staff-info" class="container-fluid ufma-container">
+      <!--工作区 begin-->
+      <div class="workspace">
+        <!--工作区顶部 begin-->
+        <div class="prs-workspace">
+          <div class="ufma-portlet">
+            <div class="portlet-title">
+              <div class="caption">
+                <span class="caption-subject font-dark uppercase modTitle"
+                  >人员工资类别</span
+                >
+              </div>
+              <div class="actions">
+                <div>
+                  <button
+                    id="btn-add-dep-staff-info"
+                    type="button"
+                    class="btn btn-sm btn-primary btn-permission btn-add"
+                  >
+                    批量设置
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--工作区中begin-->
+        <div class="workspace-center margin-top--8">
+          <div class="container-fluid">
+            <div
+              class="ufma-layout ufma-layout-slider-sm ufma-layout-fixed-slider ufma-layout-fixed-slider-left"
+            >
+              <!--工作区中左布局begin-->
+              <div
+                class="ufma-layout-slider left padding-right-0"
+                id="scrollBox"
+              >
+                <div class="de-cont-box">
+                  <div class="de-box-top">
+                    <div class="de-caption">
+                      <span class="caption-subject font-dark uppercase"
+                        >部门</span
+                      >
+                    </div>
+                  </div>
+                  <div class="input-group de-input-group">
+                    <input
+                      type="text"
+                      id="key"
+                      value=""
+                      class="form-control empty"
+                      placeholder="请输入部门名称关键词"
+                    />
+                    <span class="input-group-addon"
+                      ><i class="glyphicon glyphicon-search"></i
+                    ></span>
+                  </div>
+                  <div class="deparmentTree" style="overflow:auto;">
+                    <ul id="tree" class="ztree" style="width:400px; "></ul>
+                  </div>
+                </div>
+              </div>
+              <!--工作区中右布局begin-->
+              <div class="ufma-layout-content">
+                <div class="ufma-portlet">
+                  <!--查询条件-->
+                  <div class="portlet-body bordered pr">
+                    <div class="query-box-left">
+                      <form id="frmQuery" class="form-horizontal" style="padding-right: 30px;">
+                      </form>
+                      <form
+                        id="queryMore"
+                        class="form-horizontal none" style="padding-right: 30px;" 
+                      >
+                      </form>
+                    </div>
+
+                    <div class="query-box-right">
+                      <label class="label label-more" data-target="#queryMore"
+                        >更多<i class="glyphicon icon-angle-bottom"></i
+                      ></label>
+                      <div class="query-btn">
+                        <button
+                          id="btnQuery"
+                          class="btn btn-primary btn-query btn-permission"
+                        >
+                          查询
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="table-sub">
+                  <div class="table-sub-action fr clearfix">
+                    <!-- <div class="iframeBtnsSearch">
+                      <input
+                        type="text"
+                        class="searchHide focusOff bordered"
+                        placeholder="请输入要搜索的关键词"
+                      />
+                      <input type="hidden" class="searchValueHide" />
+                      <button
+                        class="btn btn-default btn-sm btn-permission btn-search"
+                        id="searchHideBtn"
+                      >
+                        <i class="glyphicon icon-search"></i>
+                      </button>
+                    </div> -->
+                    <div id="dtToolbar" class="btn-group"></div>
+                  </div>
+                </div>
+                <table id="dep-staff-info-table" tool-bar="#tool-bar" style="table-layout: fixed" class="ufma-table uf-rpt-table"></table>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="tool-bar" class="ufma-tool-bar">
+          <div class="tool-bar-body" style="margin-right:-1px;">
+            <!--toolbar-->
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script
+      src="empPrsType.js?rev=@@hash"
+      type="text/javascript"
+      charset="utf-8"
+    ></script>
+  </body>
+</html>

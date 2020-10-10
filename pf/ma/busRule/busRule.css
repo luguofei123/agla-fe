@@ -1,0 +1,104 @@
+#busRule .ufma-portlet{padding-bottom: 0;}
+#busRule .portlet-title{margin-bottom: 0;}
+/*标题右侧——搜索*/
+#busRule .title-search{
+	max-width: 320px;
+}
+#busRule .workspace-center .container-fluid{
+	padding: 0 !important;
+}
+/*单位级——单位选择*/
+#busRule .ufma-list-col{
+	margin-top: 8px;
+}
+/*内容盒子*/
+#busRule .twocols-box{
+	padding: 0 0 8px 149px;
+	position: relative;
+}
+/*左侧*/
+#busRule .leftposition-box{
+	width: 149px;
+	padding-top: 46px;
+	padding-left: 16px;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+#busRule .left-switch-box a{
+	display: block;
+	line-height: 34px;
+	padding-right: 16px;
+	text-align: right;
+	color: #333333;
+}
+/*右侧*/
+#busRule .right-box{
+	border-left: 1px solid #D9D9D9;
+	padding-left: 100px;
+	padding-top: 8px;
+}
+#busRule .right-box .right-prompt{
+	line-height: 1.0;
+	padding: 8px 0;
+	color: #999999;
+}
+#busRule .right-box .dl-horizontal{
+	margin-bottom: 0;
+}
+#busRule .right-box .dl-horizontal dt,
+#busRule .right-box .dl-horizontal li{
+	padding: 8px 0;
+}
+#busRule .right-box .dl-horizontal dd li:first-child{
+	padding-bottom: 0;
+}
+#busRule .right-box .dl-horizontal dt{
+	line-height: 30px;
+	width: 100px;
+	text-align: right;
+}
+#busRule .right-box .dl-horizontal dd{
+	margin-left: 160px;
+}
+#busRule .right-box .dl-horizontal dd ul{
+	margin-bottom: 0;
+}
+#busRule .rule-chrName,.rule-chrValue,.rule-chrConmode{
+	float: left;
+	vertical-align: middle;
+}
+#busRule .rule-chrValue{
+	width: 150px;
+	text-align: right;
+}
+#busRule .rule-chrConmode{
+	width: 125px;
+	text-align: right;
+}
+#busRule .rule-chrName{
+	min-width: 264px;
+	line-height: 30px;
+}
+#busRule .rule-chrValue .btn-group{
+	height: 30px;
+	padding: 3px 0;
+}
+#busRule .rule-chrValue label.btn{
+	width: 52px;
+	height: 24px;
+	line-height: 1.0 !important;
+	padding: 4px 0 !important;
+	color: #666666;
+}
+
+#busRule .rule-chrValue select,
+#busRule .rule-chrConmode select{
+	padding: 0 0 0 8px;
+	line-height: 1.0;
+	box-shadow: none;
+	
+}
+#busRule .rule-chrValue,.rule-chrConmode{
+	margin-left: 16px;
+}

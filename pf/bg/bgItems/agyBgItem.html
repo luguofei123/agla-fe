@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>指标要素定义</title>
+    <!--单位级-->
+    <meta
+      content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
+      name="viewport"
+    />
+    <script
+      src="../../pub/boot.js?rev=@@hash"
+      type="text/javascript"
+      charset="utf-8"
+    ></script>
+    <link rel="stylesheet" href="../pub/bgPub.css?rev=@@hash" />
+    <link rel="stylesheet" href="../pub/bgPubImpAttachment.css?rev=@@hash" />
+    <link rel="stylesheet" href="../pub/bgPubAuditModal.css?rev=@@hash" />
+    <link rel="stylesheet" href="../pub/bgPubWait.css?rev=@@hash" />
+    <link rel="stylesheet" href="bgItems.css?rev=@@hash" />
+  </head>
+
+  <body data-code="agy">
+    <div id="bgItems" class="container-fluid ufma-container">
+      <!--工作区 begin-->
+      <div class="workspace">
+        <!--工作区顶部 begin-->
+        <div class="workspace-top" id="workspaceBody_Top">
+          <!-- 左右间距增加 -->
+          <div class="container-fluid">
+            <!-- 上对齐，增加下间距 -->
+            <div class="ufma-portlet">
+              <div class="portlet-title">
+                <div class="caption">
+                  <span class="caption-subject font-dark uppercase"
+                    >指标要素定义</span
+                  >
+                </div>
+                <span>
+                  <div
+                    class="uf-treecombox ufma-combox-agency"
+                    id="cbAgency"
+                    name="agencyCode"
+                    idField="id"
+                    textField="codeName"
+                    pIdField="pId"
+                    readonly="true"
+                    icon="icon-unit"
+                    theme="label"
+                    autocomplete="on"
+                    placeholder="请选择单位"
+                    style="margin-top: 10px;"
+                  ></div>
+                </span>
+                <!-- 右侧新增按钮 -->
+                <div class="actions">
+                  <div class="btn-group">
+                    <button
+                      type="button"
+                      id="btn-add"
+                      class="btn btn-sm btn-primary btn-add btn-permission"
+                    >
+                      启用
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!--工作区中部 begin-->
+        <div class="workspace-center">
+          <div class="container-fluid">
+            <!-- 表格 -->
+            <div
+              class="ufma-layout ufma-layout-slider-sm ufma-layout-fixed-slider ufma-layout-fixed-slider-right"
+            >
+              <div class="tab-content">
+                <div class="tab-pane fade in active" id="workspaceBody_Center">
+                  <table
+                    id="bgItems-data"
+                    class="ufma-table"
+                    width="100%"
+                  ></table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!--工作区底 begin-->
+        <div class="workspace-bottom">
+          <div class="container-fluid"></div>
+        </div>
+      </div>
+
+      <!--新增模态框begin-->
+      <div
+        class="modal fade bs-example-modal-lg"
+        id="bgItem-edt"
+        tabindex="-1"
+        role="dialog"
+        aria-labelledby="bgItemAddLabel"
+      >
+        <div class="modal-dialog modal-xm" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button
+                type="button"
+                class="close"
+                data-dismiss="modal"
+                aria-label="Close"
+              >
+                <!-- 关闭按钮 -->
+                <span aria-hidden="true">&times;</span>
+              </button>
+              <h5 class="modal-title" id="bgItemAddLabel">选择启用要素</h5>
+              <!-- 弹层的标题  -->
+            </div>
+            <div class="modal-body">
+              <!--编辑区begin-->
+              <div class="container-fluid">
+                <!-- 表格 -->
+                <div
+                  class="ufma-layout ufma-layout-slider-sm ufma-layout-fixed-slider ufma-layout-fixed-slider-right"
+                >
+                  <div class="tab-content">
+                    <div class="tab-pane fade in active" id="all2">
+                      <div class="bgItem-edt-tbl-scroll">
+                        <table
+                          id="bgItems-data-edt"
+                          tool-bar="#bgItems-tool-bar"
+                          class="ufma-table"
+                        ></table>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-primary btn-sm btn-default btn-save btn-permission"
+                id="bgitems-edt-save"
+              >
+                保存
+              </button>
+              <button
+                type="button"
+                class="btn btn-sm btn-default btn-cancel"
+                id="bgitems-edt-cancel"
+                data-dismiss="modal"
+              >
+                取消
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script
+      src="../pub/bgPub.js?rev=@@hash"
+      type="text/javascript"
+      charset="utf-8"
+    ></script>
+    <script
+      src="../pub/bgPubImpAttachment.js?rev=@@hash"
+      type="text/javascript"
+      charset="utf-8"
+    ></script>
+    <script
+      src="../pub/bgPubAuditModal.js?rev=@@hash"
+      type="text/javascript"
+      charset="utf-8"
+    ></script>
+    <script
+      src="../pub/bgPubWait.js?rev=@@hash"
+      type="text/javascript"
+      charset="utf-8"
+    ></script>
+    <script
+      src="bgItems.js?rev=@@hash"
+      type="text/javascript"
+      charset="utf-8"
+    ></script>
+    <script
+      src="../pub/bg.parse.js?rev=@@hash"
+      type="text/javascript"
+      charset="utf-8"
+    ></script>
+  </body>
+</html>

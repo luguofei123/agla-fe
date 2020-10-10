@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>未确认亏损弥补</title>
+	<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+	<script src="../../pub/boot.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+	<link rel="stylesheet" href="dpexpenses.css" />
+</head>
+
+<body>
+	<div id="coaAccEdit" class="ufma-layout-updown">
+		<div class="ufma-layout-up">
+			<form id="frmBookIn" class="container-fluid form-horizontal form-padding">
+				<div class="form-row">
+					<div class="form-group m0 p0">
+						<label class="control-label auto">备查类型：</label>
+						<div class="control-element">
+							<input id="receivableType" type="text" class="form-control" readonly="true" style="width:190px;background-color:#F2F2F2;color:#cccccc">
+						</div>
+					</div>
+					<div class="clearfix"></div>
+				</div>
+				<div class="panel ufma-panel" style="width:726px;height:218px;margin:0;margin-bottom: 10px;">
+					<div class="panel-heading">
+						<div class="caption">股权信息</div>
+					</div>
+					<div class="panel-collapse collapse in">
+						<div class="panel-body" style="padding:16px;">
+							<div class="form-row">
+								<div class="form-group">
+									<label class="control-label">被投资单位:</label>
+									<div class="control-element" style="width:190px">
+										<div id="investmentAgency" class="uf-treecombox" name="investmentAgency" idField="code" textField="codeName" leafRequire=true></div>
+									</div>
+								</div>
+								<div class="form-group" style="margin-left: 20px;">
+									<label class="control-label" style="width:100px">社会信用代码：</label>
+									<div class="control-element" style="width:222px">
+										<input type="text" id="investmentCredit" name="investmentCredit" class="form-control">
+									</div>
+								</div>
+
+								<div class="clearfix"></div>
+							</div>
+							<div class="form-row">
+								<div class="form-group">
+									<label class="control-label">投资金额：</label>
+									<div class="control-element" style="width:190px">
+										<input id="investmentMoney" type="text" name="investmentMoney" class="form-control">
+									</div>
+								</div>
+								<div class="form-group" style="margin-left: 40px;">
+									<label class="control-label">投资日期：</label>
+									<div class="control-element" style="width:242px">
+										<div name="investmentDate" id="investmentDate" class="uf-datepicker" style="width: 242px;"></div>
+									</div>
+								</div>
+								<div class="clearfix"></div>
+							</div>
+							<div class="form-row">
+								<div class="form-group">
+									<label class="control-label">持有股份：</label>
+									<div class="control-element" style="width:190px">
+										<input id="holdShares" type="text" name="holdShares" class="form-control">
+									</div>
+								</div>
+								<div class="form-group" style="margin-left: 40px;">
+									<label class="control-label">股份占比：</label>
+									<div class="control-element" style="width:222px">
+										<input type="text" id="shareRatio" name="shareRatio" class="form-control">
+									</div>
+								</div>
+
+								<div class="clearfix"></div>
+							</div>
+							<div class="form-row">
+								<div class="form-group">
+									<label class="control-label">核算方法：</label>
+									<div class="control-element" style="width:190px">
+										<input type="text" id="accountingMethod" name="accountingMethod" class="form-control">
+									</div>
+								</div>
+								<div class="clearfix"></div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</form>
+			<form id="frmMakeup" class="container-fluid form-horizontal" style="padding-left: 30px;">
+				<div class="panel ufma-panel" style="width:726px;height:138px;margin:0;">
+					<div class="panel-heading">
+						<div class="caption">未确认亏损弥补信息</div>
+					</div>
+					<div class="panel-collapse collapse in">
+						<div class="panel-body" style="padding:16px 30px;">
+							<div class="form-row">
+								<div class="form-group" style="margin-left: 0px;">
+									<label class="control-label" style="width: 150px;">未确认亏损弥补日期：</label>
+									<div class="control-element">
+										<div name="investmentDate" id="ksmbDate" class="uf-datepicker" style="width:160px;"></div> <!--bug79757--zsj-->
+									</div>
+								</div>
+								<div class="clearfix"></div>
+							</div>
+							<div class="form-row">
+								<div class="form-group">
+									<label class="control-label" style="width: 150px;">未确认亏损弥补金额：</label>
+									<div class="control-element">
+										<input id="investmentMoney" type="text" name="investmentMoney" class="form-control">
+									</div>
+								</div>
+								<div class="clearfix"></div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</form>
+
+		</div>
+		<div class="ufma-layout-down bordered-top">
+			<div class="text-right  margin-right-30">
+				<button type="button" class="btn btn-sm btn-primary btn-permission btn-save btn-ajax" id="btnSave">保存</button>
+				<button type="button" class="btn btn-sm btn-default" id="btnClose"> 关闭</button>
+			</div>
+		</div>
+	</div>
+	<script src="dm.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+	<script src="makeup.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+</body>
+
+</html>

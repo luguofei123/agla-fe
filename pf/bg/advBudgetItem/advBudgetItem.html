@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>预拨指标</title>
+    <meta
+      content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
+      name="viewport"
+    />
+    <script
+      src="../../pub/boot.js?rev=@@hash"
+      type="text/javascript"
+      charset="utf-8"
+    ></script>
+    <link rel="stylesheet" href="../../agla-trd/fileinput/fileinput.css" />
+    <script
+      src="../../agla-trd/fileinput/fileinput.js"
+      type="text/javascript"
+      charset="utf-8"
+    ></script>
+    <script
+      src="../../agla-trd/fileinput/zh.js"
+      type="text/javascript"
+      charset="utf-8"
+    ></script>
+    <link rel="stylesheet" href="../pub/bgPub.css?rev=@@hash" />
+    <link rel="stylesheet" href="../pub/bgPubImpAttachment.css?rev=@@hash" />
+    <link rel="stylesheet" href="../pub/bgPubAuditModal.css?rev=@@hash" />
+    <link rel="stylesheet" href="../pub/bgPubLog.css?rev=@@hash" />
+    <link rel="stylesheet" href="../pub/bgPubWait.css?rev=@@hash" />
+    <link rel="stylesheet" href="advBudgetItem.css?rev=@@hash" />
+  </head>
+
+  <body>
+    <div id="advBudgetItem" class="container-fluid ufma-container">
+      <!--工作区 begin-->
+      <div class="workspace bordered">
+        <!--工作区顶部 begin-->
+        <div class="workspace-top">
+          <!-- 左右间距增加 -->
+          <div class="container-fluid">
+            <!-- 上对齐，增加下间距 -->
+            <div class="ufma-portlet" style="padding-bottom: 0px;">
+              <div class="portlet-title">
+                <div class="caption">
+                  <span class="caption-subject font-dark uppercase"
+                    >预拨指标</span
+                  >
+                </div>
+                <div id="cbb_agency_advBudgetItem"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!--工作区中部 begin-->
+        <div class="workspace-center">
+          <div class="container-fluid">
+            <!-- 头部更多的显示 -->
+            <div
+              id="bgMoreMsgPnl_advBudgetItem"
+              class="bgpub-bgnormal-postion-1"
+            ></div>
+            <div
+              class="bgpub-bgnormal-postion-1 bgpub-div-height-space-12"
+            ></div>
+            <!-- 未审核、审核、全部  的标签 -->
+            <div class="bgpub-bgnormal-postion-1">
+              <!--标签 begin-->
+              <ul class="nav nav-tabs">
+                <li class="active NAVSELECT">
+                  <a href="javascript:;" data-status="Y">预拨指标</a>
+                </li>
+                <li>
+                  <a href="javascript:;" data-status="P">批复指标</a>
+                </li>
+              </ul>
+              <!--标签 end-->
+              <!--右侧操作按钮 begin-->
+              <div class="bgpub-bgnormal-absolute-right">
+                <div class="iframeBtnsSearch">
+                  <input
+                    type="text"
+                    class="searchHide focusOff bordered"
+                    placeholder="请输入要搜索的关键词"
+                    style="right: 185px;"
+                  />
+                  <input type="hidden" class="searchValueHide" />
+                  <button
+                    class="btn btn-default btn-sm btn-search btn-permission"
+                    id="searchHideBtn"
+                  >
+                    <i class="glyphicon icon-search"></i>
+                  </button>
+                </div>
+                <div class="btn-group">
+                  <button
+                    id="btn-print-advBudgetItem"
+                    class="btn btn-default btn-print bgtooltip btn-permission"
+                    data-toggle="tooltip"
+                    title=""
+                    data-original-title="打印"
+                  >
+                    <span class="glyphicon icon-print"></span>
+                  </button>
+                  <button
+                    id="btn-imp-advBudgetItem"
+                    class="btn btn-default btn-import bgtooltip btn-permission"
+                    data-toggle="tooltip"
+                    title=""
+                    data-original-title="导入"
+                  >
+                    <span class="glyphicon icon-download"></span>
+                  </button>
+                  <button
+                    id="btn-exp-advBudgetItem"
+                    class="btn btn-default btn-export bgtooltip btn-permission"
+                    data-toggle="tooltip"
+                    title=""
+                    data-original-title="导出"
+                  >
+                    <span class="glyphicon icon-upload"></span>
+                  </button>
+                </div>
+              </div>
+              <!--右侧操作按钮 end-->
+            </div>
+            <!-- 表格 -->
+            <div
+              id="mainTableDiv_advBudgetItem"
+              class="bgpub-bgnormal-postion-1 btn-query btn-permission"
+            >
+              <table
+                id="mainTable_advBudgetItem"
+                class="ufma-table dataTable bgpub-datatable-tbl"
+              ></table>
+            </div>
+            <!-- 浮动在最底层的浮层 -->
+            <div
+              class="bgpub-bgnormal-postion-1 bgpub-div-height-space-35"
+            ></div>
+            <div
+              class="bgpub-bgnormal-postion-1 bgpub-div-height-space-35"
+            ></div>
+            <div
+              class="bgpub-div-fixBottom-1 advBudgetItem-margin-10"
+              id="fixDiv-advBudgetItem"
+              style="bottom: 15px;"
+            >
+              <div class="bgpub-bgnormal-postion-1 btn-query btn-permission">
+                <!-- 单据数量和指标金额的信息显示 -->
+                <div
+                  id="tableTotalShow-advBudgetItem"
+                  class="bgpub-bgnormal-postion-1 bg-div-margin-top-bottom-8"
+                >
+                  <span>共&nbsp;</span>
+                  <span id="span-billsCount-advBudgetItem">0</span>
+                  <span>&nbsp;张单据&nbsp;&nbsp;&nbsp; 指标金额：&nbsp; </span>
+                  <span id="span-billsTotalMoney-advBudgetItem">0.00</span>
+                </div>
+              </div>
+              <div class="bgpub-bgnormal-postion-1">
+                <div class="bgpub-normal-floatLeft-1">
+                  <label
+                    class="mt-checkbox mt-checkbox-single mt-checkbox-outline bgpub-top-4"
+                  >
+                    <input
+                      id="input-seleAll-advBudgetItem"
+                      type="checkbox"
+                      class="checkboxes"
+                      value=""
+                    />
+                    &nbsp; 全选
+                    <span></span>
+                  </label>
+                </div>
+                <div
+                  class="bgpub-normal-floatLeft-1 bgPub-bgPlanTbl-blank-4"
+                ></div>
+                <div class="bgpub-normal-floatLeft-1">
+                  <button
+                    type="button"
+                    id="btn-new-advBudgetItem"
+                    class="btn btn-sm btn-default btn-primary btn-new btn-add bgpub-normal-leftButton-1 btn-permission"
+                  >
+                    新增行
+                  </button>
+                </div>
+                <div class="bgpub-normal-floatLeft-1">
+                  <button
+                    type="button"
+                    id="btn-save-advBudgetItem"
+                    class="btn btn-sm btn-default btn-save bgpub-normal-leftButton-1 btn-permission"
+                  >
+                    保存
+                  </button>
+                </div>
+                <div class="bgpub-normal-floatLeft-1">
+                  <button
+                    type="button"
+                    id="btn-pf-advBudgetItem"
+                    class="btn btn-sm btn-default btn-reply btn-un-reply bgpub-normal-leftButton-1 btn-permission"
+                  >
+                    批复
+                  </button>
+                </div>
+                <div class="bgpub-normal-floatLeft-1">
+                  <button
+                    type="button"
+                    id="btn-delete-advBudgetItem"
+                    class="btn btn-sm btn-default btn-delete bgpub-normal-leftButton-1 btn-permission"
+                  >
+                    删除
+                  </button>
+                </div>
+                <div class="bgpub-normal-floatLeft-1">
+                  <button
+                    type="button"
+                    id="btn-xp-advBudgetItem"
+                    class="btn btn-sm btn-default btn-un-reply bgpub-normal-leftButton-1 btn-permission"
+                    style="display: none;"
+                  >
+                    销批
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!--工作区底 begin-->
+        <div class="workspace-bottom">
+          <div class="container-fluid"></div>
+        </div>
+      </div>
+
+      <!--[新增]-模态框 弹出层-->
+      <div id="advBudgetItem-add" z-index="-1" class="ufma-modal">
+        <div class="u-msg-title">
+          <h4>批复指标编制</h4>
+        </div>
+        <div class="u-msg-content" id="bg-multiModal-content-advBgItem">
+          <!-- 主体表格 -->
+          <div id="bg-multiModal-content-body-advBgItem" class="">
+            <table
+              id="bgAdvModalTable"
+              class="ufma-table bgpub-datatable-tbl"
+            ></table>
+          </div>
+        </div>
+        <div class="u-msg-footer">
+          <button
+            type="button"
+            id="btn-modal-close"
+            class="btn btn-sm btn-default btn-cancel bgpub-normal-rightButton-1"
+            data-dismiss="modal"
+          >
+            取消
+          </button>
+          <button
+            type="button"
+            id="btn-modal-save"
+            class="btn btn-sm btn-default btn-save bgpub-normal-rightButton-1"
+          >
+            确定
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <script
+      src="../pub/bgPub.js?rev=@@hash"
+      type="text/javascript"
+      charset="utf-8"
+    ></script>
+    <script
+      src="../pub/bgPubImpAttachment.js?rev=@@hash"
+      type="text/javascript"
+      charset="utf-8"
+    ></script>
+    <script
+      src="../pub/bgPubAuditModal.js?rev=@@hash"
+      type="text/javascript"
+      charset="utf-8"
+    ></script>
+    <script
+      src="../pub/bgPubLog.js?rev=@@hash"
+      type="text/javascript"
+      charset="utf-8"
+    ></script>
+    <script
+      src="../pub/bgPubWait.js?rev=@@hash"
+      type="text/javascript"
+      charset="utf-8"
+    ></script>
+    <script
+      src="../pub/bgPubItemManager.js?rev=@@hash"
+      type="text/javascript"
+      charset="utf-8"
+    ></script>
+    <script
+      src="advBudgetItem.js?rev=@@hash"
+      type="text/javascript"
+      charset="utf-8"
+    ></script>
+  </body>
+</html>

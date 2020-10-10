@@ -1,0 +1,105 @@
+.error {
+    border-width: 1px;
+    border-style: solid;
+    border-color: red;
+    border-image: initial;
+}
+
+.commonShow {
+	max-width:100px;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	overflow: hidden;
+}
+/* select::-ms-expand {
+    display: none;
+}
+
+select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background: transparent;
+    border: none;
+    padding-left: 10px;
+    margin-left: -2px!important;
+    height: 100%;
+} */
+
+
+/* .select-default {
+    display: inline-block;
+    position: relative;
+}
+
+.select-default:after {
+    position: absolute;
+    right: 10px;
+    top: 12px;
+    width: 0;
+    height: 0;
+    content: "";
+    border-width: 3px 3px 0 3px;
+    border-style: solid;
+    border-color: #fff transparent;
+    -webkit-transition: all .25s;
+    -moz-transition: all .25s;
+    -ms-transition: all .25s;
+    -o-transition: all .25s;
+    transition: all .25s;
+}
+
+.select-default:before {
+    position: absolute;
+    right: 8px;
+    top: 12px;
+    width: 0;
+    height: 0;
+    content: "";
+    border-width: 5px 5px 0 5px;
+    border-style: solid;
+    border-color: #888 transparent;
+    -webkit-transition: transform .25s;
+    -moz-transition: transform .25s;
+    -ms-transition: transform .25s;
+    -o-transition: transform .25s;
+    transition: transform .25s;
+} */
+
+.ufma-textboxlist-border,
+.ufma-combox-border {
+    position: relative;
+    background: #fff;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
+    padding: 4px 8px;
+    width: 100%;
+    cursor: text;
+    height: 30px;
+}
+.ufma-card-icon.disEnabled .ufma-card-header {
+    color: #999;
+}
+.ufma-card-icon.disEnabled .ufma-card-footer .btn-label{
+    color: #999;
+}
+.ufma-card-icon.disEnabled .ufma-card-footer .btn-label:hover{
+    color: #108ee9;
+}
+.ufma-card-icon.disEnabled .card-icon{
+    opacity: 0.5;
+}
+.ufma-card-icon.disEnabled img {
+    -webkit-filter: grayscale(100%);
+    -moz-filter: grayscale(100%);
+    -ms-filter: grayscale(100%);
+    -o-filter: grayscale(100%);
+
+    filter: grayscale(100%);
+
+    filter: gray;
+}
+.ufma-card.disEnabled{
+    background-color: #f9f9f9;
+}

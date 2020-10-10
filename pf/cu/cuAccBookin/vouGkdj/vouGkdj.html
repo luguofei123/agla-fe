@@ -1,0 +1,106 @@
+﻿<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>国库单据</title>
+		<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+		<script src="../../../pub/boot.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+		<link rel="stylesheet" href="vouGkdj.css?rev=@@hash" />
+		<style>
+			.dataTables_wrapper.no-footer .dataTables_scrollBody {
+				border-bottom: none;
+			}
+			.dataTables_scrollBody {
+				width: 0px;
+				height: 0px;
+			}
+			table.dataTable thead .sorting_asc {
+				background: none;
+			}
+		</style>
+	</head>
+
+	<body id="vouGkdj">
+		<div class="ufma-layout-updown">
+			<div class="ufma-layout-up">
+				<div class="aaa">
+					<div class="bbb">
+						<ul class="nav nav-tabs" id="tabParent" style="margin-top:8px;width:860px;margin-bottom:8.5px;margin-left:20px;margin-right:20px;">
+
+						</ul>
+					</div>
+					<div class="btnTab">
+						<ul class="nav nav-tabs" id="tabAcce"
+							style="margin-top:0px;width:860px;margin-bottom:8.5px;margin-left:20px;margin-right:20px;">
+							<li class="active" id="wscBtnli">
+								<a href="javascript:;" id="wscBtn">未生成</a>
+							</li>
+							<li id="yscBtnli">
+								<a href="javascript:;" id="yscBtn">已生成</a>
+							</li>
+							<div class="control-label fl" style="margin: 5px 16px 5px 16px">单据日期：</div>
+							<div name="startDate" id="startDate" class="uf-datepicker fl">
+							</div>
+							<span class="split fl" style="margin: 5px 16px 5px 16px">至</span>
+							<div name="endDate" id="endDate" class="uf-datepicker fl">
+							</div>
+							<div style="margin-top:-12px;margin-left:620px;width:200px;height:30px;">
+								<div style="margin-top:12px;margin-left:0px;width:200px;height:30px;">
+									<input type="text" id="txt" placeholder="请输入要搜索的关键词"
+										style="right:770px;width:200px;height:30px;border:1px solid #D9D9D9;border-radius:4px;border-right: 1px solid transparent;">
+									<button class="btn btn-default btn-sm btn-search" id="btn"
+										style="margin-top:-52px;margin-left:194px;height:30px;">
+										<i class="glyphicon icon-search"></i>
+									</button>
+								</div>
+							</div>
+						</ul>
+					</div>
+				</div>
+				<div class="rpt-table-tab" style="width:860px;margin-left:20px;margin-right:20px;">
+					<table class="ufma-table uf-rpt-table" id="vouGkdjTable" tool-bar="#tool-bar"></table>
+				</div>
+				
+			</div>
+			<div id="tool-bar" class="ufma-tool-bar">
+				<div class="tool-bar-body" style="margin-left:19px;">
+					<div class="ufma-table-paginate">
+						<!-- 分页 开始位置 -->
+					</div>
+				</div>
+			</div>
+			<div class="ufma-layout-down bordered-top inline-block">
+				<div class="text-right margin-right-30">
+					<button type="button" class="btn btn-sm btn-primary btn-permission btn-bulid btn-ajax" id="btnBuild">生成</button>
+					<button type="button" class="btn btn-sm btn-primary btn-permission btn-cancle hide btn-ajax" id="btnCancleBuild">取消生成</button>
+					<button type="button" class="btn btn-sm btn-default" id="btnClose">关闭</button>
+				</div>
+			</div>
+			<div id="saveMethod-box" class="ufma-modal">
+				<div class="u-msg-title">
+					<h4>账簿选择</h4>
+				</div>
+				<div class="u-msg-content">
+					<form class="form-horizontal rpt-method-form">
+						<div class="form-group">
+							<label class="control-label" style="margin-left:14px;">现金账簿：</label>
+							<div class="control-element">
+								<div id='cashBook' class="uf-treecombox ufma-combox-cash" style="width:150px"></div>
+							</div>
+						</div>
+					</form>
+				</div>
+				<div class="u-msg-footer">
+					<button id="sureChose" type="button" class="btn btn-primary">确定</button>
+					<button type="button" class="btn btn-default btn-close">取消</button>
+				</div>
+			</div>
+
+		</div>
+		<script src="vouGkdj.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+		<script src="../dm.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+	</body>
+
+</html>

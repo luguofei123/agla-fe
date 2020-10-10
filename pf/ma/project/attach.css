@@ -1,0 +1,82 @@
+#vouAttachBox{}
+#vouAttachBox .u-msg-content{padding:0 35px;}
+#vouAttachBox .attach-clear{clear:both;}
+#vouAttachBox .u-msg-title{height: 48px;padding-top:10px;}
+#vouAttachBox .u-msg-close{padding-top:8px;}
+
+#vouAttachBox .attach-toolbar{margin-top:16px;height:30px;line-height: 30px;}
+#vouAttachBox .attach-toolbar .attach-toolbar-tip{float: left;}
+#vouAttachBox .attach-toolbar .attach-toolbar-btns{float: right;}
+#vouAttachBox .attach-toolbar .attach-toolbar-tip p{margin:0;display: inline-block;}
+
+#vouAttachBox .attach-show{border:1px solid #d9d9d9;width:100%;margin-top:10px;}
+#vouAttachBox .attach-noData{width:100%;text-align: center;padding-bottom: 120px;}
+#vouAttachBox .attach-noData img{width:116px;height: 90px;margin-top:80px;}
+#vouAttachBox .attach-noData p{text-align: center;margin:0;margin-top:20px;color:#999;}
+
+#vouAttachBox .attach-show-list{list-style: none;margin:0;padding:4px 0 20px 8px;overflow-y:auto;max-height:334px;}
+#vouAttachBox .attach-show-list li{
+    float: left;
+	width: 195px;
+	height: 160px;
+	border: 1px solid #dfe6ec;
+	border-radius: 4px;
+	margin: 16px 0 0 16px;
+	padding: 10px;
+}
+#vouAttachBox .attach-show-li:hover{background: #E6F4FD;box-shadow: 0 2px 4px 0 rgba(0,0,0,0.10);cursor: pointer;}
+#vouAttachBox .attach-img-box{
+    width: 160px;
+	height: 70px;
+	line-height: 70px;
+	text-align: center;
+}
+#vouAttachBox .attach-img-file{
+	width: auto;
+    height: auto;
+	max-width: 100%;
+	max-height: 70px;
+}
+#vouAttachBox .attach-img-file-pos-bg{position: absolute;top:0;width:210px;height: 126px;left:0;background:#fff;}
+#vouAttachBox .attach-img-file-pos{position: absolute;top:0;height: 126px;left:42px;}
+#vouAttachBox .attach-img-icon{height:110px;}
+#vouAttachBox .attach-img-tip{overflow: hidden;margin-top:8px;}
+#vouAttachBox .attach-img-tip span{font-size:12px;height:16px;line-height:16px;display: inline-block;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;}
+#vouAttachBox .attach-img-name{
+    float: left;
+	color: #333;
+	max-width: 100px;
+}
+#vouAttachBox .attach-img-byte{float:right;color:#999;max-width:50px;}
+#vouAttachBox .attach-img-sub{margin-top:-2px;font-size:12px;color:#999;max-width:205px;height:24px;line-height:24px;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;}
+#vouAttachBox .attach-img-btns{display:none;text-align: right;}
+#vouAttachBox .attach-img-btns span{margin-left:16px;color:#666;}
+#vouAttachBox .attach-img-btns span:hover{color:#108EE9;}
+#vouAttachBox .attach-img-sub-edit{display:none;margin-top:-2px;height:24px;line-height:24px;}
+#vouAttachBox .attach-img-sub-edit input{height:24px;line-height:24px;width:130px;padding:0 8px;outline:none;border: 1px solid #108EE9;border-radius: 4px;color:#333;font-size: 12px;}
+#vouAttachBox .attach-img-sub-edit span{display:inline-block;width:24px;height:24px;line-height:24px;color:#108EE9;font-weight: bold;margin-left:4px;}
+
+#vouAttachBox .attach-step2{display: none;}
+#vouAttachBox .attach-toolbar-back{color:#333;display: inline-block;cursor: pointer;}
+#vouAttachBox .attach-upload-noData{position:absolute;top:0;left:0px;z-index:9999;border:1px dashed #d9d9d9;background:#FBFBFB;width:100%;border-radius: 4px;text-align: center;padding: 100px 0 145px 0;cursor: pointer;}
+#vouAttachBox .attach-upload-noData span{font-size: 60px;color:#108EE9;}
+#vouAttachBox .attach-upload-noData p{text-align: center;margin:0;margin-top:8px;color:#333;
+#vouAttachBox .attach-upload-show{border:1px solid #d9d9d9;width:100%;margin-top:10px;}
+#vouAttachBox .attach-upload-show .attach-show-list{max-height:300px;height:300px;}
+/*#vouAttachBox .attach-upload-show .attach-show-list li{height:192px;}*/
+#vouAttachBox .attach-upload-toolbar{border:1px solid #d9d9d9;height:46px;line-height:46px;padding-left: 26px;position: absolute;width: 100%;z-index: 2;bottom: -11px;background: #fff;}
+#vouAttachBox .attach-upload-toolbar button{margin-top:-4px;}
+#vouAttachBox .attach-upload-toolbar span{margin-left:4px;}
+#vouAttachBox .attach-upload-toolbar span i{font-style: normal;margin:0 4px;}
+#vouAttachBox .attach-show-li-add{width:230px;height:192px;margin:16px 0 0 16px;float:left;border:1px dashed #DFE6EC!important;background:#F7F7F7;cursor: pointer;text-align: center;}
+#vouAttachBox .attach-show-li-add span{font-size:60px;color:#999;margin-top:45px;}
+#vouAttachBox .attach-show-li-add p{color:#666;text-align:center;margin-top:8px;}
+
+#vouAttachBox .attach-upload-box{position: relative;}
+
+.fileinput-remove{display:none;}
+.kv-zoom-body .attach-img-file-pos-bg{display: none;}
+
+.kv-modalFooter{position: absolute;bottom: 0;left: 0;width:100%;height:70px;border-radius:0 0 9px 9px;background: rgba(0,0,0,0.50);box-shadow: 0 2px 8px 0 rgba(0,0,0,0.20);font-size: 24px;text-align: center;color: #fff;line-height: 70px;}
+.kv-modalFooter span{margin:0 32px;cursor: pointer;}
+.kv-modalFooter span:hover{color:#108EE9;}

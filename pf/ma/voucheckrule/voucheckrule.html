@@ -1,0 +1,235 @@
+﻿<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>凭证校验规则</title>
+		<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+		<script src="../../pub/boot.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+		<style>
+			/* 强制和外面的 outDiv overflow一样*/
+			.dataTables_wrapper {
+	overflow: initial !important;
+	}
+		</style>
+	</head>
+
+	<body>
+		<div id="expFunc" class="container-fluid ufma-container">
+			<!--工作区 begin-->
+			<div class="workspace">
+				<!--工作区顶部 begin-->
+				<div class="workspace-top">
+					<div class="container-fluid">
+						<div class="ufma-portlet">
+							<div class="portlet-title">
+								<div class="caption">
+									<span class="caption-subject font-dark uppercase">凭证校验规则</span>
+								</div>
+								<div class="actions">
+									<div class="btn-group">
+										<button type="button" class="btn btn-sm btn-primary btn-permission btn-add">新增</button>
+									</div>
+								</div>
+							</div>
+							<div class="portlet-body form-horizontal bordered">
+								<div class="form-body pr" id="query-tj">
+									<div class="form-group label-group">
+										<div class="control-label">科目体系：</div>
+										<div class="control-element">
+											<span id="cbAccs" class="uf-combox"></span>
+										</div>
+									</div>
+									<button class="btn btn-primary btn-query btn-permission pa" style="top:8px;right:8px;">查询</button>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!--工作区中部 begin-->
+				<div class="workspace-center">
+					<div class="container-fluid">
+
+						<!--表格begin-->
+						<div class="tab-content" id="outDiv">
+							<!-- <table id="ruleData" tool-bar="#toolBar" class="ufma-table uf-rpt-table"></table> -->
+							<table id="ruleData" tool-bar="#toolBar" class="ufma-table uf-rpt-table">
+								<!-- <thead>
+								</thead>
+								<tbody>
+								</tbody> -->
+							</table>
+						</div>
+					</div>
+				</div>
+				<!--工作区底 begin-->
+				<div id="toolBar" class="ufma-tool-bar">
+					<div class="tool-bar-body">
+						<div class="ufma-tool-btns">
+							<label class="mt-checkbox mt-checkbox-outline margin-right-8">
+                        <input class="datatable-group-checkable" type="checkbox" name="test" value="1"> 全选
+                        <span></span>
+                    </label>
+							<button type="button" class="btn btn-sm btn-default btn-permission btn-delete">删除</button>
+							<button type="button" class="btn btn-sm btn-default btn-permission btn-start"> 启用</button>
+							<button type="button" class="btn btn-sm btn-default btn-permission btn-stop"> 停用</button>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!--编辑功能分类begin-->
+			<div id="modalRuleEdit" class="ufma-modal">
+				<div class="u-msg-title">
+					<h4>凭证校验规则编辑</h4>
+				</div>
+				<div class="u-msg-content" style="position:relative">
+					<div class="container-fluid">
+
+						<form id="formRule" class="form-horizontal fl">
+							<input type="hidden" name="chrId" value="" />
+							<input type="hidden" name="lastVer" value="" />
+							<!--科目体系-->
+							<div class="form-group margin-bottom-8" style="padding: 0 0 10px;">
+								<label class="control-label">科目体系：</label>
+								<div class="control-element">
+									<span id="cbAccsEdit" class="uf-combox" style="width:320px"></span>
+								</div>
+							</div>
+							<!--公式要素-->
+							<div class="panel ufma-panel" style="width:410px;height:360px;margin:0;">
+								<div class="panel-heading">
+
+									<div class="caption" style="padding-left:10px ;">公式要素</div>
+
+								</div>
+								<div class="panel-collapse collapse in">
+									<div class="panel-body" style="padding:16px 0;">
+										<!--会计科目-->
+										<div class="form-group margin-bottom-8" style="padding-top:0;padding-left: 0;">
+											<label class="control-label" style="width:98px;text-align: right;">会计科目：</label>
+											<div class="control-element">
+												<div id="cbAcco" class="uf-textboxlist" style="width:260px"></div>
+											</div>
+										</div>
+										<!--借、贷单选按钮-->
+										<div class="form-group margin-bottom-8" style="padding-top:0;padding-left: 0;">
+											<label class="control-label" style="width:98px;text-align: right;"></label>
+											<div class="control-element">
+												<label class="mt-radio mt-radio-outline coaAcc-right">
+                                        					<input type="radio" name="dc" value="1"/>借<!--checked-->
+                                        					<span></span>
+                                    					</label>
+												<label class="mt-radio mt-radio-outline coaAcc-right">
+                                        					<input type="radio" name="dc" value="-1"/>贷
+                                        					<span></span>
+                                    					</label>
+											</div>
+										</div>
+
+										<div class="form-group margin-bottom-8" style="padding-top:0;padding-left: 0;">
+											<label class="control-label" style="width:98px;text-align: right;">项目：</label>
+											<div class="control-element">
+												<div data-code="" class="uf-treecombox" valueField="id" textField="name" style="width:260px"></div>
+											</div>
+										</div>
+										<!--支出功能分类-->
+										<div class="form-group margin-bottom-8" style="padding-top:0;padding-left: 0;">
+											<label class="control-label" style="width:98px;text-align: right;">支出功能分类：</label>
+											<div class="control-element">
+												<div data-code="" class="uf-treecombox" valueField="id" textField="name" style="width:260px"></div>
+											</div>
+										</div>
+										<!--部门经济分类-->
+										<div class="form-group margin-bottom-8" style="padding-top:0;padding-left: 0;">
+											<label class="control-label" style="width:98px;text-align: right;">部门经济分类：</label>
+											<div class="control-element">
+												<div data-code="" class="uf-treecombox" valueField="id" textField="name" style="width:260px"></div>
+											</div>
+										</div>
+										<!--运算符-->
+										<div class="form-group" style="padding-top:0;padding-left: 0;">
+											<!--margin-top:30px!important;-->
+											<label class="control-label" style="width:98px;text-align: right;">运算符：</label>
+											<div class="control-element">
+												<div id="mq" class="uf-combox" idField="id" textField="text" style="width:260px"></div>
+											</div>
+										</div>
+										<!--公式end-->
+									</div>
+								</div>
+							</div>
+						</form>
+						<!--中间的导入按钮-->
+						<div class="fl tc" style="height:400px;width:40px;">
+							<a id="btnBuildMQ" class="ib icon-angle-double-right f16" style="height:30px;width:30px;border:1px #ddd solid;border-radius: 4px;padding-top: 5px;margin-top:200px;"></a>
+						</div>
+						<!--右边可输入区域-->
+						<div class="fr">
+							<form id="frmMQInfo">
+								<div class="panel ufma-panel" style="width:530px;height:110px;margin:0;">
+									<div class="panel-heading">
+
+										<div class="caption" style="padding-left:10px ;">公式说明</div>
+
+									</div>
+									<!--公式说明-->
+									<div class="panel-collapse collapse in">
+										<div class="panel-body pr" style="padding:0;">
+											<!--说明begin-->
+											<textarea id="mqScript" style="border:0;outline:none;height:60px;width:100%;resize: none;"></textarea>
+											<!--说明end-->
+										</div>
+									</div>
+								</div>
+								<!--公式-->
+								<div class="panel ufma-panel" style="width:530px;height:140px;margin:10px 0 0;">
+									<div class="panel-heading">
+
+										<div class="caption" style="padding-left:10px ;">公式</div>
+
+									</div>
+									<div class="panel-collapse collapse in">
+										<div class="panel-body" style="padding:0;">
+											<!--公式begin-->
+											<textarea id="mqResult" style="border:0;outline:none;height:100px;width:100%;resize: none;"></textarea>
+											<!--公式end-->
+										</div>
+									</div>
+								</div>
+								<!--公式翻译-->
+								<div class="panel ufma-panel" style="width:530px;height:140px;margin:10px 0 0;">
+									<div class="panel-heading">
+										<div class="caption" style="padding-left:10px ;">公式翻译</div>
+									</div>
+									<div class="panel-collapse collapse in">
+										<div class="panel-body" style="padding:0;">
+											<!--公式翻译begin-->
+											<textarea id="mqTrans" style="border:0;outline:none;height:100px;width:100%;resize: none;readonly=" readonly ";overflow-y:scroll"></textarea>
+											<!--公式翻译end-->
+										</div>
+									</div>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+				<div class="u-msg-footer">
+					<div class="ib" style="padding-right:150px;">
+						<button type="button" id="btnCheck" class="btn btn-sm btn-default btn-check btn-permission">验证</button>
+						<button type="button" id="btnTrans" class="btn btn-sm btn-default btn-permission btn-trans">翻译</button>
+						<button type="button" id="btnChangeState" class="btn btn-sm btn-default btn-permission btn-stop">停用</button>
+					</div>
+					<button type="button" class="btn btn-sm btn-primary btn-permission btn-ajax btn-saveadd">保存并新增</button>
+					<button type="button" class="btn btn-sm btn-default btn-permission btn-ajax btn-save"> 保存</button>
+					<button type="button" class="btn btn-sm btn-default btn-close"> 取消</button>
+				</div>
+			</div>
+
+		</div>
+		<script src="../maCommon/maCommon.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+		<script src="voucheckrule.js" type="text/javascript" charset="utf-8"></script>
+	</body>
+
+</html>

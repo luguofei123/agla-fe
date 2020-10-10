@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>应收账龄分析</title>
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <script src="../../pub/boot.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+    <link rel="stylesheet" href="ageAnalysis.css?rev=@@hash" />
+    <style>
+        #gridGOV_wrapper{overflow-y: auto}
+    </style>
+</head>
+
+<body>
+    <div id="aceCav" class="container-fluid ufma-container">
+        <!--工作区 begin-->
+        <div class="workspace">
+            <!--工作区顶部 begin-->
+            <div class="workspace-top">
+                <div class="container-fluid">
+                    <div class="ufma-portlet">
+                        <div class="portlet-title">
+                            <div class="caption">
+                                <span class="caption-subject font-dark uppercase">应收账龄分析</span>
+                            </div>
+                            <div class="inline-block absolute margin-left-15" style="margin-top: 10px">
+                                <ul class='ufma-list-col clearfix padding-left-8'>
+                                    <li class="ufma-list-col-item">
+                                        <div id='cbAgency' class="uf-treecombox ufma-combox-agency"></div>
+                                    </li>
+                                    <li class="ufma-list-col-item">
+                                        <div id='cbAcct' class="uf-combox ufma-combox-acct"></div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="portlet-body bordered pr">
+                            <div class="form-horizontal">
+                                <div class="form-row " style="margin-bottom: 0">
+                                    <div class="form-group" style="position: relative">
+                                        <!--<label class="control-label">往来单位：</label>-->
+                                        <div style="display: inline-block">
+                                            <button class="btn btn-default" id="colAction" data-type="01" style="padding: 4px 11px">
+                                                <span class="text">单位</span>
+                                                <span class="glyphicon icon-angle-bottom"></span>
+                                            </button>
+                                            <div class="rpt-funnel rpt-funnelBox rpt-funnelBoxList" style="position: absolute;display: none">
+                                                <div id="colList" class="rpt-colList">
+                                                    <span data-type="01">单位</span>
+                                                    <span data-type="02">个人</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <ul class="control-element" style="padding:0;">
+                                            <li class="selete-list-li">
+                                                <div id='cbCurrent' name="cbCurrent" class="uf-treecombox"></div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-label">会计科目：</label>
+                                        <ul class="control-element" style="padding:0;">
+                                            <li class="selete-list-li">
+                                                <div id='cbAcco' name="cbAcco" class="uf-treecombox ufma-combox-acco"></div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-label">分析日期：</label>
+                                        <div class="control-element" style="width:120px;">
+                                            <div name="anysDate" id="anysDate" class="uf-datepicker" style="width:120px;"></div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="form-group " style="float: right;">
+                                        <button class="btn btn-primary btn-query btn-permission" id="query_table">查询</button>
+                                    </div>
+                                    <div class="form-group " style="float: right;margin: 4px 10px;cursor: pointer;" id="hidden" data-item='1'>
+                                        <a>展开</a>
+                                        <span class="icon icon-angle-bottom"></span>
+                                    </div>
+                                    <div class="form-group " style="float: right;margin-top:4px">
+                                        <label class="mt-checkbox mt-checkbox-outline">
+                                            <input type="checkbox" class="isSum" name="isSum">汇总分析<span></span>
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <div style="clear: both;"></div>
+                                <div>
+                                    <div class="form-group" id="hidden-box" style="display: none;margin:10px 0;padding:0">
+                                        <div class="form-row pr">
+                                            <div class="control-label" style="width:64px;float:left;text-align: left;">账龄设置 </div>
+                                            <div class="control-label">
+                                                <ul class="timeLine">
+                                                </ul>
+                                            </div>
+                                            <ul class="but-box">
+                                                <li id="btn-add">+</li>
+                                                <li id="btn-del">-</li>
+                                            </ul>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- 中间层按钮组 -->
+                    </div>
+                </div>
+            </div>
+        
+            <!--工作区中部 begin-->
+            <div class="workspace-center" style="padding: 0 15px">
+                <div class="btn-body" style="height: 40px;">
+					<!--<div class="iframeBtnsSearch fr" id="index-search" style="margin-right: 113px">-->  <!--调整按钮距离-->
+						<div class="iframeBtnsSearch fr" id="index-search" style="margin-right: 100px">
+						<input type="text" class="searchHide focusOff bordered" placeholder="请输入要搜索的关键词" style="right: 163px;">
+						<input type="hidden" class="searchValueHide">
+						<button class="btn btn-default btn-sm btn-permission btn-search" id="searchHideBtn" style="margin-top:0px;">
+							<i class="glyphicon icon-search"></i>
+						</button>
+					</div>
+					<div class="rpt-box rpt-table-box pr">
+						<!--<div id="dtToolbar" class="btn-group" style="position:absolute;right:15px;">--> <!--调整按钮距离-->
+							<div id="dtToolbar" class="btn-group" style="position:absolute;right:0px;">
+						</div>
+					</div>
+				</div>
+               
+                <!--表格 begin -->
+                <div class="rpt-table-tab">
+                    <table class="ufma-table  uf-rpt-table" tool-bar="#tool-bar" id="gridGOV">  <!-- style="width:100%;"-->
+                    </table>
+                </div>
+            </div>
+            <!--工作区中部 end-->
+            <!--工作区底部 begin -->
+            <div id="tool-bar" class="ufma-tool-bar" > <!--position:static !important;padding-right: 30px;style="width:100%;"-->
+                <div class="tool-bar-body" > <!--style="width:100%;height:55px;"-->
+                    <div id='' class="ufma-tool-btns"><!-- style="margin-top:6px;clear: both;" -->
+                        <button type="button" class="btn btn-sm btn-default btn-permission btn-badDebt" id="badZhangType">计提坏账准备</button>
+                    </div>
+                </div>
+            </div>
+            <!--工作区底部 end-->
+        </div>
+    </div>
+    <script src="ageAnalysis.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+    <script src="timeLine.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+</body>
+
+</html>

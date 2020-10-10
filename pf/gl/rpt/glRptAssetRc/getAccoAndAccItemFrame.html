@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title></title>
+    <script src="../../../pub/boot.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body,
+        html {
+            width: 100%;
+        }
+
+        ul,
+        li {
+            list-style: none;
+        }
+
+        .main {
+            padding: 10px;
+            padding-bottom:70px;
+        }
+        .listWrap{
+            position: relative;
+        }
+
+        .titleRow {
+            width: 100%;
+            overflow: hidden;
+            border-right: 1px solid #ccc;
+            box-sizing: border-box;
+            border-top: 1px solid #ccc;
+        }
+
+        .titleRow .t1,
+        .titleRow .t2 {
+            height: 30px;
+            float: left;
+            border-left: 1px solid #ccc;
+            text-align: center;
+            color: #333;
+            line-height: 30px;
+            box-sizing: border-box;
+        }
+
+        .titleRow .t1 {
+            width: 60%;
+        }
+
+        .titleRow .t2 {
+            width: 40%;
+        }
+
+        .list {
+            width: 100%;
+            box-sizing: border-box;
+            padding: 0;
+            margin: 0;
+            border-bottom: 1px solid #ccc;
+        }
+
+        .list li {
+            width: 100%;
+            box-sizing: border-box;
+            overflow: hidden;
+            border-top: 1px solid #ccc;
+            border-right: 1px solid #ccc;
+        }
+
+        .itemLeft {
+            text-align: left;
+        }
+
+        .itemRight {
+            text-align: center;
+        }
+
+        .itemLeft,
+        .itemRight {
+            height: 30px;
+            float: left;
+            border-left: 1px solid #ccc;
+            color: #333;
+            line-height: 30px;
+        }
+
+        .list .itemLeft {
+            width: 60%;
+        }
+
+        .list .itemRight {
+            width: 40%;
+        }
+
+        .rowActive {
+            background: #ecf6fd;
+        }
+
+        .editRow {
+            position: absolute;
+            top: 31px;
+            left: 60%;
+            right: 1px;
+            height: 30px;
+            line-height: 30px;
+            background: #ecf6fd;
+            box-sizing: content-box;
+            border-top: 1px solid #ccc;
+            border-left: 1px solid #ccc;
+            overflow: hidden;
+        }
+        .uf-combox .uf-combox-border {
+            border:0 !important;
+            background: transparent !important;
+        }
+        .toolbar{
+            position: fixed;
+            bottom: 0;
+            left:0;
+            right:0;
+            overflow: hidden;
+            background: #fff;
+            padding:10px 0;
+            border-top:1px solid #ccc;
+        }
+        .self-group{
+            float:right;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main">
+        <div class="listWrap">
+            <div class="titleRow">
+                <div class="t1">总账</div>
+                <div class="t2">资产</div>
+            </div>
+            <ul id="treeList" class="list">
+            </ul>
+            <div id="editRow" class="editRow hide">
+                <div id="typeTreeCode" name="typeTreeCode" class="uf-combox" style="width:100%;"></div>
+            </div>
+        </div>
+
+        <div class="toolbar">
+            <div class="self-group">
+                <a href="javascript:;" class="btn btn-primary btn-save" id="saveAndCloseBtn">保存并关闭</a>
+                <a href="javascript:;" class="btn btn-default btn-save" id="saveBtn">保存</a>
+                <a href="javascript:;" class="btn btn-default" id="cancelBtn">取消</a>
+            </div>
+        </div>
+    </div>
+
+</body>
+<script src="getAccoAndAccItemFrame.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+
+</html>

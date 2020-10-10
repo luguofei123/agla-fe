@@ -1,0 +1,44 @@
+@CHARSET "UTF-8";
+.ufma-table-paginate {
+    float: right;
+    text-align: right;
+} 
+
+.bgitems-rightAlign {
+    float: right;
+    text-align: right;
+} 
+
+.bgItem-edt-tbl-scroll{
+	height : 300px;
+	overflow-y: scroll;
+}
+.tab-pane{
+	overflow-y: auto !important;
+}
+.bgpub-normal-floatLeft-1 {
+    position: relative;
+    float: left;
+    margin: 0px 10px 0 0;
+}
+/* CWYXM-18080 编制指标时需要增加文本说明项，只录入文本，用于描述指标信息--赵雪蕊--zsj */
+.fl {
+    float: left;
+    margin-top: 5px;
+}
+.descArea {
+    width: 700px;
+    margin: 20px auto;
+}
+#textSave {
+    float: right;
+}
+/* CWYXM-19453 文本说明项,只要被指标用了就应该不能修改,如果能修改请做好指标账簿界面的文本说明列同步 */
+.isUsedClass {
+  color: red;
+  float: right;
+  margin-top: -25px;
+  height: 30px;
+  vertical-align: bottom;
+  margin-right: 41px;
+}

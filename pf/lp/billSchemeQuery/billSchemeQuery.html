@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>会计平台单据查询</title>
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <script src="../../pub/boot.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+    <link rel="stylesheet" href="billSchemeQuery.css?rev=@@hash" />
+    <style>
+        .bottom-bar{
+            position: absolute;
+            bottom: 10px;
+            left: 10px;
+            right: 10px;
+            height:40px;
+            border: 1px solid #ccc;
+            padding: 5px;
+            overflow: hidden;
+        }
+        .bottom-bar-inner{
+            float: left;
+        }
+    </style>
+</head>
+
+<body style="overflow-x:hidden;">
+    <div class="container-fluid ufma-container">
+
+        <!--工作区 begin-->
+        <div class="workspace">
+            <!--账表工作区 begin-->
+            <div class="rpt-workspace" style="margin-bottom: 45px;">
+                <div class="rpt-selete-box bordered-bottom" style="margin-top:-8px;">
+                    <div class="rpt-title">单据查询</div>
+                    <div id='cbAgency' name="agencyCode" class="ufma-treecombox ufma-combox-agency" icon="icon-unit"
+                                 valueField="id" textField="name"
+                                 placeholder="请选择单位" style="margin-left: 10px;"></div>
+                    <div class="rpt-clear"></div>
+                </div>
+
+                <div style="border-bottom: 1px solid #ddd;margin-top: 10px;">
+                    <div id="navTabBox" class="table-sub-info uf-bf1" style="overflow: hidden;margin-bottom: -1px">
+                        <ul class="nav nav-tabs" id="itemTab" style="height:33px;border:none!important">
+                            <li class="active" data-id="1">
+                                <a href="javascript:;">未生成</a>
+                            </li>
+                            <li data-id="2">
+                                <a href="javascript:;">已生成</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <table id="nameTable1" class="ufma-table uf-rpt-table" tool-bar="#tool-bar"
+                    style="margin-top: 5px"></table>
+
+                <table id="nameTable2" class="ufma-table uf-rpt-table hide" tool-bar="#tool-bar"
+                    style="margin-top: 5px"></table>
+                <!-- 以下代码测试显示 不用请注释 begin -->
+                <!-- <br>
+                <br>
+                <h3>通过扫描二维码查询到的结果(测试)：</h3> -->
+                <div id="message"></div>
+                <!-- 测试 end -->
+            </div>
+            <!--账表工作区 end-->
+
+            <!--工作区底 begin-->
+            <!-- <div id="tool-bar" class="ufma-tool-bar">
+                <div class="tool-bar-body">
+                    <div class="ufma-tool-btns">
+                        <button id="generateChecked" class="btn btn-default btn-generate">生成</button>
+                        <button id="cancelGenerate" class="btn btn-default btn-cancel hide">取消生成</button>
+                    </div>
+                </div>
+            </div> -->
+            <div class="bottom-bar">
+                <div class="bottom-bar-inner">
+                    <div class="ufma-tool-btns">
+                        <button id="generateChecked" class="btn btn-default btn-generate">生成</button>
+                        <button id="cancelGenerate" class="btn btn-default btn-cancel hide">取消生成</button>
+                    </div>
+                </div>
+            </div>
+            <!--工作区底 end-->
+        </div>
+        <!--工作区 end-->
+
+    </div>
+    <script src="billSchemeQuery.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+</body>
+
+</html>

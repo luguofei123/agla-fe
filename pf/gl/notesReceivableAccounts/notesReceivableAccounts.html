@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>应收款备查簿</title>
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <script src="../../pub/boot.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+    <link rel="stylesheet" href="common.css"/>
+</head>
+
+<body>
+<div id="receivalbe-account" class="container-fluid ufma-container">
+    <!--工作区 begin-->
+    <div class="workspace">
+        <!--工作区顶部 begin-->
+        <div class="workspace-top">
+            <div class="container-fluid">
+                <div class="ufma-portlet">
+                    <div class="portlet-title"><!-- <div class="portlet-title pr">--CWYXM-7482--应收和应付备查簿，鼠标移上去，单位和账套都消失了--zsj-->
+                        <div class="caption">
+                            <span class="caption-subject font-dark uppercase">应收款备查簿</span>
+                        </div>
+                        <!--单位&账套选择 begin-->
+                        <div class="inline-block absolute margin-left-15 margin-top-8">
+                            <ul class='ufma-list-col clearfix padding-left-8'>
+                                <li class="ufma-list-col-item">
+                                    <div id='cbAgency' name="agencyCode" class="uf-treecombox ufma-combox-agency"></div>
+                                </li>
+                                <li class="ufma-list-col-item">
+                                    <div id='cbAcct' class="uf-combox ufma-combox-acct"></div>
+                                </li>
+                            </ul>
+                        </div>
+                        <!--单位&账套选择 end-->
+                        <div class="rpt-method-tip">
+                            <button id="showMethodTip" class="btn btn-primary glyphicon icon-file"></button>
+                            <div id="rptPlanList" style="display: none;">
+                            </div>
+                        </div>
+                        <div class="clearfix"></div>
+                    </div>
+
+                    <!--查询条件-->
+                    <div class="portlet-body bordered pr">
+                        <!--按钮-->
+                        <!--<div class="btn-group" style="position: absolute;right:15px;top:15px;">-->
+                            <!--<button id="btnQuery" type="button" class="btn btn-sm btn-primary btn-permission">查询-->
+                            <!--</button>-->
+                        <!--</div>-->
+                        <div class="rpt-query-box-left">
+                            <form id="frmQuery" class="form-horizontal">
+                                <div class="form-row">
+                                    <div class="form-group accoCondition">
+                                        <label class="control-label auto">会计科目：</label>
+                                        <div class="control-element">
+                                            <div id="accoCode" name="accoCode" class="uf-treecombox" style="width:240px"></div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-label">凭证日期：</label>
+                                        <div class="control-element" style="width:120px;">
+                                            <div name="startVouDate" id="startVouDate" class="uf-datepicker"
+                                                 style="width:120px;"></div>
+                                        </div>
+                                        <span class="split">-</span>
+                                        <div class="control-element" style="width:120px;">
+                                            <div name="endVouDate" id="endVouDate" class="uf-datepicker"
+                                                 style="width:120px;"></div>
+                                        </div>
+                                    </div>
+                                    <div class="clearfix"></div>
+                                </div>
+                            </form>
+                            <form id="queryMore" class="form-horizontal none" style="margin-top: 10px">
+                                <div class="form-row">
+
+                                    <div class="form-group" style="position: relative">
+                                        <!--<label class="control-label auto">往来单位：</label>-->
+                                        <div style="display: inline-block">
+                                            <button class="btn btn-default" id="colAction" data-type="01" style="padding: 4px 11px">
+                                                <span class="text">往来单位</span>
+                                                <span class="glyphicon icon-angle-bottom"></span>
+                                            </button>
+                                            <div class="rpt-funnel rpt-funnelBox rpt-funnelBoxList" style="position: absolute;display: none">
+                                                <div id="colList" class="rpt-colList">
+                                                    <span data-type="01">往来单位</span>
+                                                    <span data-type="02">个人</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="control-element">
+                                            <div id="currentCode" class="uf-treecombox" name="currentCode" idField="code" textField="codeName"
+                                                 leafRequire=true style="width:240px"></div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-label">应收金额：</label>
+                                        <div class="control-element" style="width:120px;">
+                                            <input id="minAmt" type="text" name="minAmt"
+                                                   class="form-control">
+                                        </div>
+                                        <span class="split">-</span>
+                                        <div class="control-element" style="width:120px;">
+                                            <input id="maxAmt" type="text" name="maxAmt"
+                                                   class="form-control">
+                                        </div>
+                                    </div>
+                                    <div class="clearfix"></div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label class="control-label auto">票据类型：</label>
+                                        <div class="control-element">
+                                            <div id="billType" class="uf-treecombox" idField="code" textField="codeName"
+                                                 leafRequire=true name="billType" style="width:240px"></div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-label">票据号：</label>
+                                        <div class="control-element">
+                                            <input id="billNo" type="text" name="billNo" class="form-control"
+                                                   style="width: 256px">
+                                        </div>
+                                    </div>
+                                    <div class="clearfix"></div>
+                                </div>
+                            </form>
+                        </div>
+
+                        <div class="rpt-query-box-right">
+                            <label class="label label-more" data-target="#queryMore">更多<i class="glyphicon icon-angle-bottom"></i></label>
+                            <div class="rpt-query-btn">
+                                <button id="btnQuery" class="btn btn-primary btn-query btn-permission">查询</button>
+                                <button id="saveMethod" class="btn btn-default btn-save btn-permission">保存</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--工作区中部 begin-->
+        <div class="workspace-center">
+            <div class="rpt-box rpt-table-box pr">
+                <div class="rpt-table-title">
+                    应收款
+                </div>
+                <div id="dtToolbar" class="btn-group" style="position:absolute;right:15px;bottom:10px;">
+                </div>
+            </div>
+            <div class="rpt-table-tab" style="padding: 0 15px;">
+                <table class="ufma-table uf-rpt-table" tool-bar="#tool-bar" id="gridNotes"></table>
+            </div>
+        </div>
+
+        <div id="tool-bar" class="ufma-tool-bar">
+            <div class="tool-bar-body">
+                <!--toolbar-->
+            </div>
+        </div>
+    </div>
+    <!--保存查询方案 modal start-->
+    <div id="saveMethod-box" class="ufma-modal">
+        <div class="u-msg-title">
+            <h4>保存查询方案</h4>
+        </div>
+        <div class="u-msg-content">
+            <form class="form-horizontal rpt-method-form">
+                <div class="form-group" style="margin-left:56px;margin-top:30px;">
+                    <label class="control-label">命名：</label>
+                    <div class="control-element">
+                        <input id="methodName" type="text" class="form-control" style="width: 300px;">
+                    </div>
+                </div>
+                <div class="form-group" style="margin-left:92px;">
+                    <label class="mt-radio mt-radio-outline margin-right-8 rpt-radio-span">
+                        <input class="" type="radio" name="prjScope" value="1" checked> 私有方案
+                        <span></span>
+                    </label>
+                    <label class="mt-radio mt-radio-outline margin-right-8 rpt-radio-span">
+                        <input class="" type="radio" name="prjScope" value="2"> 本单位共享
+                        <span></span>
+                    </label>
+                    <label class="mt-radio mt-radio-outline margin-right-8 rpt-radio-span">
+                        <input class="" type="radio" name="prjScope" value="3"> 全系统共享
+                        <span></span>
+                    </label>
+                </div>
+            </form>
+        </div>
+        <div class="u-msg-footer">
+            <button id="sureSaveMethod" type="button" class="btn btn-primary">保存</button>
+            <button id="saveAs" type="button" class="btn btn-default">另存为</button>
+            <button type="button" class="btn btn-default btn-close">取消</button>
+        </div>
+    </div>
+    <!--保存查询方案 modal end-->
+</div>
+<script src="dm.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+<script src="notesReceivableAccounts.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+</body>
+
+</html>

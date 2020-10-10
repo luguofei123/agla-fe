@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>预收账款登记</title>
+	<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+	<script src="../../pub/boot.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+	<link rel="stylesheet" href="depAccount.css" />
+</head>
+
+<body>
+	<div id="coaAccEdit" class="ufma-layout-updown">
+		<div class="ufma-layout-up">
+			<form id="frmBookIn" class="container-fluid form-horizontal form-padding">
+				<div style="margin:0;">
+					<div class="panel-collapse collapse in">
+						<div class="panel-body" style="padding:16px;">
+							<div class="form-row">
+								<div class="form-group">
+									<label class="control-label">发生日期：</label>
+									<div class="control-element">
+										<div name="occurDate" id="occurDate" class="uf-datepicker" style="width: 210px;"></div>
+									</div>
+								</div>
+
+								<div class="form-group" style="margin-left: 60px;">
+									<label class="control-label">往来单位：</label>
+									<div class="control-element">
+										<div id="currentCode" class="uf-treecombox w190" name="currentCode" idField="code" textField="codeName"
+											 leafRequire=true></div>
+									</div>
+								</div>
+								<div class="clearfix"></div>
+							</div>
+							<div class="form-row">
+								<div class="form-group">
+									<label class="control-label">票据类型：</label>
+									<div class="control-element">
+										<div id="billtypeCode" class="uf-treecombox w190" name="billtypeCode" idField="code" textField="codeName"
+											 leafRequire=true></div>
+									</div>
+								</div>
+								<div class="form-group" style="margin-left: 64px;">
+									<label class="control-label">票据号：</label>
+									<div class="control-element">
+										<input type="text" id="billNo" name="billNo" class="form-control w190">
+									</div>
+								</div>
+								<div class="clearfix"></div>
+							</div>
+							<div class="form-row">
+								<div class="form-group">
+									<label class="control-label">预收金额：</label>
+									<div class="control-element">
+										<input id="depositMoney" type="text" name="depositMoney" class="form-control w190">
+									</div>
+								</div>
+								<div class="clearfix"></div>
+							</div>
+							<div class="form-row">
+								<div class="form-group" style="margin-left: 27px;">
+									<label class="control-label">备注：</label>
+									<div class="control-element" style="vertical-align: top">
+										<textarea type="text" id="remark" name="remark" class="form-control" style="width: 500px;height:70px"></textarea>
+									</div>
+								</div>
+								<div class="clearfix"></div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+			</form>
+
+			<div class="ufma-layout-down bordered-top">
+				<div class="text-right  margin-right-30">
+					<button type="button" class="btn btn-sm btn-primary btn-permission btn-saveadd state-edit btn-ajax" id="btnSaveAdd">保存并新增</button>
+					<button type="button" class="btn btn-sm btn-default btn-permission btn-save state-edit btn-ajax" id="btnSave">保存</button>
+					<button type="button" class="btn btn-sm btn-default" id="btnClose">取消</button>
+				</div>
+			</div>
+		</div>
+		<script src="dm.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+		<script src="bookin.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+</body>
+
+</html>

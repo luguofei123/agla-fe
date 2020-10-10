@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>长期股权投资登记</title>
+	<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+	<script src="../../pub/boot.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+	<link rel="stylesheet" href="dpexpenses.css" />
+</head>
+
+<body>
+	<div id="coaAccEdit" class="ufma-layout-updown">
+		<div class="ufma-layout-up">
+			<form id="frmBookIn" class="container-fluid form-horizontal" style="padding:15px 30px 30px;">
+				<div class="form-row" style="margin-bottom: 20px;">
+					<div class="form-group m0 p0">
+						<label class="control-label auto">备查类型：</label>
+						<div class="control-element">
+							<input id="receivableType" type="text" class="form-control" readonly="true" style="width:190px;background-color:#F2F2F2;color:#cccccc">
+						</div>
+					</div>
+					<div class="form-group p0" style="margin-left: 50px;">
+						<label class="control-label">备注：</label>
+						<div class="control-element">
+							<input type="text" id="remark" name="remark" class="form-control" style="width:318px;">
+						</div>
+					</div>
+					<div class="clearfix"></div>
+				</div>
+				<div class="panel ufma-panel" style="width:726px;height:258px;margin:0;">
+					<div class="panel-heading">
+						<div class="caption">股权信息</div>
+					</div>
+					<div class="panel-collapse collapse in">
+						<div class="panel-body" style="padding-top: 16px;padding-left: 30px;">
+							<div class="form-row">
+								<div class="form-group required">
+									<label class="control-label">被投资单位:</label>
+									<div class="control-element"  style="width:190px">
+										<div id="investmentAgency" class="uf-treecombox" name="investmentAgency" idField="code" textField="codeName" leafRequire=true style="width:190px"></div>
+									</div>
+								</div>
+								<div class="form-group required" style="margin-left: 20px;">
+									<label class="control-label" style="width:100px">社会信用代码：</label>
+									<div class="control-element" style="width:222px">
+										<input type="text" id="investmentCredit" name="investmentCredit" class="form-control" onkeyup="value=value.replace(/[\u4e00-\u9fa5]/ig,'')" maxlength="18"/><!--社会信用代码控制为：内容非汉字，且不超过18位-->
+									</div>
+								</div>
+
+								<div class="clearfix"></div>
+							</div>
+							<div class="form-row">
+								<div class="form-group required">
+									<label class="control-label">投资金额：</label>
+									<div class="control-element" style="width:190px">
+										<input id="investmentMoney" type="text" name="investmentMoney" class="form-control">
+									</div>
+								</div>
+								<div class="form-group required" style="margin-left: 40px;">
+									<label class="control-label">投资日期：</label>
+									<div class="control-element" style="width:220px">
+										<div name="investmentDate" id="investmentDate" class="uf-datepicker" style="width: 242px;"></div>
+									</div>
+								</div>
+								<div class="clearfix"></div>
+							</div>
+							<div class="form-row">
+								<div class="form-group required">
+									<label class="control-label">持有股份：</label>
+									<div class="control-element" style="width:190px">
+										<input id="holdShares" type="text" name="holdShares" class="form-control">
+									</div>
+								</div>
+								<div class="form-group required" style="margin-left: 40px;">
+									<label class="control-label">股份占比：</label>
+									<div class="control-element" style="width:220px">
+										<input type="text" id="shareRatio" name="shareRatio" class="form-control" style="width:220px">
+									</div>
+								</div>
+
+								<div class="clearfix"></div>
+							</div>
+							<div class="form-row">
+								<div class="form-group required">
+									<label class="control-label">核算方法：</label>
+									<div class="control-element" style="width:190px">
+										<input type="text" id="accountingMethod" name="accountingMethod" class="form-control">
+									</div>
+								</div>
+								<div class="clearfix"></div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</form>
+
+			<div class="ufma-layout-down bordered-top">
+				<div class="text-right  margin-right-30">
+					<button type="button" class="btn btn-sm btn-primary btn-permission btn-saveadd btn-ajax" id="coaAccSaveAddAll">保存并新增</button>
+					<button type="button" class="btn btn-sm btn-default btn-permission btn-save btn-ajax" id="btnSave">保存</button>
+					<button type="button" class="btn btn-sm btn-default" id="btnClose"> 关闭</button>
+				</div>
+			</div>
+		</div>
+		<script src="dm.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+		<script src="bookin.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+</body>
+
+</html>

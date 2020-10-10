@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>基础数据下发</title>
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <script src="../../pub/boot.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+    <link rel="stylesheet" href="maRef.css?rev=@@hash"/>
+</head>
+<body>
+<div class="container-fluid ufma-container">
+    <!--工作区 begin-->
+    <div class="workspace" style="min-height:516px">
+        <!--工作区顶部 begin-->
+        <div class="workspace-top">
+            <div class="container-fluid">
+                <div class="ufma-portlet">
+                    <div class="portlet-title">
+                        <div class="caption">
+                            <span class="caption-subject font-dark uppercase">基础数据下发</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--工作区顶部 end-->
+
+        <!--工作区中部 begin-->
+        <div class="workspace-center" style="margin-top:-8px;">
+            <div class="container-fluid">
+                <div class="ufma-layout ufma-layout-slider-sm ufma-layout-fixed-slider ufma-layout-fixed-slider-left">
+                    <!--工作区中左布局begin-->
+                    <div class="ufma-layout-slider left padding-right-0" style="z-index:1002">
+                        <div class="ma-cont-box bordered-input margin-right-8">
+                            <p class="bordered-bottom ma-box-top">下发单位</p>
+                            <div class="input-group ma-input-group">
+                                <input type="text" id="key" value="" class="form-control empty" placeholder="请输入搜索关键词" style="right:-10px;">
+                                <span class="input-group-addon"><span class='glyphicon icon-search'></span></span>
+                            </div>
+                            <div>
+                                <label class="rpt-check rpt-checkAll mt-checkbox mt-checkbox-outline">
+                                    <input name="isAll" type="checkbox">全选<span></span>
+                                </label>
+                            </div>
+                            <ul id="docTree" class="ufmaTree ztree doc-ztree"></ul>
+                        </div>
+                    </div>
+                    <!--工作区中左布局end-->
+                    <!--工作区中右布局begin-->
+                    <div class="ufma-layout-content" id="documentArea">
+	                    <div class="ufma-portlet">
+		                     <div class="portlet-body ma-query-box bordered">
+		                         <div class="ma-query-box-left">
+		                             <div class="ma-query-box-left-l">
+		                                	 要素类型：
+		                             </div>
+		                             <div class="ma-query-box-left-r">
+		                                 <ul class="ma-query-ul">
+		                                 </ul>
+		                             </div>
+		                         </div>
+		                         <div class="ma-query-box-right" id="moreQuery">
+		                             <i>更多</i>&nbsp;<span class="glyphicon icon-angle-bottom"></span>
+		                         </div>
+		                     </div>
+	                   	</div>
+	                    <div class="table-sub clearfix">
+		                     <div class="table-sub-action pull-right">
+		                         <div class="iframeBtnsSearch">
+		                             <input type="text" class="searchHide focusOff bordered" placeholder="请输入要搜索的关键词" style="right:40px;">
+		                             <input type="hidden" class="searchValueHide" >
+		                             <button class="btn btn-default btn-sm btn-permission btn-search" id="searchHideBtn"><span class='glyphicon icon-search'></span></button>
+		                         </div>
+		                     </div>
+	                    </div>
+	                    <div class="tab-content ac-table">
+	                        <table id="maTable" tool-bar="#maTable-tool-bar" class="ufma-table ma-table fixed-table">
+	                            <thead id="maThead"></thead>
+	                        </table>
+	                    </div>
+                    </div>
+                    <!--工作区中右布局end-->
+                </div>
+            </div>
+        </div>
+        <!--工作区中部end-->
+        
+        <!--工作区底 begin-->
+        <div id="maTable-tool-bar" class="ufma-tool-bar" style="padding-left:249px;">
+            <div class="tool-bar-body">
+                <div class="ufma-tool-btns">
+                    <label class="mt-checkbox mt-checkbox-outline margin-right-8" style="margin-left:1px;">
+                        <input class="datatable-group-checkable" type="checkbox" name="test" value="1"> 全选
+                        <span></span>
+                    </label>
+                    <button id="zs-add-check" type="button" class="btn btn-sm btn-default btn-permission btn-add-senddown">加入下发</button>
+                </div>
+            </div>
+        </div>
+        <!--工作区底 end-->
+    </div>
+    <!--工作区 end-->
+</div>
+<!--整个容器 end-->
+
+<!--右侧购物车 begin-->
+<div class="rightFixedBtn">
+    <span class="glyphicon icon-issued"></span>
+    <i class="cartCount"></i>
+</div>
+<div class="rightFixed">
+    <div class="rightFixedHead">
+        <span class="glyphicon icon-angle-double-left" style="cursor:pointer;"></span>&nbsp;&nbsp; 已选择<span id="docSelectNum">0</span>家下发单位，<span id="kindSelectNum">0</span>个类别，<span id="mainSelectNum">0</span>基础数据
+    </div>
+    <div class="rightFixedCont">
+    </div>
+    <div class="rightFixedFoot">
+        <button id="sureMaRef" class="btn btn-xs btn-primary btn-permission btn-confirm-senddown">确认下发</button>
+        <span id="clearTree" class="btn-empty btn-permission">清空</span>
+    </div>
+</div>
+<!--右侧购物车 end-->
+
+<script src="maRef.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+</body>
+</html>

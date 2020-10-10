@@ -1,0 +1,16 @@
+.rpt-funnel{margin-top:10px;height:225px;}
+.rpt-funnelBtn{font-size: 15px;cursor:pointer;}    
+
+.rpt-funnelBox{position: absolute;z-index:9999;background:#fff;border:1px solid #eee;padding:10px 8px;box-shadow: 0 0 4px 0 rgba(0,0,0,0.50);border-radius:4px;}
+.rpt-funnelBox p{margin-bottom: 0;}
+ 
+.rpt-funnelBoxList{display:none;right:4px;}
+.rpt-funnelBoxList:before{content:'';display:inline-block;border-left: 10px solid transparent;border-right: 10px solid transparent;border-bottom: 10px solid #d9d9d9;position: absolute;top:-10px;right:16px;}
+.rpt-funnelBoxList:after{content:'';display:inline-block;border-left: 9px solid transparent;border-right: 9px solid transparent;border-bottom: 9px solid #fff;position: absolute;top:-9px;right:17px;}
+.rpt-colList{text-align: left;min-width: 90px;height:180px;overflow-y: scroll;}
+.rpt-colList label{font-weight: normal;margin-bottom: 8px;}
+.rpt-funnelBoxList .rpt-colBtn{text-align: right; }
+.btn-group > .btn:last-child:not(:first-child), .btn-group > .dropdown-toggle:not(:first-child) {
+  border-top-left-radius: 4px; 
+     border-bottom-left-radius: 4px; 
+}

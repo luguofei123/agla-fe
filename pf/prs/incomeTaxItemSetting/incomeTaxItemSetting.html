@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>所得税项目设置</title>
+    <meta
+      content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
+      name="viewport"
+    />
+    <script
+      src="../../pub/boot.js?rev=@@hash"
+      type="text/javascript"
+      charset="utf-8"
+    ></script>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="../common/common.css?rev=@@hash"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="incomeTaxItemSetting.css?rev=@@hash"
+    />
+  </head>
+  <body>
+    <!--整个容器 begin-->
+    <div id="income-tax-item-setting" class="container-fluid ufma-container">
+      <!--工作区 begin-->
+      <div class="workspace">
+        <!--工作区顶部 begin-->
+        <div class="prs-workspace">
+          <div class="ufma-portlet">
+            <div class="portlet-title">
+              <div class="caption">
+                <span class="caption-subject font-dark uppercase"
+                  >所得税项目设置</span
+                >
+              </div>
+              <div class="actions">
+                <div>
+                  <button
+                    id="btn-add-same-level"
+                    type="button"
+                    class="btn btn-sm btn-primary btn-permission btn-add"
+                  >
+                    新增同级
+                  </button>
+                  <button
+                    id="btn-add-child"
+                    type="button"
+                    class="btn btn-sm btn-primary btn-permission btn-add"
+                  >
+                    新增下级
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--工作区中begin-->
+        <div class="workspace-center margin-top--8">
+          <div class="incomeTaxItemTree" style="overflow:auto;">
+            <ul id="tree" class="ztree"></ul>
+          </div>
+          <div class="bottom-btn bordered-top depar-tool">
+            <button
+              id="btn-edit-node"
+              type="button"
+              class="btn btn-sm btn-default btn-permission btn-edit"
+            >
+              编辑
+            </button>
+            <button
+              id="btn-delete-node"
+              type="button"
+              class="btn btn-sm btn-default btn-permission btn-delete"
+            >
+              删除
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script
+      src="incomeTaxItemSetting.js?rev=@@hash"
+      type="text/javascript"
+      charset="utf-8"
+    ></script>
+  </body>
+</html>

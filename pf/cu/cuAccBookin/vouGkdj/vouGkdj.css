@@ -1,0 +1,21 @@
+/* 后端分页 */
+#vouGkdj .ufma-table-paginate{
+	float: right;
+}
+.vouGkdjTable-paginate .dataTables_info {
+	   display: none;
+}
+#vouGkdj .ufma-table-paginate select {padding: 8px;}
+#vouGkdj .ufma-table-paginate .pull-left{line-height: 30px; margin: 0;}
+#vouGkdj .ufma-table-paginate button.pull-left{line-height: 20px;}
+#vouGkdj .ufma-table-paginate select,
+#vouGkdj .ufma-table-paginate input{height: 30px; border-radius: 4px;}
+#vouGkdj .ufma-table-paginate input{width: 34px;}
+#vouGkdj .ufma-table-paginate .pagination-sm>li>a{line-height: 1.42857143;}
+#vouGkdj .ufma-table-paginate .vbNumPage.active span{background-color: #108EE9;border-color: #108EE9;}
+#vouGkdj .ufma-table-paginate .vbNumPage:hover a{background-color: #108EE9;border-color: #108EE9;color: #FFFFFF;}
+#vouGkdj .ufma-table-paginate .vbPrevPage:hover a{background-color: #108EE9;border-color: #108EE9;color: #FFFFFF;}
+#vouGkdj .ufma-table-paginate .vbNextPage:hover a{background-color: #108EE9;border-color: #108EE9;color: #FFFFFF;}
+#vouGkdj .ufma-table-paginate #vbTable-pagination {
+	margin: 0 8px 0 0;
+}

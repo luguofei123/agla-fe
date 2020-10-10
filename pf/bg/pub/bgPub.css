@@ -1,0 +1,593 @@
+.bgPub-bgPlanTbl {
+	padding-left: 8px;
+	padding-right: 8px;
+	padding-top: 8px;
+	padding-bottom: 8px;
+	width: 100%;
+}
+
+.bgPub-bgPlanTbl-tr {
+	height: 42px;
+	padding-left: 8px;
+	padding-right: 8px;
+	padding-top: 4px;
+	padding-bottom: 4px;
+}
+
+.bgPub-bgPlanTbl-lbl {
+	width: 10%;
+}
+
+.bgPub-bgPlanTbl-input {
+	width: 35% !important;
+	max-width: 35% !important;
+}
+/* CWYXM-19450 指标编制和指标调剂,点击更多时要素显示换行了,具体见截图--zsj */
+.bgPub-bgPlanTbl-lbl-right {
+	/* width: 100%; */
+  text-align: right;
+  max-width: 300px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.bgPub-bgPlanTbl-blank-1 {
+	width: 1px;
+}
+
+.bgPub-bgPlanTbl-blank-2 {
+	width: 2px;
+}
+
+.bgPub-bgPlanTbl-blank-4 {
+	width: 4px;
+}
+
+.bgPub-bgPlanTbl-blank-8 {
+	width: 8px;
+}
+
+.bgPub-bgPlanTbl-blank-8p {
+	width: 1%;
+}
+
+.bgPub-combox {
+	position: relative;
+	background: #fff;
+	border: 1px #d9d9d9 solid;
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+	border-radius: 4px;
+	padding: 4px 8px;
+	width: 210px;
+	cursor: text;
+	height: 30px;
+}
+
+.bgPubMoneyCol {
+	text-align: right;
+}
+
+.bgPubTableRowNumCol {
+	text-align: center;
+}
+
+
+/** **************************** 鐎电厧鍙嗛弬鍥︽閻ㄥ嫭鐗卞锟� ***********************************/
+
+.bgPub-lbl-xlsfile {
+	box-shadow: none;
+	width: 70%;
+	height: 32px;
+	border-radius: 2px;
+	border: 1px #d9d9d9 solid;
+	/**transform : translateY(1px);**/
+}
+
+.bgpubgroupaddon {
+	padding: 6px 3px !important;
+}
+
+
+/**********************  閺嶈宓佹０鍕暬閺傝顢嶉悽鐔稿灇閺囨潙顦�  ****************************/
+
+.bgPub-div-findMsg {
+	width: 100% !important;
+	border: 1px solid;
+	float: left !important;
+	padding: 9px 0px
+}
+
+.bgPub-div-findMsg-left {
+	width: 80%;
+	float: left;
+}
+
+.bgPub-div-findMsg-right {
+	width: 18%;
+	float: left;
+}
+
+.bgPub-div-findMsg-left2 {
+	width: 70%;
+	float: left;
+}
+
+.bgPub-div-findMsg-right2 {
+	width: 28%;
+	float: left;
+}
+
+.bgPub-div-findMsg-right-subdiv {
+	float: right;
+	padding-left: 8px;
+	padding-top: 8px;
+	height: 30px;
+	position: relative;
+}
+
+.bgPub-div-bgDateTimeFatherPanel {
+	width: 100%;
+	float: left;
+}
+
+.bgPub-div-bgMoney {
+	width: 45%;
+	float: left;
+}
+
+.bgPub-div-bgDateTimeText {
+	margin-top: 4px;
+	margin-left: 4px;
+	margin-right: 4px;
+	float: left;
+}
+
+.bgPub-div-bgDateTime {
+	width: 45%;
+	float: left;
+}
+
+/* .bgPub-div-btn-more {
+	position: relative;
+	padding-top: 5px !important;
+	margin-right: 10px;
+	height: 30px;
+} */
+
+.bgPub-span-btn-more b:after {
+	position: absolute;
+	right: 4px;
+	top: 12px;
+	width: 0;
+	height: 0;
+	content: "";
+	border-width: 3px 3px 0 3px;
+	border-style: solid;
+	border-color: #ECF6FD transparent;
+	-webkit-transition: all .25s;
+	-moz-transition: all .25s;
+	-ms-transition: all .25s;
+	-o-transition: all .25s;
+	transition: all .25s;
+}
+
+.bgPub-span-btn-more b:before {
+	position: absolute;
+	right: 2px;
+	top: 12px;
+	width: 0;
+	height: 0;
+	content: "";
+	border-width: 5px 5px 0 5px;
+	border-style: solid;
+	/* border-color: #008FF0 transparent; */
+	-webkit-transition: transform .25s;
+	-moz-transition: transform .25s;
+	-ms-transition: transform .25s;
+	-o-transition: transform .25s;
+	transition: transform .25s;
+}
+
+.bgPub-span-btn-more .open b:after {
+	top: 2px;
+	-webkit-transform: rotate(180deg);
+	-moz-transform: rotate(180deg);
+	-ms-transform: rotate(180deg);
+	-o-transform: rotate(180deg);
+	transform: rotate(180deg);
+}
+
+.bgPub-span-btn-more .open b:before {
+	-webkit-transform: rotate(180deg);
+	-moz-transform: rotate(180deg);
+	-ms-transform: rotate(180deg);
+	-o-transform: rotate(180deg);
+	transform: rotate(180deg);
+}
+
+.bgPub-cbbAgency {
+	/*float : left;*/
+	display: inline-block;
+	margin-left: 24px !important;
+	margin-top: 10px !important;
+}
+
+.bgpub-bgnormal-postion-1 {
+	float: left;
+	position: relative;
+	width: 100%;
+}
+
+.bgpub-bgnormal-postion-2 {
+	float: left;
+	position: relative;
+}
+
+.bgpub-bgnormal-absolute-right {
+	position: absolute;
+	right: 0px;
+	top: 2px;
+}
+
+.bgpub-bgnormal-absolute-right2 {
+	position: absolute;
+	right: 8px;
+	top: 2px;
+}
+
+.bgtestborder {
+	border: 1px black solid;
+}
+
+.bgpub-div-height-space-12 {
+	min-height: 12px;
+}
+
+.bgpub-div-height-space-35 {
+	min-height: 35px;
+	max-height: 35px;
+}
+
+.bgpub-div-height-space-25 {
+	min-height: 25px;
+	max-height: 25px;
+}
+
+.bgpub-div-height-space-30 {
+	min-height: 30px;
+	max-height: 30px;
+}
+
+.bgPub-Tick-green-outer {
+	position: relative;
+	float: left;
+	border-radius: 50%;
+	border: 2px #00A854 solid;
+	width: 40px;
+	height: 40px;
+	text-align: center;
+}
+
+.bgPub-Tick-green-inner {
+	position: absolute;
+	float: left;
+	text-align: center;
+	top: 10px;
+	left: 8px;
+}
+
+.bgPub-Tick-green {
+	display: inline-block;
+	width: 10px;
+	height: 2px;
+	background: #00A854;
+	line-height: 0;
+	font-size: 0;
+	vertical-align: middle;
+	-webkit-transform: rotate(45deg);
+}
+
+.bgPub-Tick-green::after {
+	content: '/';
+	display: block;
+	width: 20px;
+	height: 2px;
+	background: #00A854;
+	-webkit-transform: rotate(-90deg) translateY(-50%) translateX(50%);
+}
+
+.bgHide {
+	display: none !important;
+}
+
+.bgpub-datatable-tbl {
+	/**transform : translateY(-8px);**/
+}
+
+.bgpub-datatable-tbl tr td {
+	border: 1px #DFE6EC solid !important;
+}
+
+.bgpub-datatable-tbl thead th {
+	border: 1px #DFE6EC solid !important;
+	text-align: center !important;
+}
+
+.bgpub-datatable-tbl-pnl {
+	width: 100% !important;
+}
+
+.bgpub-div-fixBottom-1 {
+	position: absolute;
+	bottom: 6px;
+	height: 75px;
+  width : 100%;
+  border: 1px solid #d9d9d9;
+}
+
+.bgpub-div-fixBottom-2 {
+	position: fixed;
+	bottom: 0px;
+	height: 50px;
+	width: 100%;
+}
+
+.bgpub-div-fixBottom-3 {
+	position: fixed;
+	bottom: 0px;
+	height: 20px;
+	width: 100%;
+}
+
+.bgpub-normal-rightButton-1 {
+	float: right;
+	margin-left: 8px;
+}
+
+.bgpub-normal-leftButton-1 {
+	float: left;
+	margin-right: 8px;
+}
+
+.bgpub-normal-floatLeft-1 {
+	position: relative;
+	float: left;
+	margin: 4px 4px 0 0;
+}
+
+.bgpub-top-4 {
+	top: 4px;
+}
+
+.bgpub-top-8 {
+	top: 8px;
+}
+
+.bgpub-top-12 {
+	top: 12px;
+}
+
+.bgRptTblToolBar {
+	height: 40px;
+	position: relative;
+	float: right;
+	width: 400px;
+}
+
+.bgRptTblToolBar .imessage {
+	display: inline-block;
+}
+
+.bgRptTblToolBar .pagelength {
+	display: inline-block;
+	transform: translateY(6px);
+}
+
+.bgRptTblToolBar .pagebuttons {
+	display: inline-block;
+	transform: translateY(-2px);
+}
+
+.bgPub-fileCount-width {
+	width: 50px;
+}
+
+.bgPub-width-10per {
+	width: 10%;
+}
+
+.bgPub-width-15per {
+	width: 15%;
+}
+
+.bgPub-width-30per {
+	width: 30%;
+}
+
+.bgPub-width-25per {
+	width: 25%;
+}
+
+.bgPub-tabSheet-topDiv {
+	position: relative;
+	float: left;
+	height: 30px;
+}
+
+.bgPub-tabSheet-topDiv-10right {
+	margin-right: 10px;
+}
+
+.bgPub-tabSheet-topDiv-30right {
+	margin-right: 30px;
+}
+
+.bgPub-tabSheet-topDiv-60right {
+	margin-right: 60px;
+}
+
+.bgPub-tabSheet-rightTopDiv {
+	position: relative;
+	float: right;
+	height: 30px;
+}
+
+.bgPub-textColor-red {
+	color: red;
+}
+
+.bgPub-textColor-green {
+	color: green;
+}
+
+.bgPub-textColor-blue {
+	color: blue;
+}
+
+.bgPub-border {
+	border: 1px #d9d9d9 solid;
+}
+
+.bgPub-autoScrollX {
+	overflow-x: auto;
+}
+
+.bgPub-autoScrollY {
+	overflow-y: auto;
+}
+
+.bgPub-autoScrollXY {
+	overflow-x: auto;
+	overflow-y: auto;
+}
+
+.bgPub-Padding-top4 {
+	padding-top: 4px;
+}
+
+
+/**************************** report 閺屻儴顕楅弬瑙勵攳閻ㄥ嫬鐨锟� ***********************************/
+
+.bgPub-case-pnl {
+	border-radius: 3px;
+	border: 1px solid;
+	border-color: #D9D9D9;
+	background-color: #F7F7F7;
+	padding: 2.3px 8px 2.3px 8px;
+	margin-left: 8px;
+	position: relative;
+	float: left;
+	height: 22px;
+	top: 6px;
+	cursor: pointer;
+}
+
+.bgPub-case-pnl .casefont {
+	font-size: 12px;
+	letter-spacing: 0.5px;
+}
+
+.bgPub-case-pnl .deletebutton {
+	float: right;
+	top: 4px;
+	right: 4px;
+	height: 8px;
+	width: 12px;
+	left: 4px;
+}
+
+
+/* .bgPub-case-pnl .deletebutton .b{
+	position: relative;
+	display: inline-block;
+	cursor: pointer;
+	top: -8px;
+	right : -2px !important;
+	width: 8px;
+	height:2px;
+	background: #333333;
+	line-height: 0;
+	font-size:0;
+	vertical-align: middle;
+	transform: rotate(45deg);
+	-webkit-transform: rotate(45deg);
+} */
+
+
+/* .bgPub-case-pnl .deletebutton .b::after{
+	content:'-';
+	display:block;
+	cursor: pointer;
+	width: 8px;
+	height:2px;
+	background: #333333;
+	transform: rotate(90deg);
+	-webkit-transform: rotate(90deg);
+} */
+
+.bgPub-lineCenter {
+	left: 50%;
+	transform: translateX(-50%);
+}
+
+.bgPub-ColCenter {
+	top: 50%;
+	transform: translateY(-50%);
+}
+
+.bgPub-normal-backgroudColor {
+	background: #ECF6FD;
+	border: 1px solid #D2EAFB;
+}
+
+.tabController {
+	width: 100%;
+	position: relative;
+	float: left;
+}
+
+.bgPub-divSelected-1 {
+	background: #E6F4FD;
+	font-size: 14px;
+	color: #108EE9;
+}
+
+.bgPub-billRow-a {
+	height: 20px;
+}
+
+.bgPub-billRow-a-more {
+	color: #108EE9 !important;
+	float: right;
+}
+
+table.ufma-table tbody tr {
+	height: 30px;
+}
+
+.bgmintooltip .tooltip-inner {
+	padding: 4px 13px !important;
+}
+
+.DTFC_ScrollWrapper {
+	height: auto !important
+}
+
+.DTFC_LeftBodyLiner {
+	overflow: hidden;
+	border-right: 1px red solid;
+}
+
+.commonControl {
+	max-width: 100px;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	overflow: hidden;
+}
+.commonShowLab {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}

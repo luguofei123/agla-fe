@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>凭证模版</title>
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <script src="../../pub/boot.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+    <link rel="stylesheet" type="text/css" href="templateGeneration.css?rev=@@hash" />
+    <style type="text/css">
+        .uf-combox-list-item span {
+            color: #ff3b30;
+        }
+
+        #tgDetailtablecomboxENU_CODE_popup {
+            height: 58px!important;
+        }
+        .uf-grid-table td {
+            height: 28px;
+        }
+        .uf-grid-body td {
+            height: 104px;
+            vertical-align: top;
+            padding-top: 4px;
+            line-height: 1.8;
+        }
+        .uf-grid-body td[name="remark"] {
+            padding-top: 0;
+        }
+        .uf-buttonedit .uf-buttonedit-input {
+            padding-top: 4px;
+            padding-bottom: 4px;
+        }
+
+        .uf-grid-table-edit .uf-form-control,
+        .uf-grid-table-edit .uf-buttonedit-border,
+        .uf-grid-table-edit .uf-combox-border,
+        .uf-grid-table-edit .uf-buttonedit,
+        .uf-grid-table-edit .uf-combox,
+        .uf-grid-table-edit .uf-treecombox,
+        .uf-grid-table-edit .uf-datepicker {
+            height: 28px;
+        }
+
+        .uf-grid-table-edit #tgAccounttablebuttoneditgsName {
+            border-right: 1px solid #d9d9d9;
+        }
+
+        .uf-grid-table-edit input[type="text"] {
+            width: 95%;
+        }
+        .uf-grid-body table tr td {
+            padding-top: 3px!important;
+        }
+        .uf-grid-table-edit .uf-buttonedit-border {
+            height: 104px;
+        }
+        .uf-grid-table tr:hover {
+            background: none!important;
+        }
+        .uf-grid-cell.toolbar .btn {
+            display: block;
+            margin: -4px auto 0;
+        }
+        .btn-icon-only > .glyphicon {
+            font-size: 18px;
+        }
+        #tgBaseInfo > div {
+            padding: 15px;
+            border: 1px #d9d9d9 solid;
+        }
+        #tgDetail > div {
+            padding-left: 0;
+            padding-right: 0;
+        }
+        #tgDetail {
+            overflow-y: auto;
+        }
+    </style>
+</head>
+
+<body id="templateGeneration" style="overflow: hidden">
+    <!--<div class="tem-title">-->
+    <!--凭证模版-->
+    <!--<span class="close-model glyphicon icon-close"></span>-->
+    <!--</div>-->
+    <div class="ufma-layout-updown temp-updown">
+        <div class="ufma-layout-up temp-up">
+            <div class="container-fluid margin-left-15 margin-right-15">
+                <!--单位和目标单据 begin-->
+                <div class="clearfix" style="margin-top: 0px;">
+                    <!--所属单位 begin-->
+                    <div class="pull-left" style="margin-right: 48px;position: relative;">
+                        <!-- <div class="agency-cont pull-left" id="dwcode">
+                            <label class="mt-radio mt-checkbox-single mt-checkbox-outline margin-right-20" id="alldwbg">
+                                <input type="radio" name="subUnits" value="*" checked="checked" id="alldw" /> 系统级
+                                <span></span>
+                            </label>
+                            <label class="mt-radio mt-checkbox-single mt-checkbox-outline" id="nodwbg">
+                                <input type="radio" name="subUnits" value="0" id="nodw" /> 单位
+                                <span></span>
+                            </label>
+                            <div class="uf-combox ufma-combox-acct head-agency" id="tgAgency"></div>
+                        </div>
+                        <div class="zezhao" style="width: 100%;height: 100%;z-index: 10;position: absolute;display: none;"></div>
+                        <div class="agency-cont pull-left" id="dwcode2" style="display: none;margin-top: 4px">
+                            系统级
+                        </div> -->
+                        <div class="agency-cont pull-left" id="dwcode3" style="display: none;margin-top:4px">
+                            单位：
+                            <span class="dw-name"></span>
+                        </div>
+                    </div>
+                    <!--所属单位 end-->
+                    <!--模版名称 start-->
+                    <!-- <div class="pull-left mbmc-name" id="vouTmpName">
+                        <span>模版名称：</span>
+                        <input class="bordered-input padding-3 input-height" />
+                        <span class="start-sign">*</span>
+                    </div>
+                    <div>
+                        <span style="margin-left: 20px;">单位类型：</span>
+                        <div id="agencyType" class="uf-combox uf-combox-wd"></div>
+                    </div> -->
+                    <!--模版名称 end-->
+                </div>
+                <!--单位和目标单据 end-->
+
+                <!-- 基本信息 begin -->
+                <div>
+                    <!-- <div class="panel-heading"> -->
+                        <!-- <h4 class="panel-title"> -->
+                            <h5 class="caption" style="margin-bottom: 6px;">基本信息</h5>
+                            <!-- <div class="actions" style="margin-top:10px">
+                                <a data-toggle="collapse" href="#tgBaseInfo">
+                                    <span class="glyphicon icon-angle-bottom"></span>
+                                </a>
+                            </div> -->
+                        <!-- </h4>
+                    </div> -->
+
+                    <div id="tgBaseInfo" class="panel-collapse collapse in">
+                        <!-- <div class="panel-body"> -->
+                            <div class="container-fluid form-horizontal">
+                               <!-- <form action="" method="post">-->
+                               	<form> <!--修改安全问题：查询中接受的主体参数--zsj-->
+                                    <ul class="set-form list-unstyled">
+                                        <li class="clearfix">
+                                            <div class="pull-left mbmc-name set-form-li pull-left" id="vouTmpName">
+                                                <span>模版名称：</span>
+                                                <input class="bordered-input padding-3 input-height uf-combox-wd" style="min-width: 192px;" />
+                                                <span class="start-sign">*</span>
+                                            </div>
+                                            <!-- 由于本次发版不能完成，前端需要隐藏该功能 后面放开时去掉hidden类 - 20200922放开 -->
+                                            <div class="set-form-li pull-left" id="matchCondition">
+                                                <label class="set-form-cont-title" style="width: 98px; margin-left: 20px;">匹配条件：</label>
+                                                <div class="set-form-cont" style="margin-left: 5px;">
+                                                    <div class="uf-buttonedit-border pr">
+                                                        <input type="text" name="pptj" class="bordered-input padding-3 fl" style="width: 192px;" autocomplete="off" placeholder="">
+                                                        <span title="" name="trigger" class="uf-buttonedit-button clickbtns">
+                                                            <span class="uf-buttonedit-icon ">...</span>
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="set-form-li">
+                                                <label style="width: 98px; margin-left: 20px; text-align: right;">单位类型：</label>
+                                                <div id="agencyType" class="uf-combox uf-combox-wd"></div>
+                                            </div>                        
+                                        </li>
+                                        <li class="clearfix">
+                                            <div class="set-form-li pull-left" id="accs">
+                                                <span>科目体系：</span>
+                                                <div id="domId" class="uf-combox uf-combox-wd"></div>
+                                                <span class="start-sign">*</span>
+                                            </div>
+                                            <div class="set-form-li pull-left hidden" id="acct">
+                                                <label style="width: 70px; text-align: right;">账套：</label>
+                                                <div id="domId2" class="uf-combox ufma-combox2 uf-combox-wd"></div>
+                                                <span class="start-sign">*</span>
+                                            </div>
+                                            <div id="cwkj-part">
+                                                <div class="set-form-li pull-left">
+                                                    <label style="width: 98px; margin-left: 20px; text-align: right;"><span id="cwkj-wz">财务</span>凭证类型：</label>
+                                                    <div id="vouFinTypeCode" class="uf-combox uf-combox-wd"></div>
+                                                </div>
+                                            </div>
+                                            <div class="hidden" id="yskj-part">
+                                                <div class="set-form-li pull-left">
+                                                    <label style="width: 98px; margin-left: 20px; text-align: right;">预算凭证类型：</label>
+                                                    <div id="vouBudTypeCode" class="uf-combox uf-combox-wd"></div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="clearfix">
+                                            <div class="set-form-li pull-left" id="vouDate">
+                                                <label class="set-form-cont-title" style="width: auto; text-align: right;">凭证日期：</label>
+                                                <div class="set-form-cont" style="margin-left: 5px;">
+                                                    <div class="uf-buttonedit-border pr">
+                                                        <input type="text" name="sctj" class="bordered-input padding-3 fl" style="width: 192px;" autocomplete="off" placeholder="">
+                                                        <span title="" name="trigger" class="uf-buttonedit-button clickbtns">
+                                                            <span class="uf-buttonedit-icon ">...</span>
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                                <span class="start-sign" style="padding-left: 10px;">*</span>
+                                            </div>
+                                            <div class="set-form-li pull-left" id="vouCnt">
+                                                <label class="set-form-cont-title" style="width: 98px; margin-left: 20px; text-align: right;">附件张数：</label>
+                                                <div class="set-form-cont" style="margin-left: 5px;">
+                                                    <div class="uf-buttonedit-border pr">
+                                                        <input type="text" name="sctj" class="bordered-input padding-3 fl" style="width: 192px;" autocomplete="off" placeholder="">
+                                                        <span title="" name="trigger" class="uf-buttonedit-button clickbtns">
+                                                            <span class="uf-buttonedit-icon ">...</span>
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                            </div>                                            
+                                        </li>
+                                        <!-- <li class="clearfix">
+                                            <div class="set-form-li pull-left col-md-4" id="accs">
+                                                <label>科目体系：</label>
+                                                <div id="domId" class="uf-combox uf-combox-wd"></div>
+                                                <span class="start-sign">*</span>
+                                            </div>
+                                            <div class="set-form-li pull-left col-md-4 hidden" id="acct">
+                                                <label>账套：</label>
+                                                <div id="domId2" class="uf-combox ufma-combox-acct ufma-combox2 uf-combox-wd"></div>
+                                                <span class="start-sign">*</span>
+                                            </div>
+                                            <div class="set-form-li pull-left col-md-4" id="vouCnt">
+                                                <label class="set-form-cont-title">附件张数：</label>
+                                                <div class="set-form-cont">
+                                                    <div class="uf-buttonedit-border pr">
+                                                        <input type="text" name="sctj" class="bordered-input padding-3 fl" autocomplete="off" placeholder="">
+                                                        <span title="" name="trigger" class="uf-buttonedit-button clickbtns">
+                                                            <span class="uf-buttonedit-icon ">...</span>
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li> -->
+                                        <!-- <li class="clearfix">
+                                            <div id="cwkj-part">
+                                                <div id="cwkj-name" class="hidden">财务会计</div>
+                                                <div class="set-form-li pull-left">
+                                                    <label style="width: 70px">财务凭证类型：</label>
+                                                    <div id="vouFinTypeCode" class="uf-combox uf-combox-wd"></div>
+                                                    <span class="start-sign start-m">*</span>
+                                                </div>
+                                                <div class="set-form-li pull-left col-md-4" id="vouDate">
+                                                    <label class="set-form-cont-title">凭证日期：</label>
+                                                    <div class="set-form-cont">
+                                                        <div class="uf-buttonedit-border pr">
+                                                            <input type="text" name="sctj" class="bordered-input padding-3 fl" autocomplete="off" placeholder="">
+                                                            <span title="" name="trigger" class="uf-buttonedit-button clickbtns">
+                                                                <span class="uf-buttonedit-icon ">...</span>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                    <span class="start-sign start-m" style="padding-top:8px;">*</span>
+                                                </div>
+
+                                            </div>
+                                            <div class="hidden" id="yskj-part">
+                                                <div id="yskj-name">预算会计</div>
+                                                <div class="set-form-li pull-left">
+                                                    <label style="width: 70px">预算凭证类型：</label>
+                                                    <div id="vouBudTypeCode" class="uf-combox uf-combox-wd"></div>
+                                                    <span class="start-sign start-m">*</span>
+                                                </div>
+                                                <div class="set-form-li pull-left col-md-4" id="vouBudDate">
+                                                    <label class="set-form-cont-title">凭证日期：</label>
+                                                    <div class="set-form-cont">
+                                                        <div class="uf-buttonedit-border pr">
+                                                            <input type="text" name="sctj" class="bordered-input padding-3 fl" autocomplete="off" placeholder="">
+                                                            <span title="" name="trigger" class="uf-buttonedit-button clickbtns">
+                                                                <span class="uf-buttonedit-icon ">...</span>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                    <span class="start-sign start-m" style="padding-top:8px">*</span>
+                                                </div>
+                                            </div>
+                                        </li> -->
+                                    </ul>
+                                </form>
+                            </div>
+                        <!-- </div> -->
+                    </div>
+                </div>
+                <!-- 基本信息 end -->
+
+                <!-- 分录明细 begin -->
+                <div style="margin-top: 6px;">
+                    <!-- <div class="panel-heading">
+                        <h4 class="panel-title"> -->
+                            <h5 class="caption" style="margin-bottom: 6px;">分录明细</h5>
+                            <!-- <div class="actions" style="margin-top:10px">
+                                <a data-toggle="collapse" href="#tgDetail">
+                                    <span class="glyphicon icon-angle-bottom"></span>
+                                </a>
+                            </div>
+                        </h4>
+                    </div> -->
+
+                    <div id="tgDetail" class="panel-collapse collapse in">
+                        <!-- <div class="panel-body"> -->
+                            <div class="container-fluid form-horizontal">
+                                <div id="tgDetailtable" class="tab-content" style="height: auto !important; margin-top: 0;"></div>
+                            </div>
+                        <!-- </div> -->
+                        <!-- <div class="panel-foot" style="width: 100%;">
+                            <button class="btn btn-default" id="tgDetailbutton" style="width:100px;margin:15px auto;display: block;">
+                                <span class="icon-add" style="margin-right: 8px;"></span>新增行
+                            </button>
+                        </div> -->
+                    </div>
+                </div>
+                <!-- 分录明细 end -->
+
+                <!-- 辅助核算 begin -->
+                <!-- <div class="panel ufma-panel" style="margin-top: 20px;">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <div class="caption">辅助核算</div>
+                            <div class="actions" style="margin-top:10px">
+                                <a data-toggle="collapse" href="#tgAccount">
+                                    <span class="glyphicon icon-angle-bottom"></span>
+                                </a>
+                            </div>
+                        </h4>
+                    </div>
+
+                    <div id="tgAccount" class="panel-collapse collapse in">
+                        <div class="panel-body">
+                            <div class="container-fluid form-horizontal">
+                                <div id="tgAccounttable" class="tab-content" style="height: auto !important;"></div>
+                            </div>
+                        </div>
+                        <div class="panel-foot" style="width: 100%;">
+                            <button class="btn btn-default" id="tgAccountbutton" style="width:100px;margin:15px auto;display: block;">
+                                <span class="icon-add" style="margin-right: 8px;"></span>新增行
+                            </button>
+                        </div>
+                    </div>
+                </div> -->
+                <!-- 辅助核算 end -->
+            </div>
+        </div>
+
+        <div class="ufma-layout-down bordered-top">
+            <div class="text-right margin-right-30">
+                <button type="button" class="btn btn-sm btn-primary btn-permission btn-save" id="btnsaveddd">保存</button>
+                <button type="button" class="btn btn-sm btn-default" id="btn-qx">取消</button>
+            </div>
+        </div>
+    </div>
+    <div id="scmodal" class="ufma-modal"></div>
+
+    <script src="templateGeneration.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+</body>
+
+</html>

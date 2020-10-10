@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>指标管理</title>
+<meta
+	content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
+	name="viewport">
+<script src="../../pub/boot.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+<link rel="stylesheet" href="../pub/bgPub.css?rev=@@hash" />
+<link rel="stylesheet" href="../pub/bgPubImpAttachment.css?rev=@@hash" />
+<link rel="stylesheet" href="budgetItemSinglePost.css?rev=@@hash" />
+</head>
+
+<body>
+	<div id="budgetItemSinglePost" class="container-fluid ufma-container">
+		<!--面包屑 begin-->
+		<!-- <div class="bread-box clearfix">
+		</div> -->
+
+		<!--工作区 begin-->
+		<div class="workspace bordered" style="height: 516px;">
+			<!--工作区顶部 begin-->
+			<div class="workspace-top">
+				<!-- 左右间距增加 -->
+				<div class="container-fluid">
+					<!-- 上对齐，增加下间距 -->
+					<div class="ufma-portlet">
+						<div class="portlet-title">
+							<div class="caption">
+								<span class="caption-subject font-dark uppercase">指标管理</span>
+							</div>
+							<div id="cbb_agency"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!--工作区中部 begin-->
+			<div class="workspace-center ">
+				<div class="container-fluid">
+					<!-- 日志的浮动框 -->
+					<div class="div-bgitemLog" id="bgItemLog">
+						<div class="div-bgitemLog-table" id="bgItemLog_table">
+							<table id="bgItemLogTable"  class="ufma-table bgItemTbl">
+							</table>
+						</div>
+					</div>
+					<!-- 快速替换框的浮动框 -->
+					<div class="div-bgitemExchange" id="bgItemExchange">
+						<div id="bgItemExchange_From" class="ufma-treecombox ufma-combox-border"><a></a></div>
+						<div><span>替换为</span></div>
+						<div id="bgItemExchange_To" class="ufma-treecombox ufma-combox-border"><a></a></div>
+						<div class="div-tbl-bottom-btn">
+							<button type="button" id="btn-exchange" class="btn btn-sm btn-primary btn-exchange">替换</button>
+							<button type="button" id="btn-unexchange" class="btn btn-sm btn-default btn-cancel">取消</button>
+						</div>
+					</div>
+					<!-- 头部查询的div -->
+					<div id="bgMoreMsgPnl">
+					</div>
+					<!-- 指标内容体，指标表格 -->
+					<div class="div-bgitembody" id="div_bgitembody">
+						<div class="div-bgitembody-lefttree bordered" id="bgitemlefttree">
+							<ul class="" id="bgitemlefttree_ul">
+							</ul>
+						</div>
+						<div class="div-bgitembody-midtable bordered" id="bgItemMainPnl">
+							<!-- 指标表格 -->
+							<div id="bgitemmidtable" class="bgItemTbl-pnl bgItemTbl-Height">
+								<table id="bgItemTable"  class="ufma-table bgItemTbl">
+									<thead>
+							            <tr id="trId">
+							                <td></td>
+							            </tr>
+							        </thead>
+							        <tbody>
+							        </tbody>
+								</table>
+							</div>
+							<div class="bgItemTbl-pnl ">
+								<div class = "bgItemTbl-Msg ">
+									<div class="bgItemTbl-blank"></div>
+									<div>
+									<span> 合计：</span>&nbsp;&nbsp;&nbsp;
+									<span> 预算金额：&nbsp;</span><span id="span_bgCur">0.00</span>&nbsp;&nbsp;&nbsp;
+									<span> 已分配金额：&nbsp;</span><span id="span_haveAlocatCur">0.00</span>&nbsp;&nbsp;&nbsp;
+									<span> 可分配金额：&nbsp;</span><span id="span_canAllocatCur">0.00</span>
+									</div>
+								</div>
+								<div class = "bgItemTbl-Btn ">
+									<div class="div-tbl-bottom-btn">
+										<button type="button" id="btn-saveItem" class="btn btn-sm btn-primary btn-permission btn-save">保存</button>
+									</div>
+									<div class="div-tbl-bottom-btn">
+										<button type="button" id="btn-newItem" class="btn btn-sm btn-default btn-permission btn-new">新增</button>
+									</div>
+									<div class="div-tbl-bottom-btn">
+										<button type="button" id="btn-printItem" class="btn btn-sm btn-default btn-permission btn-print">打印</button>
+									</div>
+									<div class="div-tbl-bottom-btn">
+										<button type="button" id="btn-impItem" class="btn btn-sm btn-default btn-permission btn-import">导入</button>
+									</div>
+									<div class="div-tbl-bottom-btn">
+										<button type="button" id="btn-expItem" class="btn btn-sm btn-default btn-permission btn-export">导出</button>
+										<a id="a_downloadFile" style="display : none">下载文件</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!--工作区底 begin-->
+			<div class="workspace-bottom">
+				<div class="container-fluid">
+				</div>
+			</div>
+		</div>
+
+
+
+	</div>
+
+	<script src="../pub/bgPub.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+	<script src="../pub/bgPubImpAttachment.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+	<script src="budgetItemSinglePost.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+</body>
+
+</html>

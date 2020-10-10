@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>差异项明细账</title>
+  <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport" />
+  <script src="../../pub/boot.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+  <link rel="stylesheet" href="differAccount.css?rev=@@hash" />
+</head>
+
+<body>
+  <div class="container-fluid ufma-container">
+    <!--修改问题：CWYXM-3908--	差异项明细表增加联查凭证功能--zsj-->
+    <input type="hidden" value="differAccount" data-name="differAccount" class="rptType" />
+    <!--工作区 begin-->
+    <div class="workspace">
+      <!--工作区顶部 begin-->
+      <div class="workspace-top">
+        <div class="container-fluid">
+          <div class="ufma-portlet">
+            <div class="portlet-title">
+              <div class="caption">
+                <span class="caption-subject font-dark uppercase">差异项明细账</span>
+              </div>
+              <!--单位&账套选择 begin-->
+              <div class="inline-block absolute margin-left-15 margin-top-8">
+                <ul class="ufma-list-col clearfix padding-left-8">
+                  <li class="ufma-list-col-item">
+                    <div id="cbAgency" name="agencyCode" class="uf-treecombox ufma-combox-agency"></div>
+                  </li>
+                  <li class="ufma-list-col-item">
+                    <div id="cbAcct" class="uf-combox ufma-combox-acct"></div>
+                  </li>
+                </ul>
+              </div>
+              <!-- <div class="rpt-method-tip" data-toggle="tooltip" data-placement="left" title="查询方案">
+								<button id="showMethodTip" class="btn btn-primary glyphicon icon-file"></button>
+								<div id="rptPlanList" style="display: none;">
+								</div>
+							</div> -->
+            </div>
+
+            <!--查询条件-->
+            <div class="portlet-body bordered pr">
+              <!--按钮-->
+              <div class="btn-group" style="position: absolute;right:15px;top:15px;">
+                <button id="btnQuery" type="button" class="btn btn-sm btn-primary btn-query btn-permission">
+                  查询
+                </button>
+              </div>
+              <form id="frmQuery" class="form-horizontal">
+                <div class="form-row">
+                  <div class="form-group">
+                    <label class="control-label " style="margin-left:16px;">期间：</label>
+                    <div class="control-element pr10" style="padding-top:3px;">
+                      <a name="period1" id="dateBn" class="label label-radio">本年</a>
+                      <a name="period1" id="dateBq" class="label label-radio selected ">本期</a>
+                      <a name="period1" id="dateJr" class="label label-radio ">今日</a>
+                    </div>
+                    <div class="control-element" style="width:120px;">
+                        <div name="startVouDate" id="minOccurDate" class="uf-datepicker" style="width:120px;"></div>
+                      </div>
+                      <span class="split">至</span>
+                      <div class="control-element">
+                        <div name="endVouDate" id="maxOccurDate" class="uf-datepicker" style="width:120px;"></div>
+                      </div>
+                  </div>
+                  <!-- <div class="form-group">
+                    <div class="control-element" style="width:120px;">
+                      <div name="minOccurDate" id="minOccurDate" class="uf-datepicker" style="width:120px;"></div>
+                    </div>
+                    <span class="split">至</span>
+                    <div class="control-element">
+                      <div name="maxOccurDate" id="maxOccurDate" class="uf-datepicker" style="width:120px;"></div>
+                    </div>
+                  </div> -->
+                  <div class="clearfix"></div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--工作区中部 begin-->
+      <div class="workspace-center">
+        <div class="container-fluid">
+          <div id="wrap"
+            class="ufma-layout ufma-layout-slider-sm ufma-layout-fixed-slider ufma-layout-fixed-slider-left">
+            <div class="rpt-box rpt-table-box pr" style="height: 42px;">
+              <!-- <div class="rpt-table-sub-tip">
+                <span class="rpt-table-sub-tip2">
+                  金额单位：
+                  <i>元</i>
+                </span>
+              </div> -->
+              <div id="dtToolbar" class="btn-group" style="position:absolute;right:1px;bottom:10px;"></div>
+            </div>
+            <div id="wrapLeft" class="ufma-layout-slider left padding-right-0"
+              style="z-index:1002;padding-right: 0px;width: 300px;top: 42px;">
+              <div class="ma-cont-box" style="border: 1px #d9d9d9 solid;overflow:auto">
+                <ul id="docTree" class="ufmaTree ztree doc-ztree"></ul>
+              </div>
+            </div>
+
+            <div id="wrapCenter" class="ufma-layout-content">
+              <div class="rpt-table-tab">
+                <table class="ufma-table uf-rpt-table" tool-bar="#tool-bar" id="gridDPE"></table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="tool-bar" class="ufma-tool-bar" style="margin-left: 331px;">
+        <div class="tool-bar-body">
+          <!-- <div
+              class="ufma-tool-btns"
+              style="margin-left:12px;clear: both;"
+            ></div> -->
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="dm.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+  <script src="differAccount.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+  <!--修改问题：CWYXM-3908--	差异项明细表增加联查凭证功能--zsj--只有rptCommon_new.js中的凭证跳转才有按钮-->
+  <script src="../rpt/rptCommon/rptCommon_new.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+</body>
+
+</html>

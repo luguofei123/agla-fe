@@ -1,0 +1,408 @@
+.padding-3 {
+    padding: 3px !important;
+}
+.lp-second-query-box {
+    background: none !important;
+    border: none;
+    margin-top: 12px;
+    padding-top: 0;
+    padding-bottom: 0;
+    padding-left: 0;
+}
+
+/*查询样式 begin*/
+#tarBillGenerate .lp-query-li {
+    margin-right: 20px;
+}
+.lp-query-li .query-item{
+    float: left;
+    margin-right: 16px;
+}
+.lp-query-li .query-item-outter{
+    border: 1px solid #D2EAFB;
+    background-color: #ECF6FD;
+    border-radius: 4px;
+    position: relative;
+    float: left;
+    margin-right: 4px;
+    margin-top: 10px;
+    padding: 15px 0 10px 6px;
+}
+.query-item-outter .item-title{
+    position: absolute;
+    background-color: #fff;
+    top:-10px;
+    /* left:210px; */
+}
+.lp-query-li .vouDate{
+    display: inline-block;
+}
+.uf-buttonedit-border {
+    display: inline-block;
+}
+.uf-buttonedit-border .clickbtns{
+    position: absolute;
+    right: 3px;
+    height: 28px;
+    cursor: pointer;
+}
+.set-form-li.date label {
+    vertical-align: super;
+}
+
+/*需要设置右侧16px*/
+#vgBillNo,#vgBillType {
+    width: 180px;
+}
+
+.mt4 {
+    margin-top: 4px;
+}
+
+.temName {
+    margin-top: 5px
+}
+.searchHide{
+    right:145px;
+}
+.tooltip{
+    white-space: nowrap;
+}
+
+/*更多查询条件样式 begin*/
+#vgMoreQuery input[data-itype="08"] {
+    width: 242px;
+}
+
+#vgMoreQuery input.more-input[data-itype="05"] {
+    width: 124px;
+    text-align: right;
+}
+
+#vgMoreQuery .date-box {
+    width: 124px;
+}
+#vgMoreQuery .date-box input.more-input{
+    width: 124px;
+}
+
+#vgMoreQuery input[data-itype="04"] {
+    width: 110px;
+}
+
+#vgMoreQuery select {
+    width: 242px;
+}
+#vgMoreQuery input.more-input {
+    width: 180px
+}
+.lp-box-left-out {
+    padding-left: 0;
+    position: relative;
+}
+#vgMoreQuery .col-sm-4 {padding-left: 0;padding-right:0;margin-left: 0;margin-right: 0}
+
+.lp-query-box-right {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    width: 240px;
+}
+
+.temName .lp-rest-sign {
+    vertical-align: top;
+    padding-left: 10px
+}
+.modeName{
+    padding-top: 5px;
+}
+.modeName .mt-checkbox {
+    margin-right: 16px;
+}
+
+.lp-query-box-li .lp-query-li-cont {
+    min-width: auto;
+}
+
+#tarBillGenerate .lp-query-box-li .lp-query-li-cont-title {
+    white-space: nowrap;
+    width: 56px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-right: 0;
+}
+#tarBillGenerate .lp-query-box-li .lp-query-li-cont-title-more {
+    width: 114px;
+}
+#tarBillGenerate .lp-query-box-li .colon{
+    float: left;
+    display: inline-block;
+    line-height: 30px;
+}
+#tarBillGenerate .lp-query-li{
+    /* width: 380px; */
+    margin-right: 6px;
+}
+
+#tarBillGenerate .lp-query-box-left .lp-query-box-top {
+    margin-left: 0px;
+}
+
+#tarBillGenerate .lp-query-vou-generate ul {
+    padding-left: 8px;
+}
+
+#tarBillGenerate .lp-query-vou-generate ul li {
+    list-style-type: none
+}
+/************ btns S***************/
+.uf-tooltip .btn-default:focus {
+    color: #666 !important;
+    background-color: #fff !important;
+    border-color: #fff !important;
+    outline: none
+}
+
+#tarBillGenerate .btn.btn-primary .badge {
+    background-color: #108ee9 !important;
+    color: #fff !important
+}
+
+#tarBillGenerate .btn.btn-primary:hover .badge {
+    background-color: #49a9ee !important;
+    color: #fff !important
+}
+
+#tarBillGenerate .btn.btn-default .badge {
+    background-color: #ECF6FD !important;
+    color: #666 !important
+}
+
+#tarBillGenerate .btn.btn-default:hover .badge,
+.uf-tooltip .btn-default:hover .badge {
+    background-color: #108ee9 !important;
+    color: #fff !important
+}
+
+.uf-tooltip .btn-default:focus .badge {
+    background-color: #fff !important;
+    color: #666 !important
+}
+/************ btns E***************/
+
+/*表格区域样式 begin*/
+/*表格上方操作样式 begin*/
+.table-sub {
+    position: relative;
+}
+
+.nav-tabs {
+    height: 34px;
+}
+
+.nav-tabs li.active {
+    background-color: transparent;
+}
+
+.nav-tabs li.active a {
+    color: #108EE9;
+}
+
+.nav-tabs li a {
+    padding: 6px 16px;
+    padding-bottom: 7px;
+    color: #666666;
+    margin-right: 4px;
+}
+
+.nav-tabs li a:hover {
+    background-color: #49a9ee;
+    border-color: #49a9ee;
+    color: #ffffff;
+}
+
+.nav-tabs li.active a:hover {
+    background-color: transparent;
+    color: #108EE9;
+    border-color: #D9D9D9 #D9D9D9 #FFFFFF #D9D9D9;
+}
+
+.table-sub-action {
+    height: 30px;
+    position: absolute;
+    right: 0;
+    bottom: 5px;
+}
+
+.table-sub-action .btn {
+    height: 30px;
+}
+
+/*搜索 begin*/
+.iframeBtnsSearch {
+    display: inline-block;
+    overflow: hidden;
+    vertical-align: middle;
+}
+
+/*.iframeBtnsSearch button{margin-left:-1px;}*/
+.searchHide {
+    margin-right: -6px;
+    width: 0;
+    height: 30px;
+    vertical-align: middle;
+    border-radius: 4px 0 0 4px;
+}
+
+@-moz-document url-prefix() {
+    .searchHide {
+        margin-right: -8px;
+    }
+}
+
+/*表格样式 begin*/
+#tarBillGenerate .table-tab {
+    margin-top: 10px;
+    position: relative;
+    overflow:auto;
+}
+
+.table-tab th {
+    border: 1px solid #D9D9D9;
+    text-align: center;
+}
+
+.table-tab th.check-style {
+    width: 30px;
+    padding: 0;
+}
+.uf-rpt-table.ufma-table.dataTable td.check-style{
+    text-align: center;
+}
+
+.table-tab td {
+    min-height: 30px;
+    line-height: 24px;
+    border: 1px solid #D9D9D9;
+}
+table th.minW{
+    min-width: 80px;
+}
+#tarBillGenerate td.tdNum{
+    text-align: right;
+}
+.table-tab td {
+    min-height: 30px;
+    line-height: 24px;
+    border: 1px solid #D9D9D9;
+}
+/*.table-box {*/
+    /*width: 100%;*/
+    /*overflow-x: scroll*/
+/*}*/
+#tarBillGenerate-data_wrapper.dataTables_wrapper {
+    overflow: initial;
+}
+
+/*模版遮罩层 S*/
+#ModalBg {
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    opacity: 0.5;
+    z-index: 9000;
+    position: fixed;
+    left: 0;
+    top:0
+}
+#tempModalBg {
+    border-radius: 2px;
+    min-width: 300px;
+    height: auto;
+    box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.22);
+}
+/*模版遮罩层 E*/
+#lp-btns-list button{
+    margin-bottom: 8px;
+}
+.billurlvou{
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.billurlvou:hover{
+    cursor: pointer;
+    text-decoration: underline;
+    color: #108EE9;
+}
+
+/* 后端分页-start */
+#tarBillGenerate .ufma-table-paginate{
+    float: right;
+}
+#tarBillGenerate .ufma-table-paginate select {padding: 8px;}
+#tarBillGenerate .ufma-table-paginate .pull-left{line-height: 30px; margin: 0;}
+#tarBillGenerate .ufma-table-paginate button.pull-left{line-height: 20px;}
+#tarBillGenerate .ufma-table-paginate select,
+#tarBillGenerate .ufma-table-paginate input{height: 30px; border-radius: 4px;}
+#tarBillGenerate .ufma-table-paginate input{width: 34px;}
+#tarBillGenerate .ufma-table-paginate .pagination-sm>li>a{font-size: 12px; line-height: 1.42857143;}
+#tarBillGenerate .ufma-table-paginate .vbNumPage.active span{background-color: #108EE9;border-color: #108EE9;}
+#tarBillGenerate .ufma-table-paginate .vbNumPage:hover a{background-color: #108EE9;border-color: #108EE9;color: #FFFFFF;}
+#tarBillGenerate .ufma-table-paginate .vbPrevPage:hover a{background-color: #108EE9;border-color: #108EE9;color: #FFFFFF;}
+#tarBillGenerate .ufma-table-paginate .vbNextPage:hover a{background-color: #108EE9;border-color: #108EE9;color: #FFFFFF;}
+#tarBillGenerate .ufma-table-paginate #vbTable-pagination {
+    margin: 0 8px 0 0;
+}
+.dataTables_info {
+    display: none;
+}
+/* 后端分页-end */
+/* 同时固定表头和列样式修改-start */
+#tool-bar {
+    top: auto !important;
+    bottom: 18px;
+}
+.DTFC_LeftWrapper .uf-rpt-table.ufma-table.dataTable tr td:last-child,
+.DTFC_LeftWrapper .uf-rpt-table.ufma-table.dataTable tr th:last-child{
+  border-right: 1px solid #d9d9d9;
+}
+/* 覆盖左侧第一列固定scroll样式 */
+.DTFC_LeftWrapper .DTFC_LeftBodyWrapper .DTFC_LeftBodyLiner {
+    overflow-x: hidden;
+}
+.uf-rpt-table.ufma-table.dataTable tr:last-child td {
+    border-bottom: none;
+}
+/* 解决table下方黑边线问题 */
+.dataTables_wrapper.no-footer .dataTables_scrollBody {
+  border-bottom: 1px solid #d9d9d9;
+}
+/* 同时固定表头和列样式修改-end */
+#tarBillGenerate-dataleft{
+	min-width: auto !important;
+	position: absolute;
+	top: 0;
+	z-index: 2;
+	table-layout: fixed;
+}
+#tarBillGenerate-dataright{
+    min-width: auto !important;
+    position: absolute;
+    top: 0;
+    z-index: 2;
+    table-layout: fixed;
+}
+#tarBillGenerate-datahead{
+    position: absolute;
+    z-index: 4;
+    table-layout: fixed;
+
+}
+#datarigthhead,#datalefthead{
+    min-width: auto !important;
+    position: absolute;
+    top: 0;
+    z-index: 5;
+    table-layout: fixed;
+}

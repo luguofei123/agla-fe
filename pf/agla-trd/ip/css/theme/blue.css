@@ -1,0 +1,94 @@
+.ip-header-bg {
+	background-color: #1B8CF2;
+}
+.ip-header-logo {
+	background:-moz-linear-gradient(left,#48a3f4,#167cdb);/*Mozilla*/
+	background:-webkit-gradient(linear,0 50%,100% 50%,from(#48a3f4),to(#167cdb));/*Old gradient for webkit*/
+	background:-webkit-linear-gradient(left,#48a3f4,#167cdb);/*new gradient for Webkit*/
+	background:-o-linear-gradient(left,#48a3f4,#167cdb); /*Opera11*/
+}
+.ip-header-menu-btn:hover {
+	background-color: #1871C1;
+}
+.hnavs .sub_nav_1 dd a:hover {
+	background-color: #1871C1;
+}
+
+.nav-tabs > li.active > a, .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus {
+	background-color: #1871C1;
+}
+.nav-tabs {
+	border-bottom: 2px solid #1871C1;
+}
+/*按钮文字颜色 文字图标共用*/
+.ip-font-color {
+	color: #1871C1;
+}
+/*按钮组*/
+.icon-buttons .icon-box{
+	display: inline-block;
+    position: relative;
+    padding: 2px 5px 2px 25px;
+    cursor: pointer;
+    border-radius: 3px;
+}
+
+.icon-buttons .icon-box:hover{
+	background: #e2e2e2;
+}
+.icon-collection{
+	background: url(./images/iconbtn.png) no-repeat;
+}
+.icon-buttons .iconbtn{
+	display: inline-block;
+	background: url(./images/iconbtn.png) no-repeat;
+	height: 15px;
+	width: 17px;
+	position: absolute;
+    left: 5px;
+    top: 4px;
+}
+.icon-buttons .icon-enter{
+	background-position: -4px -4px;
+}
+.icon-buttons .icon-copy{
+	background-position: -23px -4px;
+}
+.icon-buttons .icon-in{
+	background-position: -43px -4px;
+}
+.icon-buttons .icon-send{
+	background-position: -63px -4px;
+}
+.icon-buttons .icon-del{
+	background-position: -83px -4px;
+}
+.icon-buttons .icon-print{
+	background-position: -4px -29px;
+}
+.icon-buttons .icon-out{
+	background-position: -23px -29px;
+}
+/*调栏*/
+.uf-navmenu-light::before{
+	color: #1871C1;
+}
+.ip-content-btn-area {
+	background-color: #EBF2F9;
+}
+.modal-header {
+	background-color: #1871C1;
+}
+
+.u-grid tr:hover {
+    background: #E8F5FE !important;
+}
+.u-pagination > .active > a,
+.u-pagination > .active > span,
+.u-pagination > .active > a:hover,
+.u-pagination > .active > span:hover,
+.u-pagination > .active > a:focus,
+.u-pagination > .active > span:focus{
+	background-color: #1871C1;
+	border-color: rgb(221, 221, 221);
+}

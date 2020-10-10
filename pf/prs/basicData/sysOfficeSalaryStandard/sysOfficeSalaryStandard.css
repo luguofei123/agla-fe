@@ -1,0 +1,22 @@
+/* 主页面 */
+
+#office-salary-standard .prs-workspace {
+  margin: 0 15px;
+  margin-bottom: -10px;
+}
+
+#office-salary-standard .text-align-right,
+#add-office-salary-standard .text-align-right {
+  text-align: right;
+}
+
+#office-salary-standard .data-label,
+.office-salary-standard .data-label {
+  width: 115px;
+  text-align: left !important;
+}
+
+#add-office-salary-standard .form-group {
+  margin-left: 20px;
+  margin-bottom: 10px;
+}

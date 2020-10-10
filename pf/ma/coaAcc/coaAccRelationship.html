@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>设置关联科目</title>
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <script src="../../pub/boot.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+    <link rel="stylesheet" href="coaAcc.css?rev=@@hash"/>
+    <style type="text/css">
+        .content-box{
+            float: left;
+        }
+        .content-box .title{
+            margin: 10px 0;
+        }
+        .select-content{
+            width: 360px;
+            height: 332px;
+            border: 1px solid #d9d9d9;
+            overflow-y: auto;
+        }
+        .have-selected {
+            float: right;
+        }
+        .have-selected .select-content{
+            padding: 10px;
+        }
+        .have-selected label{
+            display: block;
+            font-style: normal;
+
+        }
+        .action-select span {
+            display: block;
+            width: 50px;
+            height: 50px;
+            border: 1px solid #d9d9d9;
+            cursor: pointer;
+            text-align: center;
+        }
+        .action-select span:hover {
+            background-color: #49a9ee;
+            border-color: #49a9ee;
+        }
+        .action-select span:hover i {
+            color: #fff ;
+        }
+        .action-select span:first-child{
+            margin-bottom: 40px;
+            margin-top: 146px;
+        }
+        .action-select{
+            padding-left: 50px;
+        }
+        .action-select i {
+            font-style: normal;
+            display: inline-block;
+            font-size: 24px;
+            color: #d9d9d9;
+            margin-top: 12px;
+        }
+        .relation-layout-content {
+            padding: 0 30px;
+        }
+        .current-acco{
+            margin-top: 10px;
+        }
+    </style>
+</head>
+
+<body>
+<div id="coaAccRelationship" class="ufma-layout-updown">
+    <div class="ufma-layout-up">
+        <div class="container-fluid">
+            <div class="ufma-layout">
+                <div class="ufma-layout-content relation-layout-content">
+                    <div class="current-acco">当前科目：<span></span></div>
+                        <div class="content-box before-selected">
+                            <div class="title">待选科目</div>
+                            <div class="select-content">
+                                <ul id="accoTree" class="ztree ufmaTree"></ul>
+                            </div>
+                        </div>
+                        <div class="content-box action-select">
+                            <span id="node-selecte" title="添加科目">
+                                <i class="glyphicon icon-angle-double-right"></i>
+                            </span>
+                            <span id="node-cancle" title="移除已添加的科目">
+                                <i class="glyphicon icon-angle-double-left"></i>
+                            </span>
+                        </div>
+                        <div class="content-box have-selected">
+                            <div class="title">已选科目</div>
+                            <div class="select-content">
+
+                            </div>
+                        </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="ufma-layout-down bordered-top">
+        <div class="text-right margin-right-30 coaAccEditBom">
+            <button type="button" class="btn btn-sm btn-default btn-permission btn-save" id="coaAccSaveAll">保存</button>
+            <button type="button" class="btn btn-sm btn-default" id="coaAccCancelAll"> 取消</button>
+        </div>
+    </div>
+</div>
+<!--<script src="../maCommon/maCommon.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>-->
+<script src="coaAccRelationship.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+</body>
+
+</html>

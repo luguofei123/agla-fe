@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>期末结账</title>
+		<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+		<script src="../../pub/boot.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+		<link rel="stylesheet" type="text/css" href="carryOver.css" />
+	</head>
+
+	<body>
+		<div class="container-fluid ufma-container">
+			<!--工作区 begin-->
+			<div class="workspace">
+				<!--工作区顶部 begin-->
+				<div class="workspace-top">
+					<div class="container-fluid">
+						<div class="ufma-portlet">
+							<div class="portlet-title">
+								<div class="caption">
+									<span class="caption-subject font-dark uppercase">期末结账</span>
+								</div>
+								<!--单位&账套选择 begin-->
+								<div class="inline-block absolute margin-left-15 margin-top-8">
+									<ul class='ufma-list-col clearfix padding-left-8'>
+										<li class="ufma-list-col-item">
+											<div id='cbAgency' name="agencyCode" class="uf-treecombox ufma-combox-agency"></div>
+										</li>
+										<li class="ufma-list-col-item">
+											<div id='cbAcct' class="uf-combox ufma-combox-acct"></div>
+										</li>
+									</ul>
+								</div>
+								<!--单位&账套选择 end-->
+								<div class="actions">
+									<!--<div class="btn-group">
+										<button id="btnAdd" type="button" class="btn btn-sm btn-primary btn-permission">登记</button>
+									</div>-->
+								</div>
+							</div>
+							<!--查询条件-->
+							<div style="width: 100%;height: 40px;position: relative;">
+								<div style="width: 6%;position: absolute;left: 0;line-height: 30px;padding-left:16px;font-weight:bold;color: #333333;" id="cosetyear">结算期间></div>
+								<div id="month-line" class="" style="width: 94%;position: absolute;right: 0;">
+									<div class="gray-line">
+										<ul class="list-unstyled blue-line">
+											<li class="blue-one choose">
+												<div class="blue-rightbkg"></div>
+												<a href="javascript:;" data-fisPerd="1">01期间</a></li>
+											<li class="blue-one">
+												<div class="blue-rightbkg"></div>
+												<a href="javascript:;" data-fisPerd="2">02期间</a></li>
+											<li class="blue-one">
+												<div class="blue-rightbkg"></div>
+												<a href="javascript:;" data-fisPerd="3">03期间</a></li>
+											<li class="blue-one">
+												<div class="blue-rightbkg"></div>
+												<a href="javascript:;" data-fisPerd="4">04期间</a></li>
+											<li class="blue-one">
+												<div class="blue-rightbkg"></div>
+												<a href="javascript:;" data-fisPerd="5">05期间</a></li>
+											<li class="blue-one">
+												<div class="blue-rightbkg"></div>
+												<a href="javascript:;" data-fisPerd="6">06期间</a></li>
+											<li class="blue-one">
+												<div class="blue-rightbkg"></div>
+												<a href="javascript:;" data-fisPerd="7">07期间</a></li>
+											<li class="blue-one">
+												<div class="blue-rightbkg"></div>
+												<a href="javascript:;" data-fisPerd="8">08期间</a></li>
+											<li class="blue-one">
+												<div class="blue-rightbkg"></div>
+												<a href="javascript:;" data-fisPerd="9">09期间</a></li>
+											<li class="blue-one">
+												<div class="blue-rightbkg"></div>
+												<a href="javascript:;" data-fisPerd="10">10期间</a></li>
+											<li class="blue-one">
+												<div class="blue-rightbkg"></div>
+												<a href="javascript:;" data-fisPerd="11">11期间</a></li>
+											<li class="blue-one">
+												<div class="blue-rightbkg"></div>
+												<a href="javascript:;" data-fisPerd="12">12期间</a></li>
+										</ul>
+									</div>
+									
+								</div>
+
+							</div>
+						</div>
+					</div>
+				</div>
+				<!--工作区中部 begin-->
+				<div class="workspace-center">
+					<div id="cotop" style="margin-left:30px;height: 30px;display: none;">
+						<span class="codate">2018年07期间</span>
+						<span class="costatus">未结账</span>
+					</div>
+					<div id="coleft" style="width: 15%;display: inline-block;margin-top: 15px;">
+						<div class="conav cblue" data-index="0">
+							<span>期末检查</span>
+							<div class="triangle"></div>
+							<div class="shows"></div>
+						</div>
+						<!--<div class="conav cblue" data-index="1">
+							<span>期末结汇</span>
+							<div class="triangle"></div>
+							<div class="shows"></div>
+						</div>-->
+						<div class="conav actives cblue" data-index="2">
+							<span>归集分摊</span>
+							<div class="triangle"></div>
+							<div class="shows"></div>
+						</div>
+						<div class="conav" data-index="3">
+							<span>期末结转</span>
+							<div class="triangle"></div>
+							<div class="shows"></div>
+						</div>
+						<div class="conav" data-index="4">
+							<span>试算平衡</span>
+							<div class="triangle"></div>
+							<div class="shows"></div>
+						</div>
+						<div class="conav" data-index="5">
+							<span>期末结账</span>
+							<div class="triangle"></div>
+							<div class="shows"></div>
+						</div>
+						<div class="conav" data-index="6">
+							<span>结账报告</span>
+							<div class="triangle"></div>
+							<div class="shows"></div>
+						</div>
+					</div>
+					<div id="coright">
+						<div class="stepshow">
+							<div style="border: 1px solid #d9d9d9;padding: 16px 16px 6px;">
+								<div class="pzzs">
+									<p><span>凭证张数（总张数）</span></p>
+									<p><span id="copzzszs">0</span></p>
+								</div>
+								<div class="pzzt">
+									<p><span>未审核</span><span>未记账</span><span>已记账</span><span>已作废</span></p>
+									<p><span id="cowsh" style="color:#FFBF00;">0</span><span id="cowjz" style="color:#FFBF00;">0</span><span id="coyjz" style="color: #00A854;">0</span><span id="coyzf" style="color: #00A854;">0</span></p>
+								</div>
+								<div><span class="icon-cross-circle" style="color: red;visibility: hidden;"></span><span style="margin-left: 8px;" id="caisjzsh">检查结果：<!--检查不通过：凭证没有全部审核记账，无法进行期末结账，请先进行凭证的审核和记账！--></span><span style="float: right;">凭证审核记账请点击-><a id="vouboxurl" style="color: #108EE9;cursor: pointer;">进入</a></span></div>
+								<p id="nullnumber" style="margin-left: 22px;"><span id="nullnum">检查到的空号：无</span><span style="float: right;">凭证重排号请点击—><a id="vouboxsorg" style="color: #108EE9;cursor: pointer;">进入</a></span></p>
+							</div>
+							<div style="border: 1px solid #d9d9d9;padding:16px 16px 6px;margin-top: 10px;">
+								<div><span class="icon-cross-circle" style="color: red;visibility: hidden;"></span><span style="margin-left: 8px;">检查到应录未录结余与盈余差异项的科目：无</span></div>
+								<p id="nullSubject" style="margin-left: 22px;">&nbsp;<!--科目【4001-单位管理费用】，科目【6001-财政拨款预算收入】--><span style="float: right;display: none;">补充登记差异项请点击—><a style="color: #108EE9;">进入</a></span></p>
+							</div>
+							<div style="border: 1px solid #d9d9d9;padding:16px 16px 6px;margin-top: 10px;">
+								<div><span class="icon-cross-circle" style="color: red;visibility: hidden;"></span><span style="margin-left: 8px;">检查到应录未录现金流量的科目：无</span></div>
+								<p id="nullnumber" style="margin-left: 22px;">&nbsp;<!--科目【1002-银行存款】，科目【6001-财政拨款预算收入】--><span style="float: right;display: none;">补充登记现金流量请点击 —><a style="color: #108EE9;">进入</a></span></p>
+							</div>
+							<div id="coerrnudiv" style="border: 1px solid #d9d9d9;padding:16px;margin-top: 10px;">
+								<div><span class="icon-cross-circle" style="color: red;"></span><span id="coerrnu" style="margin-left: 8px;">检查到资产系统，出纳系统未结账，财务系统无法结账。</span></div>
+							</div>
+						</div>
+						<!--<div class="stepshow">
+							2
+						</div>-->
+						<div class="stepshow cogriddiv" style="position: relative;">
+							<p style="font-size: 16px;font-weight: bold;color: #333333;">待摊费用分摊</p>
+							<div class="girddivcothree" style="height: 300px;overflow-y: auto;">
+								<table id="cogrid" class="ufma-table dataTable table-bordered" style="border: 1px solid #D9D9D9;">
+									<thead>
+										<tr>
+											<th style="width:35px;text-align: center;">
+												<label class="mt-checkbox mt-checkbox-outline checkall">
+													<input type="checkbox" class="checkalls">
+													<span></span>
+												</label>
+											</th>
+											<th style="width:35px;text-align: center;">序号</th>
+											<th>费用类型</th>
+											<th>发生日期</th>
+											<th>摊销金额</th>
+											<th>摊销期</th>
+											<th>已摊销金额</th>
+											<th>已摊销期</th>
+											<th>剩余摊销金额</th>
+											<th>本期摊销金额</th>
+										</tr>
+									</thead>
+									<tbody>
+										<!--<tr>
+											<td style="width:35px;text-align: center;">
+												<label class="mt-checkbox mt-checkbox-outline">
+												<input type="checkbox" class="">
+												<span></span>
+											</label>
+											</td>
+											<td style="width:35px;text-align: center;">1</td>
+											<td>01 办公房屋租金</td>
+											<td>2018-06-22</td>
+											<td style="text-align: right;">30,000.00</td>
+											<td>10期</td>
+											<td style="text-align: right;">9,000.00</td>
+											<td>3期</td>
+											<td style="text-align: right;">21,000.00</td>
+											<td style="text-align: right;">3,000.00</td>
+										</tr>
+										<tr>
+											<td style="width:35px;text-align: center;">
+											<label class="mt-checkbox mt-checkbox-outline">
+												<input type="checkbox" class="">
+												<span></span>
+											</label>
+											</td>
+											<td style="width:35px;text-align: center;">1</td>
+											<td>01 办公房屋租金</td>
+											<td>2018-06-22</td>
+											<td style="text-align: right;">30,000.00</td>
+											<td>10期</td>
+											<td style="text-align: right;">9,000.00</td>
+											<td>3期</td>
+											<td style="text-align: right;">21,000.00</td>
+											<td style="text-align: right;">3,000.00</td>
+										</tr>-->
+									</tbody>
+								</table>
+							</div>
+							<div class="ufma-table-bar" id='cogridbar'>
+								<label class="mt-checkbox mt-checkbox-outline" style="margin-top: 7px;margin-left: 16px;">
+									<input type="checkbox" class="checkalls">
+									<span></span>
+								</label>
+								<div class="btn-group" style="margin-top: -16px;">
+									<button id="btn-bqtx" type="button" class="btn btn-sm btn-default btn-permission btn-bqtx">本期摊销</button>
+								</div>
+								<div class="btn-group" style="margin-top: -16px;">
+									<button id="btn-quzc" type="button" class="btn btn-sm btn-default btn-permission btn-quzc">全部转出</button>
+								</div>
+							</div>
+						</div>
+						<div class="stepshow">
+							<div id="carryCard"></div>
+						</div>
+						<div class="stepshow">
+							<p style="font-size: 16px;font-weight: bold;color: #333333;">财务会计</p>
+							<div class="stepfivediv stepfivedivcw">
+								<div style="padding: 16px;">
+									<div style="width: 600px;display: inline-block;">
+										<div class="fivej fivejmx">
+										</div>
+										<div class="fived fivedmx">
+										</div>
+										<div style="width: 600px;height: 25px;display: inline-block;">
+											<div class="fivej">
+												<span>
+												<span class="fivename">合计：</span>
+												<span class="fiveamt fivejhj"></span>
+												</span>
+											</div>
+											<div class="fived">
+												<span>
+												<span class="fivename">合计：</span>
+												<span class="fiveamt fivedhj"></span>
+												</span>
+											</div>
+										</div>
+									</div>
+									<div style="display: inline-block;" class="coiconfivec">
+										<span class="icon-balance" style="font-size: 80px;"></span>
+									</div>
+								</div>
+							</div>
+							<p class="stepfivedivysp" style="font-size: 16px;font-weight: bold;color: #333333;">预算会计</p>
+							<div class="stepfivediv stepfivedivys">
+								<div style="padding: 16px;">
+									<div style="width: 600px;display: inline-block;">
+										<div class="fivej fivejmx">
+										</div>
+										<div class="fived fivedmx">
+										</div>
+										<div style="width: 600px;height: 25px;display: inline-block;">
+											<div class="fivej">
+												<span>
+												<span class="fivename">合计：</span>
+												<span class="fiveamt fivejhj"></span>
+												</span>
+											</div>
+											<div class="fived">
+												<span>
+												<span class="fivename">合计：</span>
+												<span class="fiveamt fivedhj"></span>
+												</span>
+											</div>
+										</div>
+									</div>
+									<div style="display: inline-block;" class="coiconfivey">
+										<span class="icon-unbalance" style="font-size: 80px;"></span>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="stepshow">
+							<div class="stepsixload" style="width: 100%;display: none;">
+								<div class="fixprogress">
+									<div class="fixprogressload"></div>
+									<p style="font-size: 18px;font-weight: bold;color: #333;text-align: center;">正在进行期末结账工作，请等待…</p>
+								</div>
+							</div>
+							<div class="stepsixsuccess" style="width: 100%;display: none;">
+								<div class="stepsixpos">
+									<p style="text-align: center;"><span class="icon-check-circle" style="font-size: 80px;color: #00A854;"></span></p>
+									<p style="font-size: 18px;font-weight: bold;color: #333;text-align: center;">期末结账工作已完成，请查看结账报告~</p>
+									<div class="btn-group">
+										<button id="jzbgbtn" type="button" class="btn btn-sm btn-default jzbgbtn">结账报告</button>
+									</div>
+								</div>
+							</div>
+							<div class="stepsixerror" style="width: 100%;">
+								<div class="stepsixpose">
+									<p style="text-align: center;"><span class="icon-cross-circle" style="font-size: 80px;color: #F04134;"></span></p>
+									<p style="font-size: 18px;font-weight: bold;color: #333;text-align: center;">期末结账工作未完成，请查看错误信息</p>
+									<div id="stepsixerrordata" style="width: 350px;height: 150px;overflow-y: auto;border: 1px solid #d9d9d9;"></div>
+								</div>
+							</div>
+						</div>
+						<div class="stepshow">
+							<div style="padding: 16px 16px 6px;" id="jzbgdiv">
+								<p style="font-size: 16px;font-weight: bold;color: #333333;">结账报告</p>
+								<p id="jzbgpzzs" style="color: #333333;"></p>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="co-tool-bar">
+					<div class="btn-group">
+						<button id="btn-next" type="button" class="btn btn-sm btn-default btn-permission btn-next">上一步</button>
+					</div>
+					<div class="btn-group">
+						<button id="btn-prev" type="button" class="btn btn-sm btn-primary btn-permission btn-prev">下一步</button>
+					</div>
+					<div class="btn-group covousc" style="display: none;">
+						<button id="btn-vouadd" type="button" class="btn btn-sm btn-primary btn-permission btn-vouadd">生成凭证</button>
+					</div>
+					<div class="btn-group noaudit" style="display: none;">
+						<button id="btn-noaudit" type="button" class="btn btn-sm btn-primary btn-noaudit">反结账</button>
+					</div>
+					<!--<div class="btn-group newxnd" style="display: none;">
+						<button id="btn-newxnd" type="button" class="btn btn-sm btn-primary">生成下年度期初</button>
+					</div>-->
+				</div>
+			</div>
+		</div>
+		<div id="vouFisperdmodal" class="ufma-modal">
+			<div class="u-msg-title">
+				<h4>结转信息设置</h4>
+			</div>
+			<div class="u-msg-content">
+				<div class="container-fluid margin-left-15 margin-right-15">
+					<ul class="list-unstyled">
+						<!--提示 begin-->
+						<li class="tips clearfix">
+							<div class="tips-icon pull-left">
+								<span class="glyphicon icon-point"></span>
+							</div>
+							<p class="pull-left">请确认以下信息：</p>
+						</li>
+						<!--提示 end-->
+
+						<!--凭证类型 begin-->
+						<li class="clearfix">
+							<label class="control-label em6">凭证类型：</label>
+							<div class="control-element" style="display: inline-block;">
+								<select class="form-control" id="vouTypeCodesel" style="width: 250px;">
+								</select>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class="u-msg-footer">
+				<div class="text-right">
+					<button type="button" class="btn btn-sm btn-primary btn-save" id="btn-vouFisperdqr">确定</button>
+					<button type="button" class="btn btn-sm btn-default btn-qx" id="btn-vouFisperdclose">取消</button>
+				</div>
+			</div>
+		</div>
+		<script src="carryOverxi.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+	</body>
+
+</html>

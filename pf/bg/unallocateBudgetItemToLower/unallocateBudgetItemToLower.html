@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>指标编制</title>
+    <meta
+            content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
+            name="viewport">
+    <script src="../../pub/boot.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+    <link rel="stylesheet" href="../../agla-trd/fileinput/fileinput.css"/>
+    <script src="../../agla-trd/fileinput/fileinput.js" type="text/javascript" charset="utf-8"></script>
+    <script src="../../agla-trd/fileinput/zh.js" type="text/javascript" charset="utf-8"></script>
+    <link rel="stylesheet" href="../pub/bgPub.css?rev=@@hash"/>
+    <link rel="stylesheet" href="../pub/bgPubImpAttachment.css?rev=@@hash"/>
+    <link rel="stylesheet" href="../pub/bgPubAuditModal.css?rev=@@hash"/>
+    <link rel="stylesheet" href="../pub/bgPubProgress1.css?rev=@@hash"/>
+    <link rel="stylesheet" href="../budgetItemMultiPost/budgetItemMultiPost.css?rev=@@hash"/>
+    <link rel="stylesheet" href="unallocateBudgetItemToLower.css?rev=@@hash"/>
+</head>
+
+<body>
+<div id="unallocateBudgetItemToLower" class="container-fluid ufma-container">
+    <!--面包屑 begin-->
+    <!-- <div class="bread-box clearfix">
+    </div> -->
+
+    <!--工作区 begin-->
+    <div class="workspace bordered" style="height: 516px;">
+        <!--工作区顶部 begin-->
+        <div class="workspace-top">
+            <!-- 左右间距增加 -->
+            <div class="container-fluid">
+                <!-- 上对齐，增加下间距 -->
+                <div class="ufma-portlet">
+                    <div class="portlet-title">
+                        <div class="caption">
+                            <span class="caption-subject font-dark uppercase">待分配指标下拨</span>
+                        </div>
+                        <div id="cbb_agency"></div>
+                        <!-- 右侧新增按钮 -->
+                        <div class="actions">
+                            <div class="btn-group">
+                                <button type="button" id="btn-add"
+                                        class="btn btn-sm btn-primary">新增
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--工作区中部 begin-->
+        <div class="workspace-center">
+            <div class="container-fluid">
+                <!-- 头部更多的显示 -->
+                <div id="bgMoreMsgPnl" class="bg-table-sub"></div>
+                <div class="bg-table-sub bg-div-height-space-12"></div>
+                <!-- 未审核、审核、全部  的标签 -->
+                <div class="bg-table-sub">
+                    <!--标签 begin-->
+                    <ul class="nav nav-tabs">
+                        <li class="active NAVSELECT"><a href="javascript:;" data-status="O">未审核</a></li>
+                        <li><a href="javascript:;" data-status="A">已审核</a></li>
+                        <li><a href="javascript:;" data-status="T">全部</a></li>
+                    </ul>
+                    <!--标签 end-->
+                    <!--右侧操作按钮 begin-->
+                    <div class="bg-table-sub-action">
+                        <div class="btn-group">
+                            <button class="btn btn-default btn-print" data-toggle="tooltip" title=""
+                                    data-original-title="打印" id="unallocateBgItemToLower-print">
+                                <span class="glyphicon icon-print"></span>
+                            </button>
+                            <button class="btn btn-default" data-toggle="tooltip" title="" data-original-title="导出"
+                                    id="btn_toLowerExp">
+                                <span class="glyphicon icon-upload"></span>
+                            </button>
+                        </div>
+                    </div>
+                    <!--右侧操作按钮 end-->
+                </div>
+                <!-- 表格 -->
+                <div id="mainTableDiv" class="bg-table-sub">
+                    <table id="mainTable-unallocateBgItemToLower"
+                           class="ufma-table dataTable unallocateBgItemToLower-tbl unallocateBgItemToLower-tbl-Height"></table>
+
+                </div>
+                <!-- 浮动在最底层的浮层 -->
+                <div class="bgpub-bgnormal-postion-1 bgpub-div-height-space-35 ">
+                </div>
+                <div class="bgpub-bgnormal-postion-1 bgpub-div-height-space-35 ">
+                </div>
+                <div class="div-fixBottom-1" id="fixDiv-unallocatebgitemToLower">
+                    <div class="bgpub-bgnormal-postion-1">
+                        <!-- 单据数量和指标金额的信息显示 -->
+                        <div id="tableTotalShow" class="bg-table-sub bg-div-margin-top-bottom-8 ufma-gray">
+                            <span>共&nbsp;</span><span id="span_billsCount">0</span><span>&nbsp;张单据&nbsp;&nbsp;&nbsp;
+											指标金额：&nbsp;</span><span id="span_billsTotalMoney">0.00</span>
+                        </div>
+                    </div>
+                    <div class="bgpub-bgnormal-postion-1">
+                        <div class="bg-multi-floatLeft-1">
+                            <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline bg-top-4">
+                                <input id="input-seleAll" type="checkbox" class="checkboxes" value=""/> &nbsp; 全选
+                                <span></span>
+                            </label>
+                        </div>
+                        <div class="bg-multi-floatLeft-1">
+                            <button type="button" id="btn-del"
+                                    class="btn btn-sm btn-default unallocate-BgItem-leftButton">删除
+                            </button>
+                        </div>
+                        <div class="bg-multi-floatLeft-1">
+                            <button type="button" id="btn-check"
+                                    class="btn btn-sm btn-default unallocate-BgItem-leftButton">审核
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--工作区底 begin-->
+        <div class="workspace-bottom">
+            <div class="container-fluid">
+            </div>
+        </div>
+    </div>
+
+    <!--[新增]-模态框 弹出层-->
+    <div id="unallocateBudgetItemToLower-add" z-index="-1" class="ufma-modal">
+        <div class="u-msg-title">
+            <h4>待分配指标下拨</h4>
+        </div>
+        <div class="u-msg-content unallocateBgItemToLowerMain " id="unallocate-BgItem-content">
+            <!-- 进度条 -->
+            <div class="ufma-layout ufma-layout-slider-sm ufma-layout-fixed-slider
+						ufma-layout-fixed-slider-right unallocateBgItemToLower-modal-title "
+                 id="progress-unallocateBgItemToLower">
+            </div>
+
+            <div class="tabController step1" pageindex="1">
+                <!-- 预算方案 -->
+                <div id="unallocateBgItem_modal_step1_morePnl"></div>
+                <!-- 指标表格 -->
+                <div class="step1-table">
+                    <table id="unallocateBgItemToLowerTable_obligate"
+                           class="ufma-table unallocateBgItemToLower-tbl unallocateBgItemToLower-tbl-Height">
+                    </table>
+                </div>
+            </div>
+
+            <div class="tabController step2" pageindex="2">
+                <div class="unallocateBgItemToLower-tab2-div unallocateBgItemToLower-tab2-div-15 "></div>
+                <div class="unallocateBgItemToLower-tab2-div unallocateBgItemToLower-tab2-div-30 ">
+                    <div class="bg-table-sub unallocate-BgItem-topDiv">
+                        <p class="bg-div-margin-top-bottom-8"> 行政区划</p>
+                    </div>
+                    <div class="bg-table-sub unallocateBgItemToLower-tab2-div tab2-agencyTree" id="tab2_agencyFrom">
+                        <!-- 左边的区划树 -->
+                    </div>
+                </div>
+                <div class="unallocateBgItemToLower-tab2-div" style="width:65px">
+                    <div class="bg-table-sub " style="height:120px"></div>
+                    <div class="bg-table-sub ">
+                        <button type="button" id="unallocateBgItemToLower-tab2-select"
+                                class="btn btn-sm btn-default"> &gt;
+                        </button>
+                    </div>
+                    <div class="bg-table-sub " style="height:20px"></div>
+                    <div class="bg-table-sub">
+                        <button type="button" id="unallocateBgItemToLower-tab2-unselect"
+                                class="btn btn-sm btn-default"> &lt;
+                        </button>
+                    </div>
+                </div>
+                <div class="unallocateBgItemToLower-tab2-div unallocateBgItemToLower-tab2-div-30 ">
+                    <div class="bg-table-sub unallocate-BgItem-topDiv">
+                        <p class="bg-div-margin-top-bottom-8"> 已选择行政区划</p>
+                    </div>
+                    <div class="bg-table-sub unallocateBgItemToLower-tab2-div tab2-agencyTree" id="tab2_agencyTo">
+                        <!-- 右边的区划树 -->
+                    </div>
+                </div>
+                <div class="unallocateBgItemToLower-tab2-div unallocateBgItemToLower-tab2-div-10 "></div>
+            </div>
+
+            <div class="tabController step3" pageindex="3">
+                <!-- 单据编号，日期，可分配金额，附件.. -->
+                <div class="step2-row">
+                    <h5 class="unallocate-BgItem-topDiv">单据日期: &nbsp;</h5>
+                    <!--<div class="control-element unallocate-BgItem-topDiv unallocate-BgItem-topDiv-30right ">-->
+                    <!--<input type="text" value="2017" class="form-control inputHeight" id="bg_unallocateBgItemToLowerModal_dtp"-->
+                    <!--readonly="readOnly"/>-->
+                    <!--</div>-->
+                    <div class="control-element unallocate-BgItem-topDiv unallocate-BgItem-topDiv-30right unallocate-BgItem-dtp">
+                        <div class='uf-datepicker bgPub-div-bgDateTime' id='bg_unallocateBgItemToLowerModal_dtp'>
+                        </div>
+                    </div>
+                    <h5 class="unallocate-BgItem-topDiv">单据号: &nbsp;</h5>
+                    <div class="control-element unallocate-BgItem-topDiv unallocate-BgItem-topDiv-30right ">
+                        <input type="text" value="AAA00001" class="form-control inputHeight"
+                               id="unallocateBgItemToLowerModal_billCode" readonly="readOnly"/>
+                    </div>
+                    <h5 class="unallocate-BgItem-topDiv">待分配指标金额: &nbsp;</h5>
+                    <h5 class="unallocate-BgItem-topDiv" id="unallocateBgItemToLowerModal_totalMoney"></h5>
+
+
+                    <button type="button" id="btn-unallocateBgItemToLowerModal-aboutFiles"
+                            class="btn btn-sm btn-default btn-attach unallocate-BgItem-rightTopDiv bg-multiModal-fileBtn">
+                        <span class=" icon-file"></span>
+                    </button>
+                    <h5 class="unallocate-BgItem-rightTopDiv">&nbsp;张&nbsp;&nbsp;&nbsp;</h5>
+                    <div class="control-element unallocate-BgItem-rightTopDiv bgPub-fileCount-width">
+                        <input type="text" value="0" class="form-control inputHeight"
+                               id="bgInput-fileCount-unallocateBgItemToLower" oninput="value=value.replace(/[^\d]/g,'')"/><!-- bug78324--zsj-->
+                    </div>
+                    <h5 class="unallocate-BgItem-rightTopDiv">附单据&nbsp;</h5>
+
+                </div>
+                <!-- <div class="step2-row">
+                    <table id="testAAAAAAA"></table>
+                </div> -->
+                <!-- 指标表格 -->
+                <!-- class="ufma-table unallocateBgItemToLower-tbl unallocateBgItemToLower-tbl-Height" -->
+                <div class="step3-table">
+                    <div id="unallocateBgItemToLowerTable_obligateA">
+                    </div>
+                </div>
+            </div>
+
+            <div class="tabController step4" pageindex="4">
+                <div class="bgpub-bgnormal-postion-2" id="unallocateBgItemToLowerTable_msg_step4">
+                    <div class="bgPub-Tick-green-outer">
+                        <div class="bgPub-Tick-green-inner">
+                            <a class="bgPub-Tick-green"></a>
+                        </div>
+                    </div>
+                    <div class="bgpub-bgnormal-postion-2">
+                        <h5> &nbsp;&nbsp;&nbsp;指标下拨单编制完成</h5>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="u-msg-footer unallocateBgItemToLower-footer2">
+            <div class="div-tbl-bottom-btn">
+                <button type="button" id="btn-modal-close"
+                        class="btn btn-sm btn-default btn-cancel unallocate-BgItem-rightButton" data-dismiss="modal">取消
+                </button>
+            </div>
+            <div class="div-tbl-bottom-btn">
+                <button type="button" id="btn-modal-next"
+                        class="btn btn-sm btn-default btn-next unallocate-BgItem-rightButton">下一步
+                </button>
+            </div>
+            <div class="div-tbl-bottom-btn">
+                <button type="button" id="btn-modal-pre"
+                        class="btn btn-sm btn-default btn-pre unallocate-BgItem-rightButton">上一步
+                </button>
+            </div>
+        </div>
+    </div>
+
+</div>
+<script src="../pub/bgPub.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+<script src="../pub/bgPubImpAttachment.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+<script src="../pub/bgPubAuditModal.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+<script src="../pub/bgPubProgress1.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+<script src="../pub/bgPubItemManager.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+<script src="unallocateBudgetItemToLower.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+</body>
+
+</html>

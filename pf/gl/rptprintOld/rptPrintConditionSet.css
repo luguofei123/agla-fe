@@ -1,0 +1,19 @@
+#rptPrintConditionSet .ufma-layout-up{
+	/*height: 352px;*/
+}
+
+#rptPrintConditionSet .table-box{
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+
+#rptPrintConditionSet .table-action{
+	margin-bottom: 8px;
+}
+
+#rpcs-data,#rpcs-data th,#rpcs-data td{
+	border: 1px solid #D9D9D9;
+}
+#rpcs-data th{
+	text-align: center;
+}

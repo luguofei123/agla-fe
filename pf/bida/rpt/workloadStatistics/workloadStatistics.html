@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>账务查询-工作量统计表</title>
+	<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+	<script src="../../../pub/boot.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+	<link rel="stylesheet" href="../rptCommon2/rptCommonBidaSelf_new.css?rev=@@hash" />
+	<link rel="stylesheet" href="../rptCommon2/rptCommon_new.css?rev=@@hash" />
+</head>
+<body id="glRptWS" class="bida-rpt-workload" style="overflow-x:hidden;">
+<div class="container-fluid ufma-container">
+	<input type="hidden" value="BIDA_RPT_WORKLOAD" data-name="glRptWS" class="rptType"/>
+
+	<!--工作区 begin-->
+	<div class="workspace">
+		<!--账表工作区 begin-->
+    	<div class="rpt-workspace">
+			<div class="rpt-selete-box bordered-bottom" style="margin-top:-8px;">
+				<div class="rpt-title">账务查询-工作量统计表</div>
+				<div class="rpt-method-tip">
+					<button id="showMethodTip" class="btn btn-primary glyphicon icon-file"></button>
+					<div id="rptPlanList" style="display: none;"></div>
+				</div>
+				<div class="rpt-clear"></div>
+			</div>
+			<div class="rpt-acc-box">
+				<div class="rpt-acc-box-left">
+					<div class="rpt-atree-box-head-top">
+						<div id="domId" class="uf-combox uf-combox-wd"></div>
+					</div>
+					<div class="rpt-atree-box-head">
+						<div class="input-group rpt-input-group">
+							<input type="text" id="key" value="" class="form-control empty" placeholder="请输入搜索关键词">
+							<span class="input-group-addon" id="btn-search"><span class='glyphicon icon-search'></span></span>
+						</div>
+					</div>
+					<div class="rpt-atree-box-body">
+						<ul id="atree" class="ufmaTree ztree atree-ztree" style="margin: -5px 0px 0 -5px;"></ul>
+					</div>
+				</div>
+				<div class="rpt-acc-box-right">
+					<div class="rpt-box rpt-query-box bida-query-box">
+						<div class="rpt-query-box-left">
+							<form id="frmQuery" class="form-horizontal">
+								<div class="form-row">
+									<div class="form-group bida-form-group hidden" style="margin-left:30px;">
+										<label class="control-label auto">会计科目：</label>
+										<div class="control-element rpt-query-li-selete">
+											<div class="rpt-p-search-key" id="queryAcco">
+												<input type="text" readonly id="ACCO-data-key" value="全部">
+												<span class="search-btn icon icon-writeoff"></span>
+											</div>
+										</div>
+									</div>
+									<div class="form-group bida-form-group-date" style="margin-left:16px;">
+										<label class="control-label auto bida-date-lable">期间：</label>
+										<div class="control-element pr10" style="padding-top:3px;">
+											<a name="period" id="dateBn" class="label label-radio">本年</a>
+											<a name="period" id="dateBq" class="label label-radio selected">本期</a>
+										</div>
+										<div class="control-element" style="width:120px;">
+											<div id="dateStart" class="uf-datepicker" style="width:120px;"></div>
+										</div>
+										<span class="split">-</span>
+										<div class="control-element">
+											<div id="dateEnd" class="uf-datepicker" style="width:120px;"></div>
+										</div>
+									</div>
+									<div class="clearfix"></div>
+								</div>
+							</form>
+							<form id="queryMore" class="form-horizontal none mt10">
+								<ul class="rpt-query-box-bottom" style="display:block;">
+									<li class="rpt-query-box-li">
+										<label class="rpt-query-li-cont-title">其他：</label>
+										<div class="rpt-query-li-cont" style="line-height: 30px; margin-left: 5px;">
+										<div class="rpt-query-li-check">
+												<label class="mt-checkbox mt-checkbox-outline" style="margin-right: 24px;">
+													<input type="checkbox" id="isByCreator" checked="checked" />按制单人统计
+													<span></span>
+												</label>
+												<label class="mt-checkbox mt-checkbox-outline" style="margin-right: 24px;">
+													<input type="checkbox" id="isIncludeYj">包含月结凭证
+													<span></span>
+												</label>
+												<label class="mt-checkbox mt-checkbox-outline" style="margin-right: 24px;">
+													<input type="checkbox" id="isIncludeNj">包含年结凭证
+													<span></span>
+												</label>
+										  </div>
+										</div>
+										</li>
+								</ul>
+							</form>
+	
+							<div class="rpt-query-box-right">
+								<label class="label label-more" data-target="#queryMore">更多<i class="glyphicon icon-angle-bottom"></i></label>
+							<div class="rpt-query-btn">
+								<button class="btn btn-primary btn-query btn-permission" id="searchTableData">查询</button>
+								<button id="saveMethod" class="btn btn-default btn-save btn-permission">保存</button>
+							</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="rpt-box rpt-table-box" style="padding: 8px 0 0;">
+						<div class="rpt-table-sub" style="float: left;">
+							<div class="rpt-table-sub-tip"></div>
+								<span class="rpt-table-sub-tip4 nowPrjNameWrap" style="display: none; margin-left: 0;">
+									当前查询方案：<span id="nowPrjName"></span>
+								</span>
+							</div>
+							<div class="rpt-table-sub-action">
+								<div class="iframeBtnsSearch">
+									<input type="text" class="searchHide focusOff bordered-input" placeholder="请输入要搜索的关键词">
+									<button class="btn btn-default btn-sm btn-search" id="searchHideBtn"><span class='glyphicon icon-search'></span></button>
+								</div>
+								<div class="btn-group" id="printTableData">
+								</div>
+							</div>
+							<div class="rpt-clear"></div>
+						</div>
+						<div class="rpt-table-tab" style="width:100%;overflow:hidden; margin-top:0;">
+							<table id="glRptWSTable" class="ufma-table uf-rpt-table" tool-bar="#tool-bar">
+								<thead id="glRptWSThead">
+									<tr>
+										<th>单位</th>
+										<th>账套</th>
+										<th>制单人</th>
+										<th>制单总数</th>
+									</tr>
+								</thead>
+							</table>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--账表工作区 end-->
+		<div id="tool-bar" class="ufma-tool-bar" style="margin-left: 252px">
+			<div class="tool-bar-body">
+				<!--toolbar-->
+			</div>
+		</div>
+	</div>
+	<!--工作区 end-->
+	
+	<!--保存查询方案 modal start-->
+	<div id="saveMethod-box" class="ufma-modal">
+		<div class="u-msg-title">
+			<h4>保存查询方案</h4>
+		</div>
+		<div class="u-msg-content">
+			<form class="form-horizontal rpt-method-form">
+				<div class="form-group">
+					<label class="control-label">命名：</label>
+					<div class="control-element">
+						<input id="methodName" data-code="" type="text" class="form-control" style="width: 300px;"> 
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="mt-radio mt-radio-outline margin-right-8 rpt-radio-span">
+                        <input class="" type="radio" name="prjScope" value="1" checked> 私有方案
+                        <span></span>
+                    </label>
+                    <label class="mt-radio mt-radio-outline margin-right-8 rpt-radio-span">
+                        <input class="" type="radio" name="prjScope" value="3"> 全系统共享
+                        <span></span>
+                    </label>
+                </div>
+			</form>
+		</div>
+		<div class="u-msg-footer">
+			<button id="sureSaveMethod" type="button" class="btn btn-primary">保存</button>
+			<button id="saveAs" type="button" class="btn btn-default">另存为</button>
+			<button type="button" class="btn btn-default btn-close">取消</button>
+		</div>
+	</div>	
+	<!--保存查询方案 modal end-->
+	<div id="tableprint" class="ufma-modal">
+		<div class="u-msg-title">
+			<h4>打印模板选择</h4>
+		</div>
+		<div class="u-msg-content">
+			<div class="container-fluid margin-left-15 margin-right-15">
+				<ul class="list-unstyled">
+					<li class="tips clearfix">
+						<div class="tips-icon pull-left">
+							<span class="glyphicon icon-point"></span>
+						</div>
+						<p class="pull-left">请选择打印模板！</p>
+					</li>
+					<li class="setVouTypecy clearfix">
+						<label class="pull-left" for="" style="width: 100px;text-align: right;margin-bottom: 8px;">财务凭证类型：</label>
+						<div class="pull-left">
+							<select name="" class="bordered-input padding-3" id="rptTemplate">
+							</select>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div class="u-msg-footer">
+			<div class="text-right  margin-right-30">
+				<button type="button" class="btn btn-sm btn-primary btn-save" id="btn-tableprintsave">保存</button>
+				<button type="button" class="btn btn-sm btn-default btn-qx" id="btn-tableprintqx">取消</button>
+			</div>
+		</div>
+	</div>
+	
+</div>
+<div id="fixedHeadBox"></div>
+<script src="../rptCommon2/dm.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+<script src="../rptCommon2/rptCommonRightCon_new.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+<script src="../rptCommon2/rptCommonSum.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+<script src="workloadStatistics.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+</body>
+</html>

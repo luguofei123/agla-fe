@@ -1,0 +1,88 @@
+/*表格底部工具条*/
+
+.tableBottom {
+	height: 40px;
+	border: 1px solid #d9d9d9;
+}
+
+.tableBottomFix {
+	background: #fff;
+	border-top: 1px solid #ccc;
+	border-bottom: 1px solid #ccc;
+	height: 40px;
+	position: fixed;
+	bottom: -1px;
+	display: none;
+}
+
+.dataTables_length {
+	margin-top: 3px;
+}
+
+.tool-bar-body {
+	position: relative;
+	height: 40px;
+}
+
+.tool-bar-body .ufma-tool-btns {
+	display: inline-block;
+	margin-left: 9px;
+}
+
+.tool-bar-body .info {
+	display: inline-block;
+	position: absolute;
+	right: 8px;
+	top: 2px;
+	font-size: 12px;
+	color: #333333;
+	line-height: 19px;
+	word-break: keep-all;
+	/* for ie */
+	white-space: nowrap;
+	/* for chrome */
+}
+
+.dataTables_wrapper .dataTables_paginate .paginate_button {
+	box-sizing: border-box;
+	display: inline-block;
+	min-width: 30px;
+	height: 30px;
+	text-align: center;
+	text-decoration: none !important;
+	cursor: pointer;
+	color: #333 !important;
+	border: 1px solid transparent;
+	border-radius: 0;
+	margin-left: -1px;
+	color: #333 !important;
+	border: 1px solid #d9d9d9!important;
+	background-color: #fff;
+	padding-left: 12px;
+	padding-right: 12px;
+}
+
+.dataTables_wrapper .dataTables_paginate .paginate_button.disabled,
+.dataTables_wrapper .dataTables_paginate .paginate_button.disabled:hover,
+.dataTables_wrapper .dataTables_paginate .paginate_button.disabled:active {
+	cursor: default;
+	color: #666 !important;
+	border: 1px solid #d9d9d9;
+	background: transparent;
+	box-shadow: none;
+}
+
+.dataTables_wrapper .dataTables_paginate .paginate_button.current,
+.dataTables_wrapper .dataTables_paginate .paginate_button.current:hover,
+.dataTables_wrapper .dataTables_paginate .paginate_button:not(.disabled):hover {
+	color: #fff !important;
+	border: 1px solid #008ff0!important;
+	background: #008ff0;
+}
+/*CWYXM-6796--zsj--需要折行的可以在列名加上class类名：commonShow，然后在对应列设置：鼠标悬浮时显示完整信息的功能*/
+.commonShow {
+	max-width:100px;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	overflow: hidden;
+}

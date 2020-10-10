@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>新增账簿</title>
+		<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+		<script src="../../../pub/boot.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+		<style>
+			.form-row {
+				height: 30px
+			}
+			
+			#topCon .control-label {
+				width: 70px
+			}
+			
+			#bomCon .form-group {
+				width: 49%;
+			}
+			
+			#bomCon .control-label {
+				width: 200px
+			}
+			
+			#bankPocket {
+				display: none
+			}
+			
+			#frmBookBfr .form-control {
+				background: #fff
+			}
+			
+			.tip {
+				font-weight: bold;
+				height: 15px;
+				border-left: 3px solid #108EE9;
+				line-height: 15px;
+				padding-left: 10px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="ufma-layout-updown">
+			<div class="ufma-layout-up">
+				<form id="frmBookBfr" class="container-fluid form-horizontal" style="padding:15px 30px 0px;">
+					<div class="panel ufma-panel" id='topBox' style="width:860px;height:200px;margin:0;">
+						<div class="panel-heading">
+							<div class="caption">账簿基本信息</div>
+						</div>
+						<div class="panel-collapse collapse in" id="topCon">
+							<div class="panel-body" style="padding:16px 16px;">
+								<!--第一行-->
+								<div class="form-row">
+									<div class="form-group required">
+										<label class="control-label">账簿类型：</label>
+										<div class="control-element" style="width:180px">
+											<div id="accountbookType" name="accountbookType" class="uf-treecombox"></div>
+										</div>
+									</div>
+									<div class="form-group required" style="margin-left: 24px;">
+										<label class="control-label" style="width:70px;">账簿名称：</label>
+										<div class="control-element" style="width:180px;">
+											<input id='accountbookName' type="text"  name="accountbookName" class="form-control">
+										</div>
+									</div>
+									<div class="form-group required" style="margin-left: 24px;">
+										<label class="control-label" style="width:70px;">账簿代码：</label>
+										<div class="control-element" style="width:180px;">
+											<input id="accountbookCode" type="text" maxlength="42" name="accountbookCode" class="form-control">
+										</div>
+									</div>
+									<div class="clearfix"></div>
+								</div>
+								<!--第二行-->
+								<div class="form-row">
+									<div class="form-group required">
+										<label class="control-label">账套：</label>
+										<div class="control-element" style="width:180px;">
+											<div id="acctCode" name="acctCode" class="uf-treecombox "></div>
+										</div>
+									</div>
+									<div class="form-group required" style="margin-left: 24px;">
+										<label class="control-label">会计科目：</label>
+										<div class="control-element" style="width:180px;">
+											<div id="accoCode" name="accoCode" class="uf-treecombox "></div>
+										</div>
+									</div>
+
+									<!-- 去掉必选,产品要求   guohx-->
+									<div class="form-group " style="margin-left: 24px;">
+										<label class="control-label">上级账簿：</label>
+										<div class="control-element" style="width:180px">
+											<div id="parentGuid" name="parentGuid" class="uf-treecombox"></div>
+										</div>
+									</div>
+									<div class="clearfix"></div>
+								</div>
+
+								<!--全部和现金-->
+								<!--第三行-->
+								<div class="form-row">
+									<div class="form-group">
+										<label class="control-label">币种：</label>
+										<div class="control-element" style="width:180px;">
+											<div id="curCode" name="curCode" class="uf-treecombox "></div>
+										</div>
+									</div>
+									<div class="form-group" id="checkType" style="margin-left:24px;">
+										<label class="control-label">结算方式：</label>
+										<div class="control-element" style="width:180px;">
+											<div id="setmodeCode" name="setmodeCode" class="uf-treecombox"></div>
+										</div>
+									</div>
+									<div class="form-group allCash" style="margin-left: 24px;">
+										<label class="control-label" style="width:70px;">备注：</label>
+										<div class="control-element" style="width:180px;">
+											<input type="text" name="remark" id="remark" class="form-control">
+										</div>
+									</div>
+									<div class="clearfix"></div>
+								</div>
+
+								<!--银行和零钱-->
+								<!--第四行-->
+								<div class="form-row bankPocket">
+									<div class="form-group bankPocket">
+										<label class="control-label" style="width:70px;">银行：</label>
+										<div class="control-element" style="width:450px;">
+											<input type="text" name="bankName" class="form-control" maxlength="100">
+										</div>
+									</div>
+									<div class="clearfix"></div>
+								</div>
+								<!--第五行-->
+								<div class="form-row bankPocket">
+									<div class="form-group">
+										<label class="control-label" style="width:70px;">账号：</label>
+										<div class="control-element" style="width:450px;">
+											<input id="bankNo" maxlength="42" type="text" name="bankId" class="form-control">
+										</div>
+									</div>
+									<div class="clearfix"></div>
+								</div>
+								<!--第六行-->
+								<div class="form-row bankPocket">
+									<div class="form-group">
+										<label class="control-label" style="width:70px;">地址：</label>
+										<div class="control-element" style="width:450px;">
+											<input type="text" name="bankAddress" class="form-control" maxlength="200">
+										</div>
+									</div>
+									<div class="clearfix"></div>
+								</div>
+								<!--第七行-->
+								<div class="form-row bankPocket">
+									<div class="form-group">
+										<label class="control-label" style="width:70px;">备注：</label>
+										<div class="control-element" style="width:450px;">
+											<input type="text" name="remarkLong" class="form-control" maxlength="200">
+										</div>
+									</div>
+									<div class="clearfix"></div>
+								</div>
+
+							</div>
+						</div>
+					</div>
+
+					<div class="panel ufma-panel" style="width:860px;min-height:480px;margin-top:15px;">
+						<div class="panel-heading">
+							<div class="caption">账簿属性信息</div>
+						</div>
+						<div class="panel-collapse collapse in" id="bomCon">
+							<div class="panel-body" style="padding:16px 16px;">
+								<p class="tip uf-line-title-font">控制选项</p>
+								<div class="form-row">
+									<div class="form-group">
+										<label class="control-label">编号生成方式：</label>
+										<div class="control-element">
+											<div class="btn-group radio-group" data-toggle="buttons">
+												<label class="btn btn-default btn-sm active numType" id="numTypeY">
+                                                <input type="radio" class="toggle" name="numType" value="2" >按月生成</label>
+												<label class="btn btn-default btn-sm numType" id="numTypeN">
+                                                <input type="radio" class="toggle" name="numType" value="1">按日生成</label>
+											</div>
+										</div>
+									</div>
+									<div class="form-group">
+										<label class="control-label">摘要必填：</label>
+										<div class="control-element">
+											<div class="btn-group radio-group" data-toggle="buttons">
+												<label class="btn btn-default btn-sm active isSummaryneed">
+                                                <input type="radio" class="toggle" name="isSummaryneed" value="1" checked=""> 是</label>
+												<label class="btn btn-default btn-sm isSummaryneed">
+                                                <input type="radio" class="toggle" name="isSummaryneed" value="0"> 否</label>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="form-row">
+									<div class="form-group">
+										<label class="control-label">上月未结账不允许继续做账：</label>
+										<div class="control-element">
+											<div class="btn-group radio-group" data-toggle="buttons">
+												<label class="btn btn-default btn-sm isLamonKeep"><!--经侯总确认默认为“否”-->
+                                                <input type="radio" class="toggle" name="isLamonKeep" value="1" checked=""> 是</label>
+												<label class="btn btn-default btn-sm active isLamonKeep">
+                                                <input type="radio" class="toggle" name="isLamonKeep" value="0"> 否</label>
+											</div>
+										</div>
+									</div>
+									<div class="form-group">
+										<label class="control-label">账簿余额不足不允许支出：</label>
+										<div class="control-element">
+											<div class="btn-group radio-group" data-toggle="buttons">
+												<label class="btn btn-default btn-sm active isStrictbook">
+                                                <input type="radio" class="toggle" name="isStrictbook" value="1" checked=""> 是</label>
+												<label class="btn btn-default btn-sm isStrictbook">
+                                                <input type="radio" class="toggle" name="isStrictbook" value="0"> 否</label>
+											</div>
+										</div>
+									</div>
+									<div class="clearfix"></div>
+								</div>
+								<div class="form-row">
+									<div class="form-group">
+										<label class="control-label">严格控制出纳与总账对账：</label>
+										<div class="control-element">
+											<div class="btn-group radio-group" data-toggle="buttons">
+												<label class="btn btn-default btn-sm isStrictcheck"><!--经侯总确认默认为“否”-->
+                                                <input type="radio" class="toggle" name="isStrictcheck" value="1" checked=""> 是</label>
+												<label class="btn btn-default btn-sm  active isStrictcheck">
+                                                <input type="radio" class="toggle" name="isStrictcheck" value="0"> 否</label>
+											</div>
+										</div>
+									</div>
+									<div class="form-group">
+										<label class="control-label">保存并新增时保留数据：</label>
+										<div class="control-element">
+											<div class="btn-group radio-group" data-toggle="buttons">
+												<label class="btn btn-default btn-sm active isKeepdata">
+                                                <input type="radio" class="toggle" name="isKeepdata" value="1" checked=""> 是</label>
+												<label class="btn btn-default btn-sm isKeepdata">
+                                                <input type="radio" class="toggle" name="isKeepdata" value="0"> 否</label>
+											</div>
+										</div>
+									</div>
+									<div class="clearfix"></div>
+								</div>
+								<div class="form-row">
+									<div class="form-group">
+										<label class="control-label">不允许修改他人登记的出纳账：</label>
+										<div class="control-element">
+											<div class="btn-group radio-group" data-toggle="buttons">
+												<label class="btn btn-default btn-sm isCanEditByOthers"> 
+                                                <input type="radio" class="toggle" name="isCanEditByOthers" value="1" checked=""> 是</label>
+												<label class="btn btn-default btn-sm  active isCanEditByOthers">
+                                                <input type="radio" class="toggle" name="isCanEditByOthers" value="0"> 否</label>
+											</div>
+										</div>
+									</div>
+									<div class="form-group">
+										<label class="control-label">经办人必填：</label>
+										<div class="control-element">
+											<div class="btn-group radio-group" data-toggle="buttons">
+												<label class="btn btn-default btn-sm active isDealWith"> 
+                                                <input type="radio" class="toggle" name="isDealWith" value="1" checked=""> 是</label>
+												<label class="btn btn-default btn-sm  isDealWith">
+                                                <input type="radio" class="toggle" name="isDealWith" value="0"> 否</label>
+											</div>
+										</div>
+									</div>
+									<div class="clearfix"></div>
+								</div>
+								<p class="tip uf-line-title-font">出纳-总账关联设置</p>
+								<div class="form-row">
+									<div class="form-group">
+										<label class="control-label">从总账提取数据：</label>
+										<div class="control-element">
+											<div class="btn-group radio-group" data-toggle="buttons">
+												<label class="btn btn-default btn-sm isPickdata" id="isPickdataY"><!--经侯总确认默认为“否”-->
+                                                <input type="radio" class="toggle" name="isPickdata" value="1" checked=""> 是</label>
+												<label class="btn btn-default btn-sm active isPickdata" id="isPickdataN">
+                                                <input type="radio" class="toggle" name="isPickdata" value="0"> 否</label>
+											</div>
+										</div>
+									</div>
+									<div class="form-group">
+										<label class="control-label">凭证已出纳签章：</label>
+										<div class="control-element">
+											<div class="btn-group radio-group" data-toggle="buttons">
+												<label class="btn btn-default btn-sm  isVouSign" disabled="true">
+                                                <input type="radio" class="toggle" name="isVouSign" value="1" checked=""> 是</label>
+												<label class="btn btn-default btn-sm active isVouSign" disabled="true">
+                                                <input type="radio" class="toggle" name="isVouSign" value="0"> 否</label>
+											</div>
+										</div>
+									</div>
+									<div class="clearfix"></div>
+								</div>
+								<div class="form-row">
+									<!--bug79652将“需生成凭证”和“生成凭证时先预览”调换位置--zsj-->
+									<div class="form-group">
+										<label class="control-label">需生成凭证：</label>
+										<div class="control-element">
+											<div class="btn-group radio-group" data-toggle="buttons">
+												<label class="btn btn-default btn-sm active isCreatevoucher" id="isCreatevoucherY">
+                                                <input type="radio" class="toggle" name="isCreatevoucher" value="1" checked=""> 是</label>
+												<label class="btn btn-default btn-sm isCreatevoucher" id="isCreatevoucherN">
+                                                <input type="radio" class="toggle" name="isCreatevoucher" value="0"> 否</label>
+											</div>
+										</div>
+									</div>
+									<div class="form-group">
+										<label class="control-label">生成凭证时先预览：</label>
+										<div class="control-element">
+											<div class="btn-group radio-group" data-toggle="buttons">
+												<label class="btn btn-default btn-sm active isPreview" id="isPreviewY">
+                                                <input type="radio" class="toggle" name="isPreview" value="1" checked=""> 是</label>
+												<label class="btn btn-default btn-sm isPreview" id="isPreviewN">
+                                                <input type="radio" class="toggle" name="isPreview" value="0"> 否</label>
+											</div>
+										</div>
+									</div>
+									<div class="clearfix"></div>
+								</div>
+
+								<p class="tip uf-line-title-font">登账界面可选字段</p>
+								<div class="form-row">
+									<div class="form-group">
+										<label class="control-label">显示跨账簿单据编号：</label>
+										<div class="control-element">
+											<div class="btn-group radio-group" data-toggle="buttons">
+												<label class="btn btn-default btn-sm isMutinum"><!--经侯总确认默认为“否”-->
+                                                <input type="radio" class="toggle" name="isMutinum" value="1" checked=""> 是</label>
+												<label class="btn btn-default btn-sm active isMutinum">
+                                                <input type="radio" class="toggle" name="isMutinum" value="0"> 否</label>
+											</div>
+										</div>
+									</div>
+									<div class="form-group">
+										<label class="control-label">登账时显示对方科目：</label>
+										<div class="control-element">
+											<div class="btn-group radio-group" data-toggle="buttons">
+												<label class="btn btn-default btn-sm active isShowOtherAcco">
+                                                <input type="radio" class="toggle" name="isShowOtherAcco" value="1" checked=""> 是</label>
+												<label class="btn btn-default btn-sm isShowOtherAcco">
+                                                <input type="radio" class="toggle" name="isShowOtherAcco" value="0"> 否</label>
+											</div>
+										</div>
+									</div>
+									<div class="clearfix"></div>
+								</div>
+								<div class="form-row">
+									<div class="form-group">
+										<label class="control-label">登账时显示支出类型：</label>
+										<div class="control-element">
+											<div class="btn-group radio-group" data-toggle="buttons">
+												<label class="btn btn-default btn-sm active isShowPayment">
+                                                <input type="radio" class="toggle" name="isShowPayment" value="1" checked=""> 是</label>
+												<label class="btn btn-default btn-sm isShowPayment">
+                                                <input type="radio" class="toggle" name="isShowPayment" value="0"> 否</label>
+											</div>
+										</div>
+									</div>
+									<div class="form-group">
+										<label class="control-label">登账时显示资金类型：</label>
+										<div class="control-element">
+											<div class="btn-group radio-group" data-toggle="buttons">
+												<label class="btn btn-default btn-sm active isCashtype">
+                                                <input type="radio" class="toggle" name="isCashtype" value="1" checked=""> 是</label>
+												<label class="btn btn-default btn-sm isCashtype">
+                                                <input type="radio" class="toggle" name="isCashtype" value="0"> 否</label>
+											</div>
+										</div>
+									</div>
+									<div class="clearfix"></div>
+								</div>
+								<div class="form-row">
+									<div class="form-group">
+										<!--<label class="control-label">登账时显示数据来源：</label>-->
+										<label class="control-label">查询时显示单据来源：</label>
+										<div class="control-element">
+											<div class="btn-group radio-group" data-toggle="buttons">
+												<label class="btn btn-default btn-sm isTicresource">
+                                                <input type="radio" class="toggle" name="isTicresource" value="1"checked=""> 是</label>
+												<label class="btn btn-default btn-sm active isTicresource">
+                                                <input type="radio" class="toggle" name="isTicresource" value="0" > 否</label>
+											</div>
+										</div>
+									</div>
+									<div class="clearfix"></div>
+								</div>
+								<p class="tip uf-line-title-font">辅助核算项</p>
+								<div class="form-row" style="width:700px;margin-top:-7px;margin-left:85px;margin-bottom:10px;"><!--margin-bottom:30px;-->
+									<div id="planItemMore"></div>
+									<div class="clearfix"></div>
+								</div>
+								
+								<!--bug78934---出纳登账新增页面增加按照辅助核算查询的科目余额--zsj-->
+								<div class="form-row" style="width:700px;margin-left:85px;margin-bottom:10px;">
+									<div class="filterByfzx hide" style="margin-top:8px;width:17em;margin-left:-4em;"> <!--form-group -->
+										<input id="isBalByAccitem" type="checkbox" style="margin-left:25px;margin-right:3px;">按核算项过滤账簿余额：</input>
+									</div>
+									<div id="planItemMoreFZ">
+										<p></p>
+									</div>
+									<div class="clearfix"></div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</form>
+
+			</div>
+			<div class="ufma-layout-down bordered-top">
+				<div class="text-right margin-right-30">
+					<button type="button" class="btn btn-sm btn-default btn-permission btn-save state-edit btn-ajax" id="btnSave">保存</button>
+					<button type="button" class="btn btn-sm btn-default" id="btnClose"> 取消</button>
+				</div>
+			</div>
+		</div>
+		<script src="allCurSet.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+	</body>
+
+</html>

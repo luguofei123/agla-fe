@@ -1,0 +1,11 @@
+.searchhead{height: 36px;}
+.searchhead .uf-datepicker{height: 32px;}
+.searchhead .prefix{height: 30px;}
+.searchhead .date-box{display: inline-block;position:relative;width: 125px;padding: 1px 0;}
+.searchhead .bordered-input{border-radius: 4px;display: inline-block;}
+.maintable{ width: 100%;overflow: auto;}
+#currentTable {border:1px solid #ddd;}
+#currentTable  th{width: 150px;text-align: center;}
+.writeAmtTd{padding: 0px !important;}
+.writeAmt{width: 100%;height: 100%;border: 0px;padding-right: 8px;text-align: right;background: none;}
+.moenytd{text-align: right;}

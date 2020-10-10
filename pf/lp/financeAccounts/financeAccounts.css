@@ -1,0 +1,70 @@
+.rpt-title {
+    float: left;
+    height: 46px;
+    line-height: 46px;
+    border-bottom: 3px solid #108EE9;
+    font-size: 16px;
+}
+.rpt-workspace {
+    margin: 0 15px;
+    margin-bottom: -10px;
+    margin-top: 8px;
+}
+.rpt-atree-box-body {
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    margin-top: 12px;
+}
+
+.rpt-acc-box {
+    position: relative;
+    padding-left: 252px;
+    margin-top: 12px;
+}
+
+.rpt-acc-box-left {
+    position: fixed;
+    border: 1px solid #d9d9d9;
+    width: 240px;
+    height: 100%;
+    left: 30px;
+    top: 58px;
+    z-index:1002;
+    overflow: hidden;
+}
+
+.rpt-acc-box-right {
+    width: 100%;
+}
+.rpt-acc-box-right {
+    width: 100%;
+}
+.rpt-box {
+    padding: 8px 0;
+}
+
+.rpt-clear {
+    clear: both;
+}
+.rpt-query-box {
+    position: relative;
+    padding: 15px 145px 15px 15px;
+    background: #ECF6FD;
+    border: 1px solid #D2EAFB;
+}
+
+.rpt-query-box-left {
+    width: 100%;
+}
+
+.rpt-query-box-right {
+    position: absolute;
+    right: 8px;
+    top: 15px;
+    width: 200px;
+    text-align: right;
+}
+.bida-query-box {
+    padding-top: 5px;
+}

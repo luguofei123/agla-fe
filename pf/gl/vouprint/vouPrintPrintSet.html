@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>凭证打印-打印设置</title>
+		<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+		<script src="../../pub/boot.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+		<link rel="stylesheet" type="text/css" href="vouPrintPrintSet.css?rev=@@hash" />
+	</head>
+
+	<body id="vouPrintPrintSet">
+		<div class="ufma-layout-updown">
+			<div class="ufma-layout-up">
+				<div class="container-fluid">
+					<!-- 页面设置 begin -->
+					<div class="panel ufma-panel" style="margin-top: 20px;display: none;">
+						<div class="panel-heading">
+							<div class="caption">页面设置</div>
+							<div class="actions">
+								<a data-toggle="collapse" href="#ymsz">
+									<span class="glyphicon icon-angle-bottom"></span>
+								</a>
+							</div>
+						</div>
+
+						<div id="ymsz" class="panel-collapse collapse in">
+							<div class="panel-body">
+								<div class="container-fluid form-horizontal">
+									<dl class="dl-horizontal">
+										<dt style="margin-top: 0; padding-top: 4px;">凭证模板：</dt>
+										<dd style="margin-top: 0;">
+											<ul class="list-unstyled">
+												<li>
+													<select name="" id="prtFormatList" class="bordered-input padding-3">
+														<!--模板 开始位置-->
+													</select>
+													<span class="rimsurl" style="color: #0c8deb;cursor: pointer;">自定义模板</span> &nbsp;&nbsp;&nbsp;
+													<span class="rimsurls" style="color: #0c8deb;cursor: pointer;">设置</span>
+												</li>
+												<!-- <li>
+                									<label class="mt-checkbox mt-checkbox-outline">
+														<input type="checkbox" name="tmplType" id="tmplType">套打
+														<span></span>
+													</label>
+                								</li> -->
+												<li>
+													<label class="mt-checkbox mt-checkbox-outline defaultimpl">
+														<input type="checkbox" name="defaultimpl" id="defaultimpl">默认
+														<span></span>
+													</label>
+												</li>
+											</ul>
+										</dd>
+										<!-- <dt>纸张大小></dt>
+                						<dd data-name="size"></dd>
+                						<dt>页面方向：</dt>
+                						<dd data-name="orientation"></dd>
+                						<dt>页边距></dt>
+                						<dd data-name="margin"></dd> -->
+									</dl>
+								</div>
+							</div>
+
+							<div class="img"></div>
+						</div>
+					</div>
+					<!-- 页面设置 end -->
+					<div style="width: 100%;position: relative;">
+					<div style="width: 20%;display: inline-block;margin: 0;padding: 0px;float: left;" class="rpt-right">
+						<ul id="docTree" class="ufmaTree ztree doc-ztree" style="border-right: 1px solid #D9D9D9;"></ul>
+						<div style="width: 100%;height: 50px;border-right: 1px solid #D9D9D9;">
+							<div class="btn-group">
+								<button type="button" class="btn btn-sm btn-default btn-thisdefault">设为默认</button>
+							</div>
+							<div class="btn-group">
+								<button type="button" class="btn btn-sm btn-default btn-fanan">复制方案</button>
+							</div>
+							<div class="btn-group">
+								<button type="button" class="btn btn-sm btn-default btn-delfanan">删除方案</button>
+							</div>
+						</div>
+					</div>
+					<div style="width: 80%;display: inline-block;margin: 0;padding:8px 0px 0px 0px;">
+						<!-- 打印数据设置 begin -->
+						<div id="navdiv" style="width: 100%;display: inline-block;overflow: hidden;">
+							<span style="margin-left: 1%;">打印模板：</span>
+							<select class="bordered-input padding-3" id="mubansel">
+								<option value="财务预算内容">财务预算内容</option>
+							</select>
+							<button type="button" class="btn btn-sm btn-default rimsurlinsetmb">模板设置</button>
+							<button type="button" class="btn btn-sm btn-default rimsurl">复制模板</button>
+							<button type="button" class="btn btn-sm btn-default rimsurlinset">修改名称</button>
+							<button type="button" class="btn btn-sm btn-default rimsurldel">删除模板</button>
+							<button type="button" class="btn btn-sm btn-default rimsurls">页面设置</button>
+							<ul class="nav nav-tabs accnab" style="display: none;">
+								<li class="active"><a href="javascript:;" code="0" >打印数据</a></li>
+							</ul>
+							<span style="margin-left: 1%;">辅助核算项分隔符：</span>
+							<select class="bordered-input padding-3" id="accSep">
+								<option value="0">空格</option>
+								<option value="1">【】</option>
+								<option value="2">[]</option>
+								<option value="3">/</option>
+							</select>
+						<!--</div>
+						<div class="panel ufma-panel" style="margin-left: 10px;">
+							<div class="panel-heading">
+								<div class="caption">打印数据设置</div>
+								<div class="actions">
+									<a data-toggle="collapse" href="#dysjsz">
+										<span class="glyphicon icon-angle-bottom"></span>
+									</a>
+								</div>
+							</div>
+
+							<div id="dysjsz" class="panel-collapse collapse in">
+								<div class="panel-body">-->
+									<div id="dysjsz" style="border-top: 1px solid #d9d9d9;margin-top: 10px;">
+									<div  class="container-fluid form-horizontal rpt-left border-right">
+										<ul class="list-unstyled"  style="margin-top: 8px;">
+											<li class="clearfix">
+												<!--科目 begin-->
+												<!-- <div class="pull-left">
+													<span>科目：</span>
+													<label class="mt-checkbox mt-checkbox-outline">
+														<input type="checkbox" name="print-name" value="0">打印代码
+														<span></span>
+													</label>
+													<label class="mt-checkbox mt-checkbox-outline">
+														<input type="radio" name="print-name" value="1" checked="checked">打印名称
+														<span></span>
+													</label>
+													<label class="mt-checkbox mt-checkbox-outline">
+														<input type="radio" name="print-name" value="2">打印全称
+														<span></span>
+													</label>
+												</div> -->
+												<!--科目 end-->
+
+												<div class="pull-left">
+													<label class="mt-checkbox mt-checkbox-outline">
+														<input type="checkbox" name="isShowBill" id="isShowBill">&nbsp;票据信息打印到摘要中
+														<span></span>
+													</label>
+													<label class="mt-checkbox mt-checkbox-outline">
+														<input type="checkbox" name="printAccoBracket" id="printAccoBracket">&nbsp;会计科目编码打印方括号
+														<span></span>
+													</label>
+												</div>
+												<!--合计值 begin-->
+												<div class="pull-left margin-right-15" style="display: none;">
+													<span> 合计行：</span>
+													<label class="mt-checkbox mt-checkbox-outline">
+													<input type="radio" name="print-sum" value="0">累计值 
+													<span></span>
+												</label>
+													<label class="mt-checkbox mt-checkbox-outline">
+													<input type="radio" name="print-sum" value="1" checked="checked">当前页小计值
+													<span></span>
+												</label>
+													<label class="mt-checkbox mt-checkbox-outline">
+													<input type="radio" name="print-sum" value="2">合计值
+													<span></span>
+												</label>
+												<!--合计值 end-->
+												
+												</div>
+												<!--<div class="pull-left  margin-left-15">
+													<label class="mt-checkbox mt-checkbox-outline">
+														<input type="checkbox" name="defaultimpl" id="defaultimpl">默认
+														<span></span>
+													</label>
+												</div>-->
+											</li>
+											<!--********外币目前先隐藏********-->
+											<li class="clearfix" style="display: none;">
+												<!--数量/外币打印 begin-->
+												<div class="pull-left">
+													<span>数量/外币打印：</span>
+													<label class="mt-checkbox mt-checkbox-outline">
+													<input type="radio" name="print-num" id="">数量/外币自动切换模板 
+													<span></span>
+												</label>
+													<label class="mt-checkbox mt-checkbox-outline">
+													<input type="radio" name="print-num" id="">数量外币在摘要中打印
+													<span></span>
+												</label>
+												</div>
+												<!--数量/外币打印 end-->
+											</li>
+											<!--********外币目前先隐藏********-->
+										</ul>
+
+										<div>
+											<table id="vpps-data" tool-bar="#vpps-tool-bar" class="ufma-table dataTable">
+												<thead>
+													<tr>
+														<th rowspan="2">打印项</th>
+														<th rowspan="2">编码规则</th>
+														<th rowspan="2">是否打印</th>
+														<th rowspan="2">打印代码</th>
+														<th rowspan="2">打印名称</th>
+														<th rowspan="2">打印全称</th>
+														<th colspan="11">汇总打印级次</th>
+														<th rowspan="2">操作</th>
+													</tr>
+													<tr>
+														<th>明细</th>
+														<th>一</th>
+														<th>二</th>
+														<th>三</th>
+														<th>四</th>
+														<th>五</th>
+														<th>六</th>
+														<th>七</th>
+														<th>八</th>
+														<th>九</th>
+														<th>十</th>
+													</tr>
+												</thead>
+												<tbody></tbody>
+											</table>
+										</div>
+									</div>
+								</div>
+								<!--</div>
+							</div>
+						</div>-->
+						<!-- 打印数据设置 end -->
+					</div>
+				</div>
+				</div>
+			</div>
+
+			<div class="ufma-layout-down bordered-top">
+				<div class="text-right margin-right-30">
+					<!--<button type="button" class="btn btn-sm btn-default rimsurlinsetmb">模板设置</button>
+					<button type="button" class="btn btn-sm btn-default rimsurl">复制模板</button>
+					<button type="button" class="btn btn-sm btn-default rimsurlinset">修改名称</button>
+					<button type="button" class="btn btn-sm btn-default rimsurldel">删除模板</button>
+					<button type="button" class="btn btn-sm btn-default rimsurls">页面设置</button>-->
+					<button type="button" class="btn btn-sm btn-primary btn-save btn-print" id="btn-save">保存</button>
+					<button type="button" class="btn btn-sm btn-default btn-qx" id="btn-qx">取消</button>
+				</div>
+			</div>
+			<div id="vouBoxcopy" class="ufma-modal">
+				<div class="u-msg-title">
+					<h4>模板名称</h4>
+				</div>
+				<div class="u-msg-content">
+					<div class="container-fluid margin-left-15 margin-right-15">
+						<ul class="list-unstyled">
+							<!--凭证类型 begin-->
+							<li class="setVouType clearfix">
+								<label class="pull-left" for="" style="width: 100px;text-align: right;margin-bottom: 8px;">模板名称：</label>
+								<div class="pull-left">
+									<input type="text" name="mobalname" id="mobalname" value="" />
+								</div>
+							</li>
+							<!--凭证类型 end-->
+						</ul>
+					</div>
+				</div>
+				<div class="u-msg-footer">
+					<div class="text-right  margin-right-30">
+						<button type="button" class="btn btn-sm btn-primary" id="vouBoxcopysave">确认</button>
+						<button type="button" class="btn btn-sm btn-default" id="vouBoxcopyqx">取消</button>
+					</div>
+				</div>
+			</div>
+			<div id="vouBoxcopyfa" class="ufma-modal">
+				<div class="u-msg-title">
+					<h4>方案名称</h4>
+				</div>
+				<div class="u-msg-content">
+					<div class="container-fluid margin-left-15 margin-right-15">
+						<ul class="list-unstyled">
+							<!--凭证类型 begin-->
+							<li class="setVouType clearfix">
+								<label class="pull-left" for="" style="width: 100px;text-align: right;margin-bottom: 8px;">方案名称：</label>
+								<div class="pull-left">
+									<input type="text" name="mobalname" id="mobalnames" value="" />
+								</div>
+							</li>
+							<!--凭证类型 end-->
+						</ul>
+					</div>
+				</div>
+				<div class="u-msg-footer">
+					<div class="text-right  margin-right-30">
+						<button type="button" class="btn btn-sm btn-primary" id="vouBoxcopyfasave">确认</button>
+						<button type="button" class="btn btn-sm btn-default" id="vouBoxcopyfaqx">取消</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script src="vouPrintPrintSet.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+	</body>
+
+</html>

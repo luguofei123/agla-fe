@@ -1,0 +1,75 @@
+/********会计科目 S**********/
+.accoCondition .ztree{
+	min-width: 240px;
+	height: 200px;
+	overflow: auto;
+	position: absolute;
+	top: 30px;
+	left: 0;
+	background-color: #fff;
+	z-index: 20000;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	display: none;
+}
+.accoCondition .control-element {
+	position: relative;
+}
+/********会计科目 E**********/
+.form-horizontal .form-row .form-group {
+	margin-left: 34px;
+}
+.form-horizontal .form-group .control-label{
+	width: 80px;
+	white-space: nowrap;
+}
+.form-horizontal .form-group-mar .control-label{
+	width: 100px;
+}
+.form-horizontal .form-row .form-group-mar{
+	margin-left: 10px;
+}
+.portlet-body{
+	position: relative;
+}
+.rpt-query-box-right{
+	position: absolute;
+	right: 10px;
+	top: 14px;
+}
+.rpt-query-box-right label,.rpt-query-box-right .rpt-query-btn {
+	float: left;
+}
+.rpt-query-box-right label {
+	margin-right: 26px;
+}
+.rpt-query-box-right .rpt-query-btn button:first-child{
+	margin-right: 5px;
+}
+.rpt-method-tip{
+	position: absolute;
+	top:10px;
+	right: 0;
+}
+.uf-tooltip{
+	z-index: 100;
+}
+
+.rpt-funnelBoxList{display:none;top:39px;left:1px;}
+.rpt-funnelBoxList:before{content:'';display:inline-block;border-left: 10px solid transparent;border-right: 10px solid transparent;border-bottom: 10px solid #d9d9d9;position: absolute;top:-10px;right:23px;}
+.rpt-funnelBoxList:after{content:'';display:inline-block;border-left: 9px solid transparent;border-right: 9px solid transparent;border-bottom: 9px solid #fff;position: absolute;top:-9px;right:25px;}
+.rpt-colList{text-align: left;min-width: 51px;}
+.rpt-colList label{font-weight: normal;margin-bottom: 8px;}
+.rpt-colList span {display: block;line-height: 24px;cursor: pointer;text-align: center}
+.rpt-colList span:hover{color: #49a9ee}
+.rpt-funnelBoxList .rpt-colBtn{text-align: right;}
+.rpt-funnelBox {
+	position: absolute;
+	z-index: 9999;
+	top: 37px;
+	background: #fff;
+	border: 1px solid #eee;
+	padding: 10px 8px;
+	box-shadow: 0 0 4px 0 rgba(0,0,0,0.50);
+	border-radius: 4px;
+}

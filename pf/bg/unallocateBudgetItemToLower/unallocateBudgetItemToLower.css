@@ -1,0 +1,274 @@
+.bg-table-sub{
+  float: left;
+  position: relative;
+  width: 100%;
+}
+.bg-table-sub-action{
+  position: absolute;
+  right: 0px;
+  top: 2px;
+}
+.unallocateBgItemToLowerMain{
+  padding: 8px 20px 0px 20px !important;
+}
+.bg-div-height-space-12{
+  min-height: 12px;
+}
+.bg-div-margin-top-bottom-8{
+  margin-top: 8px;
+  margin-bottom: 8px;
+}
+.unallocate-BgItem-content{
+  position: relative;
+  float: left;
+  width: 100%;
+}
+.unallocate-BgItem-rightButton{
+  float: right;
+  margin-left: 8px;
+}
+.unallocate-BgItem-leftButton{
+  float: left;
+  margin-right: 8px;
+}
+.unallocate-BgItem-topDiv{
+  position: relative;
+  float: left;
+  height: 30px;
+}
+.unallocate-BgItem-rightTopDiv{
+  position: relative;
+  float: right;
+  height: 30px;
+}
+.unallocate-BgItem-topDiv-30right{
+  margin-right: 30px;
+}
+.unallocate-BgItem-topDiv-60right{
+  margin-right: 60px;
+}
+.unallocate-BgItem-dtp{
+  width: 125px;
+}
+.unallocate-BgItem-bgplan{
+  width: 210px;
+}
+.unallocate-BgItem-fileBtn{
+  width: 45px;
+}
+.unallocateBgItemToLowerForm .inputHeight{
+  height: 30px !important;
+}
+.unallocateBgItemToLower-footer1{
+  height: 50px;
+  border: 0px !important;
+  position: relative;
+}
+.unallocateBgItemToLower-footer2{
+  height: 62px;
+}
+.unallocate-BgItem-tbl-addRow{
+  position: absolute;
+  left: 430px;
+  top: 10px;
+  width: 200px;
+  height: 30px;
+}
+.unallocateBgItemToLower-footer1 span{
+  position: relative;
+  width: 30px;
+  left: -35px;
+}
+.unallocateBgItemToLower-tbl{
+	/**transform : translateY(-8px);**/
+}
+.unallocateBgItemToLower-tbl tr td{
+	border : 1px #DFE6EC solid !important;
+}
+.unallocateBgItemToLower-tbl thead th{
+	border : 1px #DFE6EC solid !important;
+	text-align : center !important;
+}
+.unallocateBgItemToLower-tbl-pnl{
+	width : 100% !important;
+}
+.unallocateBgItemToLower-tbl-Height{
+
+}
+.bg-mainTableFooterDiv{
+  position: relative;
+  float: left;
+  width: 100%;
+}
+.bg-mainTableFooterDiv .rightDiv{
+  position: relative;
+  float: right;
+}
+.bg-mainTableFooterDiv .leftDiv{
+  position: relative;
+  float: left;
+}
+.bg-multi-floatLeft-1{
+  position: relative;
+  float: left;
+  margin: 4px 4px 0 0;
+}
+.bg-top-4{
+  top : 4px;
+}
+.bg-top-8{
+  top : 8px;
+}
+.bg-top-12{
+  top : 12px;
+}
+.billRow-a{
+  height: 20px;
+}
+.billRow-a-more{
+  color: #108EE9 !important;
+  float: right;
+}
+
+/******************************************************************/
+.unallocateBgItemToLower-modal-title{
+	height : 70px;
+	text-align : center;
+}
+.unallocateBgItemToLower-modal-title .fill{
+	width : 5%;
+	height : 100%;
+	float : left;
+}
+.unallocateBgItemToLower-modal-title .message{
+	width : 30%;
+	height : 100%;
+	float : left;
+}
+.ufma-layout .unallocateBgItemToLower-modal-title-top{
+	height : 1px;
+}
+.ufma-layout .unallocateBgItemToLower-modal-title-center{
+	height : 28px;
+}
+.ufma-layout .unallocateBgItemToLower-modal-title-bottom{
+	height : 40px;
+}
+.unallocateBgItemToLower-modal-title-circle {
+	border:1px solid #108EE9;
+	border-radius: 50%;
+	width: 28px;
+	height: 28px;
+	/* 宽度和高度需要相等 */
+	background-color : #108EE9;
+}
+.bgDiv-align-horizontal-center {
+	margin:0 auto;
+}
+.unallocateBgItemToLower-modal-title-circle-fontUnchoise{
+	color : #FFFFFF;
+}
+.unallocateBgItemToLower-modal-title-bottom-fontUnchoise{
+	color : #108EE9;
+	padding-top: 10px;
+}
+.unallocateBgItemToLower-modal-title-line{
+	width : 100%;
+	height:2px;
+	margin:0 auto;
+	padding:0px;
+	background-color:#108EE9;
+	overflow:hidden;
+	vertical-align : middle;
+}
+.unallocateBgItemToLower-modal-title-center-block-line{
+	height : 100%;
+	width : 33%;
+	padding-top : 13px;
+	float : left;
+}
+.unallocateBgItemToLower-modal-title-center-block-flag{
+	height : 100%;
+	width : 34%;
+	float : left;
+}
+.tabController{
+  width: 100%;
+  position: relative;
+  float: left;
+}
+.step1-row, .step2-row{
+  position: relative;
+  float: left;
+  width: 100%;
+  height: 37px;
+  padding: 4px 10px 4px 10px;
+}
+.step1-table{
+  position: relative;
+  float: left;
+  width: 100%;
+}
+.step1-row span{
+  float: left;
+  width: auto;
+  transform: translateY(4px);
+}
+.step3-table{
+  position: relative;
+  float: left;
+  width: 100%;
+  top:4px;
+}
+.subRgPnl{
+  position: relative;
+  float: left;
+  width: auto;
+  height: 30px;
+  border : 1px #108EE9 solid !important;
+  border-radius: 5px;
+  margin-left: 10px;
+  background: #fff;
+}
+.subRgPnl h5{
+  position: relative;
+  float: left;
+  margin: 6px 0 0 8px;
+}
+.subRgPnl span{
+  top : 2px !important;
+  transform: scale(0.6);
+}
+.modal-agency{
+  transform: translateY(-8px);
+  position: relative;
+  z-index: 10;
+}
+.div-fixBottom-1{
+  position: fixed;
+  bottom: 0px;
+  height: 90px;
+  width : 100%;
+}
+.unallocateBgItemToLower-tab2-div{
+  position: relative;
+  float: left;
+}
+.unallocateBgItemToLower-tab2-div-10{
+  width: 10%;
+}
+.unallocateBgItemToLower-tab2-div-15{
+  width: 15%;
+}
+.unallocateBgItemToLower-tab2-div-30{
+  width: 30%;
+}
+.unallocateBgItemToLower-tab2-div button{
+  margin: 0 10px 0 10px;
+}
+.tab2-agencyTree{
+  border : 1px #D9D9D9 solid !important;
+  border-radius: 2px;
+  background-color: #fff;
+  overflow: auto;
+}

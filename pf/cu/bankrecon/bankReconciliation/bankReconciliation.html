@@ -1,0 +1,295 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>余额调节表</title>
+	<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+	<script src="../../../pub/boot.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+	<link rel="stylesheet" type="text/css" href="bankReconciliation.css?rev=@@hash">
+	<link rel="stylesheet" type="text/css" href="../rptCommon/rptCommon.css?rev=@@hash"> </head>
+
+<body id="bankReconciliation" style="overflow-x:hidden">
+	<div class="container-fluid ufma-container">
+		<input type="hidden" value="GL_RPT_BAL" data-name="bankReconciliation" class="rptType" />
+		<!--工作区 begin-->
+		<div class="workspace">
+			<!--工作区顶部 begin-->
+			<div class="workspace-top">
+				<div class="container-fluid">
+					<div class="ufma-portlet no-print">
+						<div class="portlet-title">
+							<div class="caption">
+								<span class="caption-subject font-dark uppercase">余额调节表</span>
+							</div>
+							<!--单位选择 begin-->
+							<div class="agencycom">
+								<div id='cbAgency' name="agencyCode" class="ufma-treecombox ufma-combox-agency"></div>
+							</div>
+							<!-- 单位选择 end -->
+						</div>
+
+						<div class="rpt-box rpt-query-box">
+							<div class="rpt-query-box-left">
+								<ul class="rpt-query-box-top">
+									<li class="rpt-query-box-li">
+										<label class="rpt-query-li-cont-title accaList-title">
+											<span>对账方案</span>：</label>
+										<div class="rpt-query-li-cont">
+											<div id="selectList" class="uf-combox w210">
+											</div>
+											<div class="rpt-query-date">
+												<label class="rpt-query-li-cont-title">期间：</label>
+												<div class="rpt-query-li-cont">
+													<div class="rpt-query-btn-cont rpt-query-btn-cont-date">
+														<button class="btn btn-primary" id="dateBq">本期</button>
+													</div>
+													<span class="rpt-date-box">
+														<!--<input class="bordered padding-3" type="text" id="dateEnd" />
+														<i class="glyphicon icon-calendar"></i>-->
+														<!--CWYXM-9523--宁波 出纳管理-余额调节表，期间选择为英文--zsj-->
+														<div id="dateEnd" class="uf-datepicker" style="width:120px;"></div>
+													</span>&nbsp;
+												</div>
+											</div>
+										</div>
+									</li>
+								</ul>
+								<!-- <ul class="rpt-query-box-bottom" style="display:none">
+									<li class="rpt-query-box-li">
+										<label class="rpt-query-li-cont-title"></label>
+										<div class="rpt-query-li-cont">
+											<button id="setQuery" class="btn btn-default btn-query btn-permission">添加查询条件</button>
+										</div>
+									</li>
+								</ul> -->
+							</div>
+							<div class="rpt-query-box-right" style="width: 270px;">
+								<div class="rpt-query-btn">
+									<!-- <span class="rpt-tip-more">
+										<i>更多</i>
+										<span class="glyphicon icon-angle-bottom"></span>
+									</span> -->
+								
+									<button class="btn btn-primary btn-query btn-permission" id="searchTableData">查询</button>
+									<button class="btn btn-default btn-permission btn-gen" id="createData">生成</button>
+									<button class="btn btn-default btn-save btn-permission disabled" id="saveMethod">保存</button>
+									
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- 工作区中部 begin -->
+			<div class="workspace-center">
+				<div class="container-fluid">
+					<!--<h3 class="m10 tc">余额调节表</h3>-->
+					<div style="position:relative;" class="table-sub clearfix">
+						<div class="table-sub-info pull-left">开户行及账号：</div>
+						<div id="bankInfo" class="table-sub-info pull-left"></div>
+						<div class="table-sub-info pull-left title-center" style="padding-left: 665px;">期间：
+							<span id="period">2017-09</span>
+						</div>
+						<div class="no-print table-sub-action pull-right">
+							<div class="btn-group" style="padding-right:2px;">
+								<button id="btn-print" class="btn btn-default btn-print btn-permission" data-toggle="tooltip" title="打印">
+									<span class="glyphicon icon-print"></span>
+								</button>
+								<button class="btn btn-default btn-export btn-permission" data-toggle="tooltip" title="导出">
+									<span class="glyphicon icon-upload"></span>
+								</button>
+							</div>
+						</div>
+					</div>
+					<div id="glRecon" class="margin-top-10">
+						<table class="ufma-table dateTable pull-left glReconTable">
+							<!--表头begin-->
+							<thead>
+								<tr role="row">
+									<th colspan="3" rowspan="1" style="width:37%" class="headInfo">项目</th>
+									<th colspan="1" rowspan="1" style="width:13%" class="headInfo">余额</th>
+									<th colspan="3" rowspan="1" style="width:37%" class="headInfo">项目</th>
+									<th colspan="1" rowspan="1" style="width:13%" class="headInfo">余额</th>
+								</tr>
+								<tr role="row">
+									<th colspan="3" rowspan="1" class="headInfo">单位银行存款日记账余额</th>
+									<th colspan="1" rowspan="1" class="showMoney"></th>
+									<th colspan="3" rowspan="1" class="headInfo">银行对账单余额</th>
+									<th colspan="1" rowspan="1" class="showMoney"></th>
+								</tr>
+								<tr role="row">
+									<th colspan="3" rowspan="1" class="headInfo">加：银行已收、单位未收款</th>
+									<th colspan="1" rowspan="1">
+										<hr/>
+									</th>
+									<th colspan="3" rowspan="1" class="headInfo">加：单位已收、银行未收款</th>
+									<th colspan="1" rowspan="1">
+										<hr/>
+									</th>
+								</tr>
+								<tr role="row">
+									<th colspan="1" rowspan="1" class="headInfo">单据日期</th>
+									<th colspan="2" rowspan="1" class="headInfo">单据摘要</th>
+									<th colspan="1" rowspan="1">
+										<hr/>
+									</th>
+									<th colspan="1" rowspan="1" class="headInfo">登账日期</th>
+									<th colspan="1" rowspan="1" class="headInfo">编号</th>
+									<th colspan="1" rowspan="1" class="headInfo">摘要</th>
+									<th colspan="1" rowspan="1">
+										<hr/>
+									</th>
+								</tr>
+							</thead>
+							<!--表中数据begin-->
+							<tbody class="bal-clear">
+								<tr height="37px">
+									<td colspan="1" rowspan="1"></td>
+									<td colspan="2" rowspan="1"></td>
+									<td colspan="1" rowspan="1"></td>
+									<td colspan="1" rowspan="1"></td>
+									<td colspan="1" rowspan="1"></td>
+									<td colspan="1" rowspan="1"></td>
+									<td colspan="1" rowspan="1"></td>
+								</tr>
+							</tbody>
+							<!--表格中间头部begin-->
+							<thead>
+								<tr role="row">
+									<th colspan="3" rowspan="1" class="headInfo">小计</th>
+									<th colspan="1" rowspan="1" class="showMoney"></th>
+									<th colspan="3" rowspan="1" class="headInfo">小计</th>
+									<th colspan="1" rowspan="1" class="showMoney"></th>
+								</tr>
+								<tr role="row">
+									<th colspan="3" rowspan="1" class="headInfo">减：银行已付、单位未付款</th>
+									<th colspan="1" rowspan="1">
+										<hr/>
+									</th>
+									<th colspan="3" rowspan="1" class="headInfo">减：单位已付、银行未付款</th>
+									<th colspan="1" rowspan="1">
+										<hr/>
+									</th>
+								</tr>
+								<tr role="row">
+									<th colspan="1" rowspan="1" class="headInfo">单据日期</th>
+									<th colspan="2" rowspan="1" class="headInfo">单据摘要</th>
+									<th colspan="1" rowspan="1">
+										<hr/>
+									</th>
+									<th colspan="1" rowspan="1" class="headInfo">登账日期</th>
+									<th colspan="1" rowspan="1" class="headInfo">编号</th>
+									<th colspan="1" rowspan="1" class="headInfo">摘要</th>
+									<th colspan="1" rowspan="1">
+										<hr/>
+									</th>
+								</tr>
+							</thead>
+							<!--中间固定下的数据begin-->
+							<tbody class="bal-clear">
+								<tr height="37px" role="row">
+									<td colspan="1" rowspan="1"></td>
+									<td colspan="2" rowspan="1"></td>
+									<td colspan="1" rowspan="1"></td>
+									<td colspan="1" rowspan="1"></td>
+									<td colspan="1" rowspan="1"></td>
+									<td colspan="1" rowspan="1"></td>
+									<td colspan="1" rowspan="1"></td>
+								</tr>
+							</tbody>
+							<!--表底begin-->
+							<thead>
+								<tr role="row">
+									<th colspan="3" rowspan="1" class="headInfo">小计</th>
+									<th colspan="1" rowspan="1" class="showMoney"></th>
+									<th colspan="3" rowspan="1" class="headInfo">小计</th>
+									<th colspan="1" rowspan="1" class="showMoney"></th>
+								</tr>
+								<tr role="row">
+									<th colspan="3" rowspan="1" class="headInfo">调节后的存款余额</th>
+									<th colspan="1" rowspan="1" class="showMoney"></th>
+									<th colspan="3" rowspan="1" class="headInfo">调节后的存款余额</th>
+									<th colspan="1" rowspan="1" class="showMoney"></th>
+								</tr>
+							</thead>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div id="setQuery-box" class="ufma-modal">
+		<div class="u-msg-title">
+			<h4>添加查询条件</h4>
+		</div>
+		<div class="u-msg-content">
+			<div class="rpt-set-box">
+				<div class="rpt-set-box-left">
+					<p>待选要素</p>
+					<div class="rpt-set-list bordered-input">
+						<ul class="rpt-set-list-ul rpt-set-list-ul-l">
+						</ul>
+					</div>
+				</div>
+				<div class="rpt-set-box-center">
+					<button id="setRight" class="btn btn-icon-only btn-default">
+						<span class="glyphicon icon-angle-double-right"></span>
+					</button>
+					<button id="setLeft" class="btn btn-icon-only btn-default">
+						<span class="glyphicon icon-angle-double-left"></span>
+					</button>
+				</div>
+				<div class="rpt-set-box-right">
+					<p>已选要素</p>
+					<div class="rpt-set-list bordered-input">
+						<div class="rpt-set-list-check bordered-bottom">
+							<ul class="rpt-set-list-ul rpt-set-list-ul-r">
+							</ul>
+						</div>
+						<div class="rpt-set-list-check-tool">
+							<button id="setUp" class="btn btn-icon-only btn-default">
+								<span class="glyphicon icon-arrow-top"></span>
+							</button>
+							<button id="setDown" class="btn btn-icon-only btn-default">
+								<span class="glyphicon icon-arrow-bottom"></span>
+							</button>
+						</div>
+					</div>
+				</div>
+				<div class="rpt-clear"></div>
+			</div>
+
+		</div>
+		<div class="u-msg-footer">
+			<button type="button" class="btn btn-primary" id="sureSetQuery">确定</button>
+			<button type="button" class="btn btn-default btn-close">取消</button>
+		</div>
+	</div>
+	</div>
+	<script src="../rptCommon/rptCommon.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+	<script src="bankReconciliation.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+	<script>
+		$('.rpt-tip-more').on('click', function () {
+			if ($(this).find("i").text() == "更多") {
+				$(this).find("i").text("收起");
+				$(this).find("span").removeClass("icon-angle-bottom").addClass("icon-angle-top");
+				$(".rpt-query-box-bottom").slideDown();
+			} else {
+				$(this).find("i").text("更多");
+				$(this).find("span").removeClass("icon-angle-top").addClass("icon-angle-bottom");
+				$(".rpt-query-box-bottom").slideUp();
+			}
+		});
+
+		$(function () {
+			$("#LTBox tr:last td,#RTBox tr:last td").css("border-bottom", "none");
+			$("#LTBox tr,#LBBox tr").each(function () {
+				$(this).find("td:last,th:last").css("border-right", "none");
+			})
+		})
+	</script>
+</body>
+
+</html>

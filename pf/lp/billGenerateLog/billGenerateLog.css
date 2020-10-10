@@ -1,0 +1,105 @@
+#opt-per-input{
+    width: 210px;
+}
+.lp-query-box {
+    position: relative;
+}
+.lp-query-right-btn {
+    position: absolute;
+    right: 10px;
+    top:0px
+}
+.lp-query-box-left .lp-query-box-top{
+    margin-left: 0;
+    padding-left: 0px;
+}
+.lp-query-box-li .lp-query-li-cont-title{
+    width: 70px;
+    white-space: nowrap;
+}
+.lp-query-li.col-md-6,.lp-query-li.col-md-10{
+    padding-left: 8px;
+}
+/******************* table S*******************/
+/****/
+.table-part{
+    margin-top:13px;
+}
+.rpt-table-box {
+    width: 100%;
+    height: 30px;
+    margin-top: 13px;
+}
+.rpt-table-box #dtToolbar{
+    top: 0;
+}
+/****/
+.fixedHead-diy{
+    height: 38px;
+    background-color: #EEF1F6;
+    border:1px solid #d9d9d9;
+    border-bottom: none;
+}
+.fixedHead-diy th {
+    border-right:1px solid #d9d9d9;
+    padding: 8px 5px;
+    white-space: nowrap;
+}
+/******************* table E*******************/
+/************ btns S***************/
+.uf-tooltip .btn-default:focus {
+    color: #666 !important;
+    background-color: #fff !important;
+    border-color: #fff !important;
+    outline: none
+}
+
+#vgBillType .btn.btn-primary .badge {
+    background-color: #108ee9 !important;
+    color: #fff !important
+}
+
+#vgBillType .btn.btn-primary:hover .badge {
+    background-color: #49a9ee !important;
+    color: #fff !important
+}
+
+#vgBillType .btn.btn-default .badge {
+    background-color: #ECF6FD !important;
+    color: #666 !important
+}
+
+#vgBillType .btn.btn-default:hover .badge,
+.uf-tooltip .btn-default:hover .badge {
+    background-color: #108ee9 !important;
+    color: #fff !important
+}
+
+.uf-tooltip .btn-default:focus .badge {
+    background-color: #fff !important;
+    color: #666 !important
+}
+/************ btns E***************/
+
+/* 后端分页-start */
+#billGenerateLog .ufma-table-paginate{
+    float: right;
+}
+#billGenerateLog .ufma-table-paginate select {padding: 8px;}
+#billGenerateLog .ufma-table-paginate .pull-left{line-height: 30px; margin: 0;}
+#billGenerateLog .ufma-table-paginate button.pull-left{line-height: 20px;}
+#billGenerateLog .ufma-table-paginate select,
+#billGenerateLog .ufma-table-paginate input{height: 30px; border-radius: 4px;}
+#billGenerateLog .ufma-table-paginate input{width: 34px;}
+#billGenerateLog .ufma-table-paginate .pagination-sm>li>a{font-size: 12px; line-height: 1.42857143;}
+#billGenerateLog .ufma-table-paginate .vbNumPage.active span{background-color: #108EE9;border-color: #108EE9;}
+#billGenerateLog .ufma-table-paginate .vbNumPage:hover a{background-color: #108EE9;border-color: #108EE9;color: #FFFFFF;}
+#billGenerateLog .ufma-table-paginate .vbPrevPage:hover a{background-color: #108EE9;border-color: #108EE9;color: #FFFFFF;}
+#billGenerateLog .ufma-table-paginate .vbNextPage:hover a{background-color: #108EE9;border-color: #108EE9;color: #FFFFFF;}
+#billGenerateLog .ufma-table-paginate #vbTable-pagination {
+    margin: 0 8px 0 0;
+}
+.dataTables_info {
+    display: none;
+}
+/* 后端分页-end */

@@ -1,0 +1,102 @@
+/*盒子样式 begin*/
+.lp-workspace{margin:0 15px;margin-bottom: -10px;}
+.lp-box{padding:16px;}
+
+/*标题位样式 begin*/
+.lp-selete-box{height:46px;line-height: 46px;}
+.lp-title{float:left;height:46px;line-height: 46px;border-bottom: 3px solid #108EE9;font-size:16px;}
+.lp-selete-list{float: left;height:46px;line-height: 46px;margin-left: -16px;margin-bottom: 0;}
+.lp-selete-list-li{display: inline-block;margin-right: 32px;}
+.lp-method-tip{float: right;position: relative;height: 46px;}
+.lp-method-tip .btn-group{margin-top: 8px;}
+
+/*查询样式 begin*/
+.lp-query-box{background: #ECF6FD;border: 1px solid #D2EAFB; margin-top: 10px;position: relative;}
+.lp-query-box-left{width:100%;/*padding-right: 240px;*/}
+.lp-query-box-right{position:absolute;right:16px;top:8px;text-align:right;}
+.lp-query-box-left .lp-query-box-top,
+.lp-query-box-left .lp-query-box-bottom{list-style: none;margin-bottom: 0;padding-left: 0}
+.lp-query-box-left .lp-query-box-bottom{padding-top: 10px;padding-left: 40px;}
+/*.lp-query-box-bottom{margin-top:10px;display: none;}*/
+/*第一行特殊化*/.lp-query-box-left .lp-query-box-li:first-child{margin-top: -10px;}
+.lp-query-box-li .lp-query-li{float: left; min-height: 30px; margin-top: 10px;}
+.lp-query-box-li .lp-query-li-cont-title{text-align:right;float: left;height:30px;line-height: 30px; margin-right: 8px; margin-bottom: 0;}
+.lp-query-box-li .lp-query-li-cont{float: left;/* min-width: 240px;*/}
+.lp-query-btn-cont .btn{padding:0 12px!important;height:26px;line-height: 24px;margin: 2px 0;}
+.lp-query-btn-cont .btn.btn-default{background-color: transparent;border: 1px solid transparent;}
+.lp-query-box input,.lp-query-box select{border-radius: 4px;line-height: 22px;}
+.lp-query-box .uf-combox-input{
+    line-height: normal;
+}
+.lp-query-box .tip-more{margin-right: 4px;color:#008FF0;cursor: pointer;}
+.lp-query-box .tip-more i{font-style: normal;}
+.lp-query-box .tip-more span{margin-left: 2px;}
+.lp-query-btn-cont,.query-date{float: left;margin-left: 4px}
+/*未读信息条目样式 end*/
+.lp-query-btn-cont .btn .badge{font-size: 12px; padding: 3px;line-height: 12px; border-radius: 4px; top: 0;}
+.lp-query-btn-cont .btn.btn-default:hover .badge,
+.lp-query-btn-cont .btn.btn-primary .badge{background-color: rgba(14,119,202,1); color: #FFFFFF;}
+.lp-query-btn-cont .btn.btn-default .badge{background-color: rgba(14,119,202,0.15); color: #666666;}
+/*时间选择样式 begin*/
+.date-box{display: inline-block;position:relative;width: 124px;}
+.date-box input{width: 124px;line-height: 22px;}
+.date-box i{position:absolute;top:5px;right:5px;font-size: 20px;color:#999;}
+/*查询条件设置框样式 begin*/
+.lp-setting{position: relative;}
+.lp-setting-box{display:none;position: absolute;top:30px;right: 0;z-index:1010;width:280px;background: #FFFFFF;border: 1px solid #D9D9D9;box-shadow: 0 2px 4px 0 rgba(0,0,0,0.20);border-radius: 4px;}
+.lp-setting-box-header{border-bottom: 1px solid #d9d9d9;height:40px;padding:0 16px;line-height: 40px;}
+.lp-setting-box-footer{border-top: 1px solid #d9d9d9;height:46px;padding:0 16px;line-height: 40px;text-align: right;}
+.lp-setting-box-body{max-height:242px;padding-bottom: 1px;overflow-x: hidden;overflow-y: auto;text-align: left;}
+.lp-setting-box-header-title{float: left;}
+.lp-setting-box-header .icon-close{float: right;margin-top: 13px;cursor: pointer;}
+.lp-setting-box-body label{height: 30px;line-height: 30px;margin:0;margin-left:16px;}
+.lp-setting-box-body label span{margin-top: 7px;}
+.lp-setting-box-body label i{margin-left:-4px;font-style: normal;width:84px;text-overflow: ellipsis;overflow: hidden;white-space: nowrap;display: inline-block;height: 30px;line-height: 30px;vertical-align: middle;}
+/****************** btns 带省略号 S *********************/
+.lp-rest-sign{
+    cursor: pointer;
+    display: inline-block;
+    height: 26px;
+}
+.lp-query-btn-cont .btn.btn-default .badge {
+    background-color:#ecf6fd;
+}
+.uf-tooltip .btn.btn-primary .badge{
+    background-color: #108ee9;
+}
+.uf-tooltip .btn.btn-default .badge{
+    background-color:#fff;
+    color:#666;
+    
+}
+.uf-tooltip .btn.btn-primary .badge{
+    color:#fff;
+    
+}
+.uf-tooltip .btn{
+    border: none;
+    margin-top:2px;
+}
+.uf-tooltip .btn-primary:focus{
+    background-color: #108ee9!important;
+    border: #108ee9!important;
+}
+
+.mt-radio{
+    width: 100px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.uf-tooltip {
+    max-width: 272px;
+}
+/****************** btns 带省略号 E *********************/
+/**/
+.mt-radio.mt-checkbox-single{
+    width: auto;
+}
+/**/
+.rpt-check{position: relative;margin-bottom: 0;height:30px;line-height: 30px;margin-right:16px;padding-left:24px;}
+.rpt-check:last-child{margin-left:0px;}
+.rpt-check span{margin-top: 5px;}

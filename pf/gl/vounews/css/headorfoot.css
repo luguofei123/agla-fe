@@ -1,0 +1,168 @@
+.voucherhe {
+	width: 900px;
+	height: 80px;
+	float: left;
+	position: relative;
+	top:20px;
+}
+
+#bg {
+	width: 200px;
+	height: 26px;
+	position: relative;
+	float: left;
+}
+
+#dates {
+	width: 150px;
+	height: 26px;
+	border: 1px solid #666;
+	border-radius: 5px;
+	position: absolute;
+	left: 50px;
+	top: 0px;
+}
+
+#bg .icondates {
+	position: absolute;
+	left: 140px;
+	top: 2px;
+	z-index: 20;
+}
+#bg span{
+	position: absolute;
+	left: 50px;
+	top: 26px;
+}
+.menu {
+	margin-bottom: 30px
+}
+
+.menu a {
+	padding-right: 20px;
+}
+
+#calendar {
+	width: 250px;
+	height: auto;
+	display: none;
+	position: absolute;
+	top: 26px;
+	z-index: 9999;
+}
+
+#leftbg {
+	float: left;
+	width: 200px;
+	position: relative;
+	left: 20px;
+}
+.leftpzz{
+	width: 49px;
+	height: 19px;
+	
+}
+#sppz {
+	width: 50px;
+	height: 26px;
+	text-align: center;
+}
+#bgsearch{
+	float: left;
+	position: relative;
+	left: 20px;
+}
+#rightbg {
+	float: right;
+	position: relative;
+	right: 20px;
+}
+#rightbg span{
+	float: left;
+}
+#fjd{
+	float: left;
+	text-align: center;
+	width:50px;
+	height: 26px;
+}
+.voucherfo{
+	width:900px;
+	height: 60px;
+	float: left;
+	position: relative;
+}
+.voucherfo span{
+	width: 300px;
+	height: 26px;
+	line-height: 26px;
+}
+.voucherfo #vfjz{
+	float: left;
+	position: relative;
+	left: 20px;
+	text-align: left;
+}
+.voucherfo #vfsh{
+	float: left;
+	position: relative;
+	text-align: center;
+}
+.voucherfo #vfzd{
+	float: right;
+	position: relative;
+	right: 20px;
+	text-align: right;
+}
+.voucherinsert{
+	width:900px;
+	height: 60px;
+	float: left;
+	position: relative;
+}
+#leftbgselect{
+	float: left;
+	width: 60px;
+  border:none;
+  border-bottom: 1px solid #666666;
+
+  /*很关键：将默认的select选择框样式清除*/
+  appearance:none;
+  -moz-appearance:none;
+  -webkit-appearance:none;
+
+  /*在选择框的最右侧中间显示小箭头图片*/
+  background: url("http://ourjs.github.io/static/2015/arrow.png") no-repeat scroll right center transparent;
+
+
+  /*为下拉小箭头留出一点位置，避免被文字覆盖*/
+  padding-right: 14px;
+}
+
+
+/*清除ie的默认选择框样式清除，隐藏下拉箭头*/
+#leftbgselect::-ms-expand { display: none; }
+.leftpzzt {
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    z-index: 20;
+    text-align: center;
+    background: #FF7100;
+    border-radius: 4px;
+    color: #fff;
+    font-size: 10px;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    cursor: pointer;
+    padding: 2px 8px;
+}
+.leftws{
+	background: #00A553;
+}
+.leftzf{
+	background: #EE4033;
+}
+.leftwg{
+	background: #ffc017;
+}

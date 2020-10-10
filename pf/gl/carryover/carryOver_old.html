@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+  		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>期末结账</title>
+  		<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+		<script src="../../pub/boot.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+		<link rel="stylesheet" type="text/css" href="carryOver.css?rev=@@hash"/>
+	</head>
+<body>
+<div id="carryOver" class="container-fluid ufma-container">
+	<!--工作区 begin-->
+	<div class="workspace">
+		<!--工作区顶部 begin-->
+		<div class="workspace-top">
+			<div class="container-fluid">
+				<div class="ufma-portlet">
+					<div class="portlet-title">
+						<div class="caption">
+							<span class="caption-subject font-dark uppercase">期末结账</span>
+						</div>
+						<!-- 单位和账套选择 begin -->
+				    	<ul class="selete-list">
+							<li class="selete-list-li">
+								<!--<div id='cbAgency' name="agencyCode" class="ufma-treecombox ufma-combox-agency" icon="icon-unit" url="/gl/eleAgency/getAgencyTree" valueField="id" textField="name" placeholder="请选择单位"></div>-->
+								<div id='cbAgency' name="agencyCode" class="ufma-treecombox ufma-combox-agency"></div>
+							</li>
+							<li class="selete-list-li">
+								<div id='cbAcct' class="ufma-combox ufma-combox-acct"></div>
+							</li>
+						</ul>
+				    	<!-- 单位和账套选择 end -->
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--工作区顶部 end-->
+		<!--工作区中部 begin-->
+		<div class="workspace-center">
+			<div class="container-fluid">
+				<!--时间线 begin-->
+				<div class="time-line-vertical">
+					<!--中线（即左右的父级,中线的高度基础值为72px，每增加一个高度增加97px） begin-->
+					<div class="center-line">
+						<!--左侧定位 begin-->
+						<div class="time-box left-box fisPerdsLeft">
+							<!--内容块（1月） begin-->
+							<div class="time-item clearfix" style="display: none;">
+								<!--锚链接目标点 begin-->
+								<a name="Jan"></a>
+								<!--锚链接目标点 end-->
+								
+								<!--已结账盖章 begin-->
+								<img src="../../images/carryover/carry_over_close_accounts.png" style="display: none;"/>
+								<!--已结账盖章 end-->
+								
+								<!--装饰 begin-->
+								<div class="time-item-decorate">
+									<!--时间（圆） begin-->
+									<div class="time-circle">
+										01
+									</div>
+									<!--时间（圆） end-->
+								</div>
+								<!--装饰 end-->
+								
+								<!--内容 begin-->
+								<div class="time-item-content">
+									<!--信息 begin-->
+									<div class="time-info">
+										<h5>2017年01期间</h5>
+										<ul class="list-unstyled clearfix">
+											<li class="wsh"><div>未审核<p>0</p></div></li>
+											<li class="ysh"><div>已审核<p>0</p></div></li>
+											<li class="yjz"><div>已记账<p>320</p></div></li>
+										</ul>
+									</div>
+									<!--信息 end-->
+									
+									<!--功能 begin-->
+									<div class="time-action clearfix">
+										<!--弹出窗 begin-->
+										<div class="time-link pull-left">
+											<a href="javascript:void(0);">结账报告</a>
+										</div>
+										<!--弹出窗 end-->
+										
+										<!--按钮组 begin-->
+										<div class="time-btn pull-right">
+											<button type="button" id="btn-close-account" class="btn btn-sm btn-primary btn-permission btn-close-account">结账</button>
+											<button type="button" id="btn-anti-settlement" style="display: none;" class="btn btn-sm btn-default btn-permission btn-anti-settlement" disabled>反结账</button>
+										</div>
+										<!--按钮组 end-->
+									</div>
+									<!--功能 end-->
+								</div>
+								<!--内容 end-->
+							</div>
+							<!--内容块 end-->
+							
+						</div>
+						<!--左侧定位 end-->
+						
+						<!--右侧定位 begin-->
+						<div class="time-box right-box fisPerdsRight"></div>
+						<!--右侧定位 end-->
+					</div>
+					<!--中线（即左右的父级） end-->
+					
+				</div>
+				<!--时间线 end-->
+			</div>
+		</div>
+		<!--工作区中部 end-->
+		<!--工作区底 begin-->
+		<!--工作区底 end-->
+		<!--锚链接 begin-->
+		<div class="time-nav">
+			<ul class="list-unstyled">
+				<li class="clearfix">
+					<a href="#Jan" data-time="Jan">01</a>
+					<span>2017年01期间</span>
+				</li>
+				<li class="clearfix">
+					<a href="#Feb" data-time="Feb">02</a>
+					<span>2017年02期间</span>
+				</li>
+				<li class="clearfix">
+					<a href="#Mar" data-time="Mar">03</a>
+					<span>2017年03期间</span>
+				</li>
+				<li class="clearfix">
+					<a href="#Apr" data-time="Apr">04</a>
+					<span>2017年04期间</span>
+				</li>
+				<li class="clearfix">
+					<a href="#May" data-time="May">05</a>
+					<span>2017年05期间</span>
+				</li>
+				<li class="clearfix">
+					<a href="#June" data-time="June">06</a>
+					<span>2017年06期间</span>
+				</li>
+				<li class="clearfix">
+					<a href="#July" data-time="July">07</a>
+					<span>2017年07期间</span>
+				</li>
+				<li class="clearfix">
+					<a href="#Aug" data-time="Aug">08</a>
+					<span>2017年08期间</span>
+				</li>
+				<li class="clearfix">
+					<a href="#Sep" data-time="Sep">09</a>
+					<span>2017年09期间</span>
+				</li>
+				<li class="clearfix">
+					<a href="#Oct" data-time="Oct">10</a>
+					<span>2017年10期间</span>
+				</li>
+				<li class="clearfix">
+					<a href="#Nov" data-time="Nov">11</a>
+					<span>2017年11期间</span>
+				</li>
+				<li class="clearfix">
+					<a href="#Dec" data-time="Dec">12</a>
+					<span>2017年12期间</span>
+				</li>
+			</ul>
+		</div>
+		<!--锚链接 end-->
+	</div>
+	<!--工作区 end-->
+</div>
+<script src="carryOver.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+</body>
+</html>

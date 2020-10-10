@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>系统选项（单位级）</title>
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <script src="../../pub/boot.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+    <link rel="stylesheet" type="text/css" href="busRule.css?rev=@@hash"/>
+</head>
+<body>
+<div id="busRule" class="container-fluid ufma-container">
+    <!--工作区 begin-->
+    <div class="workspace" style="min-height: 522px;">
+        <!--工作区顶部 begin-->
+        <div class="workspace-top">
+            <div class="container-fluid">
+               <div class="ufma-portlet">
+                <div class="portlet-title">
+                    <div class="caption">
+                        <span class="caption-subject font-dark uppercase">系统选项</span>
+                    </div>
+                    <!--单位选择 begin-->
+                    <ul class='ufma-list-col clearfix padding-left-8 pull-left'>
+						<li class="ufma-list-col-item">
+							<div id='cbAgency' name="agencyCode" class="ufma-treecombox ufma-combox-agency"></div>
+                            <!--<div id='cbAgency' name="agencyCode" class="ufma-treecombox ufma-combox-agency" icon="icon-unit" url="/ma/sys/eleAgency/getAgencyTree" valueField="id"  textField="codeName" readOnly=false
+                                 placeholder="请选择单位"></div>-->
+						</li>
+					</ul>
+					<!--单位选择 end-->
+                    <div class="actions">
+                        <!--头搜索框组 begin-->
+                        <div class="title-search pull-right">
+                            <div class="input-group input-group-sm">
+                                <input type="text" class="form-control" id="searchText" placeholder="请输入要搜索的关键字"/>
+                                <span class="input-group-btn">
+									<button type="button" class="btn btn-sm btn-primary btn-search">
+										<span class="glyphicon icon-search"> </span>
+									</button>
+								</span>
+                            </div>
+                        </div>
+                        <!--头搜索框组 end-->
+                    </div>
+                </div>
+            </div>
+            </div>
+        </div>
+        <!--工作区顶部 end-->
+        <!--内容盒子 begin-->
+        <div class="workspace-center">
+            <div class="container-fluid">
+                <div class="twocols-box">
+                    <!--左边内容 begin-->
+                    <div class="leftposition-box">
+                        <!--左侧切换按钮 begin-->
+                        <div class="left-switch-box">
+                            <a href="javascript:;" data-sysId="MA">基础数据</a>
+                            <a href="javascript:;" class="choose" data-sysId="GL">账务</a>
+                            <a href="javascript:;" data-sysId="BG">指标</a>
+                            <a href="javascript:;" data-sysId="CU">出纳</a>
+                            <a href="javascript:;" data-sysId="XZ">薪资</a>
+                            <a href="javascript:;" data-sysId="DE">数据交换</a> 
+                        </div>
+                        <!--左侧切换按钮 end-->
+                    </div>
+                    <!--左边内容 end-->
+                    <!--右边内容 begin-->
+                    <div class="right-box">
+                        <!--提示内容 begin-->
+                        <div class="right-prompt second-color">
+                        	提示：灰色字体规则为系统级控制，单位须遵循系统级设置内容，不可调整。
+                        </div>
+                        <!--提示内容 end-->
+                        <!--设置开关 开始位置-->
+
+                    </div>
+                    <!--右边内容 end-->
+                </div>
+            </div>
+        </div>
+        <!--内容盒子 end-->
+    </div>
+    <!--工作区 end-->
+</div>
+<!--整个容器 end-->
+<script src="busRule.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+</body>
+</html>

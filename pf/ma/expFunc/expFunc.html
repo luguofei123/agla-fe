@@ -1,0 +1,273 @@
+﻿<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>支出功能分类</title>
+		<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+		<script src="../../pub/boot.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+		<style type="text/css">
+			.dataTables_wrapper {
+				overflow: initial !important;
+			}
+		</style>
+	</head>
+
+	<body>
+	<!--<input type="text" class="inputs">-->
+
+		<div id="expFunc" class="container-fluid ufma-container">
+			<!--工作区 begin-->
+			<div class="workspace">
+				<!--工作区顶部 begin-->
+				<div class="workspace-top">
+					<div class="container-fluid">
+						<div class="ufma-portlet">
+							<div class="portlet-title">
+								<div class="caption">
+									<span class="caption-subject font-dark uppercase">支出功能分类</span>
+								</div>
+								<div class="actions">
+									<div class="btn-group">
+										<button type="button" class="btn btn-sm btn-primary btn-permission btn-add">新增</button>
+									</div>
+								</div>
+							</div>
+							<div class="portlet-body form-horizontal bordered">
+								<div class="form-body" id="query-tj">
+									<div class="form-row">
+										<div class="form-group label-group">
+											<div class="control-label">启用状态：</div>
+											<div class="control-element">
+												<a name="enabled" value="" class="label label-radio selected">全部</a>
+												<a name="enabled" value="1" class="label label-radio ">启用</a>
+												<a name="enabled" value="0" class="label label-radio">停用</a>
+											</div>
+										</div>
+										<div class="clearfix"></div>
+									</div>
+									<div class="form-row">
+										<div class="form-group label-group" style="padding-top:0;">
+											<div class="control-label">预算体系：</div>
+											<div class="control-element" id="expfuncKMTXLabels">
+												<a name="bgttypeCode" value="" class="label label-radio selected">全部</a>
+												<a name="bgttypeCode" value="01" class="label label-radio">政府性资金</a>
+												<a name="bgttypeCode" value="02" class="label label-radio">一般公共预算</a>
+											</div>
+										</div>
+										<div class="clearfix"></div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!--工作区中部 begin-->
+				<div class="workspace-center">
+					<div class="container-fluid">
+						<div class="table-sub clearfix">
+							<div class="table-sub-info pull-left">
+								提示：
+							</div>
+							<div class="table-sub-action pull-right">
+								<div class="iframeBtnsSearch" id="index-search">
+									<input type="text" class="searchHide focusOff bordered" placeholder="请输入要搜索的关键词">
+									<input type="hidden" class="searchValueHide">
+									<button class="btn btn-default btn-sm btn-search" id="searchHideBtn">
+								<i class="glyphicon icon-search"></i>
+							</button>
+								</div>
+								<div class="btn-group" id="printTableData">
+								</div>
+							</div>
+						</div>
+						<!--表格begin-->
+						<div class="tab-content" id="outDiv">
+							<table id="expfunc-data" tool-bar="#expfunc-tool-bar" class="ufma-table">
+								<thead>
+									<tr>
+										<th style="width:20px;">
+											<label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
+                                    <input type="checkbox" class="datatable-group-checkable" data-set="#data-table .checkboxes"/>
+                                    <span></span>
+                                </label>
+										</th>
+										<th> 功能分类编码</th>
+										<th> 功能分类名称</th>
+										<th> 状态</th>
+										<th> 预算体系</th>
+										<th> 操作</th>
+									</tr>
+								</thead>
+								<tbody>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</div>
+				<!--工作区底 begin-->
+				<div id="expfunc-tool-bar" class="ufma-tool-bar">
+					<div class="tool-bar-body">
+						<div class="ufma-tool-btns">
+							<label class="mt-checkbox mt-checkbox-outline margin-right-8">
+                        <input class="datatable-group-checkable" id="CheckAll" type="checkbox" name="test" value="1"> 全选
+                        <span></span>
+                    </label>
+							<button type="button" class="btn btn-sm btn-default btn-permission btn-delete">删除</button>
+							<button type="button" class="btn btn-sm btn-default btn-permission btn-start"> 启用</button>
+							<button type="button" class="btn btn-sm btn-default btn-permission btn-stop"> 停用</button>
+							<button type="button" class="btn btn-sm btn-default btn-permission btn-senddown"> 下发</button>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!--编辑功能分类begin-->
+			<div id="expfunc-edt" class="ufma-modal">
+				<div class="u-msg-title">
+					<h4>功能分类编辑</h4>
+				</div>
+				<div class="u-msg-content" style="position:relative">
+					<div class="container-fluid">
+						<div class="ufma-layout ufma-layout-slider-sm ufma-layout-fixed-slider ufma-layout-fixed-slider-right">
+							<div class="ufma-layout-content">
+								<form id="form-expfunc" class="form-horizontal">
+									<input type="hidden" name="chrId" value="" />
+									<input type="hidden" name="lastVer" value="" />
+									<div class="form-group required">
+										<label class="control-label em8">功能分类编码：</label>
+										<div class="control-element">
+											<input type="text" name="chrCode" id="expFunc-chrCode" class="form-control w180">
+										</div>
+									</div>
+									<div class="form-group required">
+										<label class="control-label em8">功能分类名称：</label>
+										<div class="control-element">
+											<input type="text" name="chrName" id="expFunc-chrName" class="form-control w180"></span>
+										</div>
+									</div>
+									<div class="form-group">
+										<label class="control-label em8">助记码：</label>
+										<div class="control-element">
+											<input type="text" name="assCode" id="assCode" class="form-control w180" maxlength="42"></span>
+										</div>
+									</div>
+									<div class="form-group ">
+										<label class="control-label em8">预算体系：</label>
+										<div class="control-element">
+											<select class="form-control w180" name="bgttypeCode" id="expFunc-bgttypeCode" require-all=1 url="/ma/sys/expFunc/queryBgtType" idField="code" textField="name">
+												<option value=""></option>
+												<option value="01">政府性基金</option>
+												<option value="02">一般公共预算</option>
+											</select>
+										</div>
+									</div>
+									<div class="form-group ">
+										<label class="control-label em8">增加下级：</label>
+										<div class="control-element">
+											<div class="btn-group" data-toggle="buttons">
+												<label class="btn btn-default active">
+                                            <input type="radio" class="toggle" name="allowAddsub" value="1" checked> 允许 </label>
+												<label class="btn btn-default">
+                                            <input type="radio" class="toggle" name="allowAddsub" value="0"> 禁止 </label>
+
+											</div>
+										</div>
+									</div>
+									<div class="form-group ">
+										<label class="control-label em8">是否启用：</label>
+										<div class="control-element">
+											<div class="btn-group" data-toggle="buttons">
+												<label class="btn btn-default active">
+                                            <input type="radio" class="toggle" name="enabled" value="1" checked> 启用 </label>
+												<label class="btn btn-default">
+                                            <input type="radio" class="toggle" name="enabled" value="0"> 停用 </label>
+
+											</div>
+										</div>
+									</div>
+
+									<div class="form-group   field1" style="display:none">
+										<label class="control-label em8"></label>
+										<div class="control-element">
+											<div id='field1' name="field1" data-code="" class="ufma-treecombox" valueField="id" textField="name"></div>
+										</div>
+									</div>
+
+									<div class="form-group   field2" style="display:none">
+										<label class="control-label em8"></label>
+										<div class="control-element">
+											<div id='field2' name="field2" data-code="" class="ufma-treecombox" valueField="id" textField="name"></div>
+										</div>
+									</div>
+
+									<div class="form-group   field3" style="display:none">
+										<label class="control-label em8"></label>
+										<div class="control-element">
+											<div id='field3' name="field3" data-code="" class="ufma-treecombox" valueField="id" textField="name"></div>
+										</div>
+									</div>
+
+									<div class="form-group   field4" style="display:none">
+										<label class="control-label em8"></label>
+										<div class="control-element">
+											<div id='field4' name="field4" data-code="" class="ufma-treecombox" valueField="id" textField="name"></div>
+										</div>
+									</div>
+
+									<div class="form-group   field5" style="display:none">
+										<label class="control-label em8"></label>
+										<div class="control-element">
+											<div id='field5' name="field5" data-code="" class="ufma-treecombox" valueField="id" textField="name"></div>
+										</div>
+									</div>
+
+								</form>
+							</div>
+							<div class="ufma-layout-slider right">
+								<div class="panel ufma-panel ufma-panel-primary">
+									<div class="panel-heading">
+                                    <div class="caption">参考信息</div>
+                         
+									</div>
+									<div class="panel-collapse collapse in">
+										<div class="panel-body">
+												<div id="prompt" style="margin-bottom: 10px"></div>
+											<ul id="expfunc-help" class="list-inline list-inline-horizontal">
+												<li style="padding: 0">请输入功能分类编码获得参考信息</li>
+											</ul>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="u-msg-footer">
+					<button type="button" class="btn btn-sm btn-primary btn-permission btn-ajax btn-saveadd">保存并新增</button>
+					<button type="button" class="btn btn-sm btn-default btn-permission btn-ajax btn-save"> 保存</button>
+					<button type="button" class="btn btn-sm btn-default btn-close"> 取消</button>
+				</div>
+			</div>
+
+			<!--购物车功能begin-->
+			<div class="ufma-shopping-trolley right" data-target='#dw-shopp' style="bottom:50%;"><i class="glyphicon icon-supplement"></i></div>
+			<div class="ufma-shopp ufma-shopp-right" id="dw-shopp">
+				<div class="ufma-shopp-inner">
+					<div class="ufma-shopp-header">
+						<span class="glyphicon icon-angle-double-right"></span>引用单位
+					</div>
+					<div class="ufma-shopp-content">
+						<table id="dw-used" class="ufma-table" style="width:300px;">
+
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script src="../maCommon/maCommon.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+		<script src="expFunc.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+	</body>
+
+</html>

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>往来核销</title>
+	<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+	<script src="../../pub/boot.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+	<link rel="stylesheet" href="currentModal.css?rev=@@hash" />
+</head>
+
+<body data-code="agy">
+	<div>
+		<!--工作区 begin-->
+		<div class="workspace" style="min-height:516px">
+			<!--工作区顶部 begin-->
+
+			<!--工作区顶部 end-->
+			<!--工作区中部 begin-->
+			<div class="workspace-center" style="margin-top:-8px;">
+				<div class="container-fluid">
+					<div class="ufma-layout ufma-layout-slider-sm ufma-layout-fixed-slider ufma-layout-fixed-slider-left" style="margin-top: 20px;">
+						<div class="searchhead">
+							<span>日期区间：</span>
+							<span class="date-box">
+								<span id="vbStartDate" class="uf-datepicker" style="width:120px;"></span>
+							</span>
+							-
+							<span class="date-box">
+								<span id="vbEndDate" class="uf-datepicker" style="width:120px;"></span>
+							</span>
+							<input class="bordered-input padding-5" id="cruxinput" type="text" placeholder="默认提示字"/>
+							<span>金额区间：</span>
+							<input class="bordered-input padding-5" type="text" id="vbstartTotalAmt" placeholder="0.00" /> 至
+							<input class="bordered-input padding-5" type="text" id="vbendTotalAmt" placeholder="0.00" />
+							<button class="btn btn-sm btn-primary float-right" id="btn-search">查询</button>
+						</div>
+						<div class="maintable">
+							<table class="table-bordered dataTable ufma-table" id="currentTable" style="width: 1800px;">
+								<thead>
+									<tr>
+										<th>凭证日期</th>
+										<th>凭证字号</th>
+										<th>往来号</th>
+										<th>摘要</th>
+										<th>往来单位/个人</th>
+										<th>往来日期</th>
+										<th>部门</th>
+										<th>项目</th>
+										<th>金额</th>
+										<th>已核销金额</th>
+										<th>未核销金额</th>
+										<th>核销金额</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>凭证日期</td>
+										<td>凭证字号</td>
+										<td>往来号</td>
+										<td>摘要</td>
+										<td>往来单位/个人</td>
+										<td>往来日期</td>
+										<td>部门</td>
+										<td>项目</td>
+										<td class="moenytd">金额</td>
+										<td class="moenytd">已核销金额</td>
+										<td class="moenytd noWriteAmt">未核销金额</td>
+										<td class="writeAmtTd"><input type="text" class="writeAmt"></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!--工作区中部end-->
+
+		</div>
+		<!--工作区 end-->
+	</div>
+	<div class="ufma-layout-down bordered-top">
+		<div class="text-right  margin-right-30"">
+			<button type="button" class="btn btn-sm btn-primary" id="btn-sure">确定</button>
+			<button type="button" class="btn btn-sm btn-default" id="btn-cancle">取消</button>
+		</div>
+	</div>
+	<!--整个容器 end-->
+	<script src="currentModal.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+</body>
+<style>
+	.dataTables_wrapper.no-footer .dataTables_scrollBody {
+		border-bottom: 0px solid #111;
+	}
+	#modelTable .dataTables_empty{
+		border-bottom-width: 0px !important
+	}
+	#singleTable_wrapper .dataTables_empty{
+		border-bottom-width: 0px !important
+	}
+	.dataTables_wrapper {
+		overflow: auto
+	}
+</style>
+
+</html>

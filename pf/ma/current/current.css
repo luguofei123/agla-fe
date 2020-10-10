@@ -1,0 +1,13 @@
+#current .table-sub-info{line-height: 30px; padding-left: 8px; color: #999999;}
+
+/*单位级——单位选择*/
+#current .ufma-list-col{
+	margin-top: 8px;
+}
+
+/*搜索按钮*/
+#current .iframeBtnsSearch{display:inline-block;overflow: hidden;vertical-align: middle;}
+#current .searchHide{margin-right:-6px;width:0;height:30px;vertical-align: middle;border-radius:3px 0 0 3px;}
+
+/* #current .tab-content{padding-top:8px;} */
+

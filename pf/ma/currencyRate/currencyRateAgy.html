@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>币种汇率（单位级）</title>
+		<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+		<script src="../../pub/boot.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+		<link rel="stylesheet" href="currencyRate.css?rev=@@hash" />
+	</head>
+
+	<body data-code="agy">
+		<div id="currencyRate" class="container-fluid ufma-container no-print">
+			<!--工作区 begin-->
+			<div class="workspace">
+				<!--工作区顶部 begin-->
+				<div class="workspace-top">
+					<div class="container-fluid">
+						<div class="ufma-portlet">
+							<div class="portlet-title">
+								<div class="caption">
+									<span class="caption-subject font-dark uppercase">币种汇率</span>
+								</div>
+								<div class="agencycom">
+									<div id='cbAgency' name="agencyCode" class="ufma-treecombox ufma-combox-agency" icon="icon-unit" url="/ma/sys/eleAgency/getAgencyTree" valueField="id" textField="codeName" readOnly=false placeholder="请选择单位"></div>
+								</div>
+								<div class="portlet-body form-horizontal " style="display: inline-block;">
+									<div class="form-body">
+										<div class="form-group">
+											<div class="agencycom" style=" float: right;">
+												<div id='cbAcct' class="ufma-treecombox ufma-combox-acct"></div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="actions">
+									<div class="btn-group">
+										<button type="button" class="btn btn-sm btn-primary btn-choose btn-permission" style="display:none;">选用</button>
+									</div>
+									<div class="btn-group">
+										<button type="button" class="btn btn-sm btn-primary btn-add btn-permission" style="display:none;">新增</button>
+									</div>
+								</div>
+							</div>
+							<div class="portlet-body form-horizontal bordered">
+								<div id="query-rate" class="form-body">
+									<div class="form-group label-group">
+										<div class="control-label">币种：</div>
+										<div class="control-element">
+
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!--工作区中部 begin-->
+				<div class="workspace-center">
+					<div class="container-fluid">
+						<div class="table-sub clearfix">
+							<div class="table-sub-info pull-left">
+								提示：
+							</div>
+							<!--bug78798--zsj--经尹哥确认将打印和导出都隐藏起来		
+								<div class="table-sub-action pull-right">
+								<div class="btn-group">
+									<button class="btn btn-default btn-permission btn-print" data-toggle="tooltip" title="打印">
+                                <span class="glyphicon icon-print"></span>
+                            </button>
+									<button class="btn btn-default btn-permission btn-export" data-toggle="tooltip" title="导出">
+                                <span class="glyphicon icon-upload"></span>
+                            </button>
+								</div>
+
+							</div>-->
+						</div>
+						<div class="tab-head">
+							<table style="width:100%">
+								<thead>
+									<tr>
+										<th style="width:30px;">
+											<input type="checkbox" class="group-checkable">
+											<!-- <label class="mt-checkbox mt-checkbox-outline margin-right-8">
+			                        <input class="" type="checkbox" class="group-checkable">&nbsp;
+			                        <span></span>
+			                    </label> -->
+										</th>
+										<th class="curName">币种/目标币种</th>
+										<th>月份</th>
+										<th>直接汇率</th>
+										<th>间接汇率</th>
+										<th></th>
+									</tr>
+                </thead>
+                <!-- CWYXM-18782--设置比重汇率界面，新增汇率保存后界面未展示--zsj--jquery升级导致 -->
+                <tbody></tbody>
+							</table>
+						</div>
+						<div id="rateTab" class="curRate-div">
+
+						</div>
+					</div>
+				</div>
+
+				<div id="currencyRate-tool-bar" class="ufma-tool-bar">
+					<div class="tool-bar-body">
+						<div class="ufma-tool-btns">
+							<label style="display:inline !important;">
+                        <input type="checkbox" class="group-checkable" name="test" value="1"> 全选
+                        <span style="width:13px;height:13px;margin:3px;"></span>
+                    </label>
+							<!-- <label class="mt-checkbox mt-checkbox-outline margin-right-8">
+                        <input class="" type="checkbox" class="group-checkable" name="test" value="1"> 全选
+                        <span></span>
+                    </label> -->
+							<button type="button" class="btn btn-sm btn-default btn-del btn-delete btn-permission">删除</button>
+							<button type="button" class="btn btn-sm btn-default btn-downto btn-senddown btn-permission" id="currencyRateBtnDown"> 下发</button>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!--选用功能-->
+			<div id="expfunc-choose" class="ufma-modal">
+				<div class="u-msg-title">
+					<h4>选用币种</h4>
+				</div>
+				<div class="u-msg-content">
+					<div class="table-sub clearfix">
+						<div class="table-sub-action pull-right">
+							<div class="iframeBtnsSearch" id="choose-search">
+								<input type="text" class="searchHide focusOff bordered-input" placeholder="请输入要搜索的关键词">
+								<input type="hidden" class="searchValueHide">
+								<button class="btn btn-default btn-sm btn-search" id="searchHideBtn">
+							<i class="glyphicon icon-search"></i>
+						</button>
+							</div>
+						</div>
+					</div>
+					<div class="tab-content" style="position:relative;padding-bottom:37px;">
+						<table id="expfunc-choose-datatable" tool-bar="#expfunc-choose-tool-bar" class="ufma-table">
+							<thead>
+								<tr>
+									<th style="width:20px;">
+										<label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
+                                <input type="checkbox" class="group-checkable" data-set="#data-table .checkboxes"/>
+                                <span></span>
+                            </label>
+									</th>
+									<th> 币种编码</th>
+									<th> 币种名称</th>
+									<th> 币种符号</th>
+								</tr>
+							</thead>
+							<tbody>
+							</tbody>
+						</table>
+
+						<!--工作区底 begin-->
+						<div id="expfunc-choose-tool-bar" class="ufma-tool-bar">
+							<div class="tool-bar-body" style="margin: 0 -2px 0 -2px;">
+								<div class="ufma-tool-btns">
+								</div>
+							</div>
+						</div>
+
+					</div>
+				</div>
+				<div class="u-msg-footer">
+					<button type="button" class="btn btn-sm btn-primary btn-agyChoose btn-choose btn-permission"> 选用</button>
+					<button type="button" class="btn btn-sm btn-default btn-agyClose"> 取消</button>
+				</div>
+			</div>
+
+		</div>
+		<script src="currencyRate.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+		<script src="../maCommon/maCommon.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+	</body>
+
+</html>

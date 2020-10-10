@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>往来单位</title>
+		<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+		<script src="../../pub/boot.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+		<link rel="stylesheet" type="text/css" href="current.css?rev=@@hash" />
+		<style>
+			/* 强制和外面的 outDiv overflow一样*/
+			.dataTables_wrapper {
+	overflow: initial !important;
+	}
+		</style>
+	</head>
+
+	<body>
+		<!--整个容器 begin-->
+		<div id='current' class="container-fluid ufma-container currentAgy">
+			<!--工作区 begin-->
+			<div class="workspace">
+				<!--工作区顶部 begin-->
+				<div class="workspace-top">
+					<div class="container-fluid">
+						<!--标题+查询 begin-->
+						<div class="ufma-portlet">
+							<!--标题 begin-->
+							<div class="portlet-title">
+								<div class="caption">
+									<span class="caption-subject font-dark uppercase">往来单位</span>
+								</div>
+								<!--单位选择 begin-->
+								<ul class='ufma-list-col clearfix padding-left-8 pull-left'>
+									<li class="ufma-list-col-item">
+										<div id='cbAgency' name="agencyCode" class="ufma-treecombox ufma-combox-agency" icon="icon-unit" valueField="id" textField="codeName" readOnly=false placeholder="请选择单位"></div>
+									</li>
+									<li class="ufma-list-col-item">
+										<div id='cbAcct' class="ufma-treecombox ufma-combox-acct"></div>
+									</li>
+								</ul>
+								<!--单位选择 end-->
+								<div class="actions">
+									<div class="btn-group">
+										<button type="button" class="btn btn-sm btn-primary btn-choose" style="display:none;">选用</button>
+									</div>
+									<div class="btn-group">
+										<button type="button" class="btn btn-sm btn-permission btn-primary btn-add" style="display:none;">新增</button>
+										<button type="button" id="btn-sync" class="btn btn-sm btn-permission btn-default btn-sync" style="margin-left:5px">同步</button>
+										<button type="button" id="btn-syncInner" class="btn btn-sm btn-permission btn-default btn-syncInner" style="margin-left:5px">同步体制内单位</button>
+									</div>
+								</div>
+							</div>
+							<!--标题 end-->
+
+							<!--查询条件 begin-->
+							<div class="portlet-body form-horizontal bordered">
+								<div class="form-body">
+									<div class="cEnable form-group">
+										<div class="control-label">启用状态：</div>
+										<div class="control-element">
+											<a name="enabled" value="-1" class="label label-radio selected">全部</a>
+											<a name="enabled" value="1" class="label label-radio">启用</a>
+											<a name="enabled" value="0" class="label label-radio">停用</a>
+										</div>
+									</div>
+								</div>
+							</div>
+							<!--查询条件 end-->
+						</div>
+						<!--标题+查询 end-->
+					</div>
+				</div>
+				<!--工作区顶部 end-->
+
+				<!--工作区中部 begin-->
+				<div class="workspace-center">
+					<div class="container-fluid">
+						<!--表头按钮行 begin-->
+						<div class="table-sub clearfix">
+							<!--提示信息 begin-->
+							<div class="table-sub-info pull-left">
+								提示：
+							</div>
+							<!--提示信息 end-->
+
+							<!--右侧操作按钮 begin-->
+							<div class="table-sub-action pull-right">
+								<div class="iframeBtnsSearch">
+									<input type="text" class="searchHide focusOff bordered" placeholder="请输入要搜索的关键词">
+									<input type="hidden" class="searchValueHide">
+									<button class="btn btn-default btn-sm btn-search" id="searchHideBtn">
+								<i class="glyphicon icon-search"></i>
+							</button>
+								</div>
+								<div class="btn-group" id="printTableData">
+								</div>
+							</div>
+							<!--右侧操作按钮 end-->
+						</div>
+						<!--表头按钮行 end-->
+
+						<!--表格 begin-->
+						<div class="ufma-layout ufma-layout-slider-sm ufma-layout-fixed-slider ufma-layout-fixed-slider-right">
+							<div class="tab-content" id="outDiv">
+								<div class="tab-pane fade in active" id="all">
+									<table id="current-data" tool-bar="#current-tool-bar" class="ufma-table">
+										<thead>
+											<th class="nowrap">
+												<label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
+	                            			<input type="checkbox" class="datatable-group-checkable"/>
+                            				<span></span>
+	                            		</label>
+											</th>
+											<th>单位编码</th>
+											<th class="current-subject">单位名称</th>
+											<th>单位性质</th>
+											<th>联系人</th>
+											<th>状态</th>
+											<th>单位属性</th>
+											<th class="text-center nowrap btnGroup">操作</th>
+										</thead>
+									</table>
+								</div>
+							</div>
+						</div>
+						<!--表格 end-->
+					</div>
+				</div>
+				<!--工作区中部 end-->
+
+				<!--工作区底 begin-->
+				<!--<div class="workspace-bottom">-->
+				<div id="current-tool-bar" class="ufma-tool-bar">
+					<div class="tool-bar-body">
+						<div class="ufma-tool-btns">
+							<label class="mt-checkbox mt-checkbox-outline margin-right-8">
+                            <input type="checkbox" class="datatable-group-checkable"/> 全选
+                            <span></span>
+                        </label>
+							<button id="c-delete-more" type="button" class="btn btn-sm btn-permission btn-default btn-delete">删除</button>
+							<button id="c-start-more" type="button" class="btn btn-sm btn-permission btn-default btn-start">启用</button>
+							<button id="c-stop-more" type="button" class="btn btn-sm btn-permission btn-default btn-stop">停用</button>
+							<button id="currentBtnDown" type="button" class="btn btn-sm btn-permission btn-default btn-senddown">下发</button>
+							<button type="button" class="btn btn-sm btn-permission btn-default btn-imp">导入</button>
+						</div>
+					</div>
+				</div>
+				<!--</div>-->
+				<!--工作区底 end-->
+			</div>
+			<!--选用功能-->
+			<div id="expfunc-choose" class="ufma-modal">
+				<div class="u-msg-title">
+					<h4>选用</h4>
+				</div>
+				<div class="u-msg-content" id="expfunc-choose-content">
+					<div class="table-sub clearfix">
+						<div class="table-sub-action pull-right">
+							<div class="iframeBtnsSearch" id="choose-search">
+								<input type="text" class="searchHide focusOff bordered" placeholder="请输入要搜索的关键词">
+								<input type="hidden" class="searchValueHide">
+								<button class="btn btn-default btn-sm btn-search" id="searchHideChooseBtn">
+							<i class="glyphicon icon-search"></i>
+						</button>
+							</div>
+						</div>
+					</div>
+					<div class="tab-content" style="position:relative;padding-bottom:0!important;">
+						<table id="expfunc-choose-datatable" tool-bar="#expfunc-choose-tool-bar" class="ufma-table">
+							<thead>
+								<tr>
+									<th style="width:20px;">
+										<label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
+                                <input type="checkbox" class="group-checkable" data-set="#data-table .checkboxes"/>
+                                <span></span>
+                            </label>
+									</th>
+									<th> 功能分类编码</th>
+									<th> 功能分类名称</th>
+									<th> 状态</th>
+								</tr>
+							</thead>
+							<tbody>
+							</tbody>
+						</table>
+						<!--工作区底 begin-->
+						<div id="expfunc-choose-tool-bar" class="ufma-tool-bar">
+				            <div class="tool-bar-body" style="margin: 0 -2px 0 -2px;">
+				                <div class="ufma-tool-btns">
+				                </div>
+				            </div>
+		       			</div> 
+
+					</div>
+				</div>
+				<div class="u-msg-footer">
+					<button type="button" class="btn btn-sm btn-primary btn-agyChoose"> 选用</button>
+					<button type="button" class="btn btn-sm btn-default btn-agyClose"> 取消</button>
+				</div>
+			</div>
+
+			<!--工作区 end-->
+		</div>
+		<!--整个容器 end-->
+		<script src="../maCommon/maCommon.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+
+		<script src="current.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+	</body>
+
+</html>

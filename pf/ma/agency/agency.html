@@ -1,0 +1,467 @@
+﻿﻿<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>单位管理</title>
+		<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+		<script src="../../pub/boot.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+	</head>
+
+	<body>
+		<div id="agency" class="container-fluid ufma-container">
+			<!--工作区 begin-->
+			<div class="workspace">
+				<!--工作区顶部 begin-->
+				<div class="workspace-top">
+					<div class="container-fluid">
+						<div class="ufma-portlet">
+							<div class="portlet-title">
+								<div class="caption">
+									<span class="caption-subject font-dark uppercase">单位管理</span>
+								</div>
+								<div class="actions">
+									<div>
+										<button type="button" class="btn btn-sm btn-primary btn-permission btn-add">新增</button>&nbsp;
+										<button type="button" class="btn btn-sm btn-primary btn-permission btn-cacheRefresh">单位重载</button>
+									</div>
+								</div>
+							</div>
+							<div class="portlet-body form-horizontal bordered">
+								<div class="form-body" id="query-tj">
+									<div class="form-group label-group">
+										<div class="control-label em4">单位类型：</div>
+										<div class="control-element" id="agencyTypeLabel">
+											<a name="divKind" value="" class="label label-radio selected">全部</a>
+										</div>
+									</div>
+									<div class="form-group label-group" style="padding-top:8px;">
+										<div class="control-label em4">状态：</div>
+										<div class="control-element" id="">
+											<a name="enabled" value="" class="label label-radio selected">全部</a>
+											<a name="enabled" value="1" class="label label-radio">启用</a>
+											<a name="enabled" value="0" class="label label-radio">停用</a>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!--工作区中部 begin-->
+				<div class="workspace-center">
+					<div class="container-fluid">
+						<div class="table-sub clearfix">
+							<div class="table-sub-info pull-left">
+							</div>
+							<div class="table-sub-action pull-right">
+								<div class="iframeBtnsSearch" id="index-search">
+									<input type="text" class="searchHide focusOff bordered" placeholder="请输入要搜索的关键词">
+									<input type="hidden" class="searchValueHide">
+									<button class="btn btn-default btn-sm btn-permission btn-search" id="searchHideBtn">
+								<i class="glyphicon icon-search"></i>
+							</button>
+								</div>
+								<div class="btn-group" id="printTableData">
+								</div>
+							</div>
+						</div>
+						<!--表格begin-->
+						<div class="tab-content">
+							<table id="agency-data" tool-bar="#agency-tool-bar" class="ufma-table">
+								<thead>
+									<tr>
+										<th style="width:20px;">
+											<label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
+                                    <input type="checkbox" class="datatable-group-checkable" data-set="#data-table .checkboxes"/>
+                                    <span></span>
+                                </label>
+										</th>
+										<th> 单位编码</th>
+										<th> 单位名称</th>
+										<th> 单位类型</th>
+										<th> 单位负责人</th>
+										<th> 财务负责人</th>
+										<th> 状态</th>
+										<th class="hide"> 账户信息</th>
+										<th> 操作</th>
+									</tr>
+								</thead>
+								<tbody>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</div>
+				<!--工作区底 begin-->
+				<div id="agency-tool-bar" class="ufma-tool-bar">
+					<div class="tool-bar-body">
+						<div class="ufma-tool-btns">
+							<label class="mt-checkbox mt-checkbox-outline margin-right-8">
+                        <input class="datatable-group-checkable" type="checkbox" name="test" value="1"> 全选
+                        <span></span>
+                    </label>
+							<button type="button" class="btn btn-sm btn-default btn-permission btn-deleteCheck">删除</button>
+							<button type="button" class="btn btn-sm btn-default btn-permission btn-start"> 启用</button>
+							<button type="button" class="btn btn-sm btn-default btn-permission btn-stop"> 停用</button>
+							<!--单位管理新增需求：bug81379 --单位管理增加excel导入单位数据的功能，导入方式和其他基础资料保持一致--zsj-->
+							<button type="button" class="btn btn-sm btn-default btn-permission btn-imp"> 导入</button>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!--编辑功能分类begin-->
+			<div id="agency-edt" class="ufma-modal">
+				<div class="u-msg-title">
+					<h4>单位管理</h4>
+				</div>
+				<div class="u-msg-content" style="position:relative">
+					<div class="container-fluid">
+						<div class="ufma-layout "><!--ufma-layout-slider-sm ufma-layout-fixed-slider ufma-layout-fixed-slider-right-->
+							<div class="ufma-layout-content">
+								<div class="panel ufma-panel">
+									<div class="panel-heading">
+										<div class="caption">基本信息</div>
+										<div class="actions">
+											<a data-toggle="collapse" href="#form-agency">
+												<span class="glyphicon icon-angle-bottom"></span>
+											</a>
+										</div>
+									</div>
+									<form id="form-agency" class="form-horizontal panel-collapse collapse in">
+										<div class="panel-body">
+												<div class="col-xs-9">
+											<input type="hidden" name="chrId" value="" />
+											<input type="hidden" name="lastVer" value="" />
+
+											<div class="row" style="margin-top:-10px;">
+												<div class="col-xs-6">
+													<div class="form-group required" style="padding-bottom: 10px;">
+														<label class="control-label em8">单位编码：</label>
+														<div class="control-element">
+															<input type="text" name="chrCode" id="agency-chrCode" class="form-control w180">
+														</div>
+													</div>
+												</div>
+												<div class="col-xs-6">
+													<div class="form-group required">
+														<label class="control-label em8">单位名称：</label>
+														<div class="control-element">
+															<input type="text" name="chrName" id="agency-chrName" class="form-control w180">
+														</div>
+													</div>
+												</div>
+											</div>
+
+											<div class="row">
+												<div class="col-xs-6">
+													<div class="form-group required" style="padding-bottom: 10px;">
+														<label class="control-label em8">行政区划：</label>
+														<div class="control-element">
+															<div id='agency-distCode' name="distCode" class="ufma-treecombox w180"></div>
+														</div>
+													</div>
+												</div>
+												<div class="col-xs-6">
+													<div class="form-group required">
+														<label class="control-label em8">组织机构代码：</label>
+														<div class="control-element">
+															<input type="text" name="orgCode" id="agency-orgCode" class="form-control w180">
+														</div>
+													</div>
+												</div>
+											</div>
+
+											<div class="row">
+												<div class="col-xs-6">
+													<div class="form-group">
+														<label class="control-label em8">单位类型：</label>
+														<div class="control-element">
+															<select class="form-control w180" style="width:180px!important;" name="divKind" id="agency-divKind" require-all=1 url="/df/fap/agency/pub/enumerate/AGENCY_TYPE_CODE?rgCode=87&setYear=2017" idField="ENU_CODE" textField="ENU_NAME">
+																<option value=""></option>
+															</select>
+														</div>
+													</div>
+												</div>
+												<div class="col-xs-6">
+													<div class="form-group" style="padding-bottom: 10px;">
+														<label class="control-label em8">分管领导：</label>
+														<div class="control-element">
+															<div id='agency-leaderCharge' name="leaderCharge" class="ufma-treecombox w180"></div>
+														</div>
+													</div>
+												</div>												
+											</div>
+											<div class="row">
+												<div class="col-xs-6">
+													<div class="form-group" style="padding-bottom: 10px;">
+														<label class="control-label em8">单位负责人：</label>
+														<div class="control-element">
+															<input type="text" name="enCharge" id="agency-enCharge" class="form-control w180">
+														</div>
+													</div>
+												</div>
+												<div class="col-xs-6">
+													<div class="form-group">
+														<label class="control-label em8">财务负责人：</label>
+														<div class="control-element">
+															<input type="text" name="financeCharge" id="agency-financeCharge" class="form-control w180">
+														</div>
+													</div>
+												</div>												
+											</div>									
+
+											<div class="row">
+
+												<div class="col-xs-6">
+													<div class="form-group">
+														<label class="control-label em8">单位电话：</label>
+														<div class="control-element">
+															<input type="text" name="telephone" id="agency-telephone" class="form-control w180">
+														</div>
+													</div>
+												</div>
+												<div class="col-xs-6">
+													<div class="form-group" style="padding-bottom: 10px;">
+														<label class="control-label em8">缩写名称：</label>
+														<div class="control-element">
+															<input type="text" name="shortName" id="agency-shortName" class="form-control w180">
+														</div>
+													</div>													
+												</div>												
+											</div>
+											<div class="row">
+												<div class="col-xs-6">
+													<div class="form-group">
+														<label class="control-label em8">片区：</label>
+														<div class="control-element">
+															<select class="form-control w180" style="width:180px!important;" name="areaZone" id="agency-areaZone" require-all=1 url="/ma/sys/eleAgency/areaZone" idField="CHR_CODE" textField="CHR_NAME">
+																<option value=""></option>
+															</select>
+														</div>
+													</div>
+												</div>
+												<div class="col-xs-6">
+													<div class="form-group" style="padding-bottom: 10px;">
+														<label class="control-label em8">币种：</label>
+														<div class="control-element">
+															<div id='agency-currencyCode' name="currencyCode" class="ufma-treecombox w180"></div>
+														</div>
+													</div>
+												</div>
+											</div>	
+											<div class="row">
+												<div class="col-xs-6">
+													<div class="form-group" style="padding-bottom: 10px;">
+														<label class="control-label em8">邮政编码：</label>
+														<div class="control-element">
+															<input type="text" name="postCode" id="agency-postCode" class="form-control w180">
+														</div>
+													</div>
+												</div>
+												<div class="col-xs-6">
+													<div class="form-group">
+														<label class="control-label em8">网址：</label>
+														<div class="control-element">
+															<input type="text" name="webUrl" id="agency-url" class="form-control w180">
+														</div>
+													</div>
+												</div>
+											</div>
+
+											<div class="row">
+												<div class="col-xs-12">
+													<div class="form-group" style="padding-bottom: 10px;">
+														<label class="control-label em8">单位地址：</label>
+														<div class="control-element">
+															<input type="text" name="address" id="agency-address" class="form-control" style="width:563px;">
+														</div>
+													</div>
+												</div>
+											</div>
+
+											<div class="row">
+												<div class="col-xs-6">
+													<div class="form-group" style="padding-bottom: 10px;">
+														<label class="control-label em8">是否预算单位：</label>
+														<div class="control-element">
+															<div class="btn-group" data-toggle="buttons">
+																<label class="btn btn-default active">
+		                                            <input type="radio" class="toggle" name="isBudg" value="1" checked>是</label>
+																<label class="btn btn-default">
+		                                            <input type="radio" class="toggle" name="isBudg" value="0">否</label>
+
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="col-xs-6">
+													<div class="form-group">
+														<label class="control-label em8">预算单位代码：</label>
+														<div class="control-element">
+															<input type="text" name="budgCoCode" id="agency-budgCoCode" class="form-control w180">
+														</div>
+													</div>
+												</div>
+											</div>
+
+											<div class="row">
+												<div class="col-xs-6">
+													<div class="form-group" style="padding-bottom: 10px;">
+														<label class="control-label em8">是否决算单位：</label>
+														<div class="control-element">
+															<div class="btn-group" data-toggle="buttons">
+																<label class="btn btn-default active">
+		                                            <input type="radio" class="toggle" name="isFinancial" value="1" checked>是</label>
+																<label class="btn btn-default">
+		                                            <input type="radio" class="toggle" name="isFinancial" value="0">否 </label>
+
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="col-xs-6">
+													<div class="form-group">
+														<label class="control-label em8">决算单位代码：</label>
+														<div class="control-element">
+															<input type="text" name="finalCoCode" id="agency-finalCoCode" class="form-control w180">
+														</div>
+													</div>
+												</div>
+											</div>
+
+											<div class="row">
+												<div class="col-xs-6">
+													<div class="form-group" style="padding-bottom: 10px;">
+														<label class="control-label em8">是否主管单位本级：</label>
+														<div class="control-element">
+															<div class="btn-group isSelfGroup" data-toggle="buttons">
+																<label class="btn btn-default active">
+		                                            <input type="radio" class="toggle" name="isSelf" value="1" checked>是</label>
+																<label class="btn btn-default">
+		                                            <input type="radio" class="toggle" name="isSelf" value="0">否 </label>
+
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="col-xs-6">
+													<div class="form-group">
+														<label class="control-label em8">是否国库集中支付：</label>
+														<div class="control-element">
+															<div class="btn-group" data-toggle="buttons">
+																<label class="btn btn-default active">
+		                                            <input type="radio" class="toggle" name="isAcc" value="1" checked>是 </label>
+																<label class="btn btn-default">
+		                                            <input type="radio" class="toggle" name="isAcc" value="0">否</label>
+
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+											<div class="row">
+												<div class="col-xs-6">
+													<div class="form-group" style="padding-bottom: 10px;">
+														<label class="control-label em8">是否启用：</label>
+														<div class="control-element">
+															<div class="btn-group" data-toggle="buttons">
+																<label class="btn btn-default active">
+		                                            <input type="radio" class="toggle" name="enabled" value="1" checked>启用 </label>
+																<label class="btn btn-default">
+		                                            <input type="radio" class="toggle" name="enabled" value="0">停用 </label>
+
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="col-xs-3">
+											<div class="ufma-layout-slider right">
+												<div class="panel ufma-panel ufma-panel-primary">
+													<div class="panel-heading">
+														<h4 class="panel-title">
+                                                          <div class="caption" style="margin-top:7px;">参考信息</div>
+                                                        </h4>
+													</div> 
+													<!--CWYXM-6400--单位管理中单位存在很多下级会遮挡 下面的遮挡信息--zsj-->
+													<div class="panel-collapse collapse in"style="max-height: 460px;overflow-y: scroll;">
+														<div class="panel-body">
+															<div id="ruleinfo" style="margin-bottom: 10px"></div>
+															<ul id="agency-help" class="list-inline list-inline-horizontal">
+																<li>请输入单位编码获得参考信息</li>
+															</ul>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+
+										</div>
+									
+									</form>
+
+								</div>
+
+								<!--账户信息：新增需求--begin--zsj-->
+								<div class="panel ufma-panel">
+									<div class="panel-heading">
+										<div class="caption">账户信息</div>
+										<div class="actions">
+											<a data-toggle="collapse" href="#accoMsg">
+												<span class="glyphicon icon-angle-bottom"></span>
+											</a>
+										</div>
+									</div>
+
+									<form id="accoMsg" class="panel-collapse collapse in">
+										<div class="panel-body" style="overflow-x: scroll;">
+											<table id="currentAccoTab" class="ufma-table dataTable table-edit bordered uf-rpt-table">
+												<thead>
+													<tr>
+														<th style="min-width: 30px;">序号</th>
+														<th style="min-width: 100px;">银行账户</th>
+														<th style="min-width: 185px;">账户名称</th>
+														<th style="min-width: 185px;">账户类型</th>
+														<th style="min-width: 185px;">银行类别</th>
+														<th style="min-width: 200px;">开户行</th>
+														<th style="min-width: 200px;">网点行号</th>
+														<th style="min-width: 200px;">省份</th>
+														<th style="min-width: 200px;">城市</th>
+														<th style="min-width: 200px;">人行联行号</th>
+														<th style="min-width: 30px;">操作</th>
+													</tr>
+												</thead>
+											</table>
+											<div class="text-center padding-15">
+												<a class="btn btn-sm btn-default" id="currentAccoMsg">
+													<span class="glyphicon icon-add"></span>
+													<span class="margin-left-15">新增账户信息</span>
+												</a>
+											</div>
+										</div>
+
+									</form>
+								</div>
+
+							</div>
+
+						</div>
+					</div>
+				</div>
+				<div class="u-msg-footer">
+					<button type="button" class="btn btn-sm btn-primary btn-permission btn-ajax btn-saveadd">保存并新增</button>
+					<button type="button" class="btn btn-sm btn-default btn-permission btn-ajax btn-save"> 保存</button>
+					<button type="button" class="btn btn-sm btn-default btn-close"> 取消</button>
+				</div>
+			</div>
+
+		</div>
+		<script src="../maCommon/maCommon.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+		<script src="agency.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+	</body>
+
+</html>

@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>银行对账单-设置导入方案</title>
+	<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+	<script src="../../../pub/boot.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+	<link rel="stylesheet" href="bankStatement.css?rev=@@hash" />
+</head>
+
+<body>
+	<div class="ufma-layout-updown" id="setDataFormat">
+		<div class="ufma-layout-up">
+			<div class="container-fluid">
+
+				<form id="infoForm" class="form-horizontal mb15">
+					<div class="form-row" style="margin-top: 15px;">
+						<div class="form-group">
+							<label class="control-label">方案名称：</label>
+							<div class="control-element">
+								<input type="hidden" name="lastVer" id="">
+								<input type="hidden" name="impScheGuid" id="">
+								<input type="text" name="impScheName" id="impScheName" class="form-control w200">
+							</div>
+						</div>
+						<div id= "impWay" class="form-group" style="display: none;">
+							<label class="control-label">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+							<div class="control-element impway-radio">
+								<label class="mt-radio mt-radio-outline margin-right-8">
+									<input class="" type="radio" name="amtImpType" value="2" checked> 按借贷方导入
+									<span></span>
+								</label>
+								<label class="mt-radio mt-radio-outline margin-right-8">
+									<input class="" type="radio" name="amtImpType" value="3"> 按金额列正数为借方金额
+									<span></span>
+								</label>
+								<label class="mt-radio mt-radio-outline margin-right-8">
+									<input class="" type="radio" name="amtImpType" value="4"> 按金额列负数为借方金额
+									<span></span>
+								</label>
+							</div>
+						</div>
+						<div class="clearfix"></div>
+					</div>
+				</form>
+
+				<!-- 文本文件start -->
+				<div class="radio-body1">
+					<div class="ufma-report-body">
+						<div class="ufma-report-tabs">
+							<ul class="nav nav-tabs">
+								<li class="active">
+									<a href="javascript:;">定长文件</a>
+								</li>
+								<li>
+									<a href="javascript:;">不定长文件</a>
+								</li>
+							</ul>
+						</div>
+						<div class="cont-tabs">
+							<!-- 定长文件 start -->
+							<div class="cont-tabs1 p15 br bb bl">
+								<form id="file-set-box1" class="form-horizontal mt15">
+									<div class="row file-input1">
+										<div class="col-xs-6">
+											<div class="form-group">
+												<label class="control-label em6">起始行：</label>
+												<div class="control-element">
+													<input type="text" name="startLine" id="startLine1" class="form-control ib" style="width:182px;" data-check="required">
+												</div>
+											</div>
+										</div>
+										<div class="col-xs-6">
+											<div class="form-group">
+												<label class="control-label em6">单据日期：</label>
+												<div class="control-element">
+													<input type="text" name="statementDate1" id="statementDate1" class="form-control w80 ib" data-check="required"> 至
+													<input type="text" name="statementDate2" id="statementDate2" class="form-control w80 ib" data-check="required">
+												</div>
+											</div>
+										</div>
+										<div class="col-xs-6">
+											<div class="form-group">
+												<label class="control-label em6">摘要：</label>
+												<div class="control-element">
+													<input type="text" name="descpt1" id="descpt1" class="form-control w80 ib"> 至
+													<input type="text" name="descpt2" id="descpt2" class="form-control w80 ib">
+												</div>
+											</div>
+										</div>
+										<!-- <div class="col-xs-6">
+											<div class="form-group">
+												<label class="control-label em6">借方金额：</label>
+												<div class="control-element">
+													<input type="text" name="amtDr1" id="amtDr1"
+														class="form-control w80 ib"> 至 <input type="text"
+														name="amtDr2" id="amtDr2" class="form-control w80 ib">
+												</div>
+											</div>
+										</div>
+										<div class="col-xs-6">
+											<div class="form-group">
+												<label class="control-label em6">贷方金额：</label>
+												<div class="control-element">
+													<input type="text" name="amtCr1" id="amtCr1"
+														class="form-control w80 ib"> 至 <input type="text"
+														name="amtCr2" id="amtCr2" class="form-control w80 ib">
+												</div>
+											</div>
+										</div> -->
+										<div class="col-xs-6">
+											<div class="form-group">
+												<label class="control-label em6">单据编号：</label>
+												<div class="control-element">
+													<input type="text" name="vouNo1" id="vouNo1" class="form-control w80 ib"> 至
+													<input type="text" name="vouNo2" id="vouNo2" class="form-control w80 ib">
+												</div>
+											</div>
+										</div>
+										<!-- <div class="col-xs-6">
+											<div class="form-group">
+												<label class="control-label em6">结算方式：</label>
+												<div class="control-element">
+													<input type="text" name="setmodeCode1" id="setmodeCode1"
+														class="form-control w80 ib"> 至 <input type="text"
+														name="setmodeCode2" id="setmodeCode2" class="form-control w80 ib">
+												</div>
+											</div>
+										</div> -->
+										<div class="col-xs-6">
+											<div class="form-group">
+												<label class="control-label em6">票据类型：</label>
+												<div class="control-element">
+													<input type="text" name="billType1" id="billType1" class="form-control w80 ib"> 至
+													<input type="text" name="billType2" id="billType2" class="form-control w80 ib">
+												</div>
+											</div>
+										</div>
+										<div class="col-xs-6">
+											<div class="form-group">
+												<label class="control-label em6">票据日期：</label>
+												<div class="control-element">
+													<input type="text" name="billDate1" id="billDate1" class="form-control w80 ib"> 至
+													<input type="text" name="billDate2" id="billDate2" class="form-control w80 ib">
+												</div>
+											</div>
+										</div>
+										<div class="col-xs-6">
+											<div class="form-group">
+												<label class="control-label em6">票据号：</label>
+												<div class="control-element">
+													<input type="text" name="billNo1" id="billNo1" class="form-control w80 ib"> 至
+													<input type="text" name="billNo2" id="billNo2" class="form-control w80 ib">
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-xs-6">
+											<div class="form-group">
+												<label class="control-label">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+												<div class="control-element dire1-radio">
+													<label class="mt-radio mt-radio-outline margin-right-8">
+														<input class="" type="radio" name="amtImpType1" value="1" checked> 按借贷方向
+														<span></span>
+													</label>
+													<label class="mt-radio mt-radio-outline margin-right-8">
+														<input class="" type="radio" name="amtImpType1" value="2"> 按金额
+														<span></span>
+													</label>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="row dire1-box1">
+										<div class="col-xs-6">
+											<div class="form-group">
+												<label class="control-label em6">借贷方向：</label>
+												<div class="control-element">
+													<input type="text" name="drCr1" id="drCr1" class="form-control w80 ib" data-check="required"> 至
+													<input type="text" name="drCr2" id="drCr2" class="form-control w80 ib" data-check="required">
+												</div>
+											</div>
+										</div>
+										<div class="col-xs-6">
+											<div class="form-group">
+												<label class="control-label em6">金额：</label>
+												<div class="control-element">
+													<input type="text" name="stadAmt1" id="stadAmt1" class="form-control w80 ib" data-check="required"> 至
+													<input type="text" name="stadAmt2" id="stadAmt2" class="form-control w80 ib" data-check="required">
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="row dire1-box2" style="display: none;">
+										<div class="col-xs-6">
+											<div class="form-group">
+												<label class="control-label em6">借方金额：</label>
+												<div class="control-element">
+													<input type="text" name="amtDr1" id="amtDr1" class="form-control w80 ib" data-check="required"> 至
+													<input type="text" name="amtDr2" id="amtDr2" class="form-control w80 ib" data-check="required">
+												</div>
+											</div>
+										</div>
+										<div class="col-xs-6">
+											<div class="form-group">
+												<label class="control-label em6">贷方金额：</label>
+												<div class="control-element">
+													<input type="text" name="amtCr1" id="amtCr1" class="form-control w80 ib" data-check="required"> 至
+													<input type="text" name="amtCr2" id="amtCr2" class="form-control w80 ib" data-check="required">
+												</div>
+											</div>
+										</div>
+									</div>
+								</form>
+							</div>
+							<!-- 定长文件 end -->
+
+							<!-- 不定长文件 start -->
+							<div id="" class="cont-tabs2 p15 br bb bl" style="display: none;">
+								<form id="file-set-box2" class="form-horizontal mt15">
+									<div class="row file-input2">
+										<div class="col-xs-6">
+											<div class="form-group">
+												<label class="control-label em6">起始行：</label>
+												<div class="control-element">
+													<input type="text" name="startLine" id="startLine2" class="form-control w200" data-check="required">
+												</div>
+											</div>
+										</div>
+										<div class="col-xs-6">
+											<div class="form-group">
+												<label class="control-label em6">分隔符：</label>
+												<div class="control-element">
+													<input type="text" name="delimiter" id="delimiter" class="form-control w200" data-check="required">
+												</div>
+											</div>
+										</div>
+										<div class="col-xs-6">
+											<div class="form-group">
+												<label class="control-label em6">单据日期：</label>
+												<div class="control-element">
+													<input type="text" name="statementDate" id="statementDate" class="form-control w200" data-check="required">
+												</div>
+											</div>
+										</div>
+										<div class="col-xs-6">
+											<div class="form-group">
+												<label class="control-label em6">摘要：</label>
+												<div class="control-element">
+													<input type="text" name="descpt" id="descpt" class="form-control w200">
+												</div>
+											</div>
+										</div>
+										<div class="col-xs-6">
+											<div class="form-group">
+												<label class="control-label em6">单据编号：</label>
+												<div class="control-element">
+													<input type="text" name="vouNo" id="vouNo" class="form-control w200">
+												</div>
+											</div>
+										</div>
+										<!-- <div class="col-xs-6">
+											<div class="form-group">
+												<label class="control-label em6">结算方式：</label>
+												<div class="control-element">
+													<input type="text" name="setmodeCode" id="setmodeCode"
+														class="form-control w200">
+												</div>
+											</div>
+										</div> -->
+										<div class="col-xs-6">
+											<div class="form-group">
+												<label class="control-label em6">票据类型：</label>
+												<div class="control-element">
+													<input type="text" name="billType" id="billType" class="form-control w200">
+												</div>
+											</div>
+										</div>
+										<div class="col-xs-6">
+											<div class="form-group">
+												<label class="control-label em6">票据日期：</label>
+												<div class="control-element">
+													<input type="text" name="billDate" id="billDate" class="form-control w200">
+												</div>
+											</div>
+										</div>
+										<div class="col-xs-6">
+											<div class="form-group">
+												<label class="control-label em6">票据号：</label>
+												<div class="control-element">
+													<input type="text" name="billNo" id="billNo" class="form-control w200">
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-xs-6">
+											<div class="form-group">
+												<label class="control-label">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+												<div class="control-element dire2-radio">
+													<label class="mt-radio mt-radio-outline margin-right-8">
+														<input class="" type="radio" name="amtImpType2" value="1" checked> 按借贷方向
+														<span></span>
+													</label>
+													<label class="mt-radio mt-radio-outline margin-right-8">
+														<input class="" type="radio" name="amtImpType2" value="2"> 按金额
+														<span></span>
+													</label>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="row dire2-box1">
+										<div class="col-xs-6">
+											<div class="form-group">
+												<label class="control-label em6">借贷方向：</label>
+												<div class="control-element">
+													<input type="text" name="drCr" id="drCr" class="form-control w200" data-check="required">
+												</div>
+											</div>
+										</div>
+										<div class="col-xs-6">
+											<div class="form-group">
+												<label class="control-label em6">金额：</label>
+												<div class="control-element">
+													<input type="text" name="stadAmt" id="stadAmt" class="form-control w200" data-check="required">
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="row dire2-box2" style="display: none;">
+										<div class="col-xs-6">
+											<div class="form-group">
+												<label class="control-label em6">借方金额：</label>
+												<div class="control-element">
+													<input type="text" name="amtDr" id="amtDr" class="form-control w200" data-check="required">
+												</div>
+											</div>
+										</div>
+										<div class="col-xs-6">
+											<div class="form-group">
+												<label class="control-label em6">贷方金额：</label>
+												<div class="control-element">
+													<input type="text" name="amtCr" id="amtCr" class="form-control w200" data-check="required">
+												</div>
+											</div>
+										</div>
+									</div>
+								</form>
+							</div>
+							<!-- 不定长文件 end -->
+						</div>
+					</div>
+				</div>
+				<!-- 文本文件end -->
+
+				<!-- Excel start -->
+				<div class="radio-body2" style="display: none;">
+					<form id="excelForm" class="form-horizontal mt15">
+						<div id="excelTable"></div>
+						<br/>
+					</form>
+				</div>
+				<!-- Excel end -->
+			</div>
+		</div>
+		<div class="ufma-layout-down bordered-top">
+			<div class="text-right margin-right-30">
+				<button type="button" class="btn btn-primary btn-save btn-ajax">保存</button>
+				<button type="button" class="btn btn-primary btn-save-new btn-ajax btn-saveas">另存为</button>
+				<button type="button" class="btn btn-primary btn-delete btn-ajax">删除</button>
+				<button type="button" class="btn btn-default btn-close">取消</button>
+			</div>
+		</div>
+	</div>
+	<script src="setDataFormat.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+</body>
+
+</html>

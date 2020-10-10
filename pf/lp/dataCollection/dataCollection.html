@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+  		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>数据采集</title>
+  		<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+		<script src="../../pub/boot.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+		<link rel="stylesheet" type="text/css" href="../lpCommon/lpCommon.css?rev=@@hash"/>
+		<link rel="stylesheet" type="text/css" href="fileinput.css?rev=@@hash" />
+		<link rel="stylesheet" type="text/css" href="dataCollection.css?rev=@@hash"/>
+		<script type="text/javascript">
+            document.write('<script src="' + bootPath + 'agla-trd/fileinput/fileinput.js" type="text/javascript"></sc' + 'ript>');
+            document.write('<script src="' + bootPath + 'agla-trd/fileinput/zh.js" type="text/javascript"></sc' + 'ript>');
+		</script>
+		<style>
+			.file-preview-frame{
+				width: 230px!important;
+			}
+			.attach-img-file{
+				width: auto!important;
+			}
+			.file-preview-status{
+				display: none!important;
+			}
+			/*.file-drop-zone-title{*/
+				/*display: none!important;*/
+			/*}*/
+			.file-drop-zone {
+				 min-height:1px;
+			 }
+			/*.file-preview{*/
+				/*border: none;*/
+			/*}*/
+		</style>
+	</head>
+<body>
+<div id="dataCollection" class="container-fluid ufma-container">
+	<div class="workspace">
+    	<div class="lp-workspace">
+    		<div class="lp-selete-box bordered-bottom">
+    			<div class="lp-title">财务数据交换</div>
+				<ul class="lp-selete-list">
+					<li class="lp-selete-list-li">
+						<div id='cbAgency' name="agencyCode" class="ufma-treecombox ufma-combox-agency" icon="icon-unit"
+							 valueField="id" textField="name"
+							 placeholder="请选择单位"></div>
+					</li>
+					<li class="lp-selete-list-li">
+						<div id='cbAcct' class="uf-combox ufma-combox-acct"></div>
+					</li>
+				</ul>
+    		</div>
+			<div class="lp-content">
+				<div>
+					<ul class="nav nav-tabs">
+						<li class="active" index="0"><a href="javascript:;">基础数据导出</a></li>
+						<li index="1"><a href="javascript:;">基础数据导入</a></li>
+						<li index="2"><a href="javascript:;">凭证数据导出</a></li>
+						<li index="3"><a href="javascript:;">凭证数据导入</a></li>
+					</ul>
+				</div>
+				<div class="tab-content-box">
+					<div class="content clearfix">
+						<div class="content-left fl">
+							<div class="data-part">
+								<div class="data-row clearfix">
+									<div class="title">系统级</div>
+								</div>
+								<div class="data-con clearfix">
+									<div class="base-data-tree xt-tree">
+										<ul id="baseTreeXt" class="ufmaTree ztree"></ul>
+									</div>
+								</div>
+							</div>
+							<div class="data-part" style="margin-bottom: 40px">
+								<div class="data-row clearfix" style="border-left:1px solid #d9d9d9;border-right: 1px solid #d9d9d9;">
+									<div class="title">单位级</div>
+								</div>
+								<div class="data-con clearfix">
+									<!--<div><input type="text" id="key" class="bordered-input padding-3" placeholder="按末级单位编码搜索"/></div>-->
+									<div class="base-data-tree agency-tree">
+										<ul id="baseTreeAgency" class="ufmaTree ztree"></ul>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="content-right">
+							<div class="export-result-outter" id="a01">
+								<div class="export-result xt-result"></div>
+							</div>
+						</div>
+					</div>
+					<div class="content" style="display: none">
+						<div class="vou-data-btns" style="display: inline-block;"></div>
+						<!-- <div style="margin-left: 280px;margin-top: 20px;float: left;">
+							
+						<label class="mt-checkbox mt-checkbox-outline" id="isHaveAmtAndCur">
+							<input type="checkbox" class="rptOption"  name="isHaveAmtAndCur1" value="" id="isHaveAmtAndCurCheck1">按目标系统数据规则导入
+							<span></span>
+						</label>
+						<label class="mt-checkbox mt-checkbox-outline" id="isHaveAmtAndCur">
+							<input type="checkbox" class="rptOption"  name="isHaveAmtAndCu2r" value="" id="isHaveAmtAndCurCheck2">覆盖基础资料编码相同的数据
+							<span></span>
+						</label>
+						</div> -->
+						<div class="vou-data-upload">
+							<form id="textFileFrom" enctype="multipart/form-data">
+								<input type="file" name="export_file" id="export_file" multiple class="file-loading" />
+							</form>
+							<div class="upload-result hidden">
+								<div class="sign">
+									<div class="title">已识别的文件</div>
+									<div class="result-con"></div>
+								</div>
+								<div class="no-sign">
+									<div class="title">无法识别的文件</div>
+									<div  class="result-con"></div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="content" style="display: none">
+						<table class="ufma-table table-bordered voutable">
+							<tr>
+								<th>
+									<label class="mt-checkbox mt-checkbox-outline">
+										<input type="checkbox" name=""  id="checkall" autocomplete="off">
+										<span></span>
+									</label>
+								</th>
+								<th>期间</th>
+								<th>导出结果</th>
+							</tr>
+							<tr>
+								<td>
+									<label class="mt-checkbox mt-checkbox-outline">
+										<input type="checkbox" name="" class="checkdan" value="0" autocomplete="off">
+										<span></span>
+									</label>
+								</td>
+								<td>期初科目余额</td>
+								<td class="datas" item = '期初科目余额'></td>
+							</tr>
+							<tr>
+								<td>
+									<label class="mt-checkbox mt-checkbox-outline">
+										<input type="checkbox" name="" class="checkdan" value="1" autocomplete="off">
+										<span></span>
+									</label>
+								</td>
+								<td>01期间</td>
+								<td class="datas" item = '第1期间'></td>
+							</tr>
+							<tr>
+								<td>
+									<label class="mt-checkbox mt-checkbox-outline">
+										<input type="checkbox" name="" class="checkdan" value="2" autocomplete="off">
+										<span></span>
+									</label>
+								</td>
+								<td>02期间</td>
+								<td class="datas" item = '第2期间'></td>
+							</tr>
+							<tr>
+								<td>
+									<label class="mt-checkbox mt-checkbox-outline">
+										<input type="checkbox" name="" class="checkdan" value="3" autocomplete="off">
+										<span></span>
+									</label>
+								</td>
+								<td>03期间</td>
+								<td class="datas" item = '第3期间'></td>
+							</tr>
+							<tr>
+								<td>
+									<label class="mt-checkbox mt-checkbox-outline">
+										<input type="checkbox" name="" class="checkdan" value="4" autocomplete="off">
+										<span></span>
+									</label>
+								</td>
+								<td>04期间</td>
+								<td class="datas" item = '第4期间'></td>
+							</tr>
+							<tr>
+								<td>
+									<label class="mt-checkbox mt-checkbox-outline">
+										<input type="checkbox" name="" class="checkdan" value="5" autocomplete="off">
+										<span></span>
+									</label>
+								</td>
+								<td>05期间</td>
+								<td class="datas" item = '第5期间'></td>
+							</tr>
+							<tr>
+								<td>
+									<label class="mt-checkbox mt-checkbox-outline">
+										<input type="checkbox" name="" class="checkdan" value="6" autocomplete="off">
+										<span></span>
+									</label>
+								</td>
+								<td>06期间</td>
+								<td class="datas" item = '第6期间'></td>
+							</tr>
+							<tr>
+								<td>
+									<label class="mt-checkbox mt-checkbox-outline">
+										<input type="checkbox" name="" class="checkdan" value="7" autocomplete="off">
+										<span></span>
+									</label>
+								</td>
+								<td>07期间</td>
+								<td class="datas" item = '第7期间'></td>
+							</tr>
+							<tr>
+								<td>
+									<label class="mt-checkbox mt-checkbox-outline">
+										<input type="checkbox" name="" class="checkdan" value="8" autocomplete="off">
+										<span></span>
+									</label>
+								</td>
+								<td>08期间</td>
+								<td class="datas" item = '第8期间'></td>
+							</tr>
+							<tr>
+								<td>
+									<label class="mt-checkbox mt-checkbox-outline">
+										<input type="checkbox" name="" class="checkdan" value="9" autocomplete="off">
+										<span></span>
+									</label>
+								</td>
+								<td>09期间</td>
+								<td class="datas" item = '第9期间'></td>
+							</tr>
+							<tr>
+								<td>
+									<label class="mt-checkbox mt-checkbox-outline">
+										<input type="checkbox" name="" class="checkdan" value="10" autocomplete="off">
+										<span></span>
+									</label>
+								</td>
+								<td>10期间</td>
+								<td class="datas" item = '第10期间'></td>
+							</tr>
+							<tr>
+								<td>
+									<label class="mt-checkbox mt-checkbox-outline">
+										<input type="checkbox" name="" class="checkdan" value="11" autocomplete="off">
+										<span></span>
+									</label>
+								</td>
+								<td>11期间</td>
+								<td class="datas" item = '第11期间'></td>
+							</tr>
+							<tr>
+								<td>
+									<label class="mt-checkbox mt-checkbox-outline">
+										<input type="checkbox" name="" class="checkdan" value="12" autocomplete="off">
+										<span></span>
+									</label>
+								</td>
+								<td>12期间</td>
+								<td class="datas" item = '第12期间'></td>
+							</tr>
+						</table>
+						<div class="vou-btns" style="margin-left: 650px;">
+							<button id="files-vou" type="button" class="btn btn-primary">导出</button>
+						</div>
+						<!-- <div class="content-right">
+							<div class="export-result-outter" id="a01">
+								<div class="export-result xt-result"></div>
+							</div>
+						</div> -->
+					</div>
+					<div class="content" style="display: none">
+						<div class="vou-data-btns" style="display: inline-block;"></div>
+						<!-- <div style="margin-left: 280px;margin-top: 20px;float: left;">
+							<label class="mt-checkbox mt-checkbox-outline" id="isHaveAmtAndCur">
+								<input type="checkbox" class="rptOption"  name="isHaveAmtAndCur1" value="" id="isHaveAmtAndCurCheck1">按目标系统数据规则导
+								<span></span>
+							</label>
+						</div> -->
+						<div class="vou-data-upload">
+							<form id="textFileFrom" enctype="multipart/form-data">
+								<input type="file" name="txt_file" id="txt_file" multiple class="file-loading" />
+							</form>
+							<div class="upload-result hidden">
+								<div class="sign">
+									<div class="title">已识别的文件</div>
+									<div class="result-con"></div>
+								</div>
+								<div class="no-sign">
+									<div class="title">无法识别的文件</div>
+									<div  class="result-con"></div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="export-btns">
+				<button id="files-export" type="button" class="btn btn-primary">导出</button>
+			</div>
+    	</div>
+	</div>
+</div>
+<script src="dataCollection.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+</body>
+</html>

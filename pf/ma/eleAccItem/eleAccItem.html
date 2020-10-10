@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>辅助核算</title>
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <script src="../../pub/boot.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+    <style>
+        /* 强制和外面的 outDiv overflow一样*/
+        .dataTables_wrapper {
+overflow: initial !important;
+}
+    </style>
+</head>
+
+<body>
+    <div id="eleAccItem" class="container-fluid ufma-container">
+        <!--工作区开始-->
+        <div class="workspace">
+            <!--工作区顶部开始-->
+            <div class="workspace-top">
+                <div class="container-fluid">
+                    <div class="ufma-portlet">
+                        <div class="portlet-title">
+                            <div class="caption">
+                                <span class="caption-subject font-dark uppercase">辅助核算</span>
+                            </div>
+                            <div class="actions">
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-sm btn-primary btn-permission btn-start">启用</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--工作区顶部结束-->
+            <div class="workspace-center">
+                <div class="container-fluid">
+<!--                    <div class="table-sub clearfix">
+                        <div class="table-sub-action pull-right">
+                            <div class="iframeBtnsSearch" id="index-search">
+                                <input type="text" class="searchHide focusOff bordered" style="right:46px!important;" placeholder="请输入要搜索的关键词">
+                                <input type="hidden" class="searchValueHide">
+                                <button class="btn btn-default btn-sm btn-permission btn-search" id="searchHideBtn">
+                                <i class="glyphicon icon-search"></i>
+                            </button>
+                            </div>
+                        </div>
+                    </div>-->
+                    <div id="expfunc-main" class="tab-content">
+
+                        <!--主体部分begin-->
+                        <table id="eleAccItem-data" tool-bar="#eleAccItem-tool-bar" class="ufma-table">
+                            <thead>
+                                <!-- <tr>
+                                    <th> 辅助核算名称 </th>
+                                    <th> 编码规则 </th>
+                                    <th> 控制方式</th>
+                                    <th> 操作 </th>
+                                </tr> -->
+                            </thead>
+                            <tbody>
+                            </tbody>
+                        </table>
+                        <!--主体部分end-->
+
+                    </div>
+                </div>
+            </div>
+<!--            <div id="eleAccItem-tool-bar" class="ufma-tool-bar">
+                <div class="tool-bar-body">
+                    <div class="ufma-tool-btns">
+                        
+                    </div>
+                </div>
+            </div>-->
+        </div>
+    </div>
+    <script src="../maCommon/maCommon.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+    <script src="eleAccItem.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+</body>
+
+</html>

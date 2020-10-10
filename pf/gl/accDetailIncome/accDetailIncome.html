@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>应收款明细账</title>
+		<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+
+		<script src="../../pub/boot.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+		<link rel="stylesheet" href="accDetailIncome.css?rev=@@hash" />
+	</head>
+
+	<body id="accDetailIncome" style="overflow-x:hidden;">
+		<div class="container-fluid ufma-container">
+			<input type="hidden" value="accDetailIncome" data-name="accDetailIncome" class="rptType" />
+			<!--accDetailIncome-->
+
+			<!--工作区 begin-->
+			<div class="workspace">
+				<!--账表工作区 begin-->
+				<div class="rpt-workspace">
+					<div class="rpt-selete-box bordered-bottom" style="margin-top:-8px;">
+						<div class="rpt-title">应收款明细账</div>
+						<ul class="rpt-selete-list">
+							<li class="rpt-selete-list-li">
+								<div id='cbAgency' class="ufma-treecombox ufma-combox-agency"></div>
+							</li>
+							<li class="rpt-selete-list-li">
+								<div id='cbAcct' class="ufma-combox ufma-combox-acct"></div>
+							</li>
+						</ul>
+						<div class="rpt-method-tip">
+							<button id="showMethodTip" class="btn btn-primary glyphicon icon-file"></button>
+							<div id="rptPlanList" class="rptPlanList hide">
+							</div>
+						</div>
+						<div class="rpt-clear"></div>
+					</div>
+
+					<div class="rpt-box rpt-query-box bordered-bottom">
+						<div class="rpt-query-box-left">
+							<form id="frmQuery" class="form-horizontal">
+								<div class="form-row">
+									<div class="form-group">
+										<label class="control-label auto" style="margin-left:40px;">期间：</label>
+										<div class="control-element pr10" id="timeBring" name="period" style="padding-top:3px;">
+											<a name="period" id="dateBn" class="label label-radio selected">本年</a>
+											<a name="period" id="dateBq" class="label label-radio">本期</a>
+											<a name="period" id="dateJr" class="label label-radio">今日</a>
+										</div>
+										<div class="control-element" style="width:120px;margin-left:-35px;">
+											<div id="dateStart" name="dateStart" class="uf-datepicker" style="width:120px;"></div>
+										</div>
+										<span class="split">至</span>
+										<div class="control-element">
+											<div id="dateEnd" name="dateEnd" class="uf-datepicker" style="width:120px;"></div>
+										</div>
+									</div>
+									<div class="form-group" style="margin-left:30px;">
+										<label class="control-label auto">会计科目：</label>
+										<div class="control-element rpt-query-li-selete">
+											<div class="rpt-p-search-key" style="width: 160px;" id="queryAcco" name="queryAcco">
+												<input type="text" readonly id="ACCO-data-key" value="全部">
+												<span class="search-btn icon icon-writeoff" style="right:40px;"></span>
+											</div>
+										</div>
+
+									</div>
+									<div class="clearfix"></div>
+								</div>
+							</form>
+							<form id="queryMore" class="form-horizontal none m10">
+								<div class="form-row" style="margin-bottom: 0;">
+									<div class="form-group" style="position: relative">
+										<!--<label class="control-label auto">往来单位：</label>-->
+										<div style="display: inline-block">
+											<button class="btn btn-default" id="colAction" data-type="01" style="padding: 4px 11px">
+												<span class="text">单位</span>
+												<span class="glyphicon icon-angle-bottom"></span>
+											</button>
+											<div class="rpt-funnel rpt-funnelBox rpt-funnelBoxList" style="position: absolute;display: none;width: 70px;left: 0">
+												<div id="colList" class="rpt-colList" style="min-width: 48px">
+													<span data-type="01" style="display: block;text-align: center;cursor: pointer">单位</span>
+													<span data-type="02" style="display: block;text-align: center;cursor: pointer">个人</span>
+												</div>
+											</div>
+										</div>
+										<div class="control-element" style="padding-left: 4px">
+											<div id="cbCurrent" name="cbCurrent" class="uf-treecombox" style="width:174px;"></div>
+										</div>
+									</div>
+									<div class="form-group" style="height:40px;">
+										<label class="control-label auto" style="margin-left:-17px;">票据类型：</label>
+										<div class="control-element">
+											<div id="billType" name="billType" class="uf-treecombox" style="width:205px;"></div>
+										</div>
+									</div>
+									<div class="form-group">
+										<label class="control-label auto" style="margin-left:30px;">票据号：</label>
+										<div class="control-element">
+											<input type="text" name="billNo" id="billNo" class="form-control" style="width:160px;" onkeyup="this.value=this.value.replace(/\D/g,'')" onafterpaste="this.value=this.value.replace(/\D/g,'')" />
+										</div>
+									</div>
+									<div class="clearfix"></div>
+								</div>
+								<!--第二行-->
+								<div class="form-row" style="margin-bottom: 0;">
+									<div class="form-group">
+										<label class="control-label auto" style="margin-left:27px;">状态：</label>
+										<div class="control-element pr10" name="hxType" style="padding-top:3px;margin-left:5px;" id="hxType">
+											<a name="currentTypeSign" class="label label-radio allComp selected" value="" id="allType" style="width:46px;height: 26px;">全部</a>
+											<a name="currentTypeSign" class="label label-radio noComp" value="0" id="whxType" style="width:60px;height: 26px;">未核销</a>
+											<a name="currentTypeSign" class="label label-radio comp" value="1" id="yhxType" style="width:60px;height: 26px;">已核销</a>
+										</div>
+									</div>
+									<div class="form-group">
+										<div class="rpt-query-box-li-chr">
+											<label class="rpt-query-li-cont-title" style="margin-left:-55px;">凭证字号：</label>
+											<div class="rpt-query-li-cont" style="margin-left:-60px;">
+												<select id="vouTypeCode" name="vouTypeCode" class="rpt-select-60 bordered-input"></select>
+												<input id="startVouNo" name="startVouNo" class="rpt-input-60 bordered-input input-height" onkeyup="this.value=this.value.replace(/\D/g,'')" onafterpaste="this.value=this.value.replace(/\D/g,'')" /> 至
+												<input id="endVouNo" name="endVouNo" class="rpt-input-60 bordered-input input-height" onkeyup="this.value=this.value.replace(/\D/g,'')" onafterpaste="this.value=this.value.replace(/\D/g,'')" />
+											</div>
+										</div>
+
+									</div>
+
+									<div class="form-group" style="margin-left:575px;margin-top:-30px;">
+										<label class="control-label auto">核销截止日期：</label>
+										<div class="control-element">
+											<div id="endCurDate" name="endCurDate" class="uf-datepicker" style="width: 180px;"> </div>
+										</div>
+									</div>
+									<div class="clearfix"></div>
+								</div>
+								<ul class="rpt-query-box-bottom" style="display: block;margin-bottom:0px;">
+									<li class="rpt-query-box-li" style="margin-left:-30px;">
+										<label class="rpt-query-li-cont-title">其他：</label>
+										<div class="rpt-query-li-cont" style="margin-left:9px;">
+											<label class="mt-checkbox mt-checkbox-outline" style="margin-top:6px;" id="pzCheck">
+												<input type="checkbox" checked="" id="IS_INCLUDE_UNPOST" name="IS_INCLUDE_UNPOST">含未记账凭证<span></span></label>
+										</div>
+									</li>
+								</ul>
+							</form>
+						</div>
+						<div class="rpt-query-box-right">
+							<label class="label label-more" data-target="#queryMore">更多<i class="glyphicon icon-angle-bottom"></i></label>
+							<div class="rpt-query-btn">
+								<button id="btnQuery" class="btn btn-primary btn-query btn-permission">查询</button>
+								<button id="saveMethod" class="btn btn-default btn-save btn-permission">保存</button>
+							</div>
+						</div>
+					</div>
+
+					<div class="rpt-box rpt-table-box">
+						<div class="rpt-table-sub">
+							<div class="rpt-table-sub-tip hide">
+								<span class=" change-rpt-type hide">格式：
+							<i data-toggle="tooltip" title="点击选择" data-type="SANLAN">三栏式</i>
+							<select>
+								<option value="SANLAN">三栏式</option>
+							</select>
+						</span>
+							</div>
+
+							<div class="table-sub-action pull-right" style="margin-top:3px;">
+								<div class="iframeBtnsSearch" id="index-search" style="margin-left:5px;">
+									<input type="text" class="searchHide focusOff bordered" placeholder="请输入要搜索的关键词">
+									<input type="hidden" class="searchValueHide">
+									<button class="btn btn-default btn-sm btn-permission btn-search" id="searchHideBtn">
+                            <i class="glyphicon icon-search"></i> 
+                        </button>
+								</div>
+								<div id="dtToolbar" class="btn-group" style="display: inline-block">
+								</div>
+							</div>
+							<div class="rpt-clear"></div>
+						</div>
+						<div class="rpt-table-tab" style="width:100%;overflow:hidden;">
+							<table id="incomeTable" class="ufma-table uf-rpt-table" tool-bar="#tool-bar">
+								<thead id="incomeTableThead">
+								</thead>
+							</table>
+						</div>
+					</div>
+				</div>
+				<!--账表工作区 end-->
+
+				<!--工作区底 begin-->
+				<div id="tool-bar" class="ufma-tool-bar">
+					<div class="tool-bar-body">
+					</div>
+				</div>
+				<!--工作区底 end-->
+			</div>
+			<!--工作区 end-->
+
+			<table id="SANLAN" style="display:none;">
+				<tr>
+					<th colspan="3">日期</th>
+					<!-- class="tabDateCol"-->
+					<th rowspan="2">凭证号 </th>
+					<th rowspan="2">摘要</th>
+					<th rowspan="2">会计科目</th>
+					<th rowspan="2">票据类型</th>
+					<th rowspan="2">票据号</th>
+					<th rowspan="2">往来单位</th>
+					<th rowspan="2">借方金额</th>
+					<th rowspan="2">贷方金额</th>
+					<th rowspan="2">方向</th>
+					<th rowspan="2">余额</th>
+				</tr>
+				<tr>
+					<th width="40" parent-title="2017-" class="editYear">年</th>
+					<th width="40" parent-title="2017-" class="editYear">月</th>
+					<th width="40" parent-title="2017-" class="editYear">日</th>
+				</tr>
+			</table>
+			<!--保存查询方案 modal start-->
+			<div id="saveMethod-box" class="ufma-modal">
+				<div class="u-msg-title">
+					<h4>保存查询方案</h4>
+				</div>
+				<div class="u-msg-content">
+					<form class="form-horizontal rpt-method-form">
+						<div class="form-group">
+							<label class="control-label">命名：</label>
+							<div class="control-element">
+								<input id="methodName" type="text" class="form-control" style="width: 300px;">
+							</div>
+						</div>
+						<div class="form-group" style="margin-left:55px;">
+							<label class="mt-radio mt-radio-outline margin-right-8 rpt-radio-span">
+                        <input class="" type="radio" name="prjScope" value="1" checked> 私有方案
+                        <span></span>
+                    </label>
+							<label class="mt-radio mt-radio-outline margin-right-8 rpt-radio-span">
+                        <input class="" type="radio" name="prjScope" value="2"> 本单位共享
+                        <span></span>
+                    </label>
+							<label class="mt-radio mt-radio-outline margin-right-8 rpt-radio-span">
+                        <input class="" type="radio" name="prjScope" value="3"> 全系统共享
+                        <span></span>
+                    </label>
+						</div>
+					</form>
+				</div>
+				<div class="u-msg-footer">
+					<button id="sureSaveMethod" type="button" class="btn btn-primary">保存</button>
+					<button id="saveAs" type="button" class="btn btn-default">另存为</button>
+					<button type="button" class="btn btn-default btn-close">取消</button>
+				</div>
+			</div>
+			<!--保存查询方案 modal end-->
+
+		</div>
+		<script src="dm.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+		<script src="accDetailPub.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+		<script src="accDetailIncome.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+	</body>
+
+</html>

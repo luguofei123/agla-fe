@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+  		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>凭证打印-打印设置</title>
+  		<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+		<script src="../../pub/boot.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+		<link rel="stylesheet" type="text/css" href="vouPrintPrintSetOther.css?rev=@@hash"/>
+	</head>
+	<body id="vouPrintPrintSet">
+		<div class="ufma-layout-updown">
+            <div class="ufma-layout-up">
+            	<div class="container-fluid margin-left-15 margin-right-15">
+            		<!-- 页面设置 begin -->
+                	<div class="panel ufma-panel" style="margin-top: 20px;">
+                		<div class="panel-heading">
+                                <div class="caption">页面设置</div>
+                                <div class="actions">
+                                    <a data-toggle="collapse" href="#ymsz">
+                                        <span class="glyphicon icon-angle-bottom"></span>
+                                    </a>
+                                </div>
+                        </div>
+                        
+                        <div id="ymsz" class="panel-collapse collapse in">
+                			<div class="panel-body">
+                				<div class="container-fluid form-horizontal">
+                					<dl class="dl-horizontal">
+                						<dt style="margin-top: 0; padding-top: 4px;">账套：</dt>
+										<dd style="margin-top: 0;">
+											<select name="" id="prtAcctList" class="bordered-input padding-3">
+													<!--账套 开始位置-->
+													
+											</select>
+										</dd>
+                						<dt style="margin-top: 0; padding-top: 4px;">凭证模板：</dt>
+                						<dd style="margin-top: 0;">
+                							<ul class="list-unstyled">
+                								<li>
+                									<select name="" id="prtFormatList" class="bordered-input padding-3">
+                										<!--模板 开始位置-->
+                										
+                									</select>	
+                									<span class="rimsurl" style="color: #0c8deb;cursor: pointer;">自定义模板</span>
+                									&nbsp;&nbsp;&nbsp;<span class="rimsurls" style="color: #0c8deb;cursor: pointer;">设置</span>
+                								</li>
+                								<!-- <li>
+                									<label class="mt-checkbox mt-checkbox-outline">
+														<input type="checkbox" name="tmplType" id="tmplType">套打
+														<span></span>
+													</label>
+                								</li> -->
+                								<li>
+                									<label class="mt-checkbox mt-checkbox-outline">
+														<input type="checkbox" name="defaultimpl" id="defaultimpl">默认
+														<span></span>
+													</label>
+                								</li>
+                							</ul>
+                						</dd>
+                						<!-- <dt>纸张大小></dt>
+                						<dd data-name="size"></dd>
+                						<dt>页面方向：</dt>
+                						<dd data-name="orientation"></dd>
+                						<dt>页边距></dt>
+                						<dd data-name="margin"></dd> -->
+                					</dl>
+               					</div>
+             				</div>
+             				
+             				<div class="img"></div>
+                        </div>
+                	</div>
+                	<!-- 页面设置 end -->
+                	
+                	<!-- 打印数据设置 begin -->
+                	<div class="panel ufma-panel">
+                		<div class="panel-heading">
+                                <div class="caption">打印数据设置</div>
+                                <div class="actions">
+                                    <a data-toggle="collapse" href="#dysjsz">
+                                        <span class="glyphicon icon-angle-bottom"></span>
+                                    </a>
+                                </div>
+                        </div>
+                        
+                        <div id="dysjsz" class="panel-collapse collapse in">
+                			<div class="panel-body">
+                				<div class="container-fluid form-horizontal">
+                					<ul class="list-unstyled">
+                						<li class="clearfix">
+                							<!--科目 begin-->
+                							<div class="pull-left">
+                								<span>科目：</span>
+                								<label class="mt-checkbox mt-checkbox-outline">
+													<input type="checkbox" name="print-name" value="0">打印代码
+													<span></span>
+												</label>
+												<label class="mt-checkbox mt-checkbox-outline">
+													<input type="radio" name="print-name" value="1">打印名称
+													<span></span>
+												</label>
+												<label class="mt-checkbox mt-checkbox-outline">
+													<input type="radio" name="print-name" value="2">打印全称
+													<span></span>
+												</label>
+                							</div>
+                							<!--科目 end-->
+                							
+                							<!--合计值 begin-->
+                							<div class="pull-left">
+                								<span>合计行：</span>
+												<label class="mt-checkbox mt-checkbox-outline">
+													<input type="radio" name="print-sum" value="0">累计值 
+													<span></span>
+												</label>
+												<label class="mt-checkbox mt-checkbox-outline">
+													<input type="radio" name="print-sum" value="1" checked="checked">当前页小计值
+													<span></span>
+												</label>
+												<label class="mt-checkbox mt-checkbox-outline">
+													<input type="radio" name="print-sum" value="2">合计值
+													<span></span>
+												</label>
+                							</div>
+                							<!--合计值 end-->
+                						</li>
+                						<!--********外币目前先隐藏********-->
+                						<li class="clearfix" style="display: none;">
+                							<!--数量/外币打印 begin-->
+                							<div class="pull-left">
+                								<span>数量/外币打印：</span>
+												<label class="mt-checkbox mt-checkbox-outline">
+													<input type="radio" name="print-num" id="">数量/外币自动切换模板 
+													<span></span>
+												</label>
+												<label class="mt-checkbox mt-checkbox-outline">
+													<input type="radio" name="print-num" id="">数量外币在摘要中打印
+													<span></span>
+												</label>
+                							</div>
+                							<!--数量/外币打印 end-->
+                						</li>
+                						<!--********外币目前先隐藏********-->
+                					</ul>
+               						
+               						<div style="border:1px solid #D9D9D9">
+               						<table id="vpps-data" tool-bar="#vpps-tool-bar" style="border:none;" class="ufma-table dataTable">
+				    					<thead>
+				    						<tr>
+				    							<th rowspan="2">打印项</th>
+				    							<th rowspan="2">编码规则</th>
+				    							<th rowspan="2">是否打印</th>
+				    							<th rowspan="2">打印代码</th>
+				    							<th rowspan="2">打印名称</th>
+				    							<th rowspan="2">打印全称</th>
+				    							<th colspan="11">汇总打印级次</th>
+				    						</tr>
+				    						<tr>
+				    							<th>明细</th>
+				    							<th>一</th>
+				    							<th>二</th>
+				    							<th>三</th>
+				    							<th>四</th>
+				    							<th>五</th>
+				    							<th>六</th>
+				    							<th>七</th>
+				    							<th>八</th>
+				    							<th>九</th>
+				    							<th>十</th>
+				    						</tr>
+				    					</thead>
+				    					<tbody></tbody>
+				    				</table>
+				    				</div>
+                				</div>
+             				</div>
+                        </div>
+                	</div>
+                	<!-- 打印数据设置 end -->
+            	</div>
+            </div>
+            
+            <div class="ufma-layout-down bordered-top">	
+				<div class="text-right margin-right-30">
+					<button type="button" class="btn btn-sm btn-primary btn-save" id="btn-save">保存</button>
+					<!--<button type="button" class="btn btn-sm btn-default btn-save-preview" id="btn-save-preview">保存并预览</button>-->
+					<button type="button" class="btn btn-sm btn-default btn-qx" id="btn-qx">取消</button>
+				</div>
+			</div>
+		</div>
+		
+		<script src="vouPrintPrintSetOther.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+	</body>
+</html>

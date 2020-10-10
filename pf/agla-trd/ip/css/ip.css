@@ -1,0 +1,188 @@
+@CHARSET "UTF-8";
+/*ip平台组件*/
+.info-notice {
+	display: none;
+	position: absolute;
+	z-index: 100;
+	top: 200px;
+	left: 50%;
+	padding: 0 20px;
+	margin-left: -30px;
+	font-size: 16px;
+	color:#333;
+	background-color: #d9edf7;
+	height: 40px;
+    /*width: 119px;*/
+	border:1px solid #bce8f1;
+    text-align: center;
+    line-height: 40px;
+    font-size: 16px;
+}
+
+/*第三方组件，ip平台修改*/
+/*bootstrap*/
+button.glyphicon {
+	margin-top: -1px;
+}
+label.text-right {
+	height: 34px;
+	line-height: 34px;
+	padding: 0;
+	padding-right: 10px;
+}
+.ip-input-group {
+	height: 34px;
+	line-height: 34px;
+	padding: 0;
+}
+/*uui*/
+.u-table .u-checkbox-outline{
+    top : -11px
+}
+.u-pagination > .active > a, .u-pagination > .active > span, .u-pagination > .active > a:hover, .u-pagination > .active > span:hover, .u-pagination > .active > a:focus, .u-pagination > .active > span:focus {
+    z-index: 2;
+    color: #fff;
+    cursor: default;
+	background-color: #337ABC;
+    border-color: #0b5d9b;
+}
+.ztree li span.button {
+    width: 15px;
+}
+.ztree li span.button.remove{
+	display:none;
+}
+.ztree li span.button.edit{
+	display:none;
+}
+.active {
+	background-color: #fff;
+}
+/*zTree*/
+.ztree li a.curSelectedNode span {
+    background-color: #4db1e9;
+    color: #fff;
+    border: none;
+}
+.ztree li span{
+	font-family: "微软雅黑";
+}
+/*带确定的提示弹出框*/
+.bs-modal-sm{
+	position: fixed;
+    top: 60px;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1150;
+}
+/*
+ * 交行grid复选框和数字列的顺序
+ */
+.u-grid-content-left1{
+	left:40px;
+}
+.u-grid-content-left2{
+	left:0 !important;
+}
+/*
+ * 调栏设置修改
+ */
+.uf-navmenu-light:before {
+    content: "调栏";
+    color: #333;
+    font-family: 微软雅黑;
+    font-family:"Microsoft YaHei";
+}
+.u-grid-header-columnmenu{
+	left:0;
+	z-index: 2000;
+	line-height: 2.3em;
+	float:left;
+	width:40px;
+}
+
+.u-grid-header-multi-select{
+	padding: 0 0 0 0.9em;
+}
+.u-grid-content-multiSelect{
+	padding: 0 0 0 0.9em;
+	border-right:1px solid #ccc;
+	height: 26px;
+	line-height: 1.75em;
+}
+.u-grid-checkbox-outline{
+	display: block;
+	top: 7px;
+}
+.u-grid-content-num{
+	height: 26px;
+	font-size: 12px;
+	border-right: 1px solid #ccc;
+}
+.u-grid-header-num{
+	border-right: 1px solid #95cdff;
+}
+
+.u-grid-header-multi-select{
+	left:40px;
+}
+
+.u-grid-header-left{
+	width: 90px !important;
+	background: #b4dcff;
+	z-index: 1000;
+}
+.u-grid-header-multi-select{
+	z-index: 9999;
+    border-right: 1px solid #95cdff;
+    border-left: 1px solid #95cdff;
+}
+.u-grid-column-menu{
+	z-index:1200;
+}
+
+/*
+ 表格中复选框选中之后样式
+*/
+.u-grid-checkbox-outline.is-checked {
+  		background: #1baede url(。。/image/check.png) no-repeat center;
+ }
+  	.u-grid-checkbox-outline.is-checked .u-grid-checkbox-tick-outline{
+  		background: #1baede url(../image/check.png) no-repeat center;
+  }
+  
+/*
+ 辅助录入数
+*/
+#myModalTree .modal-dialog{
+	width: 400px
+}
+#myModalTree .tree-area{
+	height: 270px;
+    overflow: auto;
+    clear: both;
+    border: 1px solid #E5E5E5;
+}
+#myModalTree .ip-input-group input{
+	height: 25px;
+}
+#myModalTree .top-button,
+#myModalTree .top-button-next{
+	height: 25px;
+	padding: 0px 10px;
+	margin: 0px 5px;
+	font-size: 12px;
+}
+
+#myModalTree .top-button .search-addon{
+	margin-left: 5px;
+}
+#myModalTree .ip-input-group button.btn-primary{
+	margin-left: 10px;
+    background: #4A90E2;
+    height: 25px;
+    padding: 0px 10px;
+    margin-right: 10px;
+}
+

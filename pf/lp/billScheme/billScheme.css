@@ -1,0 +1,342 @@
+/*查询条件style S*/
+#bdAgency, #bdAgencyEdit {
+    margin-left: 4px;
+    width: 184px;
+    visibility: hidden;
+}
+
+/*查询条件style E*/
+/*************新增/编辑页面style S*****************/
+#data-type button {
+    margin-right: 10px;
+}
+.lp-edit-input .bordered-input {
+    border-radius: 4px;
+    min-width: 210px;
+}
+
+.lp-edit-input .span-txt, .agency-title {
+    font-weight: normal;
+    display: inline-block;
+    width: 84px;
+    text-align: right;
+}
+
+.lp-edit-input #data-param, .lp-edit-input #scheme-name {
+    width: 30%;
+}
+
+.lp-edit-input ul {
+    padding-left: 0;
+}
+
+.lp-edit-input li {
+    list-style: none;
+    margin-top: 6px;
+}
+
+.lp-edit-input li label {
+    width: 100%;
+}
+
+.lp-edit-input #scheme-describe1, .lp-edit-input #scheme-describe2 {
+    vertical-align: middle;
+}
+
+.w940{
+    width: 940px;
+}
+
+.w830{
+    width: 830px;
+}
+
+.agency-cont {
+    margin-top: -5px;
+}
+
+#data-type {
+    display: inline-block;
+}
+
+/*table*/
+.tableCommonStyle th {
+    text-align: center;
+}
+
+.tableCommonStyle td, .tableCommonStyle td input {
+    text-align: center;
+}
+
+.tableCommonStyle td input {
+    border: none;
+}
+
+.clickbtns {
+    position: absolute;
+    right: 5px;
+    cursor: pointer;
+}
+
+#tgBaseInfo input {
+    background: #fff;
+}
+
+.set-form-cont-title .span-txt, .set-form-cont-title .set-form-cont {
+    float: left;
+}
+
+.set-form-cont-title input {
+    font-weight: normal;
+}
+
+#nameTable2.ufma-table.dataTable th, #nameTable2.ufma-table.dataTable td, #showTable2.ufma-table.dataTable th, #showTable2.ufma-table.dataTable td {
+    border-right: 1px solid #d9d9d9;
+}
+
+#nameTable2.ufma-table.dataTable {
+    border-top: 1px solid #d9d9d9;
+    border-left: 1px solid #d9d9d9;
+}
+
+table td {
+    height: 40px;
+}
+
+table th {
+    background-color: #EEF1F6;
+    height: 40px;
+    /*width: 150px!important;*/
+}
+
+#nameTable2 th, #showTable2 th {
+    border: 1px solid #d9d9d9;
+}
+
+table {
+    width: 100% !important;
+}
+
+.tableCommonStyle td.dataTables_empty {
+    padding-top: 20px !important;
+}
+
+table.ufma-table.dataTable tbody th, table.ufma-table.dataTable tbody td {
+    height: 30px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+}
+
+table.dataTable thead th {
+    padding-top: 0px;
+    padding-bottom: 0px;
+}
+
+/*************新增/编辑页面style *****************/
+/***************导入数据 S**************************/
+/*短横虚线*/
+.uf-dashed-hr {
+    border-top: 1px dashed #d9d9d9;
+    margin-top: 12px;
+    height: 2px;
+    width: 100%;
+}
+
+.w70 {
+    width: 71px;
+}
+
+.w160 {
+    width: 160px;
+}
+
+/*自定义样式*/
+.uf-grid-head .uf-grid-head-lock, .uf-grid-body .uf-grid-body-lock {
+    border-right: #DFE6EC 0px solid;
+}
+
+.file-btn-box .btn:last-child {
+    border-left-color: #108ee9;
+}
+
+.file-btn-active {
+    color: #108ee9;
+    background-color: #fff;
+    border-color: #108ee9;
+}
+
+.file-upload-box {
+    padding: 0 50px;
+    margin: 16px 0;
+    background: #ECF6FD;
+    border: 1px solid #D2EAFB;
+    height: 62px;
+    line-height: 62px;
+}
+
+.file-upload-box-text {
+    float: left;
+    width: 500px;
+}
+
+.file-upload-box-btn {
+    float: right;
+    width: 88px;
+    position: relative;
+}
+
+.file-upload-box-btn button {
+    border-radius: 0 4px 4px 0;
+}
+
+.file-upload-input {
+    width: 88px;
+    height: 30px;
+    overflow: hidden;
+    position: absolute;
+    top: 16px;
+    font-size: 100px;
+    opacity: 0;
+    filter: alpha(opacity=0);
+    cursor: pointer;
+}
+
+.file-upload-tip {
+    color: #999;
+    border: 1px #d9d9d9 solid;
+    border-radius: 4px;
+    padding-left: 5px;
+}
+
+.file-upload-title {
+    border: 1px #d9d9d9 solid;
+    padding-left: 5px;
+    border-radius: 4px;
+}
+
+.file-upload-title i {
+    color: #999;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+.label-show {
+    font-weight: normal;
+    height: 19px;
+    line-height: 28px;
+}
+
+#sheetList .uf-combox-input {
+    height: 28px;
+    line-height: 28px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+}
+
+.panel.ufma-panel > .panel-heading {
+    height: 38px;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.file-upload-box {
+    float: left;
+    margin: 0;
+    border: none;
+    height: auto;
+    line-height: normal;
+    padding: 0;
+}
+
+.file-upload-box-text {
+    height: 30px;
+    border-radius: 2px;
+    line-height: 30px;
+    margin-right: -2px;
+    background-color: #fff;
+    padding-left: 5px;
+}
+
+.file-upload-input {
+    top: 0;
+}
+
+.lp-query-li-cont-title.control-label {
+    width: 100px;
+}
+
+.line-num {
+    float: left;
+}
+
+.line-num .bordered-input {
+    height: 30px;
+}
+
+#scheme-Import .span-txt, #scheme-Import .lp-query-li-cont-title, #scheme-Import .control-label {
+    float: left;
+    width: 100px;
+    display: block;
+    text-align: right;
+    line-height: 30px;
+    font-weight: normal;
+}
+
+#scheme-Import .control-label {
+    padding-top: 0px;
+}
+
+#scheme-Import .file-option {
+    float: left;
+}
+
+#scheme-Import .file-upload-box-text {
+    line-height: 28px;
+}
+
+/*去掉谷歌浏览器自带的表单填充黄色的底色*/
+input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0px 1000px white inset;
+}
+
+.table-part .dataTables_scroll {
+    border: 1px solid #d9d9d9;
+    border-bottom: none;
+}
+
+.table-part .dataTables_wrapper.no-footer .dataTables_scrollBody {
+    border-bottom: none;
+}
+
+.table-part {
+    margin-bottom: 20px;
+}
+
+/***************导入数据 E**************************/
+/************来源子系统 S*******************/
+#son-system-btns, #scheme-Import #source-btn {
+    position: relative;
+}
+
+#lp-btns-list {
+    position: absolute;
+    right: 0px;
+    background-color: #fff;
+    border: 1px solid #d9d9d9;
+}
+
+.lp-rest-sign {
+    cursor: pointer;
+}
+
+#dataSonSystem_input {
+    padding-top: 3px;
+    padding-right: 3px;
+    height: 28px;
+    line-height: 28px;
+}
+
+/************来源子系统 E*******************/
+input:disabled, textarea:disabled {
+    background-color: #fff;
+}

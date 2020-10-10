@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>部门人员信息</title>
+  <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport" />
+  <script src="../../../pub/boot.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+  <link rel="stylesheet" type="text/css" href="depStaffInformation.css?rev=@@hash" />
+</head>
+
+<body>
+  <!--整个容器 begin-->
+  <div id="dep-staff-info" class="container-fluid ufma-container">
+    <!--工作区 begin-->
+    <div class="workspace">
+      <!--工作区顶部 begin-->
+      <div class="prs-workspace">
+        <div class="ufma-portlet">
+          <div class="portlet-title">
+            <div class="caption">
+              <span class="caption-subject font-dark uppercase">部门人员信息</span>
+            </div>
+            <div class="inline-block absolute margin-left-15" style="margin-top: 10px">
+              <ul class='ufma-list-col clearfix padding-left-8'>
+                <li class="ufma-list-col-item">
+                  <div id='cbAgency' class="uf-treecombox ufma-combox-agency"></div>
+                </li>
+              </ul>
+            </div>
+            <div class="actions">
+              <div>
+                <button id="btn-add-dep-staff-info" type="button" class="btn btn-sm btn-primary btn-permission btn-add">
+                  新增
+                </button>
+                <button id="btn-batch-upgrade-staff-info" type="button" class="btn btn-sm btn-primary btn-permission btn-add">
+                  批量调级
+                </button>
+                <button id="btn-import" class="btn btn-default btn-import btn-permission">
+                  导入
+                </button>
+                <!-- CWYXM-17810 sunch 需要将【部门人员信息】新建和编辑界面的“账户信息”区域去掉，不再在【部门人员信息】中维护个人银行账户。 -->
+                <!-- <button id="btn-test" class="btn btn-default btn-test">
+                  测试
+                </button> -->
+                <button id="btnSynchronous" class="btn btn-default btn-synchronous btn-permission">
+                  同步警综用户
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--工作区中begin-->
+      <div class="workspace-center margin-top--8">
+        <div class="container-fluid">
+          <div class="ufma-layout ufma-layout-slider-sm ufma-layout-fixed-slider ufma-layout-fixed-slider-left">
+            <!--工作区中左布局begin-->
+            <div class="ufma-layout-slider left padding-right-0" id="scrollBox">
+              <div class="de-cont-box">
+                <div class="de-box-top">
+                  <div class="de-caption">
+                    <span class="caption-subject font-dark uppercase">部门</span>
+                  </div>
+                  <div style="cursor: pointer" class="de-actions  btn-add-department btn-permission">
+                    <span class="icon-plus" style="position:relative;left:5px"></span>
+                    <span>新增部门</span>
+                  </div>
+                </div>
+                <div class="input-group de-input-group">
+                  <input type="text" id="key" value="" class="form-control empty" placeholder="请输入部门名称关键词" />
+                  <span class="input-group-addon">
+                    <i class="glyphicon glyphicon-search"></i>
+                  </span>
+                </div>
+                <div class="deparmentTree" style="overflow:auto;">
+                  <ul id="tree" class="ztree" style="width:400px; "></ul>
+                </div>
+                <div class="bottom-btn bordered-top  depar-tool">
+                  <a class="btn btn-icon-only btn-sm department-delete  btn-permission" data-toggle="tooltip" title="删除">
+                    <span class="glyphicon icon-trash"></span>
+                  </a>
+                  <a class="btn btn-icon-only btn-sm department-start  btn-permission" data-toggle="tooltip" title="启用">
+                    <span class="glyphicon icon-play"></span>
+                  </a>
+                  <a class="btn btn-icon-only btn-sm department-stop  btn-permission" data-toggle="tooltip" title="停用">
+                    <span class="glyphicon glyphicon icon-ban"></span>
+                  </a>
+                  <!-- <a
+                      class="btn btn-icon-only btn-sm btn-permission department-imp btn-impdpt"
+                      data-toggle="tooltip"
+                      title="导入"
+                    >
+                      <span class="glyphicon glyphicon icon-download"></span
+                    ></a> -->
+                </div>
+              </div>
+            </div>
+            <!--工作区中右布局begin-->
+            <div class="ufma-layout-content">
+              <div class="ufma-portlet">
+                <!--查询条件-->
+                <div class="portlet-body bordered pr"  style="padding-top: 10px; padding-bottom: 10px;">
+                  <div class="query-box-left">
+                    <form id="frmQuery" class="form-horizontal" style="padding-right: 30px;" >
+                    </form>
+                    <form id="queryMore" class="form-horizontal none" style="padding-right: 30px;" >
+                    </form>
+                  </div>
+
+                  <div class="query-box-right">
+                    <label class="label label-more" data-target="#queryMore">更多
+                      <i class="glyphicon icon-angle-bottom"></i>
+                    </label>
+                    <div class="query-btn">
+                      <button id="btnQuery" class="btn btn-primary btn-query btn-permission">
+                        查询
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="table-sub">
+                <div class="table-sub-action fr clearfix">
+                  <!-- <div class="iframeBtnsSearch">
+                      <input
+                        type="text"
+                        class="searchHide focusOff bordered"
+                        placeholder="请输入要搜索的关键词"
+                      />
+                      <input type="hidden" class="searchValueHide" />
+                      <button
+                        class="btn btn-default btn-sm btn-permission btn-search"
+                        id="searchHideBtn"
+                      >
+                        <i class="glyphicon icon-search"></i>
+                      </button>
+                    </div> -->
+                  <div id="dtToolbar" class="btn-group" style="margin-bottom:5px"></div>
+                </div>
+              </div>
+              <table id="dep-staff-info-table" tool-bar="#tool-bar" style="table-layout: fixed" class="ufma-table uf-rpt-table"></table>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="tool-bar" class="ufma-tool-bar">
+        <div class="tool-bar-body" style="margin-right:-1px;">
+          <!--toolbar-->
+          <div class="ufma-tool-btns fl">
+            <label class="mt-checkbox mt-checkbox-outline margin-right-8" style="margin-left: 4px;">
+              <input class="datatable-group-checkable" type="checkbox" name="test" value="1"> 全选
+              <span></span>
+            </label>
+            <button id="tool-bar-del" type="button" class="btn btn-sm btn-permission btn-default btn-delete" style="margin-right: 8px;">
+              删除
+            </button>
+            <button id="tool-bar-sync" type="button" class="btn btn-sm btn-permission btn-default btn-sync">
+              同步
+            </button>
+          </div>
+          <div class="ufma-table-paginate">
+            <!-- 分页 开始位置 -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="depStaffInformation.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+</body>
+
+</html>

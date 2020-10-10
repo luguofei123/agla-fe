@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>职务补贴标准</title>
+    <meta
+      content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
+      name="viewport"
+    />
+    <script
+      src="../../../pub/boot.js?rev=@@hash"
+      type="text/javascript"
+      charset="utf-8"
+    ></script>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="officeSubsidyStandard.css?rev=@@hash"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="../../common/common.css?rev=@@hash"
+    />
+    <style>
+      .dataTables_empty{
+          border-bottom: 0 !important;
+      }
+    </style>
+  </head>
+  <body>
+    <!--整个容器 begin-->
+    <div id="office-subsidy-standard" class="container-fluid ufma-container">
+      <div class="workspace">
+        <div class="prs-workspace">
+          <div class="ufma-portlet">
+            <div class="portlet-title">
+              <div class="caption">
+                <span class="caption-subject font-dark uppercase"
+                  >职务补贴标准</span
+                >
+              </div>
+              <div class="actions">
+                <div>
+                  <button
+                    id="btn-add-office-subsidy-standard"
+                    type="button"
+                    class="btn btn-sm btn-primary btn-permission btn-add"
+                  >
+                    新增
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="table-sub">
+            <div class="table-sub-action clearfix">
+              <div id="dtToolbar" class="btn-group fr"></div>
+            </div>
+          </div>
+          <table
+            id="office-subsidy-standard-table"
+            tool-bar="#tool-bar"
+            class="ufma-table uf-rpt-table"
+          ></table>
+        </div>
+        <div id="tool-bar" class="ufma-tool-bar">
+          <div class="tool-bar-body"></div>
+        </div>
+      </div>
+    </div>
+    <script
+      src="officeSubsidyStandard.js?rev=@@hash"
+      type="text/javascript"
+      charset="utf-8"
+    ></script>
+  </body>
+</html>

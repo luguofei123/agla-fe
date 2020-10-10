@@ -1,0 +1,99 @@
+/*所属单位 begin*/
+.agency-title{font-weight: normal;line-height: 30px;line-height: 30px;margin-bottom: 0;}
+.head-agency{margin-left: 4px;width: 184px;/*visibility: hidden;*/}
+.head-target{width: 210px;height: 30px;line-height: 22px;border-radius: 4px;}
+.mbmc-name .bordered-input{border-radius: 4px;min-width: 210px}
+.mbmc-name .padding-3{padding: 3px;}
+#tgAgency{margin-left: 4px;width: 184px;visibility: hidden;}
+
+
+/*基本信息 begin*/
+/* .two-show{
+	position: relative;
+	border: 1px solid #d9d9d9;
+	margin-top: 20px;
+	padding-bottom: 10px;
+} */
+.two-show #cwkj-name,.two-show #yskj-name{
+	position: absolute;
+	background-color: #fff;
+	top:-10px;
+	left: 16px;
+	font-weight: bold;
+}
+#tgBaseInfo  input{background:#fff;}
+.mr-122{margin-right: 122px;}
+.set-form{margin-bottom: 0;margin-top: -10px;}
+.set-form-li{margin-top: 10px;}
+.set-form-cont-title{float: left;margin-bottom: 0;line-height: 30px;width: 158px;text-align: right;}
+.set-form-cont{float: left;}
+.set-form-cont input,.set-form-cont select{line-height: 22px;height: 30px;border-radius: 4px;width:180px;}
+.set-form-cont textarea{line-height: 18px;width: 720px;height: 80px;border-radius: 4px;resize: none;}
+.clickbtns{
+	position: absolute;
+	right: 5px;
+	cursor: pointer;
+}
+.col-md-4{
+	min-width: 380px;
+}
+.hidden{
+	display: none;
+}
+#accs label,#acct label{
+	width: 70px;
+	text-align: right;
+}
+.uf-combox-input{
+	padding-top: 4px;
+	padding-bottom: 4px;
+}
+/*单据要输设置 begin*/
+input:disabled,textarea:disabled  {
+	background-color: #fff;
+}
+/*title S*/
+.close-model{
+	float: right;
+	display: block;
+	font-size: 10px;
+	margin-top: 16px;
+	margin-right: 16px;
+	opacity: .5;
+	cursor: pointer;
+}
+.close-model:hover{
+	opacity:1;
+}
+#templateGeneration .tem-title{
+	height: 49px;
+	line-height: 50px;
+	border-bottom: 1px solid #d9d9d9;
+	font-size: 16px;
+	padding-left: 15px;
+}
+/*title E*/
+#templateGeneration .ufma-layout-down {
+	background-color: #fff;
+}
+#tgAccount {
+	padding-bottom: 60px;
+}
+.temp-up {
+	margin-bottom: 0px;
+}
+/*.temp-updown{*/
+	/*height: 441px;*/
+/*}*/
+.panel-heading .caption{
+	line-height: 34px;
+}
+.start-sign {
+	color: red;
+	padding: 0 0 0 5px;
+	display: inline-block;
+	vertical-align: sub;
+}
+.start-m {
+	padding: 4px 0 0 5px;
+}

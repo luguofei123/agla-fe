@@ -1,0 +1,121 @@
+.ma-input-group{margin:8px 10px 0 10px;}
+.ma-input-group .form-control{height: 30px;}
+.ma-input-group .input-group-addon{background:none;padding:6px 16px;cursor: pointer;}
+.doc-ztree{margin-top:8px;margin-left:0px;overflow:auto;}
+/*搜索按钮*/
+
+@-moz-document url-prefix(){.searchHide{margin-right:-8px;}}
+
+.model-name{
+	float:left;
+	margin-top: 20px;
+	margin-left: 20px;
+	margin-bottom: 20px;
+}
+.model-input{
+	float:left;
+	margin-top: 20px;
+	margin-left: 10px;
+	margin-bottom: 20px;
+}
+.w260{width:260px;}
+.w282{width:282px;}
+.w210{width:210px;}
+.w420{width:420px;}
+
+.vou-selete-list{float: left;height:46px;line-height: 46px;margin-left: -16px;margin-bottom: 0;}
+.vou-selete-list-li{display: inline-block;margin-right: 32px;}
+
+.query-left {
+    width: 100%;
+}
+.query-right {
+    position: absolute;
+    right: 8px;
+    top: 8px;
+    text-align: right;
+}
+.query-left-ul {
+    list-style: none;
+    margin-left: -40px;
+    margin-bottom: 0;
+}
+.query-left-li {
+    position: relative;
+    padding-left: 110px;
+    margin-top: 10px;
+    min-height: 30px;
+}
+.query-left .query-left-li:first-child {
+    margin-top: 0px;
+}
+.query-li-title {
+    text-align: left;
+    font-weight: normal;
+    display: inline-block;
+    width: 70px;
+    height: 30px;
+    line-height: 30px;
+}
+.query-inline-block {
+    display: inline-block;
+}
+.query-select {
+    width: 100%;
+    min-width: 745px;
+}
+.query-select-dzfa {
+    border-radius: 4px;
+    height: 30px;
+    width: 100%;
+}
+.portlet-body{
+	background-color: #ECF6FD;
+}
+.model-input-new{
+	height: 30px;
+}
+.margin-left-64{
+    margin-left: 64px;
+}
+.margin-right-64{
+    margin-right: 64px;
+}
+.ztree li span.button.ico_docu {
+    background: url(../../images/list.png) no-repeat center center;
+    margin:0 2px;
+    vertical-align: top;
+}
+table.table-thead-center td {
+	text-align: left;
+}
+.icon-file_ico_close:before {
+    content: "\e970"; 
+    color:#FFBF00;
+    font-size: 12px;
+    vertical-align: top;
+}
+.icon-file_ico_close{
+    background: none!important;
+}
+.icon-file_ico_open:before {
+    content: "\e96e";
+    color:#FFBF00;
+    font-size: 12px;
+    vertical-align: top;
+}
+.icon-file_ico_open{
+    background: none!important;
+}
+.ico_docu{
+    display:none!important;
+}
+.icon-file_ico_docu:before{
+    content: "\e96e";
+    color:#FFBF00;
+    font-size: 12px;
+    vertical-align: top;
+}
+.icon-file_ico_docu{
+    background: none!important;
+}

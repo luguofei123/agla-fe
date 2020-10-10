@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>凭证数据检查</title>
+	<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+	<script src="../../pub/boot.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+	<link rel="stylesheet" type="text/css" href="vouBox.css?rev=@@hash" />
+</head>
+
+<body>
+	<!--整个容器 begin-->
+	<div id="vouCheck" class="container-fluid ufma-container">
+
+		<div class="workspace">
+			<div class="vou-workspace">
+
+				<div class="vou-selete-box bordered-top">
+					<div class="vou-title">凭证检查</div>					
+				</div>
+
+				
+				<div class="vou-box vou-query-box">
+					<div class="vou-query-box-left">											
+							
+						<li class="vou-query-box-li clearfix">																						
+							
+							<div class="voucheck" style="width:100%;">
+								<label class="vou-query-li-cont-title">区划rg_code：</label>
+								<div class="vou-query-li-cont">
+									<input class="bordered-input padding-3" type="text" name="rgCode" id="rgCode" value="87" />
+								</div>
+							
+								<label class="vou-query-li-cont-title">年度set_year：</label>
+								<div class="vou-query-li-cont">
+									<input class="bordered-input padding-3" type="text" name="setYear" id="setYear" value="2019" 
+									style="min-width:210px;height:30px"/>
+								</div>
+							</div>
+							
+							<div class="voucheck" style="width:100%;">
+							    
+							    <label class="vou-query-li-cont-title" style="width:200px;">当前页数(每页查询20家单位)</label>
+								
+								<div class="vou-query-li-cont">
+									<input class="bordered-input padding-3" type="text" name="curPage" id="curPage" value="1" />
+								</div>
+								
+							</div>
+							<div style="width:100%;height:90px;float:left;"">
+								<div class="vou-query-li-cont">
+									<button class="btn btn-primary btn-query" id="checkVou">查询科目挂接辅助项是否正确</button>
+								</div>
+								
+								<div class="vou-query-li-cont">
+									<button class="btn btn-primary btn-query" id="checkVouAssValue">查询辅助分录里的值是否正确</button>
+								</div>
+							</div>
+							<div class="tips" style="color: red;font-size: 20px;width:100%;float:left;">
+							    <span>
+								     说明：根据rg_code和set_year来查询单位账套，然后循环单位、账套来查询有问题的数据；
+									 由于程序查询的内容较多，执行较慢，因此分批查询；
+									 处理的结果放到了表A_ERROR_ASS里，当处理完错误数据后将记录手动删除。
+								</span>
+							</div>
+							
+							
+						</li>
+						
+						
+													
+					</div>
+				</div>
+				
+			</div>
+		</div>
+				
+	</div>
+	<!--整个容器 end-->
+	<script src="vouchersCheck.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+</body>
+
+<style type="text/css">
+	.vou-query-box-li .voucheck{float: left; min-height: 20px; margin-top: 20px;height:60px;}
+</style>
+
+</html>

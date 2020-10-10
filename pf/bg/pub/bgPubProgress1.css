@@ -1,0 +1,56 @@
+.progress1-style1 {
+  float: left;
+  position: relative;
+  width: 100%;
+  text-align: center;
+}
+
+.progress1-style2 {
+  float: left;
+  position: relative;
+  text-align: center;
+}
+
+.progress1-style3 {
+  float: left;
+  position: absolute;
+  text-align: center;
+}
+
+.progress1-normalHeight {
+  height: 70px;
+}
+
+.progress1-circle {
+  border-radius: 50%;
+  width: 28px;
+  height: 28px;
+}
+
+.progress1-circle-select {
+  border: 1px solid #108EE9;
+  background-color: #108EE9;
+  color: #FFFFFF;
+}
+
+.progress1-circle-unselect {
+  border: 1px solid #D9D9D9;
+  /* background-color: #FFFFFF; */
+  /* color : #D9D9D9; */
+}
+
+.progress1-font-select {
+  color: #108EE9;
+}
+
+/* .progress1-font-unselect {
+  color: #D9D9D9;
+} */
+
+.progress1-line-select {
+  background-color: #108EE9;
+}
+
+.progress1-line-unselect {
+  background-color: #D9D9D9;
+}

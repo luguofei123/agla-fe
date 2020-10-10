@@ -1,0 +1,124 @@
+.padding-3{padding: 3px;}
+#vouPrintPrintSet .container-fluid{
+	position: relative;
+}
+#vouPrintPrintSet .ufma-layout-up{
+	/*padding-top: 10px;*/ 
+	/*height: 372px;*/
+	/*padding-bottom: 10px;*/
+}
+#vouPrintPrintSet #ymsz .img{
+	position: absolute;
+	right: 100px;
+	top: 94px;
+}
+#vouPrintPrintSet #ymsz .img img{
+	height: 130px;
+}
+#vouPrintPrintSet #ymsz .mt-checkbox{
+	padding-bottom: 0;
+	margin: 10px 0 0;
+	font-weight: normal;
+}
+#vouPrintPrintSet #ymsz .container-fluid{
+	padding-left: 9px;
+}
+#vouPrintPrintSet #ymsz dl.dl-horizontal{
+	margin-bottom: 0;
+}
+#vouPrintPrintSet #ymsz dt,#vouPrintPrintSet #ymsz dd{
+	line-height: 20px;
+	margin-top: 10px;
+}
+#vouPrintPrintSet #ymsz dt{
+	width: 70px;
+	font-weight: normal;
+}
+#vouPrintPrintSet #ymsz dd{
+	margin-left: 80px;
+}
+#vouPrintPrintSet #ymsz dd[data-name="size"] span,
+#vouPrintPrintSet #ymsz dd[data-name="margin"] li span{
+	display: inline-block;
+	margin-right: 16px;
+}
+#vouPrintPrintSet #ymsz ul.list-unstyled{
+	margin-bottom: 0;
+}
+
+#vouPrintPrintSet #dysjsz ul.list-unstyled{
+	margin-bottom: 0;
+}
+#vouPrintPrintSet #dysjsz li{
+	line-height: 20px;
+	margin-bottom: 10px;
+}
+#vouPrintPrintSet #dysjsz li div.pull-left{
+	margin-right: 35px;
+}
+#vouPrintPrintSet #dysjsz ul.list-unstyled .mt-checkbox{
+	margin-bottom: 0;
+	font-weight: normal;
+	margin-right: 16px;
+}
+#vouPrintPrintSet th{
+	border: 1px solid #D9D9D9; 
+	text-align: center;
+}
+#vouPrintPrintSet td{
+	min-height: 30px;
+	line-height: 24px; 
+	border: 1px solid #D9D9D9;
+}
+/*td,th{border-collapse:collapse;}*/
+/*.dataTables_wrapper.no-footer .dataTables_scrollBody{border-bottom:0;}*/
+/*.dataTables_scrollBody{overflow-x:hidden!important;overflow-y:auto!important;}*/
+.lis{
+    width: 100%;
+    height: 24px;
+    line-height: 24px;
+    cursor: pointer;
+    padding-left: 15px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+.xtjmb .active{
+	background: #cee6ff;
+}
+.dwjmb .active{
+	background: #cee6ff;
+}
+.treedefault{
+	text-align: right;
+    color: red;
+    border: 1px solid red;
+    padding: 0px 5px;
+    border-radius: 3px;
+    margin-left: 10px;
+}
+.border-right{
+	border-right: 1px solid #d9d9d9;
+}
+.bordered-input{
+    border-radius: 4px;
+    width: 200px;
+}
+#docTree .node_name{
+    max-width: 170px;
+    display: inline-block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    height: 24px;
+    line-height: 24px;
+}
+#docTree .curSelectedNode {
+    height: 24px;
+}
+#docTree.ztree li a{
+	height: 24px;
+}
+#accSep{
+	width: 70px;
+}

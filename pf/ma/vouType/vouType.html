@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>凭证类型</title>
+		<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+		<script src="../../pub/boot.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+	</head>
+<!-- 系统级凭证类型界面已废弃 -->
+	<body>
+		<div class="container-fluid ufma-container">
+			<!--工作区 begin-->
+			<div class="workspace" style="min-height:514px">
+				<!--工作区顶部 begin-->
+				<div class="workspace-top">
+					<div class="container-fluid">
+						<div class="ufma-portlet">
+							<div class="portlet-title">
+								<div class="caption">
+									<span class="caption-subject font-dark uppercase">凭证类型</span>
+								</div>
+								<div class="actions">
+									<div class="btn-group">
+										<button type="button" id="btn-add" class="btn btn-sm btn-permission btn-primary btn-add" data-toggle="modal">新增</button>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!--工作区中部 begin-->
+				<div class="workspace-center">
+					<div class="container-fluid">
+						<div id="vouTypes" class="row vouTypes">
+						</div>
+					</div>
+				</div>
+				<div class="workspace-bottom">
+					<div id="expfunc-tool-bar" class="ufma-tool-bar" style="overflow:hidden;bottom:10px">
+						<div class="tool-bar-body">
+							<div class="ufma-tool-btns">
+								<label class="mt-checkbox mt-checkbox-outline margin-right-8">
+                        <input id="selectAll" class="datatable-group-checkable" type="checkbox" name="test" value="1"> 全选
+                        <span></span>
+                    </label>
+								<button type="button" class="btn btn-sm btn-default btn-permission btn-senddown" id="vouTypeBtnDown"> 下发
+                    </button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!--编辑凭证类型 begin-->
+			<div class="modal fade bs-example-modal-lg ufma-modal" id="vouType-edt" tabindex="-1" role="dialog" aria-labelledby="vouTypeAddLabel">
+				<div class="modal-dialog modal-xm" role="document">
+					<div class="modal-content">
+						<div class="modal-header add-header">
+							<button type="button" id="btnClose" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+							<h5 class="modal-title" id="vouTypeAddLabel">新增凭证类型</h5>
+						</div>
+						<div class="modal-body add-body">
+							<!--编辑区begin-->
+							<div class="container-fluid">
+								<div class="row">
+									<div class="col-xs-1"></div>
+									<div class="col-xs-12">
+										<form id="form-vouType" class="form-horizontal">
+											<div class="form-group  hidden">
+												<label class="col-sm-3 control-label">chrId：</label>
+												<div class="col-sm-5">
+													<input type="text" name="chrId" id="chrId" class="form-control">
+												</div>
+												<div class="col-sm-4"></div>
+											</div>
+											<div class="form-group  required">
+												<label class="col-sm-3 control-label">凭证类型编码：</label>
+												<div class="col-sm-5 control-element">
+													<input type="text" name="chrCode" id="chrCode" class="form-control"></span>
+												</div>
+												<div class="col-sm-4"></div>
+											</div>
+											<div class="form-group  required">
+												<label class="col-sm-3 control-label">凭证类型简称：</label>
+												<div class="col-sm-5 control-element">
+													<input type="text" name="chrName" id="chrName" class="form-control"></span>
+												</div>
+												<div class="col-sm-4"></div>
+											</div>
+											<div class="form-group required">
+												<label class="col-sm-3 control-label">凭证类型全称：</label>
+												<div class="col-sm-5 control-element">
+													<input type="text" name="vouFullname" id="vouFullname" class="form-control">
+												</div>
+												<div class="col-sm-4"></div>
+											</div>
+											<div class="form-group ">
+												<label class="col-sm-3 control-label">会计体系：</label>
+												<div class="col-sm-5">
+													<span name="accaCode" id="accaCode" class="uf-combox"></span>
+												</div>
+												<div class="col-sm-4"></div>
+											</div>
+											<div class="form-group  ">
+												<label class="col-sm-3 control-label">备注：</label>
+												<div class="col-sm-9">
+													<textarea style="height:90px" class="form-control" rows="3" name="remark" id="remark"></textarea>
+												</div>
+											</div>
+											<input type="text" name="lastVer" class="hidden">
+										</form>
+									</div>
+									<div class="col-xs-1"></div>
+								</div>
+								<div class="panel ufma-panel" style="height:auto;">
+									<div class="panel-heading">
+										<div class="caption">设置科目对应关系</div>
+										<div class="actions">
+											<button id="chooseAcco" type="button" class="btn btn-sm btn-primary btn-choose">选用科目</button>
+											<!-- btn-permission-->
+										</div>
+									</div>
+									<form id="form-moneyInfoTab" class="panel-collapse collapse in">
+										<div class="panel-body">
+											<div class="container-fluid form-horizontal">
+												<div class="rpt-table-tab" style="margin-top: -9px;">
+													<!--CWYXM-9693--基础资料-凭证类型，选用科目页签，字体偏大应统一--zsj-->
+													<table class="ufma-table uf-rpt-table" id="carryOver" style="font-size: 14px;"></table>
+													<!-- tool-bar="#tool-bar"-->
+												</div>
+											</div>
+										</div>
+									</form>
+									<div id="tool-bar" class="panel-collapse collapse in">
+										<div class="tool-bar-body">
+											<div class="ufma-tool-btns">
+												<label class="mt-checkbox mt-checkbox-outline margin-right-8">
+                                                    <input class="checkAll datatable-group-checkable" type="checkbox" name="" id="btnAll"> 全选 <span></span>
+												 </label>
+												<!-- sunch【CWYXM-10007】【20191130 财务云8.20.12】基础资料-凭证类型，去掉启用/禁用按钮，同时删除不再校验是否已在凭证中使用 -->
+												<!-- <button type="button" class="btn btn-sm btn-default btn-permission btn-start" id="btnStart">启用</button>
+												<button type="button" class="btn btn-sm btn-default btn-permission btn-stop" id="btnStop">停用</button> -->
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="modal-footer add-footer">
+							<button type="button" class="btn btn-sm btn-primary btn-permission btn-saveadd" id="btn-saveadd">保存并新增</button>
+							<button type="button" class="btn btn-sm btn-default btn-permission btn-save" id="btn-save">保存</button>
+							<button type="button" class="btn btn-sm btn-default add-close" id="btn-close">取消</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script src="../maCommon/maCommon.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+		<script src="vouType.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+	</body>
+
+</html>

@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>部门工资汇总表</title>
+    <meta
+      content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
+      name="viewport"
+    />
+    <script
+      src="../../pub/boot.js?rev=@@hash"
+      type="text/javascript"
+      charset="utf-8"
+    ></script>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="../common/common.css?rev=@@hash"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="depSalarySummary.css?rev=@@hash"
+    />
+  </head>
+  <body>
+    <!--整个容器 begin-->
+    <div id="dep-salary-summary" class="container-fluid ufma-container">
+      <!--工作区 begin-->
+      <div class="workspace">
+        <!--工作区顶部 begin-->
+        <div class="prs-workspace">
+          <div class="ufma-portlet">
+            <div class="portlet-title">
+              <div class="caption">
+                <span class="caption-subject font-dark uppercase"
+                  >部门工资汇总表</span
+                >
+              </div>
+              <div class="actions">
+                <div>
+                  <button
+                    id="btn-add-dep-salary-summary"
+                    type="button"
+                    class="btn btn-sm btn-primary btn-permission btn-add"
+                  >
+                    新增
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--工作区中begin-->
+        <div class="workspace-center margin-top--8">
+          <div class="container-fluid">
+            <div
+              class="ufma-layout ufma-layout-slider-sm ufma-layout-fixed-slider ufma-layout-fixed-slider-left"
+            >
+              <!--工作区中左布局begin-->
+              <div
+                class="ufma-layout-slider left padding-right-0"
+                id="scrollBox"
+              >
+                <div class="de-cont-box">
+                  <div class="de-box-top">
+                    <div class="de-caption">
+                      <span class="caption-subject font-dark uppercase"
+                        >部门</span
+                      >
+                    </div>
+                    <div
+                      style="cursor: pointer"
+                      class="de-actions  btn-add-department btn-permission"
+                    >
+                      <span
+                        class="icon-plus"
+                        style="position:relative;left:5px"
+                      ></span>
+                      <span >新增部门</span
+                      >
+                    </div>
+                  </div>
+                  <div class="input-group de-input-group">
+                    <input
+                      type="text"
+                      id="key"
+                      value=""
+                      class="form-control empty"
+                      placeholder="请输入部门名称关键词"
+                    />
+                    <span class="input-group-addon"
+                      ><i class="glyphicon glyphicon-search"></i
+                    ></span>
+                  </div>
+                  <div class="deparmentTree" style="overflow:auto;">
+                    <ul id="tree" class="ztree" style="width:400px; "></ul>
+                  </div>
+                  <div class="bottom-btn bordered-top  depar-tool">
+                    <a
+                      class="btn btn-icon-only btn-sm department-delete  btn-permission"
+                      data-toggle="tooltip"
+                      title="删除"
+                    >
+                      <span class="glyphicon icon-trash"></span
+                    ></a>
+                    <a
+                      class="btn btn-icon-only btn-sm department-start  btn-permission"
+                      data-toggle="tooltip"
+                      title="启用"
+                    >
+                      <span class="glyphicon icon-play"></span
+                    ></a>
+                    <a
+                      class="btn btn-icon-only btn-sm department-stop  btn-permission"
+                      data-toggle="tooltip"
+                      title="停用"
+                    >
+                      <span class="glyphicon glyphicon icon-ban"></span
+                    ></a>
+                    <!-- <a
+                      class="btn btn-icon-only btn-sm btn-permission department-imp btn-impdpt"
+                      data-toggle="tooltip"
+                      title="导入"
+                    >
+                      <span class="glyphicon glyphicon icon-download"></span
+                    ></a> -->
+                  </div>
+                </div>
+              </div>
+              <!--工作区中右布局begin-->
+              <div class="ufma-layout-content">
+                <div class="ufma-portlet">
+                  <!--查询条件-->
+                  <div class="portlet-body bordered pr">
+                    <div class="query-box-left">
+                      <form id="frmQuery" class="form-horizontal">
+                        <div class="form-row">
+                          <div class="form-group col-xs-10 col-sm-5 col-md-5">
+                            <label
+                              class="control-label data-label margin-left-30"
+                              >姓名：</label
+                            >
+                            <div
+                              class="control-element margin-left-20"
+                              style="width:180px;"
+                            >
+                              <input
+                                id="staff-name"
+                                type="text"
+                                name="name"
+                                class="form-control"
+                                style="width: 180px"
+                              />
+                            </div>
+                          </div>
+                          <div
+                            class="form-group font-size-0 col-xs-10 col-sm-5 col-md-5"
+                          >
+                            <label
+                              class="control-label data-label font-size-14 text-align-left"
+                              >职务等级：</label
+                            >
+                            <div class="control-element" style="width:180px;">
+                              <input
+                                id="office-rank"
+                                type="text"
+                                name="rank"
+                                class="form-control"
+                                style="width: 180px"
+                              />
+                            </div>
+                          </div>
+                          <div class="clearfix"></div>
+                        </div>
+                      </form>
+                      <form
+                        id="queryMore"
+                        class="form-horizontal none margin-top-10"
+                      >
+                        <div class="form-row">
+                          <div class="form-group col-xs-10 col-sm-5 col-md-5">
+                            <label
+                              class="control-label data-label margin-left-30"
+                              >人员状态：</label
+                            >
+                            <div
+                              class="control-element margin-left-20"
+                              style="width:180px;"
+                            >
+                              <input
+                                id="staff-status"
+                                type="text"
+                                name="staff-status"
+                                class="form-control"
+                                style="width: 180px"
+                              />
+                            </div>
+                          </div>
+                          <div
+                            class="form-group font-size-0 col-xs-10 col-sm-5 col-md-5"
+                          >
+                            <label
+                              class="control-label data-label font-size-14 text-align-left"
+                              >停发状态：</label
+                            >
+                            <div class="control-element" style="width:180px;">
+                              <input
+                                id="stopping-status"
+                                type="text"
+                                name="stopping-status"
+                                class="form-control"
+                                style="width: 180px"
+                              />
+                            </div>
+                          </div>
+                          <div class="clearfix"></div>
+                        </div>
+                        <div class="form-row">
+                          <div class="form-group col-xs-10 col-sm-5 col-md-5">
+                            <label
+                              class="control-label data-label margin-left-30"
+                              >人员类型：</label
+                            >
+                            <div
+                              class="control-element margin-left-20"
+                              style="width:180px;"
+                            >
+                              <input
+                                id="staff-type"
+                                type="text"
+                                name="staff-type"
+                                class="form-control"
+                                style="width: 180px"
+                              />
+                            </div>
+                          </div>
+                          <div
+                            class="form-group font-size-0 col-xs-10 col-sm-5 col-md-5"
+                          >
+                            <label
+                              class="control-label data-label font-size-14 text-align-left"
+                              >学历：</label
+                            >
+                            <div class="control-element" style="width:180px;">
+                              <input
+                                id="education"
+                                type="text"
+                                name="education"
+                                class="form-control"
+                                style="width: 180px"
+                              />
+                            </div>
+                          </div>
+                          <div class="clearfix"></div>
+                        </div>
+                        <div class="form-row">
+                          <div class="form-group">
+                            <label
+                              class="control-label data-label margin-left-30 margin-right-20"
+                              >参加工作日期：</label
+                            >
+                            <div class="control-element" style="width:120px;">
+                              <div
+                                id="dateStart"
+                                name="dateStart"
+                                class="uf-datepicker"
+                                style="width:120px;"
+                              ></div>
+                            </div>
+                            <span class="split">-</span>
+                            <div class="control-element">
+                              <div
+                                id="dateEnd"
+                                name="dateEnd"
+                                class="uf-datepicker"
+                                style="width:120px;"
+                              ></div>
+                            </div>
+                          </div>
+                          <div class="clearfix"></div>
+                        </div>
+                      </form>
+                    </div>
+
+                    <div class="query-box-right">
+                      <label class="label label-more" data-target="#queryMore"
+                        >更多<i class="glyphicon icon-angle-bottom"></i
+                      ></label>
+                      <div class="query-btn">
+                        <button
+                          id="btnQuery"
+                          class="btn btn-primary btn-query btn-permission"
+                        >
+                          查询
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="table-sub">
+                  <div class="table-sub-action fr clearfix">
+                    <div style="margin-left:4px;position:relative;display:inline-block;">
+                      <button class="btn btn-default" id="colAction">
+                          <span class="glyphicon icon-list-all"></span>
+                          <span class="glyphicon icon-angle-bottom"></span>
+                      </button>
+                      <div class="rpt-funnel rpt-funnelBox rpt-funnelBoxList none" style="position: absolute;">
+                          <div id="colList" class="rpt-colList clearfix">
+                          </div>
+                          <p class="rpt-colBtn"><button id="addCol" class="btn btn-primary">确定</button></p>
+                      </div>
+                  </div>
+                    <div id="dtToolbar" class="btn-group"></div>
+                  </div>
+                </div>
+                <table
+                  id="dep-salary-summary-table"
+                  tool-bar="#tool-bar"
+                  class="ufma-table uf-rpt-table"
+                ></table>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          id="tool-bar"
+          class="ufma-tool-bar"
+          style="padding-left:249px;padding-right:16px;"
+        >
+          <div class="tool-bar-body" style="margin-right:-1px;">
+            <!--toolbar-->
+            <!-- <div class="ufma-tool-btns">
+              <button
+                id="delete-more"
+                type="button"
+                class="btn btn-sm btn-permission btn-default btn-delete"
+              >
+                删除
+              </button>
+            </div> -->
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script
+      src="depSalarySummary.js?rev=@@hash"
+      type="text/javascript"
+      charset="utf-8"
+    ></script>
+  </body>
+</html>

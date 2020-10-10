@@ -1,0 +1,147 @@
+.impAttachmentBody{
+  box-sizing:border-box;
+  position: relative;
+  float: left;
+  height: 100%;
+  top:0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+}
+.impAttachmentTestBorder{
+  border: 1px black solid;
+}
+.impAttachmentSubDiv{
+  position: relative;
+  float: left;
+  width: 100%;
+}
+.bottomBatch{
+  display: none;
+}
+.impAttachmentSubDiv.bottomBatch{
+  width: 70px;
+}
+.bottomBatch.bbutton{
+  position: relative;
+  top: -4px;
+  margin-left: 12px;
+}
+.impAttachmentSubDiv.impAttachmentSubDiv-boxbody{
+  border:  1px #999 solid;
+  border-radius: 2px;
+  overflow-y: auto;
+}
+.impAttachmentSubDiv.Atop{
+  min-height: 30px;
+  max-height: 30px;
+}
+.impAttachmentSubDiv.Abottom{
+  min-height: 30px;
+  max-height: 30px;
+  padding-top: 12px;
+}
+.impAttachment-leftFloat{
+  float: left;
+}
+.impAttachment-rightButton{
+  float: right;
+  top: -4px;
+  margin-left: 8px;
+}
+.impAttachmentSubDiv.impAttachment-leftFloat{
+  width: 50%;
+}
+.impAttachmentSubDiv.impAttachment-rightButton{
+  width: 20%;
+}
+.impAttachmentSubFileBox{
+  position: relative;
+  float: left;
+  border-radius: 2px;
+  padding: 16px 0 0 16px;
+}
+.impAttachmentSubFileBox_innerbox{
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border:  1px #999 solid;
+  border-radius: 2px;
+}
+.impAttachmentSubFile_innerBox_top{
+  position: relative;
+}
+.impAttachmentSubFile_innerBox_top span{
+  position: absolute;
+  white-space: nowrap;
+  overflow: hidden;
+  font-size: 12px;
+}
+.impAttachmentSubFile_innerBox_top img{
+  position: relative;
+}
+.impAttachmentSubFile_innerBox_top .outRadio{
+  position: absolute;
+  top : -10px;
+  left : -10px;
+  width : 20px;
+  height: 20px;
+  border: 1px #999 solid;
+  border-radius: 50%;
+  background: #fff;
+  display: none;
+}
+.impAttachmentSubFile_innerBox_top .outRadio .innerRadio{
+  position: absolute;
+  top: 3.1px;
+  left: 3.1px;
+  width : 11px;
+  height: 11px;
+  border-radius: 50%;
+  display: none;
+}
+.impAttachmentSubFile_innerBox_top .outRadio .innerRadio.selected{
+  background: red;
+}
+.impAttachmentSubFile_innerBox_top .outRadio .innerRadio.unSelected{
+  background: #fff;
+}
+
+.impAttachmentSubFile_innerBox_bottom{
+  position: relative;
+}
+.impAttachmentSubFileBox-iconsize{
+  position: relative;
+  width: 60px;
+  height: 60px;
+}
+.addfileIcon {
+  background: #999999;
+  height: 50px;
+  position: relative;
+  width: 4px;
+  border-radius: 5px;
+  left: 28px;
+  top : 5px;
+}
+.addfileIcon:after {
+  background: #999999;
+  content: "";
+  height: 4px;
+  left: -23px;
+  position: absolute;
+  top: 23px;
+  width: 50px;
+  border-radius: 5px;
+}
+.impAttachmentSubFileBox_innerbox > p{
+  position: relative;
+}
+.impAttachmentSubFile_innerBox_bottom .left{
+  float: left;
+}
+.impAttachmentSubFile_innerBox_bottom .right{
+  float: right;
+  margin: 0 8px 0 0;
+}

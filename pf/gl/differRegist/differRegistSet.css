@@ -1,0 +1,97 @@
+.vou,.vouSummary{
+	width: 100%;
+	height: 167px;
+	overflow: auto;
+	border: 1px solid #d9d9d9;
+	position: relative;
+}
+.balAmttab,.voutab,.differAcctab,.balAmtaltab,.vouSummarytabss{
+	width: 100%;
+	table-layout: fixed;
+}
+.differAcc{
+	margin-bottom: 60px;
+	margin-top: 4px;
+}
+.voutabss{
+	position: absolute;
+	top: 0;
+    table-layout: fixed;
+	width: 100%;
+}
+.voutabss th{
+	text-align: center;
+	background: #EEF1F6;
+	height: 24px !important;
+}
+.voutab th{
+	text-align: center;
+	background: #EEF1F6;
+	height: 24px !important;
+}
+.vouamt{
+	text-align: right;
+}
+.vouSummarytab{
+	position: absolute;
+	top: 0;
+    table-layout: fixed;
+	width: 100%;
+}
+.vouSummarytabss th{
+	text-align: center;
+	background: #EEF1F6;
+	height: 24px !important;
+}
+.vouSummarytab th{
+	text-align: center;
+	background: #EEF1F6;
+	height: 24px !important;
+}
+.balAmttab td,.balAmtaltab td{
+	min-width: 150px;
+}
+.balAmttab .title,.balAmtaltab .title{
+	background: #EEF1F6;
+}
+.differAcctab th{
+	text-align: center;
+	background: #EEF1F6;
+}
+
+.differAcctab td{
+	max-width: 100px;
+}
+.je{
+	text-align: right;
+}
+.differAmt{
+	width: 100%;
+	height: 100%;
+	border: none;
+	text-align: right;
+}
+.leaf0{
+	font-weight: bold;
+}
+.leave1{
+	padding-left: 10px;
+}
+.level2{
+	padding-left: 20px;
+}
+.level3{
+	padding-left: 30px;
+}
+.yellowcircular{    
+    margin-right: 5px;
+    line-height: 30px;
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    background-color: #FFBF00;
+}
+.circular{
+	line-height: 30px;
+	margin: 0px;
+}

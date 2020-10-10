@@ -1,0 +1,10 @@
+.rpt-query-box-right{
+    position: absolute;
+    right: 10px;
+    top: 15px;
+}
+.iframeBtnsSearch {
+    position: absolute;
+    right: 115px;
+    top: 2px;
+}

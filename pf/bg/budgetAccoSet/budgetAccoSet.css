@@ -1,0 +1,121 @@
+.table-Col-rowNum {
+	padding-left: 10px;
+}
+
+.bgAccoSet-modal-title {
+	height: 87px;
+	text-align: center;
+}
+
+.bgAccoSet-modal-title .fill {
+	width: 5%;
+	height: 100%;
+	float: left;
+}
+
+.bgAccoSet-modal-title .message {
+	width: 30%;
+	height: 100%;
+	float: left;
+}
+
+.ufma-layout .bgAccoSet-modal-title-top {
+	height: 18px;
+}
+
+.ufma-layout .bgAccoSet-modal-title-center {
+	height: 28px;
+}
+
+.ufma-layout .bgAccoSet-modal-title-bottom {
+	height: 40px;
+}
+
+.bgAccoSet-modal-title-circle {
+	border: 1px solid #108EE9;
+	border-radius: 50%;
+	width: 28px;
+	height: 28px;
+	/* 宽度和高度需要相等 */
+	background-color: #108EE9;
+}
+
+.bgDiv-align-horizontal-center {
+	margin: 0 auto;
+}
+
+.bgAccoSet-modal-title-circle-fontUnchoise {
+	color: #FFFFFF;
+}
+
+.bgAccoSet-modal-title-bottom-fontUnchoise {
+	color: #108EE9;
+	padding-top: 10px;
+}
+
+.bgAccoSet-modal-title-line {
+	width: 100%;
+	height: 2px;
+	margin: 0 auto;
+	padding: 0px;
+	background-color: #108EE9;
+	overflow: hidden;
+	vertical-align: middle;
+}
+
+.bgAccoSet-modal-title-center-block-line {
+	height: 100%;
+	width: 33%;
+	padding-top: 13px;
+	float: left;
+}
+
+.bgAccoSet-modal-title-center-block-flag {
+	height: 100%;
+	width: 34%;
+	float: left;
+}
+
+.bgAcco-edt-tbl-scroll {}
+
+.bgAccoSet-modal-page2-title1 {
+	padding-left: 16px;
+}
+
+.bgAccoSet-modal-page2-title2 {
+	padding-left: 48px;
+
+}
+
+.bgAccoSet-modal-page2-title3 {
+	padding-left: 8px;
+}
+
+.bgAccoSet-modal-page2-title-blank {
+	height: 8px;
+}
+
+.bgAccoSet-modal-divTextAlign {
+	text-align: center;
+}
+
+.modal-btn-choiseAcco {
+	padding-left: 40%;
+}
+
+.modal-content-bgAccoSet {
+	max-height: 601px;
+}
+
+.modal-content-ModalMain {
+	padding: 8px 20px 0px 20px !important;
+}
+
+.modal-content-bgAccoset-title {
+	height: 70px;
+	text-align: center;
+}
+
+.dataTables_scrollBody {
+	height: auto !important;
+}

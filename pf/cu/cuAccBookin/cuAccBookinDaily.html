@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>登记出纳账-现金日记账</title>
+	<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+	<script src="../../pub/boot.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+
+	<link rel="stylesheet" href="cuAccBookin.css?rev=@@hash" />
+</head>
+
+<body>
+	<div class="ufma-layout-updown" style="border-top: 1px solid #d9d9d9;">
+		<div class="ufma-layout-up">
+			<form id="frmBookIn" class="form-horizontal" style="padding:24px 10px;">
+				<div class="form-row">
+					<div class="form-group required" style="width: 300px;">
+						<label class="control-label" style="width: 100px;">账簿：</label>
+						<div class="control-element">
+							<div id='accountbookCode' name="accountbookGuid" class="uf-treecombox ufma-combox-billType " style="width: 190px;"></div>
+						</div>
+					</div>
+					<div class="clearfix "></div>
+				</div>
+				<!--第一行-->
+				<div class="form-row">
+					<div id="jouNoDiv" class="form-group required" style="width: 300px;">
+						<label class="control-label auto" style="width: 100px;">编号：</label>
+						<div class="control-element" style="width:190px;">
+							<input id="jouNo" type="text" name="jouNo" class="form-control">
+						</div>
+					</div>
+					<div class="form-group required qcdz" style="margin-left:10px;">
+						<label class="control-label" style="width: 100px;">登账日期：</label>
+						<div class="control-element">
+							<div id="jouDate" name="jouDate" class="uf-datepicker" style="width:210px;"> </div>
+						</div>
+					</div>
+					<div class="clearfix "></div>
+				</div>
+				<div class="form-row ">
+					<div id="summaryReq" class="form-group" style="width: 300px;height: 30.5px;">
+						<label class="control-label" style="width: 100px;vertical-align: top;">摘要：</label>
+						<div id="summary" class="control-element" style="width:190px;">
+							<!--常用摘要--CWYXM-4270--zsj-->
+							<textarea id="description" class="form-control" maxlength="255"></textarea>
+							<ul class="uf-inputSelect"></ul>
+						</div>
+					</div>
+					<div class="form-group" id="drcr" style="margin-left:10px;">
+						<label class="control-label auto" style="width: 100px;">借贷方向：</label>
+						<div class="control-element">
+							<div class="btn-group" data-toggle="buttons">
+								<label class="btn btn-default active" id="drCrY">
+									<input type="radio" class="toggle" name="drCr" value="1"> 借 </label>
+								<label class="btn btn-default" id="drCrN">
+									<input type="radio" class="toggle" name="drCr" value="-1"> 贷 </label>
+							</div>
+							<label for="drCr" class="control-label hide"></label>
+						</div>
+					</div>
+					<div class="clearfix "></div>
+				</div>
+				<div id="default">
+					<div class="form-row ">
+						<div id="defaultMoney" class="form-group required" style="width: 300px;">
+							<label class="control-label" style="margin-left:58px;" style="width: 100px;">金额：</label>
+							<div class="control-element">
+								<input type="text" id="subsidyMoney" name="money" class="form-control money zeromoney" style="width:190px;" maxlength="14">
+								<!--修改金额位数过大保存时报服务的异常的问题-->
+							</div>
+						</div>
+						<!--bug81813 【20190703 财务云8.0 广东省财政厅】登记出纳账，点击登账，资金类型、项目类型一闪消失--zsj--设置一开始就隐藏-->
+						<div class="form-group hidden isCashType" style="margin-left:10px;">
+							<label class="control-label" style="width: 100px;">资金类型：</label>
+							<div class="control-element">
+								<div class="btn-group" data-toggle="buttons">
+									<label class="btn btn-default cashTypeY">
+										<input type="radio" class="toggle" name="cashType" value="1">上年结余</label>
+									<label class="btn btn-default active cashTypeN">
+										<input type="radio" class="toggle" name="cashType" value="2">本年预算</label>
+								</div>
+								<label for="cashType" class="control-label hide"></label>
+							</div>
+						</div>
+
+						<div class="clearfix "></div>
+					</div>
+					<div id="isReceipt" class="form-row " style="margin-bottom: 10px;">
+						<div class="form-group" style="width: 300px;">
+							<label class="control-label" style="width: 100px;">是否回单：</label>
+							<div class="control-element">
+								<div class="btn-group" data-toggle="buttons">
+									<label class="btn btn-default isReceiptY">
+										<input type="radio" class="toggle" name="isReceipt" value="1"> 是 </label>
+									<label class="btn btn-default active isReceiptN">
+										<input type="radio" class="toggle" name="isReceipt" value="0"> 否 </label>
+								</div>
+								<label for="isReceipt" class="control-label hide"></label>
+							</div>
+						</div>
+						<!--bug81813 【20190703 财务云8.0 广东省财政厅】登记出纳账，点击登账，资金类型、项目类型一闪消失--zsj--设置一开始就隐藏-->
+						<div class="form-group hidden isPayment" style="margin-left:10px;">
+							<label class="control-label" style="width: 100px;">支出类型：</label>
+							<div class="control-element">
+								<div class="btn-group" data-toggle="buttons">
+									<label class="btn btn-default active typeY">
+										<input type="radio" class="toggle" name="type" value="1">基本</label>
+									<label class="btn btn-default typeN">
+										<input type="radio" class="toggle" name="type" value="2">项目</label>
+								</div>
+								<label for="type" class="control-label hide"></label>
+							</div>
+						</div>
+						<div class="clearfix "></div>
+					</div>
+				</div>
+				<div id="curStyle" class="hidden">
+					<div class="form-row ">
+						<div class="form-group required" style="width: 300px;">
+							<label class="control-label" style="margin-left:58px;" style="width: 100px;">汇率：</label>
+							<div class="control-element">
+								<input type="text" id="exchangeRate" name="exchangeRate" class="form-control exchangeRate" style="width:190px;" maxlength="14">
+							</div>
+						</div>
+						<div class="form-group hidden isCashType" style="margin-left:10px;">
+							<label class="control-label" style="width: 100px;">资金类型：</label>
+							<div class="control-element">
+								<div class="btn-group" data-toggle="buttons">
+									<label class="btn btn-default cashTypeY">
+										<input type="radio" class="toggle" name="cashTypeCur" value="1">上年结余</label>
+									<label class="btn btn-default active cashTypeN">
+										<input type="radio" class="toggle" name="cashTypeCur" value="2">本年预算</label>
+								</div>
+								<label for="cashType" class="control-label hide"></label>
+							</div>
+						</div>
+						<div class="clearfix "></div>
+					</div>
+					<!--第四行-->
+					<div class="form-row ">
+						<div class="form-group required" style="width: 300px;">
+							<label class="control-label" style="width: 100px;">外币金额：</label>
+							<div class="control-element">
+								<input type="text" id="currencyMoney" name="currencyMoney" class="form-control currencyMoney" style="width:190px;" maxlength="14">
+							</div>
+						</div>
+						<div id="isReceiptCUR" class="form-group" style="width: 300px;">
+							<label class="control-label" style="width: 100px">是否回单：</label>
+							<div class="control-element">
+								<div class="btn-group" data-toggle="buttons">
+									<label class="btn btn-default isReceiptY">
+										<input type="radio" class="toggle" name="isReceiptCur" value="1"> 是 </label>
+									<label class="btn btn-default active isReceiptN">
+										<input type="radio" class="toggle" name="isReceiptCur" value="0"> 否 </label>
+								</div>
+								<label for="isReceipt" class="control-label hide"></label>
+							</div>
+						</div>
+						<div class="clearfix "></div>
+					</div>
+					<!--第五行-->
+					<div class="form-row " style="margin-bottom: 10px;">
+						<div id="localMoney" class="form-group required" style="width: 300px;">
+							<label class="control-label" style="width: 100px;">本币金额：</label>
+							<div class="control-element">
+								<input type="text" id="subsidyMoney" name="localMoney" class="form-control money onemoney" style="width:190px;" maxlength="14">
+							</div>
+						</div>
+						<div class="form-group hidden isPayment" style="margin-left:10px;">
+							<label class="control-label" style="width: 100px;">支出类型：</label>
+							<div class="control-element">
+								<div class="btn-group" data-toggle="buttons">
+									<label class="btn btn-default active typeY">
+										<input type="radio" class="toggle" name="typeCur" value="1">基本</label>
+									<label class="btn btn-default typeN">
+										<input type="radio" class="toggle" name="typeCur" value="2">项目</label>
+								</div>
+								<label for="type" class="control-label hide"></label>
+							</div>
+						</div>
+						<div class="clearfix"></div>
+					</div>
+				</div>
+				<div class="form-row">
+					<div class="form-group" id="voutypecode">
+						<label class="control-label" style="width: 100px;">凭证字号：</label>
+						<div class="control-element">
+							<select id="vouType" name="vouType" class="bordered-input" style="width: 60px;"></select>
+							<select id="vouFisPerd" name="vouFisPerd" class="bordered-input" style="width: 60px;"></select>
+							<input type="text" name="vouNo" class="form-control" style="width:61px;margin-top:-3px;" id="vouNo" maxlength="4">
+						</div>
+					</div>
+					<div class="form-group" id='billType' style="width: 300px;margin-left: 15px;">
+						<label class="control-label" style="width: 100px;">票据类型：</label>
+						<div class="control-element">
+							<div id='billTypeCode' name="billtypeCode" class="uf-treecombox ufma-combox-billType " style="width: 190px;"></div>
+						</div>
+					</div>
+					<div class="clearfix"></div>
+				</div>
+
+				<!--第六行-->
+				<div class="form-row " style="margin-bottom: 0px;">
+					<div class="form-group dealWithClass" style="width: 300px;">
+						<label class="control-label" style="width: 100px;">经办人：</label>
+						<div class="control-element">
+							<input type="text" id="dealWith" name="dealWith" class="form-control" style="width:190px;">
+						</div>
+					</div>
+					<div class="form-group " id="billNoDiv" style="margin-left:10px;">
+						<label class="control-label" style="width: 100px;">票据号：</label>
+						<div class="control-element">
+							<input type="text" id="billNo" name="billNo" class="form-control" style="width:190px;">
+						</div>
+					</div>
+					<div class="clearfix "></div>
+				</div>
+
+				<div class="form-row" style="width:650px;">
+					<div id="planItemMore"></div>
+					<div class="clearfix"></div>
+				</div>
+				<!--第七行-->
+				<div class="form-row">
+					<div class="form-group" id="oppositeUnitDiv">
+						<label class="control-label" style="width: 100px;">对方单位：</label>
+						<div class="control-element">
+							<input type="text" id="oppositeUnit" name="oppositeUnit" class="form-control" style="width:190px;" maxlength="50">
+						</div>
+					</div>
+
+					<div class="form-group" id="remarkDiv">
+						<label class="control-label" style="width: 100px;">备注：</label>
+						<div class="control-element">
+							<input type="text" id="remark" name="remark" class="form-control" style="width:190px;">
+						</div>
+					</div>
+					<div class="clearfix"></div>
+				</div>
+				<!-- 最后一行 -->
+				<div class="form-row">
+					<div class="form-group" style="width: 295px;">
+						<label class="control-label" style="width: 100px;">账簿余额：</label>
+						<span id="balance" class="inline-block" style="margin-top: 6px;"></span>
+					</div>
+					<div class="clearfix" style="margin-bottom: 32px;"></div>
+				</div>
+		</div>
+		</form>
+	</div>
+	</div>
+	<div class="ufma-layout-down bordered-top">
+		<div class="text-right  margin-right-30">
+			<button type="button" class="btn btn-sm btn-primary btn-permission btn-saveadd btn-ajax" title="Alt+N" id="btnSaveAndAdd">保存并新增</button>
+			<button type="button" class="btn btn-sm btn-default btn-permission btn-save btn-ajax" title="Ctrl+S" id="btnSave">保存</button>
+			<button type="button" class="btn btn-sm btn-default" id="btnQuit">取消</button>
+		</div>
+	</div>
+	</div>
+	<script src="dm.js?rev=@@hash " type="text/javascript" charset="utf-8"></script>
+	<script src="cuAccBookinDaily.js" type="text/javascript" charset="utf-8"></script>
+	<script src="cuAccBookin.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+</body>
+
+</html>

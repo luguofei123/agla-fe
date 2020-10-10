@@ -1,0 +1,1341 @@
+* {
+	margin: 0;
+	padding: 0;
+	font-family: "微软雅黑";
+}
+
+input::-ms-clear {
+	display: none;
+	width: 0;
+	height: 0;
+}
+
+select::-ms-expand {
+	display: none;
+}
+
+.voucherall {
+	height: 100% !important;
+	position: relative;
+	left: 8px;
+	margin-top: 0px;
+	background: #FFFFFF;
+	min-width: 1150px;
+	overflow: hidden;
+}
+
+.voucherall .pzlrbt {
+	font-size: 16px;
+	color: rgb(51, 51, 51);
+	line-height: 43px;
+	box-sizing: border-box;
+	border-bottom: 3px solid rgb(16, 142, 233);
+	display: inline-block;
+	margin-left: 10px;
+}
+
+.times {
+	position: absolute;
+	left: 800px;
+	top: 15px;
+	font-size: 14px;
+	color: red;
+	display: none;
+}
+
+.voucher-title {
+	border-bottom: 1px solid #d9d9d9!important;
+}
+
+.voucherbtn {
+	display: inline-block;
+	padding-top: 8px;
+	padding-bottom: 8px;
+	background: #fff;
+	z-index: 1;
+	padding-left: 56px;
+}
+
+.voucherbtn div {
+	display: inline-block;
+}
+
+.voucherbtn .all-no {
+    display: none;
+    width: 100%;
+    background: #fff;
+    position: absolute;
+    top: 30px;
+    left: 0px;
+    box-shadow: 2px 2px 4px 0 rgba(0, 0, 0, 0.20);
+    z-index: 20;
+}
+
+.voucherbtn .all-no-fen {
+	width: 100%;
+	height: 30px;
+	border: 1px solid #D9D9D9;
+	border-bottom: none;
+}
+
+.mt-checkbox>span,
+.mt-radio>span {
+	height: 16px;
+	width: 16px;
+}
+
+.voucher-btnall {
+	width: 100%;
+	position: relative;
+	height: 48px;
+}
+
+.voucherxz {
+	border-bottom: 1px solid #DFE6EC;
+	position: absolute;
+	right: 0;
+	display: inline-block;
+}
+
+.voucherkj {
+	width: 45px;
+	height: 30px;
+	position: absolute;
+	right: 46px;
+	top: 10px;
+	background: #FFFFFF;
+	border: 1px solid #DFE6EC;
+	border-radius: 4px;
+	font-size: 12px;
+	text-align: center;
+	line-height: 30px;
+}
+
+.voucherkjxs {
+	width: 300px;
+	position: absolute;
+	right: 0px;
+	top: 26px;
+	z-index: 200;
+	background: #daedfb;
+	display: none;
+	box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.20);
+	padding: 0px 10px;
+	font-size: 12px;
+	color: #cec9e6;
+	border: 1px solid #7ebdfd;
+}
+
+.voucherkjxs p {
+	width: 50%;
+	height: 30px;
+	line-height: 30px;
+	font-family: "微软雅黑";
+	font-size: 12px;
+	color: #333333;
+	float: left;
+	text-align: left;
+	color: #777;
+}
+
+.btn-prevvoucher {
+	width: 30px;
+	height: 30px;
+	cursor: pointer;
+	border: 1px solid #DFE6EC;
+	position: absolute;
+	right: 140px;
+	top: 10px;
+	text-align: center;
+	line-height: 30px;
+	font-size: 14px;
+	border-radius: 4px;
+}
+
+.btn-nextvoucher {
+	width: 30px;
+	height: 30px;
+	cursor: pointer;
+	border: 1px solid #DFE6EC;
+	position: absolute;
+	right: 100px;
+	top: 10px;
+	text-align: center;
+	line-height: 30px;
+	font-size: 14px;
+	border-radius: 4px;
+}
+
+#vouHangup {
+	position: absolute;
+	right: 180px;
+	top: 10px;
+	height: 22px;
+	border: 1px solid #DFE6EC;
+}
+
+.vourightall {
+	height: 100%;
+	position: absolute;
+	right: 0px;
+	margin-top: 0px;
+	background: #FFFFFF;
+	z-index: 100;
+}
+
+.vou-verticalbtn {
+	width: 20px;
+	font-size: 12px;
+	border-top-left-radius: 4px;
+	border-bottom-left-radius: 4px;
+	border: 1px solid #d9d9d9;
+	border-right: none;
+	padding-top: 10px;
+	line-height: 20px;
+	padding-bottom: 10px;
+	padding-left: 10px;
+	cursor: pointer;
+	padding-right: 5px;
+	background: #108EE9;
+	color: #fff;
+	display: inline-block;
+	position: absolute;
+	left: 0;
+    z-index: 1;
+}
+.verticalbtnhover{
+	color: #108EE9;
+	background: #fff;
+}
+.vou-rightbody {
+	height: 100%;
+	display: inline-block;
+	position: absolute;
+	right: 0;
+	width: 394px;
+	overflow: auto;
+	box-shadow: 0px 2px 6px 3px rgba(0, 0, 0, 0.1);
+    background: #fff;
+}
+
+.vou-right-title {
+	font-size: 16px;
+	padding-left: 8px;
+	line-height: 40px;
+	border-bottom: 1px solid #d9d9d9;
+}
+
+.vou-righ-date {
+	position: relative;
+	height: 30px;
+	padding-top: 10px;
+}
+
+.vou-righ-datestext {
+	display: inline-block;
+	width: 70px;
+	position: relative;
+	left: 10px;
+	text-align: right;
+}
+
+.vou-righ-searchal {
+	position: relative;
+	height: 30px;
+	padding-top: 10px;
+}
+
+.vou-right-searchtdatess {
+	display: inline-block;
+	width: 280px;
+	position: relative;
+	left: 5px;
+}
+
+.vou-righ-searchtext {
+	display: inline-block;
+	width: 70px;
+	position: relative;
+	left: 10px;
+	text-align: right;
+}
+
+.vou-right-searchbtn {
+	display: inline-block;
+	width: 272px;
+	position: relative;
+	left: 5px;
+}
+.rightoption{
+	box-sizing: border-box;
+	padding: 10px;
+	line-height: 30px;
+	font-size: 12px;
+	color: #333333;
+	float: left;
+	text-align: left;
+	color: #777;
+}
+.rightoption p .kj {
+	float: right;
+	width: 80px;
+	text-align: left;
+}
+.voucherleftsearchinp {
+	width: 218px;
+	height: 28px;
+	padding-left: 8px;
+	background: #FFFFFF;
+	border: 1px solid #DFE6EC;
+}
+
+.btn-searchleft {
+	width: 43px;
+	height: 28px;
+	background: #FFFFFF;
+	border: 1px solid #DFE6EC;
+	border-left: none;
+	position: absolute;
+	right: 0px;
+	top: 0px;
+}
+
+.vou-right-searchtbody {
+	position: relative;
+	overflow-y: auto;
+	padding: 8px 40px;
+}
+
+.voucherleftbody {
+	width: 100%;
+	height: 290px;
+	float: left;
+	position: relative;
+	left: 16px;
+	overflow-y: scroll;
+	overflow-x: hidden;
+}
+
+.voucherleftbodyk {
+	width: 100%;
+	height: 104px;
+	border: 1px solid #D9D9D9;
+	position: relative;
+	margin-bottom: 8px;
+	cursor: pointer;
+	border-radius: 4px;
+}
+
+.voucherleftbodykdp {
+	width: 100%;
+	height: 120px;
+	border: 1px solid #D9D9D9;
+	position: relative;
+	margin-bottom: 8px;
+	cursor: pointer;
+	border-radius: 4px;
+}
+
+.voucherleftbodykdp .leftcha {
+	height: 90px;
+}
+
+.voucherleftbodyk p:nth-of-type(1) {
+	margin-top: 10px;
+}
+
+.voucherleftbodyk p {
+	font-size: 14px;
+	color: #333333;
+	letter-spacing: 0.67px;
+	margin-left: 10px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+.voucherleftbodyk p span {
+	float: left;
+	width: 60px;
+	text-align: right;
+}
+
+.voucherleftbodykdp p span {
+	float: left;
+	width: 76px;
+	text-align: right;
+}
+
+.btn-searchleft img {
+	width: 16px;
+	height: 16px;
+	margin-left: 13px;
+	margin-top: 6px;
+}
+
+.leftcha {
+	width: 100%;
+	height: 74px;
+	background: rgba(0, 0, 0, 0.4);
+	color: #fff;
+	text-align: center;
+	line-height: 74px;
+	position: absolute;
+	top: 0;
+	left: 0;
+	font-family: "微软雅黑";
+	font-size: 14px;
+	display: none;
+}
+
+.leftbtns {
+	width: 100%;
+	height: 30px;
+	position: absolute;
+	left: 0;
+	top: 74px;
+	background: #FFFFFF;
+	border: 1px solid #DFE6EC;
+	border-radius: 0 0 4px 4px;
+	display: none;
+}
+
+.voucherleftbodykdp .leftbtns {
+	top: 90px;
+}
+
+.leftbtns .leftfz {
+	width: 33%;
+	height: 30px;
+	text-align: center;
+	line-height: 30px;
+	background: #fff;
+	float: left;
+	font-family: "微软雅黑";
+	font-size: 14px;
+	color: #333333;
+}
+
+.leftbtns .leftcr {
+	width: 33%;
+	height: 30px;
+	text-align: center;
+	line-height: 30px;
+	background: #fff;
+	border-left: 1px solid #DFE6EC;
+	border-right: 1px solid #DFE6EC;
+	float: left;
+	font-family: "微软雅黑";
+	font-size: 14px;
+	color: #333333;
+}
+
+.leftbtns .leftsc {
+	width: 33%;
+	height: 30px;
+	text-align: center;
+	line-height: 30px;
+	background: #fff;
+	float: left;
+	font-family: "微软雅黑";
+	font-size: 14px;
+	color: #333333;
+}
+
+.leftpzzt {
+	position: absolute;
+	right: 0px;
+	top: 0px;
+	z-index: 20;
+	text-align: center;
+	background: #FF7100;
+	border-radius: 4px;
+	color: #fff;
+	font-size: 10px;
+	padding-top: 4px;
+	padding-bottom: 4px;
+	cursor: pointer;
+	padding: 2px 8px;
+}
+
+.leftws {
+	background: #00A553;
+}
+
+.leftzf {
+	background: #EE4033;
+}
+
+.leftwg {
+	background: #ffc017;
+}
+
+.voucherhetitle {
+	width: 101px;
+	height: 30px;
+	line-height: 31px;
+	position: relative;
+	left: 50%;
+	font-family: "微软雅黑";
+	font-size: 24px;
+	color: #333333;
+	letter-spacing: 1.2px;
+	margin-left: -50px;
+	display: inline-block;
+}
+
+.voucherhe {
+	height: 34px;
+	width: 100%;
+	position: relative;
+	z-index: 10;
+}
+
+#pzzhuantai {
+	position: absolute;
+	left: 50%;
+	top: 6px;
+	text-align: center;
+	border-radius: 4px;
+	color: #fff;
+	font-size: 10px;
+	padding-top: 4px;
+	padding-bottom: 4px;
+	cursor: pointer;
+	padding: 2px 8px;
+	display: none;
+	margin-left: 55px;
+}
+
+#pzzhuantaiC {
+	position: absolute;
+	left: 50%;
+	top: 6px;
+	text-align: center;
+	border-radius: 4px;
+	color: #fff;
+	font-size: 10px;
+	padding-top: 4px;
+	padding-bottom: 4px;
+	cursor: pointer;
+	padding: 2px 8px;
+	/* display: none; */
+	margin-left: 110px;
+}
+
+#leftbg .leftpzz {
+	width: 42px;
+	height: 19px;
+	position: absolute;
+	left: 56px;
+	top: 8px;
+	font-family: "微软雅黑";
+	font-size: 14px;
+	color: #333333;
+}
+
+#leftbgselect {
+	float: left;
+	width: 46px;
+	height: 26px;
+	border: none;
+	position: absolute;
+	left: 100px;
+	top: 5px;
+	border-bottom: 1px solid #DFE6EC;
+	appearance: none;
+	-moz-appearance: none;
+	-webkit-appearance: none;
+	background: url('/pf/gl/vou/img/xialaxi.png') no-repeat scroll right center transparent;
+	padding-right: 14px;
+	padding-left: 4px;
+}
+
+#leftbg .leftpzh {
+	width: 14px;
+	height: 19px;
+	position: absolute;
+	left: 225px;
+	top: 8px;
+	font-family: "微软雅黑";
+	font-size: 14px;
+	color: #333333;
+}
+
+#leftbgselect option {
+	padding: 2px 4px;
+}
+
+#leftbgselect::-ms-expand {
+	display: none;
+}
+
+#sppz {
+	width: 60px;
+	height: 28px;
+	position: absolute;
+	left: 164px;
+	top: 3px;
+	background: none;
+	border: none;
+	border-bottom: 1px solid #DFE6EC;
+	font-family: "微软雅黑";
+	font-size: 14px;
+	color: #333333;
+	text-align: center;
+}
+
+.bgda {
+	width: 28px;
+	height: 19px;
+	position: absolute;
+	left: 242px;
+	top: 8px;
+	font-family: "微软雅黑";
+	font-size: 14px;
+	color: #333333;
+}
+
+#sppz {
+	width: 60px;
+	height: 28px;
+	position: absolute;
+	left: 164px;
+	top: 3px;
+	background: none;
+	border: none;
+	border-bottom: 1px solid #DFE6EC;
+	font-family: "微软雅黑";
+	font-size: 14px;
+	color: #333333;
+	text-align: center;
+}
+
+#dates {
+	width: 125px;
+	height: 28px;
+	position: absolute;
+	left: 272px;
+	top: 3px;
+	border: none;
+	box-shadow: none;
+	border-bottom: 1px solid #DFE6EC;
+	font-family: "微软雅黑";
+	font-size: 14px;
+	color: #333333;
+}
+
+.datesno {
+	width: 142px;
+	height: 30px;
+	position: absolute;
+	left: 272px;
+	top: 0px;
+	font-family: "微软雅黑";
+	font-size: 14px;
+	color: #333333;
+	display: none;
+	z-index: 100;
+}
+
+.vouSource {
+	font-size: 14px;
+	float: left;
+	position: absolute;
+	right: 30px;
+	top: 7px;
+	color: #333333;
+}
+.iswriteoff{
+    color: red;
+	cursor: pointer;
+    width: 100%;
+    padding: 8px;
+    display: inline-block;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+#rightbg .fjd {
+	width: 42px;
+	height: 19px;
+	position: absolute;
+	/*left: 872px;*/
+	right: 163px;
+	top: 7px;
+	font-family: "微软雅黑";
+	font-size: 14px;
+	color: #333333;
+}
+
+#rightbg .bxd {
+	max-width: 200px;
+	height: 19px;
+	position: absolute;
+	/*left: 666px;*/
+	right: 210px;
+	top: 7px;
+	font-family: "微软雅黑";
+	font-size: 14px;
+	color: #333333;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	cursor: pointer;
+}
+
+#rightbg #fjd {
+	width: 33px;
+	height: 28px;
+	position: absolute;
+	/*left: 929px;*/
+	right: 122px;
+	top: 3px;
+	border: none;
+	box-shadow: none;
+	border-bottom: 1px solid #DFE6EC;
+	font-family: "微软雅黑";
+	font-size: 14px;
+	color: #333333;
+}
+
+#rightbg .fjdz {
+	width: 14px;
+	height: 19px;
+	position: absolute;
+	/*left: 970px;*/
+	right: 106px;
+	top: 7px;
+	font-family: "微软雅黑";
+	font-size: 14px;
+	color: #333333;
+}
+
+.voudetail {
+	position: relative;
+}
+.voudetailAss{
+	position: relative;
+	box-sizing: border-box;
+	padding-top: 8px;
+}
+.voucher {
+	width: 100% !important;
+	position: relative;
+}
+.voucher-center .voucherjia {
+    visibility: hidden; 
+    cursor: pointer;
+    text-decoration: none;
+    display: block;
+    position: relative;
+    height: 22px;
+}
+.voucher-center .voucherjiass {
+    visibility: hidden; 
+    cursor: pointer;
+    text-decoration: none;
+    display: block;
+    position: relative;
+    height: 22px;
+ }
+.voucher-body .voucherjias span{
+    color: #333;
+    font-size: 18px;
+    float: right;
+    position: absolute;
+    right: 2px;
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+}
+
+.voucher-body .voucherjiass span{
+    right: 8px;
+}
+.voucher-body .voucherjian {
+	position: absolute;
+	float: left;
+	left: 2px;
+	top: 17px;
+	visibility: hidden;
+	color: #333333;
+	width: 18px;
+	height: 18px; 
+    font-size: 18px;
+    text-decoration: none;
+}
+
+.voubodyscroll {
+    width: 100%;
+    position: relative;
+    height: auto;
+    overflow-x: hidden;
+    overflow-y: auto;
+    max-height: 150px;
+}
+/*单凭证左右*/ 
+.voucher-singelzy .voucher-head div{
+	display: inline-block;
+	box-sizing: border-box;
+	text-align: center;
+	height: 30px;
+	line-height: 30px;
+	color: #333333;
+    border-bottom: 1px solid #9E9E9E;
+	font-size: 14px;
+}
+.voucher-singelzy .voucher-head .voucherheadtitle {
+    width: 49%;
+	border-top: 1px solid #ABB8C3;
+    border-right: 1px solid #9E9E9E;
+   	border-left: 1px solid #ABB8C3;
+    position: absolute;
+    top: 0px;
+    left: 3%;
+}
+
+.voucher-singelzy .voucher-head .voucherheadtitley{
+	width: 45%;
+	border-top: 1px solid #ABB8C3;
+	border-right: 1px solid #ABB8C3;
+	position: absolute;
+	top: 0px;
+	left: 52%;
+}
+.voucher-singelzy .voucher-head .vouindex{
+	height: 30px;
+	border-right: 1px solid #ABB8C3;
+   	border-left: 1px solid #ABB8C3;
+	width: 4%;
+    position: absolute;
+    top: 30px;
+    left: 3%;
+}
+.voucher-singelzy .voucher-head .voucherheadbtn{
+	height: 60px;
+	width: 3%;
+	background: #FFFFFF;
+    border-bottom: 1px solid #FFFFFF;
+    position: absolute;
+    top: 0px;
+    left: 0;
+}
+.voucher-singelzy .voucher-head .voucherheadbtny{
+	height: 60px;
+	width: 3%;
+    border-bottom: 1px solid #FFFFFF;
+	background: #FFFFFF;
+    position: absolute;
+    top: 0px;
+    left: 97%;
+}
+.voucher-singelzy .voucher-head .abstracthead {
+	height: 30px;
+	border-right: 1px solid #9E9E9E;
+	width: 10%;
+    position: absolute;
+    top: 30px;
+    left: 7%;
+}
+
+.voucher-singelzy .voucher-head .accountinghead {
+	height: 30px;
+	border-right: 1px solid #9E9E9E;
+	width: 15%;
+    position: absolute;
+    top: 30px;
+    left: 17%;
+}
+
+.voucher-singelzy .voucher-head .jf {
+	height: 30px;
+	border-right: 1px solid #9E9E9E;
+	width: 10%;
+    position: absolute;
+    top: 30px;
+    left: 32%;
+}
+
+.voucher-singelzy .voucher-head .df {
+	height: 30px;
+	width: 10%;
+	border-right: 1px solid #9E9E9E;
+    position: absolute;
+    top: 30px;
+    left: 42%;
+}
+.voucher-singelzy .voucher-head .abstractheadtwo {
+	height: 30px;
+	border-right: 1px solid #9E9E9E;
+	width: 10%;
+    position: absolute;
+    top: 30px;
+    left: 52%;
+}
+
+.voucher-singelzy .voucher-head .accountingheady {
+	height: 30px;
+	border-right: 1px solid #9E9E9E;
+	width: 15%;
+    position: absolute;
+    top: 30px;
+    left: 62%;
+}
+
+.voucher-singelzy .voucher-head .jfy {
+	height: 30px;
+	border-right: 1px solid #9E9E9E;
+	width: 10%;
+    position: absolute;
+    top: 30px;
+    left: 77%;
+}
+
+.voucher-singelzy .voucher-head .dfy {
+	height: 30px;
+	width: 10%;
+	border-right: 1px solid #ABB8C3;
+    position: absolute;
+    top: 30px;
+    left: 87%;
+}
+
+.voucher-singelzy .voucher-center{
+	width: 100%;
+	height: 50px;
+	position: relative;
+	left: 0px;
+	top: 0px;
+	float: left;
+}
+.voucher-singelzy .voucher-center:nth-child(odd) {
+  background-color:#F5F5F5;
+}
+.voucher-singelzy .voucher-center:nth-child(even) {
+  background-color:rgba(242,249,255,0.5);
+}
+.voucher-singelzy .voucher-center:nth-child(odd) .accountingye{
+  background-color:#F5F5F5;
+}
+.voucher-singelzy .voucher-center:nth-child(odd) .accountingmx{
+  background-color:#F5F5F5;
+}
+.voucher-singelzy .voucher-center:nth-child(even) .accountingye{
+  background-color:rgba(242,249,255,0.5);
+}
+.voucher-singelzy .voucher-center:nth-child(even) .accountingye{
+  background-color:rgba(242,249,255,0.5);
+}
+.voucher-singelzy .voucher-center div{
+	display: inline-block;
+	box-sizing: border-box;
+	font-size: 12px;
+	float: left;
+    height: 50px;
+}
+.voucher-singelzy .voucher-center .voucherjias {
+    width: 3%;
+    position: absolute;
+    left: 0px;
+    background: #ffffff;
+}
+
+.voucher-singelzy .voucher-centercw {
+	/*width: 49%;
+	border-right: 1px solid #abb8c3;
+	margin-left: ;*/
+}
+
+.voucher-singelzy .voucher-centerys {
+	/*width: 45%;
+	position: absolute;
+	left: 52%;*/
+}
+.voucher-singelzy .voucher-center .voucherjians {
+ 	width: 3%;
+    height: 50px;
+    position: absolute;
+    left: 97%;
+    background: #ffffff;
+}
+
+.voucher-singelzy .abstractinp, .voucher-singelzy .accountinginp,.voucher-singelzy .money-sr{
+	width: 100%;
+	height: 50px;
+	border: 0px;
+	box-sizing: border-box;
+	padding-left: 8px;
+}
+.voucher-singelzy .money-sr{
+	display: none;
+}
+.voucher-singelzy .money-xs {
+	width: 100%;
+	border: 0px;
+	box-sizing: border-box;
+	padding-left: 8px;
+	line-height: 50px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+.voucher-singelzy .voucher-centercw .voucherindex{
+ 	width: 4%;
+    height: 50px;
+    position: absolute;
+    left: 3%;
+    line-height: 50px;
+    text-align: center;
+    font-size: 12px;
+	border-right: 1px solid #ABB8C3;
+	border-bottom: 1px solid #ABB8C3;
+    border-left: 1px solid #ABB8C3;
+}
+.voucher-singelzy .voucher-centercw .abstract {
+ 	width: 10%;
+    position: absolute;
+    left: 7%;
+    border-left: 0px;
+}
+
+.voucher-singelzy .voucher-centercw .accounting {
+	width: 15%;
+    position: absolute;
+    left: 17%;
+}
+.voucher-singelzy .voucher-centercw .moneyj {
+	width: 10%;
+    position: absolute;
+    left: 32%;
+}
+
+.voucher-singelzy .voucher-centercw .moneyd {
+	width: 10%;
+    position: absolute;
+    left: 42%;
+	border-right: 1px solid #ABB8C3;
+}
+
+.voucher-singelzy .voucher-centerys .abstract {
+	width: 10%;
+    position: absolute;
+    left: 52%;
+	border-left: 0px;
+}
+.voucher-singelzy .voucher-centerys .accounting {
+	width: 15%;
+    position: absolute;
+    left: 62%;
+}
+
+.voucher-singelzy .voucher-centerys .moneyj {
+	width: 10%;
+    position: absolute;
+    left: 77%;
+}
+.voucher-singelzy .voucher-centerys .moneyd {
+	width: 10%;
+    position: absolute;
+    left: 87%;
+	border-right: 1px solid #ABB8C3;
+}
+
+.voucher-singelzy .voucher-footer {
+    width: 100%;
+    height: 50px;
+    position: relative;
+}
+
+.voucher-singelzy .vouindexss{
+    width: 4%;
+    height: 50px;
+    border-left: 1px solid #ABB8C3;
+    border-bottom: 1px solid #ABB8C3;
+    border-right: 1px solid #ABB8C3;
+    line-height: 50px;
+    font-size: 12px;
+    position: absolute;
+    left: 3%;
+    box-sizing: border-box;
+}
+.voucher-singelzy .voucher-footer .moneyhjcw .heji {
+	left: 7%;
+	width: 25%;
+	border-left: 0px;
+	position: absolute;
+}
+
+.voucher-singelzy .voucher-footer .moneyhjcw .moneyj {
+	left: 32%;
+	width: 10%;
+}
+
+.voucher-singelzy .voucher-footer .moneyhjcw .moneyd {
+	left: 42%;
+	width: 10%;
+}
+
+.voucher-singelzy .moneyhjys .hejihz {
+	width: 25%;
+	height: 50px;
+	position: absolute;
+	left: 52%;
+	border-bottom: 1px solid #9E9E9E;
+	border-right: 1px solid #9E9E9E;
+	line-height: 50px;
+	padding-left: 8px;
+	box-sizing: border-box;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+.voucher-singelzy .voucher-footer .moneyhjys .moneyj {
+	left: 77%;
+	width: 10%;
+}
+
+.voucher-singelzy .voucher-footer .moneyhjys .moneyd {
+	left: 87%;
+	width: 10%;
+}
+
+.voucher-singelzy .voucher-centercw .voucher-yc {
+	left: 48px;
+	width: 1130px;
+	position: relative;
+}
+
+.voucher-singelzy .voucher-centercw .voucher-yc-bg {
+	overflow-x: auto;
+	overflow-y: hidden;
+	width: 100%;
+	border: 1px solid #d2ebfc;
+	background: #d2ebfc;
+}
+
+.voucher-singelzy .voucher-centerys .voucher-yc {
+	left: -565px;
+	width: 1130px;
+}
+
+.voucher-singelzy .accountingye {
+	width: 96px;
+}
+
+.voucher-singelzy .accountingmx {
+	left: 110px;
+}
+
+.voucher-singelzy .moneyj .money-xs {
+	width: 100%;
+	height: 50px;
+	border: 0px;
+    line-height: 50px;
+}
+
+.voucher-singelzy .moneyd .money-xs {
+	width: 100%;
+	height: 50px;
+	border: 0px;
+    line-height: 50px;
+}
+.voudeletediv{
+    float: left;
+    position: absolute;
+    right: 48%;
+    opacity: 0.5;
+    cursor: pointer;
+    width: 16px;
+    height: 50px;
+}
+.voucher-singelzyx .voubodyscroll .voucher-center{
+	top: 0px;
+}
+.voucher-centerys .voudeletediv{
+	right: 3%;	
+}
+.voucher-singelzyx .voucher-centerys .voudeletediv{
+	right: 15px;	
+}
+.voucher-singelzybg .voucher-centercw .voudeletediv{
+	right: 20px;	
+}
+.voucher-singelzybg .voucher-centerys .voudeletediv{
+	right: 26px;	
+}
+
+.voudelete{
+    float: left;
+    position: absolute;
+    top: 0px;
+    visibility: hidden;
+    cursor: pointer;
+    line-height: 50px;
+    left: 2px;
+}
+
+/*新的辅助核算表样式*/
+.voucher-yc {
+	position: relative;
+	width: 100%;    
+	box-sizing: border-box;
+	overflow: hidden;
+}
+.voucher-yc-bt {
+    width: 100%;
+    height: 30px;
+    position: relative;
+    left: 0px;
+}
+.voucher-yc-bt-gudinbg{
+    width: 94%;
+    height: 30px;
+    position: absolute;
+    left: 3%;
+    z-index: 2;
+    overflow: hidden;
+}
+.voucher-yc-bt-gudin{
+    width: 100%%;
+    height: 30px;
+    z-index: 2;
+}
+.voucher-bgall{
+	width: 100%;
+	position: relative;
+	overflow-y: hidden;
+	overflow-x: hidden;
+}
+.voucher-bgallscroll{
+	width: 100%;
+	position: relative;
+	overflow-y: auto !important;
+	overflow-x: hidden !important;
+}
+.voucher-yc-addbtns{
+	position: relative;
+	width: 3%;
+	left: 0px;
+	float: left;
+	padding-top: 30px;
+}
+.voucher-yc-bg{
+    position: relative;
+    overflow-x: auto !important;
+    overflow-y: hidden;
+    width: 94%;
+    left: 0%;
+    float: left;
+}
+.voucher-yc-deletebtns{
+	position: relative;
+	width: 3%;
+	left: 0%;
+	float: left;
+	padding-top: 30px;
+}
+.bgheight {
+	overflow-y: scroll !important;
+	height: 455px;
+}
+.ychead {
+    float: left;
+    width: 200px;
+    height: 30px;
+    text-align: center;
+    line-height: 30px;
+    border-left:1px solid #b0b6bb;
+    border-top: 1px solid #DFE6EC;
+    background: #EAEAEA;
+    box-sizing: border-box;
+}
+.ychead:nth-last-of-type(1){
+	border-right: 1px solid #DFE6EC;
+}
+.voucher-yc-bo {
+	width: 100%;
+	height: 50px;
+	position: relative;
+	float: left;
+	box-sizing: border-box;
+}
+
+.ycbody {
+	width: 200px;
+	height: 50px;
+	float: left;
+	border: none;
+	border-left: 1px solid #DFE6EC;
+	border-bottom: 1px solid #DFE6EC;
+	position: relative;
+	box-sizing: border-box;
+}
+.voucher-yc-bo .yctz {
+	border-right: 1px solid #DFE6EC;
+	text-align: right;
+	padding-right: 8px;
+	box-sizing: border-box;
+}
+.ycbody .ycbodyinp {    
+	width: 100%;
+    height: 100%;
+    border: none;
+    box-sizing: border-box;
+    background: #fff;
+    padding-left: 2px;
+    resize:none;
+}
+.bgblack {
+	background: rgba(173, 173, 173, 0.1);
+}
+.ycadddiv{
+    width: 20px;
+    height: 50px;
+    float: right;
+    box-shadow: none;
+    border: none;
+}
+.ycadd {
+    width: 15px;
+    height: 15px;
+    float: left;
+    position: relative;
+    top: 16px;
+    left: 1px;
+    z-index: 1;
+	visibility: hidden;
+	cursor: pointer;
+}
+.ycdeldiv{
+    width: 100%;
+    height: 52px;
+    float: left;
+    box-shadow: none;
+    border: none;
+    /*position: absolute;*/
+    left: 0px;
+}
+.ycdelect {
+	width: 14px;
+	height: 14px;
+	float: left;
+	position: relative;
+    top: 16px;
+    left: 1px;
+	visibility: hidden;
+	cursor: pointer;
+	color: #000000;
+	font-size: 16px;
+}
+.voucher-yc-deletebtns .voucher-close{
+	float: left;
+	position: relative;
+}
+.voucher-hover{
+	background-color: #ffffff !important;
+}
+.voucher-hover .accountingye{
+	background-color: #ffffff !important;
+}

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+  		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>凭证打印-打印封面</title>
+  		<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+		<script src="../../pub/boot.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+		<link rel="stylesheet" type="text/css" href="rptPrintPrintCover.css?rev=@@hash"/>
+		<!--<link href="@Url.Content("~/vouPrintPrintCover.css?rev=@@hash")" rel="stylesheet" type="text/css"  media="print" />-->
+	</head>
+	<body id="rptPrintPrintCover">
+		<div class="ufma-layout-updown">
+            <div class="ufma-layout-up">
+            	<div class="container-fluid margin-left-15 margin-right-15">
+            		<div class="cover-box">
+            			<h5 class="title">账簿封面</h5>
+            				
+        				<form action="">
+        					<table class="table table-bordered">
+	        					<tbody>
+	        						<tr>
+	        							<td>单位名称</td>
+	        							<td colspan="8">
+	        								<input type="text" name="" id="rppcAgencyName" value="" />
+	        							</td>
+	        						</tr>
+	        						<tr>
+	        							<td>账簿名称</td>
+	        							<td colspan="8">
+	        								<input type="text" name="" id="rppcRptName" value="" />
+	        							</td>
+	        						</tr>
+	        						<tr>
+	        							<td>所属年度</td>
+	        							<td colspan="4">
+	        								<input type="text" name="" id="rppcSetYear" value="" />
+	        								年度
+	        							</td>
+	        							<td colspan="2">装订册次</td>
+	        							<td colspan="2">
+	        								第
+	        								<input type="text" class="binding" id='volume-num' style="border-bottom: 1px solid #333333;"/>
+	        								册（共
+	        								<input type="text" class="binding" id='volume-sum' style="border-bottom: 1px solid #333333;"/>
+	        								册）
+	        							</td>
+	        						</tr>
+	        						<tr>
+	        							<td>起讫页码</td>
+	        							<td colspan="8">
+	        								自第
+	        								<input type="text" class="page" id='pages'  style="border-bottom: 1px solid #333333;"/>
+	        								页&nbsp;至&nbsp;第
+	        								<input type="text" class="page" id='pagee' style="border-bottom: 1px solid #333333;"/>
+	        								页（共
+	        								<input type="text" class="page" id='pagen' style="border-bottom: 1px solid #333333;"/>
+	        								页）</td>
+	        						</tr>
+	        						<tr>
+	        							<td rowspan="3" style="vertical-align: middle;">经管人员</td>
+	        							<td colspan="2">单位领导人</td>
+	        							<td colspan="2">会计主管</td>
+	        							<td colspan="2">记账</td>
+	        							<td colspan="2">装订</td>
+	        						</tr>
+	        						<tr>
+	        							<td>姓名</td>
+	        							<td>盖章</td>
+	        							<td>姓名</td>
+	        							<td>盖章</td>
+	        							<td>姓名</td>
+	        							<td>盖章</td>
+	        							<td>姓名</td>
+	        							<td>盖章</td>
+	        						</tr>
+	        						<tr>
+	        							<td>&nbsp;</td>
+	        							<td>&nbsp;</td>
+	        							<td>&nbsp;</td>
+	        							<td>&nbsp;</td>
+	        							<td>&nbsp;</td>
+	        							<td>&nbsp;</td>
+	        							<td>&nbsp;</td>
+	        							<td>&nbsp;</td>
+	        						</tr>
+	        						<tr>
+	        							<td>备注</td>
+	        							<td colspan="8"><input type="text" id="remark" value="" style="width: 100%;"/></td>
+	        						</tr>
+	        					</tbody>
+	        				</table>
+        				</form>
+        				
+            		</div>
+            	</div>
+            </div>
+            
+            <div class="ufma-layout-down bordered-top">	
+				<div class="text-right margin-right-30">
+					<button type="button" class="btn btn-sm btn-primary btn-print" id="btn-print">打印</button>
+					 <button type="button" class="btn btn-sm btn-default btn-qx" id="btn-qx">取消</button>
+				 </div>
+			</div>
+		</div>
+		
+		<script src="rptPrintPrintCover.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+	</body>
+</html>

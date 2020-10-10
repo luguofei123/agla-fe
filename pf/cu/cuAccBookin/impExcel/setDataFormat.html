@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>银行对账单-设置导入方案</title>
+	<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+	<script src="../../../pub/boot.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+	<link rel="stylesheet" href="../cuAccBookin.css?rev=@@hash" />
+</head>
+
+<body>
+	<div class="ufma-layout-updown" id="setDataFormat">
+		<div class="ufma-layout-up">
+			<div class="container-fluid">
+
+				<form id="infoForm" class="form-horizontal mt10" >
+					<div class="form-row">
+						<div class="form-group">
+							<label class="control-label">方案名称：</label>
+							<div class="control-element">
+								<input type="hidden" name="lastVer" id="">
+								<input type="hidden" name="impScheGuid" id="">
+								<input type="text" name="impScheName" id="impScheName" class="form-control w200">
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="control-label">导入开始行：</label>
+							<div class="control-element">
+								<div id="startLine" name="startLine" class="uf-combox w70 ib"></div>
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="control-label">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+							<div class="control-element dire1-radio">
+								<label class="mt-radio mt-radio-outline margin-right-8">
+									<input class="" type="radio" name="amtImpType" value="1" checked> 按借贷方向
+									<span></span>
+								</label>
+								<label class="mt-radio mt-radio-outline margin-right-8">
+									<input class="" type="radio" name="amtImpType" value="2"> 按金额
+									<span></span>
+								</label>
+							</div>
+						</div>
+						
+						<div class="clearfix"></div>
+					</div>
+				</form>
+
+
+				<!-- Excel start -->
+				<div class="radio-body2">
+					<form id="excelForm" class="form-horizontal mt15">
+						<div id="excelTable"></div>
+						<br/>
+					</form>
+				</div>
+				<!-- Excel end -->
+			</div>
+		</div>
+		<div class="ufma-layout-down bordered-top">
+			<div class="text-right margin-right-30">
+				<button type="button" class="btn btn-primary btn-save btn-ajax">保存</button>
+				<button type="button" class="btn btn-primary btn-save-new btn-ajax btn-saveas">另存为</button>
+				<button type="button" class="btn btn-primary btn-delete btn-ajax">删除</button>
+				<button type="button" class="btn btn-default btn-close">取消</button>
+			</div>
+		</div>
+	</div>
+	<script src="setDataFormat.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+	<script src="../dm.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+</body>
+
+</html>

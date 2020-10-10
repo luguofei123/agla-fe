@@ -1,0 +1,17 @@
+/*#coAccEdit .add-content{padding: 16px;}
+#coAccEdit .add-content .add-content-left{width: 518px; border: 1px solid #D9D9D9;padding: 16px 0 16px 100px;}
+#coAccEdit .add-content .add-content-right{width: 200px;}*/
+
+#coAccEdit .ufma-layout-content .form-group input,
+#coAccEdit .ufma-layout-content .form-group select{height: 30px; width: 310px;}
+#treeAgency,#treeAgency_popup{width:310px}
+#coAccEdit .ufma-layout-content #treeAgency input{width: 278px;}
+
+/*#coAccEdit .add-content-right .panel{background-color: rgba(230,244,253,0.50);}
+#coAccEdit .add-content-right .panel h5{font-size: 14px; line-height: 34px; border-bottom: 1px solid #D9D9D9; margin: 0;padding: 0 16px;}
+#coAccEdit .add-content-right .panel ul.list-unstyled{margin: 0;padding: 10px 16px;}
+#coAccEdit .add-content-right .panel ul.list-unstyled li{font-size: 12px;margin-top: 10px;}
+#coAccEdit .add-content-right .panel ul.list-unstyled li:first-child{margin-top: 0;}*/
+
+#coAccEdit .add-footer{padding: 16px; border-top: 1px solid #D9D9D9; text-align: right;}
+#coAccEdit .ufma-combox-border{padding: 0 8px;}

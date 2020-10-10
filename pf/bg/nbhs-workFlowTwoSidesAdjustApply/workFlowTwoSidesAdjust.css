@@ -1,0 +1,103 @@
+.budgetItemTwoSidesAdjustMain {
+	padding: 8px 20px 0px 20px !important;
+	color: #333 !important;
+}
+
+
+/******************************************************************/
+
+.budgetItemTwoSidesAdjust-modal-title {
+	height: 70px;
+	text-align: center;
+}
+
+.budgetItemTwoSidesAdjust-modal-title .fill {
+	width: 5%;
+	height: 100%;
+	float: left;
+}
+
+.budgetItemTwoSidesAdjust-modal-title .message {
+	width: 30%;
+	height: 100%;
+	float: left;
+}
+
+.tabController {
+	width: 100%;
+	position: relative;
+	float: left;
+}
+
+.budgetItemTwoSidesAdjust-footer2 {
+	height: 62px;
+}
+
+.budgetItemTwoSidesAdjust-width-125 {
+	width: 125px;
+}
+
+.budgetItemTwoSidesAdjust-width-45 {
+	width: 45px;
+}
+
+.budgetItemTwoSidesAdjust-margin-10 {
+	margin-left: 10px;
+}
+
+.active {
+	background: #FFFFFF !important;
+}
+
+.uf-datepicker {
+	background-color: white !important;
+}
+
+.ufma-portlet>.portlet-title {
+	position: relative;
+}
+
+.ufma-portlet>.portlet-title>.actions {
+	position: absolute;
+	right: 0;
+	top: 0;
+}
+
+#mainTable-twoSidesAdjItem .dataTables_scrollHeadInner,
+.dataTables_scrollHeadInner .dataTable {
+	width: 100% !important;
+}
+
+#adjustTotal p {
+	float: left;
+}
+
+#inApplyTitle input {
+	height: 30px;
+}
+
+
+/*调整追踪流程显示弹窗*/
+
+.workflow-trace-full.horizontal.default {
+	max-width: 1100px;
+	max-height: 500px;
+	overflow: auto;
+}
+
+.ufma-table.uf-rpt-table.dataTable.no-footer {
+	width: 100% !important;
+}
+
+table.ufma-table.dataTable tr th.afterDispenseMoney,
+table.ufma-table.dataTable tr td.afterDispenseMoney {
+	min-width: 150px !important;
+	max-width: 250px !important;
+}
+
+.commonShow {
+	max-width: 250px !important;
+	max-height: 40px;
+	text-overflow: ellipsis;
+	overflow: hidden;
+}

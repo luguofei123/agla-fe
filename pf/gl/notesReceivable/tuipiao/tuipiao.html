@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>应付票据退票</title>
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <script src="../../../pub/boot.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+    <link rel="stylesheet" href="../notesCommon/notesCommon.css"/>
+</head>
+
+<body>
+<div id="coaAccEdit" class="ufma-layout-updown">
+    <div class="ufma-layout-up">
+        <form id="frmBookIn" class="container-fluid form-horizontal form-padding form-top-padding">
+            <div class="form-row">
+                <div class="form-group m0 p0">
+                    <label class="control-label auto">备查类型：</label>
+                    <div class="control-element">
+                        <input id="receivableType" type="text" name="receivableType" class="form-control"
+                               readonly="true" style="width:190px;background-color:#F2F2F2;color:#cccccc">
+                    </div>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+            <div class="panel ufma-panel" style="width:860px;height:220px;margin:0;">
+                <div class="panel-heading">
+                    <div class="caption">票据信息</div>
+                </div>
+                <div class="panel-collapse collapse in">
+                    <div class="panel-body" style="padding:16px;">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label class="control-label">票据类型：</label>
+                                <div class="control-element">
+                                    <div id="billType" class="uf-treecombox" name="billType" idField="code" textField="codeName"
+                                         leafRequire=true style="width:160px"></div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label">票据号数：</label>
+                                <div class="control-element">
+                                    <input type="text" name="billNumber" class="form-control">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label">出票人:</label>
+                                <div class="control-element">
+                                    <div id="billPerson" class="uf-treecombox" name="billPerson" idField="code" textField="codeName"
+                                         leafRequire=true style="width:160px"></div>
+                                </div>
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+                        <div class="form-row">
+
+                            <div class="form-group">
+                                <label class="control-label">交易合同号:</label>
+                                <div class="control-element">
+                                    <input type="text" name="dealpactNumber" class="form-control">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label">出票日期：</label>
+                                <div class="control-element">
+                                   <!-- <div name="billDate" id="billDate" class="uf-datepicker"
+                                         style="width: 180px"></div>-->
+                                    <input type="text" name="billDate" id="billDate" class="form-control" style="width: 160px"><!--bug79763--zsj--控制不可编辑-->     
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label">到期日期：</label>
+                                <div class="control-element">
+                                    <!--<div name="expiryDate" id="expiryDate" class="uf-datepicker"
+                                         style="width: 180px"></div>-->
+                                    <input type="text" name="expiryDate" id="expiryDate" class="form-control" style="width: 160px"><!--bug79763--zsj--控制不可编辑-->     
+                                </div>
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label class="control-label">票面金额：</label>
+                                <div class="control-element">
+                                    <input id="billfaceAmount" type="text" name="billfaceAmount" class="form-control">
+                                </div>
+                            </div>
+                            <div class="form-group" style="margin-left:19px">
+                                <label class="control-label" style="margin-right:16px">票面利率(%)：</label>
+                                <div class="control-element">
+                                    <input type="text" id="billfaceRate" name="billfaceRate" class="form-control">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label">付款人:</label>
+                                <div class="control-element">
+                                    <div id="payerAgency" class="uf-treecombox" name="payerAgency" idField="code" textField="codeName"
+                                         leafRequire=true style="width:160px"></div>
+                                </div>
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label class="control-label">承兑人：</label>
+                                <div class="control-element">
+                                    <div id="acceptAgency" class="uf-treecombox" name="acceptAgency" idField="code" textField="codeName"
+                                         leafRequire=true style="width:160px"></div>
+                                </div>
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+
+        <div class="beishu-part" style="padding-bottom: 50px">
+            <div class="panel ufma-panel" style="width:860px;margin:0;">
+                <div class="panel-heading">
+                    <div class="caption">退票信息</div>
+                </div>
+                <div class="panel-collapse collapse in">
+                    <div class="panel-body" style="padding:16px;padding-bottom: 0px">
+                        <form id="frmBookIn2" class="container-fluid form-horizontal form-padding form-top-padding" style="padding: 0">
+                            <div class="form-row">
+                                <div class="form-group required">
+                                    <label class="control-label">退票日期：</label>
+                                    <div class="control-element">
+                                        <div name="businessDate" id="businessDate" class="uf-datepicker"
+                                             style="width: 160px"></div>
+                                    </div>
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>
+                            <div style="margin-top: 10px;padding-left: 16px;padding-left: 38px;margin-bottom: 10px">
+                                <div class="form-group p0" style="margin-left: 0px;">
+                                    <label class="control-label auto" style="font-weight: normal">备注：</label>
+                                    <div class="control-element" style="display: inline-block">
+                                        <input type="text" name="billRemark" class="form-control" style="width:494px;" maxlength="200">
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+
+        <div class="ufma-layout-down bordered-top" style="background-color: #fff">
+            <div class="text-right  margin-right-30">
+                <!--<button type="button" class="btn btn-sm btn-primary btn-permission btn-saveadd" id="coaAccSaveAddAll">-->
+                    <!--保存并新增-->
+                <!--</button>-->
+                <button type="button" class="btn btn-sm btn-default btn-permission btn-save" id="btnSave">保存</button>
+                <button type="button" class="btn btn-sm btn-default" id="btnClose"> 关闭</button>
+            </div>
+        </div>
+    </div>
+</div>
+    <script src="../dm.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+    <script src="tuipiao.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+</body>
+
+</html>

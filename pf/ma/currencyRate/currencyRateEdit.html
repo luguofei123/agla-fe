@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>设置币种汇率</title>
+		<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+		<script src="../../pub/boot.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+		<link rel="stylesheet" href="currencyRate.css?rev=@@hash" />
+	</head>
+
+	<body>
+		<div class="ufma-layout-updown">
+			<div class="ufma-layout-up" style="padding:10px;">
+				<div class="container-fluid">
+					<div class="ufma-layout ufma-layout-slider-lm ufma-layout-fixed-slider ufma-layout-fixed-slider-right">
+						<div class="ufma-layout-content">
+							<!--基本信息begin-->
+							<div class="panel ufma-panel">
+								<div class="panel-heading">
+									<!--<h4 class="panel-title" style="line-height:36px;">-->
+									<div class="caption">基本信息</div>
+									<div class="actions">
+										<a class="curRate-edit margin-right-8" id="btnCurRateBaseEdit"><span class="glyphicon icon-edit"></span></a>
+										<a data-toggle="collapse" href="#form-curRateBaseTab">
+											<span class="glyphicon icon-angle-bottom"></span>
+										</a>
+									</div>
+									<!--</h4>-->
+								</div>
+								<form id="form-curRateBaseTab" class="panel-collapse collapse in">
+									<div class="panel-body">
+										<div class="container-fluid form-horizontal">
+											<input type="hidden" name="chrId" value="" />
+											<!-- <input type="hidden" name="agencyCode" value="*"/> -->
+											<div class="row">
+												<div class="col-xs-6">
+													<div class="form-group required">
+														<label class="control-label em6">币种编码：</label>
+														<div class="control-element w180">
+															<input type="text" name="chrCode" id="chrCode" class="form-control" />
+															<label for="chrCode" class="control-label hide"></label>
+														</div>
+													</div>
+												</div>
+												<div class="col-xs-6">
+													<div class="form-group required">
+														<label class="control-label em6">币种名称：</label>
+														<div class="control-element w180">
+															<input type="text" name="chrName" id="chrName" class="form-control">
+															<label for="chrName" class="control-label hide" style="width: 100%;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;text-align: left;"></label>
+														</div>
+													</div>
+												</div>
+											</div>
+											<div class="row">
+												<div class="col-xs-6">
+													<div class="form-group required">
+														<label class="control-label em6">货币符号：</label>
+														<div class="control-element w180">
+															<input type="text" name="curSign" id="curSign" class="form-control" />
+															<label for="curSign" class="control-label hide"></label>
+														</div>
+													</div>
+												</div>
+												<div class="col-xs-6">
+													<div class="form-group" style="padding-bottom: 5px;">
+														<label class="control-label em6" style="float: left;margin-top: 2px;">汇率小数位数：</label>
+														<div class="control-element w180">
+															<div class="rate-num-count">
+																<span class="rate-num-disabled rate-num-reduce">
+															<span class="glyphicon icon-minus"></span>
+																</span>
+																<!-- 汇率小数点位数 最小为2，最大为6，默认为4 -->
+																<input type="text" name="rateDigits" id="rateDigits" class="rate-num-val" value="4" readonly/>
+																<span class="rate-num-action rate-num-add">
+															<span class="glyphicon icon-plus"></span>
+																</span>
+															</div>
+															<label for="rateDigits" class="control-label hide" style="margin-top: 2px;"></label>
+														</div>
+													</div>
+												</div>
+											</div>
+											<div class="row">
+												<div class="col-xs-6">
+													<div class="form-group">
+														<label class="control-label em6">本位币：</label>
+														<div class="control-element">
+															<div class="btn-group" data-toggle="buttons">
+																<label class="btn btn-default">
+                                                            <input type="radio" class="toggle" name="isStdCur" value="1"> 是 </label>
+																<label class="btn btn-default active">
+                                                            <input type="radio" class="toggle" name="isStdCur" value="0" checked> 否 </label>
+															</div>
+															<label for="isStdCur" class="control-label hide"></label>
+														</div>
+													</div>
+												</div>
+												<div class="col-xs-6">
+													<div class="form-group">
+														<label class="control-label em6">中间币种：</label>
+														<div class="control-element">
+															<div class="btn-group" data-toggle="buttons">
+																<label class="btn btn-default">
+                                                            <input type="radio" class="toggle" name="isMidCur" value="1"> 是 </label>
+																<label class="btn btn-default active">
+                                                            <input type="radio" class="toggle" name="isMidCur" value="0" checked> 否 </label>
+															</div>
+															<label for="isMidCur" class="control-label hide"></label>
+														</div>
+													</div>
+												</div>
+											</div>
+											<div class="row">
+												<div class="col-xs-6">
+													<div class="form-group">
+														<label class="control-label em6">助记码：</label>
+														<div class="control-element w180">
+															<input type="text" name="assCode" id="assCode" class="form-control" maxlength="42" />
+															<label for="assCode" class="control-label hide" style="width: 200px;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;text-align: left;vertical-align: sub;"></label>
+														</div>
+													</div>
+												</div>
+												<div class="col-xs-6">
+													<div class="form-group">
+														<label class="control-label em6">计算公式：</label>
+														<div class="control-element w180">
+															<input type="text" name="curFormula" id="curFormula" class="form-control" maxlength="64" />
+															<label for="curFormula" class="control-label hide" style="width: 200px;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;text-align: left;vertical-align: sub;"></label>
+														</div>
+													</div>
+												</div>
+											</div>
+											<div class="row">
+												<div class="col-xs-6">
+													<div class="form-group">
+														<label class="control-label em6">币种属性：</label>
+														<div class="control-element w180">
+															<div id="curAttribute" name="curAttribute" class="uf-combox" style="width:180px;"> </div>
+															<label for="curAttribute" class="control-label hide" style="width: 200px;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;text-align: left;vertical-align: sub;"></label>
+														</div>
+													</div>
+												</div>
+											</div>
+											<div class="row hide" id="curRateBaseBtnGroup">
+												<div class="col-xs-12 text-right margin-top-8">
+													<button type="button" class="btn btn-sm btn-primary btn-save btn-permission">保存</button>
+													<button type="button" class="btn btn-sm btn-default btn-cancel">取消</button>
+												</div>
+											</div>
+										</div>
+									</div>
+								</form>
+							</div>
+							<!--汇率设置begin-->
+							<div class="panel ufma-panel">
+								<div class="panel-heading">
+									<!--<h4 class="panel-title" style="line-height:36px;">-->
+									<div class="caption">汇率设置</div>
+									<div class="actions">
+										<a class="curRate-edit margin-right-8" id="btnCurRateSetEdit"><span class="glyphicon icon-edit"></span></a>
+										<a data-toggle="collapse" href="#form-curRateSetTab">
+											<span class="glyphicon icon-angle-bottom"></span>
+										</a>
+									</div>
+									<!--</h4>-->
+								</div>
+								<form id="form-curRateSetTab" class="panel-collapse collapse in">
+									<div class="panel-body">
+										<table id="currencyRateTable" class="ufma-table dataTable table-edit uf-rpt-table bordered">
+											<thead>
+												<tr>
+													<th width="30"> 序号</th>
+													<th> 月份</th>
+													<th> 直接汇率</th>
+													<th> 间接汇率</th>
+												</tr>
+                      </thead>
+                      <!-- CWYXM-18782--设置比重汇率界面，新增汇率保存后界面未展示--zsj--jquery升级导致 -->
+                      <tbody></tbody>
+										</table>
+										<div class="text-center padding-15">
+											<a class="btn btn-sm btn-default" id="currencyRateAdd"><span class="glyphicon icon-plus"></span><span class="margin-left-15">新增汇率</span></a>
+										</div>
+										<div class="hide text-right margin-top-8" id="curRateSetBtnGroup" style="position: relative;top: -26px;">
+											<button type="button" class="btn btn-sm btn-primary btn-save btn-permission">保存</button>
+											<button type="button" class="btn btn-sm btn-default btn-cancel">取消</button>
+										</div>
+									</div>
+								</form>
+							</div>
+						</div>
+						<div class="ufma-layout-slider right">
+							<!--备注begin-->
+							<div class="panel ufma-panel ufma-panel-primary">
+								<div class="panel-heading">
+									<div class="caption">参考信息</div>
+								</div>
+								<div class="panel-collapse collapse in">
+									<!-- <div class="panel-body">
+                                <div class="container-fluid form-horizontal" id="accSysLabelCards">
+                                    <div class="row">
+
+                                    </div>
+                                </div>
+                            </div> -->
+									<div class="panel-body">
+										<div id="prompt" style="margin-bottom: 10px"></div>
+										<ul id="expfunc-help" class="list-inline list-inline-horizontal">
+											<li style="padding: 0;">请输入币种编码获得参考信息</li>
+										</ul>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="ufma-layout-down bordered-top" style="background:#fff;">
+				<div class="text-right margin-right-30">
+					<button type="button" class="btn btn-sm btn-primary btn-saveadd btn-permission" id="curRateSaveAddAll">保存并新增</button>
+					<button type="button" class="btn btn-sm btn-default btn-save btn-permission" id="curRateAccSaveAll">保存</button>
+					<button type="button" class="btn btn-sm btn-default btn-close" id="curRateCancelAll"> 关闭</button>
+				</div>
+			</div>
+		</div>
+		<script src="../maCommon/maCommon.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+		<script src="currencyRateEdit.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+	</body>
+
+</html>

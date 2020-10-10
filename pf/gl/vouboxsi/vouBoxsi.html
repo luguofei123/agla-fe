@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+  		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>凭证箱</title>
+  		<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+		<script src="../../pub/boot.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+		<link rel="stylesheet" type="text/css" href="vouBox.css?rev=@@hash"/>
+	</head>
+<body>
+<!--整个容器 begin-->
+<div id="vouBox" class="container-fluid ufma-container">
+	<!--工作区 begin-->
+	<div class="workspace">
+		<!--凭证工作区 begin-->
+    	<div class="vou-workspace">
+    		<!--标题位 begin-->
+    		<div class="vou-selete-box bordered-bottom">
+    			<!--标题 begin-->
+    			<div class="vou-title">凭证箱</div>
+    			<!--标题 end-->
+    			
+    			<!--单位&账套选择 begin-->
+				<ul class="vou-selete-list">
+					<li class="vou-selete-list-li">
+						<!--<div id='cbAgency' name="agencyCode" class="ufma-treecombox ufma-combox-agency" icon="icon-unit" url="/gl/eleAgency/getAgencyTree" valueField="id" textField="name" placeholder="请选择单位"></div>-->
+						<div id='cbAgency' name="agencyCode" class="ufma-treecombox ufma-combox-agency"></div>
+					</li>
+					<li class="vou-selete-list-li">
+						<div id='cbAcct' class="uf-textboxlist ufma-combox-acct" style="width:250px"></div>
+					</li>
+				</ul>
+				<!--单位&账套选择 end-->
+				
+				<!--按钮 begin-->
+				<div class="vou-method-tip">
+					<div class="btn-group pull-right" style="margin-left: 8px;">
+						<button type="button" id="btnSortVoucher" class="btn btn-sm btn-default btn-reset btn-permission">凭证重排</button>
+					</div>
+					<!--<div class="btn-group pull-right" style="margin-left: 8px;">
+						<button type="button" id="btn-print-preview" class="btn btn-sm btn-default btn-print-vou btn-permission">打印凭证</button>
+					</div>-->
+					<div class="btn-group pull-right" style="margin-left: 8px;">
+						<button type="button" id="btn-print-previewpdf" class="btn btn-sm btn-default btn-print-previewpdf btn-permission">打印</button>
+					</div>
+					<div class="btn-group pull-right">
+						<button type="button" id="btn-add" class="btn btn-sm btn-primary btn-add btn-permission">新增</button>
+					</div> 
+					<div class="btn-group pull-right">
+						<button type="button" title="切换样式" id="btnSwitch" class="btn btn-sm btn-default btn-switch switchStyle" style="position: absolute;right: 8px;height: 30px;border: 1px solid #DFE6EC;top: 0px;">
+							<span class="icon-select " style="font-size: 20px;"></span>
+						</button>
+						<div class="switchStylexs" id="rptPlanList">
+							<div class="voucherjcjt"></div>
+							<p id="vouisfullnamecode" style="width: 100%;">
+								<span>显示全称</span>
+								<span class="kj">
+									<label class="mt-radio">
+													<input type="radio" name="vouisfullnamesingle"  id="vouisfullnamesingles"/>&nbsp;<span></span>
+									</label>否
+								</span>
+								<span class="kj">
+									<label class="mt-radio">
+										<input type="radio" name="vouisfullnamesingle"  id="vouisfullnamesingle" checked="true"/>&nbsp;<span></span>
+									</label>是
+								</span>
+							</p>
+						</div>
+					</div>
+				</div>
+				<!--按钮 end-->
+    		</div>
+    		<!--标题位 end-->
+    		
+    		<!--查询 begin-->
+			<div class="vou-box vou-query-box">
+				<!--左侧查询 begin-->
+				<div class="vou-query-box-left">
+					<!--上半部显示 begin-->
+					<ul class="vou-query-box-top">
+						<!--第一行 begin-->
+						<li class="vou-query-box-li clearfix">
+							<!--期间 begin-->
+							<div class="vou-query-li padding-left-24">
+								<label class="vou-query-li-cont-title">期间：</label>
+								<div class="vou-query-li-cont">
+									<div class="vou-query-btn-cont vouTimes">
+										<button class="btn btn-default vouTimeYear">本年</button>
+										<button class="btn btn-primary vouTimeMonth">本期</button>
+										<button class="btn btn-default vouTimeDay">今日</button>
+									</div>
+									<div class="query-date">
+										<span class="date-box">
+											<input class="bordered-input padding-3" type="text" id="vbStartVouDate"/>
+											<i class="glyphicon icon-calendar"></i>
+										</span>
+										至
+										<span class="date-box">
+											<input class="bordered-input padding-3" type="text" id="vbEndVouDate"/>
+											<i class="glyphicon icon-calendar"></i>
+										</span>
+									</div>
+								</div>
+							</div>
+							<!--期间 end-->
+						</li>
+						<!--第一行 end-->
+					</ul>
+					<!--上半部显示 end-->
+					<!--下半部隐藏 begin-->
+					<ul class="vou-query-box-bottom">
+						<!--第一行 begin-->
+						<li class="vou-query-box-li clearfix">
+							<!--凭证字号 begin-->
+							<div class="vou-query-li">
+								<label class="vou-query-li-cont-title">凭证字号：</label>
+								<div class="vou-query-li-cont">
+									<select id="vbVouTypeCode" class="bordered-input">
+										<!-- 凭证类型 开始位置 -->
+										
+									</select>
+									<input class="bordered-input padding-3" type="text" id="vbStartVouNo"/>
+									至
+									<input class="bordered-input padding-3" type="text" id="vbEndVouNo"/>
+								</div>
+							</div>
+							<!--凭证字号 end-->
+							
+							<!--分录金额 begin-->
+							<div class="vou-query-li padding-left-24">
+								<label class="vou-query-li-cont-title">分录金额：</label>
+								<div class="vou-query-li-cont">
+									<input class="bordered-input padding-3" type="text" id="vbStartStadAmt" placeholder="0.00"/>
+									至
+									<input class="bordered-input padding-3" type="text" id="vbEndStadAmt" placeholder="0.00"/>
+								</div>
+							</div>
+							<!--分录金额 end-->
+						</li>
+						<!--第一行 end-->
+						
+						<!--第二行 begin-->
+						<li class="vou-query-box-li clearfix">
+							<!--制单人 begin-->
+							<div class="vou-query-li">
+								<label class="vou-query-li-cont-title">制单人：</label>
+								<div class="vou-query-li-cont">
+									<div id="vbInputor" name="vbInputor" class="uf-combox" style="width: 110px"></div>
+									<!-- <input class="bordered-input padding-3" type="text" name="vbInputor" id="vbInputor" value="" /> -->
+									<label class="mt-checkbox mt-checkbox-outline">
+										<input type="checkbox" id="vbShowOwn">当前用户
+										<span></span>
+									</label>
+								</div>
+							</div>
+							<!--制单人 end-->
+							
+							<!--打印状态 begin-->
+							<div class="vou-query-li padding-left-24" style="display: none;">
+								<label class="vou-query-li-cont-title">打印状态：</label>
+								<div class="vou-query-li-cont">
+									<div class="vou-query-btn-cont" id="vbPrintStatus">
+										<!-- 打印状态按钮 开始位置 -->
+										
+									</div>
+								</div>
+							</div>
+							<!--打印状态 end-->
+						</li>
+						<!--第二行 end-->
+						
+						<!--第三行 begin-->
+						<li class="vou-query-box-li clearfix">
+							<!--摘要 begin-->
+							<div class="vou-query-li padding-left-24">
+								<label class="vou-query-li-cont-title">摘要：</label>
+								<div class="vou-query-li-cont">
+									<input class="bordered-input padding-3" type="text" name="vbRemark" id="vbRemark" value="" />
+								</div>
+							</div>
+							<!--摘要 end-->
+							
+							<!--打印状态 begin-->
+							<div class="vou-query-li padding-left-24">
+								<label class="vou-query-li-cont-title">是否标错：</label>
+								<div class="vou-query-li-cont">
+									<div class="vou-query-btn-cont" id="vbErrFlag">
+										<button class="btn btn-primary" value="">全部</button>
+										<button class="btn btn-default" value="1">是</button>
+										<button class="btn btn-default" value="0">否</button>
+									</div>
+								</div>
+							</div>
+							<!--打印状态 end-->
+						</li>
+						<!--第三行 end-->
+						<!-- 第四行 begin-->
+						<li class="vou-query-box-li clearfix">
+							<!--凭证来源 begin-->
+							<div class="vou-query-li padding-left-24">
+								<label class="vou-query-li-cont-title">凭证来源：</label>
+								<div class="vou-query-li-cont">
+									<div class="vou-query-li-selete">
+										<div id="vouSource" name="vouSource" class="uf-combox" style="width: 200px"></div>
+									</div>
+								</div>
+							</div>
+							<!--凭证来源 end-->
+							
+							
+						</li>
+						<!-- 第四行 end-->
+					</ul>
+					<!--下半部隐藏 end-->
+				</div>
+				<!--左侧查询 end-->
+				<!--查询按钮 begin-->
+				<div class="vou-query-box-right">
+					<div class="vou-query-btn">
+						<span class="tip-more"><i>更多</i><span class="glyphicon icon-angle-bottom"></span></span>
+						<button class="btn btn-primary btn-query searchVou btn-permission">查询</button>
+					</div>
+				</div>
+				<!--查询按钮 end-->
+			</div>
+			<!--查询 end-->
+			
+			<!--表格 begin-->
+			<div class="vou-box table-box">
+				<!--表格上方的操作 begin-->
+				<div class="table-sub">
+					<!--标签 begin-->
+					<ul class="nav nav-tabs vbStatus">
+						<!--"F":已复审;"O":未审核;"A":已审核;"P":已记账;"C":已作废 -->
+						<!-- 枚举表加载凭证状态 开始位置 -->
+						
+					</ul>
+					<!--标签 end-->
+					<!--右侧操作按钮 begin-->
+					<!--<div class="table-sub-action">
+						<div class="btn-group">
+							<button class="btn btn-default btn-print btn-permission" data-toggle="tooltip" title="打印">
+								<span class="glyphicon icon-print"></span>
+							</button>
+						</div>
+					</div>-->
+					<!--右侧操作按钮 end-->
+				</div>
+				<!--表格上方的操作 end-->
+				<!--表格 begin-->
+				<div class="table-tab">
+					<table id="vouBoxTable" class="ufma-table dataTable fixed-table" width="100%">
+						<thead id="vouBoxThead">
+							<tr>
+								<th class="vB-check-style nowrap">
+									<label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
+										<input type="checkbox" id="vbCheckAll"/>&nbsp;
+										<span></span>
+									</label>
+								</th>
+								<th class="ellipsis acct">账套</th>
+								<th class="ellipsis zhaiyao">摘要</th>
+								<th class="ellipsis acco">科目</th>
+								<th class="vB-num-style">借方金额</th>
+								<th class="vB-num-style">贷方金额</th>
+								<th class="vB-action-style">操作</th>
+							</tr>
+						</thead>
+						<tbody>
+							<!--表格数据 开始位置-->
+							
+						</tbody>
+						<!--<tfoot>
+							<tr>
+								<td class="vbDataSum" colspan="6"></td>
+							</tr>
+						</tfoot>-->
+					</table>
+				</div>
+				<!--表格 end-->
+			</div>
+			<!--表格 end-->
+		</div>
+    	<!--凭证工作区 end-->
+    	
+    	<!--表格工具栏 begin-->
+		<div id="vbTable-tool-bar" class="ufma-tool-bar">
+			<!-- 合计 begin -->
+			<div class="vbDataSum"></div>
+			<!-- 合计 end -->
+			
+			<div class="tool-bar-body">
+				<div class="ufma-tool-btns">
+					<!-- 批量操作按钮 开始位置 -->
+					
+				</div>
+				
+				<!-- 分页相关 begin -->
+				<div class="ufma-table-paginate">
+					<!-- 分页 开始位置 -->
+					
+				</div>
+				<!-- 分页相关 end -->
+			</div>
+		</div>
+		<!--表格工具栏 end-->
+	</div>
+	<!--工作区 end-->
+	<div id="vouBoxRedVoucher" class="ufma-modal">
+		<div class="u-msg-title">
+			<h4>凭证冲红</h4>
+		</div>
+		<div class="u-msg-content">
+			<div class="container-fluid margin-left-15 margin-right-15">
+				<ul class="list-unstyled">
+					<!--提示 begin-->
+					<li class="tips clearfix">
+						<div class="tips-icon pull-left">
+							<span class="glyphicon icon-point"></span>
+						</div>
+						<p class="pull-left">红字凭证将按以下设置生成！</p>
+					</li>
+					<!--提示 end-->
+
+					<!--凭证类型 begin-->
+					<li class="setVouType clearfix">
+						<label class="pull-left" for="">凭证类型：</label>
+						<div class="pull-left">
+							<select name="" class="bordered-input padding-3" id="vbrvVouType">
+								<!--凭证类型 开始位置-->
+
+							</select>
+						</div>
+					</li>
+					<!--凭证类型 end-->
+
+					<!--凭证日期 begin-->
+					<li class="setVouDate clearfix">
+						<label class="pull-left" for="">凭证日期：</label>
+						<div class="pull-left">
+							<input class="bordered-input padding-3" type="text" name="" id="vbrvVouDate" value="" />
+							<i class="glyphicon icon-calendar"></i>
+						</div>
+					</li>
+					<!--凭证类型 end-->
+				</ul>
+			</div>
+		</div>
+		<div class="u-msg-footer">
+			<div class="text-right  margin-right-30">
+				<button type="button" class="btn btn-sm btn-primary btn-save" id="btn-save">保存</button>
+				<button type="button" class="btn btn-sm btn-default btn-qx" id="btn-qx">取消</button>
+			</div>
+		</div>
+	</div>
+</div>
+<!--整个容器 end-->
+<script src="vouBoxsi.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+</body>
+</html>

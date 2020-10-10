@@ -1,0 +1,67 @@
+#billCancel .form-horizontal{padding-top: 20px;}
+#billCancel .list-unstyled{margin-bottom: 0;}
+#billCancel .list-unstyled li{margin-bottom: 16px;}
+#billCancel .list-unstyled label{min-width: 80px; margin-bottom: 0; font-weight: normal; line-height: 30px; text-align: right;}
+#billCancel .list-unstyled select,
+#billCancel .list-unstyled textarea{border-radius: 4px;}
+#billCancel .list-unstyled select{line-height: 22px; height: 30px; min-width: 300px;}
+#billCancel .list-unstyled textarea{line-height: 22px; margin-left: 4px; resize: none; width: 452px; height: 80px;}
+.top-infor i {
+    font-style: normal;
+    color: red;
+}
+.top-infor{
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.top-infor span {
+    display: inline-block;
+    margin-left: 30px;
+}
+.top-infor {text-align: right}
+/** table **/
+#showTable th,#showTable td{
+    border:1px solid #d9d9d9;
+    border-left: none;
+}
+.table-part .dataTables_wrapper.no-footer .dataTables_scrollBody{
+    border-color: #d9d9d9;
+    overflow: visible!important;
+}
+.table-part .dataTables_wrapper{
+    overflow: visible!important;
+    border-right: none;
+    border-left: none;
+}
+.table-part .dataTables_scroll{
+    border:1px solid #d9d9d9;
+    border-bottom: none;
+}
+.cancle-gen,.check-log,.preview-vou,.check-vou{
+    cursor: pointer;
+    color: #49a9ee;
+}
+.table-part table.ufma-table.dataTable tbody td a {
+    color: #49a9ee;
+}
+/*title S*/
+.close-model{
+    float: right;
+    display: block;
+    font-size: 10px;
+    margin-top: 16px;
+    margin-right: 16px;
+    opacity: .5;
+    cursor: pointer;
+}
+.close-model:hover{
+    opacity:1;
+}
+.tem-title{
+    height: 49px;
+    line-height: 50px;
+    border-bottom: 1px solid #d9d9d9;
+    font-size: 16px;
+    padding-left: 15px;
+}
+/*title E*/

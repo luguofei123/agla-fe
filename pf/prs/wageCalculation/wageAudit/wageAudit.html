@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>工资审核</title>
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <script src="../../../pub/boot.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+    <link rel="stylesheet" type="text/css" href="wageAudit.css?rev=@@hash"/>
+    <link rel="stylesheet" type="text/css" href="../../common/common.css?rev=@@hash"/>
+    <style>
+        .tooltip .tooltip-inner {
+            padding: 6px;
+        }
+
+        .control-label {
+            width: 80px !important;
+        }
+        #mainTable_info {
+            display: none;
+        }
+        .dataTables_wrapper.no-footer .dataTables_scrollBody{
+            border-bottom: none;
+        }
+        #departmentCode_popup {
+            max-width: 400px!important;
+            width: 400px!important;
+        }
+        .colorY {
+        	color : red;
+        }
+        .tdlight {
+        	background-color : #ecf6fd;
+        }
+    </style>
+</head>
+<body>
+<!--整个容器 begin-->
+<div id="value-set" class="container-fluid ufma-container">
+    <div class="workspace">
+        <div class="prs-workspace workspace-inner">
+            <div class="ufma-portlet" style="padding-bottom: 0">
+                <div class="uf-selete-box bordered-bottom" style="margin-bottom: 0">
+                    <div class="uf-title">工资审核</div>
+                    <div class="method-tip clearfix title-btns-group">
+                        <div class="btn-query-box fr">
+                            <button id="btnQuery" class="btn btn-default btn-query btn-permission" style="margin-top: 0">查询
+                                <span class="glyphicon icon-angle-bottom"></span>
+                            </button>
+                            <div class="rpt-funnel rpt-funnelBox rpt-funnelBoxList hidden" id="queryFunnelBox" style="position: absolute;z-index: 1002">
+                                <div id="query-condition" class="rpt-colList clearfix">
+                                    <form id="frmQuery" class="form-horizontal" style="line-height: 40px">
+                                        <div class="form-row">
+                                            <div class="form-group">
+                                                <label class="control-label">部门：</label>
+                                                <div class="control-element">
+                                                    <div id="departmentCode" name="departmentCode" class="ufma-textboxlist" style="width: 180px"></div>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="control-label">工资状态：</label>
+                                                <div class="control-element">
+                                                    <div id="payEditStat" class="uf-combox" style="width: 180px">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <!--<label class="control-label">职务等级：</label>
+                                                <div class="control-element">
+                                                    <div id="jobRank" class="uf-combox" style="width: 180px">
+                                                    </div>
+                                                </div>-->
+                                                <label class="control-label">姓名：</label>
+                                                <div class="control-element">
+                                                    <input id="empName" type="text" name="empName" class="form-control" maxlength="200" style="width: 180px" autocomplete="off">
+                                                </div>
+                                            </div>
+                                            <div class="clearfix"></div>
+                                        </div>
+                                    </form>
+                                </div>
+                                <p class="rpt-colBtn" style="float: none;width: 100%;text-align: right;">
+                                    <button id="query-reset" class="btn btn-primary">重置</button>
+                                    <button id="query-sure" class="btn btn-primary">确定</button>
+                                </p>
+                            </div>
+                        </div>
+                        <button id="btn-audit" class="btn btn-primary btn-audit btn-permission fr">审核</button>
+                        <button id="btn-wf-untread" class="btn btn-default btn-wf-untread btn-permission fr">退回</button>
+                    </div>
+                </div>
+
+                <div class="portlet-body bordered clearfix">
+                    <div class="query-box-left fl" style="width:100%">
+                            <div class="form-row">
+                                <div class="prTypes-box fl" >
+                                    <div class="control-element" id="prTypes" style="display: inline-block;padding-top:8px">
+                                    </div>
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>
+                    </div>
+                </div>
+            </div>
+            <div class="table-sub">
+                <!-- <div class="prTypes-box fl">
+                    <span class="to-bottom fr glyphicon icon-angle-bottom hidden" style="margin-top:10px"></span>
+                    <div id="prTypes" style="display: inline-block;padding-top:8px">
+                    </div>
+                    <div class="prTypes-hide">
+                        <span class="to-top fr glyphicon icon-angle-top"></span>
+
+                    </div>
+                </div> -->
+                <div class="table-sub-action fr">
+                    <div id="dtToolbar" class="btn-group">
+                    </div>
+                    <div style="margin-left:4px;position:relative;display:inline-block;">
+                        <button class="btn btn-default" id="colAction">
+                            <span class="glyphicon icon-list-all"></span>
+                            <span class="glyphicon icon-angle-bottom"></span>
+                        </button>
+                        <div class="rpt-funnel rpt-funnelBox rpt-funnelBoxList hidden"
+                             style="position: absolute;z-index: 1002">
+                            <div id="colList" class="rpt-colList clearfix">
+                            </div>
+                            <p class="rpt-colBtn" style="float: none">
+                                <button id="addCol" class="btn btn-primary">确定</button>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <table id="mainTable" tool-bar="#tool-bar" class="ufma-table uf-rpt-table" style="width: 100%">
+            </table>
+        </div>
+        <div id="tool-bar" class="ufma-tool-bar" style="height:9px !important">
+            <div class="tool-bar-body" style="height:0px !important;">
+            <!--<button id="btn-import" class="btn btn-default btn-import btn-permisson" style="margin-left: 10px">导入excel工资数据</button>-->
+            <!--<button id="btn-replace" class="btn btn-default btn-replace btn-permisson">替换</button>-->
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../../common/common.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+<script src="wageAudit.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+</body>
+</html>

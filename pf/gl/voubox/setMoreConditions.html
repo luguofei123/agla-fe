@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>查询条件</title>
+		<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+		<script src="../../pub/boot.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+		<link rel="stylesheet" type="text/css" href="setMoreConditions.css?rev=@@hash" />
+		
+	</head>
+
+	<body>
+		<div id="set-more-conditions" class="ufma-layout-updown">
+			<input type="hidden" value="GL_RPT_CHRBOOK" data-name="glRptChrBook" class="rptType" />
+			<div class="ufma-layout-up">
+				<div class="condition-con">
+					<ul class="nav nav-tabs">
+						<li class="active">
+							<a href="#">主信息</a>
+						</li>
+						<li>
+							<a href="#">辅项信息</a>
+						</li>
+					</ul>
+					<div class="tab-content-box">
+						<div class="content">
+							<form id="frmQuery" class="form-horizontal">
+								<div class="form-row">
+									<div class="form-group" style="width: 100%">
+										<label class="control-label">期间：</label>
+										<div class="control-element vouTimes" style="width: auto">
+											<button id="dateBn" class="btn btn-default vouTimeYear">本年</button>
+											<button id="dateBq" class="btn btn-primary vouTimeMonth">本期</button>
+											<button id="dateJr" class="btn btn-default vouTimeDay">今日</button>
+										</div>
+										<div class="control-element" style="width:120px;">
+											<span id="vbStartVouDate" class="uf-datepicker" style="width:120px;"></span>
+										</div>
+										<span class="split">-</span>
+										<div class="control-element">
+											<span id="vbEndVouDate" class="uf-datepicker" style="width:120px;"></span>
+										</div>
+									</div>
+									<div class="clearfix"></div>
+								</div>
+								<div class="form-row">
+									<div class="form-group">
+										<label class="control-label">会计体系：</label>
+										<div class="control-element">
+											<div class="vou-query-btn-cont vbAccaCode" id="vbAccaCode">
+												<button class="btn btn-primary" value="">全部</button>
+												<button class="btn btn-default" value="1">财务会计</button>
+												<button class="btn btn-default" value="2">预算会计</button>
+											</div>
+										</div>
+									</div>
+									<div class="form-group">
+										<label class="control-label">凭证字号：</label>
+										<div class="control-element">
+											<select id="vbVouTypeCode" class="bordered-input">
+											</select>
+											<input class="bordered-input padding-3 input-height" type="text" id="vbStartVouNo" /> 至
+											<input class="bordered-input padding-3 input-height" type="text" id="vbEndVouNo" />
+										</div>
+									</div>
+									<div class="clearfix"></div>
+								</div>
+								<div class="form-row">
+									<div class="form-group">
+										<label class="control-label">会计科目：</label>
+										<div class="control-element">
+											<div class="ufma-treecombox" id="vbAcco"></div>
+										</div>
+									</div>
+									<div class="form-group">
+										<label class="control-label">凭证金额：</label>
+										<div class="control-element">
+											<input class="bordered-input padding-3 input-height" type="text" id="vbstartTotalAmt" placeholder="0.00" /> 至
+											<input class="bordered-input padding-3 input-height" type="text" id="vbendTotalAmt" placeholder="0.00" />
+										</div>
+									</div>
+									<div class="clearfix"></div>
+								</div>
+								<div class="form-row">
+									<div class="form-group">
+										<label class="control-label">分录金额：</label>
+										<div class="control-element">
+											<input class="bordered-input padding-3 input-height" type="text" id="vbStartStadAmt" placeholder="0.00" /> 至
+											<input class="bordered-input padding-3 input-height" type="text" id="vbEndStadAmt" placeholder="0.00" />
+										</div>
+									</div>
+									<div class="form-group">
+										<label class="control-label" style="width:100px">辅助分录金额：</label>
+										<div class="control-element">
+											<input class="bordered-input padding-3 input-height" type="text" id="vbassStartAmt" placeholder="0.00" /> 至
+											<input class="bordered-input padding-3 input-height" type="text" id="vbassEndAmt" placeholder="0.00" />
+										</div>
+									</div>
+									<div class="clearfix"></div>
+								</div>
+								<div class="form-row">
+									<div class="form-group">
+										<label class="control-label">制单人：</label>
+										<div class="control-element">
+											<div id="vbInputor" name="vbInputor" class="uf-combox" style="width: 150px"></div>
+											<!-- <input class="bordered-input padding-3 input-height" type="text" name="vbInputor" id="vbInputor" value="" /> -->
+											<label class="mt-checkbox mt-checkbox-outline">
+												<input type="checkbox" id="vbShowOwn">当前用户
+												<span></span>
+											</label>
+										</div>
+									</div>
+									<div class="form-group">
+										<label class="control-label">打印状态：</label>
+										<div class="control-element rpt-query-li-selete" id="vbPrintStatus">
+											<!-- 打印状态按钮 开始位置 -->
+											<button class="btn btn-primary" value="">全部</button>
+											<button class="btn btn-default" value="0">未打印</button>
+											<button class="btn btn-default" value="1">已打印</button>
+										</div>
+									</div>
+									<div class="clearfix"></div>
+								</div>
+								<div class="form-row">
+									<div class="form-group">
+										<label class="control-label">摘要：</label>
+										<div class="control-element">
+											<input class="bordered-input padding-3 input-height" type="text" name="vbRemark" id="vbRemark" value="" />
+										</div>
+									</div>
+									<div class="form-group">
+										<label class="control-label">报销单号：</label>
+										<div class="control-element">
+											<input class="bordered-input padding-3 input-height" type="text" name="billNo" id="billNo" value="" style="min-width:210px;height:30px" />
+										</div>
+									</div>
+									<div class="clearfix"></div>
+								</div>
+								<div class="form-row">
+									<div class="form-group">
+										<label class="control-label">是否挂接：</label>
+										<div class="control-element rpt-query-li-selete">
+											<div class="vou-query-btn-cont" id="vbtreasuryHook">
+												<button class="btn btn-primary" value="">全部</button>
+												<button class="btn btn-default" value="1">未挂接</button>
+												<button class="btn btn-default" value="2">已挂接</button>
+											</div>
+										</div>
+									</div>
+									<div class="form-group">
+										<label class="control-label">凭证来源：</label>
+										<div class="control-element">
+											<div id="vouSource" name="vouSource" class="uf-combox" style="width: 200px"></div>
+										</div>
+									</div>
+									<div class="clearfix"></div>
+								</div>
+								<div class="form-row">
+									
+									<div class="form-group">
+										<label class="control-label">是否冲红：</label>
+										<div class="control-element" id="isWriteoff" style="width: 330px;">
+											<button class="btn btn-primary" value="">全部</button>
+											<button class="btn btn-default" value="0">未冲红</button>
+											<button class="btn btn-default" value="1">已冲红</button>
+											<button class="btn btn-default" value="2">冲红生成</button>
+										</div>
+									</div>
+									<div class="clearfix"></div>
+								</div>
+							</form>
+						</div>
+						<div class="content" style="display: none">
+							
+							<form id="frmQuery2" class="form-horizontal frmQuery2">
+							</form>
+						</div>
+					</div>
+				</div>
+
+			</div>
+			<div class="ufma-layout-down bordered-top">
+				<div class="text-right  margin-right-30">
+					<button type="button" class="btn btn-sm btn-default" id="btn-del" style="display: none;">清空</button>
+					<button type="button" class="btn btn-sm btn-primary btn-save" id="btnSave">确定</button>
+					<button type="button" class="btn btn-sm btn-default" id="btnClose"> 关闭</button>
+				</div>
+			</div>
+		</div>
+		<script src="../rpt/rptCommon/dm.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+		<script src="../rpt/rptCommon/rptCommon_new.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+		<script src="setMoreConditions.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+	</body>
+
+</html>

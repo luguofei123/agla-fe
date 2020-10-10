@@ -1,0 +1,72 @@
+/*短横虚线*/
+.uf-dashed-hr{border-top:1px dashed #d9d9d9;margin-top:5px;height:2px;width:100%;}
+.w70{width:71px;}
+.w160{width:160px;}
+/*自定义样式*/
+.uf-grid-head .uf-grid-head-lock,.uf-grid-body .uf-grid-body-lock{
+	border-right: #DFE6EC 0px solid;
+}
+.file-btn-box .btn:last-child{
+    border-left-color: #108ee9;
+}
+.file-btn-active{
+	color: #108ee9;
+    background-color: #fff;
+    border-color: #108ee9;
+}
+
+/* .file-upload-box{
+	padding:0 50px;margin:16px 0;background:#ECF6FD;
+	border: 1px solid #D2EAFB;height:62px;line-height:62px;
+} */
+/* .file-upload-box-text{
+	float:right;width:200px;
+} */
+.file-upload-box-btn{
+	float:right;width:88px;position:relative;
+}
+.file-upload-box-btn button{
+	
+}
+.file-upload-input{
+	width:88px;height:30px;overflow:hidden;
+	position: absolute;top:16px;font-size: 100px;
+    opacity: 0;filter: alpha(opacity=0);cursor: pointer;
+}
+.file-upload-tip{
+	color:#999;
+}
+.file-upload-title{
+	
+}
+.file-upload-title i{
+	color:#999;font-size:12px;cursor:pointer;
+}
+.label-show{
+	font-weight:normal;height:19px;line-height:28px;
+}
+
+.panel.ufma-panel > .panel-heading {
+	height: 38px;
+	padding-left: 0;
+	padding-right: 0;
+}
+.import-type {
+	background-color: #ECF6FD;
+    border-top-width: 10px;
+    margin-top: 8px;
+}
+.uf-grid-table .uf-grid-headerCell  {
+	font-weight: bold!important;
+ }
+ 
+ .uf-combox-popup{
+ 	max-height: 140px;
+ }
+ .fileLong{
+	float: left;
+	max-width: 500px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}

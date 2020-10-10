@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, viewport-fit=cover">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>我的工资</title>
+    <script src="./js/common.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        ul,
+        ol {
+            list-style: none;
+        }
+
+        body,
+        html {
+            width: 100%;
+            height: 100%;
+            background: #F1F3F6;
+        }
+
+        .header {
+            height: calc(1.25rem + 25px);
+            background: linear-gradient(135deg, rgba(88, 163, 252, 1) 0%, rgba(83, 160, 253, 1) 48%, rgba(114, 176, 249, 1) 100%);
+            box-shadow: 0px 1px 0px 0px rgba(0, 0, 0, 0.25);
+            padding-top: 25px;
+            box-sizing: border-box;
+        }
+
+        .header-inner{
+            height: 100%;
+            position: relative;
+        }
+
+        .back {
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 1.0667rem;
+            padding-left: 0.05rem;
+            height: 1.25rem;
+            box-sizing: border-box;
+            display: inline-block;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .back-img {
+            width: 0.2933rem;
+            height: 0.5734rem;
+        }
+
+        .title {
+            display: inline-block;
+            font-size: 19px;
+            color: #fff;
+            font-weight: normal;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .tabWrap {
+            width: 100%;
+            height: 1.1333rem;
+            background: #fff;
+            overflow-x: scroll;
+        }
+
+        .tabWrap::-webkit-scrollbar {
+            display: none
+        }
+
+        .tab {
+            width: auto;
+            height: 100%;
+        }
+
+        .tab:after {
+            border-bottom: 1px solid #ccc;
+            transform: scaleY(.5);
+        }
+
+        .tab-inner {
+            width: auto;
+            display: flex;
+        }
+
+        .tab-bar {
+            height: 0.1067rem;
+        }
+
+        .year {
+            width: 3.3333rem;
+            height: 1.0266rem;
+            line-height: 1.1333rem;
+            text-align: center;
+            font-size: 16px;
+            color: #333;
+        }
+
+        .year-active {
+            color: #0099FF;
+        }
+
+        .tab-bar-inner {
+            width: 3.3333rem;
+            height: 100%;
+            transition: all .3s ease;
+            transform: translateX(0);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .tab-bar-inner-active {
+            width: 1.5467rem;
+            height: 100%;
+            background: rgba(53, 150, 250, 1);
+            border-radius: 0.0534rem;
+        }
+
+        .main {
+            padding: 0.2667rem;
+        }
+
+        .statement {
+            width: 100%;
+            height: 2.72rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-radius: 0.1333rem;
+            background: #fff;
+            background: #E6F0FF;
+        }
+
+        .statementBox {
+            width: 50%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .smount {
+            font-size: 20px;
+            color: #0099FF;
+            font-weight: 500;
+        }
+
+        .stype {
+            font-size: 14px;
+            color: #333;
+            margin-top: 0.2667rem;
+        }
+
+        .list-month-salary {
+            background: transparent;
+            overflow-y: auto;
+            margin-top: .2667rem;
+        }
+
+        .list-month-salary li {
+            background: #fff;
+            margin-bottom: .2667rem;
+            border-bottom: .5px solid #eee;
+            border-radius: 0.1333rem;
+        }
+
+        .ls-item-top {
+            padding: 0.2667rem 0.4rem 0 0.4rem;
+        }
+
+        .ls-item-top-inner,
+        .ls-item-title-wrap {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .ls-item-title-mark {
+            width: 0.08rem;
+            height: 0.4rem;
+            background: #00A1E9;
+        }
+
+        .ls-item-title {
+            font-size: 16px;
+            font-weight: 400;
+            color: #333;
+        }
+
+        .ls-item-main {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 0.2667rem 0 0.4rem 0;
+        }
+
+        .ls-item-main-box {
+            width: 50%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            position: relative;
+            box-sizing: border-box;
+            padding-left: 0.7467rem;
+        }
+
+        .item-mount {
+            font-size: 18px;
+            color: #333;
+        }
+
+        .item-type {
+            font-size: 14px;
+            color: #b3b9bd;
+            margin-top: 0.1333rem;
+        }
+
+        .arrow-right {
+            width: 0.1867rem;
+            height: 0.3733rem;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header">
+        <div class="header-inner">
+            <a class="back">
+                <img src="./img/back.png" class="back-img" alt="">
+            </a>
+            <span class="title">我的工资</span>
+        </div>
+    </div>
+    <div class="tabWrap">
+        <div class="tab">
+            <div class="tab-inner">
+                <!-- <div class="year">2019</div>
+                <div class="year">2018</div>
+                <div class="year">2017</div> -->
+            </div>
+            <div class="tab-bar">
+                <div class="tab-bar-inner">
+                    <div class="tab-bar-inner-active"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="main">
+        <div class="statement">
+            <div class="statementBox" style="padding-left: 0.8667rem;">
+                <div class="smount" id="sum1"></div>
+                <div class="stype">应发合计</div>
+            </div>
+            <div class="statementBox">
+                <div class="smount" id="sum2"></div>
+                <div class="stype">实发合计</div>
+            </div>
+        </div>
+        <ul class="list-month-salary" id="salarylist">
+
+        </ul>
+    </div>
+</body>
+<script id="mytmpl" type="text/x-dot-template">
+    {{~it:value:index}}
+      {{ if(value!=null){ }}
+    <li class="ls-item" data-year="{{=value.year}}" data-mo="{{=value.mo}}">
+            <div class="ls-item-top">
+                <div class="ls-item-top-inner">
+                    <div class="ls-item-title-wrap">
+                        <div class="ls-item-title">{{=value.yearmo}}</div>
+                    </div>
+                    <img src="./img/arrow-right.png" class="arrow-right" alt="">
+                </div>
+            </div>
+            <div class="ls-item-main">
+                <div class="ls-item-main-box">
+                    <div class="ls-item-main-box-inner">
+                        <div class="item-mount">{{=formatMoney(Number(value.data['1']))}}</div>
+                        <div class="item-type">应发工资</div>
+                    </div>
+                </div>
+                <div class="ls-item-main-box">
+                    <div class="ls-item-main-box-inner">
+                        <div class="item-mount">{{=formatMoney(Number(value.data['2']))}}</div>
+                        <div class="item-type">实发工资</div>
+                    </div>
+                </div>
+            </div>
+        </li>
+      {{ } }}
+    {{~}}
+</script>
+<script src="./js/jquery-2.2.4.js"></script>
+<script src="./js/doT.js"></script>
+<script src="./js/fastclick.js"></script>
+<script>
+    $(function () {
+        FastClick.attach(document.body);
+
+        $('.back').on('click', function () {
+            // window.history.go(-1)
+            // 范红亮：目前工资和资产的app都是前端自己单独的包，集成到一起后，正常可以跳转过去，但是返回不回来 我们提供了统一的返回方式，辛苦你们前端调整下返回函数调用
+            // http://faq.cwy.com/topic/99
+            window.parent.postMessage({ // 参数是对象
+            cmd: 'back' 
+            }, '*') 
+        });
+
+
+        var url = window.location.href, opt = {};
+        if (url.indexOf('?') > -1) {
+            url.split('?')[1].split('&').forEach(function (item, index) {
+                var keyvalue = item.split('=');
+                opt[keyvalue[0]] = keyvalue[1];
+            });
+            if(!opt.tokenid){
+                $('body').html('<h2>错误：未获取到tokenid</h2>')
+                return ;
+            }
+        } else {
+            // alert('未获取到页面参数');
+            $('body').html('<h2>错误：未获取到页面参数</h2>')
+            return;
+        }
+        var year = new Date().getFullYear(),
+            YEAR_COUNT = 5; //从今年向后几年
+        var yearArr = [],
+            str = '';
+        for (var i = 0; i < YEAR_COUNT; i++) {
+            yearArr[i] = Number(year) - i;
+        }
+        yearArr.forEach(function (item, index) {
+            str += '<div class="year" data-year="' + item + '" data-cur="' + index + '">' + item +
+                '</div>'
+        })
+
+        var TABBAR_WIDTH = 3.3333,
+            yearCount = yearArr.length;
+        $('.tab-inner').html(str).css({
+            width: TABBAR_WIDTH * yearCount + 'rem'
+        });
+        $('.tab-bar').css({
+            width: TABBAR_WIDTH * yearCount + 'rem'
+        });
+        var h = $('body').outerHeight() - $('.header').outerHeight() - $('.tabWrap').outerHeight() - $('.statement').outerHeight() - 34;
+        console.log(h)
+        $('#salarylist').css({
+            height: h+'px'
+        })
+
+        $('.year').on('click', function (e) {
+            var selectYear = e.currentTarget.dataset.year;
+            console.log(selectYear)
+            var cur = e.currentTarget.dataset.cur;
+            $('.tab-bar-inner').css({
+                transform: 'translate(' + cur * TABBAR_WIDTH + 'rem)'
+            });
+            getData(selectYear);
+        })
+
+        var ul = document.getElementById("salarylist");
+        var templ = document.getElementById("mytmpl").innerHTML;
+        var fn = doT.template(templ);
+
+        
+        /**
+         *  配置参数 获取数据
+         **/
+        function getData(selectYear) {
+            var url = '/df/access/public/pf/prs/prspersional/mySalaryData';
+			var param = {
+                tokenid : opt.tokenid,
+                setYear: selectYear
+			}
+			$.ajax({
+				url: url,  //请求后台地址
+				type:"POST",   //请求方式
+				data:JSON.stringify(param),  //传入参数
+                headers:{tokenid: opt.tokenid},
+				dataType: 'json',
+			    contentType: 'application/json; charset=utf-8',
+				success: function(result){
+				 console.log(result);
+                var data = result.data,
+				    salaryList = result.data.salaryList,
+                    arr = [],
+                    sum1 = 0,
+                    sum2 = 0;
+                for (var prop in salaryList) {
+                    var mo = parseInt(prop.split('-')[1]),
+                        index = mo - 1,
+                        obj = {};
+                    obj.mo = mo;
+                    obj.yearmo = prop;
+                    obj.data = salaryList[prop];
+                    sum1 += salaryList[prop]['1'];
+                    sum2 += salaryList[prop]['2'];
+                    arr[index] = obj;
+                }
+                arr.forEach(function(item,index){
+                	if(!item){
+                		arr[index] = null
+                	}
+                })
+                console.log(arr);
+                $('#sum1').text(formatMoney(Number(sum1)));
+                $('#sum2').text(formatMoney(Number(sum2)));
+                ul.innerHTML = fn(arr);
+
+                $('.ls-item').on('click', function (e) {
+                    console.log(e);
+                    window.location.href = './salarydetail.html?mo=' + e.currentTarget.dataset.mo + '&setYear='+selectYear + '&name=' + data.name +'&tokenid='+ opt.tokenid;
+                })
+			   }
+			});
+			
+        }
+        getData(yearArr[0]);
+
+    })
+</script>
+
+</html>

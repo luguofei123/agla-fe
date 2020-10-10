@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>同步人员信息</title>
+    <script src="../../pub/boot.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+    <link rel="stylesheet" href="syncEmp.css?rev=@@hash" />
+    <style>
+    .uf-combox .uf-combox-border{
+        border: 0;
+        background: transparent;
+    }
+    .uf-combox-input{
+        text-align: center;
+    }
+    .uf-combox-input{
+        box-sizing: border-box;
+        padding-left: 26px;
+    }
+    .ufma-combox-input{
+        color: #555555;
+    }
+    .ufma-combox-input::-webkit-input-placeholder {
+       color: #999999;
+    }
+    </style>
+</head>
+
+<body style="overflow-x:hidden;">
+        <!--工作区 begin-->
+        <div class="workspace">
+            <!--账表工作区 begin-->
+            <div class="rpt-workspace">
+                <div class="rpt-acc-box">
+                    <div class="rpt-acc-box-left">
+                        <div style="padding: 10px 0 0 10px;">选择同步人员</div>
+                        <div class="rpt-atree-box-head">
+                            <div class="input-group rpt-input-group">
+                                <input type="text" id="key" value="" class="form-control empty" placeholder="请输入搜索关键词">
+                                <span class="input-group-addon"><span class='glyphicon icon-search'></span></span>
+                            </div>
+                        </div>
+                        <div class="rpt-atree-box-body">
+                            <ul id="atree" class="ufmaTree ztree atree-ztree" style="margin: -5px 0px 0 -5px;"></ul>
+                        </div>
+                    </div>
+                    <div class="rpt-acc-box-right">
+                        <div style="padding: 10px;position: relative;">设置部门对应关系
+                            <div class="btn-group" style="position: absolute;right: 10px;top: 10px;">
+                                <button type="button" class="btn btn-sm btn-primary btn-sync-emp">同步部门人员信息</button>
+                            </div>
+                        </div>
+                        <div class="rpt-table-tab">
+                            <table id="syncEmpTable" class="ufma-table uf-rpt-table fixed-table"
+                                style="border-left: 1px solid #D9D9D9;border-right: 1px solid #D9D9D9;">
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--账表工作区 end-->
+        </div>
+        <!--工作区 end-->
+    <script src="atree.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+    <script src="syncEmp.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+</body>
+
+</html>

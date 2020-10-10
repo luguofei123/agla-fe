@@ -1,0 +1,38 @@
+.ufma-textboxlist-border,
+.ufma-combox-border {
+    position: relative;
+    background: #fff;
+    border: 1px #d9d9d9 solid;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
+    padding: 4px 8px;
+    width: 100%;
+    cursor: text;
+    height: 30px;
+}
+
+table.ufma-table.dataTable tbody tr:not(.locked):hover {
+    border-collapse: collapse;
+    background-color: #FFFFFF !important;
+}
+
+table.ufma-table.dataTable tr:nth-child(even) {
+    background-color: #FFFFFF !important
+}
+
+.ufma-textboxlist,
+.ufma-combox {
+    display: inline-table;
+    *display: inline;
+    zoom: 1;
+    table-layout: fixed;
+    border-collapse: collapse;
+    border-collapse: separate;
+    vertical-align: middle;
+    font: 9pt Verdana;
+}
+/*经雪蕊姐确认将科目体系去掉：和边框-zsj*/
+.eleAccsAgy .uf-combox-border{
+	border: none;
+}

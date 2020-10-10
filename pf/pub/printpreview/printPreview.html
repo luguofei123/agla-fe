@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+  		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>打印预览</title>
+  		<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+		<script src="../boot.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+		
+		<link rel="stylesheet" type="text/css" href="printPreview.css?rev=@@hash"/>
+		<link rel="stylesheet" type="text/css" href="zw-print.css?rev=@@hash"/>
+		
+		<script language="javascript" src="zw-printUtils.js?rev=@@hash"></script>
+		
+		<!--查影响的位置-->
+
+		
+		<!--<script language="javascript" src="zw-formtmpl-pz.js"></script>
+		<script language="javascript" src="zw-paper-A4.js"></script>
+		<script language="javascript" src="zw-pz-form.js"></script>
+		<script language="javascript" src="zw-pz-data-new.js"></script>-->
+	</head>
+	<body id="printPreview">
+		<!--容器 begin-->
+		<div class="vpppBox">
+			<!--左侧模板 begin-->
+			<div class="vpppBox-left">
+				<!--标题位置 begin-->
+				<div class="title">
+					<dl>
+						<dt>打印预览</dt>
+						<dd id="pageNum"></dd>
+					</dl>
+					<div class="action">
+						<button type="button" class="btn btn-sm btn-primary btn-print" id="btn-print">打印</button>
+					</div>
+				</div>
+				<!--标题位置 end-->
+				
+				<!--页面设置 begin-->
+				<div class="set-box">
+					<div class="show-set">
+						<a href="javascript:;">页面设置</a>
+						<span class="glyphicon icon-angle-bottom"></span>
+					</div>
+					
+					<!--设置 begin-->
+					<div class="set-content">
+						<!--第一行 begin-->
+						<dl class="dl-horizontal ymfx">
+							<dt>页面方向:</dt>
+							<dd>
+								<span class="glyphicon icon-file-x"></span>
+								<label class="mt-radio mt-checkbox-outline">
+									<input type="radio" name="orientation" disabled="disabled" value="0" id="">横向
+									<span></span>
+								</label>
+								<span class="glyphicon icon-file"></span>
+								<label class="mt-radio mt-checkbox-outline">
+									<input type="radio" name="orientation" disabled="disabled" value="1" id="">纵向
+									<span></span>
+								</label>
+							</dd>
+						</dl>
+						<!--第一行 end-->
+						
+						<!--第二行 begin-->
+						<dl class="dl-horizontal zz">
+							<dt>纸张></dt>
+							<dd>
+								<ul class="list-unstyled">
+									<li class="clearfix">
+										<div class="pull-left define-left page-title">
+											名称：
+										</div>
+										<div id="tmplName" class="pull-left define-right"></div>
+									</li>
+									<li class="clearfix">
+										<div class="pull-left define-left page-title">
+											大小：
+										</div>
+										<div class="pull-left define-right">
+											<ul class="list-unstyled">
+												<li class="define-length clearfix">
+													<span class="pull-left">长</span>
+													<div class="input-group pull-left">
+												    	<span class="input-group-btn">
+												    		<button class="btn btn-default btn-minus" type="button" disabled="disabled">-</button>
+												    	</span>
+												    	<input type="text" id="paperHeight" class="form-control" placeholder="" disabled="disabled">
+												    	<span class="input-group-btn">
+												    		<button class="btn btn-default btn-plus" type="button" disabled="disabled">+</button>
+												    	</span>
+												    </div>
+													<span class="pull-left">毫米</span>
+												</li>
+												<li class="define-width clearfix">
+													<span class="pull-left">宽</span>
+													<div class="input-group pull-left">
+												    	<span class="input-group-btn">
+												    		<button class="btn btn-default btn-minus" type="button" disabled="disabled">-</button>
+												    	</span>
+												    	<input type="text" id="paperWidth" class="form-control" placeholder="" disabled="disabled">
+												    	<span class="input-group-btn">
+												    		<button class="btn btn-default btn-plus" type="button" disabled="disabled">+</button>
+												    	</span>
+												    </div>
+													<span class="pull-left">毫米</span>
+												</li>
+											</ul>
+										</div>
+									</li>
+								</ul>
+							</dd>
+						</dl>
+						<!--第二行 end-->
+						
+						<!--第三行 begin-->
+						<dl class="dl-horizontal ybj">
+							<dt>页边距></dt>
+							<dd>
+								<ul class="list-unstyled">
+									<li class="clearfix">
+										<span class="pull-left">上</span>
+										<div class="input-group pull-left">
+									    	<span class="input-group-btn">
+									    		<button class="btn btn-default" type="button" disabled="disabled">-</button>
+									    	</span>
+									    	<input type="text" id="marginTop" class="form-control" placeholder="" disabled="disabled">
+									    	<span class="input-group-btn">
+									    		<button class="btn btn-default" type="button" disabled="disabled">+</button>
+									    	</span>
+									    </div>
+										<span class="pull-left">毫米</span>
+									</li>
+									<li class="clearfix">
+										<span class="pull-left">下</span>
+										<div class="input-group pull-left">
+									    	<span class="input-group-btn">
+									    		<button class="btn btn-default" type="button" disabled="disabled">-</button>
+									    	</span>
+									    	<input type="text" id="marginBottom" class="form-control" placeholder="" disabled="disabled">
+									    	<span class="input-group-btn">
+									    		<button class="btn btn-default" type="button" disabled="disabled">+</button>
+									    	</span>
+									    </div>
+										<span class="pull-left">毫米</span>
+									</li>
+									<li class="clearfix">
+										<span class="pull-left">左</span>
+										<div class="input-group pull-left">
+									    	<span class="input-group-btn">
+									    		<button class="btn btn-default" type="button" disabled="disabled">-</button>
+									    	</span>
+									    	<input type="text" id="marginLeft" class="form-control" placeholder="" disabled="disabled">
+									    	<span class="input-group-btn">
+									    		<button class="btn btn-default" type="button" disabled="disabled">+</button>
+									    	</span>
+									    </div>
+										<span class="pull-left">毫米</span>
+									</li>
+									<li class="clearfix">
+										<span class="pull-left">右</span>
+										<div class="input-group pull-left">
+									    	<span class="input-group-btn">
+									    		<button class="btn btn-default" type="button" disabled="disabled">-</button>
+									    	</span>
+									    	<input type="text" id="marginRight" class="form-control" placeholder="" disabled="disabled">
+									    	<span class="input-group-btn">
+									    		<button class="btn btn-default" type="button" disabled="disabled">+</button>
+									    	</span>
+									    </div>
+										<span class="pull-left">毫米</span>
+									</li>
+								</ul>
+							</dd>
+						</dl>
+						<!--第三行 end-->
+					</div>
+					<!--设置 end-->
+				</div>
+				<!--页面设置 end-->
+				
+				<!--模板 begin-->
+				<div class="template-box">
+					<div class="template-search">
+						<input type="text" class="bordered-input padding-3" name="" id="" value="" placeholder="请输入要搜索的关键词" />
+						<span class="glyphicon icon-search"></span>
+					</div>
+					<ul class="list-unstyled">
+						<!--模板选择 开始位置-->
+						
+					</ul>
+				</div>
+				<!--模板 end-->
+			</div>
+			<!--左侧模板 end-->
+			
+			<!--右侧预览 begin-->
+			<div class="vpppBox-right">
+				<div style="margin: 0 auto;">
+					<!--预览页面盒子 begin-->
+					<div id="all_pages"></div>
+					<!--预览页面盒子 end-->
+				</div>
+			</div>
+			<!--右侧预览 end-->
+		</div>
+		<!--容器 end-->
+		
+		<script src="printPreview.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+	</body>
+</html>

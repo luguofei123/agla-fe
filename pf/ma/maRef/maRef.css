@@ -1,0 +1,145 @@
+.ma-box{position:relative;width:100%;padding:0px 8px 0px 248px;margin-top:-8px;}
+.ma-box-left{position: absolute;left:8px;top:0;width:240px;}
+/* .ma-box-right{width:100%;} */
+/* .ma-cont-box{min-height: 470px;} */
+/* .ma-table-box{margin:10px 8px 3px 8px;} */
+.ma-box-top{line-height:19px;padding:10px 0 10px 25px;margin-bottom: 0;}
+.ma-input-group{margin:8px 10px 0 10px;}
+.ma-input-group .form-control{height: 30px;}
+.ma-input-group .input-group-addon{background:none;padding:6px 16px;cursor: pointer;}
+.doc-ztree{margin-top:8px;margin-left:0px;/* max-height:625px;min-height:422px; */overflow:auto;}
+
+/*搜索按钮*/
+/* .ma-search{text-align: right;} */
+.iframeBtnsSearch{display: inline-block;overflow: hidden;vertical-align: middle;}
+.iframeBtnsSearch .btn{height:30px;}
+/*.searchHide{margin-right:-6px;width:0;height:30px;vertical-align: middle;border-radius:3px 0 0 3px;}*/
+.searchHide{right:40px;width:0;height:30px;vertical-align: middle;border-radius:3px 0 0 3px;}
+@-moz-document url-prefix(){.searchHide{margin-right:-8px;}}
+
+
+/*要素类型选择*/
+.ma-query-box{position:relative;width:100%;padding-right:68px;}
+.ma-query-box-left{width:100%;position:relative;padding-right:68px;padding-left:76px;}
+.ma-query-box-left-l{position: absolute;left:0;top:5px;width:80px;text-align: right;}
+.ma-query-box-left-r{width:100%;}
+.ma-query-box-right{position: absolute;right:5px;top:5px;width:60px;text-align: center;cursor: pointer;}
+.ma-query-box-right i{font-style: normal;color:#108EE9;}
+.ma-query-box-right span{margin:16px 8px 8px auto;cursor: pointer;}
+.ma-query-ul{margin:0 0 0px -34px;height:28px;overflow: hidden;}
+.ma-query-ul li{list-style: none;display: inline-block;/*margin-top:8px;*/margin-right:5px;}
+.ma-query-ul li i{font-style: normal;}
+.ma-query-ul button{border: none;background:none;}
+
+/*右侧购物车*/
+.rightFixedBtn{z-index:9999;width:40px;height:44px;line-height:50px;color:#fff;font-size:20px;text-align:center;background: #108EE9;position: fixed;top:50%;right: 0;margin-top:-50px;cursor: pointer;}
+.rightFixed{z-index:9999;width:400px;box-shadow: -2px 0 5px 0 rgba(0,0,0,0.15);background:#fff;border:1px solid #ccc;border-left:3px solid #108EE9;position:fixed;right:-400px;}
+.rightFixedHead{width:100%;padding-left:10px;background: #F2F2F2;height: 50px;line-height: 50px;font-size: 16px;border-bottom:1px solid #D9D9D9;}
+.rightFixedFoot{width:100%;padding:0 8px;height: 46px;line-height: 46px;background: #F2F2F2;border-top:1px solid #D9D9D9;}
+.rightFixedFoot button{float: left;margin-top: 8px;}
+.rightFixedFoot span{float: right;cursor: pointer;}
+.rightFixedCont{width:100%;overflow-y: auto;overflow-x: auto;}
+.cartBox{width:100%;}
+.cartBox dt{border-bottom: 1px solid #ccc;border-top: 1px solid #ccc;height:50px;line-height: 50px;padding-left:8px;padding-right:30px;position: relative;font-weight: normal;}
+.cartBox dt:first-child{border-top: 0px solid #ccc;}
+.cartBox dt .ma-icon{position:absolute;top:20px;right:10px;cursor: pointer;color:#008FF0;}
+.cartBox dd{padding:15px;}
+.cartBox dt .docTitle{margin-left:8px;
+margin-right: 30px;
+white-space: nowrap;
+	text-overflow: ellipsis;
+	-o-text-overflow: ellipsis;
+	overflow: hidden;}
+.cartBox dd .ztree li span.button.switch{width:0;}
+.dataTipNum{font-weight: normal;margin-left:8px;}
+.dataTipNum i{font-style:normal;}
+.cartBox .ztree li a:hover{color: #108EE9;text-decoration: none;}
+
+/*树样式重写*/
+/*.ztree{padding:0px;}
+.ztree li{line-height: 16px;margin-bottom: 4px;}
+.ztree li span{margin-left:4px;}
+.ztree li span.button{margin-right:4px;}
+.ztree li span.button.ico_docu{margin-right:4px;}
+.ztree li span.button.ico_open{margin-right:4px;}
+.ztree li a.curSelectedNode{background: #E6F4FD;border:none;}
+.ztree li a.curSelectedNode .noline_docu{background-color:#fff;display: inline-block;padding:2px 2px 2px 0;}
+/*.ztree li a.curSelectedNode .ico_docu{background-color:#E6F4FD;display: inline-block;padding:2px 2px 2px 0;}*/
+/*.ztree li a.curSelectedNode .node_name{background:#E6F4FD;display: inline-block;padding:2px 2px 2px 0;}*/
+.ztree li .node_name{padding-right:40px;}
+.ztree li span.button.remove{margin-left: -20px;background-position:0 0;background-image:url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAAOCAYAAAAfSC3RAAAAAXNSR0IArs4c6QAAATxJREFUKBW9UsFKw0AQnZndlBQPmlqESr34CV68e7SI4G8oiCDi1bOQ0K9QL36C6HeoFfEgSfVgBRPU3XGStGQTBG9ussx7M29md5hFcNZi9LJh2V4y8LzjBgR8I6Sd14Pu1cxPM5BbA2YAxGeqrfruBuQLw2bT1eJClNyJY7VwMktxZMHWFQkmqGIADPd6zvPXPz7TR6VoS1vvoZFQUSxhBl8j0mq7oEGUvGuCtfH+0m2l/B3JDa3yaaXWYyeMT6TIbp4ShMlxJ4oPCxzFR4Fst5R2iUVcliuo3Ce2J41+55gBe7l1V+1EN/AX/v/EWo8IbKW3YoYC5KdynsjymORzVi1Rt/DUEqV53AdvmHlTsW4NnZwClnMMk4mwAbVp1BQ0ucnsk9bYn57I54x4Y1JTFGqKaxzxerzXff4BQBFiVqM5/xUAAAAASUVORK5CYII=');}
+
+/*表格样式*/
+.ac-table table .zs-check-style{text-align: center;width:20px!important;}
+.ac-table table .zs-action-style{text-align: center;width:80px!important;}
+.ac-table table .zs-state-style{text-align: center;width:60px!important;}
+.zs-btn-add{display:inline-block;width:16px;height:16px;text-align:center;line-height:13px;cursor: pointer;color:#333;}
+.zs-btn-add:hover{color:#108EE9;}
+
+/*购物车计数器*/
+.cartCount{
+	background:#F04134;border-radius:200px;height:16px;min-width:16px;
+	text-align:center;font-size:12px;line-height:15px;
+	color:#fff;display:none;position:absolute;font-style:normal;
+	right:4px;top:4px;padding:0 3px;
+}
+.sizeFont
+{
+animation:myfirst 0.8s;
+-moz-animation:myfirst 0.8s; /* Firefox */
+-webkit-animation:myfirst 0.8s; /* Safari and Chrome */
+-o-animation:myfirst 0.8s; /* Opera */
+}
+
+@keyframes myfirst
+{
+0%   {font-size: 20px;}
+50%  {font-size: 24px;}
+100% {font-size: 20px;}
+}
+
+@-moz-keyframes myfirst /* Firefox */
+{
+0%   {font-size: 20px;}
+50%  {font-size: 24px;}
+100% {font-size: 20px;}
+}
+
+@-webkit-keyframes myfirst /* Safari and Chrome */
+{
+0%   {font-size: 20px;}
+50%  {font-size: 24px;}
+100% {font-size: 20px;}
+}
+
+@-o-keyframes myfirst /* Opera */
+{
+0%   {font-size: 20px;}
+50%  {font-size: 24px;}
+100% {font-size: 20px;}
+}
+
+
+/**左侧树**/
+.ufmaTree.ztree li span.button.switch{
+	display: none;
+}
+.rpt-checkAll span {
+	width: 14px;
+	height: 14px;
+}
+.mt-checkbox>span:after{
+	left: 4px;
+	width: 4px;
+	height: 7px;
+	border-width: 0 1px 1px 0;
+}
+.rpt-checkAll{
+	margin-top: 8px;
+	margin-left: 5px;
+}
+.doc-ztree{
+	margin-top: 0;
+	padding-top: 0;
+}
+

@@ -1,0 +1,63 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>指标导入</title>
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <script src="../../pub/boot.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+    <link rel="stylesheet" href="../pub/common.css?rev=@@hash" />
+    <link rel="stylesheet" href="financeItem.css?rev=@@hash" />
+</head>
+
+<body>
+    <div class="ufma-layout-updown">
+        <div class="ufma-layout-up " style="overflow-y: auto">
+            <!-- 表格begin -->
+            <div class="portlet-body bordered pr bordered-bottom" style="background-color: #ECF6FD;padding: 5px;margin: 5px;height: 42px;">
+                <div class="radio-title" style="position: relative;top: 5px;width: 100%;">
+                    <div class="fl">
+                        <label class="control-label " style="margin-left:16px;">预算方案：</label>
+                        <span id="czPlan"></span>
+                    </div>
+                    <div class="file-upload-box-text mt-radio mt-radio-outline margin-right-8">
+                        <div class="file-upload-tip"></div>
+                        <div class="file-upload-title" style="display: none;margin-left: 16px;">
+                            <span></span> &nbsp;&nbsp;
+                            <i class="icon icon-close"></i>
+                        </div>
+                    </div>
+                    <div class="file-upload-box-btn" style="width:90px;overflow: hidden;">
+                        <button class="btn btn-primary" id="chooseFile">选择文件</button>
+                        <form id="excelFileFrom" enctype="multipart/form-data">
+                            <input id="excelFile" name="file" type="file" class="file-upload-input" style="bottom: 0px;top: 0px;">
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="rpt-table-tab" style="padding:0 5px;">
+                <table class="ufma-table uf-rpt-table" id="gridGOV"></table>
+            </div>
+        </div>
+    </div>
+    <div class="ufma-layout-down bordered-top">
+        <div class="text-right  margin-right-30">
+        	<!--<a href="#" id="impModal" style="float:left;margin-left:40px;"></a>-->
+          <a id="impModal" style="float:left;margin-left:40px;cursor: pointer;"></a><!--由于弹窗点现在链接时会把href="#"当做路由访问 ，导致门户上方蓝色上衣，故去掉href="#"--zsj-->
+          <!-- CWYXM-184070---财政指标界面导入单位指标时，可以不填写与父指标相同的要素，导入模版中不显示对应的列--zsj -->
+          <label class="mt-checkbox mt-checkbox-outline showYsCheck" style="margin-top: 15px;float: left;margin-left: 27px;">
+            <input type="checkbox" checked="" id="isImportTempFileShowFinanceBgEles">导入模版不显示财政指标的要素
+            <span></span>
+          </label>
+          <button type="button" class="btn btn-sm btn-primary btn-saveadd btn-ajax" id="btnImport">导入</button>
+          <button type="button" class="btn btn-sm btn-default" id="btnClose">关闭</button>
+        </div>
+    </div>
+    </div>
+    <script src="dm.js?rev=@@hash " type="text/javascript" charset="utf-8"></script>
+    <script src="importItem.js" type="text/javascript" charset="utf-8"></script>
+
+</body>
+
+</html>

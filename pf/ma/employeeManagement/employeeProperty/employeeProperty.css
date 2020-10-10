@@ -1,0 +1,58 @@
+/* 主页面 */
+
+#employee-property .prs-workspace {
+  margin: 0 15px;
+  margin-bottom: -10px;
+}
+
+#employee-property .query-box-right {
+  position: absolute;
+  right: 10px;
+  top: 14px;
+}
+
+#employee-property .query-box-right label,
+#employee-property .query-box-right .query-btn {
+  float: left;
+}
+
+#employee-property .query-box-right label {
+  margin-right: 26px;
+}
+
+#employee-property .query-box-right .query-btn button:first-child {
+  margin-right: 5px;
+}
+
+#employee-property .query-li-check {
+  position: relative;
+}
+
+#employee-property .query-li-check label {
+  position: relative;
+  margin-bottom: 0;
+  height: 30px;
+  line-height: 30px;
+  font-weight: normal;
+  margin-right: 32px;
+  padding-left: 24px;
+}
+
+#employee-property .query-li-check label:last-child {
+  margin-left: 0px;
+}
+
+#employee-property .query-li-check label span {
+  margin-top: 5px;
+}
+
+#employee-property .data-label,
+.employee-property .data-label {
+  width: 84px;
+  text-align: left !important;
+}
+
+/* 新增自定义人员属性 弹框 */
+.employee-property .form-row {
+  height: 30px;
+}

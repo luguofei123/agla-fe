@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>建账向导</title>
+		<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+
+		<script>
+			var bAgency = true; //单位级和系统级区分
+		</script>
+		<script src="../../pub/boot.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+	</head>
+
+	<body>
+		<div class="ufma-layout-updown" id="coAccEdit">
+			<div class="ufma-layout-up">
+				<div class="container-fluid" style="overflow-x: hidden;">
+					<div class="ufma-layout ufma-layout-slider-xm ufma-layout-fixed-slider ufma-layout-fixed-slider-right">
+						<div id="initNewYearTimeline" class="margin-top-8" style="display:block;"> </div>
+						<div class="">
+							<div id="checkData" class="hide">
+								<!--<h4 class="text-center font-size20"><span class="curYear"></span>第一步</h4>
+								<div class="bordered-gray padding-15 font-size14">
+									<ul id="checkList" class="list-inline list-inline-horizontal margin-bottom-0">
+										<li class="h50 tc uf-box-center">测试第一步</li>
+									</ul>
+								</div>-->
+								<div class="form-horizontal" style="width: 980px;float:left;margin-left:114px;">
+
+									<div class="form-row">
+										<div class="form-group required">
+											<label class="control-label em6">单位名称：</label>
+											<div class="control-element">
+												<!--<select class="form-control" name="agency" id="caAddAgency" require-all=1 style="display: none;"></select>-->
+												<div class="ufma-treecombox" id="treeAgency"></div>
+											</div>
+										</div>
+										<div class="form-group required" style="margin-left:90px">
+											<label class="control-label em6">账套编码：</label>
+											<div class="control-element">
+												<input type="text" name="chrCode" id="caEditChrCode" class="form-control" style="width: 250px;">
+											</div>
+										</div>
+										<div style="clear:both"></div>
+									</div>
+									<div class="form-row">
+										<div class="form-group required">
+											<label class="control-label em6">财务负责人：</label>
+											<div class="control-element">
+												<input type="text" name="fiLeader" id="caFiLeader" class="form-control" style="width: 250px;">
+											</div>
+										</div>
+										<div class="form-group required" style="margin-left:90px">
+											<label class="control-label em6">账套名称：</label>
+											<div class="control-element">
+												<!--账套管理的账套编码 不走此校验$(this).attr('acctType') != 'acctCheck'-->
+												<input type="text" name="chrName" id="caEditChrName" acctType="acctCheck" class="form-control" style="width: 250px;">
+											</div>
+										</div>
+										<div style="clear:both"></div>
+									</div>
+									<div class="form-row">
+										<div class="form-group">
+											<label class="control-label em6">科目体系：</label>
+											<div class="control-element">
+												<select class="form-control" id="caEditEleAcc" style="width: 250px;">
+												</select>
+											</div>
+										</div>
+										<div class="form-group" style="margin-left:90px">
+											<label class="control-label em6">纳税人类型：</label>
+											<div class="control-element">
+												<select class="form-control" name="eleAcc" id="taxpayerType" require-all=1 style="width: 250px;">
+												</select>
+											</div>
+										</div>
+										<div style="clear:both"></div>
+									</div>
+									<div class="form-row" style="position:relative">
+
+										<div class="form-group" id="agencyTypeGroup" style="width:360px;min-height: 30px;">
+											<label class="control-label em6">单位类型：</label>
+											<div class="control-element">
+												<select class="form-control" name="agencyType" id="agencyType" require-all=1 style="width: 250px;">
+												</select>
+											</div>
+										</div>
+										<div class="form-group" style="display: none !important;">
+											<label class="control-label em6">启用期间：</label>
+											<div class="control-element">
+												<select class="form-control" name="" id="enablePeriod" require-all=1 style="width: 250px;">
+													<option value='1'>第一期间</option>
+													<option value='2'>第二期间</option>
+													<option value='3'>第三期间</option>
+													<option value='4'>第四期间</option>
+													<option value='5'>第五期间</option>
+													<option value='6'>第六期间</option>
+													<option value='7'>第七期间</option>
+													<option value='8'>第八期间</option>
+													<option value='9'>第九期间</option>
+													<option value='10'>第十期间</option>
+													<option value='11'>第十一期间</option>
+													<option value='12'>第十二期间</option>
+												</select>
+											</div>
+										</div>
+										<label class="mt-checkbox mt-checkbox-single mt-checkbox-outline coaAcc-right" style="margin-left: 130px;display: none !important;">
+												<input type="checkbox" class="datatable-group-checkable" name="isShowBill" id="isDefaultAcct"/>默认账套
+												<span></span>
+										</label>
+										<div class="form-group" style="position:absolute;left: 77px;top: 40px;">
+											<label class="mt-checkbox mt-checkbox-single mt-checkbox-outline coaAcc-right">
+												<input type="checkbox" class="datatable-group-checkable" name="isCashFlowAccount" id="isCashFlowAccount"/>核算现金流量
+												<span></span>
+											</label>
+											<!--<label class="mt-checkbox mt-checkbox-single mt-checkbox-outline coaAcc-right">
+												<input type="checkbox" class="datatable-group-checkable" name="issueAcco" id="issueAcco"/>下发科目
+												<span></span>
+											</label>-->
+										</div>
+										<div class="form-group" style="margin-left:87px">
+											<div class="control-element" style="color: #9e9e9e;font-size: 12px;width:386px;padding-left:17px ;">
+												<span>说明：属于增值税一般纳税人的单位，在2101应交增值税科目下设置 “应交税金”
+												“未交税金”、“预交税金”、“待抵扣进项税额”、“待认证进项税额”、 “待转销项税额”
+												“简易计税”、“转让金融商品应交增值税”、“代扣代交增值税”等明细科目。</span>
+											</div>
+										</div>
+
+										<div style="clear:both"></div>
+									</div>
+
+									<div style="width: 850px;border-top: 1px solid #969191;float:left;"></div>
+									<div class="col-xs-12">
+										<div class="form-group" class="col-sm-6">
+											<div class="control-element">
+												<label class="control-label em6" style="margin-left: -35px;">平行记账：</label>
+												<div class="btn-group btn-group-sm" data-toggle="buttons">
+													<label class="btn btn-sm btn-default" disabled="true">
+														<input type="radio" name="isParallel" id="isParallel">是
+													</label>
+													<label class="btn btn-sm btn-default active" disabled="true">
+														<input type="radio" name="isParallel" checked="true"  id="isParallels">否
+													</label>
+												</div>
+												<!--<label class="mt-checkbox mt-checkbox-single mt-checkbox-outline coaAcc-right">
+			                                        <input type="checkbox" class="datatable-group-checkable" name="isParallel" id="isParallel"/>平行记账
+			                                        <span></span>
+			                                    </label>-->
+												<label class="mt-radio coaAcc-right ispx" style="display: none;margin-left: 20px;">
+			                                        <input type="radio" name="isDoubleVou"  id="isDoubleVou" checked="true"/>单凭证
+			                                        <span></span>
+			                                    </label>
+												<label class="mt-radio coaAcc-right ispx" style="display: none;margin-left: 300px;">
+			                                        <input type="radio" name="isDoubleVou" />双凭证
+			                                        <span></span>
+			                                    </label>
+											</div>
+										</div>
+									</div>
+									<div class="col-xs-6 ">
+										<div class="control-element">
+
+										</div>
+									</div>
+									<div class="col-xs-6 ispx" style="display: none;">
+										<div class="control-element">
+
+										</div>
+									</div>
+								</div>
+								<img src="spz.png" class="clickbigs1 ispx" style="display: none;float:left;width:30%;margin-left:18%;margin-bottom:50px;border: 1px solid #bbb;" />
+								<img src="danpz.png" class="clickbigs2 ispx" style="display: none;float:right;width:30%;margin-right:15%;margin-bottom:50px;border: 1px solid #bbb;" />
+							</div>
+							<div id="tranAcco" class="hide">
+								<!--<h4 class="text-center font-size20"><span class="curYear"></span>第二步</h4>
+								<div class="bordered-gray padding-15 font-size14">
+									<ul id="checkList" class="list-inline list-inline-horizontal margin-bottom-0">
+										<li class="h50 tc uf-box-center">测试第二步</li>
+									</ul>
+								</div>-->
+
+								<div style="width: 80%;margin-left:10%;height:350px;overflow:auto;border: 1px solid #d8d8d8;position: relative;" id="aAccTablediv">
+									<!-- <table class="ufma-table dataTable uf-rpt-table" id='aAccTablehead' style="width:100%;position: absolute;">
+										<tr><th>类别代码</th><th>类别名称</th><th>控制方式</th><th>分级规则</th><tr>
+									</table> -->
+									<table class="ufma-table dataTable uf-rpt-table" id='aAccTable' style="width:100%;">
+									</table>
+								</div>
+							</div>
+							<div id="yinitEnd" class="hide text-center">
+								<!--<h4 class="text-center font-size20"><span class="curYear"></span>第三步</h4>
+								<div class="bordered-gray padding-15 font-size14">
+									<ul id="checkList" class="list-inline list-inline-horizontal margin-bottom-0">
+										<li class="h50 tc uf-box-center">测试第三步</li>
+									</ul>
+								</div>-->
+								<div class="form-horizontal" style="width: 980px;float:left;padding-left: 68px">
+									<div class="form-group ib fl">
+										<label class="control-label em6">下发科目：</label>
+										<div class="control-element">
+											<div class="btn-group btn-group-sm" data-toggle="buttons">
+												<label class="btn btn-sm btn-default active">
+													<input type="radio" name="issueAcco" checked="true" id="issueAcco">是
+												</label>
+												<label class="btn btn-sm btn-default">
+													<input type="radio" name="issueAcco"  id="issueAccos">否
+												</label>
+											</div>
+										</div>
+									</div>
+									<div class="form-group ib fl">
+										<label class="control-label em6">科目体系：</label>
+										<div class="control-element">
+											<span id="caEditEleAcctext" style="line-height: 30px;"></span>
+										</div>
+									</div>
+
+									<div class="form-group ib fl">
+										<label class="control-label em6">科目编码规则：</label>
+										<div class="control-element">
+											<span style="width: 250px;display:inline-block;text-align: left;line-height: 30px;" id="caEditEleAccrule"></span>
+										</div>
+									</div>
+
+								</div>
+								<div class="table-sub">
+									<ul class="nav nav-tabs accnab" style="width: 98%;margin-left: 1%;">
+									</ul>
+									<div style="width: 98%;margin-left:1%;height:250px;overflow:auto;border: 1px solid #d8d8d8;position: relative;" id='acctabdiv'>
+										<!-- <table class="ufma-table dataTable uf-rpt-table" id='AccTablehead' style="position: absolute;">
+											<tr>
+												<th>科目代码</th>
+												<th>科目名称</th>
+												<th>辅项信息</th>
+												<th>会计要素</th>
+												<th>余额方向</th>
+												<th>备查登记</th>
+												<th>差异项登记</th>
+												<th>科目类型</th>
+												<th>级次</th>
+											<tr>
+										</table> -->
+										<table class="ufma-table dataTable uf-rpt-table" id='AccTable' style="width:100%;">
+										</table>
+									</div>
+								</div>
+							</div>
+							<div id="initEnd" class="hide text-center">
+								<!--<h4 class="text-center font-size20"><span class="curYear"></span>第四步</h4>
+								<div class="bordered-gray padding-15 font-size14">
+									<ul id="checkList" class="list-inline list-inline-horizontal margin-bottom-0">
+										<li class="h50 tc uf-box-center">测试第四步</li>
+									</ul>
+								</div>-->
+								<div style="width: 700px;border:1px solid #adaaaa;padding: 25px;margin-top: 20px;margin-left:180px;height: 300px;" id="initEnddata">
+									<p><span class='span1'>账套：</span><span class='span2'>0001   北京产品技术管委会</span></p>
+									<p><span class='span1'>单位：</span><span class='span2'>0001   北京产品技术管委会</span></p>
+									<p><span class='span1'>单位负责人：</span><span class='span2'>0001   北京产品技术管委会</span></p>
+									<p id='agencyCodeType'><span class='span1'>单位类型：</span><span class='span2'>0001   北京产品技术管委会</span></p>
+									<p><span class='span1'>科目体系：</span><span class='span2'>0001   北京产品技术管委会</span></p>
+									<p><span class='span1'>平行记账：</span><span class='span2'>0001   北京产品技术管委会</span></p>
+
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="ufma-layout-down bordered-top" style="background:#fff;">
+				<div class="text-right margin-right-30">
+					<a class="btn btn-default hide" id="btn-prev">上一步</a>
+					<a class="btn btn-default" id="btn-next">下一步</a>
+					<a class="btn btn-default" id="btn-close">取消</a>
+					<a class="btn btn-primary hide" id="btn-succes">完成</a>
+					<a class="btn btn-default hide" id="btn-succesadd">继续添加</a>
+				</div>
+			</div>
+		</div>
+		</div>
+		<div id="outerdiv" style="position:fixed;top:0;left:0;background:rgba(255,255,255,0.3);z-index:2;width:100%;height:100%;display:none;">
+			<div id="innerdiv" style="position:absolute;background: rgba(255,255,255,0);">
+				<img id="bigimg" style="border:0px solid #fff;" src="" />
+			</div>
+		</div>
+	</body>
+
+</html>
+<script src="buildingGuide.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+<style type="text/css">
+	.bigimg {
+		width: 100% !important;
+		margin-left: 0px !important;
+		margin-right: 0px !important;
+	}
+	
+	#bigimg {
+		border: 2px solid #ccc !important;
+	}
+	
+	td {
+		text-align: left !important;
+		max-width: 200px !important;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+	}
+	
+	th {
+		text-align: center !important;
+		max-width: 2000px !important;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+	}
+	
+	#initEnddata p {
+		line-height: 30px;
+		font-size: 16px;
+	}
+	
+	#initEnddata p .span1 {
+		float: left;
+		text-align: right;
+		width: 300px;
+	}
+	
+	#initEnddata p .span2 {
+		float: left;
+		text-align: left;
+		/*width: 300px;*/
+		max-width: 200px;
+		white-space: nowrap;
+		text-overflow: ellipsis;
+		overflow: hidden;
+	}
+	
+	.ufma-timeline li .ufma-timeline-icon {
+		z-index: 1;
+	}
+</style>

@@ -1,0 +1,480 @@
+#vouAttachBox {
+	width: 880px;
+	height: 530px;
+	position: fixed;
+	left: 50%;
+	top: 50%;
+	margin-left: -440px;
+	margin-top: -265px;
+}
+
+#vouAttachBox .u-msg-content {
+	padding: 0 35px;
+}
+
+#vouAttachBox .attach-clear {
+	clear: both;
+}
+
+#attachUploadBtn {
+	margin-right: 16px;
+}
+
+#vouAttachBox .u-msg-title {
+	height: 46px;
+	/*padding-top: 10px;*/
+	padding-left: 16px;
+	border-bottom: 1px solid #D9D9D9;
+	line-height: 46px;
+}
+
+#vouAttachBox .u-msg-close {
+	padding-top: 8px;
+}
+
+#vouAttachBox .attach-toolbar {
+	margin-top: 8px;
+	height: 30px;
+	line-height: 30px;
+}
+
+#vouAttachBox .attach-toolbar .attach-toolbar-tip {
+	float: left;
+}
+
+#vouAttachBox .attach-toolbar .attach-toolbar-btns {
+	float: right;
+}
+
+#vouAttachBox .attach-toolbar .attach-toolbar-tip p {
+	margin: 0;
+	display: inline-block;
+}
+
+#vouAttachBox .attach-show {
+	border: 1px solid #d9d9d9;
+	width: 100%;
+	margin-top: 10px;
+}
+
+#vouAttachBox .attach-noData {
+	width: 100%;
+	text-align: center;
+	padding-bottom: 120px;
+}
+
+#vouAttachBox .attach-noData img {
+	width: 116px;
+	height: 90px;
+	margin-top: 80px;
+}
+
+#vouAttachBox .attach-noData p {
+	text-align: center;
+	margin: 0;
+	margin-top: 20px;
+	color: #999;
+}
+
+#vouAttachBox .attach-show-list {
+	list-style: none;
+	margin: 0;
+	padding: 4px 0 20px 0px;
+	overflow-y: auto;
+	height: 380px;
+}
+
+#vouAttachBox .attach-show-list li {
+	float: left;
+	width: 158px;
+	height: 150px;
+	border: 1px solid #dfe6ec;
+	border-radius: 4px;
+	margin: 16px 0 0 16px;
+	padding: 10px;
+}
+
+#vouAttachBox .attach-show-li:hover {
+	background: #E6F4FD;
+	box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.10);
+	cursor: pointer;
+}
+
+#vouAttachBox .attach-img-box {
+	width: 160px;
+	height: 70px;
+	line-height: 70px;
+	text-align: center;
+}
+
+#vouAttachBox .attach-img-file {
+	height: auto;
+	width: auto;
+	max-width: 100%;
+	max-height: 70px;
+}
+
+#vouAttachBox .attach-img-file-pos-bg {
+	position: absolute;
+	top: 0;
+	width: 210px;
+	height: 126px;
+	left: 0;
+	background: #fff;
+}
+
+#vouAttachBox .attach-img-file-pos {
+	position: absolute;
+	top: 0;
+	height: 126px;
+	left: 42px;
+}
+
+#vouAttachBox .attach-img-icon {
+	height: 110px;
+}
+
+#vouAttachBox .attach-img-tip {
+	overflow: hidden;
+	margin-top: 8px;
+}
+
+#vouAttachBox .attach-img-tip span {
+	font-size: 12px;
+	height: 16px;
+	line-height: 16px;
+	display: inline-block;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+#vouAttachBox .attach-img-name {
+	float: left;
+	color: #333;
+	max-width: 90px;
+}
+
+#vouAttachBox .attach-img-byte {
+	float: right;
+	color: #999;
+	max-width: 50px;
+}
+
+#vouAttachBox .attach-img-sub {
+	margin-top: -2px;
+	font-size: 12px;
+	color: #999;
+	max-width: 160px;
+	height: 24px;
+	line-height: 24px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+#vouAttachBox .attach-img-btns {
+	/*display: none;*/
+	text-align: right;
+	margin-top: 10px;
+}
+
+#vouAttachBox .attach-img-btns span {
+	margin-left: 16px;
+	color: #666;
+}
+
+#vouAttachBox .attach-img-btns span:hover {
+	color: #108EE9;
+}
+
+#vouAttachBox .attach-img-sub-edit {
+	display: none;
+	margin-top: -2px;
+	height: 24px;
+	line-height: 24px;
+}
+
+#vouAttachBox .attach-img-sub-edit input {
+	height: 24px;
+	line-height: 24px;
+	width: 112px;
+	padding: 0 8px;
+	outline: none;
+	border: 1px solid #108EE9;
+	border-radius: 4px;
+	color: #333;
+	font-size: 12px;
+}
+
+#vouAttachBox .attach-img-sub-edit span {
+	display: inline-block;
+	width: 24px;
+	height: 24px;
+	line-height: 24px;
+	color: #108EE9;
+	font-weight: bold;
+	margin-left: 4px;
+}
+
+#vouAttachBox .attach-step2 {
+	display: none;
+}
+
+#vouAttachBox .attach-step3 {
+	display: none;
+}
+
+#vouAttachBox .attach-toolbar-back {
+	color: #333;
+	display: inline-block;
+	cursor: pointer;
+}
+
+#vouAttachBox .attach-upload-noData {
+	position: absolute;
+	top: 0;
+	left: 0px;
+	z-index: 9999;
+	border: 1px dashed #d9d9d9;
+	background: #FBFBFB;
+	width: 100%;
+	border-radius: 4px;
+	text-align: center;
+	padding: 155px 0 155px 0;
+	cursor: pointer;
+}
+
+#vouAttachBox .attach-upload-noData span {
+	font-size: 60px;
+	color: #108EE9;
+}
+
+#vouAttachBox .attach-upload-noData p {
+	text-align: center;
+	margin: 0;
+	margin-top: 8px;
+	color: #333;
+}
+
+#vouAttachBox .attach-upload-show {
+	border: 1px solid #d9d9d9;
+	width: 100%;
+	margin-top: 10px;
+}
+
+#vouAttachBox .attach-upload-show .attach-show-list {
+	max-height: 300px;
+	height: 300px;
+}
+
+#vouAttachBox .attach-upload-show .attach-show-list li {
+	height: 192px;
+}
+
+#vouAttachBox .attach-upload-toolbar {
+	border: 1px solid #d9d9d9;
+	height: 46px;
+	line-height: 46px;
+	position: absolute;
+	width: 100%;
+	z-index: 2;
+	bottom: -11px;
+	background: #fff;
+}
+
+#vouAttachBox .attach-upload-toolbar button {
+	margin-top: 8px;
+	float: right;
+	margin-right: 16px;
+}
+
+#vouAttachBox .attach-upload-toolbar span {
+	margin-right: 8px;
+	float: right;
+}
+
+#vouAttachBox .attach-upload-toolbar span i {
+	font-style: normal;
+	margin: 0 4px;
+}
+
+#vouAttachBox .attach-show-li-add {
+	width: 178px;
+	height: 170px;
+	margin: 16px 0 0 16px;
+	float: left;
+	border: 1px dashed #DFE6EC!important;
+	background: #F7F7F7;
+	cursor: pointer;
+	text-align: center;
+}
+
+#vouAttachBox .attach-show-li-add span {
+	font-size: 60px;
+	color: #999;
+	margin-top: 45px;
+}
+
+#vouAttachBox .attach-show-li-add p {
+	color: #666;
+	text-align: center;
+	margin-top: 8px;
+}
+
+#vouAttachBox .attach-upload-box {
+	position: relative;
+}
+
+.fileinput-remove {
+	display: none;
+}
+
+.kv-zoom-body .attach-img-file-pos-bg {
+	display: none;
+}
+
+.kv-modalFooter {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 70px;
+	border-radius: 0 0 9px 9px;
+	background: rgba(0, 0, 0, 0.50);
+	box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.20);
+	font-size: 24px;
+	text-align: center;
+	color: #fff;
+	line-height: 70px;
+}
+
+.kv-modalFooter span {
+	margin: 0 32px;
+	cursor: pointer;
+}
+
+.kv-modalFooter span:hover {
+	color: #108EE9;
+}
+
+.attach-close {
+	color: #999;
+	float: right;
+	position: absolute;
+	right: 16px;
+	top: 21px;
+	font-size: 10px;
+	cursor: pointer;
+}
+
+#btn-paishe {
+	padding: 8px 16px;
+	background: #108EE9;
+	color: #fff;
+	border-radius: 4px;
+	float: left;
+	position: absolute;
+	left: 310px;
+	bottom: 40px;
+	cursor: pointer;
+}
+/*#btn-flashpaishe {
+	padding: 8px 16px;
+	background: #108EE9;
+	color: #fff;
+	border-radius: 4px;
+	float: left;
+	position: absolute;
+	left: 310px;
+	bottom: 40px;
+	text-decoration: none;
+	cursor: pointer;
+}*/
+#btn-paishetijiao {
+	padding: 8px 16px;
+	background: #108EE9;
+	color: #fff;
+	border-radius: 4px;
+	float: left;
+	position: absolute;
+	right: 200px;
+	bottom: 40px;
+	cursor: pointer;
+}
+
+.shangchuanneirong {
+	float: right;
+	overflow-y: scroll;
+	height: 100%;
+	width: 240px;
+	border: 1px solid #d9d9d9;
+	position: absolute;
+	right: 20px;
+	height: 470px;
+	top: 16px;
+	border-radius: 4px;
+}
+
+.shangchuanshuru {
+	width: 220px;
+	/*height: 123px;*/
+	margin-left: 2px;
+	margin-top: 16px;
+	position: relative;
+}
+.shangchuanshuruyishangchuan {
+	width: 220px;
+	/*height: 123px;*/
+	margin-left: 2px;
+	margin-top: 16px;
+	position: relative;
+}
+.paishecaozuo{
+	width: 220px;
+	height: 60px;
+}
+.shangchuanshuruyishangchuan .paishecaozuo{
+	width: 220px;
+	height: 60px;
+}
+.xiugaipaishe {
+	border: none;
+	margin-top: 2px;
+	margin-bottom: 2px;
+	box-shadow: none;
+	float: left;
+	width: 170px;
+	height: 26px;
+	padding-left: 8px;
+}
+.delpaishe{
+	float: right;
+	margin-right: 8px;
+	cursor: pointer;
+	line-height: 24px;
+}
+.chuanpaishe{
+	float: right;
+	margin-right: 8px;
+	cursor: pointer;
+	line-height: 24px;
+}
+.shangchuanshuruyishangchuan .xiugaipaishe{
+	background: #fff;
+}
+.shangchuanshuruyishangchuan .xiugaipaishewc{
+	background: #5cb85c;
+	text-align: center;
+	color: #FFFFFF;
+	font-size: 12px;
+	border-radius:4px;
+	height: 16px;
+	border:none;
+	width: 220px;
+	position: absolute;
+	bottom: 8px;
+}
+.kv-modalFooter{
+	display: none;
+}

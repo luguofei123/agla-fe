@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<link rel="icon" href="./favicon.ico">
+		<title></title>
+
+		<script src="../boot.js"></script>
+		<style>
+			body {
+				padding: 8px;
+				marign: 0;
+				overflow: hidden;
+			}
+			
+			img {
+				border: none;
+				margin: 0;
+				padding: 0;
+				width: 24px;
+			}
+			
+			.uf-overlay {
+				position: fixed;
+				z-index: 999;
+				top: -100px;
+				left: 0;
+				bottom: 0;
+				right: 0;
+				width: 100%;
+				background: #fff;
+				will-change: opacity;
+				filter: alpha(opacity=0.5);
+				opacity: 0.5;
+				filter: alpha(opacity=50) \9;
+				display: block;
+				transition: all 300ms;
+			}
+			
+			.loading {
+				z-index: 1000;
+				position: fixed;
+				margin-top: -20px;
+				margin-left: -100px;
+				font-size: 14px;
+				top: 50%;
+				left: 50%;
+			}
+			
+			.export-tools {
+				margin: 0;
+				width: 400px;
+			}
+			
+			.clear {
+				clear: both;
+			}
+			
+			.table-export {
+				position: absolute;
+				left: -200%;
+				border-collapse: collapse;
+				width: 100%;
+				border: 1px solid #000;
+			}
+			
+			.table-export th,
+			.table-export td {
+				border: 1px solid #000;
+			}
+			
+			ul {
+				list-style: none;
+				margin: 0;
+				padding: 0;
+				cursor: default;
+			}
+			
+			ul li {
+				float: left;
+				padding: 16px 24px!important;
+				text-align: center;
+				width: 100px!important;
+				cursor:pointer;
+			}
+			
+			ul li span {
+				display: block;
+				font-size: 12px;
+				font-family: 微软雅黑
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="uf-overlay"></div>
+		<span class="loading">正在初始化，请耐心等待......</span>
+		<div class="export-tools">
+			<ul>
+				<li class="export-xlsx">
+
+					<img src="./icons/xls.png" />
+
+					<span>XLS</span>
+				</li>
+				<li class="export-txt">
+
+					<img src="./icons/txt.png" />
+					<span>TXT</span>
+				</li>
+				<li class="export-xml">
+
+					<img src="./icons/xml.png" />
+					<span>XML</span>
+				</li>
+				<!-- <li class="export-pdf">
+
+					<img src="./icons/pdf.png" />
+					<span>PDF</span>
+				</li>
+				<li class="export-png">
+
+					<img src="./icons/png.png" />
+					<span>PNG</span>
+				</li> -->
+				<li class="export-doc">
+
+					<img src="./icons/word.png" />
+					<span>DOC</span>
+				</li>
+
+				<li class="export-csv">
+
+					<img src="./icons/csv.png" />
+					<span>CSV</span>
+				</li>
+
+				<li class="export-json">
+
+					<img src="./icons/json.png" />
+					<span>JSON</span>
+				</li>
+			</ul>
+			<div class="clear"></div>
+		</div>
+
+		<script src="./tableExport/libs/pdfMake/pdfmake.min.js"></script>
+		<script src="./tableExport/libs/pdfMake/vfs_fonts.js?rev=@@hash"></script>
+		<script type="text/javascript" src="./tableExport/libs/FileSaver/FileSaver.min.js"></script>
+		<script type="text/javascript" src="./tableExport/libs/js-xlsx/xlsx.core.min.js"></script>
+		<script type="text/javascript" src="./tableExport/libs/jsPDF/jspdf.min.js"></script>
+		<script type="text/javascript" src="./tableExport/libs/jsPDF-AutoTable/jspdf.plugin.autotable.js?rev=@@hash"></script>
+		<script type="text/javascript" src="./tableExport/libs/html2canvas/html2canvas.min.js"></script>
+		<script type="text/javascript" src="./tableExport/tableExport.js?rev=@@hash"></script>
+
+		<script src="./js/table-export.js?rev=@@hash"></script>
+
+	</body>
+
+</html>

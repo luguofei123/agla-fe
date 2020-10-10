@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+  		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>凭证打印-打印封面</title>
+  		<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+		<script src="../../pub/boot.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+		<link rel="stylesheet" type="text/css" href="vouPrintPrintCover.css?rev=@@hash"/>
+		<!--<link href="@Url.Content("~/vouPrintPrintCover.css?rev=@@hash")" rel="stylesheet" type="text/css"  media="print" />-->
+	</head>
+	<body id="vouPrintPrintCover">
+		<div class="ufma-layout-updown">
+            <div class="ufma-layout-up">
+            	<div class="container-fluid margin-left-15 margin-right-15">
+            		<div class="cover-box">
+            			<h5>记账凭证封面</h5>
+            			<form>
+            				<div class="form-horizontal clearfix">
+            					<div class="form-group pull-left">
+            						<label class="control-label">单位名称：</label>
+    								<div class="control-element">
+       							    	<input type="text" id="vppcAgencyName" value="" />
+                                	</div>
+            					</div>
+            					
+            					<div class="form-group pull-right">
+            						<label class="control-label">日期：</label>
+    								<div class="control-element">
+    									<input type="text" id="vppcSetYear" value="" />年 <input type="text" id="vppcFisPerd" value="" />月
+    								</div>
+            					</div>
+            				</div>
+            				
+            				<table class="table table-bordered">
+            					<tbody>
+            						<tr>
+            							<td>凭证类型</td>
+            							<td id="vppcVouTypeCode">
+            								<!--凭证类型  开始位置-->
+            								<input type="text" name="" id="vouTypeNO" value="" style="width: 100%;" />
+            							</td>
+            						</tr>
+            						<tr class="notfirst">
+            							<td>册数</td>
+            							<td class="clearfix">
+            								<div class="pull-left">
+            									本月共
+	            								<input type="text" name="" id="volume-sum" value="" />
+	            								册
+            								</div>
+            								<div class="pull-right">
+            									本册是第
+	            								<input type="text" name="" id="volume-num" value="" />
+	            								册
+            								</div>
+            							</td>
+            						</tr>
+            						<tr class="notfirst">
+            							<td>张数</td>
+            							<td class="clearfix">
+            								<div class="pull-left">
+            									本册自第
+	            								<input type="text" name="" id="number-num-s" value="" />
+	            								号至第
+	            								<input type="text" name="" id="number-num-e" value="" />
+	            								号
+            								</div>
+            								<div class="pull-right">
+            									共
+	            								<input type="text" name="" id="number-sum" value="" />
+	            								张
+            								</div>
+            							</td>
+            						</tr>
+            						<tr class="notfirst">
+            							<td>起讫日期</td>
+            							<td>
+            								本月自
+            								<input type="text" style="width: 100px;" name="" id="date-s" value="" />
+            								日起至
+            								<input type="text" style="width: 100px;" name="" id="date-e" value="" />
+            								日止
+            							</td>
+            						</tr>
+            						<tr class="fj">
+            							<td>附记</td>
+            							<td>
+            								<textarea name="" rows="" cols="" id="remark"></textarea>
+            							</td>
+            						</tr>
+            					</tbody>
+            				</table>
+            				
+            				<div class="form-horizontal clearfix">
+            					<div class="form-group pull-left">
+            						<label class="control-label">会计主管：</label>
+    								<div class="control-element">
+       							    	<input type="text" id="vppcFiLeader" value="" />
+                                	</div>
+            					</div>
+            					
+            					<div class="form-group pull-right">
+            						<label class="control-label">装订人：</label>
+    								<div class="control-element">
+       							    	<input type="text" id="binder" value="" />
+                                	</div>
+            					</div>
+            				</div>
+            			</form>
+            		</div>
+            	</div>
+            </div>
+            
+            <div class="ufma-layout-down bordered-top">	
+				<div class="text-right margin-right-30">
+					<button type="button" class="btn btn-sm btn-primary btn-print" id="btn-print">打印</button>
+					 <button type="button" class="btn btn-sm btn-default btn-qx" id="btn-qx">取消</button>
+				 </div>
+			</div>
+		</div>
+		
+		<script src="vouPrintPrintCover.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+	</body>
+</html>

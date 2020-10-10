@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>综合查询</title>
+	<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+	<script src="../../pub/boot.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+	<link rel="stylesheet" href="multiQuery.css" />
+</head>
+
+<body>
+	<div class="container-fluid ufma-container">
+		<!--工作区 begin-->
+		<div class="workspace">
+			<!--工作区顶部 begin-->
+			<div class="workspace-top">
+				<div class="container-fluid">
+					<div class="ufma-portlet">
+						<div class="portlet-title">
+							<div class="caption">
+								<span class="caption-subject font-dark uppercase">综合查询</span>
+							</div>
+							<!--单位选择 begin-->
+							<div class="inline-block absolute margin-left-15 margin-top-8">
+								<ul class='ufma-list-col clearfix padding-left-8'>
+									<li class="ufma-list-col-item">
+										<div id='cbAgency' name="agencyCode" class="uf-treecombox ufma-combox-agency"></div>
+									</li>
+									<li class="ufma-list-col-item hide" id="acct">
+										<div id='cbAcct' class="uf-combox ufma-combox-acct"></div>
+									</li>
+								</ul>
+							</div>
+							<!--单位选择 end-->
+						</div>
+
+						<!--查询条件-->
+						<div class="portlet-body bordered pr">
+							<!--按钮-->
+							<div class="btn-group" style="position: absolute;right:15px;top:15px;">
+								<button id="btnQuery" type="button" class="btn btn-sm btn-primary btn-query btn-permission">查询</button>
+							</div>
+							<form id="frmQuery" class="form-horizontal">
+								<div class="form-row">
+									<div class="form-group">
+										<label class="control-label " style="margin-left:16px;">登账日期：</label>
+										<div class="inline-block" id="">
+											<a name="enabled" id="dateBn" class="label label-radio " code="1">本年</a>
+											<a name="enabled" id="dateBq" class="label label-radio selected" code="2">本期</a>
+											<a name="enabled" id="dateJr" class="label label-radio " code="3">今日</a>
+										</div>
+										<div class="control-element" style="width: 116px">
+											<div name="startJouDate" id="startJouDate" class="uf-datepicker" style="width: 125px;">
+											</div>
+										</div>
+										<span class="split" style="margin: 5px 8px 5px 16px">至</span>
+										<div class="control-element">
+											<div name="endJouDate" id="endJouDate" class="uf-datepicker" style="width: 125px;">
+											</div>
+										</div>
+									</div>
+									<div class="form-group" style="margin-top:6px;margin-left:56px;">
+										<div class="rpt-query-li-action">
+											<input type="hidden" value="-1">
+											<lable>是否回单：</lable>
+											<label class="mt-radio mt-radio-outline">
+												<input type="radio" class="" name="isReceipt" value="" checked>全部
+												<span></span>
+											</label>
+											<label class="mt-radio mt-radio-outline">
+												<input type="radio" class="" name="isReceipt" value="1">是
+												<span></span>
+											</label>
+											<label class="mt-radio mt-radio-outline">
+												<input type="radio" class="radioSelected" name="isReceipt" value="0">否
+												<span></span>
+											</label>
+										</div>
+									</div>
+									<div class="form-group">
+										<label class="mt-checkbox mt-checkbox-outline" style="margin-top:5px;margin-left:10px;">
+											<input type="checkbox" checked="" id="isAccountNotNull">发生额为0不显示
+											<span></span>
+										</label>
+									</div>
+									<div class="clearfix"></div>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!--工作区中部 begin-->
+			<div class="workspace-center">
+				<div class="rpt-box rpt-table-box pr">
+					<div class="rpt-table-title">
+						综合查询
+					</div>
+					<div id="dtToolbar" class="btn-group" style="position:absolute;right:15px;bottom:15px;">
+					</div>
+				</div>
+				<div class="rpt-table-tab" style="padding: 0 15px;">
+					<table class="ufma-table uf-rpt-table" tool-bar="#tool-bar" id="gridDPE">
+						<thead id="modelTableThead">
+							<tr>
+								<th rowspan="2">账簿名称</th>
+								<th rowspan="2">期初余额</th>
+								<th colspan="2">借方发生</th>
+								<th colspan="2">贷方发生</th>
+								<th rowspan="2">期末余额</th>
+							</tr>
+							<tr>
+								<th>金额</th>
+								<th>笔数</th>
+								<th>金额</th>
+								<th>笔数</th>
+							</tr>
+						</thead>
+					</table>
+
+				</div>
+			</div>
+
+			<div id="tool-bar" class="ufma-tool-bar">
+				<div class="tool-bar-body">
+					<!--toolbar-->
+				</div>
+			</div>
+		</div>
+	</div>
+	</div>
+	<script src="dm.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+	<script src="multiQuery.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+	<style>
+		.wrapper-right {
+			display: none !important;
+		}
+	</style>
+</body>
+
+</html>

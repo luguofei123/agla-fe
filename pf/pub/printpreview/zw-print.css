@@ -1,0 +1,14 @@
+body {margin:0; padding:0; background-color:#888}
+table {margin:0; padding:0; border-collapse:collapse;}
+td {word-break:break-all; word-wrap:break-word; white-space:pre-wrap;}
+
+@media screen {
+  .data_page {position:relative; border:1px dashed #ddd; background-color:#fff;}
+  .sub_page {position:relative;}
+}
+
+@media print {
+  .data_page {position:relative; border:0px;}
+  .sub_page {position:relative;}
+  nav, .noprint {display:none;}
+}

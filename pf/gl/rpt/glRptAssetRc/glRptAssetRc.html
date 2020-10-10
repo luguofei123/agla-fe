@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>与资产对账</title>
+	<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+	<script src="../../../pub/boot.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+	<link rel="stylesheet" href="../rptCommon/rptCommon_new.css?rev=@@hash" />
+	<style>
+	.btn-setting{
+		display: inline-block;
+		width:20px;
+		height:20px;
+	}
+	</style>
+</head>
+
+<body style="overflow-x:hidden;">
+	<div class="container-fluid ufma-container">
+		<input type="hidden" value="GL_RPT_ASSETRC" data-name="glRptCashFlow" class="rptType" />
+		<!--工作区 begin-->
+		<div class="workspace">
+			<!--账表工作区 begin-->
+			<div class="rpt-workspace">
+				<div class="rpt-selete-box bordered-bottom" style="margin-top:-8px;">
+					<div class="rpt-title">与资产对账</div>
+					<ul class="rpt-selete-list">
+						<li class="rpt-selete-list-li">
+							<div id='cbAgency' class="ufma-treecombox ufma-combox-agency"></div>
+						</li>
+						<li class="rpt-selete-list-li">
+							<div id='cbAcct' class="ufma-combox ufma-combox-acct"></div>
+						</li>
+					</ul>
+					<div class="rpt-clear"></div>
+				</div>
+
+				<div class="rpt-box rpt-query-box">
+					<div class="rpt-query-box-left">
+						<form id="frmQuery" class="form-horizontal">
+							<div class="form-row">
+								<div class="form-group" style="margin-left:30px;">
+
+								</div>
+								<div class="form-group">
+									<label class="control-label auto">期间：</label>
+									<div class="control-element pr10">
+										<a name="period" id="dateBn" class="label label-radio">本年</a>
+										<a name="period" id="dateBq" class="label label-radio selected">本期</a>
+										<!-- <a name="period" id="dateJr" class="label label-radio">今日</a> -->
+									</div>
+									<div class="control-element" style="width:120px;">
+										<div id="dateStart" class="uf-datepicker" style="width:120px;"></div>
+									</div>
+									<span class="split">-</span>
+									<div class="control-element">
+										<div id="dateEnd" class="uf-datepicker" style="width:120px;"></div>
+									</div>
+									<a href="javascript:;" class="inline-block" id="btn-setting" style="margin-left:10px;">
+										<span class="icon icon-setting btn-permission btn-setup f18 vm cp"></span>
+									</a>
+								</div>
+								<div class="clearfix"></div>
+							</div>
+							<div class="form-row">
+								<div class="form-group" style="margin-left: 16px" >
+									<label class="control-label auto">其他：</label>
+									<label class="mt-checkbox mt-checkbox-outline" style="margin-left: 11px" id="isShowDetail">
+										<input type="checkbox" checked name="isShowDetailCheck" value="1" id="isShowDetailCheck">展开明细
+										<span></span>
+									</label>
+								</div>
+								<div class="clearfix"></div>
+							</div>
+						</form>
+					</div>
+					<div class="rpt-query-box-right">
+						<div class="rpt-query-btn">
+							<button id="glRptAssetRc-getData"
+								class="btn btn-default">取资产数据</button>
+							<button id="glRptAssetRc-query"
+								class="btn btn-primary btn-query btn-permission">查询</button>
+						</div>
+					</div>
+				</div>
+
+				<div class="rpt-box rpt-table-box">
+					<div class="rpt-table-sub">
+						<div class="rpt-table-sub-action">
+							<div class="btn-group" id="printTableData">
+							</div>
+						</div>
+						<div class="rpt-clear"></div>
+					</div>
+					<div class="rpt-table-tab">
+						<table id="glRptAssetRcTable" class="ufma-table uf-rpt-table" >
+						</table>
+					</div>
+				</div>
+			</div>
+			<!--账表工作区 end-->
+
+			<!--工作区底 begin-->
+			<!-- <div id="tool-bar" class="ufma-tool-bar">
+				<div class="tool-bar-body">
+				</div>
+			</div> -->
+			<!--工作区底 end-->
+
+		</div>
+		<!--工作区 end-->
+
+	</div>
+	<script src="../rptCommon/rptCommon_new.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+	<script src="glRptAssetRc.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+	<script src="../rptCommon/dm.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+</body>
+
+</html>

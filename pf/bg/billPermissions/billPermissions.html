@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>权限设置</title>
+		<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+		<script src="../../pub/boot.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+    <link rel="stylesheet" href="../pub/bgPub.css?rev=@@hash" />
+    <link rel="stylesheet" href="../pub/common.css?rev=@@hash" />
+		<link rel="stylesheet" href="billPermissions.css?rev=@@hash" />
+	</head>
+
+	<body>
+		<div class="ufma-layout-updown">
+			<div class="ufma-layout-up">
+				<div class="container-fluid">
+					<div class="ufma-portlet">
+						<form id="frmQuery" class="form-horizontal" style="margin-top: 5px;">
+							<div class="form-row">
+								<div class="form-group">
+									<label class="control-label">权限名称：</label>
+									<div class="control-element">
+										<input id="methodName" type="text" class="form-control" style="width: 200px;">
+									</div>
+								</div>
+								<div class="form-group">
+									<label class="control-label">权限类别：</label>
+									<div class="control-element setTypeClss">
+										<!--<label class="mt-radio">
+											<input type="radio" class="typeCheck ckeckTrue"  name="configType" id="showGkbm" checked="true"/>&nbsp;
+											<span></span>
+										</label>归口部门
+										<label class="mt-radio">
+											<input type="radio" class="typeCheck" name="configType" id="showYkbm"/>&nbsp;
+											<span></span>
+										</label>用款部门-->
+									</div>
+								</div>
+								<div class="clearfix"></div>
+							</div>
+						</form>
+					</div>
+				</div>
+				<div class="tree-outer-box leftArea ufma-layout ufma-layout-slider-sm ufma-layout-fixed-slider ufma-layout-fixed-slider-left">
+					<!--选择设置方式-->
+					<div style="margin-bottom: 10px;"></div>
+					<div id="cbBgPlan" style="width:250px;margin-left:15px;"></div>
+					<!--权限树-->
+					<div class="tree-outer-box permissionArea">
+						<ul id="permissionTree" class="ztree ufmaTree"></ul>
+					</div>
+				</div>
+				<div class="tree-outer-box rightArea">
+					<div class="btnTab">
+						<ul class="nav nav-tabs" id="tabAcce" style="margin-top:0px;width:100%;margin-bottom:8.5px;margin-left:0px;margin-right:20px;">
+							<li class="active" id="billTable">
+								<a href="javascript:;" setType="BGITEM" id="aBillTable">指标</a>
+							</li>
+							<li id="departTree" class="hide">
+								<a href="javascript:;" setType="DEPARTMENT" id="aDepartTree">部门</a>
+							</li>
+							<li id="projectTree" class="hide">
+								<a href="javascript:;" setType="PROJECT" id="aProjectTree">项目</a>
+							</li>
+							<li id="expecoTree" class="hide">
+								<a href="javascript:;" setType="EXPECO" id="aExpecoTree">部门经济分类</a>
+							</li>
+						</ul>
+					</div>
+					<div class="rpt-table-tab " id="billArea">
+						<table class="ufma-table uf-rpt-table" id="carryOver"></table>
+					</div>
+					<!--部门树-->
+					<div class="rpt-table-tab hide" id="departArea">
+						<table class="ufma-table uf-rpt-table" id="depTable"></table>
+					</div>
+					<!--项目树-->
+					<div class="rpt-table-tab hide" id="projectArea">
+						<table class="ufma-table uf-rpt-table" id="proTable"></table>
+					</div>
+					<!--部门经济分类树-->
+					<div class="rpt-table-tab hide" id="expecoArea">
+						<table class="ufma-table uf-rpt-table" id="expTable"></table>
+					</div>
+					<div style="margin: 10px;">
+						<a class="btn btn-sm btn-default btn-addRow" id="addNewData">
+							<span class="glyphicon icon-add"></span>
+							<span class="margin-left-15">新增</span>
+						</a>
+					</div>
+				</div>
+
+			</div>
+			<div class="ufma-layout-down bordered-top">
+				<div class="text-right margin-right-30">
+					<button type="button" class="btn btn-sm btn-primary  btn-save btn-permission" id="btnSave">保存</button>
+					<button type="button" class="btn btn-sm btn-default" id="btnClose"> 取消</button>
+				</div>
+			</div>
+		</div>
+		<script src="../pub/bg.parse.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+		<script src="../pub/bgPub.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+		<script src="billPermissions.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+	</body>
+
+</html>

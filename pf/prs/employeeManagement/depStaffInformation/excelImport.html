@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Excel导入</title>
+    <meta
+      content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
+      name="viewport"
+    />
+    <script
+      src="../../../pub/boot.js?rev=@@hash"
+      type="text/javascript"
+      charset="utf-8"
+    ></script>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="../../common/common.css?rev=@@hash"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="depStaffInformation.css?rev=@@hash"
+    />
+    <style type="text/css">
+      input {
+        background-color: #fff !important;
+      }
+      .lp-edit-input ul {
+        padding-left: 0;
+      }
+      .line-num input {
+        border-radius: 4px;
+      }
+      .lp-edit-input li {
+        list-style: none;
+        margin-top: 6px;
+      }
+      /*短横虚线*/
+      .uf-dashed-hr {
+        border-top: 1px dashed #d9d9d9;
+        margin-top: 12px;
+        height: 2px;
+        width: 100%;
+      }
+
+      .w70 {
+        width: 71px;
+      }
+
+      .w160 {
+        width: 160px;
+      }
+
+      /*自定义样式*/
+      .uf-grid-head .uf-grid-head-lock,
+      .uf-grid-body .uf-grid-body-lock {
+        border-right: #dfe6ec 0px solid;
+      }
+
+      .file-btn-box .btn:last-child {
+        border-left-color: #108ee9;
+      }
+
+      .file-btn-active {
+        color: #108ee9;
+        background-color: #fff;
+        border-color: #108ee9;
+      }
+
+      .file-upload-box {
+        padding: 0 50px;
+        margin: 16px 0;
+        background: #ecf6fd;
+        border: 1px solid #d2eafb;
+        height: 62px;
+        line-height: 62px;
+      }
+
+      .file-upload-box-text {
+        float: left;
+        width: 500px;
+      }
+
+      .file-upload-box-btn {
+        float: right;
+        width: 88px;
+        position: relative;
+      }
+
+      .file-upload-box-btn button {
+        border-radius: 0 4px 4px 0;
+      }
+
+      .file-upload-input {
+        width: 88px;
+        height: 30px;
+        overflow: hidden;
+        position: absolute;
+        top: 16px;
+        font-size: 100px;
+        opacity: 0;
+        filter: alpha(opacity=0);
+        cursor: pointer;
+      }
+
+      .file-upload-tip {
+        color: #999;
+        border: 1px #d9d9d9 solid;
+        border-radius: 4px;
+        padding-left: 5px;
+      }
+
+      .file-upload-title {
+        border: 1px #d9d9d9 solid;
+        padding-left: 5px;
+        border-radius: 4px;
+      }
+
+      .file-upload-title i {
+        color: #999;
+        font-size: 12px;
+        cursor: pointer;
+      }
+
+      .label-show {
+        font-weight: normal;
+        height: 19px;
+        line-height: 28px;
+      }
+
+      #sheetList .uf-combox-input {
+        height: 28px;
+        line-height: 28px;
+        padding-top: 3px;
+        padding-bottom: 3px;
+      }
+
+      .panel.ufma-panel > .panel-heading {
+        height: 38px;
+        padding-left: 0;
+        padding-right: 0;
+      }
+
+      .file-upload-box {
+        float: left;
+        margin: 0;
+        border: none;
+        height: auto;
+        line-height: normal;
+        padding: 0;
+      }
+
+      .file-upload-box-text {
+        height: 30px;
+        border-radius: 2px;
+        line-height: 30px;
+        margin-right: -2px;
+        background-color: #fff;
+        padding-left: 5px;
+      }
+
+      .file-upload-input {
+        top: 0;
+      }
+
+      .lp-query-li-cont-title.control-label {
+        width: 100px;
+      }
+
+      .line-num {
+        float: left;
+      }
+
+      .line-num .bordered-input {
+        height: 30px;
+      }
+
+      #scheme-Import .span-txt,
+      #scheme-Import .lp-query-li-cont-title,
+      #scheme-Import .control-label {
+        float: left;
+        width: 140px;
+        display: block;
+        text-align: right;
+        line-height: 30px;
+        font-weight: normal;
+      }
+
+      #scheme-Import .control-label {
+        padding-top: 0px;
+      }
+
+      #scheme-Import .file-option {
+        float: left;
+      }
+
+      #scheme-Import .file-upload-box-text {
+        line-height: 28px;
+      }
+
+      /*去掉谷歌浏览器自带的表单填充黄色的底色*/
+      input:-webkit-autofill {
+        -webkit-box-shadow: 0 0 0px 1000px white inset;
+      }
+      .uf-rpt-table.ufma-table.dataTable tr:last-child td {
+        border-bottom: none;
+      }
+      .dt-buttons {
+        display: none;
+      }
+    </style>
+  </head>
+  <body id="scheme-Import">
+    <div class="ufma-layout-updown">
+      <div class="ufma-layout-up">
+        <div
+          class="container-fluid margin-left-15 margin-right-15"
+          style="padding-bottom: 45px"
+        >
+          <!--form区域 start-->
+          <div class="lp-edit-input">
+            <ul>
+              <li>
+                <!--导入方式begin-->
+                <div class="">
+                  <div id="form-uploadTab" class="">
+                    <div class="">
+                      <div class="radio-body clearfix">
+                        <!-- Excel start -->
+                        <div class="radio-body2">
+                          <div class="lp-query-li clearfix">
+                            <label class="lp-query-li-cont-title"
+                              >请选择要导入的文件：</label
+                            >
+                            <div class="file-upload-box">
+                              <div class="file-upload-box-text">
+                                <div class="file-upload-tip">
+                                  点击按钮选择导入文件，文件大小请控制在2M之内
+                                </div>
+                                <div
+                                  class="file-upload-title"
+                                  style="display: none;"
+                                >
+                                  <span></span> &nbsp;&nbsp;<i
+                                    class="icon icon-close"
+                                  ></i>
+                                </div>
+                              </div>
+                              <div class="file-upload-box-btn">
+                                <button class="btn btn-primary">
+                                  选择文件
+                                </button>
+                                <form
+                                  id="excelFileFrom"
+                                  enctype="multipart/form-data"
+                                >
+                                  <input
+                                    id="excelFile"
+                                    name="filePath"
+                                    type="file"
+                                    class="file-upload-input"
+                                  />
+                                  <input
+                                    id="matchcolumnindex"
+                                    name="matchcolumnindex"
+                                    type="hidden"
+                                  />
+                                  <input id="datarowindex" name="datarowindex" type="hidden" />
+                                  <input
+                                    id="sheetid"
+                                    name="sheetid"
+                                    type="hidden"
+                                  />
+                                  <input id="id" name="id" type="hidden">
+                                </form>
+                              </div>
+                              <div style="clear: both;"></div>
+                            </div>
+                          </div>
+                        </div>
+                        <!-- Excel end -->
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!--导入方式end-->
+              </li>
+            </ul>
+          </div>
+          <!--form区域 end-->
+          <div class="table-part">
+            <div style="margin: 10px 0">请选择导入格式：</div>
+            <table
+              id="mainTable"
+              class="ufma-table uf-rpt-table"
+              tool-bar="#tool-bar"
+            ></table>
+          </div>
+        </div>
+      </div>
+      <div id="tool-bar" class="ufma-tool-bar">
+        <div class="tool-bar-body">
+          <!--toolbar-->
+        </div>
+      </div>
+
+      <div class="ufma-layout-down bordered-top">
+        <div class="text-right margin-right-30">
+          <button
+            type="button"
+            class="btn btn-sm btn-primary btn-import"
+            id="data-import-btn"
+          >
+            导入
+          </button>
+          <button
+            type="button"
+            class="btn btn-sm btn-primary btn-cancle"
+            id="btn-cancle"
+          >
+            关闭
+          </button>
+        </div>
+      </div>
+    </div>
+    <!--<div class="modal fade" id="loadingModal">-->
+    <!--<div style="width: 200px;height:20px; z-index: 50000; position: absolute; text-align: center; left: 50%; top: 50%;margin-left:-100px;margin-top:-10px">-->
+    <!--<div class="progress progress-striped active" style="margin-bottom: 0;">-->
+    <!--<div class="progress-bar" style="width: 100%;"></div>-->
+    <!--</div>-->
+    <!--<h5 sytle="color:#000">正在加载...</h5>-->
+    <!--</div>-->
+    <!--</div>-->
+    <script
+      src="excelImport.js?rev=@@hash"
+      type="text/javascript"
+      charset="utf-8"
+    ></script>
+    <!--<script src="importExcel.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>-->
+  </body>
+</html>

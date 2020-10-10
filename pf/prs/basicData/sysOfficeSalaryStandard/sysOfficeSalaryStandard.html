@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>系统职务工资标准</title>
+    <meta
+      content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
+      name="viewport"
+    />
+    <script
+      src="../../../pub/boot.js?rev=@@hash"
+      type="text/javascript"
+      charset="utf-8"
+    ></script>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="sysOfficeSalaryStandard.css?rev=@@hash"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="../../common/common.css?rev=@@hash"
+    />
+  </head>
+  <body>
+    <!--整个容器 begin-->
+    <div id="office-salary-standard" class="container-fluid ufma-container">
+      <div class="workspace">
+        <div class="prs-workspace">
+          <div class="ufma-portlet">
+            <div class="portlet-title">
+              <div class="caption">
+                <span class="caption-subject font-dark uppercase"
+                  >职务工资标准</span
+                >
+              </div>
+              <div class="actions">
+                <div>
+                  <button
+                    id="tool-bar-sendown"
+                    type="button"
+                    class="btn btn-default btn-senddown btn-permission"
+                  >
+                    下发
+                  </button>
+                  <button
+                    id="btn-add-office-salary-standard"
+                    type="button"
+                    class="btn btn-sm btn-primary btn-permission btn-add"
+                  >
+                    新增
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="table-sub">
+            <div class="table-sub-action clearfix">
+              <div id="dtToolbar" class="btn-group fr"></div>
+            </div>
+          </div>
+          <table
+            id="office-salary-standard-table"
+            tool-bar="#tool-bar"
+            class="ufma-table uf-rpt-table"
+          ></table>
+        </div>
+        <div id="tool-bar" class="ufma-tool-bar">
+          <div class="tool-bar-body"></div>
+        </div>
+      </div>
+    </div>
+    <script
+      src="sysOfficeSalaryStandard.js?rev=@@hash"
+      type="text/javascript"
+      charset="utf-8"
+    ></script>
+  </body>
+</html>

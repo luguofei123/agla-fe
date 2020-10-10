@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>税率设置</title>
+    <meta
+      content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
+      name="viewport"
+    />
+    <script
+      src="../../../pub/boot.js?rev=@@hash"
+      type="text/javascript"
+      charset="utf-8"
+    ></script>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="taxRateSetting.css?rev=@@hash"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="../../common/common.css?rev=@@hash"
+    />
+  </head>
+  <body>
+    <!--整个容器 begin-->
+    <div id="tax-rate-setting" class="container-fluid ufma-container">
+      <div class="workspace">
+        <div class="prs-workspace">
+          <div class="ufma-portlet">
+            <div class="portlet-title">
+              <div class="caption">
+                <span class="caption-subject font-dark uppercase"
+                  >税率设置</span
+                >
+              </div>
+            </div>
+          </div>
+
+          <div class="table-sub">
+            <div class="table-sub-action clearfix">
+              <div
+                id="navdiv"
+                style="width: 90%;display: inline-block;overflow: hidden;"
+              >
+                <ul class="nav nav-tabs accnab"></ul>
+              </div>
+              <div class="btn-group" style="position: absolute;">
+                <button
+                  type="button"
+                  class="btn btn-sm btn-default"
+                  id="btn-left"
+                  style="padding: 3px 9px;display: none;"
+                >
+                  <span class="icon-angle-left"></span>
+                </button>
+                <button
+                  type="button"
+                  class="btn btn-sm btn-default"
+                  id="btn-right"
+                  style="padding: 3px 9px;display: none;"
+                >
+                  <span class="icon-angle-right"></span>
+                </button>
+              </div>
+              <div id="dtToolbar" class="btn-group fr"></div>
+            </div>
+          </div>
+          <table
+            id="tax-rate-setting-table"
+            tool-bar="#tool-bar"
+            class="ufma-table uf-rpt-table"
+          ></table>
+          <div class="set-salary-table margin-top-20 margin-left-20">
+            <p>个税免征额：5000元</p>
+          </div>
+          <div class="labor-fee-table margin-top-20 margin-left-20">
+            <p class="font-weight-bold">
+              劳动报酬所得、稿酬所得、特许权使用费所得税款的计算方法：
+            </p>
+            <ol>
+              <li>
+                <dl>
+                  <dt>计算预扣缴应纳税所得额：</dt>
+                  <dd class="margin-top-10 margin-bottom-10">三项综合所得以每次收入减除费用后的余额为收入项；</dd>
+                  <dd class="margin-top-10 margin-bottom-10">每次收入不超过四千元的，费用按八百元计算；</dd>
+                  <dd class="margin-top-10 margin-bottom-10">每次收入四千元以上的，减除费用按百分之二十计算。</dd>
+                </dl>
+              </li>
+              <li class="margin-top-20">计算应纳税所得额：以每次收入额为预扣预缴应纳税所得额。</li>
+              <li class="margin-top-20">
+                计算预扣预缴应纳税额。根据预扣预缴应纳税所得额乘以适用预扣率计算应预扣预缴税额。劳务：3档预扣率，见上表。
+              </li>
+            </ol>
+          </div>
+          <div class="remuneration-rate-table margin-left-20">
+            <p class="font-weight-bold">
+              劳动报酬所得、稿酬所得、特许权使用费所得税款的计算方法：
+            </p>
+            <ol>
+              <li>
+                <dl>
+                  <dt>计算预扣缴应纳税所得额：</dt>
+                  <dd class="margin-top-10 margin-bottom-10">三项综合所得以每次收入减除费用后的余额为收入项；稿酬所得的收入额按百分之七十计算。</dd>
+                  <dd class="margin-top-10 margin-bottom-10">每次收入不超过四千元的，费用按八百元计算；</dd>
+                  <dd class="margin-top-10 margin-bottom-10">每次收入四千元以上的，减除费用按百分之二十计算。</dd>
+                </dl>
+              </li>
+              <li class="margin-top-20">计算应纳税所得额：以每次收入额为预扣预缴应纳税所得额。</li>
+              <li class="margin-top-20">
+                计算预扣预缴应纳税额。根据预扣预缴应纳税所得额乘以适用预扣率计算应预扣预缴税额。劳务：3档预扣率；稿酬、特许权使用费：预扣率20%。
+              </li>
+            </ol>
+          </div>
+        </div>
+        <!-- <div id="tool-bar" class="ufma-tool-bar">
+          <div class="tool-bar-body">
+          </div>
+        </div> -->
+      </div>
+    </div>
+    <script
+      src="taxRateSetting.js?rev=@@hash"
+      type="text/javascript"
+      charset="utf-8"
+    ></script>
+  </body>
+</html>

@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>日记账</title>
+		<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+		<script src="../../../pub/boot.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+		<!--<script src="http://192.168.0.2:8081/rap.plugin.js?projectId=1" type="text/javascript"></script>-->
+		<link rel="stylesheet" href="../rptCommon/rptCommon_new.css?rev=@@hash" />
+	</head>
+
+	<body id="glRptDlyJounal" style="overflow-x:hidden;">
+		<div class="container-fluid ufma-container">
+			<input type="hidden" value="GL_RPT_DAILYJOURNAL" data-name="glRptDlyJounal" class="rptType" />
+			<div class="workspace">
+				<!--账表工作区 begin-->
+				<div class="rpt-workspace">
+					<div class="rpt-selete-box bordered-bottom" style="margin-top:-8px;">
+						<div class="rpt-title">日记账</div>
+						<ul class="rpt-selete-list">
+							<li class="rpt-selete-list-li">
+								<div id='cbAgency' class="ufma-treecombox ufma-combox-agency"></div>
+							</li>
+							<li class="rpt-selete-list-li">
+								<div id='cbAcct' class="ufma-combox ufma-combox-acct"></div>
+							</li>
+						</ul>
+						<!-- <button id="btn-printyun" class="btn btn-primary btn-printyun btn-permission" >云打印</button> -->
+						<div class="rpt-method-tip" data-toggle="tooltip" data-placement="left" title="查询方案">
+							<button id="showMethodTip" class="btn btn-primary glyphicon icon-file"></button>
+							<div id="rptPlanList" style="display: none;">
+							</div>
+						</div>
+						<div class="rpt-clear"></div>
+					</div>
+
+					<div class="rpt-box rpt-query-box bordered-bottom">
+						<div class="rpt-query-box-left">
+							<form id="frmQuery" class="form-horizontal">
+								<div class="form-row">
+									<div class="form-group">
+										<label class="control-label auto">会计科目：</label>
+										<div class="control-element rpt-query-li-selete">
+											<div class="rpt-p-search-key" id="queryAcco">
+												<input type="text" readonly id="ACCO-data-key" value="全部">
+												<span class="search-btn icon icon-writeoff"></span>
+											</div>
+										</div>
+
+									</div>
+									<div class="form-group">
+										<label class="control-label auto">期间：</label>
+										<div class="control-element pr10">
+											<a name="period" id="dateBn" class="label label-radio">本年</a>
+											<a name="period" id="dateBq" class="label label-radio selected">本期</a>
+											<a name="period" id="dateJr" class="label label-radio">今日</a>
+										</div>
+										<div class="control-element" style="width:120px;">
+											<div id="dateStart" class="uf-datepicker" style="width:120px;"></div>
+										</div>
+										<span class="split">-</span>
+										<div class="control-element">
+											<div id="dateEnd" class="uf-datepicker" style="width:120px;"></div>
+										</div>
+									</div>
+									<div class="clearfix"></div>
+								</div>
+							</form>
+							<form id="queryMore" class="form-horizontal none mt10">
+								<div class="form-row">
+									<div class="form-group">
+										<label class="control-label" style="margin-left:28px;">其他：</label>
+										<div class="control-element pr10">
+											<div class="rpt-query-li-check">
+
+											</div>
+										</div>
+									</div>
+									<div class="clearfix"></div>
+								</div>
+								<div class="form-row">
+									<div class="form-group">
+										<label class="control-label">凭证类型：</label>
+										<div class="control-element pr10">
+											<select id="rpt-query-pzzh" class="bordered-input" style="padding: 8px">
+											</select>
+										</div>
+									</div>
+									<div class="clearfix"></div>
+								</div>
+							</form>
+						</div>
+					<div class="rpt-query-box-right">
+						<label class="label label-more" data-target="#queryMore">更多
+							<i class="glyphicon icon-angle-bottom"></i>
+						</label>
+						<div class="rpt-query-btn">
+							<button id="glRptDlyJounal-query" class="btn btn-primary btn-query btn-permission">查询</button>
+							<button id="saveMethod" class="btn btn-default btn-save btn-permission">保存</button>
+						</div>
+					</div>
+				</div>
+
+					<div class="rpt-box rpt-table-box">
+						<div class="rpt-table-sub">
+							<div class="rpt-table-sub-tip">
+								<!-- <span class="rpt-table-sub-tip1">单位：<span>北京用友软件管理委员会</span> <span>行政单位账套</span></span> -->
+								<span class="rpt-table-sub-tip2">
+							金额单位：
+							<i>元</i>
+							<select>
+								<option>元</option>
+								<option>万元</option>
+							</select>
+						</span>
+							<span class="rpt-table-sub-tip3 change-rpt-type">
+								格式：
+								<i data-toggle="tooltip" title="点击选择" data-type="SANLAN">三栏式</i>
+								<select id="geshi">
+									<option value="SANLAN">三栏式</option>
+									<option value="SHULIANG">数量式</option>
+									<option value="WAIBI">外币式</option>
+									<option value="SHULWAIB">数量外币式</option>
+								</select>
+							</span>
+							<span class="rpt-table-sub-tip3 rpt-table-sub-tip-currency" style="display: none;">
+								币种：
+								<i data-toggle="tooltip" title="点击选择" data-type=""></i>
+								<select>
+								</select>
+							</span>
+							<span class="rpt-table-sub-tip4 nowPrjNameWrap" style="display: none;">
+								当前查询方案：<span id="nowPrjName"></span>
+							</span>
+						</div>
+						<div class="rpt-table-sub-action">
+							<div class="iframeBtnsSearch">
+								<input type="text" class="searchHide focusOff bordered" placeholder="请输入要搜索的关键词" style="right: 214px!important;">
+								<button class="btn btn-default btn-sm btn-search btn-permission" id="searchHideBtn">
+									<span class='glyphicon icon-search'></span>
+								</button>
+							</div>
+							<div class="rpt-btn-group">
+								<button class="btn btn-default btn-print btn-permission" data-toggle="tooltip" title="打印">
+									<span class="glyphicon icon-print"></span>
+								</button>
+								<button class="btn btn-default btn-export btn-permission" data-toggle="tooltip" title="导出">
+									<span class="glyphicon icon-upload"></span>
+								</button>
+							</div>
+							<div class="btn-group" id="printTableData">
+							</div>
+
+							<div style="margin-left:4px;position:relative;display:inline-block;">
+								<button class="btn btn-default" id="colAction">
+									<span class="glyphicon icon-list-all"></span>
+									<span class="glyphicon icon-angle-bottom"></span>
+								</button>
+								<div class="rpt-funnel rpt-funnelBox rpt-funnelBoxList" style="position: absolute;">
+									<div id="colList" class="rpt-colList">
+									</div>
+									<p class="rpt-colBtn">
+										<button id="addCol" class="btn btn-primary">确定</button>
+									</p>
+								</div>
+							</div>
+						</div>
+						<div class="rpt-clear"></div>
+					</div>
+					<div class="rpt-table-tab">
+						<table id="glRptDlyJounalTable" class="ufma-table" tool-bar="#tool-bar" width="100%">
+							<thead id="glRptDlyJounalThead">
+							</thead>
+						</table>
+					</div>
+				</div>
+			</div>
+			<!--账表工作区 end-->
+
+			<!--工作区底 begin-->
+			<div id="tool-bar" class="ufma-tool-bar">
+				<div class="tool-bar-body">
+					<!--toolbar-->
+				</div>
+			</div>
+			<!--工作区底 end-->
+		</div>
+		<!--工作区 end-->
+		<table id="SANLAN" width="100%" style="display:none;">
+			<tr>
+				<th width="90">期间</th>
+				<th>凭证字号</th>
+				<th>票据日期</th>
+				<th>票据号</th>
+				<th>对方科目</th>
+				<th>凭证ID</th>
+				<th>
+					<span class="thTitle rpt-th-zhaiyao-5">摘要</span>
+				</th>
+				<th>
+					<span class="thTitle rpt-th-jine-4">借方金额</span>
+				</th>
+				<th>
+					<span class="thTitle rpt-th-jine3-3">贷方金额</span>
+				</th>
+				<th width="34">方向</th>
+				<th>
+					<span class="thTitle rpt-th-jine3-1">余额</span>
+				</th>
+			</tr>
+		</table>
+		<!--外币式-->
+		<table id="WAIBI" style="display:none;">
+			<tr>
+				<th width="110" rowspan="2">期间</th>
+				<th rowspan="2">凭证字号</th>
+				<th rowspan="2">票据日期</th>
+				<th rowspan="2">票据号</th>
+				<th rowspan="2">对方科目</th>
+				<th rowspan="2">凭证ID</th>
+				<th rowspan="2" class="zhaiyaoCol">
+					<span class="thTitle rpt-th-zhaiyao-5">摘要</span>
+				</th>
+				<th colspan="3" style="width:400px">借方金额</th>
+				<th colspan="3" style="width:400px">贷方金额</th>
+				<th width="45" rowspan="2">方向</th>
+				<th colspan="3" style="width:400px">余额</th>
+			</tr>
+			<tr>
+				<th parent-title="借方金额">
+					<span class="thTitle">汇率</span>
+				</th>
+				<th parent-title="借方金额">
+					<span class="thTitle rpt-th-jine3-9">外币</span>
+				</th>
+				<th parent-title="借方金额">
+					<span class="thTitle rpt-th-jine3-8">本币</span>
+				</th>
+				<th parent-title="贷方金额">
+					<span class="thTitle">汇率</span>
+				</th>
+				<th parent-title="贷方金额">
+					<span class="thTitle rpt-th-jine3-6">外币</span>
+				</th>
+				<th parent-title="贷方金额">
+					<span class="thTitle rpt-th-jine3-5">本币</span>
+				</th>
+				<th parent-title="余额">汇率</th>
+				<th parent-title="余额">
+					<span class="thTitle rpt-th-jine3-2">外币</span>
+				</th>
+				<th parent-title="余额">
+					<span class="thTitle rpt-th-jine3-1">本币</span>
+				</th>
+			</tr>
+		</table>
+
+		<!--数量式-->
+		<table id="SHULIANG" style="display:none;">
+			<tr>
+				<th width="90" rowspan="2">期间</th>
+				<th rowspan="2">凭证字号</th>
+				<th rowspan="2">票据日期</th>
+				<th rowspan="2">票据号</th>
+				<th rowspan="2">对方科目</th>
+				<th rowspan="2">凭证ID</th>
+				<th rowspan="2" class="zhaiyaoCol">
+					<span class="thTitle rpt-th-zhaiyao-5">摘要</span>
+				</th>
+				<th colspan="3" style="width:400px">借方金额</th>
+				<th colspan="3" style="width:400px">贷方金额</th>
+				<th width="45" rowspan="2">方向</th>
+				<th colspan="3" style="width:400px">余额</th>
+			</tr>
+			<tr>
+				<th parent-title="借方金额">单价</th>
+				<th parent-title="借方金额">数量</th>
+				<th parent-title="借方金额">
+					<span class="thTitle rpt-th-jine3-8">本币</span>
+				</th>
+				<th parent-title="贷方金额">单价</th>
+				<th parent-title="贷方金额">数量</th>
+				<th parent-title="贷方金额">
+					<span class="thTitle rpt-th-jine3-5">本币</span>
+				</th>
+				<th parent-title="余额">单价</th>
+				<th parent-title="余额">数量</th>
+				<th parent-title="余额">
+					<span class="thTitle rpt-th-jine3-1">本币</span>
+				</th>
+			</tr>
+		</table>
+
+		<!--数量外币式-->
+		<table id="SHULWAIB" style="display:none;">
+			<tr>
+				<th width="220" rowspan="2">期间</th>
+				<th rowspan="2">凭证字号</th>
+				<th rowspan="2">票据日期</th>
+				<th rowspan="2">票据号</th>
+				<th rowspan="2">对方科目</th>
+				<th rowspan="2">凭证ID</th>
+				<th rowspan="2" class="zhaiyaoCol">
+					<span class="thTitle rpt-th-zhaiyao-5">摘要</span>
+				</th>
+				<th colspan="5" style="width:600px">借方金额</th>
+				<th colspan="5" style="width:600px">贷方金额</th>
+				<th width="45" rowspan="2">方向</th>
+				<th colspan="5" style="width:600px">余额</th>
+			</tr>
+			<tr>
+				<th parent-title="借方金额">
+					<span class="thTitle ">汇率</span>
+				</th>
+				<th parent-title="借方金额">
+					<span class="thTitle rpt-th-jine3-15">外币</span>
+				</th>
+				<th parent-title="借方金额">
+					<span class="thTitle ">单价</span>
+				</th>
+				<th parent-title="借方金额">
+					<span class="thTitle">数量</span>
+				</th>
+				<th parent-title="借方金额">
+					<span class="thTitle rpt-th-jine3-12">本币</span>
+				</th>
+				<th parent-title="贷方金额">
+					<span class="thTitle">汇率</span>
+				</th>
+				<th parent-title="贷方金额">
+					<span class="thTitle rpt-th-jine3-10">外币</span>
+				</th>
+				<th parent-title="贷方金额">
+					<span class="thTitle ">单价</span>
+				</th>
+				<th parent-title="贷方金额">
+					<span class="thTitle">数量</span>
+				</th>
+				<th parent-title="贷方金额">
+					<span class="thTitle rpt-th-jine3-7">本币</span>
+				</th>
+				<th parent-title="余额">汇率</th>
+				<th parent-title="余额">
+					<span class="thTitle rpt-th-jine3-4">外币</span>
+				</th>
+				<th parent-title="余额">
+					<span class="thTitle">单价</span>
+				</th>
+				<th parent-title="余额">
+					<span class="thTitle">数量</span>
+				</th>
+				<th parent-title="余额">
+					<span class="thTitle rpt-th-jine3-1">本币</span>
+				</th>
+			</tr>
+		</table>
+		<!--保存查询方案 modal start-->
+		<div id="saveMethod-box" class="ufma-modal">
+			<div class="u-msg-title">
+				<h4>保存查询方案</h4>
+			</div>
+			<div class="u-msg-content">
+				<form class="form-horizontal rpt-method-form">
+					<div class="form-group">
+						<label class="control-label">命名：</label>
+						<div class="control-element">
+							<input id="methodName" type="text" class="form-control" style="width: 300px;">
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="mt-radio mt-radio-outline margin-right-8 rpt-radio-span">
+							<input class="" type="radio" name="prjScope" value="1" checked> 私有方案
+							<span></span>
+						</label>
+						<label class="mt-radio mt-radio-outline margin-right-8 rpt-radio-span">
+							<input class="" type="radio" name="prjScope" value="2"> 本单位共享
+							<span></span>
+						</label>
+						<label class="mt-radio mt-radio-outline margin-right-8 rpt-radio-span">
+							<input class="" type="radio" name="prjScope" value="3"> 全系统共享
+							<span></span>
+						</label>
+					</div>
+				</form>
+			</div>
+			<div class="u-msg-footer">
+				<button id="sureSaveMethod" type="button" class="btn btn-primary">保存</button>
+				<button id="saveAs" type="button" class="btn btn-default">另存为</button>
+				<button type="button" class="btn btn-default btn-close">取消</button>
+			</div>
+		</div>
+		<!--保存查询方案 modal end-->
+		<div id="tableprint" class="ufma-modal">
+			<div class="u-msg-title">
+				<h4>打印模板选择</h4>
+			</div>
+			<div class="u-msg-content">
+				<div class="container-fluid margin-left-15 margin-right-15">
+					<ul class="list-unstyled">
+						<li class="tips clearfix">
+							<div class="tips-icon pull-left">
+								<span class="glyphicon icon-point"></span>
+							</div>
+							<p class="pull-left">请选择打印模板！</p>
+						</li>
+						<!--<li class="setVouType clearfix">
+								<label class="pull-left" for="" style="width: 100px;text-align: right;margin-bottom: 8px;">账簿类型：</label>
+								<div class="pull-left">
+									<select name="" class="bordered-input padding-3" id="rptStyle">
+	
+									</select>
+								</div>
+							</li>-->
+							<li class="setVouTypecy clearfix">
+								<label class="pull-left" for="" style="width: 100px;text-align: right;margin-bottom: 8px;">打印模板：</label>
+								<div class="pull-left">
+									<select name="" class="bordered-input padding-3" id="rptTemplate">
+									</select>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="u-msg-footer">
+					<div class="text-right  margin-right-30">
+						<button type="button" class="btn btn-sm btn-primary btn-save" id="btn-tableprintsave">打印</button>
+						<button type="button" class="btn btn-sm btn-default btn-qx" id="btn-tableprintqx">取消</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script src="../rptCommon/dm.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+		<script src="../rptCommon/rptCommon_new.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+		<script src="glRptDlyJounal.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+	</body>
+	<style type="text/css">
+		.searchHide {
+			right: 238px !important;
+		}
+	</style>
+
+</html>

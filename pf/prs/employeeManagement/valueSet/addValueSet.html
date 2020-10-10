@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>新增/修改值集</title>
+    <meta
+      content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
+      name="viewport"
+    />
+    <script
+      src="../../../pub/boot.js?rev=@@hash"
+      type="text/javascript"
+      charset="utf-8"
+    ></script>
+    <script
+      src="../../common/common.js?rev=@@hash"
+      type="text/javascript"
+      charset="utf-8"
+    ></script>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="../../common/common.css?rev=@@hash"
+    />
+    <link rel="stylesheet" type="text/css" href="valueSet.css?rev=@@hash" />
+    <style>
+      .uf-grid-body {
+        height: auto !important;
+      }
+    </style>
+  </head>
+  <body>
+    <!--整个容器 begin-->
+    <div class="ufma-layout-updown">
+      <div class="ufma-layout-up">
+        <div class="container-fluid">
+          <form id="frmQuery" class="form-horizontal" style="margin-top: 10px">
+            <div class="form-row">
+              <div class="form-group required">
+                <label class="control-label">值集代码：</label>
+                <div class="control-element">
+                  <input
+                    id="valsetId"
+                    type="text"
+                    name="valsetId"
+                    class="form-control"
+                    maxlength="121"
+                    style="width: 394px"
+                    autocomplete="off"
+                  />
+                </div>
+              </div>
+              <div class="form-group required">
+                <label class="control-label">值集名称：</label>
+                <div class="control-element">
+                  <input
+                    id="valsetName"
+                    type="text"
+                    name="valsetName"
+                    class="form-control"
+                    style="width: 394px"
+                    autocomplete="off"
+                    maxlength="121"
+                  />
+                </div>
+              </div>
+              <div class="clearfix"></div>
+            </div>
+            <div class="form-row">
+              <div class="form-group required">
+                <label class="rpt-check mt-checkbox mt-checkbox-outline"
+                  ><input
+                    name="sqlValue"
+                    type="checkbox"
+                    autocomplete="off"/>SQL语句引用值集<span></span
+                ></label>
+              </div>
+              <div class="clearfix"></div>
+            </div>
+            <div class="form-row">
+              <div class="form-group required">
+                <label class="control-label">值集SQL：</label>
+                <div class="control-element" style="vertical-align: top">
+                  <textarea
+                    id="valSql"
+                    type="text"
+                    name="valSql"
+                    class="form-control"
+                    autocomplete="off"
+                    style="width: 880px;height: 100px"
+                    disabled="disabled"
+                  ></textarea>
+                </div>
+              </div>
+              <div class="clearfix"></div>
+            </div>
+          </form>
+          <div class="value-opts clearfix" style="margin-top: 30px">
+            <div class="buttons" style="bottom: -8px">
+              <button
+                class="btn btn-default btn-preview manual-opt fr"
+                disabled="disabled"
+              >
+                <span
+                  class="glyphicon icon-details"
+                  style="padding-right: 5px"
+                ></span
+                >预览
+              </button>
+              <button class="btn btn-default btn-del-row manual-opt fr">
+                <span
+                  class="glyphicon icon-trash"
+                  style="padding-right: 5px"
+                ></span
+                >删行
+              </button>
+              <!--<button class="btn btn-default btn-add-row fr"><span class="glyphicon icon-plus"-->
+              <!--style="padding-right: 5px"></span>增行-->
+              <!--</button>-->
+            </div>
+          </div>
+          <table
+            id="nameTable2"
+            class="tableCommonStyle ufma-table"
+            tool-bar="#rpt-tool-bar"
+          ></table>
+          <div class="panel-foot" style="width: 100%;">
+            <button
+              class="btn btn-default btn-add-row"
+              style="width:100px;margin:15px auto;display: block;"
+            >
+              <span class="icon-add" style="margin-right: 8px;"></span>增行
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="ufma-layout-down bordered-top">
+        <div class="text-right margin-right-30">
+          <button type="button" class="btn btn-sm btn-primary" id="btn-sure">
+            确定
+          </button>
+          <button
+            type="button"
+            class="btn btn-sm btn-default btn-close"
+            id="btn-close"
+          >
+            关闭
+          </button>
+        </div>
+      </div>
+    </div>
+    <script src="../../common/common.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+    <script
+      src="addValueSet.js?rev=@@hash"
+      type="text/javascript"
+      charset="utf-8"
+    ></script>
+  </body>
+</html>

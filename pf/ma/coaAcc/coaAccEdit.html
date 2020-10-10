@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>设置会计科目</title>
+	<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+	<script src="../../pub/boot.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+	<link rel="stylesheet" href="coaAcc.css?rev=@@hash" />
+</head>
+
+<body>
+	<div id="coaAccEdit" class="ufma-layout-updown">
+		<div class="ufma-layout-up coaAcc-layout-up">
+			<div class="container-fluid coaAcc-container" style="margin-bottom: 10px">
+				<div class="ufma-layout ufma-layout-slider-lm ufma-layout-fixed-slider ufma-layout-fixed-slider-right">
+					<div class="ufma-layout-content">
+						<!--参考信息begin-->
+						<div class="ufma-portlet">
+							<div class="portlet-body form-horizontal bordered" style="padding: 6px;">
+								&nbsp;&nbsp;
+								<div class="fl " style="margin-left: 20px;">
+									<span>科目体系：</span>
+									<span id="editAccsName">新政府会计制度</span>
+								</div>
+								&nbsp;&nbsp;
+								<div class="fl " style="margin-left: 20px;min-width: 100px;">
+									<span>会计要素：</span>
+									<span id="editAcceName"></span>
+								</div>
+								&nbsp;&nbsp;
+								<div class="fl " style="margin-left: 20px;">
+									<span>编码规则：</span>
+									<span id="editAccoRule"></span>
+								</div>
+							</div>
+						</div>
+						<!--基本信息begin-->
+						<div class="panel ufma-panel">
+							<div class="panel-heading">
+								<div class="caption">基本信息</div>
+								<div class="actions">
+									<a class="coaAcc-edit margin-right-8" id="btnCoaAccBaseEdit">
+										<span class="glyphicon icon-edit"></span>
+									</a>
+									<a data-toggle="collapse" href="#form-mainInfoTab">
+										<span class="glyphicon glyphicon icon-angle-bottom"></span>
+									</a>
+								</div>
+							</div>
+
+							<form id="form-mainInfoTab" class="panel-collapse collapse in">
+								<div class="panel-body">
+									<div class="container-fluid form-horizontal">
+										<input type="hidden" name="chrId" id="chrId" value="" />
+										<input type="hidden" name="lastVer" id="lastVer" value="" />
+										<div class="form-row" style="margin-bottom: 0">
+											<div class="form-group required" style="width:313px;">
+												<label class="control-label em6">科目编码：</label>
+												<div class="control-element">
+													<input type="text" name="chrCode" id="chrCode" class="form-control"
+														autocomplete="off">
+													<label for="chrCode" class="control-label hide"></label>
+												</div>
+											</div>
+											<div class="form-group required" style="margin-left: 14px">
+												<label class="control-label em6">科目名称：</label>
+												<div class="control-element "
+													style="width: 200px;vertical-align: top;height:34px;">
+													<input type="text" name="chrName" id="chrName" class="form-control"
+														autocomplete="off">
+													<label for="chrName" class="control-label hide nowrap"
+														style="width: 100%;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;text-align: left;"></label>
+												</div>
+											</div>
+											<div class="form-group" style="height:34px;margin-left: 15px">
+												<label class="control-label em6"
+													style="vertical-align: top;height:30px">助记码：</label>
+												<div class="control-element">
+													<input type="text" name="assCode" id="assCode" class="form-control"
+														autocomplete="off" maxlength="42">
+													<label for="assCode" class="control-label hide"
+														style="width:200px;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;text-align: left;"></label>
+												</div>
+											</div>
+											<div style="clear: both;"></div>
+										</div>
+										<div class="form-row" style="margin-top: 10px;margin-bottom: 0;">
+											<div class="form-group diffAgency required" style="width:313px;">
+												<label class="control-label em6">适用单位：</label>
+												<div class="control-element">
+													<select class="form-control" name="agencyTypeCode"
+														id="agencyTypeCode">
+														<option value=""></option>
+													</select>
+													<label for="agencyTypeCode"
+														class="control-label commonShow hide"></label>
+												</div>
+											</div>
+											<div class="form-group required kemulx"
+												style="margin-left: 15px;max-height: 34px;width: 313px;">
+												<label class="control-label em6">科目类型：</label>
+												<div class="control-element">
+													<select class="form-control" name="accoType" id="accoType"
+														require-all=1 url="/ma/pub/enumerate/ACCO_TYPE"
+														idField="ENU_CODE" textField="ENU_NAME">
+														<option value=""></option>
+													</select>
+													<label for="accoType" class="control-label hide"></label>
+												</div>
+											</div>
+											<div class="form-group">
+												<label class="control-label em6">余额方向：</label>
+												<div class="control-element">
+													<div class="btn-group" data-toggle="buttons" id="balDir">
+														<label class="btn btn-default active">
+															<input type="radio" class="toggle" name="accBal" value="1"
+																checked> 借方 </label>
+														<label class="btn btn-default">
+															<input type="radio" class="toggle" name="accBal" value="-1">
+															贷方 </label>
+													</div>
+													<label for="accBal" class="control-label hide"></label>
+												</div>
+											</div>
+											<div style="clear: both;"></div>
+										</div>
+										<div class="form-row" style="margin-top: 10px;margin-bottom: 0;">
+											<div class="form-group" style="width: 313px;">
+												<label class="control-label em6">单位修改属性：</label>
+												<div class="control-element">
+													<div class="btn-group" data-toggle="buttons">
+														<label name="isChangeAttr" class="btn btn-default active">
+															<input type="radio" class="toggle" name="isChangeAttr"
+																value="1" checked> 允许 </label>
+														<label name="isChangeAttr" class="btn btn-default">
+															<input type="radio" class="toggle" name="isChangeAttr"
+																value="0"> 禁止 </label>
+													</div>
+													<label for="isChangeAttr" class="control-label hide"></label>
+												</div>
+											</div>
+											<div class="form-group" style="width: 311px" ;>
+												<label class="control-label em6">单位修改名称：</label>
+												<div class="control-element">
+													<div class="btn-group" data-toggle="buttons">
+														<label name="allowChangeName" class="btn btn-default active">
+															<input type="radio" class="toggle" name="allowChangeName"
+																value="1" checked> 允许 </label>
+														<label name="allowChangeName" class="btn btn-default">
+															<input type="radio" class="toggle" name="allowChangeName"
+																value="0"> 禁止 </label>
+													</div>
+													<label for="allowChangeName" class="control-label hide"></label>
+												</div>
+											</div>
+											<div class="form-group">
+												<label class="control-label em6">启用状态：</label>
+												<div class="control-element">
+													<div class="btn-group" data-toggle="buttons">
+														<label name="enabled" class="btn btn-default active">
+															<input type="radio" class="toggle" name="enabled" value="1"
+																checked> 启用 </label>
+														<label name="enabled" class="btn btn-default">
+															<input type="radio" class="toggle" name="enabled" value="0">
+															停用 </label>
+													</div>
+													<label for="enabled" class="control-label hide"></label>
+												</div>
+											</div>
+											<div style="clear: both;"></div>
+										</div>
+										<div class="form-row" style="margin-top: 10px;margin-bottom: 0;">
+											<div class="form-group">
+												<label class="control-label em6">允许增加下级：</label>
+												<div class="control-element">
+													<div class="btn-group" data-toggle="buttons">
+														<label name="allowAddsub" class="btn btn-default active">
+															<input type="radio" class="toggle" name="allowAddsub"
+																value="1" checked> 允许 </label>
+														<label name="allowAddsub" class="btn btn-default">
+															<input type="radio" class="toggle" name="allowAddsub"
+																value="0"> 禁止 </label>
+													</div>
+													<label for="allowAddsub" class="control-label hide"></label>
+												</div>
+											</div>
+											<div style="clear: both;"></div>
+										</div>
+										<div class="row hide" id="coaAccBaseBtnGroup">
+											<div class="col-xs-12 text-right margin-top-8">
+												<button type="button"
+													class="btn btn-sm btn-primary btn-save">保存</button>
+												<button type="button"
+													class="btn btn-sm btn-default btn-cancel">取消</button>
+											</div>
+										</div>
+									</div>
+								</div>
+							</form>
+						</div>
+
+						<!--辅助核算begin-->
+						<div class="panel ufma-panel">
+							<div class="panel-heading">
+								<div class="caption">辅助核算</div>
+								<div class="actions">
+									<a class="coaAcc-edit margin-right-8" id="btnCoaAccAssistEdit">
+										<span class="glyphicon icon-edit"></span>
+									</a>
+									<a data-toggle="collapse" href="#form-assistInfoTab">
+										<span class="glyphicon icon-angle-bottom"></span>
+									</a>
+								</div>
+							</div>
+							<form id="form-assistInfoTab" class="panel-collapse collapse in">
+								<div class="panel-body">
+									<div style="margin-bottom:10px;">
+										<label class="mt-checkbox mt-checkbox-single mt-checkbox-outline coaAcc-right">
+											<input type="checkbox" class="datatable-group-checkable" name="expireDate"
+												id="expireDate" value="1" />到期日登记
+											<span></span>
+										</label>
+										<label class="mt-checkbox mt-checkbox-single mt-checkbox-outline coaAcc-right">
+											<input type="checkbox" class="datatable-group-checkable" name="isCashflow"
+												id="isCashflow" value="1" />现金流量
+											<span></span>
+										</label>
+										<label class="mt-checkbox mt-checkbox-single mt-checkbox-outline coaAcc-right">
+											<input type="checkbox" class="datatable-group-checkable" name="isShowBill"
+												id="isShowBill" value="1" />票据登记
+											<span></span>
+										</label>
+										<label class="mt-checkbox mt-checkbox-single mt-checkbox-outline coaAcc-right">
+											<input type="checkbox" class="datatable-group-checkable"
+												name="isCheckRegister" id="isCheckRegister" value="1" />备查登记
+											<span></span>
+										</label>
+										<label class="mt-checkbox mt-checkbox-single mt-checkbox-outline coaAcc-right">
+											<input type="checkbox" class="datatable-group-checkable"
+												name="field1" id="field1" value="1" />往来号
+											<span></span>
+										</label>
+										<label class="mt-checkbox mt-checkbox-single mt-checkbox-outline coaAcc-right">
+											<input type="checkbox" class="datatable-group-checkable"
+												name="field2" id="field2" value="1" />合同号
+											<span></span>
+										</label>
+										<label
+											class="mt-checkbox mt-checkbox-single mt-checkbox-outline coaAcc-right hide">
+											<!--CWYXM-7706--经赵雪蕊确认先隐藏会计科目编辑界面差异项的勾选项--按照默认未勾选保存--zsj-->
+											<input type="checkbox" class="datatable-group-checkable" name="allowSurplus"
+												id="allowSurplus" value="1" />差异项登记
+											<span></span>
+										</label>
+										<label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
+											<input type="checkbox" class="datatable-group-checkable"
+												name="updateAllSonAccItems" id="updateAllSonAccItems"
+												value="1" />同步修改下级科目的辅助核算
+											<span></span>
+										</label>
+									</div>
+									<table id="coaAccAssist" class="ufma-table dataTable table-edit bordered">
+										<thead>
+											<tr>
+												<th style="width:30px;min-width:30px;text-align:center;">序号</th>
+												<th style="width:170px;min-width:170px;text-align:center;">辅助核算项</th>
+												<th style="width:170px;min-width:170px;text-align:center;">辅助核算内容</th>
+												<th style="width:170px;min-width:170px;text-align:center;">默认辅助核算内容</th>
+												<th style="width:30px;min-width:30px;text-align:center;">显示</th>
+												<th style="width:30px;min-width:30px;text-align:center;">必输</th>
+											</tr>
+										</thead>
+										<tbody></tbody>
+									</table>
+									<div class="text-center padding-15">
+										<a class="btn btn-sm btn-default" id="coaAccAddAssist">
+											<span class="glyphicon icon-add"></span>
+											<span class="margin-left-15">新增辅助核算</span>
+										</a>
+									</div>
+									<div class="hide text-right margin-top-8" id="coaAccAssistBtnGroup">
+										<button type="button" class="btn btn-sm btn-primary btn-save">保存</button>
+										<button type="button" class="btn btn-sm btn-default btn-cancel">取消</button>
+									</div>
+								</div>
+							</form>
+						</div>
+						<!--金额控制begin-->
+						<div class="panel ufma-panel">
+							<div class="panel-heading">
+								<div class="caption">金额控制</div>
+								<div class="actions">
+									<a class="coaAcc-edit margin-right-8" id="btnAmtCtrlEdit">
+										<span class="glyphicon icon-edit"></span>
+									</a>
+									<a data-toggle="collapse" href="#frmAMTCtrl">
+										<span class="glyphicon icon-angle-bottom"></span>
+									</a>
+								</div>
+							</div>
+							<form id="frmAMTCtrl" class="panel-collapse collapse in">
+								<div class="panel-body">
+									<div class="container-fluid form-horizontal">
+										<div class="form-row" style="margin-bottom: 0;margin-left: -21px;">
+											<div class="form-group">
+												<label style="margin-top:5px;"
+													class="mt-checkbox mt-checkbox-single mt-checkbox-outline moneyCheckGroup">
+													<input type="checkbox" class="datatable-group-checkable"
+														name="enableBalanceControl" id="enableBalanceControl"
+														value="1" />启用余额控制
+													<span></span>
+												</label>
+											</div>
+											<div class="form-group" style="margin-left: -30px;">
+												<!--<label class="control-label em6">金额<=：</label>-->
+												<label class="control-label em6">金额<：</label>
+														<!--CWYXM-9758---科目金额控制，产品要求‘余额控制时，金额<=应改为<’--zsj-->
+														<div class="control-element">
+															<input type="text" name="balanceControlMoney"
+																id="balanceControlMoney" class="form-control"
+																style="width:120px;text-align: right;">
+														</div>
+											</div>
+											<div class="form-group" style="margin-left: -18px;">
+												<label class="control-label em6">控制方式：</label>
+												<div class="control-element ">
+													<div id="balanceControlMode" name="balanceControlMode"
+														class="uf-combox" style="width:60px;"></div>
+												</div>
+											</div>
+											<div class="form-group" style="margin-left: 2px;">
+												<label style="margin-top:5px;"
+													class="mt-checkbox mt-checkbox-single mt-checkbox-outline assistCheckGroup">
+													<input type="checkbox" class="datatable-group-checkable"
+														name="enableBalanceAccitem" id="enableBalanceAccitem" value="1"
+														disabled />启用辅助项控制
+													<span></span>
+												</label>
+											</div>
+											<div style="clear: both;"></div>
+										</div>
+										<div class="form-row" style="margin-bottom: 0;margin-left: -21px;">
+											<div class="form-group">
+												<label style="margin-top:5px;"
+													class="mt-checkbox mt-checkbox-single mt-checkbox-outline moneyCheckGroup">
+													<input type="checkbox" class="datatable-group-checkable"
+														name="enableLargeControl" id="enableLargeControl"
+														value="1" />启用大额控制
+													<span></span>
+												</label>
+											</div>
+											<div class="form-group" style="margin-left: -30px;">
+												<label class="control-label em6">金额>=：</label>
+												<div class="control-element">
+													<input type="text" disabled name="largeControlMoney"
+														id="largeControlMoney" class="form-control"
+														style="width:120px;text-align: right;">
+												</div>
+											</div>
+											<div class="form-group" style="margin-left: -18px;">
+												<label class="control-label em6">控制方式：</label>
+												<div class="control-element ">
+													<div id="largeControlMode" disabled name="largeControlMode"
+														class="uf-combox" style="width:60px;"></div>
+												</div>
+											</div>
+											<div class="form-group" style="margin-left: 2px;">
+												<label style="margin-top:5px;"
+													class="mt-checkbox mt-checkbox-single mt-checkbox-outline assistCheckGroup">
+													<input type="checkbox" class="datatable-group-checkable" disabled
+														name="enableLargeAccitem" id="enableLargeAccitem" value="1"
+														disabled />启用辅助项控制
+													<span></span>
+												</label>
+											</div>
+											<div style="clear: both;"></div>
+										</div>
+									</div>
+									<table id="moneyAssist"
+										class="ufma-table dataTable table-edit bordered uf-rpt-table">
+										<thead>
+											<tr>
+												<th style="width:30px;min-width:30px;text-align:center;font-weight: 400;">
+													序号</th>
+												<th style="width:200px;min-width:200px;text-align:center;font-weight: 400;">
+													辅助核算类别</th>
+												<th style="width:150px;min-width:150px;text-align:center;font-weight: 400;"
+													class="hide">控制类</th>
+											</tr>
+										</thead>
+										<tbody></tbody>
+									</table>
+									<div class="text-center padding-15">
+										<a class="btn btn-sm btn-default" id="moneyAssistAdd">
+											<span class="glyphicon icon-add"></span>
+											<span class="margin-left-15">新增辅助核算</span>
+										</a>
+									</div>
+
+									<div class="hide text-right margin-top-8" id="amtCtrlBtngrp">
+										<button type="button" class="btn btn-sm btn-primary btn-save">保存</button>
+										<button type="button" class="btn btn-sm btn-default btn-cancel">取消</button>
+									</div>
+								</div>
+
+							</form>
+						</div>
+						<!--数量外币begin-->
+						<div class="panel ufma-panel">
+							<div class="panel-heading">
+								<div class="caption">数量外币</div>
+								<div class="actions">
+									<a class="coaAcc-edit margin-right-8" id="btnCoaAccNummoneyEdit">
+										<span class="glyphicon icon-edit"></span>
+									</a>
+									<a data-toggle="collapse" href="#form-moneyInfoTab">
+										<span class="glyphicon icon-angle-bottom"></span>
+									</a>
+								</div>
+							</div>
+							<form id="form-moneyInfoTab" class="panel-collapse collapse in">
+								<div class="panel-body">
+									<div class="container-fluid form-horizontal">
+										<div class="row">
+											<div class="col-xs-6">
+												<div class="form-group">
+													<label class="control-label em6">使用外币核算：</label>
+													<div class="control-element">
+														<div class="btn-group" data-toggle="buttons" id="isCur">
+															<label class="btn btn-default curActive">
+																<input type="radio" class="toggle" name="isCur"
+																	value="1"> 启用 </label>
+															<label class="btn btn-default active curStop">
+																<input type="radio" class="toggle" name="isCur"
+																	value="0"> 停用 </label>
+														</div>
+														<label for="isCur" class="control-label hide"></label>
+													</div>
+												</div>
+											</div>
+											<div class="col-xs-6">
+												<div id="mrbz" class="form-group hidden">
+													<label class="control-label em6">默认币种：</label>
+													<div class="control-element">
+														<select class="form-control" name="defCurCode" id="defCurCode"
+															require-all=1 idField="code" textField="name"
+															disabled="true">
+															<option value=""></option>
+														</select>
+														<label for="defCurCode" class="control-label hide"></label>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="row">
+											<div class="col-xs-4">
+												<div class="form-group">
+													<label class="control-label em6">使用数量核算：</label>
+													<div class="control-element">
+														<div class="btn-group" data-toggle="buttons" id="isQty">
+															<label class="btn btn-default qtyActive">
+																<input type="radio" class="toggle" name="isQty"
+																	value="1"> 启用 </label>
+															<label class="btn btn-default active qtyStop">
+																<input type="radio" class="toggle" name="isQty"
+																	value="0"> 停用 </label>
+														</div>
+														<label for="isQty" class="control-label hide"></label>
+													</div>
+												</div>
+											</div>
+											<div class="col-xs-4">
+												<div id="xsws" class="form-group hidden">
+													<label class="control-label em6"
+														style="float:left;width:7em;">小数位数：</label>
+													<div class="control-element" style="margin-left:5px;height:30px;">
+														<div class="coaAcc-num-count">
+															<span class="coaAcc-num-disabled coaAcc-num-reduce"
+																style="width:20px;">-</span>
+															<input type="text" name="qtyDigits" id="qtyDigits"
+																class="coaAcc-num-val" value="0" readonly
+																disabled="true"
+																style="margin-right: -5.7px;margin-left: -4px;" />
+															<span class="coaAcc-num-disabled coaAcc-num-add"
+																style="width: 20px;">+</span>
+														</div>
+														<label for="qtyDigits" class="control-label hide"></label>
+													</div>
+												</div>
+											</div>
+											<div class="col-xs-4">
+												<div id="wbhs" class="form-group hidden">
+													<label class="control-label em6" style="width: 3em;">单位：</label>
+													<div class="control-element">
+														<input type="text" style="width: 120px;" name="qtyUom"
+															id="qtyUom" class="form-control" disabled="true">
+														<label for="qtyUom" class="control-label hide"></label>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="row">
+
+										</div>
+										<div class="row hide" id="coaAccNummoneyBtnGroup">
+											<div class="col-xs-12 text-right margin-top-8">
+												<button type="button"
+													class="btn btn-sm btn-primary btn-save">保存</button>
+												<button type="button"
+													class="btn btn-sm btn-default btn-cancel">取消</button>
+											</div>
+										</div>
+									</div>
+								</div>
+							</form>
+						</div>
+						<!--非法对应科目begin-->
+						<div class="panel ufma-panel">
+							<div class="panel-heading">
+								<div class="caption">非法对应科目</div>
+								<div class="actions">
+									<a class="coaAcc-edit margin-right-8" id="btnCoaAccIllegalEdit">
+										<span class="glyphicon icon-edit"></span>
+									</a>
+									<a data-toggle="collapse" href="#form-illegalInfoTab">
+										<span class="glyphicon icon-angle-bottom"></span>
+									</a>
+								</div>
+							</div>
+							<form id="form-illegalInfoTab" class="panel-collapse collapse in">
+								<div class="panel-body">
+									<table id="coaAccIllegal" class="ufma-table dataTable table-edit bordered">
+										<thead>
+											<tr>
+												<th style="width: 30px;min-width: 30px;">序号</th>
+												<th style="width: 50px;min-width: 50px;">方向</th>
+												<th style="width: 185px;min-width: 185px;">非法对应科目编码</th>
+												<th style="width: 300px;min-width: 300px;">科目名称</th>
+											</tr>
+										</thead>
+									</table>
+									<div class="text-center padding-15">
+										<a class="btn btn-sm btn-default" id="coaAccAddIllegal">
+											<span class="glyphicon icon-add"></span>
+											<span class="margin-left-15">新增非法对应科目</span>
+										</a>
+									</div>
+									<div class="hide text-right margin-top-8" id="coaAccIllegalBtnGroup">
+										<button type="button" class="btn btn-sm btn-primary btn-save">保存</button>
+										<button type="button" class="btn btn-sm btn-default btn-cancel">取消</button>
+									</div>
+								</div>
+							</form>
+						</div>
+						<!--备注begin-->
+						<div class="panel ufma-panel">
+							<div class="panel-heading">
+								<div class="caption">科目说明</div>
+								<div class="actions">
+									<a class="coaAcc-edit margin-right-8" id="btnCoaAccRemarkEdit">
+										<span class="glyphicon icon-edit"></span>
+									</a>
+									<a data-toggle="collapse" href="#form-remarkInfoTab">
+										<span class="glyphicon icon-angle-bottom"></span>
+									</a>
+								</div>
+							</div>
+							<form id="form-remarkInfoTab" class="panel-collapse collapse in">
+								<div class="panel-body">
+									<div class="container-fluid form-horizontal">
+										<div class="row">
+											<div class="col-xs-12">
+												<div class="form-group">
+													<label class="control-label fl">科目说明：</label>
+													<div class="control-element">
+														<textarea name="remark" id="remark" class="form-control"
+															placeholder="输入文字显示在这里"
+															style="height:80px;width:550px !important;"></textarea>
+														<label for="remark" class="control-label hide"></label>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="row hide" id="coaAccRemarkBtnGroup">
+											<div class="col-xs-12 text-right margin-top-8">
+												<button type="button"
+													class="btn btn-sm btn-primary btn-save">保存</button>
+												<button type="button"
+													class="btn btn-sm btn-default btn-cancel">取消</button>
+											</div>
+										</div>
+									</div>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="ufma-layout-down bordered-top" style="background-color: #fff">
+			<div class="text-right margin-right-30 coaAccEditBom">
+				<button type="button" class="btn btn-sm btn-primary btn-permission btn-saveadd"
+					id="coaAccSaveAddAll">保存并新增</button>
+				<button type="button" class="btn btn-sm btn-default btn-permission btn-save"
+					id="coaAccSaveAll">保存</button>
+				<button type="button" class="btn btn-sm btn-default" id="coaAccCancelAll"> 关闭</button>
+			</div>
+		</div>
+
+		<!--左侧树begin-->
+
+		<div class="coaAcc-shopp" id="coaAcc-shopp">
+			<div class="coaAcc-shopping-trolley" data-target='#coaAcc-shopp'>
+				<i class="glyphicon icon-node"></i>
+			</div>
+			<div class="shopp-left">
+				<div class="coaAcc-shopp-header">
+					<div class="input-group input-group-sm">
+						<input type="text" id="coaAccSearchKey" class="form-control empty" placeholder="请输入要搜索的关键字">
+						<span class="input-group-btn">
+							<button type="button" class="btn btn-sm btn-default">
+								<span class="glyphicon icon-search"></span>
+							</button>
+						</span>
+					</div>
+				</div>
+				<div class="coaAcc-shopp-content">
+					<ul id="leftTree" class="ztree ufmaTree">
+
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script src="../maCommon/maCommon.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+	<script src="coaAccEdit.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+</body>
+
+</html>

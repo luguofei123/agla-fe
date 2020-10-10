@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>指标调剂申请</title>
+    <meta
+      content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
+      name="viewport"
+    />
+    <script
+      src="../../pub/boot.js?rev=@@hash"
+      type="text/javascript"
+      charset="utf-8"
+    ></script>
+    <link rel="stylesheet" href="../../agla-trd/fileinput/fileinput.css" />
+    <script
+      src="../../agla-trd/fileinput/fileinput.js"
+      type="text/javascript"
+      charset="utf-8"
+    ></script>
+    <script
+      src="../../agla-trd/fileinput/zh.js"
+      type="text/javascript"
+      charset="utf-8"
+    ></script>
+    <link rel="stylesheet" href="../pub/bgPub.css?rev=@@hash" />
+    <link rel="stylesheet" href="../pub/common.css?rev=@@hash" />
+    <link rel="stylesheet" href="../pub/bgPubImpAttachment.css?rev=@@hash" />
+    <link rel="stylesheet" href="../pub/bgPubLog.css?rev=@@hash" />
+    <link rel="stylesheet" href="workFlowTwoSidesAdjust.css?rev=@@hash" />
+  </head>
+
+  <body>
+    <div id="inFilesPage" class="ufma-layout-updown">
+      <div class="ufma-layout-up">
+        <div class="container-fluid">
+          <div class="ufma-portlet">
+            <p class="changeTitle">指标调剂申请</p>
+            <!--CWYXM-7764--指标中增加选项，启用指标申请流程，默认不启用，系统级控制；--zsj-->
+            <div
+              class="portlet-body bordered pr inPlan hide"
+              style="margin-top: 10px; padding: 11px; margin-bottom: 10px;"
+            >
+              <label
+                class="label label-more"
+                data-target="#queryMore"
+                style="right: 106px;position: absolute;margin-top: 5px;"
+                >更多
+                <i class="glyphicon icon-angle-bottom"></i>
+              </label>
+              <div
+                class="btn-group"
+                style="position: absolute; right: 15px; top: 15px;"
+              >
+                <button
+                  id="btnQuery"
+                  type="button"
+                  class="btn btn-sm btn-primary btn-query"
+                  style="
+                    border-top-left-radius: 4px;
+                    border-bottom-left-radius: 4px;
+                  "
+                >
+                  查询
+                </button>
+              </div>
+              <form
+                id="frmQuery"
+                class="form-horizontal"
+                style="margin-left: 10px;"
+              >
+                <div class="form-row inline-block" style="margin-bottom: 0px;">
+                  <div class="form-group">
+                    <label class="control-label auto">预算方案：</label>
+                    <div
+                      id="cbBgPlan"
+                      class="uf-combox"
+                      idField="chrId"
+                      textField="chrName"
+                      placeholder="请选择预算方案"
+                      style="width: 300px;"
+                    ></div>
+                  </div>
+                  <div class="form-group">
+                    <label class="control-label auto" style="margin-left: 28px;"
+                      >单据日期：</label
+                    >
+                    <div class="control-element" style="width: 120px;">
+                      <div
+                        id="dateStart"
+                        name="dateStart"
+                        class="uf-datepicker"
+                        style="width: 120px;"
+                      ></div>
+                    </div>
+                    <span class="split">至</span>
+                    <div class="control-element">
+                      <div
+                        id="dateEnd"
+                        name="dateEnd"
+                        class="uf-datepicker"
+                        style="width: 120px;"
+                      ></div>
+                    </div>
+                  </div>
+                  <div class="clearfix"></div>
+                </div>
+              </form>
+              <form
+                id="queryMore"
+                class="form-horizontal none mt10"
+                name="form0"
+              >
+                <div class="moreMessage">
+                  <div
+                    class="form-row"
+                    style="
+                      width: 1000px;
+                      margin-top: -7px;
+                      max-height: 100px;
+                      overflow-y: auto;
+                    "
+                  >
+                    <div id="planItemMore"></div>
+                    <div class="clearfix"></div>
+                  </div>
+                </div>
+              </form>
+            </div>
+            <div
+              class="bgpub-bgnormal-postion-1 bgpub-div-height-space-35 hide"
+              id="inApplyTitle"
+              style="margin-bottom: 10px;"
+            >
+              <h5 class="bgPub-tabSheet-topDiv">申请人: &nbsp;</h5>
+              <h5
+                class="bgPub-tabSheet-topDiv bgPub-tabSheet-topDiv-30right"
+                id="inAdjModal"
+              ></h5>
+
+              <h5 class="bgPub-tabSheet-topDiv">单据日期: &nbsp;</h5>
+              <div
+                class="control-element bgPub-tabSheet-topDiv bgPub-tabSheet-topDiv-30right budgetItemTwoSidesAdjust-width-125"
+              >
+                <div
+                  class="uf-datepicker bgPub-div-bgDateTime"
+                  id="bg_twoSidesAdjModal_dtp"
+                ></div>
+              </div>
+              <h5 class="bgPub-tabSheet-topDiv">单据号: &nbsp;</h5>
+              <div
+                class="control-element bgPub-tabSheet-topDiv bgPub-tabSheet-topDiv-30right"
+              >
+                <input
+                  type="text"
+                  value="AAA00001"
+                  class="form-control inputHeight"
+                  id="twoSidesAdjModal_billCode"
+                  readonly="readOnly"
+                />
+              </div>
+              <button
+                type="button"
+                id="btnInFiles"
+                class="btn btn-sm btn-default btn-attach bgPub-tabSheet-rightTopDiv budgetItemTwoSidesAdjust-width-45"
+                title="附件"
+              >
+                <span class="icon-file"></span>
+              </button>
+              <h5 class="bgPub-tabSheet-rightTopDiv">
+                &nbsp;张&nbsp;&nbsp;&nbsp;
+              </h5>
+              <div
+                class="control-element bgPub-tabSheet-rightTopDiv bgPub-fileCount-width"
+              >
+                <input
+                  type="text"
+                  value="0"
+                  class="form-control inputHeight bgPub-fileCount-width"
+                  id="bgInput"
+                  oninput="value=value.replace(/[^\d]/g,'')"
+                />
+                <!-- bug78324--zsj-->
+              </div>
+              <h5 class="bgPub-tabSheet-rightTopDiv">附单据&nbsp;</h5>
+            </div>
+            <div class="control-element hide" id="textInput">
+              说明：
+              <textarea type="text" id="summary" class="form-control" style="width: 1020px;margin-left: 40px; margin-top: -23px;" maxlength="100"></textarea>
+            </div>
+          </div>
+        </div>
+        <div class="rpt-table-tab" style="padding: 0 15px;">
+          <table class="ufma-table uf-rpt-table hide" id="inTable"></table>
+          <table
+            class="ufma-table uf-rpt-table hide"
+            id="adjustInTable"
+          ></table>
+          <div id="adjustTotal" style="margin-top: 10px;">
+            <p class="outCount hide">调出合计: &nbsp;</p>
+            <p
+              class="outCount bgPub-tabSheet-topDiv-30right bgPub-textColor-green hide"
+              id="twosidesAdj_outSumMoney"
+              v="0"
+            >
+              0
+            </p>
+            <p class="inCount hide">调入合计: &nbsp;</p>
+            <p
+              class="inCount bgPub-tabSheet-topDiv-30right bgPub-textColor-blue"
+              id="twosidesAdj_inSumMoney"
+              v="0"
+            >
+              0
+            </p>
+            <p class="subCount hide">差额: &nbsp;</p>
+            <p
+              class="subCount bgPub-tabSheet-topDiv-30right bgPub-textColor-red hide"
+              id="twosidesAdj_balanceMoney"
+              v="0"
+            >
+              0
+            </p>
+          </div>
+          <table
+            class="ufma-table uf-rpt-table hide"
+            id="adjustOutTable"
+          ></table>
+        </div>
+      </div>
+      <div class="ufma-layout-down bordered-top">
+        <div class="text-right margin-right-30">
+          <button
+            type="button"
+            class="btn btn-sm btn-primary btn-inPrev hide"
+            id="inPrev"
+          >
+            上一步
+          </button>
+          <button
+            type="button"
+            class="btn btn-sm btn-primary btn-inNext"
+            id="inNext"
+          >
+            下一步
+          </button>
+          <button
+            type="button"
+            class="btn btn-sm btn-primary btn-saveadd hide"
+            id="saveAddAll"
+          >
+            保存并新增
+          </button>
+          <button
+            type="button"
+            class="btn btn-sm btn-default btn-save hide"
+            id="btnSave"
+          >
+            保存
+          </button>
+          <button type="button" class="btn btn-sm btn-default" id="btnClose">
+            取消
+          </button>
+        </div>
+      </div>
+    </div>
+    <script
+      src="../pub/bgPub.js?rev=@@hash"
+      type="text/javascript"
+      charset="utf-8"
+    ></script>
+    <script
+      src="../pub/bg.parse.js?rev=@@hash"
+      type="text/javascript"
+      charset="utf-8"
+    ></script>
+    <script
+      src="../pub/bgPubImpAttachment.js?rev=@@hash"
+      type="text/javascript"
+      charset="utf-8"
+    ></script>
+    <script
+      src="../pub/bgPubLog.js?rev=@@hash"
+      type="text/javascript"
+      charset="utf-8"
+    ></script>
+    <script
+      src="workFlowOpen.js?rev=@@hash"
+      type="text/javascript"
+      charset="utf-8"
+    ></script>
+  </body>
+</html>

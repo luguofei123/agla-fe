@@ -1,0 +1,64 @@
+dl,dt,dd,ol{margin:0;padding:0}
+
+li{list-style: none;padding:0;margin:0}
+
+.dataTables_length{
+    margin-top: 6px;
+}
+.row-details {
+    cursor: pointer;
+}
+/*.ufma-tool-bar {
+    margin-top: -1px
+}*/
+
+
+
+
+.btn-magn{margin-top:-55px;margin-left:10px;z-index:3}
+/*时间轴----开始---- */
+.timeLine{height:60px;padding-left:0;border-top:3px solid #108ee9;margin-top:10px;margin-left:12px}
+.timeLine li{height:10px;width:10px;border:1px solid #108ee9;border-radius:50%;background:#108ee9;margin-left:80px;float:left;margin-top:-6px}
+.timeLine li.active{background:#fff}
+.timeLine li.active dd{display:block}
+.timeLine dl{border:1px solid #108ee9;height:30px;width:50px;border-radius:4px;text-align:center;background:#fff; margin-top: 17px;
+    margin-left: -18px;}
+.timeLine dt,dd{float:left;height:100%;font-weight:normal}
+.timeLine dt{width:36px;line-height:30px;line-height:30px}
+.timeLine dd{width:12px;font-size:11px;background:#108ee9;display:none;}
+.timeLine span{margin: 6px 0; margin-left: 1px; cursor: pointer;}
+
+/*向上的三角*/
+.timeLine .arrow-up {width:0;height:0;border-left:5px solid transparent;border-right:5px solid transparent;
+    border-bottom:5px solid #fff;display:block;overflow: hidden;} 
+    /*向下的三角*/
+.timeLine .arrow-down {width:0;height:0;border-left:5px solid transparent;border-right:5px solid transparent;
+    border-top:5px solid #fff;display:block;overflow: hidden;}
+.but-box{position: absolute;
+    right: 15px;
+    top: 6px;}
+.but-box li{cursor:pointer;margin-right:10px;float:left;font-size:16px;color:#108ee9;border:1px solid #108ee9;height:18px;width:18px;border-radius:4px;line-height:14px;text-align:center;}
+/*时间轴-----结束---*/
+
+
+.rpt-funnelBoxList{display:none;top:39px;left:1px;}
+.rpt-funnelBoxList:before{content:'';display:inline-block;border-left: 10px solid transparent;border-right: 10px solid transparent;border-bottom: 10px solid #d9d9d9;position: absolute;top:-10px;right:23px;}
+.rpt-funnelBoxList:after{content:'';display:inline-block;border-left: 9px solid transparent;border-right: 9px solid transparent;border-bottom: 9px solid #fff;position: absolute;top:-9px;right:25px;}
+.rpt-colList{text-align: left;min-width: 51px;}
+.rpt-colList label{font-weight: normal;margin-bottom: 8px;}
+.rpt-colList span {display: block;line-height: 24px;cursor: pointer;text-align: center}
+.rpt-colList span:hover{color: #49a9ee}
+.rpt-funnelBoxList .rpt-colBtn{text-align: right;}
+.rpt-funnelBox {
+    position: absolute;
+    z-index: 9999;
+    top: 37px;
+    background: #fff;
+    border: 1px solid #eee;
+    padding: 10px 8px;
+    box-shadow: 0 0 4px 0 rgba(0,0,0,0.50);
+    border-radius: 4px;
+}
+
+
+

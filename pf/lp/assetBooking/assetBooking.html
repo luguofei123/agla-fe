@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>资产记账</title>
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <script src="../../pub/boot.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+    <link rel="stylesheet" type="text/css" href="lpCommon.css?rev=@@hash"/>
+    <link rel="stylesheet" type="text/css" href="assetBooking.css?rev=@@hash"/>
+    <style type="text/css">
+        .lp-box.table-box{
+            padding-left: 0;
+            padding-right: 0;
+            padding-bottom: 0;
+        }
+        .tooltip.top{
+            margin-top: 4px;
+        }
+        .tooltip .tooltip-inner{
+            padding: 6px 13px;
+        }
+        .vgBillTypeList {
+            margin-bottom: -8px;
+            display: block;
+            white-space:nowrap;
+        }
+        .vgBillTypeList li {
+            border-radius: 8px;
+            height: 30px;
+            display: inline-block;
+            margin-right: 8px;
+            list-style: none;
+            float:none;
+        }
+        .vgBillTypeList li a {
+            line-height: 28px;
+            padding: 0 10px;
+            color: #333333;
+            background-color: rgba(243, 243, 243, 1);
+            border-radius: 5px;
+            box-sizing: border-box;
+            border-width: 1px;
+            border-style: solid;
+            border-color: rgba(243, 243, 243, 1);
+        }
+        .vgBillTypeList li a span {
+            font-size: 12px;
+            color: #0099FF;
+            font-weight: bold;
+            background: rgba(236, 246, 253, 1);
+            padding: 2px 4px;
+            position: relative;
+        }
+        .vgBillTypeList li.active a {
+            background-color: rgba(236, 246, 253, 1);
+            font-weight: 650;
+            font-size: 14px;
+            color: #0099FF;
+        }
+        .nav > li > a:hover,.nav > li > a:focus {
+            background-color: none;
+        }
+        .tool-show-amt {
+            height: 24px;
+            position: absolute;
+            right: 326px;
+            bottom: 5px;
+            left: 272px;
+        }
+        .tool-show-more-amt {
+            height: 24px;
+            position: absolute;
+            right: 326px;
+            bottom: 5px;
+        }
+        .tool-show-more-amt i {
+            float: right;
+        }
+        .tool-show-more-amt ul {
+            display: none;
+            width: 168px;
+            background: #fff;
+            z-index: 99999;
+            position: relative;
+            right: 0px;
+            top: 19px;
+            padding: 8px 2px 8px 12px;
+            height: 150px;
+            overflow-y: auto;
+        }
+        .tool-show-more-amt ul li {
+            list-style-type: none;
+        }
+        .tool-show-more-amt.show ul {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+<!--整个容器 begin-->
+<div id="assetBooking" class="billGenetateAccount container-fluid ufma-container">
+    <!--工作区 begin-->
+    <!-- <div id="pzlrtzdiv" style="display: none;"></div> -->
+    <div id="open-check-vou"></div>
+    <div class="workspace">
+        <!--会计平台工作区 begin-->
+        <div class="lp-workspace" style="margin-bottom:0">
+            <!--标题位 begin-->
+            <div class="lp-selete-box bordered-bottom">
+                <!--标题 begin-->
+                <div class="lp-title">资产记账</div>
+                <!--标题 end-->
+                <ul class="lp-selete-list">
+                    <li class="lp-selete-list-li">
+                        <div id='cbAgency' name="agencyCode" class="ufma-treecombox ufma-combox-agency" icon="icon-unit"
+                             valueField="id" textField="name"
+                             placeholder="请选择单位"></div>
+                    </li>
+                    <li class="lp-selete-list-li">
+                        <div id='cbAcct' class="uf-combox ufma-combox-acct"></div>
+                    </li>
+                </ul>
+                <!--单位选择 end-->
+
+                <!--按钮 begin-->
+                <div class="lp-method-tip clearfix" style="width: 242px">
+                    <div class="btn-group fr">
+                        <button id="b-import" class="btn btn-default btn-import btn-permission btn-permissionPP" style="margin-left: 8px;border-radius: 4px">取数</button>
+                    </div>
+                    <div class="btn-group fr">
+                        <button type="button" id="vgVouGen" class="btn btn-sm btn-primary btn-gen btn-permission btn-permissionPP"
+                                style="margin-left: 8px;">生成
+                        </button>
+                    </div>
+                    <div class="btn-group fr">
+                        <button type="button" id="vgSumGen" class="btn btn-sm btn-default btn-gather-gen btn-permission btn-permissionPP"
+                                style="margin-left: 8px;">汇总生成
+                        </button>
+                    </div>
+                </div>
+                <!--按钮 end-->
+            </div>
+            <!--标题位 end-->
+
+            <div class="clearfix">
+                <div class="clearfix" id="navdiv" style="margin-bottom: -7px;">
+                    <div style="float: left;width: calc(100% - 80px);margin: 8px 0 0 0; display: inline-block;height:31px;overflow: hidden;">
+                        <div style="width: 100%;">
+                            <ul class="nav vgBillTypeList">
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="btn-group" style="float: right; margin-top: 8px;">
+                        <button type="button" class="btn btn-sm btn-default" id="btn-left" style="padding: 3px 9px;">
+                            <span class="icon-angle-left"></span>
+                        </button>
+                        <button type="button" class="btn btn-sm btn-default" id="btn-right" style="padding: 3px 9px;">
+                            <span class="icon-angle-right"></span>
+                        </button>
+                    </div>
+                </div>
+                <div class="lp-box-left-out">
+                    <!--查询 begin-->
+                    <div class="lp-box lp-query-box" style="padding-left: 16px">
+                        <!--查询条件 begin-->
+                        <div class="lp-query-box-left">
+                            <!--上半部显示 begin-->
+                            <ul class="lp-query-box-top">
+                                <!--第一行 begin-->
+                                <li class="lp-query-box-li clearfix padding-right-pos">
+                                    <!--单据日期 begin-->
+                                    <div class="lp-query-li" style="width: auto">
+                                        <label class="lp-query-li-cont-title">单据日期</label><span class="colon">：</span>
+                                        <div class="lp-query-li-cont">
+                                            <div id="vgTime" class="lp-query-btn-cont">
+                                                <button id="vgTimeYear" data-type="bennian" class="btn btn-default">本年</button>
+                                                <button id="vgTimeMonth" data-type="benQi" class="btn btn-primary">本期</button>
+                                                <button id="vgTimeDay" data-type="today" class="btn btn-default">今日</button>
+                                            </div>
+                                            <div class="query-date">
+                                                <div id="dateStart" name="dateStart" class="uf-datepicker" style="width:120px;display: inline-block"></div>
+                                                至
+                                                <div id="dateEnd" name="dateEnd" class="uf-datepicker" style="width:120px;display: inline-block"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!--单据日期 end-->
+                                </li>
+                                <!--第一行 end-->
+
+
+                            </ul>
+                            <!--上半部显示 end-->
+                            <!--下半部隐藏 begin-->
+                            <div class="lp-query-box-bottom" style="display: none;padding-left: 0">
+                                <form action="" id="vgMoreQuery" class="lp-query-box-li clearfix">
+                                    <!--单据编号 begin-->
+                                    <div class="lp-query-li col-sm-4">
+                                        <label class="lp-query-li-cont-title">单据编号</label><span class="colon">：</span>
+                                        <div class="lp-query-li-cont">
+                                            <input type="text" id="vgBillNo" class="bordered-input padding-3 input-control"/>
+                                        </div>
+                                    </div>
+                                    <!--单据编号 end-->
+                                </form>
+                            </div>
+                            <!--下半部隐藏 end-->
+                        </div>
+                        <!--查询条件 end-->
+
+                        <!--查询按钮 begin-->
+                        <div class="lp-query-box-right">
+                            <div class="lp-query-btn">
+                                <span class="tip-more"><i>收起</i><span class="glyphicon icon-angle-top"></span></span>
+                                <button class="btn btn-primary btn-query btn-permission btn-permissionPP">查询</button>
+                                <div class="lp-setting pull-right" style="margin-left: 8px;">
+                                    <button class="btn btn-default btn-queryset btn-condition-setup btn-permission btn-permissionPP">条件设置</button>
+                                    <!--查询条件设置 begin-->
+                                    <div class="lp-setting-box">
+                                        <div class="lp-setting-box-header clearfix">
+                                            <span class="lp-setting-box-header-title">设置查询条件</span>
+                                            <span class="glyphicon icon-close"></span>
+                                        </div>
+                                        <div class="lp-setting-box-body">
+                                            <!--动态添加的查询条件  开始位置-->
+                                        </div>
+                                        <div class="lp-setting-box-footer">
+                                            <button class="btn btn-primary">确定</button>&nbsp;
+                                            <button class="btn btn-default">取消</button>
+                                        </div>
+                                    </div>
+                                    <!--查询条件设置 end-->
+                                </div>
+                            </div>
+                        </div>
+                        <!--查询按钮 end-->
+                    </div>
+                    <!--查询 end-->
+                </div>
+                <div class="lp-box-right-out">
+                    <!--查询 begin-->
+                    <div class="lp-box lp-query-box lp-second-query-box">
+                        <!--查询条件 begin-->
+                        <div class="lp-query-box-left">
+                            <!--凭证生成设置 begin-->
+                            <ul class="lp-query-box-top">
+                                <li class="lp-query-box-li clearfix" id="temNames">
+                                    <div class="lp-query-li" style="width: 266px">
+                                        <label class="lp-query-li-cont-title" style="width: auto">凭证模版</label><span class="colon">：</span>
+                                        <div id="temName" class="uf-combox" style="width: 180px">
+                                        </div>
+                                    </div>
+                                    <div class="lp-query-li" id="gather-gen-preview" style="width: auto">
+                                        <label class="rpt-check mt-checkbox mt-checkbox-outline"><input name="isPreview"
+                                                                                                        type="checkbox">生成前预览<span></span></label>
+                                    </div>
+                                    <div class="lp-query-li" id="combine-mode" style="width: auto">
+                                        <label class="lp-query-li-cont-title" style="width: auto">合并方式</label><span class="colon">：</span>
+                                        <div class="lp-query-li-cont modeName lp-query-btn-cont">
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="lp-query-box-li clearfix lp-vou-li hidden">
+                                    <div class="lp-query-li" style="width: auto">
+                                        <div class="lp-single-vou hidden">
+                                            <div class="lp-vou-type query-item">
+                                                <label class="lp-query-li-cont-title" style="width: auto">凭证类型</label><span class="colon">：</span>
+                                                <div id="VouType" class="uf-combox" style="width: 180px">
+                                                </div>
+                                            </div>
+                                            <div class="lp-vou-date query-item" style="width: 420px;">
+                                                <label class="lp-query-li-cont-title" style="width: auto">凭证日期</label><span class="colon">：</span>
+                                                <div id="VouDate" class="uf-combox uf-combox-wd"></div>
+                                                <div name="startVouDate" id="startVouDate" class="uf-datepicker" style="width:120px;"></div>
+                                            </div>
+                                        </div>
+                                        <div class="lp-double-vou hidden">
+                                            <div class="query-item-outter">
+                                                <div class="item-title">财务会计</div>
+                                                <div class="lp-vou-type query-item">
+                                                    <label class="lp-query-li-cont-title" style="width: auto">凭证类型</label><span class="colon">：</span>
+                                                    <div id="vouFinTypeCode" class="uf-combox" style="width: 180px">
+                                                    </div>
+                                                </div>
+                                                <div class="lp-vou-date query-item" style="width: 420px;">
+                                                    <label class="lp-query-li-cont-title" style="width: auto">凭证日期</label><span class="colon">：</span>
+                                                    <div id="vouFinDate" class="uf-combox vouDate"></div>
+                                                    <div name="startVouFinDate" id="startVouFinDate" class="uf-datepicker" style="width:120px;"></div>
+                                                </div>    
+                                            </div>
+                                            <div class="query-item-outter">
+                                                <div class="item-title">预算会计</div>
+                                                <div class="lp-vou-type query-item">
+                                                    <label class="lp-query-li-cont-title" style="width: auto">凭证类型</label><span class="colon">：</span>
+                                                    <div id="vouBudTypeCode" class="uf-combox" style="width: 180px">
+                                                    </div>
+                                                </div>
+                                                <div class="lp-vou-date query-item" style="width: 420px;">
+                                                    <label class="lp-query-li-cont-title" style="width: auto">凭证日期</label><span class="colon">：</span>
+                                                    <div id="vouBudDate" class="uf-combox vouDate"></div>
+                                                    <div name="startVouBudDate" id="startVouBudDate" class="uf-datepicker" style="width:120px;"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                            <!--凭证生成设置 end-->
+                        </div>
+                        <!--查询条件 end-->
+                    </div>
+                    <!--查询 end-->
+                </div>
+            </div>
+
+
+            <!--表格相关 begin-->
+            <div class="lp-box table-box">
+                <!--表格上方的操作 begin-->
+                <div class="table-sub">
+                    <!--页签 begin-->
+                    <ul class="nav nav-tabs">
+                        <li class="active">
+                            <a href="javascript:;" data-state="-1">未生成</a>
+                        </li>
+                        <li class="">
+                            <a href="javascript:;" data-state="0">已生成</a>
+                        </li>
+                        <li class="">
+                            <a href="javascript:;" data-state="2">不生成</a>
+                        </li>
+                    </ul>
+                    <!--页签 end-->
+                    <div class="tool-show-amt">
+
+                    </div>
+                    <div class="tool-show-more-amt">
+                        <i class="glyphicon icon-angle-bottom show-more-amt-btn"></i>
+                        <ul class="more-amt-list">
+                        </ul>
+                    </div>
+
+                    <!--右侧操作按钮 begin-->
+                    <div class="table-sub-action">
+                        <div class="iframeBtnsSearch">
+                            <input type="text" class="searchHide focusOff bordered-input" placeholder="请输入要搜索的关键词">
+                            <button class="btn btn-default btn-sm btn-search btn-permissionPP" id="searchHideBtn"><span
+                                    class='glyphicon icon-search'></span></button>
+                        </div>
+                        <div id="dtToolbar" class="btn-group">
+                        </div>
+                    </div>
+                    <!--右侧操作按钮 end-->
+                </div>
+                <!--表格上方的操作 end-->
+
+                <!--表格 begin-->
+                <div class="table-tab">
+                           <!-- 同时固定表头和列样式 -->
+					<table id="assetBooking-datahead" class="ufma-table uf-rpt-table dataTable no-footer JColResizer JCLRFlex" tool-bar="#tool-bar" style="border: 1px solid #D9D9D9;">
+						<thead id="assetBookingdatahead">
+						</thead>
+					</table>
+                    <table id="assetBooking-data" tool-bar="#tool-bar" style="table-layout: fixed; border: 1px solid #D9D9D9;"
+                           class="ufma-table uf-rpt-table">
+                    </table>
+					<table id="assetBooking-dataleft" class="ufma-table uf-rpt-table dataTable" tool-bar="#tool-bar" style="border: 1px solid #D9D9D9;">
+						<thead>
+						</thead>
+						<tbody>
+						</tbody>
+                    </table>
+					<table id="assetBooking-dataright" class="ufma-table uf-rpt-table dataTable" tool-bar="#tool-bar" style="border: 1px solid #D9D9D9;">
+						<thead>
+						</thead>
+						<tbody>
+						</tbody>
+					</table>
+                    <table id="datalefthead" class="ufma-table uf-rpt-table dataTable" tool-bar="#tool-bar" style="border: 1px solid #D9D9D9;">
+						<thead id="dataleftheads">
+						</thead>
+					</table>
+                    <table id="datarigthhead" class="ufma-table uf-rpt-table dataTable" tool-bar="#tool-bar" style="border: 1px solid #D9D9D9;">
+						<thead id="datarightheads">
+						</thead>
+					</table>
+                </div>
+                <!--表格 end-->
+            </div>
+            <!--表格相关 end-->
+        </div>
+        <!--会计平台工作区 end-->
+        <div id="tool-bar" class="ufma-tool-bar">
+            <div class="tool-bar-body">
+                <div class="ufma-tool-btns tool-btns-preGenerated">
+                    <label class="mt-checkbox mt-checkbox-outline margin-right-8" style="margin-left: 3px">
+                        <input type="checkbox" class="datatable-group-checkable"/> 全选当前页 <span></span>
+                    </label>
+                    <label class="mt-checkbox mt-checkbox-outline margin-right-8" style="margin-left: 3px">
+                        <input type="checkbox" class="datatable-group-checkable-all"/> 全选所有页 <span></span>
+                    </label>
+                    <button id="tool-bar-vougen" type="button" class="btn btn-sm btn-default btn-gen btn-permission btn-permissionPP">生成
+                    </button>
+                    <button id="tool-bar-sumgen" type="button" class="btn btn-sm btn-default btn-gather-gen btn-permission btn-permissionPP">汇总生成
+                    </button>
+                    <button id="tool-bar-cancel" type="button" class="btn btn-sm btn-default btn-cancel btn-permission">不生成
+                    </button>
+                    <button id="tool-bar-delete" type="button" class="btn btn-sm btn-default btn-delete btn-permission btn-permissionPP">删除
+                    </button>
+                </div>
+                <div class="ufma-tool-btns tool-btns-hasGenerated" style="display: none">
+                    <label class="mt-checkbox mt-checkbox-outline margin-right-8" style="margin-left: 3px">
+                        <input type="checkbox" class="datatable-group-checkable"/> 全选当前页 <span></span>
+                    </label>
+                    <button id="tool-bar-recoverGen" type="button" class="btn btn-sm btn-default btn-gather-gen-cancel btn-permission btn-permissionPP">取消生成
+                    </button>
+                </div>
+                <div class="ufma-tool-btns tool-btns-noGenerated" style="display: none">
+                    <label class="mt-checkbox mt-checkbox-outline margin-right-8" style="margin-left: 3px">
+                        <input type="checkbox" class="datatable-group-checkable"/> 全选当前页 <span></span>
+                    </label>
+                    <label class="mt-checkbox mt-checkbox-outline margin-right-8" style="margin-left: 3px">
+                        <input type="checkbox" class="datatable-group-checkable-all"/> 全选所有页 <span></span>
+                    </label>
+                    <button id="tool-delete" type="button" class="btn btn-sm btn-default btn-delete btn-permission">删除
+                    </button>
+                    <button id="un-cancel" type="button" class="btn btn-sm btn-default btn-un-cancel btn-permission">还原
+                    </button>
+                </div>
+                <!--toolbar-->
+                <!-- 分页相关 begin -->
+                <div class="ufma-table-paginate">
+                    <!-- 分页 开始位置 -->
+
+                </div>
+                <!-- 分页相关 end -->
+            </div>
+        </div>
+    </div>
+    <!--工作区 end-->
+</div>
+<!--整个容器 end-->
+<div id="ModalBg" style="display: none"></div>
+<script src="lpCommon.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+<script src="assetBooking.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+</body>
+</html>

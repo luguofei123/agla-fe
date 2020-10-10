@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>工资数据导入格式</title>
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <script src="../../../pub/boot.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+    <link rel="stylesheet" type="text/css" href="wageImport.css?rev=@@hash"/>
+    <link rel="stylesheet" type="text/css" href="../../common/common.css?rev=@@hash"/>
+    <style>
+        .tooltip .tooltip-inner {
+            padding: 6px;
+        }
+        .dataTables_empty{
+            border-bottom: 0 !important;
+        }
+    </style>
+</head>
+<body>
+<!--整个容器 begin-->
+<div id="value-set" class="container-fluid ufma-container">
+    <div class="workspace">
+        <div class="prs-workspace workspace-inner">
+            <div class="ufma-portlet">
+                <div class="uf-selete-box bordered-bottom">
+                    <div class="uf-title">工资数据导入格式</div>
+                    <div class="method-tip clearfix">
+                        <div class="btn-group fr title-btns-group">
+                            <button id="btn-add-value" class="btn btn-primary btn-add btn-permission btn-add-value">新增
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="portlet-body bordered clearfix">
+                    <div class="query-box-left fl">
+                        <form id="frmQuery" class="form-horizontal">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label class="control-label">格式名称：</label>
+                                    <div class="control-element">
+                                        <input type="text" name="name" class="form-control" maxlength="200" style="width: 200px" autocomplete="off">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label">匹配类型：</label>
+                                    <div class="control-element">
+                                        <div id="matchitem" name="matchitem" class="uf-combox" style="width: 200px">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>
+                        </form>
+                    </div>
+
+                    <div class="query-box-right fr">
+                        <div class="query-btn">
+                            <button id="btnQuery" class="btn btn-primary btn-query btn-permission">查询</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="table-sub">
+                <div class="table-sub-action clearfix">
+                    <div id="dtToolbar" class="btn-group fr">
+                    </div>
+                </div>
+            </div>
+            <table id="mainTable" tool-bar="#tool-bar" class="ufma-table uf-rpt-table">
+            </table>
+        </div>
+        <div id="tool-bar" class="ufma-tool-bar">
+            <div class="tool-bar-body">
+                <div class="ufma-tool-btns tool-btns-preGenerated">
+                    <button id="tool-bar-del" type="button" class="btn btn-default btn-delete btn-permission">删除</button>
+                </div>
+                <div class="ufma-tool-btns tool-btns-preGenerated">
+                    <button id="tool-bar-sendown" type="button" class="btn btn-default btn-senddown btn-permission">下发</button>
+                </div>
+                <div class="ufma-tool-btns">
+                    <button id="tool-bar-empty" type="button" class="btn btn-default btn-empty btn-permission">清空单位工资数据格式</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../../common/common.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+<script src="wageImport.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+</body>
+</html>

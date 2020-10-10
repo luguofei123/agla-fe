@@ -1,0 +1,94 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>对账明细信息</title>
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <script src="../../pub/boot.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+    <link rel="stylesheet" href="ledRecon.css?rev=@@hash" />
+</head>
+
+<body>
+    <div class="ufma-layout-updown">
+        <div class="ufma-layout-up" style="overflow-y: auto">
+            <div class="portlet-body bordered pr">
+                <form id="frmQuery" class="form-horizontal">
+                    <div class="form-row">
+                        <div class="form-group" style="height: 26px;">
+                            <!-- <label class="control-label auto">账簿：</label> -->
+                            <div class="query-title">账簿：</div>
+                            <div class="control-element" style="width: 200px;">
+                                <div id="accountBook" class="table-li-info pull-left"></div>
+                            </div>
+                        </div>
+                        <div style="padding-top: 5px;" id="drCr">
+                            <div class="query-title" style="margin-top: 0px;">借贷方向：</div>
+                            &nbsp;&nbsp;&nbsp;&nbsp;
+                            <label class="mt-radio mt-radio-outline margin-right-8 rpt-radio-span">
+                                <input class="all drCr" type="radio" name="drCr" value="" checked> 全部
+                                <span></span>
+                            </label>
+                            <label class="mt-radio mt-radio-outline margin-right-8 rpt-radio-span">
+                                <input class="drBalance drCr" type="radio" name="drCr" value="1"> 借方
+                                <span></span>
+                            </label>
+                            <label class="mt-radio mt-radio-outline margin-right-8 rpt-radio-span">
+                                <input class="crBalance drCr" type="radio" name="drCr" value="-1"> 贷方
+                                <span></span>
+                            </label>
+                        </div>
+                        <div class="clearfix"></div>
+                    </div>
+                </form>
+            </div>
+            <div class="container-fluid" style="margin-left: 5px;margin-right: 5px;">
+                <div class="row">
+                    <div style="padding-left:0px" class="col-md-6">
+                        <div class="title-pointer">
+                        </div>
+                        <span>出纳</span>
+                    </div>
+                    <div style="padding-left:5px" class="col-md-6">
+                        <div class="title-pointer">
+                        </div>
+                        <span>总账</span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div style="padding-left:0px;padding-right:0px;" class="col-md-6 table-border">
+                        <table id="gridCU" class="ufma-table uf-rpt-table" style="width:240%">
+                        </table>
+                    </div>
+                    <div style="padding-right:0px;padding-left:5px;" class="col-md-6 table-border">
+                        <table id="gridGL" class="ufma-table uf-rpt-table" style="width:220%">
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 表格end -->
+        <!-- <div id="tool-bar" class="ufma-tool-bar">
+            <div class="tool-bar-body">
+                <!-- style="width:1051px !important;margin-top:-1px;"-->
+        <!-- <div class="ufma-tool-btns">
+                    <label class="mt-checkbox mt-checkbox-outline margin-right-8" style="margin-left: 10px;">
+                        <input class="checkAll" type="checkbox" name="" id="all"> 全选
+                        <span></span>
+                    </label>
+                </div>
+            </div>
+        </div> -->
+    </div>
+    <div class="ufma-layout-down bordered-top">
+        <div class="text-right  margin-right-30">
+        </div>
+    </div>
+    </div>
+    <script src="dm.js?rev=@@hash " type="text/javascript" charset="utf-8"></script>
+    <script src="detailAccount.js" type="text/javascript" charset="utf-8"></script>
+
+</body>
+
+</html>

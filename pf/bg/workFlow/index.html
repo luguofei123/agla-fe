@@ -1,0 +1,72 @@
+<!DOCTYPE html><html lang=en><head><meta charset=utf-8><meta http-equiv=X-UA-Compatible content="IE=edge"><meta name=viewport content="width=device-width,initial-scale=1"><link rel=icon href=favicon.ico><title>工作流演示系统</title><link href=css/workflow-main.css rel=preload as=style><link href=css/workflow-vendor.css rel=preload as=style><link href=js/workflow-main.js rel=preload as=script><link href=js/workflow-vendor.js rel=preload as=script><link href=css/workflow-vendor.css rel=stylesheet><link href=css/workflow-main.css rel=stylesheet></head><body><noscript><strong>We're sorry but app1 doesn't work properly without JavaScript enabled. Please enable it to continue.</strong></noscript><div id=app></div><button onclick=start()>启动流程</button> <button onclick=show()>显示流程</button><div id=chart></div><div id=list></div><script src=js/workflow-vendor.js></script><script src=js/workflow-main.js></script></body><script>var businessKey = "2";
+  var userCode = '200899';
+  var variables = [];
+  variables.push({ type: 'integer', name: 'money', value: 100 });
+
+  emiter.emit('config', {
+    debug: true,
+    userCode: userCode,
+    authToken: "Bearer " + "aaaaa",
+    flowModelerBaseUrl: "http://10.10.65.184:8080/fbpm-modeler",
+    flowProcessBaseUrl: "http://10.10.65.184:8080/fbpm-process",
+    appCode: "cwbx", //"cwbx",
+    rgCode: "87"
+  });
+  function start() {
+    var formDefinedData = {
+      // 单据类型code
+      bizTypeCode: "REPAY_GENERAL", //"REPAY_GENERAL",
+      // 区划code
+      rgCode: "87",
+      // 单位code
+      unitCode: "" //"048098"
+    };
+
+    emiter.emit('start', {
+      ...formDefinedData,
+      businessKey: businessKey,
+      userCode: userCode,
+      variables: variables,
+      //isTextMessage: true,
+      signType: 'ca',
+      onCancel: () => {
+
+      },
+      //signRequired: true,
+      // 完成后的回调
+      // ret
+      //    error: 错误标记，0: 没有错误
+      //                    1: 错误
+      //    message: 错误消息
+      //    extra:  附加的回传数据, 不同接口要求不同
+      onComplete: (ret) => {
+        this.isLoading = false;
+        if (ret.error) {
+          alert(ret.message);
+          return;
+        }
+
+        // 将流程实例id更新回业务系统
+        // extra = {
+        //   procInstId,
+        //   businessKey
+        //}
+        alert(JSON.stringify(ret.extra));
+      }
+
+    });
+  }
+
+  function show() {
+    emiter.emit('workflow-trace-full', {
+      id: '#chart',
+      businessKey: businessKey,
+      variables: variables
+    });
+
+    emiter.emit('workflow-trace-list', {
+      id: '#list',
+      businessKey: businessKey,
+      variables: variables
+    });
+  }</script></html>

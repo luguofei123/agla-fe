@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+  		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>凭证箱-凭证冲红</title>
+  		<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+		<script src="../../pub/boot.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+		<link rel="stylesheet" type="text/css" href="vouBoxRedVoucher.css?rev=@@hash"/>
+	</head>
+	<body id="vouBoxRedVoucher">
+		<div class="ufma-layout-updown">
+            <div class="ufma-layout-up">
+            	<div class="container-fluid margin-left-15 margin-right-15">
+            		<ul class="list-unstyled">
+            			<!--提示 begin-->
+            			<li class="tips clearfix">
+            				<div class="tips-icon pull-left">
+            					<span class="glyphicon icon-point"></span>
+            				</div>
+            				<p class="pull-left">红字凭证将按以下设置生成！</p>
+            			</li>
+            			<!--提示 end-->
+            			
+            			<!--凭证类型 begin-->
+            			<li class="setVouType clearfix">
+            				<label class="pull-left" for="">凭证类型：</label>
+            				<div class="pull-left">
+            					<select name="" class="bordered-input padding-3" id="vbrvVouType">
+            						<!--凭证类型 开始位置-->
+            						
+            					</select>
+            				</div>
+            			</li>
+            			<!--凭证类型 end-->
+            			
+            			<!--凭证日期 begin-->
+            			<li class="setVouDate clearfix">
+            				<label class="pull-left" for="">凭证日期：</label>
+            				<div class="pull-left">
+            					<input class="bordered-input padding-3" type="text" name="" id="vbrvVouDate" value="" />
+            					<i class="glyphicon icon-calendar"></i>
+            				</div>
+            			</li>
+            			<!--凭证类型 end-->
+            		</ul>
+            	</div>
+            </div>
+            
+            <div class="ufma-layout-down bordered-top">	
+				<div class="text-right margin-right-30">
+					 <button type="button" class="btn btn-sm btn-primary btn-save" id="btn-save">保存</button>
+					 <button type="button" class="btn btn-sm btn-default btn-qx" id="btn-qx">取消</button>
+				 </div>
+			</div>
+		</div>
+		
+	<script src="vouBoxRedVoucher.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+	</body>
+</html>

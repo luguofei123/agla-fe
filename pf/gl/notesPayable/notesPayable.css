@@ -1,0 +1,43 @@
+
+.ufma-tool-bar{margin-top:-1px}
+.form-padding{
+	padding-top: 16px;
+    padding-bottom: 24px;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+.gray{
+	background-color:#F2F2F2!important;
+	color:#cccccc;
+}
+.form-horizontal .form-row{
+	margin-bottom: 10px;
+}
+.form-row:nth-last-child(1){
+	margin-bottom: 0;
+}
+.form-horizontal .form-row .form-group {
+	float: left;
+	display: inline-block;
+	padding: 0;
+	margin:0 0 0 30px;
+}
+.form-horizontal .form-row .form-group:first-child{
+	margin-left: 0;
+}
+.form-horizontal .form-group .control-element {
+	width: 160px;
+}
+.form-horizontal .form-group .control-label {
+	width: 80px;
+	text-align: right;
+	margin-right: 5px;
+}
+.form-horizontal .form-group .control-label.auto {
+	width: auto;
+}
+.form-horizontal .form-group .split {
+	/*float: left;*/
+	display: inline-block;
+	margin: 5px;
+}

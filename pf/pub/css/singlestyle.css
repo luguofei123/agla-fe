@@ -1,0 +1,194 @@
+/*全部内容的容器*/
+.all-container{
+	padding: 8px;
+	background-color: #f2f2f2;
+	background-color: #f2f2f2;
+	color: #333333;
+	font-size: 14px;
+	font-family: "微软雅黑";
+}
+
+/*面包屑*/
+.bread-box{
+	font-size: 12px;
+	line-height: 1;
+	padding-left: 8px;
+	margin: 8px 0 16px;
+}
+.breadcrumb{
+	padding: 0;
+	margin: 0;
+	color: #333333;
+	background-color: transparent;
+}
+.breadcrumb li.active{
+	background-color: transparent;
+}
+.breadcrumb a{
+	color: #999999;
+}
+.bread-help{
+	font-size: 12px;
+	line-height: 1.0;
+	margin-right: 8px;
+}
+.bread-help span{
+	padding-right: 4px;
+}
+
+/*单列主体内容盒子*/
+.main-box{
+	background-color: #FFFFFF;
+	border: 1px solid #d9d9d9;
+	padding: 0 8px;
+}
+/*盒子头*/
+.box-header{
+	padding: 8px 0 8px 8px;
+	border-bottom: 1px solid #D9D9D9;
+}
+/*头标题*/
+.box-header h3.box-title{
+	font-size: 16px;
+	line-height: 30px;
+	margin: 0;
+}
+/*头标题--标签*/
+.box-header .box-note-group{
+	padding: 3px 0;
+	margin-left: 16px;
+}
+.box-header .box-note-group .box-note button{
+	padding: 2px 8px;
+	margin-right: 8px;
+	line-height: 18px;
+}
+.box-header .box-note-group .box-note button span{
+	padding-left: 4px;
+}
+.box-header .box-note-group .box-note-clear{
+	line-height: 24px;
+	display: none;
+}
+/*头按钮组*/
+.box-header .box-btn-group button{
+	margin-left: 8px;
+	padding: 5px 16px;
+	line-height: 18px;
+	font-size: 14px;
+}
+/*查询条件容器*/
+.box-inquiry{
+	border: 1px solid #D9D9D9;
+	padding: 0 8px;
+	margin: 8px 0;
+}
+/*查询条件*/
+.box-inquiry .inquiry-warp{
+	padding: 8px 0;
+	border-top: 1px solid #D9D9D9;
+	height: 46px;
+	overflow: hidden;
+}
+.box-inquiry .inquiry-warp.full-height{
+	height: 100%;
+}
+.box-inquiry .inquiry-warp:first-child{
+	border-top: 0;
+}
+.box-inquiry .inquiry-warp .inquiry-key{
+	line-height: 30px;
+	text-align: right;
+	padding: 0 16px 0 0;
+}
+.box-inquiry .inquiry-warp .inquiry-val{
+	margin: 0;
+	padding: 0;
+}
+.box-inquiry .inquiry-warp .inquiry-val li{
+	padding: 0;
+	margin-right: 8px;
+	float: left;
+}
+.box-inquiry .inquiry-warp.more-val .inquiry-val li{
+	margin-bottom: 8px;
+}
+.box-inquiry .inquiry-warp .inquiry-val li button{
+	line-height: 18px;
+	font-size: 14px;
+	padding: 5px 16px;
+}
+.box-inquiry .inquiry-warp .inquiry-val li a{
+	display: inline-block;
+	line-height: 18px;
+	font-size: 14px;
+	padding: 6px 16px;
+}
+.box-inquiry .inquiry-warp .inquiry-val li a input[type="checkbox"]{
+	margin: 0 4px 0 0;
+	display: none;
+	vertical-align:text-bottom;
+	margin-bottom:2px;
+	margin-bottom:-2px\9;
+}
+/*更多&多选按钮*/
+.box-inquiry .inquiry-warp .inquiry-plus{
+	padding: 0 8px 0 0;
+}
+.box-inquiry .inquiry-warp .inquiry-plus a{
+	line-height: 30px;
+	margin-left: 32px;
+}
+.box-inquiry .inquiry-warp.more-val .inquiry-plus .check-inquiry span{
+	margin-right: 4px;
+}
+.box-inquiry .inquiry-warp.more-val .inquiry-plus .more-inquiry span{
+	margin-left: 4px;
+}
+/*多选的确认和取消按钮*/
+.box-inquiry .inquiry-warp .inquiry-confirm-btn{
+	padding: 8px 0;
+	text-align: center;
+	display: none;
+}
+.box-inquiry .inquiry-warp .inquiry-confirm-btn button{
+	line-height: 18px;
+	font-size: 14px;
+	padding: 5px 16px;
+	margin-right: 8px;
+}
+/*模态框*/
+/*模态框--头*/
+.add-header{
+	padding: 8px;
+}
+.add-header h4{
+	font-size: 16px;
+}
+/*模态框--内容*/
+.add-body{
+	padding: 8px;
+}
+/*模态框--底部*/
+.add-footer{
+	padding: 8px;
+	text-align: center;
+}
+.add-footer button{
+	margin-left: 8px;
+}
+/*Toast*/
+.add-success{
+	width: 320px;
+	height: 180px;
+	margin-left: -160px;
+	margin-top: -90px;
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	text-align: center;
+	line-height: 180px;
+	display: none;
+}
+/*表格区域*/
+.box-table{}

@@ -1,0 +1,6 @@
+.div-fixBottom-1{
+  position: fixed;
+  bottom: 0px;
+  height: 90px;
+  width : 100%;
+}

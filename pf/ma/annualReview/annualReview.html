@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>新年度初始化</title>
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <script src="../../pub/boot.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+    <link rel="stylesheet" href="annualReview.css?rev=@@hash" />
+    <style>
+    .form-row{
+        padding-top: 15px;
+    }
+    .sysDataTable{
+        margin-left: 257px;
+        overflow: hidden;
+        background: #ECF6FD;
+        border: 1px solid #D2EAFB;
+        padding: 15px;
+    }
+    .sysDataTableTitle{
+        float: left;
+        margin-left: 20px;
+        padding-top: 5px;
+        font-weight: bold;
+    }
+    .sysDataTableStatus{
+        float:left;
+        margin-left: 10px;
+        text-align: left;
+        padding-top: 5px;
+        font-weight: bold;
+    }
+    .uf-combox .uf-combox-border{
+        border: 0;
+        background: transparent;
+    }
+    .uf-combox-input{
+        text-align: center;
+    }
+    .uf-combox-input{
+        box-sizing: border-box;
+        padding-left: 26px;
+    }
+    .sysBtn{
+        float: left;
+        margin-left: 15px;
+    }
+    .ufma-combox-input{
+        color: #555555;
+    }
+    /* .ufma-combox-input[placeholder]{
+        color: #999999;
+    } */
+    .ufma-combox-input::-webkit-input-placeholder {
+       color: #999999;
+    }
+    .tablehide{
+        display: none;
+    }
+    .progressModalWrap{
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 999999999;
+        background: rgba(0, 0, 0, .5);
+    }
+    .progressModal{
+        padding: 10px 15px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        background: #fff;
+        border-radius: 5px;
+    }
+    .modalTitle{
+        font-size: 16px;
+        font-weight: bold;
+        color: #333;
+    }
+    .progressBarWrap{
+        width: 500px;
+        padding: 20px 0;
+    }
+    .progressBar{
+        width: 500px;
+        height: 8px;
+        background: #eee;
+        border-radius: 4px;
+    }
+    .progressBarActive{
+        width: 2%;
+        height: 8px;
+        border-radius: 4px;
+        background: #49A9EE;
+    }
+    .clearfix:after {
+        content: ".";
+        display: block;
+        height: 0;
+        visibility: hidden;
+        clear: both;
+    }
+    .clearfix {
+        *zoom: 1;
+    }
+    .modalRow{
+        margin-top: 10px
+    }
+    .modalRow .left{
+        float: left;
+    }
+    .modalRow .right{
+        float: right;
+    }
+    .successWrap{
+        margin-top: 10px;
+        font-weight: bold;
+        color: #00A854;
+    }
+    .errorWrap{
+        width: 500px;
+        margin-top: 10px;
+        font-weight: bold;
+        color: #F04134;
+        max-height: 300px;
+        overflow-y: auto;
+    }
+    .modalRow span{
+        display: inline-block;
+    }
+    /* #agencyName{
+        float: left;
+        width: 190px;
+        white-space: nowrap;  
+        overflow: hidden;  
+        text-overflow: ellipsis; 
+    }
+    #destAgencyName{
+        float: right;
+        width: 190px;
+        white-space: nowrap;  
+        overflow: hidden;  
+        text-overflow: ellipsis;  
+    } */
+    .btnWrap{
+        padding-top: 15px;
+        text-align: center;
+    }
+    .disabledTableColor{
+        color: #999 !important;
+    }
+    .disabledTableBg{
+        background: #eee !important;
+    }
+    </style>
+</head>
+
+<body id="glRptJournal" style="overflow-x:hidden;">
+    <div class="container-fluid ufma-container">
+
+        <!--工作区 begin-->
+        <div class="workspace">
+            <!--账表工作区 begin-->
+            <div class="rpt-workspace">
+                <div class="rpt-selete-box bordered-bottom" style="margin-top:-8px;">
+                    <div class="rpt-title">新年度初始化</div>
+                    <div class="rpt-clear"></div>
+                </div>
+                <form id="frmQuery" class="form-horizontal">
+                <div class="form-row" style="padding-bottom:5px;overflow: hidden;">
+                    <div class="form-group">
+                        <label class="control-label auto">当前年度：</label>
+                        <div class="control-element">
+                            <input id="currentyear" name="currentyear" type="text" class="form-control"
+                                style="width: 50px;padding:4px 6px;" value="" disabled />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label auto">新年度：</label>
+                        <div class="control-element">
+                            <input id="newyear" name="newyear" type="text" class="form-control"
+                                style="width: 50px;padding:4px 6px;" value="" disabled />
+                        </div>
+                    </div>
+                </div> 
+            </form>
+
+                <div style="border-bottom: 1px solid #ddd;margin-top: 10px;">
+                    <div id="navTabBox" class="table-sub-info uf-bf1" style="overflow: hidden;margin-bottom: -1px">
+                        <ul class="nav nav-tabs" id="itemTab" style="height:33px;border:none!important">
+                            <li class="active" data-id="1">
+                                <a href="javascript:;">系统级基础资料</a>
+                            </li>
+                            <li data-id="2">
+                                <a href="javascript:;">单位级基础资料</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="sysInitWrap">
+                    <div class="rpt-acc-box-right mt10">
+                        <div style="position: relative;">
+                            <div class="rpt-query-box-left" style="margin-top: 15px;">
+                                <div style="float:left;height: 30px;">
+                                    <label class="mt-radio mt-radio-outline margin-right-8 mt5">
+                                        <input type="radio" name="sysRadio" value="1" checked>全部结转&nbsp;<span></span>
+                                    </label>
+                                    <label class="mt-radio mt-radio-outline margin-right-8 mt5">
+                                        <input type="radio" name="sysRadio" value="2">自定义&nbsp;<span></span>
+                                    </label>
+                                    &nbsp;&nbsp;
+                                    <label class="mt-checkbox mt-checkbox-outline margin-right-8 mt5">
+                                        <input type="checkbox" id="sysCoverAll" value="1" checked>全部覆盖&nbsp;<span></span>
+                                    </label>
+                                </div>
+                                <div class="sysDataTableTitle">系统级初始化状态：</div>
+                                <div class="sysDataTableStatus"></div>
+                                <button id="initsys-btn" class="btn btn-primary btn-initsys sysBtn btn-permission">初始化</button>
+                                <div class="clearfix"></div>
+                            </div>
+                        </div>
+                        <div class="table-wrap">
+                            <div id="tablebox1" class="rpt-table-box">
+                                <div class="rpt-table-tab">
+                                    <table id="annualReview1" class="ufma-table uf-rpt-table fixed-table" 
+                                        style="border-left: 1px solid #D9D9D9;border-right: 1px solid #D9D9D9;">
+                                        <thead id="">
+                                        </thead>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="agencyInitWrap hide">
+                    <div class="rpt-acc-box">
+                        <div class="rpt-acc-box-left">
+                            <div class="rpt-atree-box-head">
+                                <div class="input-group rpt-input-group">
+                                    <input type="text" id="key" value="" class="form-control empty" placeholder="请输入搜索关键词">
+                                    <span class="input-group-addon"><span class='glyphicon icon-search'></span></span>
+                                </div>
+                            </div>
+                            <div class="rpt-atree-box-body">
+                                <ul id="atree" class="ufmaTree ztree atree-ztree" style="margin: -5px 0px 0 -5px;"></ul>
+                            </div>
+                        </div>
+                        <div class="rpt-acc-box-right">
+                            <div style="position: relative;">
+                                <div class="rpt-query-box-left">
+                                    <div style="height: 30px;">
+                                        <label class="mt-radio mt-radio-outline margin-right-8 mt5">
+                                            <input type="radio" name="agencyRadio" value="1" checked>全部结转&nbsp;<span></span>
+                                        </label>
+                                        <label class="mt-radio mt-radio-outline margin-right-8 mt5">
+                                            <input type="radio" name="agencyRadio" value="2">自定义&nbsp;<span></span>
+                                        </label>
+                                        &nbsp;&nbsp;
+                                        <label class="mt-checkbox mt-checkbox-outline margin-right-8 mt5">
+                                            <input type="checkbox" id="agencyCoverAll" value="1" checked>全部覆盖&nbsp;<span></span>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="rpt-query-box-right">
+                                    <div class="rpt-query-btn">
+                                        <!-- btn-permission -->
+                                        <button id="init-btn" class="btn btn-primary btn-init btn-permission">初始化</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="right-table-wrap">
+                                <div id="tablebox2" class="rpt-table-box">
+                                    <div class="rpt-table-tab">
+                                        <table id="annualReview2" class="ufma-table uf-rpt-table fixed-table" 
+                                            style="border-left: 1px solid #D9D9D9;border-right: 1px solid #D9D9D9;">
+                                            <thead id="">
+                                            </thead>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--账表工作区 end-->
+
+            <!-- 结转进度模态窗口 begin -->
+            <div class="progressModalWrap tablehide">
+                <div class="progressModal">
+                        <div class="modalTitle">结转进度&nbsp;<span id="percent">0%</span></div>
+                        <div class="progressBarWrap">
+                            <div class="progressBar">
+                                <div class="progressBarActive"></div>
+                            </div>
+                        </div>
+                        <div class="modalRow">
+                            <div class="left">当前结转第<span id="current"></span>个单位&nbsp;单位编码：<span id="agencyName"></span></div>
+                            <div class="right">共<span id="total"></span>个单位</div>
+                            <div class="clearfix"></div>
+                        </div>
+                        <div id="success" class="successWrap tablehide"></div>
+                        <div id="error" class="errorWrap tablehide">
+                        </div>
+                        <div class="btnWrap tablehide">
+                            <button class="btn btn-primary" id="progressModalClose">关闭</button>
+                        </div>
+                </div>
+            </div>
+            <!-- 结转进度模态窗口 end -->
+        </div>
+        <!--工作区 end-->
+
+    </div>
+    <script src="atree.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+    <script src="annualReview.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+</body>
+
+</html>

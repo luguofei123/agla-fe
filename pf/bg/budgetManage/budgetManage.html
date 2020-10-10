@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>指标登记簿</title><!--将CWYXM-4291修改名称“指标管理”改为指标登记簿--与赵雪蕊确认--zsj-->
+		<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+		<script src="../../pub/boot.js?rev=@@hash"></script>
+    <link rel="stylesheet" href="../pub/bgPub.css?rev=@@hash" />
+    <link rel="stylesheet" href="../pub/common.css?rev=@@hash" />
+		<link rel="stylesheet" href="../pub/bgPubImpAttachment.css?rev=@@hash" />
+		<link rel="stylesheet" href="budgetManage.css?rev=@@hash" />
+		<link rel="stylesheet" href="../pub/bgPubLog.css?rev=@@hash" />
+		<link rel="stylesheet" href="../pub/bgPubAuditModal.css?rev=@@hash" />
+	</head>
+
+	<body style="overflow-y: auto; padding-right: 0px;">
+		<div id="budgetManage" class="container-fluid ufma-container">
+			<div class="workspace " style="padding-top: 4px;padding-left: 15px;padding-right: 15px;">
+				<!--工作区顶部 begin-->
+				<div class="workspace-top">
+					<div class="uf-portlet" style="padding-bottom: 12px;">
+						<div class="portlet-title">
+							<div class="caption">
+								<span class="caption-main">指标登记簿</span> <span><!--将CWYXM-4291修改名称“指标管理”改为指标登记簿--与赵雪蕊确认--zsj-->
+								<div class="uf-treecombox ufma-combox-agency" id="cbAgency"
+									name="agencyCode" idField='id' textField='codeName' pIdField='pId'
+									 icon='icon-unit' theme='label'
+									autocomplete="on" placeholder="请选择单位"></div>
+									
+							</span>
+							</div>
+						</div>
+						<div class="portlet-body bordered">
+							<div id="searchPlanPnl" class="uf-form-group-panel">
+								<div class="actions">
+									<label class="label label-more hide btn-more-item" style="margin-left: -64px;"><span>更多</span><i class="glyphicon icon-angle-bottom"></i></label>
+									<button class="btn btn-primary btn-query btn-permission" id="btnQry">查询</button>
+								</div>
+								<table>
+									<tr>
+										<td class="label-ctrl">预算方案：</td>
+										<td class="form-ctrl">
+											<div id="cbBgPlan" class="uf-combox" idField="chrId" textField="chrName" placeholder="请选择预算方案" style="width: 200px;"></div>
+										</td>
+										<td class="label-ctrl">单据日期：</td>
+										<td class="form-ctrl">
+											<div id="createDate1" class="uf-datepicker inline-block"></div>
+											<span> 至 </span></span>
+											<div id="createDate2" class="uf-datepicker inline-block"></div>
+										</td>
+									</tr>
+								</table>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="workspace-center">
+					<div class="container-fluid">
+						<div class="bg-table-sub" style="padding-bottom: 8px;">
+							<!--右侧操作按钮 begin-->
+							<div class="bg-table-sub-action pull-right">
+								<div class="iframeBtnsSearch" style="margin-left:-10px;">
+									<input id="btnsSearchContent" type="text" class="searchHide focusOff bordered" placeholder="请输入要搜索的关键词" style="right: 140px;">
+									<input type="hidden" class="searchValueHide">
+									<button class="btn btn-default btn-sm btn-search" id="searchHideBtn">
+									<i class="glyphicon icon-search"></i>
+								</button>
+								</div>
+								<!-- 避免样式错乱，等 打印可用 后放入btn-group
+
+										<button id="print" class="btn btn-default btn-print btn-permission bgtooltip hide" data-toggle="tooltip" title="打印">
+									<span class="glyphicon icon-print"></span>
+								</button>
+								 -->
+								<div class="btn-group">
+									<!--<button id="print" class="btn btn-default btn-print btn-permission bgtooltip" data-toggle="tooltip"
+									title="打印">-->
+									<!--暂时隐藏-->
+								
+									<!--<button id="export" class="btn btn-default btn-export btn-permission bgtooltip"
+									data-toggle="tooltip" title="导出">-->
+									<!--修改只有导出按钮时的样式,打印功能恢复后将该样式删除即可-->
+									<button id="export" class="btn btn-default btn-export btn-permission bgtooltip" data-toggle="tooltip" title="导出" style="border-bottom-left-radius:4px;border-top-left-radius:4px;">
+									<span class="glyphicon icon-upload"></span>
+								</button>
+								</div>
+								<div style="position: relative;display: inline-block;vertical-align: middle;">
+									<button class="btn btn-default" id="colAction"><span class="glyphicon icon-list-all"></span><span class="glyphicon icon-angle-bottom"></span></button>
+									<div class="rpt-funnel rpt-funnelBox rpt-funnelBoxList">
+										<div id="colList" class="rpt-colList">
+											<table id="colListTable">
+												<thead>
+													<tr>
+														<th style="width: 30px;min-width: 30px;" class="hide">序号</th>
+														<th style="width: 30px;min-width: 30px;"class="hide">
+															<label class="mt-checkbox mt-checkbox-outline margin-right-8">
+                                <input class="checkAll" type="checkbox" name="" id=""> 
+                                <span></span>
+                              </label>
+														</th>
+														<th style="width: 50px;min-width: 50px;"class="hide">列名</th>
+													</tr>
+                        </thead>
+                        <!-- CWYXM-18450 指标台账,预算执行情况表,记忆列没勾选但是界面全部显示了,再次勾选记忆列点击确定界面处于一直加载状态,具体见截图--zsj--由jquery升级导致 -->
+                        <tbody></tbody>
+											</table>
+										</div>
+										<button id="addCol" class="btn btn-primary">确定</button>
+									</div>
+								</div>
+							</div>
+							<!--右侧操作按钮 end-->
+
+						</div>
+						<!--<div class="zbtz-data-caption uf-datagrid-caption btn-query btn-permission none">
+							共 <span class="billNum">0</span> 张单据
+						</div>-->
+						<!--<div class="bg-table-sub btn-query btn-permission">
+						<table id="mangerTable" class="ufma-table uf-rpt-table">
+						</table>
+					</div>-->
+						<div class="rpt-table-tab">
+							<table class="ufma-table uf-rpt-table" id="mangerTable">
+							</table>
+
+						</div>
+						<div id="tool-bar" class="control-bar" style="top:0px !important;margin-top:0px;">
+							<div class="tool-bar-body" style="height:80px;top:0px !important;margin-left:0px;width:100%;">
+								<div style="margin-left:10px;"> 共 <span class="billNum">0</span> 张单据</div>
+								<hr style="margin-top: 6px;" />
+								<div class="ufma-tool-btns" style="margin-top:-5px;margin-left: 10px;">
+									<label class="mt-checkbox mt-checkbox-outline margin-right-8">
+                                        <input class="checkAll" type="checkbox" name="" id="btnAll"> 全选 <span></span>
+                                    </label>
+									<button class="btn btn-primary  btn-con btn-permission" id="btnControl">控制设置</button>
+									<button class="btn btn-default btn-start btn-permission" id="btnStart">启用</button>
+									<button class="btn btn-default btn-stop btn-permission" id="btnStop">停用</button>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script
+		src="../pub/bgPubAuditModal.js?rev=@@hash"
+		type="text/javascript"
+		charset="utf-8"
+	  ></script>
+	  <script
+		src="../pub/bgPubLog.js?rev=@@hash"
+		type="text/javascript"
+		charset="utf-8"
+	  ></script>
+		<script src="../pub/bg.parse.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+		<script src="../pub/bgPub.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+		<script src="../pub/bgPubItemManager.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+		<script src="budgetManage.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+		<script src="../pub/bgPubLog.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+		<!-- <script src="../../pub/js/uf.core.min.js?rev=@@hash"></script> -->
+	</body>
+
+</html>

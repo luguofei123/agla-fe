@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>指标分解</title>
+<!--暂时未发现使用痕迹，半年后无人  问津便可删除-->
+<meta
+	content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
+	name="viewport">
+	<script src="../../pub/boot.js?rev=@@hash"></script>
+	<link rel="stylesheet" href="../pub/bgPub.css?rev=@@hash" />
+	<link rel="stylesheet" href="../pub/bgPubImpAttachment.css?rev=@@hash" />
+	<link rel="stylesheet" href="indexDecomposition.css?rev=@@hash" />
+</head>
+<body style="overflow-y: auto; padding-right: 0px;">
+	<div id="budgetItemDecompose" class="container-fluid ufma-container">
+		<div class="workspace padding-15" style="padding-top: 4px;">
+			<!--工作区顶部 begin-->
+			<div class="workspace-top">
+				<div class="uf-portlet" style="padding-bottom: 12px;">
+					<div class="portlet-title">
+						<div class="caption">
+							<span class="caption-main">指标分解</span> <span>
+								<div class="uf-treecombox ufma-combox-agency" id="cbAgency"
+									name="agencyCode" idField='id' textField='codeName' pIdField='pId'
+									 icon='icon-unit' theme='label'
+									autocomplete="on" placeholder="请选择单位"></div>
+									
+							</span>
+						</div>
+						<div class="actions">
+							<div class="btn-group">
+								<button type="button" id="btn-add" class="btn btn-sm btn-primary btn-add btn-new btn-permission" style=" margin-top: 2px;">新增</button>
+							</div>
+						</div>
+					</div>
+					<div class="portlet-body bordered">
+						<div id="searchPlanPnl" class="uf-form-group-panel">
+							<div class="actions">
+								<span class="label-more btn-more-item btn-more hide">更多<b></b></span>
+								<button class="btn btn-primary btn-query btn-permission" id="btnQry">查询</button>
+							</div>
+							<table>
+								<tr>
+									<td class="label-ctrl">预算方案：</td>
+									<td class="form-ctrl">
+										<div id="cbBgPlan" class="uf-combox" idField="chrId"
+											textField="chrName" placeholder="请选择预算方案"
+											style="width: 300px;"></div>
+									</td>
+									<td class="label-ctrl">单据日期：</td>
+									<td class="form-ctrl"><div id="createDate1"
+											class="uf-datepicker inline-block"></div>
+										<span> 至 </span></span>
+									<div id="createDate2" class="uf-datepicker inline-block"></div></td>
+								</tr>
+							</table>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="workspace-center">
+				<div class="container-fluid">
+					<div class="bg-table-sub" style="padding-bottom: 8px;">
+						<!--标签 begin-->
+						<ul class="nav nav-tabs" id="tabStatus">
+							<li class="active"><a href="javascript:;" data-status="1">未审核</a></li>
+							<li><a href="javascript:;" data-status="3">已审核</a></li>
+							<li><a href="javascript:;" data-status="">全部</a></li>
+						</ul>
+						<!--标签 end-->
+						<!--右侧操作按钮 begin-->
+						<div class="bg-table-sub-action pull-right">
+							<div class="btn-group">
+								<button id="print" class="btn btn-default btn-print btn-permission bgtooltip" data-toggle="tooltip"
+									title="" data-original-title="打印">
+									<span class="glyphicon icon-print"></span>
+								</button>
+								<button id="export" class="btn btn-default btn-export btn-permission bgtooltip"
+									data-toggle="tooltip" title="" data-original-title="导出">
+									<span class="glyphicon icon-download"></span>
+								</button>
+							</div>
+						</div>
+						<!--右侧操作按钮 end-->
+
+					</div>
+					<div id="zbtz-data-caption" class="uf-datagrid-caption btn-query btn-permission">
+						共 <span id="billNum">0</span> 张单据 金额：<span id="billHJJE">0.00</span>
+					</div> 
+					<div class="bg-table-sub btn-query btn-permission">
+						<table id="zbfj-data" class="uf-datagrid">
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script src="../pub/bg.parse.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+	<script src="../pub/bgPub.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+	<script src="../pub/bgPubItemManager.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+	<script src="indexDecomposition.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+	<script src="../pub/bgPubLog.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+	<script src="../../pub/js/uf.core.min.js?rev=@@hash"></script>
+</body>
+
+</html>

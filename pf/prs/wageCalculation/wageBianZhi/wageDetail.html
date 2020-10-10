@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>记录明细</title>
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <script src="../../../pub/boot.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+    <link rel="stylesheet" type="text/css" href="../../common/common.css?rev=@@hash"/>
+    <link rel="stylesheet" type="text/css" href="wageBianZhi.css?rev=@@hash"/>
+    <style>
+            td.money {
+                text-align: right!important
+            }
+        </style>
+</head>
+<body>
+<!--整个容器 begin-->
+<div class="ufma-layout-updown">
+    <div class="ufma-layout-up">
+        <div class="container-fluid">
+            <div class="clearfix" style="margin: 20px 0;">
+                <span>人员代码：<span class="employee-code"></span></span>
+                <span style="padding-left: 30px">人员姓名：<span class="employee-name"></span></span>
+                <span style="padding-left: 30px">工资类别：<span class="prtype"></span></span>
+                <div class="fr">
+                    <button id="theFirst" class="btn btn-default glyphicon icon-fast-backward" title="第一个"></button>
+                    <button id="thePre" class="btn btn-default glyphicon icon-angle-left" title="上一个"></button>
+                    <button id="theNext" class="btn btn-default glyphicon icon-angle-right" title="下一个"></button>
+                    <button id="theLast" class="btn btn-default glyphicon icon-fast-forward" title="最后一个"></button>
+                </div>
+            </div>
+            <table id="nameTable" class="tableCommonStyle ufma-table" tool-bar="#rpt-tool-bar">
+            </table>
+        </div>
+    </div>
+
+    <div class="ufma-layout-down bordered-top">
+        <div class="text-right margin-right-30">
+            <button type="button" class="btn btn-sm btn-primary" id="btn-sure">保存</button>
+            <button type="button" class="btn btn-sm btn-default btn-close" id="btn-close">关闭</button>
+        </div>
+    </div>
+</div>
+<script src="../../common/common.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+<script src="wageDetail.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>指标授权</title>
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <script src="../../pub/boot.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+    <link rel="stylesheet" href="../budgetManage/budgetManage.css?rev=@@hash"/>
+    <link rel="stylesheet" href="../pub/common.css?rev=@@hash"/>
+  </head>
+
+  <body>
+    <div class="ufma-layout-updown" id="budgetAuth">
+      <div class="ufma-layout-up" style="overflow: hidden;">
+        <div id="authData" class="uf-datagrid" style="height: 300px;margin: 10px;"></div>
+        <div class="u-msg-footer bgMultiModal-footer2 btn-add">
+          <button type="button" id="btnAddRow" class="btn btn-sm btn-default bg-addRow">
+            <span class="glyphicon icon-plus btn-add"> &nbsp;新增表格行 </span>
+          </button>
+        </div>
+      </div>
+      <div class="ufma-layout-down bordered-top">
+        <div class="text-right margin-right-30">
+          <button
+            type="button"
+            class="btn btn-sm btn-primary btn-save"
+            id="btn-save"
+          >
+            保存
+          </button>
+          <button
+            type="button"
+            class="btn btn-sm btn-default btn-close"
+            id="btn-close"
+          >
+            关闭
+          </button>
+        </div>
+      </div>
+    </div>
+    <script src="../pub/bg.parse.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+    <script src="optAuth.js" type="text/javascript" charset="utf-8"></script>
+    <script src="../pub/bgPub.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+  </body>
+</html>

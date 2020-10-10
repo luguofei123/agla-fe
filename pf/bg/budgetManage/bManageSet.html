@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>指标控制设置</title>
+		<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+        <script src="../../pub/boot.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+		<style>
+		
+		</style>
+	</head>
+
+	<body>
+		<div class="ufma-layout-updown">
+            <form id="frmBookBfr" class="container-fluid form-horizontal">
+                <div class="form-row" style="margin-top:10px;">
+                    <div class="form-group">
+                        <label class="control-label" style="width:80px;">控制方式：</label>
+                        <div class="control-element " id="bgCtrlType" style="width:275px;">
+                            <select class="form-control" name="bgCtrlType">
+                                <option value="0">禁止</option>
+                                <option value="1">预警</option>
+                                <option value="2">不控制</option>
+                            </select>
+                            <label for="bgCtrlType" class="control-label hide"></label>
+                        </div>
+                    </div> 
+                    <div class="clearfix"></div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label class="control-label" style="width:80px;">预警百分比:</label>
+                        <div class="control-element" style="width:275px;">
+                            <input type="text" name="bgWarnRatio" class="form-control" value="100">
+                        </div>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+                <div class="form-row" style="margin-bottom:30px;">
+                    <div class="form-group">
+                        <label class="control-label" style="width:80px;">控制百分比:</label>
+                        <div class="control-element" style="width:275px;">
+                            <input type="text" name="bgCtrlRatio" class="form-control" value="100">
+                        </div>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+            </form>
+
+            <div>
+                <div class="text-right margin-right-30">
+                    <button type="button" class="btn btn-sm btn-default btn-primary btn-save" id="btnSave">确定</button>
+                    <button type="button" class="btn btn-sm btn-default btn-cancel" id="btnClose"> 取消</button>
+                </div>
+            </div>
+		</div>
+		<script src="bManageSet.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+	</body>
+
+</html>

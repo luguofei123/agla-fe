@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>指标调剂申请</title>
+    <meta
+      content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
+      name="viewport"
+    />
+    <script
+      src="../workFlow/workflow-main.js?rev=@@hash"
+      type="text/javascript"
+      charset="utf-8"
+    ></script>
+    <script
+      src="../workFlow/workflow-vendor.js?rev=@@hash"
+      type="text/javascript"
+      charset="utf-8"
+    ></script>
+    <script
+      src="../../pub/boot.js?rev=@@hash"
+      type="text/javascript"
+      charset="utf-8"
+    ></script>
+    <link rel="stylesheet" href="../../agla-trd/fileinput/fileinput.css" />
+    <link rel="stylesheet" href="../pub/bgPub.css?rev=@@hash" />
+    <link rel="stylesheet" href="../pub/common.css?rev=@@hash" />
+    <link rel="stylesheet" href="../pub/bgPubImpAttachment.css?rev=@@hash" />
+    <link rel="stylesheet" href="../pub/bgPubAuditModal.css?rev=@@hash" />
+    <link rel="stylesheet" href="../pub/bgPubWait.css?rev=@@hash" />
+    <link rel="stylesheet" href="../pub/bgPubLog.css?rev=@@hash" />
+    <link rel="stylesheet" href="../pub/bgPubProgress1.css?rev=@@hash" />
+    <link rel="stylesheet" href="workFlowTwoSidesAdjust.css?rev=@@hash" />
+    <!--工作流专用-->
+    <link rel="stylesheet" href="../workFlow/workflow-main.css?rev=@@hash" />
+    <link rel="stylesheet" href="../workFlow/workflow-vendor.css?rev=@@hash" />
+    <style>
+      .ufma-datatable tr th {
+        text-align: center !important;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div
+      id="workFlowTwoSidesAdjustApply"
+      class="container-fluid ufma-container"
+    >
+      <div class="workspace" style="padding: 6px 15px 15px;">
+        <!--工作区顶部 begin-->
+        <div class="workspace-top">
+          <div class="uf-portlet">
+            <div class="portlet-title">
+              <div class="caption">
+                <span class="caption-main">指标调剂申请</span>
+                <span>
+                  <div
+                    class="uf-treecombox ufma-combox-agency"
+                    id="cbAgency"
+                    name="agencyCode"
+                    idField="id"
+                    textField="codeName"
+                    pIdField="pId"
+                    readonly="true"
+                    icon="icon-unit"
+                    theme="label"
+                    autocomplete="on"
+                    placeholder="请选择单位"
+                  ></div>
+                </span>
+              </div>
+              <div class="actions">
+                <div class="btn-group">
+                  <button
+                    type="button"
+                    id="btnAdd"
+                    class="btn btn-sm btn-primary btn-add btn-permission"
+                  >
+                    新增
+                  </button>
+                </div>
+              </div>
+              <div class="portlet-body bordered bgPub-div-findMsg">
+                <form id="frmQuery" class="form-horizontal">
+                  <div class="actions">
+                    <button class="btn btn-primary btn-query btn-permission" id="btnQry" style="float: right;margin-right: 24px;">查询</button>
+                  </div>
+                    <div class="form-row">
+                      <div
+                        class="form-group"
+                        style="margin-left: 24px;"
+                        id="timeId"
+                      >
+                        <label class="control-label auto">录入日期：</label>
+                        <div
+                          id="startDate"
+                          class="uf-datepicker inline-block"
+                          style="width: 157px;"
+                        ></div>
+                        至
+                        <div
+                          id="endDate"
+                          class="uf-datepicker inline-block"
+                          style="width: 157px;"
+                        ></div>
+                      </div>
+                      <div class="clearfix"></div>
+                    </div>
+                  <div class="clearfix"></div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!--工作区中部 begin-->
+        <div class="workspace-center">
+          <div class="bgpub-bgnormal-postion-1" style="margin-top: 10px;">
+            <ul class="nav nav-tabs">
+              <!-- ysdp:20200728093234--nbhs--门户待办、已办事项跳转问题--zsj -->
+              <li class="active NAVSELECT sendN">
+                <a href="javascript:;" data-status="O">未提交</a>
+              </li>
+              <!-- ysdp:20200728093234--nbhs--门户待办、已办事项跳转问题--zsj -->
+              <li class="sendY">
+                <a href="javascript:;" data-status="A">已提交</a>
+              </li>
+              <li>
+                <a href="javascript:;" data-status="T">全部</a>
+              </li>
+            </ul>
+
+            <div class="bgpub-bgnormal-absolute-right">
+              <div class="iframeBtnsSearch hide">
+                <input
+                  type="text"
+                  class="searchHide focusOff bordered"
+                  placeholder="请输入要搜索的关键词"
+                />
+                <input type="hidden" class="searchValueHide" />
+                <button
+                  class="btn btn-default btn-sm btn-search"
+                  id="searchHideBtn"
+                >
+                  <i class="glyphicon icon-search"></i>
+                </button>
+              </div>
+              <!--   
+                避免样式错乱，等 打印可用 后放入btn-group
+                <button
+                  class="btn btn-default btn-print bgtooltip hide"
+                  data-toggle="tooltip"
+                  title="打印"
+                  id="budgetItemTwoSidesAdjust-print"
+                >
+                  <span class="glyphicon icon-print"></span>
+                </button> -->
+              <div class="btn-group">
+                <button
+                  id="export"
+                  class="btn btn-default btn-export bgtooltip"
+                  data-toggle="tooltip"
+                  title="导出"
+                  style="
+                    border-bottom-left-radius: 4px;
+                    border-top-left-radius: 4px;
+                  "
+                >
+                  <span class="glyphicon icon-upload"></span>
+                </button>
+              </div>
+            </div>
+            <!--右侧操作按钮 end-->
+          </div>
+          <!-- 表格 -->
+          <div
+            id="mainTableDiv-twoSidesAdjItem"
+            class="bgpub-bgnormal-postion-1 btn-query"
+          >
+            <table
+              id="mainTable-twoSidesAdjItem"
+              class="ufma-table dataTable bgpub-datatable-tbl"
+            ></table>
+          </div>
+          <div class="bgpub-div-fixBottom-1" id="fixDiv-twoSidesAdjItem">
+            <div class="bgpub-bgnormal-postion-1 btn-query">
+              <!-- 单据数量和指标金额的信息显示 -->
+              <div
+                id="tableTotalShow-twoSidesAdjItem"
+                class="bgpub-bgnormal-postion-1 mt8 mb3"
+              >
+                <span>共&nbsp;</span
+                ><span id="span-billsCount-twoSidesAdjItem">0</span
+                ><span>&nbsp;张单据&nbsp;&nbsp;&nbsp; 指标金额：&nbsp;</span
+                ><span id="span-billsTotalMoney-twoSidesAdjItem">0.00</span>
+              </div>
+            </div>
+            <div class="bgpub-bgnormal-postion-1">
+              <div class="bgpub-normal-floatLeft-1">
+                <label
+                  class="mt-checkbox mt-checkbox-single mt-checkbox-outline bgpub-top-4"
+                >
+                  <input
+                    id="input-seleAll-twoSidesAdjItem"
+                    type="checkbox"
+                    class="checkboxes"
+                    value=""
+                  />
+                  &nbsp; 全选
+                  <span></span>
+                </label>
+              </div>
+              <div class="bgpub-normal-floatLeft-1">
+                <button
+                  type="button"
+                  id="btn-del-twoSidesAdjItem"
+                  class="btn btn-sm btn-default btn-delete bgpub-normal-leftButton-1 btn-permission"
+                >
+                  删除
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--工作流--zsj-->
+    <div id="openWork"></div>
+    <script
+      src="../pub/bgPub.js?rev=@@hash"
+      type="text/javascript"
+      charset="utf-8"
+    ></script>
+    <script
+      src="../pub/bgPubAuditModal.js?rev=@@hash"
+      type="text/javascript"
+      charset="utf-8"
+    ></script>
+    <script
+      src="../pub/bgPubWait.js?rev=@@hash"
+      type="text/javascript"
+      charset="utf-8"
+    ></script>
+    <script
+      src="../pub/bgPubLog.js?rev=@@hash"
+      type="text/javascript"
+      charset="utf-8"
+    ></script>
+    <script
+      src="../pub/bgPubProgress1.js?rev=@@hash"
+      type="text/javascript"
+      charset="utf-8"
+    ></script>
+    <script
+      src="../pub/bgPubItemManager.js?rev=@@hash"
+      type="text/javascript"
+      charset="utf-8"
+    ></script>
+    <script
+      src="workFlowTwoSidesAdjust.js?rev=@@hash"
+      type="text/javascript"
+      charset="utf-8"
+    ></script>
+  </body>
+</html>

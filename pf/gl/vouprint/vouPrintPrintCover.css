@@ -1,0 +1,117 @@
+#vouPrintPrintCover .ufma-layout-up{
+	/*padding-top: 10px;*/
+	/*height: 372px;*/
+	/*padding-bottom: 10px;*/
+}
+
+#vouPrintPrintCover .container-fluid{
+	padding: 0!important;
+	margin: 0!important;
+}
+#vouPrintPrintCover .cover-box{
+	border: 2px solid #D9D9D9;
+	width: 100%;
+	/*width: 840px;
+	height: 508px;*/
+	margin: 0 auto;
+	padding-bottom: 18px;
+}
+
+#vouPrintPrintCover .cover-box h5{
+	font-size: 20px;
+	line-height: 26px;
+	margin: 18px 0 14px;
+	text-align: center;
+}
+
+#vouPrintPrintCover .cover-box form{
+	padding: 0 32px 0 78px;
+}
+#vouPrintPrintCover .cover-box .form-group{
+	margin: 0!important;
+	padding: 0;
+}
+#vouPrintPrintCover .cover-box .form-group.col-xs-5{
+	width: 50%;
+}
+#vouPrintPrintCover .cover-box .control-label{
+	line-height: 30px;
+	width: 70px;
+	padding: 3px 0;
+}
+#vouPrintPrintCover .cover-box .control-element{
+	line-height: 30px;
+	padding: 3px 0;
+}
+#vouPrintPrintCover .cover-box .control-element input{
+	line-height: 29px;
+	height: 30px;
+	padding-bottom: 0;
+	outline: none;
+	border: none;
+	border-bottom: 1px solid transparent;
+}
+#vppcAgencyName{
+	width: 525px;
+}
+#vppcSetYear{
+	width: 50px;
+}
+#vppcFisPerd{
+	width: 30px;
+}
+
+#vouPrintPrintCover table{
+	margin-bottom: 0!important;
+}
+#vouPrintPrintCover table td{
+	padding: 10px 8px;
+	line-height: 20px;
+}
+#vouPrintPrintCover table td:first-child{
+	width: 120px;
+}
+/*#vouPrintPrintCover table td .pull-right{
+	margin-right: 40px;
+}*/
+#vouPrintPrintCover table tr.notfirst td:first-child{
+	padding: 5px 8px;
+	line-height: 30px;
+}
+#vouPrintPrintCover table tr.notfirst td{
+	padding: 5px 40px 5px 8px;
+	line-height: 30px;
+}
+#vouPrintPrintCover table input{
+	border: none;
+	border-bottom: 1px solid transparent;
+	outline: none;
+	line-height: 29px;
+	height: 30px;
+	padding-bottom: 0;
+}
+#vouPrintPrintCover table input[type='text']{
+	width: 50px;
+	text-align: center;
+}
+#vouPrintPrintCover table .mt-checkbox{
+	margin-bottom: 0;
+	font-weight: normal;
+	width: 25%;
+	/*margin-right: 50px;*/
+}
+#vouPrintPrintCover table tr.fj td{
+	padding: 7px 8px;
+}
+#vouPrintPrintCover table tr.fj td:first-child{
+	line-height: 60px;
+	vertical-align: middle;
+}
+#vouPrintPrintCover table tr.fj textarea{
+	line-height: 20px;
+	font-size: 14px;
+	border: none;
+	outline: none;
+	height: 66px;
+	width: 100%;
+}

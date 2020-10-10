@@ -1,0 +1,182 @@
+﻿<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>存现</title>
+		<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+		<script src="../../../pub/boot.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+		<style>
+			.form-horizontal .form-row {
+				margin-bottom: 5px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div id="coaAccEdit" class="ufma-layout-updown">
+			<div class="ufma-layout-up">
+				<div class="container-fluid form-horizontal" style="padding:15px 30px 10px;overflow-y: scroll;height:400px;">
+					<div class="form-row" style="margin-top:-10px;">
+						<div class="form-group required">
+							<label class="control-label" style="margin-left:14px;">现金账簿：</label>
+							<div class="control-element">
+								<div id='cashBook' class="uf-treecombox ufma-combox-cash" idField="accountbookGuid" textField="accountbookName" leafRequire=true name="cashBook" style="width:380px"></div>
+							</div>
+						</div>
+						<div class="clearfix"></div>
+					</div>
+					<div class="form-row">
+						<div class="form-group">
+							<label class="control-label" style="margin-left:14px;">账簿类型：</label>
+							<div class="control-element" style="padding-top:3px;margin-left:5px;">
+								<a name="bookType" class="bookTypeCha label label-radio selected" id="bankType" value="2" style="height: 26px;">银行账簿</a>
+								<a name="bookType" class="bookTypeCha label label-radio" value="3" id="zeroType" style="height: 26px;">零余额账簿</a>
+							</div>
+						</div>
+						<div class="clearfix"></div>
+					</div>
+					<div class="form-row bankbook">
+						<div class="form-group required">
+							<label class="control-label" style="margin-left:14px;">银行账簿：</label>
+							<div class="control-element">
+								<div id='bankBook' class="uf-treecombox ufma-combox-bank" idField="accountbookGuid" textField="accountbookName" leafRequire=true style="width:380px"></div>
+							</div>
+						</div>
+						<div class="clearfix"></div>
+					</div>
+					<div class="form-row hide zerobook">
+						<div class="form-group required">
+							<label class="control-label auto">零余额账簿：</label>
+							<div class="control-element">
+								<div id='zeroBook' class="uf-treecombox ufma-combox-zero" idField="accountbookGuid" textField="accountbookName" leafRequire=true style="width:380px"></div>
+							</div>
+						</div>
+						<div class="clearfix"></div>
+					</div>
+					<div class="panel ufma-panel" style="width:700px;margin:0;">
+						<!--为IE8-->
+						<div class="panel-body" style="padding:4px 16px;min-height:200px;">
+							<form id="panelBody" class="form-horizontal">
+								<div class="form-row">
+									<div class="form-group required">
+										<label class="control-label" style="margin-left:56px;">编号：</label>
+										<div class="control-element" style="width:200px;">
+											<input id="jouNo" type="text" name="jouNo" class="form-control">
+										</div>
+									</div>
+									<div class="form-group required">
+										<label class="control-label" style="margin-left:32px;">登账日期：</label>
+										<div class="control-element">
+											<div id="jouDate" name="jouDate" class="uf-datepicker" style="width:220px;"> </div>
+										</div>
+									</div>
+									<div class="clearfix"></div>
+								</div>
+								<div class="form-row">
+									<div class="form-group" id="summaryNeed">
+										<label class="control-label" style="margin-left:56px;">摘要：</label>
+										<div class="control-element">
+											<input type="text" id="summary" name="summary" class="form-control" placeholder="请录入摘要" style="width:200px;">
+										</div>
+									</div>
+									<!--bug79503--经海哥确认将借贷注释，默认传值，原借贷位置空出-->
+									<!--<div class="form-group">
+										<label class="control-label auto" style="margin-left:32px;">借贷方向：</label>
+										<div class="control-element pr10" name="drCr" style="padding-top:3px;margin-left:5px;">
+											<a name="drCr" class="drCrpre label label-radio selected" id="drCrJie" value="1" style="width:46px;height: 26px;">借</a>
+											<a name="drCr" class="drCrpre label label-radio" value="-1" id="drCrDai" style="width:46px;height: 26px;">贷</a>
+										</div>
+									</div>-->
+									<div class="clearfix"></div>
+								</div>
+								<div class="form-row">
+									<div class="form-group required">
+										<label class="control-label" style="margin-left:56px;">金额：</label>
+										<div class="control-element">
+											<input id="money" type="text" name="money" class="form-control" style="width:200px;">
+										</div>
+									</div>
+									<div class="form-group">
+										<label class="control-label auto" style="margin-left:32px;">资金类型：</label>
+										<div class="control-element pr10" name="cashType" style="padding-top:3px;margin-left:5px;">
+											<a name="cashType" class="hxType label label-radio" id="lastYear" value="1" style="width:80px;height: 26px;">上年结转</a>
+											<a name="cashType" class="hxType label label-radio selected" value="2" id="thisYear" style="width:80px;height: 26px;">本年预算</a>
+										</div>
+									</div>
+									<div class="clearfix"></div>
+								</div>
+								<div class="form-row">
+									<div class="form-group">
+										<label class="control-label" style="margin-left:27px;">是否回单：</label>
+										<div class="control-element pr10" name="isReceipt" style="padding-top:3px;margin-left:5px;">
+											<a name="isReceipt" class="isReceiptType label label-radio" id="isyes" value="1" style="width:46px;height: 26px;">是</a>
+											<a name="isReceipt" class="isReceiptType label label-radio selected" value="0" id="isno" style="width:46px;height: 26px;">否</a>
+										</div>
+									</div>
+									<div class="form-group">
+										<label class="control-label" style="margin-left:148px;">类型：</label>
+										<div class="control-element pr10" name="typetwo" style="padding-top:3px;margin-left:5px;">
+											<a name="type" class="typetwo label label-radio selected" id="basic" value="1" style="width:46px;height: 26px;">基本</a>
+											<a name="type" class="typetwo label label-radio" value="2" id="project" style="width:46px;height: 26px;">项目</a>
+										</div>
+									</div>
+									<div class="clearfix"></div>
+								</div>
+								<div class="form-row">
+									<div class="form-group">
+										<label class="control-label" style="margin-left:27px;">凭证字号：</label>
+										<div class="control-element">
+											<select id="vouType" name="vouType" class="bordered-input" style="width: 60px;"></select>
+											<select id="vouFisPerd" name="vouFisPerd" class="bordered-input" style="width: 60px;"></select>
+											<input type="text" name="vouNo" class="form-control" style="width:75px;" id="vouNo" maxlength="4">
+										</div>
+									</div>
+									<div class="form-group">
+										<label class="control-label" style="margin-left:45px;">票据号：</label>
+										<div class="control-element">
+											<input type="text" name="billNo" id="billNo" class="form-control" placeholder="请录入票据号" style="width:200px;">
+										</div>
+									</div>
+									<div class="clearfix"></div>
+								</div>
+								<div class="form-row">
+									<div class="form-group dealWithClass">
+										<label class="control-label" style="margin-left:40px;">经办人：</label>
+										<div class="control-element">
+											<input type="text" name="dealWith" id="dealWith" class="form-control" placeholder="请录入经办人" style="width:200px;">
+										</div>
+									</div>
+									<div class="form-group">
+										<label class="control-label" style="margin-left:60px;">备注：</label>
+										<div class="control-element">
+											<input type="text" id="remark" name="remark" class="form-control" placeholder="请录入备注" style="width:200px;">
+										</div>
+									</div>
+									<div class="clearfix"></div>
+								</div>
+								<div class="form-row" style="width:650px;margin-top:-7px;">
+									<div id="planItemMore"></div>
+									<div class="clearfix"></div>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="ufma-layout-down bordered-top">
+				<div class="text-right margin-right-30">
+					<button type="button" class="btn btn-sm btn-primary  btn-saveadd state-edit btn-permission" id="btnAddAll">保存并新增</button>
+
+					<button type="button" class="btn btn-sm btn-default  btn-save btn-permission" id="btnSave">保存</button>
+
+					<button type="button" class="btn btn-sm btn-default" id="btnClose"> 关闭</button>
+				</div>
+			</div>
+		</div>
+		<script src="depositCash.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+		<script src="../dm.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+	</body>
+
+</html>

@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>职务工资汇总表</title>
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <script src="../../../pub/boot.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+    <link rel="stylesheet" type="text/css" href="wageDutyReport.css?rev=@@hash"/>
+    <link rel="stylesheet" type="text/css" href="../../common/common.css?rev=@@hash"/>
+    <style>
+        .tooltip .tooltip-inner {
+            padding: 6px;
+        }
+        #atree label {
+		    margin-left: 35px;
+		    margin-top: 5px;
+		    padding-left: 24px;
+		}
+		
+		#atree label.checkAll {
+		    margin-left: 10px;
+		    margin-top: 5px;
+		    padding-left: 24px;
+		}
+		
+		.colorY {
+			font-weight:bold;
+			font-size:14px
+		}
+		
+		#payNoMo {
+			width : 45px;
+		}
+    </style>
+</head>
+<body>
+<!--整个容器 begin-->
+<div id="wageSlipPrint" class="container-fluid ufma-container">
+    <div id = "open-plus-reduce" style="display: none"></div>
+    <div class="workspace">
+        <div class="prs-workspace workspace-inner">
+            <div class="ufma-portlet" style="padding-bottom: 0">
+                <div class="uf-selete-box bordered-bottom">
+                    <div class="uf-title">职务工资汇总表</div>
+                </div>
+            </div>
+            <div class="rpt-acc-box">
+                <div class="rpt-acc-box-left">
+                    <div class="rpt-atree-box-body">
+                        <ul id="atree" class="ufmaTree ztree atree-ztree" style="margin: -5px 0px 0 -5px;"></ul>
+                    </div>
+                </div>
+                <div class="rpt-acc-box-right">
+                    <div class="ufma-portlet">
+                        <div class="portlet-body bordered clearfix" style="position: relative">
+                            <div class="query-box-left fl">
+                                <form id="frmQuery" class="form-horizontal">
+                                    <div class="form-row">
+                                        <div class="form-group">
+                                            <label class="control-label">部门：</label>
+                                            <div class="control-element">
+                                                <div id="departmentCode" name="departmentCode" class="ufma-textboxlist"
+                                                      style="width: 180px"></div>
+                                            </div>
+                                        </div>
+                                        <div class="clearfix"></div>
+                                    </div>
+                                    <div class="form-row">
+                                        <div class="form-group">
+                                            <label class="control-label">工资数据来源：</label>
+                                            <div class="control-element">
+                                                <div class="control-element source" style="width: 270px;height: 32px">
+                                                    <button class="btn btn-primary select-item" value="0">未结账当月数据</button>
+                                                    <button class="btn btn-default select-item" value="1">已结账历史数据</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group" style="width: 212px;height: 30px">
+                                            <div class="control-element month-element hidden" style="width:48px;">
+                                                <!--<div id="startMonth" name="startMonth" class="uf-combox">-->
+                                                <!--</div>-->
+                                                <select id="startMonth" name="startMonth">
+                                                </select>
+                                            </div>
+                                            <span class="split month-element hidden">-</span>
+                                            <div class="control-element month-element hidden" style="width:48px;">
+                                                <!--<div id="endMonth" id="endMonth" class="uf-combox">-->
+                                                <!--</div>-->
+                                                <select id="endMonth" name="endMonth"></select>
+                                            </div>
+                                        </div>
+                                        <div class="form-group" style="display:none">
+                                            <label class="control-label" style="width: 120px">查询方案：</label>
+                                            <div class="control-element">
+                                                <div id="serchScheme" name="serchScheme" class="uf-treecombox"></div>
+                                            </div>
+                                            <div class="control-element">
+                                                <span id="btn-set" class="btn-permission btn-setup glyphicon icon-setting"></span>
+                                            </div>
+                                        </div>
+                                        <div class="clearfix"></div>
+                                    </div>
+                            </form>
+                        </div>
+
+                        <div class="query-box-right" style="position:absolute;top: 10px;right: 10px">
+                            <!--<label class="label label-more fr" data-target="#queryMore">更多<i class="glyphicon icon-angle-bottom"></i></label>-->
+                            <div class="query-btn" style="margin-left: 30px">
+                                <button id="btnQuery" class="btn btn-primary btn-query btn-permission">查询</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="table-sub">
+                    <div class="table-sub-action fr">
+                        <div id="dtToolbar" class="btn-group">
+                        </div>
+                        <div style="margin-left:4px;position:relative;display:inline-block;">
+                            <button class="btn btn-default" id="colAction">
+                                <span class="glyphicon icon-list-all"></span>
+                                <span class="glyphicon icon-angle-bottom"></span>
+                            </button>
+                            <div class="rpt-funnel rpt-funnelBox rpt-funnelBoxList hidden"
+                                 style="position: absolute;z-index: 1002">
+                                <div id="colList" class="rpt-colList clearfix">
+                                </div>
+                                <p class="rpt-colBtn" style="float: none">
+                                    <button id="addCol" class="btn btn-primary">确定</button>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <table id="mainTable" tool-bar="#tool-bar" class="ufma-table uf-rpt-table">
+                </table>
+            </div>
+        </div>
+    </div>
+    <!-- <div id="tool-bar" class="ufma-tool-bar" style="margin-left: 252px">
+        <div class="tool-bar-body">
+        </div>
+    </div> -->
+</div>
+</div>
+<script src="../../common/common.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+<script src="wageDutyReport.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+</body>
+</html>

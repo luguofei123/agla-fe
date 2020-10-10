@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>账务查询</title>
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    
+    <script src="../../../pub/boot.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+	<link rel="stylesheet" href="../rptCommon/rptCommon.css?rev=@@hash" />
+	<style>
+		table.dataTable thead .sorting_asc {
+			background-image: none;
+		}
+	</style>
+</head>
+<body id="accountingQuery">
+<div class="container-fluid ufma-container">
+	<input type="hidden" value="accQuery" data-name="accountingQuery" class="rptType"/>
+
+	<!--工作区 begin-->
+	<div class="workspace">
+		<!--账务查询工作区 begin-->
+    	<div class="rpt-workspace">
+			<div class="rpt-selete-box bordered-bottom" style="margin-top:-8px;">
+				<div class="rpt-title">账务查询</div>
+				<div class="rpt-method-tip">
+					
+				</div>
+				<div class="rpt-clear"></div>
+			</div>
+			
+			<div class="rpt-acc-box">
+				<div class="rpt-acc-box-left">
+					<div class="rpt-atree-box-head">
+						<div class="input-group rpt-input-group">
+                            <input type="text" id="key" value="" class="form-control empty" placeholder="请输入搜索关键词">
+                            <span class="input-group-addon" id="btn-search"><span class='glyphicon icon-search'></span></span>
+                        </div>
+					</div>
+					<div class="rpt-atree-box-body">
+						<ul id="atree" class="ufmaTree ztree atree-ztree" style="margin: -5px 0px 0 -5px;"></ul>
+					</div>
+				</div>
+				<div class="rpt-acc-box-right">
+					<div class="rpt-acc-sub">
+						<ul>
+							<li>
+								<label>已选单位：</label>
+								<span></span>
+							</li>
+							<li>
+								<label>已选账套：</label>
+								<span></span>
+							</li>
+						</ul>
+					</div>
+					<div class="rpt-acc-nav">
+						<ul>
+							<li data-href="../../../voucherQuery/vouBox.html?pageFrom=accQuery" class="btn-query" data-title="账务查询-凭证箱">
+								<i class="glyphicon icon-voubox"></i>
+								<span>凭证箱</span>
+							</li><!--
+							--><li data-href="../../../glBal/glBal.html?pageFrom=accQuery" class="btn-query" data-title="账务查询-余额表">
+								<i class="glyphicon icon-glBal"></i>
+								<span>余额表</span>
+							</li><!--
+							--><li data-href="../../../dtlLedger/dtlLedger.html?pageFrom=accQuery" class="btn-query" data-title="账务查询-明细账">
+								<i class="glyphicon icon-journal"></i>
+								<span>明细账</span>
+							</li><!--
+							--><li data-href="../../../glLedger/glLedger.html?pageFrom=accQuery" class="btn-query" data-title="账务查询-总账">
+								<i class="glyphicon icon-ledger "></i>
+								<span>总账</span>
+							</li>
+						</ul>
+					</div>
+					<div class="rpt-acc-tab">
+						<table id="accTable" class="ufma-table rpt-table-tab" width="100%">
+							<thead>
+								<th>期间</th>
+								<th>状态</th>
+								<th>凭证总数</th>
+								<th>未审核数</th>
+								<th>审核数</th>
+								<!--<th>复审数</th>-->
+								<th>记账数</th>
+							</thead>
+							<tbody></tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+			
+		</div>
+		<!--账务查询工作区 end-->
+	</div>
+	<!--工作区 end-->
+</div>
+
+
+
+<script src="../rptCommon/rptCommon.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+<script src="accountingQuery.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+</body>
+</html>

@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>对账方案-设置方案内容</title>
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <script src="../../../pub/boot.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+    <link rel="stylesheet" href="bankBalanceAccSche.css?rev=@@hash" />
+</head>
+
+<body>
+    <div class="ufma-layout-updown" id="accScheModal">
+        <div class="ufma-layout-up">
+            <div class="container-fluid">
+                <form id="accScheForm" class="form-horizontal" style="margin:10px -15px;">
+                    <input type="hidden" name="schemaGuid" id="sche-schemaGuid" value="" class="isClear" />
+                    <input type="hidden" name="lastVer" id="sche-lastVer" value="" class="isClear" />
+                    <input type="hidden" name="isUpdate" id="sche-isUpdate" value="" class="isClear" />
+                    <div class="form-row">
+                        <div class="form-group ml0" style="margin-left: 26px; margin-bottom: 18px;margin-top:10px">
+                            <label class="control-label em4">方案名称：</label>
+                            <div class="control-element pr">
+                                <input type="text" name="schemaName" id="sche-schemaName" class="form-control w300 isClear">
+                            </div>
+                        </div>
+                        <div class="form-group ml0" style="margin-left: 55px; margin-bottom: 18px;margin-top:10px">
+                            <label class="control-label em4">方案描述：</label>
+                            <div class="control-element">
+                                <input type="text" name="remark" id="sche-remark" class="form-control w300 isClear">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="row ml0">
+                            <div class="col-xs-5">
+                                <label class="control-label em4">开户行：</label>
+                                <div class="control-element">
+                                    <input type="hidden" name="bankCode" id="sche-bankCode">
+                                    <input type="text" name="bank" id="sche-bank" class="form-control w300 isClear">
+                                </div>
+                            </div>
+                            <div class="col-xs-7" style="margin-left: -5px;">
+                                <label class="control-label em4">银行账号：</label>
+                                <div class="control-element">
+                                    <input type="text" name="bankAccount" id="sche-bankAccount" maxlength="30" class="form-control w300 isClear">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="row m0">
+                            <div class="col-xs-5">
+                                <label class="control-label em4">对账方向：</label>
+                                <div class="control-element">
+                                    <label class="mt-checkbox mt-checkbox-outline margin-right-8 mt5">
+                                        <input class="" type="checkbox" name="isOpposite" value="1" data-elename="日记账借方与对账单贷方核对" checked> 日记账借方与对账单贷方核对
+                                        <span></span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="ufma-report-body">
+                            <div class="ufma-report-tabs">
+                                <ul class="nav nav-tabs"></ul>
+                            </div>
+                            <div class="cont-tabs">
+                                <!-- 单位日记账 start -->
+                                <div id="agencyBox" class="cont-tabs0 p15 br bb bl">
+                                  <!--  新需求-->
+                                   <!-- <div class="uf-line-title">
+                                        <div class="uf-line-title-font">日记账来源</div>
+                                    </div>
+                                    <div class="ml10 mt10" id="journalSrc">
+                                    </div>
+                                    <div class="mt8 ml10 check-list-box">
+                                        <span>凭证状态：</span>
+                                        <label class="mt-checkbox mt-checkbox-outline margin-right-8">
+                                            <input class="" type="checkbox" name="optCode" value="O" data-elename="未审核" data-searchtype="01" checked> 未审核
+                                            <span></span>
+                                        </label>
+                                        <label class="mt-checkbox mt-checkbox-outline margin-right-8">
+                                            <input class="" type="checkbox" name="optCode" value="A" data-elename="已审核" data-searchtype="01" checked> 已审核
+                                            <span></span>
+                                        </label>
+                                        <label class="mt-checkbox mt-checkbox-outline margin-right-8">
+                                            <input class="" type="checkbox" name="optCode" value="P" data-elename="已记账" data-searchtype="01" checked> 已记账
+                                            <span></span>
+                                        </label>
+                                    </div>-->
+                                    <!-- <div class="mt8 ml10 check-list-box" id="vouType">
+                                        <span>凭证类型：</span>
+                                    </div>
+                                    <div class="mt8 ml10 check-list-box" id="vouSource">
+                                        <span>凭证来源：</span>
+                                    </div> -->
+                                    <!-- <div class="uf-dashed-hr"></div> -->
+
+                                    <div class="uf-line-title ">
+                                        <div class="uf-line-title-font">设置数据范围</div>
+                                    </div>
+                                    <div id="agencyRange" class="mt10"></div>
+                                    <div class="tc p10 bl br bb">
+                                        <button class="btn btn-default pl30 pr30 btn-add btn-permission" id="addEditRow">
+                                            <span class="icon icon-add vm"></span>&nbsp;&nbsp;新增行
+                                        </button>
+                                    </div>
+                                    <div class="uf-dashed-hr"></div>
+
+                                    <div class="uf-line-title mt10">
+                                        <div class="uf-line-title-font">设置单位日记账格式</div>
+                                    </div>
+                                    <div class="bt bl br mt10 pr">
+                                        <table id="agencyData" class="ufma-table table-thead-center"></table>
+                                        <div id="agencyDataCol" class="box-col">
+                                            <div style="max-height: 400px;overflow-y: auto">
+                                                <ul class="box-col-list">
+                                                </ul>
+                                            </div>
+                                            <div class="box-col-btns">
+                                                <span class="uf-primary">确定</span>
+                                                <span class="uf-gray">重置</span>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <!-- 单位日记账 end -->
+                                    <div class="uf-dashed-hr"></div>
+                                    <!-- 银行对账单 begin -->
+                                    <div class="uf-line-title mt10">
+                                        <div class="uf-line-title-font">设置银行对账单格式</div>
+                                       <!-- <div class="uf-line-title-action">
+                                            <button class="btn btn-default btn-permission btn-setting btn-setup btn-ajax" id="setBankBtn">设置
+                                            </button>
+                                        </div>-->
+                                        <div class="inline-block" id="setBankBtn">
+                                            <!-- 雪蕊说先注释掉,因为日记账的辅助项已经注释掉了  guohx 20200506-->
+                                            <span class="icon icon-setting btn-permission btn-setup f18 vm uf-primary cp hide"></span>
+                                        </div>
+                                    </div>
+                                    <div class="bt bl br mt10">
+                                        <table id="bankData" class="ufma-table table-thead-center"></table>
+                                    </div>
+                                    <!-- 银行对账单 end -->
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="ufma-layout-down bordered-top">
+            <div class="text-right margin-right-30">
+                <button type="button" class="btn btn-primary btn-permission btn-saveadd btn-ajax">保存并新增</button>
+                <button type="button" class="btn btn-primary btn-permission btn-save btn-ajax"> 保存</button>
+                <button type="button" class="btn btn-default btn-close"> 取消</button>
+            </div>
+        </div>
+    </div>
+    <script src="setAccSche.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+</body>
+<style type="text/css">
+	.u-overlay{
+		background: #FFFFFF !important;
+	}
+</style>
+</html>

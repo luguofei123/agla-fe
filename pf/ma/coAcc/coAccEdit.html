@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+  		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>账套管理-操作</title>
+  		<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+		<script src="../../pub/boot.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+		<link rel="stylesheet" type="text/css" href="coAccEdit.css?rev=@@hash"/>
+	</head>
+	<body id="coAccEdit">
+		<div class="ufma-layout-updown">
+		    <div class="ufma-layout-up">
+		        <div class="container-fluid">
+		        	<div class="ufma-layout ufma-layout-slider-xm ufma-layout-fixed-slider ufma-layout-fixed-slider-right">
+		                <form id="coAccEdit" class="ufma-layout-content" style="margin-top: 20px;">
+		                	<!--操作部分 begin-->
+		                	<div class="panel ufma-panel">
+		                		<div class="panel-collapse collapse in" style="border-top: 0;">
+		                			<div class="panel-body">
+		                				<div class="container-fluid form-horizontal">
+		                					<div class="form-horizontal">
+												<input type="hidden" name="chrCId" id="caChrId" value="" data-enabled="1">
+												<div class="form-group">
+													<label class="control-label em6">单位：</label>
+													<div class="control-element">
+														<!--<select class="form-control" name="agency" id="caAddAgency" require-all=1 style="display: none;"></select>-->
+														<div class="ufma-treecombox" id="treeAgency"></div>
+													</div>
+												</div>
+												<div class="form-group required">
+													<label class="control-label em6">账套编码：</label>
+													<div class="control-element">
+														<input type="text" name="chrCode" id="caEditChrCode" class="form-control">
+													</div>
+												</div>
+												<div class="form-group required">
+													<label class="control-label em6">账套名称：</label>
+													<div class="control-element">
+														<input type="text" name="chrName" id="caEditChrName" class="form-control">
+													</div>
+												</div>		
+												<div class="form-group">
+													<label class="control-label em6">科目体系：</label>
+													<div class="control-element">
+														<select class="form-control" name="eleAcc" id="caEditEleAcc" require-all=1>
+															<!-- 科目体系 开始位置 -->
+														</select>
+													</div>
+													<label class="mt-checkbox mt-checkbox-single mt-checkbox-outline coaAcc-right" style="margin-left: 100px;margin-top:6px;">
+				                                        <input type="checkbox" class="datatable-group-checkable" name="isCashFlowAccount" id="isCashFlowAccount"/>核算现金流量
+				                                        <span></span>
+				                                    </label>
+												</div>
+												<div class="form-group">
+													<label class="control-label em6">财务负责人：</label>
+													<div class="control-element">
+														<input type="text" name="fiLeader" id="caFiLeader" class="form-control" placeholder="请输入财务负责人"></span>
+													</div>
+												</div>
+												<div class="form-group" id="caCarryOverTypes" style="display: none;">
+													<label class="control-label em6">结转方式：</label>
+													<div class="control-element">
+														<div class="btn-group" data-toggle="buttons">
+															<label class="btn btn-default active">
+															<input type="radio" class="toggle" name="carryOverType" value="2" checked="checked"> 年结 </label>
+															<label class="btn btn-default">
+															<input type="radio" class="toggle" name="carryOverType" value="1"> 月结 </label>
+														</div>
+													</div>
+												</div>
+												<div class="form-group" id="caIsParallel">
+													<label class="control-label em6">平行记账模式：</label>
+													<div class="control-element">
+														<div class="btn-group btn-group-sm" data-toggle="buttons">
+															<label class="btn btn-sm btn-default" disabled="true">
+																<input type="radio" name="isParallel" id="isParallel">是
+															</label>
+															<label class="btn btn-sm btn-default active" disabled="true">
+																<input type="radio" name="isParallel" checked="true"  id="isParallels">否
+															</label>
+														</div>
+														<!--<label class="mt-checkbox mt-checkbox-single mt-checkbox-outline coaAcc-right">
+					                                        <input type="checkbox" class="datatable-group-checkable" name="isParallel" id="isParallel"/>平行记账
+					                                        <span></span>
+					                                    </label>-->
+														<label class="mt-radio coaAcc-right ispx" style="display: none;">
+					                                        <input type="radio" name="isDoubleVou"  id="isDoubleVou" checked="true"/>单凭证
+					                                        <span></span>
+					                                    </label>
+														<label class="mt-radio coaAcc-right ispx" style="display: none;">
+					                                        <input type="radio" name="isDoubleVou"   id="isDoubleVous"/>双凭证
+					                                        <span></span>
+					                                    </label>
+													</div>
+												</div>
+												<div class="form-group" id="agencyType">
+													<label class="control-label em6">单位类型：</label>
+													<div class="control-element">
+														<select class="form-control" name="" id="agencyTypecode" require-all=1>
+														</select>
+													</div>
+												</div>
+												<div class="form-group" id="taxpayerType">
+													<label class="control-label em6">纳税人类型：</label>
+													<div class="control-element">
+														<select class="form-control" name="" id="taxpayerTypecode" require-all=1>
+														</select>
+													</div>
+												</div>
+												<div class="form-group" id="enablePeriods" style="display: none !important;">
+													<label class="control-label em6">启用期间：</label>
+													<div class="control-element">
+														<select class="form-control" name="" id="enablePeriod" require-all=1>
+															<option value='1'>第一期间</option>
+															<option value='2'>第二期间</option>
+															<option value='3'>第三期间</option>
+															<option value='4'>第四期间</option>
+															<option value='5'>第五期间</option>
+															<option value='6'>第六期间</option>
+															<option value='7'>第七期间</option>
+															<option value='8'>第八期间</option>
+															<option value='9'>第九期间</option>
+															<option value='10'>第十期间</option>
+															<option value='11'>第十一期间</option>
+															<option value='12'>第十二期间</option>
+														</select>
+													</div>
+												</div>
+											</div>
+		                				</div>
+		                			</div>
+		                		</div>
+		                	</div>
+		                	<!--操作部分 end-->
+		                </form>
+		                
+		                <!--右侧 begin-->
+		            	<div class="ufma-layout-slider right">
+		            		<div class="panel ufma-panel ufma-panel-primary">
+		                        <div class="panel-heading">
+		                                <div class="caption">变更信息</div>
+		                        </div>
+		                        <div class="panel-collapse collapse in">
+		                            <div class="panel-body">
+		                                <ul class="project-ul list-unstyled" id="project-ul">
+											<!--<li>2016-1-12~2017-2-10  张三</li>
+											<li>2017–2-10至今  张三丰</li>-->
+		                                </ul>
+		                            </div>
+		                        </div>
+		                    </div>
+		            	</div>
+		            	<!--右侧 end-->
+	               	</div>
+	            </div>
+           	</div>
+       		
+       		<!--底部按钮 begin-->
+			<div class="ufma-layout-down bordered-top">
+		        <div class="text-right margin-right-30">
+					<!--<button type="button" class="btn btn-sm btn-primary btn-ajax btn-permission btn-saveadd" id="btn-save-add">保存并新增</button>-->
+					<button type="button" class="btn btn-sm btn-default btn-ajax btn-permission btn-save" id="btn-save">保存</button>
+					<button type="button" class="btn btn-sm btn-default btn-ajax btn-close" id="btn-close">取消</button>
+				</div>
+			</div>
+			<!--底部按钮 end-->
+		</div>
+		<script src="coAccEdit.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+		<script src="../maCommon/maCommon.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+	</body>
+</html>

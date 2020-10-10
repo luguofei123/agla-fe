@@ -1,0 +1,60 @@
+.title-btns-group {
+    /*margin-top: 8px;*/
+}
+.table-sub-action {
+    padding: 5px 0;
+}
+.title-btns-group .btn {
+    margin-left: 10px;
+    margin-top: 10px;
+}
+.u-overlay {
+    z-index:1002!important;
+}
+ul li {
+    list-style: none;
+}
+ul {
+    padding-left: 0;
+}
+.value-opts {
+    margin: 10px 0;
+    position: relative;
+}
+.value-opts .buttons{
+    border: none;
+    position: absolute;
+    right: 0;
+    bottom: -30px;
+}
+.value-opts .buttons .btn {
+    border: none;
+}
+/**左右结构**/
+.rpt-acc-box {
+    position: relative;
+    padding-left: 252px;
+    /* min-height: 625px; */
+    /* overflow: hidden; */
+    margin-top: 12px;
+}
+.rpt-acc-box-left {
+    position: fixed;
+    border: 1px solid #d9d9d9;
+    width: 240px;
+    height: 100%;
+    left: 30px;
+    top: 64px;
+    z-index: 1002;
+    overflow: hidden;
+}
+.rpt-acc-box-right {
+    width: 100%;
+}
+.rpt-atree-box-body {
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    margin-top: 12px;
+    /* padding-bottom: 126px; */
+}

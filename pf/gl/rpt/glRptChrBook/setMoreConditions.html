@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>查询条件</title>
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <script src="../../../pub/boot.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+    <style type="text/css">
+        .condition-con {
+            padding: 10px 40px 0;
+        }
+
+        .tab-content-box {
+            border: 1px solid #D9D9D9;
+            border-top: none;
+            border-radius: 4px;
+            margin-top: -2px;
+            position: relative;
+            min-height: 302px;
+            padding: 16px 0;
+        }
+
+        .rpt-pzzh-input {
+            width: 60px;
+            height: 30px;
+            padding: 3px;
+            vertical-align: bottom;
+        }
+        .btn-default {
+            border: none;
+        }
+        form input {
+            border-radius: 4px;
+            height: 30px;
+        }
+        #rptPzzhSelect {
+            width: 60px;
+            min-width: 60px;
+        }
+
+        #rptPzzhSelect .uf-combox-inputLi {
+            padding: 0 2px;
+        }
+
+        #rptPzzhSelect .uf-combox-btn {
+            width: 14px;
+        }
+
+        #rptPzzhSelect .uf-combox-btn b:before {
+            right: 3px;
+        }
+
+        #rptPzzhSelect .uf-combox-btn b:after {
+            right: 5px;
+        }
+        .control-label {
+            width: 80px;
+            text-align: right;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+        }
+        .form-horizontal .form-row .form-group .control-element{
+            width: 240px;
+        }
+        .form-horizontal .form-row .form-group:first-child .control-element{
+            width: 376px;
+        }
+        .rpt-hzfs-check label{
+            margin-right: 4px;
+        }
+        .rpt-pzzt-check label{
+            margin-right: 10px;
+        }
+        .rpt-pzzt-print button,.rpt-drcr-check button{
+            margin-right: 10px;
+        }
+        .frmQuery2 .form-group{
+            float: left;
+        }
+        #baseTree{
+            min-width: 240px;
+            height: 180px;
+            overflow: auto;
+            position: absolute;
+            top: -179px;
+            /*left: 80px;*/
+            background-color: #fff;
+            z-index: 20000;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            display: none;
+        }
+        .accoCondition .control-element {
+            position: relative;
+        }
+        .control-label{
+            vertical-align: sub;
+        }
+        .money-condition {
+            width:111px
+        }
+        .form-horizontal .form-row .form-group:first-child .money-condition-group,
+        .form-horizontal .form-row .form-group .money-condition-group{
+            width: 111px
+        }
+        .vou-query-btn-cont .btn {
+            margin-right: 10px;
+        }
+    </style>
+</head>
+
+<body>
+<div id="set-more-conditions" class="ufma-layout-updown">
+    <input type="hidden" value="GL_RPT_CHRBOOK" data-name="glRptChrBook" class="rptType" />
+    <div class="ufma-layout-up">
+        <div class="condition-con">
+            <ul class="nav nav-tabs">
+                <li class="active"><a href="#">主信息</a></li>
+                <li><a href="#">辅项信息</a></li>
+            </ul>
+            <div class="tab-content-box">
+                <div class="content">
+                    <form id="frmQuery" class="form-horizontal">
+                        <div class="form-row">
+                            <div class="form-group" style="width: 100%">
+                                <label class="control-label">期间：</label>
+                                <div class="control-element" style="width: auto">
+                                    <a name="period" id="dateBn" class="label label-radio">本年</a>
+                                    <a name="period" id="dateBq" class="label label-radio selected">本期</a>
+                                    <a name="period" id="dateJr" class="label label-radio">今日</a>
+                                </div>
+                                <div class="control-element" style="width:120px;">
+                                    <div id="dateStart" name="dateStart" class="uf-datepicker" style="width:120px;"></div>
+                                </div>
+                                <span class="split">-</span>
+                                <div class="control-element">
+                                    <div id="dateEnd" name="dateEnd" class="uf-datepicker" style="width:120px;"></div>
+                                </div>
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label class="control-label">凭证字号：</label>
+                                <div class="control-element">
+                                    <div id="rptPzzhSelect" name="rptPzzhSelect" class="uf-combox"></div>
+                                    <input id="rpt-pzzh-input-form" name="pzzhForm" class="rpt-pzzh-input bordered-input"/> 至
+                                    <input id="rpt-pzzh-input-to" name="pzzhTo" class="rpt-pzzh-input bordered-input"/>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label">凭证来源：</label>
+                                <div class="control-element">
+                                    <div id="vouSource" name="vouSource" class="uf-combox" style="width: 200px"></div>
+                                </div>
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label class="control-label">凭证状态：</label>
+                                <div class="control-element">
+                                    <div id="vbStatus" name="vbStatus" class="rpt-query-btn-cont rpt-pzzt-check" style="min-width: 200px;margin-top:4px">
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label">打印状态：</label>
+                                <div class="control-element rpt-query-li-selete">
+                                    <div id="vbPrintStatus" name="vbPrintStatus" class="rpt-query-btn-cont rpt-pzzt-print" style="min-width: 200px">
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label class="control-label">制单人：</label>
+                                <div class="control-element">
+                                    <input id="inputorName" name="inputorName" class="bordered-input padding-3" style="width: 236px"/>
+                                    <div style="display: inline-block">
+                                        <label class="rpt-check mt-checkbox mt-checkbox-outline">
+                                            <input id="nowUser" name="nowUser" type="checkbox"/>当前用户<span></span>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label">其他：</label>
+                                <div id="rpt-hzfs-check" name="rpt-hzfs-check" class="control-element rpt-hzfs-check" style="min-width: 200px;margin-top: 4px">
+                                </div>
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label class="control-label">会计体系：</label>
+                                <div class="control-element">
+                                    <div class="vou-query-btn-cont vbAccaCode" id="accaList"></div>
+                                </div>
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label class="control-label">会计科目：</label>
+                                <div class="control-element">
+                                    <div id='accoCode' name="accoCode" class="uf-textboxlist" style="width: 236px" disabled="true" autocomplete="on"></div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label">对方科目：</label>
+                                <div class="control-element">
+                                    <div id='dAccoCode' name="dAccoCode" class="uf-textboxlist" style="width: 236px" disabled="true" autocomplete="on"></div>
+                                </div>
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group" id="accoSurplus-gruop">
+                                <label class="control-label">分录金额：</label>
+                                <div class="control-element money-condition-group">
+                                    <input type="text" name="dStadAmtFrom" id="dStadAmtFrom" class="money-condition bordered-input padding-3"/>
+                                </div>
+                                <span class="split">-</span>
+                                <div class="control-element money-condition-group">
+                                    <input type="text" name="dStadAmtTo" id="dStadAmtTo" class="money-condition bordered-input padding-3"/>
+                                </div>
+                            </div>
+                            <div class="form-group" id="drcr-gruop" style="margin-left:138px">
+                                <label class="control-label" style="width:100px">辅助分录金额：</label>
+                                <div class="control-element money-condition-group">
+                                    <input type="text" name="fzStadAmtFrom" id="fzStadAmtFrom" class="money-condition bordered-input padding-3"/>
+                                </div>
+                                <span class="split">-</span>
+                                <div class="control-element money-condition-group">
+                                    <input type="text" name="fzStadAmtTo" id="fzStadAmtTo" class="money-condition bordered-input padding-3"/>
+                                </div>
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label class="control-label">分录摘要：</label>
+                                <div class="control-element">
+                                    <input id="descpt" name="descpt" class="bordered-input padding-3" style="width: 200px"/>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label">票据类型：</label>
+                                <div class="control-element">
+                                    <div id='billType' name="billType" class="uf-treecombox" style="width: 236px"></div>
+                                </div>
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label class="control-label">票据号：</label>
+                                <div class="control-element">
+                                    <input id="billNo" name="billNo" class="bordered-input padding-3" style="width: 200px"/>
+                                </div>
+                            </div>
+                            <div class="form-group" id="drcr-gruop">
+                                <label class="control-label">借/贷：</label>
+                                <div id="drcr" name="drcr" class="control-element rpt-drcr-check">
+                                    <button class="btn btn-primary" value>全部</button>
+                                    <button class="btn btn-default" value="1">借</button>
+                                    <button class="btn btn-default" value="-1">贷</button>
+                                </div>
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+                        <!-- <div class="form-row"> -->
+                            <!-- <div class="form-group" id="accoSurplus-gruop">
+                                <label class="control-label">差异项：</label>
+                                <div class="control-element">
+                                    <div id='accoSurplus' name="accoSurplus" class="uf-treecombox" style="width: 236px"></div>
+                                </div>
+                            </div> -->
+                            <!-- <div class="clearfix"></div>
+                        </div> -->
+
+                    </form>
+                </div>
+                <div class="content" style="display: none">
+                    <form id="frmQuery2" class="form-horizontal frmQuery2">
+
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="ufma-layout-down bordered-top">
+        <div class="text-right  margin-right-30">
+            <button type="button" class="btn btn-sm btn-primary btn-save" id="btnSave">确定</button>
+            <button type="button" class="btn btn-sm btn-default" id="btnClose" style="border: 1px solid #ccc; border-radius: 3px;"> 关闭</button>
+        </div>
+    </div>
+</div>
+<script src="../rptCommon/dm.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+<script src="../rptCommon/rptCommon_new.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+<script src="setMoreConditions.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+</body>
+
+</html>

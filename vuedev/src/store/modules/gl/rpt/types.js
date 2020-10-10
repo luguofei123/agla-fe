@@ -1,0 +1,123 @@
+/*
+ * @Author: sunch
+ * @Date: 2020-06-15 09:49:56
+ * @LastEditTime: 2020-09-29 17:47:17
+ * @LastEditors: Please set LastEditors
+ * @Description: 明细账的types
+ * @FilePath: /agla-fe-8.50/vuedev/src/store/modules/gl/rpt/glRptJournal/types.js
+ */
+
+//设置表格高度
+const SET_TABLE_HEIGHT = 'SET_TABLE_HEIGHT'
+//设置单位代码
+const SET_AGENCY_CODE = 'SET_AGENCY_CODE'
+//设置单位名称
+const SET_AGENCY_NAME = 'SET_AGENCY_NAME'
+//设置账套代码
+const SET_ACCT_CODE= 'SET_ACCT_CODE'
+//设置账套名称
+const SET_ACCT_NAME = 'SET_ACCT_NAME'
+//设置会计体系
+const SET_ACCS_CODE = 'SET_ACCS_CODE'
+//设置会计体系名称
+const SET_ACCS_NAME = 'SET_ACCS_NAME'
+//设置要回写的辅助项
+const SET_QRY_ITEM_DATA = 'SET_QRY_ITEM_DATA'
+//部分设置查询区域内辅助项的选择项（只修改属性）
+const SET_QRY_SELECT_ITEM_DATA = 'SET_QRY_SELECT_ITEM_DATA'
+//完全设置查询区域内辅助项的选择项
+const SET_QRY_SELECT_ITEM = 'SET_QRY_SELECT_ITEM'
+//设置方案代码
+const SET_PRJ_CODE = 'SET_PRJ_CODE'
+//设置方案名称
+const SET_NOW_PRJ = 'SET_NOW_PRJ'
+//设置方案作用域
+const SET_PRJ_SCOPE = 'SET_PRJ_SCOPE'
+//设置方案
+const SET_PRJ_CONTENT = 'SET_PRJ_CONTENT'
+//设置账表样式
+const SET_RPT_STYLE = 'SET_RPT_STYLE'
+//设置查询项
+const SET_RPT_QRYITEMS = 'SET_RPT_QRYITEMS'
+//设置货币代码
+const SET_CURCODE = 'SET_CURCODE'
+//设置金额起
+const SET_STAD_AMT_FROM = 'SET_STAD_AMT_FROM'
+//设置金额止
+const SET_STAD_AMT_TO = 'SET_STAD_AMT_TO'
+//设置查询开始时间
+const SET_START_DATE = 'SET_START_DATE'
+//设置查询截止时间
+const SET_END_DATE = 'SET_END_DATE'
+//设置方案列表
+const SET_PRJ_LIST = 'SET_PRJ_LIST'
+//设置保存时返回的prjCode用于标记
+const SET_SAVE_PRJ_CODE = 'SET_SAVE_PRJ_CODE'
+//设置方案guid
+const SET_PRJ_GUID = 'SET_PRJ_GUID'
+//设置账套改变标记
+const SET_ACCT_CHANGED = 'SET_ACCT_CHANGED'
+const SET_ACCT_CHANGED_FLAG = 'SET_ACCT_CHANGED_FLAG'
+//报表跳转标记
+const SET_FROM_RMIS_FLAG = 'SET_FROM_RMIS_FLAG'
+//其他页面跳转标记
+const SET_FROM_OTHER_RPT_FLAG = 'SET_FROM_OTHER_RPT_FLAG'
+//报表跳转 开始日期
+const SET_FR_START_DATE = 'SET_FR_START_DATE'
+//报表跳转 结束日期
+const SET_FR_END_DATE = 'SET_FR_END_DATE'
+//余额表 设置查询期间
+const SET_START_YEAR = 'SET_START_YEAR'
+const SET_END_YEAR = 'SET_END_YEAR'
+const SET_START_FISPERD = 'SET_START_FISPERD'
+const SET_END_FISPERD = 'SET_END_FISPERD'
+
+// 财政项目明细账 辅助项是否包含财政项目
+const SET_DEPPRO_FLAG = 'SET_DEPPRO_FLAG'
+// 设置选择的科目名
+const SET_SELECTED_ACCO_NAMES = 'SET_SELECTED_ACCO_NAMES'
+//设置方案列表为空状态
+const SET_PRJLIST_EMPTY = 'SET_PRJLIST_EMPTY'
+//设置方案保存后成功选择了该方案的状态
+const SET_CHOICE_PRJ_SUCCESS_AFTER_SAVE = 'SET_CHOICE_PRJ_SUCCESS_AFTER_SAVE'
+
+export default {
+  SET_TABLE_HEIGHT,
+  SET_DEPPRO_FLAG,
+  SET_AGENCY_CODE,
+  SET_AGENCY_NAME,
+  SET_ACCT_CODE,
+  SET_ACCT_NAME,
+  SET_ACCS_CODE,
+  SET_ACCS_NAME,
+  SET_QRY_ITEM_DATA,
+  SET_QRY_SELECT_ITEM_DATA,
+  SET_QRY_SELECT_ITEM,
+  SET_PRJ_CODE,
+  SET_NOW_PRJ,
+  SET_PRJ_SCOPE,
+  SET_PRJ_CONTENT,
+  SET_RPT_STYLE,
+  SET_RPT_QRYITEMS,
+  SET_CURCODE,
+  SET_STAD_AMT_FROM,
+  SET_STAD_AMT_TO,
+  SET_START_DATE,
+  SET_END_DATE,
+  SET_PRJ_LIST,
+  SET_SAVE_PRJ_CODE,
+  SET_PRJ_GUID,
+  SET_ACCT_CHANGED,
+  SET_ACCT_CHANGED_FLAG,
+  SET_FROM_RMIS_FLAG,
+  SET_FROM_OTHER_RPT_FLAG,
+  SET_FR_START_DATE,
+  SET_FR_END_DATE,
+  SET_START_YEAR,
+  SET_END_YEAR,
+  SET_START_FISPERD,
+  SET_END_FISPERD,
+  SET_SELECTED_ACCO_NAMES,
+  SET_PRJLIST_EMPTY,
+  SET_CHOICE_PRJ_SUCCESS_AFTER_SAVE
+}

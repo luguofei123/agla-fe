@@ -1,0 +1,27 @@
+.control-label {
+    width: 100px;
+    text-align: right;
+}
+.tab-items .btn {
+    margin-left: 5px;
+    padding: 5px;
+    border: none;
+}
+.rpt-funnelBoxList {
+    background-color: #fff;
+    width: 410px;
+    right: 0;
+    border: 1px solid #d9d9d9;
+}
+.rpt-funnelBoxList p {
+    float: left;
+    width: 200px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    padding: 10px;
+}
+.rpt-funnelBoxList .rpt-colBtn {
+    width: 100%;
+    text-align: right;
+}

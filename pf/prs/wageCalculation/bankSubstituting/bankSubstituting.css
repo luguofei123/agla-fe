@@ -1,0 +1,60 @@
+.prs-workspace {
+    margin: 0 15px;
+    margin-bottom: -10px;
+}
+.control-label {
+    width: 100px;
+    text-align: right;
+}
+.rpt-funnelBoxList {
+    background-color: #fff;
+    width: 142px;
+    right: 0;
+    border: 1px solid #d9d9d9;
+    padding: 5px;
+}
+.rpt-funnelBoxList p {
+    cursor: pointer;
+}
+.wageItems label{
+    margin-left: 10px;
+}
+.month-element select {
+    border-radius: 4px;
+    padding: 2px;
+}
+.wageItems {
+    width: 100%;
+    vertical-align: bottom;
+}
+#prTypes label {
+    display: block;
+    float: left;
+}
+.wage-items-hide {
+    position: absolute;
+    background-color:#ECF6FD; 
+    /* width:202px; */
+    z-index: 1011;
+    top: 0px;
+    left:0px;
+}
+.wage-items-hide label{
+    margin-left:10px;
+    margin-bottom: 5px;
+}
+.label-more-self {
+    position: relative;
+    display: inline-block;
+    width: 3.2em;
+    color: #008FF0;
+    cursor: default;
+}
+.label.label-more-self {
+    display: inline-block;
+    float: left;
+    padding: 5px 15px!important;
+    border-radius: 4px;
+    background: none!important;
+    border: none;
+}

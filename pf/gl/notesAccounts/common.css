@@ -1,0 +1,42 @@
+/********会计科目 S**********/
+
+
+/*废弃文件--zsj*/
+
+.accoCondition .ztree {
+	min-width: 240px;
+	height: 200px;
+	overflow: auto;
+	position: absolute;
+	top: 30px;
+	left: 0;
+	background-color: #fff;
+	z-index: 20000;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	display: none;
+}
+
+.accoCondition .control-element {
+	position: relative;
+}
+
+
+/********会计科目 E**********/
+
+.form-horizontal .form-row .form-group {
+	margin-left: 34px;
+}
+
+.form-horizontal .form-group .control-label {
+	width: 80px;
+	white-space: nowrap;
+}
+
+.form-horizontal .form-group-mar .control-label {
+	width: 100px;
+}
+
+.form-horizontal .form-row .form-group-mar {
+	margin-left: 10px;
+}

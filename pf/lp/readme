@@ -1,0 +1,9 @@
+一、谷歌中表单自带下拉提示，如果想要去掉有两种方法
+1、在谷歌浏览器的设置中找到密码和表单，将自动填充勾选去掉。
+2、在出问题的input上设置<input autocomplete="off"/>
+
+二、谷歌浏览器中表单自带填充黄色的底色，想要去掉的方法
+/*去掉谷歌浏览器自带的表单填充黄色的底色*/
+input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0px 1000px white inset;
+}

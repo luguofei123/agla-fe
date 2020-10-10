@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>设置要素定义</title>
+		<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+		<script src="../../pub/boot.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+		<link rel="stylesheet" href="element.css?rev=@@hash" />
+	</head>
+
+	<body id="elementEdit">
+		<div class="ufma-layout-updown">
+			<div class="ufma-layout-up">
+				<div class="container-fluid">
+					<div class="ufma-layout ufma-layout-slider-xm ufma-layout-fixed-slider ufma-layout-fixed-slider-right">
+						<form id="form-element" class="form-horizontal form">
+							<div class="form-group required">
+								<label class="control-label em6">要素编码：</label>
+								<div class="control-element">
+									<input type="text" name="eleCode" id="eleCode" maxlength="42" placeholder="请输入大写字母" class="form-control">
+								</div>
+							</div>
+
+							<div class="form-group required">
+								<label class="control-label em6">要素名称：</label>
+								<div class="control-element">
+									<input type="text" name="eleName" id="eleName" maxlength="60" class="form-control">
+								</div>
+							</div>
+							<!--bug71560--经侯总确认暂时不用加助记码，如后期需要可放开注释--zsj
+								<div class="form-group">
+								<label class="control-label em6">助记码：</label>
+								<div class="control-element">
+									<input type="text" name="assCode" id="assCode" class="form-control">
+								</div>
+							</div>-->
+							<div class="form-group">
+								<label class="control-label em6">编码规则：</label>
+								<div class="control-element">
+									<div class="ele-check-box">
+										<label class="mt-checkbox mt-checkbox-outline margin-right-8">
+                                    <input type="checkbox" name="codeByRule" id="isCodeCheck" checked="checked"> 按规则设置编码
+                                    <span></span>
+                                </label>
+									</div>
+								</div>
+							</div>
+							<div class="form-group" style="padding-top:0;margin-top:-10px!important;">
+								<label class="control-label em6"></label>
+								<div class="control-element">
+									<input type="text" name="codeRule" id="oneCode" maxlength="2" class="ufma-form-control-small">
+									<input type="text" name="codeRule" id="twoCode" maxlength="2" class="ufma-form-control-small">
+									<input type="text" name="codeRule" id="threeCode" maxlength="2" class="ufma-form-control-small">
+									<input type="text" name="codeRule" id="fourCode" maxlength="2" class="ufma-form-control-small">
+									<input type="text" name="codeRule" id="fiveCode" maxlength="2" class="ufma-form-control-small">
+									<input type="text" name="codeRule" id="sixCode" maxlength="2" class="ufma-form-control-small">
+									<input type="text" name="codeRule" id="sevenCode" maxlength="2" class="ufma-form-control-small">
+									<input type="text" name="codeRule" id="eightCode" maxlength="2" class="ufma-form-control-small">
+									<input type="text" name="codeRule" id="nineCode" maxlength="2" class="ufma-form-control-small">
+									<input type="text" name="codeRule" id="tenCode" maxlength="2" class="ufma-form-control-small">
+								</div>
+							</div>
+							<!-- 暂时屏蔽自定义属性 <div class="form-group">
+                        <label class="control-label em6">自定义属性：</label>
+                        <div class="control-element">
+                            <select id="fieldRelationEle" class="js-example-responsive" multiple="multiple" style="width: 100%">
+                            </select>
+                        </div>
+                    </div>-->
+
+							<div class="form-group ctrlLevel">
+								<label class="control-label em6">控制方式：</label>
+								<div class="control-element">
+									<div class="ele-radio-box">
+										<label class="mt-radio mt-radio-outline margin-right-8">
+                                    <input type="radio" name="agencyCtrllevel" value="01" id="controlTypeOne" checked> 上下级公用
+                                    <span></span>
+                                </label>
+									</div>
+									<div class="btn-group margin-left-15 controlTypeOneShow" data-toggle="buttons">
+										<label class="btn ele-btn btn-default active" id="gyxf" style="padding: 3px 0 0 0;">
+                                    <input type="radio" class="toggle" name="enabled" value="01" checked>下发
+                                </label>
+										<label class="btn ele-btn btn-default" id="gyxy" style="padding: 3px 0 0 0;">
+                                    <input type="radio" class="toggle" name="enabled" value="02" checked>选用
+                                </label>
+									</div>
+								</div>
+							</div>
+							<div class="form-group ctrlLevel" style="padding-top:0;margin-top:-10px!important;">
+								<label class="control-label em6"></label>
+								<div class="control-element">
+									<div class="ele-radio-box">
+										<label class="mt-radio mt-radio-outline margin-right-8">
+                                    <input type="radio" name="agencyCtrllevel" value="02" id="controlTypeThree"> 下级细化
+                                    <span></span>
+                                </label>
+									</div> 
+									<div class="btn-group margin-left-15 controlTypeThreeShow" style="display:none;">
+										<div class="ele-check-box">
+											<!-- 可增加一级 选中01 不选择02-->
+											<label class="mt-checkbox mt-checkbox-outline margin-right-8">
+                                        <input type="checkbox" name="crc" id="isDetail"> 可增加一级
+                                        <span></span>
+                                    </label>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="form-group ctrlLevel" style="padding-top:0;margin-top:-10px!important;">
+								<label class="control-label em6"></label>
+								<div class="control-element">
+									<div class="ele-radio-box">
+										<label class="mt-radio mt-radio-outline margin-right-8">
+                                    <input type="radio" name="agencyCtrllevel" value="03" id="controlTypeTwo"> 上下级无关
+                                    <span></span>
+                                </label>
+									</div>
+								</div>
+							</div>
+							<div class="form-group" style="padding-top:0;">
+								<label class="control-label em6">允许全称相同：</label>
+								<div class="btn-group" data-toggle="buttons" style="margin-left:10px;margin-top:4px;">
+									<label class="btn ele-btn btn-default enabledLabel" style="padding: 3px 0 0 0;">
+                                <input type="radio" class="toggle" name="allowSameFullName" value="1">是
+                            </label>
+									<label class="btn ele-btn btn-default active enabledLabel" style="padding: 3px 0 0 0;">
+                                <input type="radio" class="toggle" name="allowSameFullName" value="0">否
+                            </label>
+								</div>
+							</div>
+							<!--新增、编辑界面如果有新的功能添加，一定要去element.js中initEleImageList拼接为不显示的div，否则你将获取不到数据-->
+							<div class="form-group downStep" style="padding-top:0;">
+								<label class="control-label em6">逐级下发：</label>
+								<!--2是：逐级下发；1否：一发到底-->
+								<div class="btn-group" data-toggle="buttons" style="margin-left:10px;margin-top:4px;">
+									<label class="btn ele-btn btn-default issueTypeData" id="zjxf" style="padding: 3px 0 0 0;">
+                                        <input type="radio" class="toggle" name="issueType" value="2">是
+                                    </label>
+									<label class="btn ele-btn btn-default active issueTypeData" id="yfdd" style="padding: 3px 0 0 0;">
+                                        <input type="radio" class="toggle" name="issueType" value="1">否
+                                    </label>
+								</div>
+							</div>
+							<!-- 暂时屏蔽启用停用    <div class="form-group" style="padding-top:0;">
+                        <label class="control-label em6">状态：</label>
+                        <div class="btn-group" data-toggle="buttons" style="margin-left:10px;margin-top:4px;">
+                            <label class="btn ele-btn btn-default active enabledLabel" style="padding: 3px 0 0 0;">
+                                <input type="radio" class="toggle" name="enabled" value="1">启用
+                            </label>
+                            <label class="btn ele-btn btn-default enabledLabel" style="padding: 3px 0 0 0;">
+                                <input type="radio" class="toggle" name="enabled" value="0">停用
+                            </label>
+                        </div>
+                    </div>
+                    -->
+                    <!--新增、编辑界面如果有新的功能添加，一定要去element.js中initEleImageList拼接为不显示的div，否则你将获取不到数据-->
+                    <!--bug80541--20190612【财务云8.0 】基础资料区分账套管理--zsj-->
+							<div class="form-group" style="padding-top:0;">
+								<label class="control-label em6">账套级：</label>
+								<!--1是：账套级；0否：非账套级-->
+								<div class="btn-group" data-toggle="buttons" style="margin-left:10px;margin-top:4px;">
+									<label class="btn ele-btn btn-default isAcctLevelData" id="ztjNeed" style="padding: 3px 0 0 0;">
+                                        <input type="radio" class="toggle" name="isAcctLevel" value="1">是
+                                    </label>
+									<label class="btn ele-btn btn-default active isAcctLevelData" id="ztjNeedNo" style="padding: 3px 0 0 0;">
+                                        <input type="radio" class="toggle" name="isAcctLevel" value="0">否
+                                    </label>
+								</div>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+
+			<div class="ufma-layout-down bordered-top">
+				<div class="text-right margin-right-30">
+					<a class="btn btn-sm btn-primary  btn-permission btn-saveadd" id="btn-saveadd" disabled='disabled'>保存并新增</a>
+					<a class="btn btn-sm btn-default btn-permission btn-save" id="btn-save" disabled='disabled'> 保存</a>
+					<a class="btn btn-sm btn-default btn-permission btn-delete" disabled='disabled'> 删除</a>
+					<a class="btn btn-sm btn-default btn-close" disabled='disabled'> 取消</a>
+				</div>
+			</div>
+		</div>
+
+		<script src="elementEdit.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+	</body>
+
+</html>

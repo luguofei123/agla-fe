@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>指标编制</title>
+    <meta
+      content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
+      name="viewport"
+    />
+    <script
+      src="../../pub/boot.js?rev=@@hash"
+      type="text/javascript"
+      charset="utf-8"
+    ></script>
+    <link rel="stylesheet" href="../../agla-trd/fileinput/fileinput.css" />
+    <script
+      src="../../agla-trd/fileinput/fileinput.js"
+      type="text/javascript"
+      charset="utf-8"
+    ></script>
+    <script
+      src="../../agla-trd/fileinput/zh.js"
+      type="text/javascript"
+      charset="utf-8"
+    ></script>
+    <link rel="stylesheet" href="../pub/bgPub.css?rev=@@hash" />
+    <link rel="stylesheet" href="../pub/common.css?rev=@@hash" />
+    <link rel="stylesheet" href="../pub/bgPubImpAttachment.css?rev=@@hash" />
+    <link rel="stylesheet" href="../pub/bgPubAuditModal.css?rev=@@hash" />
+    <link rel="stylesheet" href="../pub/bgPubLog.css?rev=@@hash" />
+    <link rel="stylesheet" href="budgetItemMultiPost.css?rev=@@hash" />
+  </head>
+
+  <body>
+    <div id="budgetItemMultiPost" class="container-fluid ufma-container">
+      <!--面包屑 begin-->
+      <!-- <div class="bread-box clearfix">
+    </div> -->
+
+      <!--工作区 begin-->
+      <div class="workspace bordered">
+        <!--工作区顶部 begin-->
+        <div class="workspace-top">
+          <!-- 左右间距增加 -->
+          <div class="container-fluid">
+            <!-- 上对齐，增加下间距 -->
+            <div class="ufma-portlet" style="padding-bottom: 0px;">
+              <div class="portlet-title">
+                <div class="caption">
+                  <span class="caption-subject font-dark uppercase"
+                    >指标编制</span
+                  >
+                </div>
+                <div id="cbb_agency"></div>
+                <!-- 右侧新增按钮 -->
+                <div class="actions">
+                  <div class="btn-group">
+                    <button
+                      type="button"
+                      id="btn-add"
+                      class="btn btn-sm btn-primary btn-add btn-permission"
+                    >
+                      新增
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!--工作区中部 begin-->
+        <div class="workspace-center">
+          <div class="container-fluid">
+            <!-- 头部更多的显示 -->
+            <div id="bgMoreMsgPnl" class="bg-table-sub"></div>
+            <div class="bg-table-sub bg-div-height-space-12"></div>
+            <!-- 未审核、审核、全部  的标签 -->
+            <div class="bg-table-sub">
+              <!--标签 begin-->
+              <ul class="nav nav-tabs">
+                <li class="active NAVSELECT">
+                  <a href="javascript:;" data-status="O">未审核</a>
+                </li>
+                <li>
+                  <a href="javascript:;" data-status="A">已审核</a>
+                </li>
+                <li>
+                  <a href="javascript:;" data-status="T">全部</a>
+                </li>
+              </ul>
+              <!--标签 end-->
+              <!--右侧操作按钮 begin-->
+              <div class="bg-table-sub-action">
+                <div class="iframeBtnsSearch hide" style="margin-left: -10px;">
+                  <input
+                    id="btnsSearchContent"
+                    type="text"
+                    class="searchHide focusOff bordered"
+                    placeholder="请输入要搜索的关键词"
+                    style="right: 140px;"
+                  />
+                  <input type="hidden" class="searchValueHide" />
+                  <button
+                    class="btn btn-default btn-sm btn-search"
+                    id="searchHideBtn"
+                  >
+                    <i class="glyphicon icon-search"></i>
+                  </button>
+                </div>
+                <!--bugCWYXM-4301--经海哥确认，暂时隐藏打印，待后续用新的打印--zsj-->
+                <!--	
+								<div class="btn-group">
+								<button id="bgMulti-printBtn" class="btn btn-default btn-print btn-permission bgtooltip" data-toggle="tooltip" title="" data-original-title="打印">
+									<span class="glyphicon icon-print"></span>
+								</button>
+								<button id="bgMulti-expBtn" class="btn btn-default btn-export btn-permission bgtooltip"data-toggle="tooltip" title="" data-original-title="导出">
+									<span class="glyphicon icon-upload"></span>
+								</button>
+							</div>
+              -->
+                <!-- 
+避免样式错乱，等 打印可用 后放入btn-group
+                         <button
+                    id="bgMulti-printBtn"
+                    class="btn btn-default btn-print btn-permission bgtooltip hide"
+                    data-toggle="tooltip"
+                    title=""
+                    data-original-title="打印"
+                  >
+                    <span class="glyphicon icon-print"></span>
+                  </button>
+               -->
+                <div class="btn-group">
+                  <button
+                    id="bgMulti-expBtn"
+                    class="btn btn-default btn-export btn-permission bgtooltip"
+                    style="
+                      border-bottom-left-radius: 4px;
+                      border-top-left-radius: 4px;
+                    "
+                    data-toggle="tooltip"
+                    title=""
+                    data-original-title="导出"
+                  >
+                    <span class="glyphicon icon-upload"></span>
+                  </button>
+                </div>
+              </div>
+              <!--右侧操作按钮 end-->
+            </div>
+            <!-- 表格 -->
+            <div
+              id="mainTableDiv"
+              class="bg-table-sub btn-query btn-permission"
+            >
+              <table
+                id="mainTable"
+                class="ufma-table dataTable bgMultiModal-tbl bgMultiModal-tbl-Height"
+              ></table>
+            </div>
+          </div>
+        </div>
+
+        <!--工作区底 begin-->
+        <div class="workspace-bottom">
+          <div class="container-fluid"></div>
+        </div>
+      </div>
+    </div>
+    <!--[新增]-模态框 弹出层-->
+    <div id="budgetItemMultiPost-add" z-index="-1" class="ufma-modal">
+      <div class="u-msg-title">
+        <h4>新增指标编制</h4>
+      </div>
+      <div class="u-msg-content bgMultiModalMain" id="bg-multiModal-content">
+        <!-- 顶部 -->
+        <div id="bg-multiModal-content-top" class="bg-multiModal-content">
+          <form class="form-horizontal form bgMultiModalForm" submit="#">
+            <h5 class="bg-multiModal-topDiv">预算方案: &nbsp;</h5>
+            <div
+              class="uf-combox bg-multiModal-topDiv bg-multiModal-topDiv-30right bg-multiModal-bgplan"
+              id="bg-multiModal-bgPlan"
+            ></div>
+            <h5 class="bg-multiModal-topDiv">单据日期: &nbsp;</h5>
+            <div
+              class="uf-datepicker bg-multiModal-topDiv bg-multiModal-topDiv-30right bg-multiModal-dtp"
+              id="bg_multiModal_dtp"
+              style="background-color: white;"
+            ></div>
+            <h5 class="bg-multiModal-topDiv">单据号: &nbsp;</h5>
+            <div
+              class="control-element bg-multiModal-topDiv bg-multiModal-topDiv-30right"
+            >
+              <input
+                type="text"
+                value="AAA00001"
+                class="form-control inputHeight"
+                id="multiModal_billCode"
+                readonly
+              />
+            </div>
+
+            <button
+              type="button"
+              id="btn-multiModal-aboutFiles"
+              class="btn btn-sm btn-default btn-attach btn-permission bg-multiModal-rightTopDiv unallocate-BgItem-fileBtn"
+              title="附件"
+            >
+              <span class="icon-file"></span>
+            </button>
+            <h5 class="bg-multiModal-rightTopDiv">
+              &nbsp;张&nbsp;&nbsp;&nbsp;
+            </h5>
+            <div
+              class="control-element bg-multiModal-rightTopDiv bg-multiModal-fileCount"
+            >
+              <!--<input id="btn-multiModal-fileCountInput" type="text" value="0" class="form-control inputHeight" readonly/>-->
+              <input
+                id="btn-multiModal-fileCountInput"
+                type="text"
+                value="0"
+                class="form-control inputHeight"
+                oninput="value=value.replace(/[^\d]/g,'')"
+              />
+              <!-- bug78324--zsj-->
+            </div>
+            <h5 class="bg-multiModal-rightTopDiv">附单据&nbsp;</h5>
+          </form>
+        </div>
+
+        <!-- 主体表格 -->
+        <div
+          id="bg-multiModal-content-body"
+          class="bg-multiModal-content bgMultiModal-tbl-pnl"
+        >
+          <table
+            id="bgMultiModalTable"
+            class="ufma-table bgMultiModal-tbl bgMultiModal-tbl-Height"
+          ></table>
+        </div>
+
+        <div style="position: absolute; bottom: 42px;">
+          <button
+            type="button"
+            id="btn-newRow"
+            class="btn btn-sm btn-default bg-multiModal-tbl-addRow btn-permission btn-add"
+          >
+            <span class="glyphicon icon-plus btn-add"> &nbsp;新增表格行 </span>
+          </button>
+        </div>
+      </div>
+
+      <div class="u-msg-footer bgMultiModal-footer2">
+        <div class="div-tbl-bottom-btn">
+          <button
+            type="button"
+            id="btn-modal-close"
+            class="btn btn-sm btn-default btn-cancel bg-multiModal-rightButton"
+            data-dismiss="modal"
+          >
+            取消
+          </button>
+        </div>
+        <div class="div-tbl-bottom-btn">
+          <button
+            type="button"
+            id="btn-modal-save"
+            class="btn btn-sm btn-default btn-save bg-multiModal-rightButton btn-permission"
+          >
+            保存
+          </button>
+        </div>
+        <div class="div-tbl-bottom-btn">
+          <button
+            type="button"
+            id="btn-modal-saveAndNew"
+            class="btn btn-sm btn-primary btn-saveadd bg-multiModal-rightButton btn-permission"
+          >
+            保存并新增
+          </button>
+        </div>
+        <div class="div-tbl-bottom-btn">
+          <button
+            type="button"
+            id="btn-modal-imp"
+            class="btn btn-sm btn-default btn-import bg-multiModal-rightButton btn-permission"
+          >
+            导入
+          </button>
+        </div>
+      </div>
+    </div>
+    <script
+      src="../pub/bgPub.js?rev=@@hash"
+      type="text/javascript"
+      charset="utf-8"
+    ></script>
+    <script
+      src="../pub/bgPubImpAttachment.js?rev=@@hash"
+      type="text/javascript"
+      charset="utf-8"
+    ></script>
+    <script
+      src="../pub/bgPubAuditModal.js?rev=@@hash"
+      type="text/javascript"
+      charset="utf-8"
+    ></script>
+    <script
+      src="../pub/bgPubLog.js?rev=@@hash"
+      type="text/javascript"
+      charset="utf-8"
+    ></script>
+    <script
+      src="../pub/bgPubItemManager.js?rev=@@hash"
+      type="text/javascript"
+      charset="utf-8"
+    ></script>
+    <script
+      src="budgetItemMultiPost.js?rev=@@hash"
+      type="text/javascript"
+      charset="utf-8"
+    ></script>
+  </body>
+</html>

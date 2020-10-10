@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>复制凭证模版</title>
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <script src="../../pub/boot.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+    <style type="text/css">
+        ul li {
+            list-style-type: none;
+        }
+
+        ul {
+            padding-left: 0;
+            padding-top: 20px;
+        }
+
+        .set-form-li label {
+            width: 80px;
+            overflow: hidden;
+            text-align: right;
+            text-overflow: ellipsis;
+            font-weight: normal;
+            margin-bottom: 0;
+            vertical-align: middle;
+        }
+
+        .set-form-li.col-md-4 {
+            padding-left: 0;
+        }
+
+        .vou-type-title {
+            font-weight: bold;
+            position: absolute;
+            top: -10px;
+            background-color: #fff;
+            left: 10px;
+        }
+
+        .vou-box {
+            position: relative;
+            border: 1px solid #d9d9d9;
+            padding: 10px 0;
+            margin-top: 15px;
+            padding-bottom: 13px;
+        }
+        .uf-buttonedit-border {
+            display: inline-block;
+        }
+        input{
+            border-radius: 4px;
+            width: 190px;
+            height: 30px;
+        }
+        .uf-buttonedit-border .clickbtns{
+            position: absolute;
+            right: 3px;
+            height: 28px;
+            cursor: pointer;
+        }
+        .set-form-li.date label {
+            vertical-align: super;
+        }
+
+    </style>
+</head>
+
+<body id="template-copy" style="overflow: hidden">
+<div class="ufma-layout-updown temp-updown">
+    <div class="ufma-layout-up temp-up">
+        <div class="container-fluid margin-left-15 margin-right-15">
+            <form action="">
+                <ul class="set-form">
+                    <li class="clearfix" style="margin-bottom: 10px">
+                        <div class="set-form-li pull-left col-md-4">
+                            <label>模版名称：</label>
+                            <input type="text" name="tempName" class="bordered-input padding-3"/>
+                        </div>
+                    </li>
+                    <li class="clearfix">
+                        <div class="set-form-li pull-left col-md-4">
+                            <label>单位类型：</label>
+                            <div id="agencyType" class="uf-combox"></div>
+                        </div>
+                        <div class="set-form-li pull-left col-md-4">
+                            <label>账套：</label>
+                            <div id="acct" class="uf-combox"></div>
+                        </div>
+                    </li>
+                    <li id="vou" class="clearfix" style="margin-top: 10px">
+                        <div class="set-form-li pull-left col-md-4">
+                            <label>凭证类型：</label>
+                            <div id="vou-type" class="uf-combox vou-uf-combox"></div>
+                        </div>
+                        <div class="set-form-li date pull-left col-md-4" id = "vou-date">
+                            <label>凭证日期：</label>
+                            <div class="uf-buttonedit-border pr">
+                                <input type="text" name="sctj" class="bordered-input padding-3 fl"
+                                       autocomplete="off" placeholder="">
+                                <span title="" name="trigger"
+                                      class="uf-buttonedit-button clickbtns"><span
+                                        class="uf-buttonedit-icon ">...</span></span>
+                            </div>
+                        </div>
+                    </li>
+                    <li id="vou-double" style="display: none">
+                        <div class="vou-box clearfix">
+                            <div class="vou-type-title">财务会计</div>
+                            <div class="set-form-li pull-left col-md-4">
+                                <label>凭证类型：</label>
+                                <div id="vou-fin-type" class="uf-combox vou-uf-combox"></div>
+                            </div>
+                            <div class="set-form-li date pull-left col-md-4" id="vou-fin-date">
+                                <label>凭证日期：</label>
+                                <div class="uf-buttonedit-border pr">
+                                    <input type="text" name="sctj" class="bordered-input padding-3 fl"
+                                           autocomplete="off" placeholder="">
+                                    <span title="" name="trigger"
+                                          class="uf-buttonedit-button clickbtns"><span
+                                            class="uf-buttonedit-icon ">...</span></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="vou-box clearfix">
+                            <div class="vou-type-title">预算会计</div>
+                            <div class="set-form-li pull-left col-md-4">
+                                <label>凭证类型：</label>
+                                <div id="vou-bug-type" class="uf-combox vou-uf-combox"></div>
+                            </div>
+                            <div class="set-form-li date pull-left col-md-4" id="vou-bug-date">
+                                <label>凭证日期：</label>
+                                <div class="uf-buttonedit-border pr">
+                                    <input type="text" name="sctj" class="bordered-input padding-3 fl"
+                                           autocomplete="off" placeholder="">
+                                    <span title="" name="trigger"
+                                          class="uf-buttonedit-button clickbtns"><span
+                                            class="uf-buttonedit-icon ">...</span></span>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </form>
+        </div>
+    </div>
+
+    <div class="ufma-layout-down bordered-top">
+        <div class="text-right margin-right-30">
+            <button type="button" class="btn btn-sm btn-primary btn-permission btn-save" id="btnsave">确定</button>
+            <button type="button" class="btn btn-sm btn-default btn-permission btn-qx" id="btn-qx">取消</button>
+        </div>
+    </div>
+</div>
+
+<script src="templateCopy.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+</body>
+
+</html>

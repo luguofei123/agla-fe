@@ -1,0 +1,121 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>指标调整</title>
+		<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">	
+		<script src="../../pub/boot.js?rev=@@hash"></script>
+    <link rel="stylesheet" href="../pub/bgPub.css?rev=@@hash" />
+    <link rel="stylesheet" href="../pub/common.css?rev=@@hash" />
+		<link rel="stylesheet" href="../pub/bgPubImpAttachment.css?rev=@@hash" />
+		<link rel="stylesheet" href="budgetItemAdjust.css?rev=@@hash" />
+	</head>
+
+	<body style="overflow:hidden;">
+		<div id="budgetItemAdjust" class="container-fluid ufma-container">
+			<div class="workspace" style="padding-left: 15px;padding-right: 15px;padding-top: 4px;">
+				<!--工作区顶部 begin-->
+				<div class="workspace-top">
+					<div class="uf-portlet" style="padding-bottom: 12px;">
+						<div class="portlet-title">
+							<div class="caption">
+								<span class="caption-main">指标调整</span>	
+
+								<span>
+									<div class="uf-treecombox ufma-combox-agency" id="cbAgency" name="agencyCode" idField='id' textField='codeName' pIdField='pId' readonly='true' icon='icon-unit' theme='label' autocomplete="on" placeholder="请选择单位"> </div>
+								</span>
+																
+							</div>
+							<div class="actions">
+									<div class="btn-group">
+										<button type="button" class="btn btn-sm btn-primary btn-add btn-new btn-permission" style="margin-top: 2px;">新增</button>
+									</div>
+							</div>
+						</div>
+
+						<div class="portlet-body bordered">
+							
+							<div id="searchPlanPnl" class="uf-form-group-panel">
+								<div class="actions">
+									<label class="label btn-more-item hide label-more"  style="margin-left: -64px"><span>更多</span><i class="glyphicon icon-angle-bottom"></i></label>
+									<button id="btnQry" class="btn btn-primary btn-query btn-permission">查询</button>
+								</div>
+								<table>							
+								<tr>
+									<td class="label-ctrl">
+										预算方案：
+									</td>
+									<td class="form-ctrl">
+										<div id="cbBgPlan" class="uf-combox" idField="chrId" textField="chrName" placeholder="请选择预算方案"></div>
+									</td>
+									<td class="label-ctrl">单据日期：</td><td class="form-ctrl"><div id="createDate1" class="uf-datepicker inline-block"></div><span> 至 </span></span><div id="createDate2" class="uf-datepicker inline-block"></div></td>
+								</tr>				
+								</table>
+							</div>
+						</div>
+					</div>
+
+				</div>
+				<div class="workspace-center">
+					<div class="container-fluid">
+					<div class="bg-table-sub" style="padding-bottom: 8px;">
+						<!--标签 begin-->
+						<ul class="nav nav-tabs" id="tabStatus">
+							<li class="active"><a href="javascript:;" data-status="1">未审核</a>
+							</li>
+							<li><a href="javascript:;" data-status="3">已审核</a></li>
+							<li><a href="javascript:;" data-status="">全部</a></li>
+						</ul>
+						<!--标签 end-->
+						<!--右侧操作按钮 begin-->
+						<div class="bg-table-sub-action pull-right">
+							 <div class="iframeBtnsSearch hide" style="margin-left:-10px;">
+								<input id="btnsSearchContent" type="text" class="searchHide focusOff bordered" placeholder="请输入要搜索的关键词" style="right: 140px;">
+								<input type="hidden" class="searchValueHide">
+								<button class="btn btn-default btn-sm btn-search" id="searchHideBtn">
+									<i class="glyphicon icon-search"></i>
+								</button> 
+							</div>
+							<!-- 
+								避免样式错乱，等 打印可用 后放入btn-group
+								<button id="print" class="btn btn-default btn-print btn-permission bgtooltip hide" data-toggle="tooltip"
+									title="打印">
+									<span class="glyphicon icon-print"></span>
+								</button>
+							 -->
+							<div class="btn-group">
+								<!--<button id="print" class="btn btn-default btn-print btn-permission bgtooltip" data-toggle="tooltip"
+									title="打印">--> <!--暂时隐藏-->
+									
+								<!--<button id="export" class="btn btn-default btn-export btn-permission bgtooltip"
+									data-toggle="tooltip" title="导出">-->  <!--修改只有导出按钮时的样式,打印功能恢复后将该样式删除即可-->
+									<button id="export" class="btn btn-default btn-export btn-permission bgtooltip"
+									data-toggle="tooltip" title="导出" style="border-bottom-left-radius:4px;border-top-left-radius:4px;">
+									<span class="glyphicon icon-upload"></span>
+								</button>
+							</div>
+						</div>
+						<!--右侧操作按钮 end-->
+
+					</div>
+					<div class="zbtz-data-caption uf-datagrid-caption btn-query btn-permission none">
+						共 <span class="billNum">0</span> 张单据 金额：<span class="billHJJE">0.00</span>
+					</div>
+					<div class="bg-table-sub btn-query btn-permission">
+						<div id="zbtz-data" class="uf-datagrid">
+						</div>
+					</div>
+				</div>
+				</div>
+			</div>
+		</div>
+		<script src="budgetItemAdjust.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+		<script src="../pub/bg.parse.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+		<script src="../pub/bgPub.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+		<script src="../pub/bgPubItemManager.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+		<script src="../pub/bgPubLog.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+	    <!-- <script src="../../pub/js/uf.core.min.js?rev=@@hash"></script> -->
+	</body>
+
+</html>

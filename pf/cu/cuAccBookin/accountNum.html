@@ -1,0 +1,80 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>登记出纳账-从账务取数</title>
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <script src="../../pub/boot.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+    <link rel="stylesheet" href="cuAccBookin.css?rev=@@hash" />
+</head>
+
+<body>
+    <div class="ufma-layout-updown">
+        <div class="ufma-layout-up " style="overflow-y: auto">
+            <!-- 表格begin -->
+            <div class="portlet-body bordered pr bordered-bottom" style="background-color: #ECF6FD;padding: 5px;margin: 5px;">
+                <div class="more" style="width:100%">
+                    <form id="frmQuery" class="form-horizontal">
+                        <div class="form-row">
+                            <div class="form-group" style="margin-left:-15px;width: 282px;">
+                                <label class="control-label " style="margin-left:16px;">日期：</label>
+                                <div class="control-element pr10" style="padding-top:3px;">
+                                    <a name="period" id="dateBn" class="label label-radio">本年</a>
+                                    <a name="period" id="dateBq" class="label label-radio ">本期</a>
+                                    <a name="period" id="dateJr" class="label label-radio selected">今日</a>
+                                </div>
+                            </div>
+                            <div class="form-group" style="width: 305px">
+                                <div class="control-element" style="width: 116px">
+                                    <div name="startDate" id="startDate" class="uf-datepicker" style="width: 125px;">
+                                    </div>
+                                </div>
+                                <span class="split" style="margin: 5px 8px 5px 16px">至</span>
+                                <div class="control-element">
+                                    <div name="endDate" id="endDate" class="uf-datepicker" style="width: 125px;">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+                    </form>
+                </div>
+                <div class="btn-group" style="position: absolute;right:15px;top: 5px;">
+                    <div class="cab-query-btn inline-block">
+                        <button id="queryTable" class="btn btn-primary btn-query">查询</button>
+                    </div>
+                </div>
+            </div>
+            <div class="rpt-table-tab" style="padding:0 5px;">
+                <table class="ufma-table uf-rpt-table" tool-bar="#tool-bar" id="gridGOV"></table>
+            </div>
+        </div>
+
+        <!-- 表格end -->
+        <div id="tool-bar" class="ufma-tool-bar">
+            <div class="tool-bar-body" style="margin-left: 5px;margin-right: 5px;">
+                <div class="ufma-tool-btns">
+                    <label class="mt-checkbox mt-checkbox-outline margin-right-8" style="margin-left: 10px;">
+                        <input class="checkAll" type="checkbox" name="" id="all"> 全选
+                        <span></span>
+                    </label>
+                </div>
+            </div>
+        </div>
+        <div class="ufma-layout-down bordered-top">
+            <div class="text-right  margin-right-30">
+                <button type="button" class="btn btn-sm btn-primary btn-permission btn-saveadd btn-ajax" id="btnSave">登记</button>
+                <button type="button" class="btn btn-sm btn-default" id="btnClose">关闭</button>
+            </div>
+        </div>
+    </div>
+   
+    </div>
+    <script src="dm.js?rev=@@hash " type="text/javascript" charset="utf-8"></script>
+    <script src="accountNum.js" type="text/javascript" charset="utf-8"></script>
+
+</body>
+
+</html>

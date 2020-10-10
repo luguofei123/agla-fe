@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>汇总分析表</title>
+    <meta
+      content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
+      name="viewport"
+    />
+    <script
+      src="../../pub/boot.js?rev=@@hash"
+      type="text/javascript"
+      charset="utf-8"
+    ></script>
+    <link rel="stylesheet" href="../pub/bgPub.css?rev=@@hash" />
+    <link rel="stylesheet" href="../pub/common.css?rev=@@hash" />
+    <link rel="stylesheet" href="../pub/bgPubImpAttachment.css?rev=@@hash" />
+    <link rel="stylesheet" href="../pub/bgPubAuditModal.css?rev=@@hash" />
+    <link rel="stylesheet" href="../pub/bgPubWait.css?rev=@@hash" />
+    <link rel="stylesheet" href="budgetPerformanceReport.css?rev=@@hash" />
+
+    <style>
+      .form-row {
+        height: 30px;
+        display: block;
+        margin: 0px 0px 10px !important;
+        padding: 0px !important;
+      }
+
+      td .form-row:last-child {
+        margin-bottom: 0px !important;
+      }
+
+      .amt-input {
+        width: 128px;
+        float: left;
+      }
+
+      .form-row .label1 {
+        padding-top: 6px;
+        display: inline-block;
+      }
+
+      .bgpub-bgnormal-postion-1 h5 {
+        padding-top: 5px;
+        padding-bottom: 5px;
+        margin-top: 0;
+        margin-bottom: 0;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="bgPerformanceReport" class="container-fluid ufma-container">
+      <!--工作区 begin-->
+      <div class="workspace">
+        <!--工作区顶部 begin-->
+        <div class="workspace-top">
+          <!-- 左右间距增加 -->
+          <div class="container-fluid">
+            <!-- 上对齐，增加下间距 -->
+            <div class="ufma-portlet">
+              <div class="portlet-title">
+                <div class="caption">
+                  <span class="caption-subject font-dark uppercase"
+                    >汇总分析表</span
+                  >
+                </div>
+                <!--单位&账套选择 begin-->
+                <div class="inline-block absolute margin-left-15 margin-top-8">
+                  <ul class="ufma-list-col clearfix padding-left-8">
+                    <li class="ufma-list-col-item">
+                      <div
+                        id="cbAgency"
+                        name="agencyCode"
+                        class="uf-treecombox ufma-combox-agency"
+                      ></div>
+                    </li>
+                  </ul>
+                </div>
+                <!--单位&账套选择 end-->
+                <div class="actions">
+                  <div class="btn-group">
+                    <!--CWYXM-12238--预算执行情况表和汇总分析表，查询条件处界面优化--zsj-->
+                    <!--bug75659--需要选项控制，项目、支出功能分类等可以隐藏编码，只显示名称--zsj-->
+                    <div class="fzxName hide">
+                      <button
+                        type="button"
+                        title="切换样式"
+                        id="btnSwitch"
+                        class="btn btn-sm btn-default btn-switch switchStyle"
+                        style="
+                          position: absolute;
+                          right: 51px;
+                          height: 30px;
+                          border: 1px solid #dfe6ec;
+                          margin-top: 2px;
+                        "
+                      >
+                        <span
+                          class="icon-select"
+                          style="font-size: 20px;"
+                        ></span>
+                      </button>
+                      <div class="switchStylexs" id="rptTableList">
+                        <div class="voucherjcjt"></div>
+                        <p
+                          id="vouisfullname"
+                          class="second-color"
+                          style="
+                            width: 100%;
+                            margin-bottom: 5px;
+                            margin-top: 5px;
+                          "
+                        >
+                          <span>显示代码</span>
+                          <span class="kj">
+                            <label class="mt-radio">
+                              <input
+                                type="radio"
+                                name="Model"
+                                id="showTrue"
+                                checked="true"
+                              />&nbsp;
+                              <span></span> </label
+                            >是
+                          </span>
+                          <span class="kj">
+                            <label class="mt-radio">
+                              <input
+                                type="radio"
+                                name="Model"
+                                id="showFalse"
+                              />&nbsp;
+                              <span></span> </label
+                            >否
+                          </span>
+                        </p>
+                      </div>
+                    </div>
+                    <button
+                      id="showMethodTip"
+                      class="btn btn-primary glyphicon icon-file"
+                      style="
+                        border-top-left-radius: 4px;
+                        border-bottom-left-radius: 4px;
+                      "
+                    ></button>
+                  </div>
+                  <div id="rptPlanList" style="display: none;"></div>
+                </div>
+              </div>
+
+              <div class="portlet-body bordered">
+                <div
+                  id="searchPlanPnl"
+                  class="uf-form-group-panel form-horizontal"
+                >
+                  <div class="actions" style="right: -25px;">
+                    <label
+                      class="label label-more mr15"
+                      style="color: #008ff0;"
+                      data-target="#queryMorePlan"
+                    >
+                      <span>更多</span>
+                      <i class="glyphicon icon-angle-bottom"></i>
+                    </label>
+                    <button
+                      id="btnSetQueryPlan"
+                      class="btn btn-sm btn-default ib"
+                      data-toggle="tooltip"
+                      title="设置"
+                      style="width: 70px; margin-right: -7px;"
+                    >
+                      <span
+                        class="glyphicon icon-setting"
+                        style="margin-left: -5px; margin-right: 5px;"
+                      ></span
+                      >设置
+                    </button>
+                    <button
+                      id="btnQuery"
+                      class="btn btn-primary btn-query"
+                      style="width: 56px; padding: 4px 12px;"
+                    >
+                      查询
+                    </button>
+                    <!-- btn-permission-->
+                    <button
+                      id="_reportFindMore_saveBtn_bgMoreMsgPnl-bgPerformanceReport"
+                      class="btn btn-default btn-permission btn-save"
+                      style="
+                        width: 56px;
+                        padding: 4px 12px;
+                        margin-left: 1px;
+                        margin-right: 25px;
+                      "
+                    >
+                      保存
+                    </button>
+                  </div>
+                  <table>
+                    <tr>
+                      <td class="label-ctrl" style="width: 8.5em;">
+                        <!--CWYXM-12238--预算执行情况表和汇总分析表，查询条件处界面优化-->
+                        <div class="form-row">
+                          <span class="label1">单据日期：</span>
+                        </div>
+                      </td>
+                      <td class="label-ctrl">
+                        <div class="form-row tl">
+                          <div
+                            id="starData"
+                            class="uf-datepicker inline-block"
+                          ></div>
+                          至
+                          <div
+                            id="endData"
+                            class="uf-datepicker inline-block"
+                          ></div>
+                        </div>
+                      </td>
+                      <td class="label-ctrl" style="width: 100px;">
+                        <div class="form-row">
+                          <span class="label1">金额：</span>
+                        </div>
+                      </td>
+                      <td class="label-ctrl">
+                        <div class="form-row form-group">
+                          <input
+                            class="form-control amt-input .amt-from"
+                            type="text"
+                            id="_reportFindMore_inputFrom_bgMoreMsgPnl-bgPerformanceReport"
+                          />
+                          <span class="fl ib" style="margin: 5px;">至</span>
+                          <input
+                            class="form-control amt-input .amt-to"
+                            type="text"
+                            id="_reportFindMore_inputTo_bgMoreMsgPnl-bgPerformanceReport"
+                          />
+                        </div>
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+                <div id="queryMorePlan" class="none">
+                  <table
+                    class="mt5"
+                    id="_reportFindMore_findTable_bgMoreMsgPnl-bgPerformanceReport"
+                  >
+                    <tr class="notEmpty lastrow" style="height: 0px;">
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!--工作区中部 begin-->
+        <div class="workspace-center">
+          <div class="container-fluid">
+            <div class="bg-table-sub">
+              <!--右侧操作按钮 begin-->
+              <div class="rpt-table-sub-action" style="margin-bottom: 10px;">
+                <div class="iframeBtnsSearch">
+                  <input
+                    type="text"
+                    class="searchHide focusOff bordered-input"
+                    placeholder="请输入要搜索的关键词"
+                  />
+                  <button
+                    class="btn btn-default btn-sm btn-search btn-permission"
+                    id="searchHideBtn"
+                  >
+                    <span class="glyphicon icon-search"></span>
+                  </button>
+                </div>
+                <div class="btn-group" id="dtToolbar"></div>
+              </div>
+              <!--右侧操作按钮 end-->
+              <!-- 表格 -->
+              <div class="rpt-table-tab" style="margin-top: 43px;">
+                <table
+                  class="ufma-table uf-rpt-table"
+                  tool-bar="#tool-bar"
+                  id="reportTable"
+                ></table>
+              </div>
+              <!-- 单据数量和指标金额的信息显示 -->
+              <!--<div id="tableTotalShow" class="bgpub-bgnormal-postion-1 margin-5">
+								<span>共&nbsp;</span>
+								<span id="billsCount">0</span>
+								<span>&nbsp;张单据&nbsp;&nbsp;&nbsp; 指标金额：&nbsp;
+								</span>
+								<span id="billsTotalMoney">0.00</span>
+							</div>-->
+            </div>
+          </div>
+        </div>
+        <!--工作区底 begin-->
+        <div id="tool-bar" class="ufma-tool-bar">
+          <div class="tool-bar-body"></div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="ufma-modal"
+      z-index="-1"
+      id="_reportFindMore_setCaseModalId_bgMoreMsgPnl-bgPerformanceReport"
+    >
+      <div class="u-msg-title">
+        <h4>设置查询要素</h4>
+      </div>
+      <div
+        class="u-msg-content budgetItemTwoSidesAdjustMain"
+        style="padding: 8px 20px 0px 20px;"
+      >
+        <div
+          class="bgpub-bgnormal-postion-2 bgPub-lineCenter bgPub-normal-backgroudColor"
+          style="width: 90%;"
+        >
+          <div
+            class="bgpub-bgnormal-postion-2 bgPub-lineCenter bgPubTableRowNumCol"
+          >
+            <div class="bgpub-bgnormal-postion-2">
+              <h5 id="setWay">设置方式：</h5>
+            </div>
+            <div class="bgpub-bgnormal-postion-2" style="top: 8px;">
+              <label class="mt-radio mt-radio-outline">
+                <input
+                  type="radio"
+                  name="eleIsPri"
+                  checked
+                  id="_reportFindMore_setCaseByBgItem_bgMoreMsgPnl-bgPerformanceReport"
+                  pageindex="1"
+                />
+                <span></span>按要素设置</label
+              >
+            </div>
+            <!-- <div class="bgpub-bgnormal-postion-2 " style="width : 64px">&nbsp;</div>
+					<div class="bgpub-bgnormal-postion-2" style="top: 8px;">
+						<label class="mt-radio mt-radio-outline">
+							<input type="radio" name="eleIsPri" id="_reportFindMore_setCaseByCtrl_bgMoreMsgPnl-bgPerformanceReport" pageindex="2">
+							<span></span>按控制方案设置</label>
+					</div> -->
+          </div>
+        </div>
+        <div class="tabController step1 bgpub-bgnormal-postion-2" pageindex="1">
+          <div
+            class="bgpub-bgnormal-postion-2"
+            style="width: 46%; padding: 10px 20px 10px 30px;"
+          >
+            <div class="bgpub-bgnormal-postion-1">
+              所有指标要素
+            </div>
+            <div class="bgpub-bgnormal-postion-1">
+              <div
+                class="bgpub-bgnormal-postion-1 bgPub-border bgPub-autoScrollY bgRptCaseItemChoise"
+                id="_reportFindMore_allBgItemList_bgMoreMsgPnl-bgPerformanceReport"
+                style="height: 290px;"
+              ></div>
+            </div>
+          </div>
+          <div class="bgpub-bgnormal-postion-2" style="width: 8%;">
+            <div class="bgpub-bgnormal-postion-1" style="height: 120px;"></div>
+            <div class="bgpub-bgnormal-postion-1">
+              <button
+                type="button"
+                id="_reportFindMore_choiseItemBtn_bgMoreMsgPnl-bgPerformanceReport"
+                class="btn btn-sm btn-default icon-angle-right"
+              ></button>
+            </div>
+            <div class="bgpub-bgnormal-postion-1" style="height: 20px;"></div>
+            <div class="bgpub-bgnormal-postion-1">
+              <button
+                type="button"
+                id="_reportFindMore_disChoiseItemBtn_bgMoreMsgPnl-bgPerformanceReport"
+                class="btn btn-sm btn-default icon-angle-left"
+              ></button>
+            </div>
+          </div>
+          <div
+            class="bgpub-bgnormal-postion-2"
+            style="width: 46%; padding: 10px 30px 10px 20px;"
+          >
+            <div class="bgpub-bgnormal-postion-1">
+              已选指标要素
+            </div>
+            <div
+              class="bgpub-bgnormal-postion-1 bgPub-border bgPub-autoScrollY bgRptCaseItemChoise"
+              id="_reportFindMore_choisedBgItemList_bgMoreMsgPnl-bgPerformanceReport"
+              style="height: 290px;"
+            ></div>
+          </div>
+        </div>
+        <div class="tabController step2 bgpub-bgnormal-postion-2" pageindex="2">
+          <div
+            class="bgpub-bgnormal-postion-2 bgPub-lineCenter"
+            style="width: 90%; padding-top: 16px;"
+            id="_reportFindMore_bgCtrlListDiv_bgMoreMsgPnl-bgPerformanceReport"
+          ></div>
+        </div>
+      </div>
+      <div class="u-msg-footer">
+        <button
+          type="button"
+          id="btnCancel"
+          class="btn btn-sm btn-default btn-cancel bgpub-normal-rightButton-1"
+          data-dismiss="modal"
+        >
+          取消
+        </button>
+        <button
+          type="button"
+          id="btnOk"
+          class="btn btn-sm btn-primary btn-next bgpub-normal-rightButton-1"
+        >
+          确认
+        </button>
+      </div>
+    </div>
+
+    <script
+      src="../pub/bg.parse.js?rev=@@hash"
+      type="text/javascript"
+      charset="utf-8"
+    ></script>
+    <script
+      src="../pub/bgPub.js?rev=@@hash"
+      type="text/javascript"
+      charset="utf-8"
+    ></script>
+    <script
+      src="../pub/bgPubReportFindPnl.js?rev=@@hash"
+      type="text/javascript"
+      charset="utf-8"
+    ></script>
+    <script
+      src="dm.js?rev=@@hash"
+      type="text/javascript"
+      charset="utf-8"
+    ></script>
+    <script
+      src="budgetReport.js?rev=@@hash"
+      type="text/javascript"
+      charset="utf-8"
+    ></script>
+  </body>
+</html>

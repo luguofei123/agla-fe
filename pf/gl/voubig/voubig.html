@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<title>大数据凭证</title>
+	<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport" />
+	<script src="../../pub/boot.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+	<link rel="stylesheet" type="text/css" href="voubig.css?rev=@@hash" />
+	<link rel="stylesheet" type="text/css" href="fileinput.css?rev=@@hash" />
+	<link rel="stylesheet" type="text/css" href="attach.css?rev=@@hash" />
+</head>
+
+<body>
+	<div class="container-fluid ufma-container">
+		<div class="workspace">
+			<div class="workspace-top">
+				<div class="container-fluid">
+					<div class="ufma-portlet">
+						<div class="portlet-title">
+							<div class="disableddiv"></div>
+							<div class="caption">
+								<span class="caption-subject font-dark uppercase">大数据凭证</span>
+							</div>
+							<div class="inline-block  margin-left-15 margin-top-8">
+								<ul class='ufma-list-col clearfix padding-left-8'>
+									<li class="ufma-list-col-item">
+										<div id='cbAgency' name="agencyCode" class="ufma-treecombox ufma-combox-agency"></div>
+									</li>
+									<li class="ufma-list-col-item">
+										<div id='cbAcct' class="ufma-combox ufma-combox-acct"></div>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="workspace-center">
+				<div class="container-fluid">
+					<div class="voutitle">
+						<span class="titleagencyacct"></span>
+						<div class="btn-group">
+						<button class="btn btn-default btn-upload" data-toggle="tooltip" title="上传附件">
+							<span class="glyphicon icon-paperclip"></span>
+						</button>
+						</div>
+						<span class="fujianshujian">张</span>
+						<span id="fjd">2</span>
+						<span class="fujianshu">附件数</span>
+						<div class="btn-group">
+							<button class="btn btn-default btn-search" data-toggle="tooltip" title="搜索">
+								<span class="glyphicon icon-search"></span>
+							</button>
+						</div>
+					</div>
+					<div class="voudetailAccdiv">
+						<table class="ufma-table table-bordered" id='voubigtablehead'>
+							<thead>
+								<th>摘要</th>
+								<th>科目</th>
+								<th style="width: 230px;">借方金额</th>
+								<th style="width: 230px;">贷方金额</th style="width: 200px;">
+							</thead>
+						</table>
+						<table class="ufma-table table-bordered" id='voubigtable'>
+							<thead>
+								<th>摘要</th>
+								<th>科目</th>
+								<th style="width: 230px;">借方金额</th>
+								<th style="width: 230px;">贷方金额</th style="width: 200px;">
+							</thead>
+							<tbody>
+							</tbody>
+						</table>
+						<div id="vbTable-tool-bar" class="ufma-tool-bar">
+							<!-- 合计 begin -->
+							<div class="vbDataSum"></div>
+							<!-- 合计 end -->
+							<div class="tool-bar-body">
+								<div class="ufma-tool-btns">
+									<!-- 批量操作按钮 开始位置 -->
+			
+								</div>
+			
+								<!-- 分页相关 begin -->
+								<div class="ufma-table-paginate">
+									<!-- 分页 开始位置 -->
+			
+								</div>
+								<!-- 分页相关 end -->
+							</div>
+						</div>
+					</div>
+					<div class="voudetailAssdiv">
+						<div class="voubigtableassdiv">
+							<table class="ufma-table table-bordered" id='voubigtableasshead'>
+								<thead>
+								</thead>
+							</table>
+							<table class="ufma-table table-bordered" id='voubigtableass'>
+								<thead>
+								</thead>
+								<tbody>
+								</tbody>
+							</table>
+						</div>
+						
+						<div id="vbTable-tool-barAss" class="ufma-tool-bar">
+							<!-- 合计 begin -->
+							<div class="vbDataSum"></div>
+							<!-- 合计 end -->
+			
+							<div class="tool-bar-body">
+								<div class="ufma-tool-btns">
+									<!-- 批量操作按钮 开始位置 -->
+								</div>
+			
+								<!-- 分页相关 begin -->
+								<div class="ufma-table-paginate">
+									<!-- 分页 开始位置 -->
+			
+								</div>
+								<!-- 分页相关 end -->
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+			<!--表格工具栏 end-->
+		</div>
+	</div>
+	<div id="vouassData" class="ufma-modal">
+		<div class="u-msg-title">
+			<h4>查询条件</h4>
+		</div>
+		<div class="u-msg-content">
+			<div class="tab-contents">
+				<div class="form-horizontal">
+					<div class="form-group">
+						<label class="control-label">摘要：</label><div class="control-element"><input type="text" placeholder="空格分隔关键字可多摘要查询" id="despct" style="width: 820px;" class="money-condition form-control" /></div>
+					</div>
+					<div class="form-group">
+						<label class="control-label">金额：</label><div class="control-element">
+							<input type="text" name="stadAmtFrom" id="stadAmtFrom" class="money-condition form-control" style="width: 150px;" />
+							<span>至</span>
+							<input type="text" name="stadAmtTo" id="stadAmtTo" class="money-condition form-control" style="width: 150px;"/>
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="control-label">会计科目：</label><div class="control-element"><div class="ufma-treecombox w324" id="vbAcco"></div></div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="u-msg-footer">
+			<div class="text-right">
+				<button type="button" class="btn btn-sm btn-primary" id="btn-qrsearch">确认</button>
+				<button type="button" class="btn btn-sm btn-default btn-qx" id="btn-vouassclose">关闭</button>
+				<button type="button" class="btn btn-sm btn-default" id="btn-emty">清除</button>
+			</div>
+		</div>
+	</div>
+	<div id="zezhao"></div>
+	<script src="voubig.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		document.write('<script src="' + bootPath + 'agla-trd/fileinput/fileinput.js" type="text/javascript"></sc' + 'ript>');
+		document.write('<script src="' + bootPath + 'agla-trd/fileinput/zh.js" type="text/javascript"></sc' + 'ript>');
+	</script>
+</body>
+
+</html>

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>待摊费用登记簿</title>
+		<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+		<script src="../../pub/boot.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+	</head>
+
+	<body>
+		<div class="container-fluid ufma-container">
+			<!--工作区 begin-->
+			<div class="workspace">
+				<!--工作区顶部 begin-->
+				<div class="workspace-top">
+					<div class="container-fluid">
+						<div class="ufma-portlet">
+							<div class="portlet-title">
+								<div class="caption">
+									<span class="caption-subject font-dark uppercase">待摊费用登记簿</span>
+								</div>
+								<!--单位&账套选择 begin-->
+								<div class="inline-block absolute margin-left-15 margin-top-8">
+									<ul class='ufma-list-col clearfix padding-left-8'>
+										<li class="ufma-list-col-item">
+											<div id='cbAgency' name="agencyCode" class="uf-treecombox ufma-combox-agency"></div>
+										</li>
+										<li class="ufma-list-col-item">
+											<div id='cbAcct' class="uf-combox ufma-combox-acct"></div>
+										</li>
+									</ul>
+								</div>
+								<!--单位&账套选择 end-->
+								<div class="actions">
+									<!-- 针对报表跳转新标签页的测试 js的代码部分在676至694行 代码已全部注释 可删除 保留原因是可能用于测试 -->
+									<!-- <div class="btn-group">
+										<button id="linkurtest" type="button" class="btn btn-sm btn-default btn-accSetting btn-permission">跳转测试</button>
+									</div> -->
+									<div class="btn-group">
+										<button id="zhangSet" type="button" class="btn btn-sm btn-default btn-accSetting btn-permission">入账设置</button>
+									</div>
+									<div class="btn-group">
+										<button id="btnAdd" type="button" class="btn btn-sm btn-primary btn-add btn-permission">登记</button>
+									</div>
+								</div>
+							</div>
+
+							<!--查询条件-->
+							<div class="portlet-body bordered pr">
+								<!--按钮-->
+								<div class="btn-group" style="position: absolute;right:15px;top:15px;">
+									<button id="btnQuery" type="button" class="btn btn-sm btn-primary btn-query btn-permission">查询</button>
+								</div>
+								<form id="frmQuery" class="form-horizontal">
+									<div class="form-row">
+										<div class="form-group">
+											<label class="control-label auto">费用类型：</label>
+											<div class="control-element">
+												<div id="fylxCode" class="uf-treecombox" idField="id" textField="codeName" leafRequire=true name="fylxCode" style="width:200px"> </div>
+											</div>
+										</div>
+										<div class="form-group">
+											<label class="control-label">发生日期：</label>
+											<div class="control-element" style="width:120px;">
+												<div name="minOccurDate" id="minOccurDate" class="uf-datepicker" style="width:120px;"></div>
+											</div>
+											<span class="split">-</span>
+											<div class="control-element">
+												<div name="maxOccurDate" id="maxOccurDate" class="uf-datepicker" style="width:120px;"></div>
+											</div>
+										</div>
+										<div class="clearfix"></div>
+									</div>
+									<div class="form-row">
+										<div class="form-group">
+											<label class="control-label auto">摊销类型：</label>
+											<div class="control-element">
+												<div id="apportionType" style="width:200px"></div>
+											</div>
+										</div>
+										<div class="form-group">
+											<label class="control-label">摊销金额：</label>
+											<div class="control-element" style="width:120px;">
+												<input id="minApportionMoney" type="text" name="minApportionMoney" class="form-control">
+											</div>
+											<span class="split">-</span>
+											<div class="control-element" style="width:120px;">
+												<input id="maxApportionMoney" type="text" name="maxApportionMoney" class="form-control">
+											</div>
+										</div>
+										<div class="clearfix"></div>
+									</div>
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!--工作区中部 begin-->
+				<div class="workspace-center">
+					<div class="rpt-box rpt-table-box pr">
+						<div class="rpt-table-title">
+							待摊费用
+						</div>
+						<div id="dtToolbar" class="btn-group" style="position:absolute;right:15px;bottom:10px;">
+						</div>
+					</div>
+					<div class="rpt-table-tab" style="padding: 0 15px;">
+						<table class="ufma-table uf-rpt-table" tool-bar="#tool-bar" id="gridDPE"></table>
+
+					</div>
+				</div>
+
+				<div id="tool-bar" class="ufma-tool-bar">
+					<div class="tool-bar-body">
+						<div class="ufma-tool-btns" style="margin-left:12px;clear: both;">
+							<label class="mt-checkbox mt-checkbox-outline margin-right-8 compAllLa">
+								<input type="checkbox" class="datatable-group-checkable" id="all"/> 全选
+								<span></span>
+							</label>
+							<button type="button" class="btn btn-sm btn-primary btn-permission btn-gather-amort" id="btn-gather-amort">批量摊销
+							</button>
+						</div>
+						<!--toolbar-->
+					</div>
+				</div>
+			</div>
+		</div>
+		<script src="dm.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+		<script src="dpexpenses.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+	</body>
+
+</html>

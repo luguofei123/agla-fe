@@ -1,0 +1,37 @@
+	.commonShow {
+	max-width: 100px;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	overflow: hidden;
+}
+
+#carryOver .dataTables_wrapper.no-footer .dataTables_scrollBody {
+	border-bottom: 1px solid transparent;
+}
+
+
+/*CWYXM-9728--基础资料-凭证类型，所选科目少加载时间短时，表头未自适应--zsj*/
+
+.dataTables_scroll .dataTables_scrollHeadInner,.uf-rpt-table {
+	width: 100% !important;
+}
+.buttonGroups {
+	width: 200px;
+	margin: 0 auto;
+}
+
+#tool-bar {
+	height: 41px;
+}
+
+.tool-bar-body {
+	margin-left: 41px;
+	margin-top: 5px;
+}
+
+#form-vouType {
+	margin-top: -20px;
+}
+
+.ztree li span.button.chk.checkbox_true_disable {
+	background-position: -14px -16px;

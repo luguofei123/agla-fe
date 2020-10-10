@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>新增凭证模板</title>
+	<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+	<script src="../../pub/boot.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+	<link rel="stylesheet" href="newVouModel.css?rev=@@hash" />
+	<link rel="stylesheet" href="vouModel.css?rev=@@hash" />
+
+</head>
+
+<body>
+	<div id="budgetItemDecomposeAdd" class="ufma-layout-updown ">
+		<div class="workspace ufma-layout-up div-scroll">
+			<div style="margin-left: 20px;margin-right: 20px;">
+				<div class="workspace-top">
+					<div class="container-fluid" style="position :relative ;margin-top: 8px;">
+						<div class="query-li-title" style="margin-left: 18px;">
+							模板名称:
+						</div>
+						<input class="bordered-input padding-3 w210 input-height" type="text" style="border-radius:4px;" id="modelName" />
+						<div class="query-li-title" style="margin-left: 80px;">
+							模板描述:
+						</div>
+						<input class="bordered-input padding-3  w420 input-height" style="border-radius:4px;" type="text" id="modelDescp" />
+					</div>
+				</div>
+				<div class="workspace-center">
+					<div id="cwkj-data" class="tab-content container-fluid uf-datagrid" style="height:210px ;overflow-y:auto">
+
+					</div>
+					<div class="btn-add btn-permission">
+						<button type="button" id="btnNewCW" class="btn btn-sm btn-default btn-add btn-permission" style="margin-left: 413px;margin-top: 13px;">
+							<span class="glyphicon icon-plus btn-add"> &nbsp;新增表格行 </span>
+						</button>
+					</div>
+				</div>
+
+			</div>
+
+		</div>
+	</div>
+	<div class="ufma-layout-down bordered-top">
+		<div class="text-right  margin-right-30">
+			<button type="button" class="btn btn-sm btn-primary btn-save btn-permission btn-ajax " id="btn-save">保存</button>
+			<button type="button" class="btn btn-sm btn-default" id="btn-cancle">取消</button>
+		</div>
+	</div>
+	</div>
+	<script src="newSingleVouModel.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+</body>
+
+</html>

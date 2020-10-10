@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>补充核算信息</title>
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <script src="../../pub/boot.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+    <style type="text/css">
+        .container-box {
+            float: left;
+            width: 525px;
+            margin-top: 10px;
+        }
+        .container-box .acco-con{
+            border:1px solid #d9d9d9;
+            width: 523px;
+            float: left;
+            min-height: 450px;
+        }
+        .acco-con form{
+            float: right;
+        }
+        .acco-con form:first-child{
+            float: left;
+        }
+        .acco-type {
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .form-horizontal .form-group{
+            margin: 0;
+        }
+        .uf-treecombox {
+            width: 160px;
+        }
+        .control-label {
+            width: 70px;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            overflow: hidden;
+        }
+        .control-element {
+            vertical-align: bottom;
+        }
+    </style>
+</head>
+<body id="add-accItems">
+<div class="ufma-layout-updown">
+    <div class="ufma-layout-up">
+        <div class="container-fluid">
+            <div id="acco-vou-fin" class="container-box">
+                <div class="acco-type">财务会计</div>
+                <div class="acco-con">
+                    <form id="frmQuery1" class="form-horizontal">
+                        <div class="form-group">
+                            <label class="control-label">借方科目：</label>
+                            <div class="control-element">
+                                <div id="drFinAccoCode" name="drFinAccoCode" class="accoTree finAccoCode uf-treecombox"></div>
+                            </div>
+                        </div>
+                        <div class="accitems-con"></div>
+                    </form>
+                    <form id="frmQuery2" class="form-horizontal">
+                        <div class="form-group">
+                            <label class="control-label">贷方科目：</label>
+                            <div class="control-element">
+                                <div id="crFinAccoCode" name="crFinAccoCode" class="accoTree finAccoCode uf-treecombox"></div>
+                            </div>
+                        </div>
+                        <div class="accitems-con"></div>
+                    </form>
+                </div>
+            </div>
+            <div id="acco-vou-bug" class="container-box" style="float: right">
+                <div class="acco-type">预算会计</div>
+                <div class="acco-con">
+                    <form id="frmQuery3" class="form-horizontal">
+                        <div class="form-group">
+                            <label class="control-label">借方科目：</label>
+                            <div class="control-element">
+                                <div id="drBugAccoCode" name="drBugAccoCode" class="accoTree uf-treecombox"></div>
+                            </div>
+                        </div>
+                        <div class="accitems-con"></div>
+                    </form>
+                    <form id="frmQuery4" class="form-horizontal">
+                    <div class="form-group">
+                        <label class="control-label">借方科目：</label>
+                        <div class="control-element">
+                            <div id="crBugAccoCode" name="crBugAccoCode" class="accoTree uf-treecombox"></div>
+                        </div>
+                    </div>
+                        <div class="accitems-con"></div>
+                </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="ufma-layout-down bordered-top">
+        <div class="text-right margin-right-30">
+            <button type="button" class="btn btn-primary" id="btn-save">确定</button>
+            <button type="button" class="btn btn-default" id="btn-qx">关闭</button>
+        </div>
+    </div>
+</div>
+<script src="addAccItemsModal.js" type="text/javascript" charset="utf-8"></script>
+</body>
+</html>

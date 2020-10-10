@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>应付政府补贴款备查簿</title>
+		<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+		<script src="../../pub/boot.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+		<link rel="stylesheet" href="preforgovsub.css?rev=@@hash" />
+	</head>
+
+	<body>
+		<div class="container-fluid ufma-container">
+			<div class="workspace">
+				<!--工作区顶部 begin-->
+				<div class="workspace-top">
+					<div class="container-fluid">
+						<div class="ufma-portlet">
+							<div class="portlet-title">
+								<div class="caption">
+									<span class="caption-subject font-dark uppercase">应付政府补贴款备查簿</span>
+								</div>
+								<div class="inline-block absolute margin-left-15 margin-top-8">
+									<ul class='ufma-list-col clearfix padding-left-8'>
+										<li class="ufma-list-col-item">
+											<div id='cbAgency' name="agencyCode" class="uf-treecombox ufma-combox-agency"></div>
+										</li>
+										<li class="ufma-list-col-item">
+											<div id='cbAcct' class="uf-combox ufma-combox-acct"></div>
+										</li>
+									</ul>
+								</div>
+								<div class="actions">
+									<div class="btn-group">
+										<button type="button" class="btn btn-sm btn-primary btn-permission btn-add" id="btnBookin">登记</button>
+									</div>
+								</div>
+							</div>
+
+							<div class="portlet-body bordered pr">
+								<!--按钮-->
+								<div class="btn-group" style="position: absolute;right:15px;top:15px;">
+									<button id="btnQuery" type="button" class="btn btn-sm btn-primary btn-permission btn-query ">查询</button>
+								</div>
+								<!--中间-->
+								<form id="frmQuery" class="form-horizontal">
+									<!--第一行-->
+									<div class="form-row">
+										<div class="form-group">
+											<label class="control-label auto" style="margin-left:43px;">补贴种类：</label>
+											<div class="control-element">
+												<div id="btzlCode" class="uf-treecombox" idField="id" textField="codeName" leafRequire=true name="btzlCode" style="width:240px"> </div>
+											</div>
+										</div>
+										<div class="form-group">
+											<label class="control-label" style="margin-left:93px;">补贴日期：</label>
+											<div class="control-element">
+												<div name="minSubsidyDate" id="minSubsidyDate" class="uf-datepicker" style="width: 145px;">
+												</div>
+											</div>
+											<span class="split" style="margin-right:5px;margin-left:-60px;">-</span>
+											<div class="control-element" style="margin-top:-29px;">
+												<div name="maxSubsidyDate" id="maxSubsidyDate" class="uf-datepicker" style="width: 145px;">
+												</div>
+											</div>
+										</div>
+										<div class="clearfix"></div>
+									</div>
+									<!--第二行-->
+									<div class="form-row">
+										<div class="form-group">
+											<label class="control-label auto">接受者身份代码：</label>
+											<div class="control-element">
+												<input type="text" name="subsidyPersonIdentity" id="subsidyPersonIdentity" class="form-control" style="width:240px;">
+											</div>
+										</div>
+										<div class="form-group">
+											<label class="control-label" style="margin-left:93px;">补贴金额：</label>
+											<div class="control-element">
+												<input id="minSubsidyMoney" type="text" name="minSubsidyMoney" class="form-control required" minlength="0" style="width:125px;">
+											</div>
+											<span class="split" style="margin-right:5px;margin-left:-60px;">-</span>
+											<div class="control-element" style="margin-top:-29px;">
+												<input id="maxSubsidyMoney" type="text" name="maxSubsidyMoney" class="form-control required" maxlength="18" style="width:125px;">
+											</div>
+										</div>
+										<div class="clearfix"></div>
+									</div>
+									<!--第三行-->
+									<div class="form-row">
+										<div class="form-group">
+											<label class="control-label auto" style="margin-left:29px;">接受者名称：</label>
+											<div class="control-element">
+												<input type="text" name="subsidyPersonName" id="subsidyPersonName" class="form-control" style="width:240px;">
+											</div>
+										</div>
+										<div class="clearfix"></div>
+									</div>
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!--工作区顶部 end-->
+
+				<div class="workspace-center">
+					<!--<div class="table-sub-action pull-right" style="width:150px;margin-top:3px;">
+						<div class="iframeBtnsSearch" id="index-search" style="margin-left:-10px;">
+							<input type="text" class="searchHide focusOff bordered" placeholder="请输入要搜索的关键词"style="right:159px;">
+							<input type="hidden" class="searchValueHide">
+							<button class="btn btn-default btn-sm btn-permission btn-search" id="searchHideBtn">
+                            <i class="glyphicon icon-search"></i> 
+                        </button>
+						</div>
+						<div class="rpt-box rpt-table-box pr" style="height:0;margin-bottom:10px;">
+							<div id="dtToolbar" class="btn-group"style="margin-left:40px;margin-top:-52px;height:30px;"> 
+							</div>
+						</div>
+					</div>-->
+					<div class="btn-body" style="height: 40px;">
+						<div class="iframeBtnsSearch fr" id="index-search" style="margin-right: 113px">
+							<input type="text" class="searchHide focusOff bordered" placeholder="请输入要搜索的关键词" style="right: 163px;">
+							<input type="hidden" class="searchValueHide">
+							<button class="btn btn-default btn-sm btn-permission btn-search" id="searchHideBtn">
+							<i class="glyphicon icon-search"></i>
+						</button>
+						</div>
+						<div class="rpt-box rpt-table-box pr">
+							<div id="dtToolbar" class="btn-group" style="position:absolute;right:15px;">
+							</div>
+						</div>
+					</div>
+					<div class="rpt-table-tab" style="padding: 0 15px;">
+						<table class="ufma-table uf-rpt-table" tool-bar="#tool-bar" id="gridGov"></table>
+					</div>
+				</div>
+				<!--工作区底部 begin -->
+				<div id="tool-bar" class="ufma-tool-bar">
+					<div class="tool-bar-body">
+						<div class="ufma-tool-btns">
+							<label class="mt-checkbox mt-checkbox-outline margin-right-8">
+                             <input class="checkAll" type="checkbox" name="" id="btnAll"> 全选 <span></span>
+                        </label>
+							<button type="button" class="btn btn-sm btn-default btn-permission btn-delete" id="btnDelAll">删除</button>
+							<button type="button" class="btn btn-sm btn-default btn-permission btn-import hide">导入</button>
+						</div>
+					</div>
+				</div>
+				<!--工作区底部 end-->
+			</div>
+		</div>
+		<script src="preforgovsub.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+		<script src="dm.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+	</body>
+
+</html>

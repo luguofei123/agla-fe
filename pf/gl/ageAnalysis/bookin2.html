@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>待摊费用登记</title>
+		<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+		<script src="../../pub/boot.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+		<style>
+		#badZhang_wrapper{overflow:auto}
+		</style>
+	</head>
+
+	<body>
+		<div id="coaAccEdit" class="ufma-layout-updown">
+			<div class="ufma-layout-up">
+				<form id="frmBookIn" class="container-fluid form-horizontal" style="padding:15px 30px 30px;">
+					<div class="form-row">
+						<div class="form-group m0 p0">
+							<label class="control-label auto" id="ageName"></label>
+						</div>
+						<div class="clearfix"></div>
+					</div>
+                    <table class="ufma-table  uf-rpt-table" tool-bar="#tool-bar" id="badZhang" style="width:100%;"> 
+                    </table>
+				</form>
+
+			</div>
+			<div class="ufma-layout-down bordered-top">
+				<div class="text-right margin-right-30">
+					<button type="button" class="btn btn-sm btn-primary btn-permission btn-gen-vou " id="coaAccSave">生成凭证</button>
+					<button type="button" class="btn btn-sm btn-primary btn-permission btn-save " id="btnSave">保存</button>
+					<button type="button" class="btn btn-sm btn-default btn-permission btn-cancel" id="btnClose"> 关闭</button>
+				</div>
+			</div>
+		</div>
+		<script src="bookin2.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+	</body>
+
+</html>

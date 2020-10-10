@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>新增/修改银行代发文件格式</title>
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <script src="../../../pub/boot.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+    <link rel="stylesheet" type="text/css" href="../../common/common.css?rev=@@hash"/>
+    <link rel="stylesheet" type="text/css" href="bankDocs.css?rev=@@hash"/>
+    <style>
+        .uf-grid-body{
+            height: auto!important;
+        }
+    </style>
+</head>
+<body>
+<!--整个容器 begin-->
+<div class="ufma-layout-updown addBankDocs">
+    <div class="ufma-layout-up">
+        <div class="container-fluid">
+            <form id="frmQuery" class="form-horizontal" style="margin-top: 10px;margin-bottom:10px">
+                <div class="form-row">
+                    <div class="form-group required">
+                        <label class="control-label">银行代发文件格式代码：</label>
+                        <div class="control-element">
+                            <input type="text" name="prstylCode" class="form-control" maxlength="200"
+                                   style="width: 200px" autocomplete="off">
+                        </div>
+                    </div>
+                    <div class="form-group required">
+                        <label class="control-label">银行代发文件格式名称：</label>
+                        <div class="control-element">
+                            <input type="text" name="prstylName" class="form-control" maxlength="200"
+                                   style="width: 200px" autocomplete="off">
+                        </div>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label class="control-label">行分隔符：</label>
+                        <div class="control-element">
+                            <input type="text" name="listSept" class="form-control" maxlength="200"
+                                   style="width: 200px" autocomplete="off">
+                        </div>
+                    </div>
+                    <div class="form-group required">
+                        <label class="control-label">银行接收端操作系统类型：</label>
+                        <div class="control-element">
+                            <div id="osType" name="osType" class="uf-combox" style="width: 200px">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+            </form>
+            <div class="value-opts">
+                <div class="buttons">
+                    <button class="btn btn-default btn-del-row"><span class="glyphicon icon-trash" style="padding-right: 5px"></span>删除</button>
+                </div>
+            </div>
+            <ul class="nav nav-tabs">
+                <li class="active" data-value="0">
+                    <a href="javascript:;" data-state="0">首行设置</a>
+                </li>
+                <li data-value="1">
+                    <a href="javascript:;" data-state="1">中间行设置</a>
+                </li>
+                <li data-value="2">
+                    <a href="javascript:;" data-state="2">末行设置</a>
+                </li>
+            </ul>
+            <div class="nav-content">
+                <table id="nameTable1" class="uf-datagrid" tool-bar="#rpt-tool-bar">
+                </table>
+                <div class="panel-foot" style="width: 100%;">
+                    <button class="btn btn-default btn-add-row" data-value=0 style="width:100px;margin:15px auto;display: block;">
+                        <span class="icon-add" style="margin-right: 8px;"></span>增行
+                    </button>
+                </div>
+            </div>
+
+            <div class="nav-content hidden">
+                <table id="nameTable2" class="uf-datagrid" tool-bar="#rpt-tool-bar">
+                </table>
+                <div class="panel-foot" style="width: 100%;">
+                    <button class="btn btn-default btn-add-row" data-value=1 style="width:100px;margin:15px auto;display: block;">
+                        <span class="icon-add" style="margin-right: 8px;"></span>增行
+                    </button>
+                </div>
+            </div>
+            <div class="nav-content hidden">
+                <table id="nameTable3" class="uf-datagrid" tool-bar="#rpt-tool-bar">
+                </table>
+                <div class="panel-foot" style="width: 100%;">
+                    <button class="btn btn-default btn-add-row" data-value=2 style="width:100px;margin:15px auto;display: block;">
+                        <span class="icon-add" style="margin-right: 8px;"></span>增行
+                    </button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="ufma-layout-down bordered-top">
+        <div class="text-right margin-right-30">
+            <input type="file" style="display: none" id="import-files">
+            <button type="button" class="btn btn-sm btn-primary" id="btn-import">导入模板</button>
+            <button type="button" class="btn btn-sm btn-primary" id="btn-export">导出模板</button>
+            <button type="button" class="btn btn-sm btn-primary" id="btn-sure">确定</button>
+            <button type="button" class="btn btn-sm btn-default btn-close" id="btn-close">关闭</button>
+        </div>
+    </div>
+</div>
+<script src="../../common/common.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+<script src="addBankDocs.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+</body>
+</html>

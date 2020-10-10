@@ -1,0 +1,302 @@
+﻿<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>科目体系</title>
+		<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+		<script src="../../pub/boot.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+		<link rel="stylesheet" href="accSys.css?rev=@@hash" />
+	</head>
+
+	<body>
+		<div id="accSys" class="container-fluid ufma-container">
+			<!--工作区 begin-->
+			<div class="workspace" style="min-height:514px">
+				<div class="container-fluid">
+					<div class="ufma-portlet">
+						<div class="portlet-title">
+							<div class="caption">
+								<span class="caption-subject font-dark uppercase">科目体系</span>
+							</div>
+							<div class="actions">
+								<div class="btn-group">
+									<button type="button" class="btn btn-sm btn-primary btn-permission btn-add">新增</button>
+								</div>
+							</div>
+						</div>
+
+						<div class="portlet-body form-horizontal" style="background-color:#fff !important;">
+							<div class="container-fluid" id="accSys-cards">
+
+							</div>
+						</div>
+					</div>
+					<!--编辑科目体系begin-->
+					<div id="accsys-edt" class="ufma-modal">
+						<div class="u-msg-title">
+							<h4>科目体系</h4>
+						</div>
+						<div class="u-msg-content">
+							<div class="ufma-layout ufma-layout-slider-xm ufma-layout-fixed-slider ufma-layout-fixed-slider-right">
+								<div class="ufma-layout-content">
+									<!--基本信息begin-->
+									<div class="panel ufma-panel">
+										<div class="panel-heading">
+											<div class="caption">基本信息</div>
+											<div class="actions">
+												<a class="accsys-edit margin-right-8" id="btnAccSysBaseEdit"><span class="glyphicon icon-edit"></span></a>
+												<a data-toggle="collapse" href="#accsys-base">
+													<span class="glyphicon icon-angle-bottom"></span>
+												</a>
+											</div>
+
+										</div>
+										<form id="accsys-base" class="panel-collapse collapse in">
+											<div class="panel-body">
+												<div class="container-fluid form-horizontal">
+													<input type="hidden" id="accsys-coderule" name="codeRule" value="" />
+													<input type="hidden" id="chrId" name="chrId" value="" />
+													<div class="row">
+														<div class="col-xs-12">
+															<div class="form-group">
+																<label class="control-label em6 fl">编码规则：</label>
+																<div class="control-element" id="bmgz">
+																	<b class="select-default"><select id='num0' class="form-control num-select num0" index="0"></select></b>
+																	<b class="select-default"><select id='num1' class="form-control num-select num1" index="1"></select></b>
+																	<b class="select-default"><select id='num2' class="form-control num-select num2" index="2"></select></b>
+																	<b class="select-default"><select id='num3' class="form-control num-select num3" index="3"></select></b>
+																	<b class="select-default"><select id='num4' class="form-control num-select num4" index="4"></select></b>
+																	<b class="select-default"><select id='num5' class="form-control num-select num5" index="5"></select></b>
+																	<b class="select-default"><select id='num6' class="form-control num-select num6" index="6"></select></b>
+																	<b class="select-default"><select id='num7' class="form-control num-select num7" index="7"></select></b>
+																	<b class="select-default"><select id='num8' class="form-control num-select num8" index="8"></select></b>
+																	<b class="select-default"><select id='num9' class="form-control num-select num9" index="9"></select></b>
+																	<label for="codeRule" class="control-label hide"></label>
+																</div>
+
+															</div>
+														</div>
+													</div>
+													<div class="row">
+														<div class="col-xs-6">
+															<div class="form-group required">
+																<label class="control-label em6">科目体系编码：</label>
+																<div class="control-element w150">
+																	<input id="chrCode" type="text" name="chrCode" class="form-control" style="width: 160px">
+																	<label for="chrCode" class="control-label hide"></label>
+																</div>
+															</div>
+														</div>
+														<div class="col-xs-6">
+															<div class="form-group required">
+																<label class="control-label em6">科目体系名称：</label>
+																<div class="control-element w150">
+																	<input type="text" name="chrName" class="form-control" id="chrName" style="width: 160px" />
+																	<label style="white-space:nowrap;" for="chrName" class="control-label hide"></label>
+																</div>
+															</div>
+														</div>
+													</div>
+													<div class="row">
+														<div class="col-xs-6">
+															<div class="form-group">
+																<label class="control-label em6">推荐结转方式：</label>
+																<div class="control-element w150">
+																	<div id="carryOverType" name="carryOverType" class="form-control ufma-combox" style="width:160px;"></div>
+																	<label for="carryOverTypeName" id="carryOverTypeName" class="control-label hide"></label>
+																</div>
+															</div>
+														</div>
+														<div class="col-xs-6">
+															<div class="form-group">
+																<label class="control-label em6">行业：</label>
+																<div class="control-element w150">
+																	<input type="text" name="vocationName" id="vocationName" class="form-control" style="width: 160px" />
+																	<label for="vocationName" class="control-label hide"></label>
+																</div>
+															</div>
+														</div>
+													</div>
+													<div class="row">
+
+														<div class="col-xs-6">
+															<div class="form-group">
+																<label class="control-label em6">允许增加一级：</label>
+																<div class="control-element">
+																	<div class="btn-group" data-toggle="buttons">
+																		<label class="btn btn-default active">
+                                                                    <input type="radio" class="toggle" name="isAddFirst" value="1" checked> 允许 </label>
+																		<label class="btn btn-default">
+                                                                    <input type="radio" class="toggle" name="isAddFirst" value="0"> 禁止 </label>
+																	</div>
+																	<label for="isAddFirst" class="control-label hide"></label>
+																</div>
+															</div>
+														</div>
+														<div class="col-xs-6">
+															<div class="form-group">
+																<label class="control-label em6">启用状态：</label>
+																<div class="control-element">
+																	<div class="btn-group" data-toggle="buttons">
+																		<label class="btn btn-default active">
+                                                                    <input type="radio" class="toggle" name="enabled" value="1" checked> 启用 </label>
+																		<label class="btn btn-default">
+                                                                    <input type="radio" class="toggle" name="enabled" value="0"> 停用 </label>
+																	</div>
+																	<label for="enabled" class="control-label hide"></label>
+																</div>
+															</div>
+														</div>
+														<div class="col-xs-5">
+															<div class="form-group">
+																<label class="control-label em7" style="margin-left: -2em;">科目区分适用单位：</label>
+																<div class="control-element">
+																	<div class="btn-group" data-toggle="buttons">
+																		<label class="btn btn-default active">
+                                                                    <input type="radio" class="toggle" name="diffAgencyType" value="1" checked> 是 </label>
+																		<label class="btn btn-default">
+                                                                    <input type="radio" class="toggle" name="diffAgencyType" value="0"> 否 </label>
+																	</div>
+																	<label for="diffAgencyType" class="control-label hide"></label>
+																</div>
+															</div>
+														</div>
+														<div class="col-xs-7">
+															<div class="form-group">
+																<label class="control-label em6" style="width: 222px;">下级单位允许删除下发的科目：</label>
+																<div class="control-element">
+																	<div class="btn-group" data-toggle="buttons">
+																		<label class="btn btn-default active">
+                                                                    <input type="radio" class="toggle" name="allowDeleteIssuedAcco" value="1" checked> 是 </label>
+																		<label class="btn btn-default">
+                                                                    <input type="radio" class="toggle" name="allowDeleteIssuedAcco" value="0"> 否 </label>
+																	</div>
+																	<label for="allowDeleteIssuedAcco" class="control-label hide"></label>
+																</div>
+															</div>
+														</div>
+													</div>
+													<div class="row">
+														<div class="col-xs-6">
+															<div class="form-group">
+																<label class="control-label em6">上级科目体系：</label>
+																<div class="control-element w150" style="vertical-align: top;">
+																	<div id="parentCode" name="parentCode" class="form-control ufma-combox" style="width:160px;"></div>
+																	<label for="parentCodeName" id="parentCodeName" class="control-label hide commonShow"></label>
+																</div>
+															</div>
+														</div>
+													</div>
+													<div class="row hide" id="accSysBaseBtnGroup">
+														<div class="col-xs-12 text-right margin-top-8">
+															<button type="button" class="btn btn-sm btn-primary btn-save">保存</button>
+															<button type="button" class="btn btn-sm btn-default btn-cancel">取消</button>
+														</div>
+													</div>
+												</div>
+											</div>
+										</form>
+									</div>
+									<!--会计要素begin-->
+									<div class="panel ufma-panel">
+										<div class="panel-heading">
+											<div class="caption">会计要素</div>
+											<div class="actions">
+												<a class="accsys-edit margin-right-8" id="btnAccSysKJYSEdit"><span class="glyphicon icon-edit"></span></a>
+
+												<a data-toggle="collapse" href="#accsys-kjys">
+													<span class="glyphicon icon-angle-bottom"></span>
+												</a>
+											</div>
+										</div>
+										<form id="accsys-kjys" class="panel-collapse collapse in">
+											<div class="panel-body">
+												<table id="accSysKJYS" class="ufma-table dataTable table-edit uf-rpt-table" style="border-left: 1px solid #d9d9d9;border-right: 1px solid #d9d9d9;">
+													<thead>
+														<tr style="border-bottom: 1px solid #d9d9d9;">
+															<th width="60px"> 要素编码</th>
+															<th> 要素名称</th>
+															<th> 平衡公式方向</th>
+															<th> 会计体系</th>
+														</tr>
+													</thead>
+												<tbody></tbody>
+												</table>
+												<div class="text-center padding-15">
+													<a class="btn btn-sm btn-default" id="accSysAddKJYS"><span class="glyphicon icon-plus"></span><span class="margin-left-15">新增会计要素</span></a>
+												</div>
+												<div class="hide text-right margin-top-8" id="accSysKJYSBtnGroup">
+													<button type="button" class="btn btn-sm btn-primary btn-save">保存</button>
+													<button type="button" class="btn btn-sm btn-default btn-cancel">取消</button>
+												</div>
+
+											</div>
+										</form>
+									</div>
+								</div>
+								<div class="ufma-layout-slider right">
+									<div class="panel ufma-panel ufma-panel-primary">
+										<div class="panel-heading">
+											<div class="caption">平衡公式</div>
+
+										</div>
+										<div class="panel-collapse collapse in">
+											<div class="panel-body">
+												<h5>财务会计平衡公式</h5>
+												<ul id="cwkjphgs" class="list-inline list-inline-horizontal">
+													<li></li>
+												</ul>
+												<h5>预算会计平衡公式</h5>
+												<ul id="yskjphgs" class="list-inline list-inline-horizontal">
+													<li></li>
+												</ul>
+											</div>
+										</div>
+									</div>
+									<!--常用操作begin-->
+									<div class="panel ufma-panel ufma-panel-primary">
+										<div class="panel-heading">
+											<div class="caption">常用操作</div>
+
+										</div>
+										<div class="panel-collapse collapse in">
+											<div class="panel-body">
+												<div class="container-fluid form-horizontal">
+													<div class="row">
+														<div class="col-xs-4 text-center">
+															<a class="label-a ckkm" style="cursor: pointer;text-decoration:underline" data-href="/pf/ma/coaAcc/coaAcc.html" data-title="会计科目" name="" value="">查看科目</a>
+														</div>
+														<div class="col-xs-4 text-center">
+															<a class="label-a xjzt" style="cursor: pointer;text-decoration:underline" data-href="/pf/ma/coAcc/coAcc.html" data-title="账套管理" name="" value="">查看账套</a>
+														</div>
+														<div class="col-xs-4 text-center">
+															<a class="label-a fzhs" style="cursor: pointer;text-decoration:underline" data-href="/pf/ma/eleAccItem/eleAccItem.html" data-title="辅助核算" name="" value="">辅助核算</a>
+														</div>
+													</div>
+
+												</div>
+											</div>
+										</div>
+									</div>
+									<!--常用操作end-->
+								</div>
+							</div>
+						</div>
+						<div class="u-msg-footer">
+							<button type="button" class="btn btn-sm btn-primary btn-permission btn-save" id="accSysSaveAll">保存</button>
+							<button type="button" class="btn btn-sm btn-default btn-cancel" id="accSysCancelAll">取消</button>
+							<button type="button" class="btn btn-sm btn-default btn-permission btn-delete" id="accSysDelete">删除</button>
+							<button type="button" class="btn btn-sm btn-default btn-close hide" id="accSysCloseAll">关闭</button>
+						</div>
+					</div>
+					<!--编辑科目体系end-->
+				</div>
+			</div>
+			<!--工作区 end-->
+		</div>
+		<script src="accSys.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+	</body>
+
+</html>

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>总账对账</title>
+	<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+	<script src="../../pub/boot.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+	<link rel="stylesheet" href="ledRecon.css" />
+</head>
+
+<body>
+	<div class="container-fluid ufma-container">
+		<!--工作区 begin-->
+		<div class="workspace">
+			<!--工作区顶部 begin-->
+			<div class="workspace-top">
+				<div class="container-fluid">
+					<div class="ufma-portlet">
+						<div class="portlet-title">
+							<div class="caption">
+								<span class="caption-subject font-dark uppercase">总账对账</span>
+							</div>
+							<!--单位&账套选择 begin-->
+							<div class="inline-block absolute margin-left-15 margin-top-8">
+								<ul class='ufma-list-col clearfix padding-left-8'>
+									<li class="ufma-list-col-item">
+										<div id='cbAgency' name="agencyCode" class="uf-treecombox ufma-combox-agency"></div>
+									</li>
+									<li class="ufma-list-col-item hide" id="acct">
+										<div id='cbAcct' class="uf-combox ufma-combox-acct"></div>
+									</li>
+									<li class="ufma-list-col-item">
+										<div id='AccBook' class="uf-treecombox ufma-combox-agency"></div>
+									</li>
+								</ul>
+							</div>
+							<!--单位&账套选择 end-->
+						</div>
+
+						<!--查询条件-->
+						<div class="portlet-body bordered pr">
+							<!--按钮-->
+							<div class="btn-group" style="position: absolute;right:15px;top:15px;">
+								<button id="btnQuery" type="button" class="btn btn-sm btn-primary btn-query btn-permission">查询</button>
+							</div>
+							<form id="frmQuery" class="form-horizontal">
+								<div class="form-row">
+									<div class="form-group">
+										<label class="control-label auto">月份：</label>
+										<div class="control-element" style="width: 200px;">
+											<!--<div id="billType" class="uf-combox" idField="chrCode" textField="chrName" leafRequire=true name="billType" style="width:200px"> </div>-->
+											<div id="month" class="uf-combox" name="fisPerd" idField="code" textField="codeName" leafRequire=true style="width:200px"></div>
+										</div>
+									</div>
+									<div>
+										&nbsp;&nbsp;&nbsp;&nbsp;
+										<label class="mt-checkbox mt-checkbox-outline">
+											<input type="checkbox" checked id="isShowMonthData">仅显示当月数据
+											<span></span>
+										</label>&nbsp;&nbsp;
+										<label class="mt-checkbox mt-checkbox-outline">
+											<input type="checkbox" id="isShowDiff">只显示有差异的数据行
+											<span></span>
+										</label>&nbsp;&nbsp;
+										<label class="mt-checkbox mt-checkbox-outline">
+											<input type="checkbox" id="isShowUnRecon">包含未记账凭证
+											<span></span>
+										</label>
+									</div>
+									<div class="clearfix"></div>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!--工作区中部 begin-->
+			<div class="workspace-center">
+				<div class="rpt-box rpt-table-box pr">
+					<div class="rpt-table-title">
+						总账对账
+					</div>
+					<div id="dtToolbar" class="btn-group" style="position:absolute;right:15px;bottom:15px;">
+						<!-- <button id="btnPrint" type="button" class="btn btn-sm icon-print btn-default"></button>
+							<button id="btnPrint" type="button" class="btn btn-sm icon-upload btn-default"></button> -->
+					</div>
+				</div>
+				<div class="rpt-table-tab" style="padding: 0 15px;">
+					<table class="ufma-table uf-rpt-table" tool-bar="#tool-bar" id="gridDPE">
+						<thead id="modelTableThead">
+							<tr>
+								<th width="30" rowspan="2">月份</th>
+								<th colspan="3">月累计借方发生</th>
+								<th colspan="3">月累计贷方发生</th>
+								<th colspan="3">期末余额</th>
+							</tr>
+
+							<tr>
+								<th width="40">出纳</th>
+								<th width="100">总账</th>
+								<th width="100">借方差额</th>
+								<th width="40">出纳</th>
+								<th width="100">总账</th>
+								<th width="100">借方差额</th>
+								<th width="40">出纳</th>
+								<th width="100">总账</th>
+								<th width="100">借方差额</th>
+							</tr>
+						</thead>
+					</table>
+
+				</div>
+			</div>
+
+			<div id="tool-bar" class="ufma-tool-bar">
+				<div class="tool-bar-body">
+					<!--toolbar-->
+				</div>
+			</div>
+		</div>
+	</div>
+	</div>
+	<script src="dm.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+	<script src="ledRecon.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+	<style>
+		.wrapper-right {
+			display: none !important;
+		}
+	</style>
+</body>
+
+</html>

@@ -1,0 +1,27 @@
+/* 主页面 */
+
+#income-tax-item-setting .prs-workspace {
+  margin: 0 15px;
+  margin-bottom: -10px;
+}
+
+#income-tax-item-setting #tree {
+  margin-right: 15px;
+  margin-left: 15px;
+  border: 1px solid #d9d9d9;
+  border-bottom: none;
+}
+
+#income-tax-item-setting .depar-tool {
+  padding-top: 10px;
+  padding-left: 20px;
+  padding-bottom: 10px;
+  border: 1px solid #d9d9d9;
+  margin-right: 15px;
+  margin-left: 15px;
+}
+
+#add-income-tax-item .data-label {
+  width: 115px;
+  text-align: left !important;
+}

@@ -1,0 +1,223 @@
+
+.voutypeCode ul li{
+	list-style: none;
+	float: left;
+}
+.getDataBody {
+    margin-top: 20px;
+    margin-left: 16px;
+    margin-right: 16px;
+}
+#tool-bar{
+	padding-top : 1px!important;
+}
+
+/*更多的触摸板*/
+.rpt-method-tip{float: right;position: relative;height: 46px;}
+.rpt-method-tip #showMethodTip{height: 30px;}
+.rpt-method-tip .btn{float: right;}
+.rpt-method-tip .btn span{margin-left:0px;}
+.rpt-method-tip i{display:none;position:absolute;top:3px;right:-2px;width:9px;height:9px;border-radius:50%;background:#F04134;}
+.rpt-method-tip .rpt-share-method-box{position: absolute;z-index: 999;top:45px;right:0px;max-height: 274px;background: #fff;border-radius: 4px;box-shadow: 2px 2px 4px 2px rgba(0,0,0,0.20);}
+.rpt-method-tip .rpt-share-method-box:before{content:'';display:inline-block;border-left: 10px solid transparent;border-right: 10px solid transparent;border-bottom: 10px solid #d9d9d9;position: absolute;top:-10px;right:12px;}
+.rpt-method-tip .rpt-share-method-box:after{content:'';display:inline-block;border-left: 9px solid transparent;border-right: 9px solid transparent;border-bottom: 9px solid #fff;position: absolute;top:-9px;right:14px;}
+.rpt-method-tip .rpt-share-method-box-top{height:50px;padding:8px 16px;line-height: 17px;font-size: 12px;color:#999;}
+.rpt-method-tip .rpt-share-method-box-body{padding:0 16px;overflow-y:auto;max-height:221px;}
+.rpt-method-tip .rpt-share-method-box-body ul{margin-left:-40px;}
+.rpt-method-tip .rpt-share-method-box-body ul li{list-style:none;height: 37px;line-height: 37px;border-bottom: 1px solid #D9D9D9;}
+.rpt-method-tip .rpt-share-method-box-body ul li:last-child{border-bottom: 0px solid #D9D9D9;}
+.rpt-method-tip .rpt-share-method-box-body ul li .btn{height:26px;margin-top:5px;color: #999;}
+.rpt-method-tip .rpt-share-method-box-body ul li span{max-width: 170px;display: inline-block;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;}
+ .rpt-method-list{display: inline-block;margin-bottom: 0;margin-left:-32px;line-height: 0;}  /*width:100%;*/
+.rpt-method-list li{height:22px;line-height:20px;display: inline-block;margin-right:8px;padding:0 8px;margin-top: 9px;}
+.rpt-method-list span{cursor:pointer;color: #108EE9;}
+.rpt-method-list span:hover{}
+.rpt-method-list b{display:inline-block;width:12px;height:12px;margin-left: 4px;cursor: pointer;color: #108EE9;}
+
+li{
+	list-style: none;
+	z-index: 200;
+}
+#voutypeCode{
+	width: 74px;
+    border-radius: 4px;
+    padding-left: 16px;
+}
+#gridGOV .check-style{
+	width: 37px;padding: 0;
+}
+#panelUl li:hover{
+	cursor:pointer; 
+	background: rgba(16,142,233,0.20);
+}
+.under-line{
+	text-decoration: underline;
+}
+/*全局*/
+body{
+	overflow:auto;
+    letter-spacing: 0;
+    height:100%;
+}
+/*未达项表格*/
+.form-group{
+	margin-bottom:0!important;
+}
+/* #addRow{
+	border-radius: 4px;
+} */
+.uf-grid-viewport{
+    color: #333333;   
+	border:1px solid #DFE6EC;
+    height:auto;
+}
+/* #lateBoxBody,#listBoxBody{
+	height:auto!important;
+} */
+/*按钮组*/
+.tool-bar-body{
+	text-align: center;
+}
+/* .tc{
+	border: 1px solid #DFE6EC;
+	 padding:10px;
+	 margin:0;
+} */
+/* #addRow,#addRowOne{
+	width:142px;
+} */
+/* #expfunc-tool-bar{
+	 padding-top:15px;
+} */
+/*对账单*/
+.tab-content{
+	border:none;
+
+	overflow:hidden;
+}
+#bankBegin,#reconBegin{
+	width: 49.5%;
+    background: #F7F9FB;
+    padding:10px;
+}
+#bankBegin table td,#bankBegin table th{
+	border: 1px solid #DFE6EC;
+	text-align: center;
+}
+#reconBegin table td,#reconBegin table th{
+	border: 1px solid #DFE6EC;
+	text-align: center;
+}
+.beginTitle{
+	margin: 6px 0;
+	border-left: solid 3px #108EE9;
+	padding-left: 10px;
+}
+.beginTitle span:last-child{
+	text-align: right;
+}
+#bankBegin table,#reconBegin table{
+	background: #FFFFFF!important;
+	width: 100%;
+}
+#bankBegin table td,#reconBegin table td{
+	padding:10px;
+}
+#bankBegin table td.left,#reconBegin table td.left{
+	text-align: left;
+	width: 50%;
+}
+#bankBegin table td.right,#reconBegin table td.right{
+	text-align: right;
+	width: 50%;
+}
+#change{
+	text-decoration: none;
+	color: #108EE9;
+	text-align: left;
+}
+#bankChangeInput,#reconChangeInput{
+	border: none;
+	outline: medium;
+	display: block;
+	width:200px;
+	text-align: right;
+}
+.cont-tabs{
+	 margin-top:10px;
+}
+div.uf-grid-head-view,div.uf-grid-body-view{
+	width:auto!important;
+}
+.icon-calendar{
+	display:none!important;
+}
+.journalcls{
+   background: #F7F9FB;
+   border: 1px solid #DFE6EC;
+   border-radius: 4px;
+   width:48%;
+   height:106px;
+   margin:10px;
+}
+.journalcls:nth-child(2){
+    margin-left:0px;
+    margin-right: 17px;
+}
+.beginContainer{
+    padding:12px 10px 0 12px;
+}
+.begincon{
+        padding-left: 15px;
+}
+.begincon i{
+    font-style: normal;
+}
+.begincon i:nth-child(2){
+    padding-left:50px;
+}
+.containerfoot{
+margin:auto;
+}
+
+.switch-style{
+	background: #FFFFFF;
+	border: 1px solid #CCC;
+	border-radius: 4px;
+	font-size: 20px;
+	text-align: center;
+	padding-top: 4px;
+	line-height: 20px;
+	height: 30px;
+	margin-top: 4px;
+	margin-right: 12px;
+}
+.switch-stylexs {
+	width: 250px;
+	padding-left: 10px;
+	display: none;
+}
+.switch-stylexs label {
+	margin: 5px 0;
+}
+/* 后端分页 */
+#crossBook .ufma-table-paginate{
+	float: right;
+}
+.gridGOV-paginate .dataTables_info {
+	   display: none;
+}
+#crossBook .ufma-table-paginate select {padding: 8px;}
+#crossBook .ufma-table-paginate .pull-left{line-height: 30px; margin: 0;}
+#crossBook .ufma-table-paginate button.pull-left{line-height: 20px;}
+#crossBook .ufma-table-paginate select,
+#crossBook .ufma-table-paginate input{height: 30px; border-radius: 4px;}
+#crossBook .ufma-table-paginate input{width: 34px;}
+#crossBook .ufma-table-paginate .pagination-sm>li>a{font-size: 12px; line-height: 1.42857143;}
+#crossBook .ufma-table-paginate .vbNumPage.active span{background-color: #108EE9;border-color: #108EE9;}
+#crossBook .ufma-table-paginate .vbNumPage:hover a{background-color: #108EE9;border-color: #108EE9;color: #FFFFFF;}
+#crossBook .ufma-table-paginate .vbPrevPage:hover a{background-color: #108EE9;border-color: #108EE9;color: #FFFFFF;}
+#crossBook .ufma-table-paginate .vbNextPage:hover a{background-color: #108EE9;border-color: #108EE9;color: #FFFFFF;}
+#crossBook .ufma-table-paginate #vbTable-pagination {
+	margin: 0 8px 0 0;
+}

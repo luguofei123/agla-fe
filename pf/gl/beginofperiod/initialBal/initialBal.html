@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>期初余额录入</title>
+		<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+		<script src="../../../pub/boot.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+	</head>
+
+	<body>
+		<div class="container-fluid ufma-container no-print">
+			<!--工作区 begin-->
+			<div class="workspace" id="bodywork">
+				<div class="container-fluid" id="bodycont">
+					<div class="ufma-portlet">
+						<div class="portlet-title">
+							<div class="caption">
+								<span class="caption-subject font-dark uppercase">期初科目余额</span>
+							</div>
+							<div class="inline-block absolute margin-left-15 margin-top-8">
+								<ul class='ufma-list-col clearfix padding-left-8'>
+									<li class="ufma-list-col-item">
+										<!--<div id='cbAgency' name="agencyCode" class="ufma-treecombox ufma-combox-agency" icon="icon-unit" url="/gl/eleAgency/getAgencyTree" valueField="id" textField="codeName" placeholder="请选择单位"></div>-->
+										<div id='cbAgency' name="agencyCode" class="ufma-treecombox ufma-combox-agency"></div>
+									</li>
+									<li class="ufma-list-col-item">
+										<div id='cbAcct' class="ufma-combox ufma-combox-acct"></div>
+									</li>
+								</ul>
+							</div>
+							<div class="btn-group pull-right" style="margin-left: 8px;margin-top: 8px;">
+								<button type="button" id="btn-upload" class="btn btn-sm btn-default btn-upload btn-uploads btn-permission">导入Excel</button>
+							 	 <form id="upmodaldata" enctype="multipart/form-data">
+                                    <input name="agencyCode" type="input" id="agencyCodes" style="display: none;">
+                                    <input name="acctCode" type="input" id="acctCodes" style="display: none;">
+                                    <input name="setYear" type="input" id="setYears" style="display: none;">
+                                    <input name="rgCode" type="input" id="rgCodes" style="display: none;">
+                                    <input name="file" type="file" id="upmodal" style="display: none;">
+                                </form>
+							</div>
+							<div class="btn-group pull-right" style="margin-left: 8px;margin-top: 8px;">
+								<!--<a id="btn-dowload" style="color:blue">下载导入模板</a>-->
+								<button type="button" id="btn-dowload" class="btn btn-sm btn-default btn-dowload  btn-uploads btn-permission">下载导入模板</button>
+								<!--<input type="file" style="display: none;" id="upmodal" value="" />-->
+							</div>
+						</div>
+
+					</div>
+					<!--					<div class="ufma-form-group-box bordered-bottom padding-bottom-5 margin-top-8">
+						
+						<ul class='ufma-list-col clearfix padding-left-8'>
+							<li class="ufma-list-col-item">
+								<div id='cbAgency' name="agencyCode" class="ufma-treecombox ufma-combox-agency" icon="icon-unit" url="/gl/eleAgency/getAgencyTree" valueField="id" textField="codeName" placeholder="请选择单位"></div>
+							</li>
+							<li class="ufma-list-col-item">
+								<div id='cbAcct' class="ufma-combox ufma-combox-acct"></div>
+							</li>
+						</ul>
+					</div>-->
+					<!--报表begin-->
+					<div class="ufma-report">
+
+						<!--报表标题begin-->
+						<div class="ufma-report-header">
+							<div class="ufma-report-title">期初余额</div>
+							<!--报表标题end-->
+							<!--报表副标题begin-->
+							<div class="ufma-report-caption">
+								<span class="org" style="display: none !important;">单位：<span id="curAngency">...</span> <span id="curAcct">...</span></span>
+								<span class="unit">金额单位：元</span>
+								<span class="script">
+								<span style="display: none;">显示暂存
+									<label class="mt-checkbox mt-checkbox-outline" style="height: 14px;">
+										<input type="checkbox" id="issavetemp">
+										<span></span>
+									</label>
+								</span>
+								<span>显示上年余额
+									<label class="mt-checkbox mt-checkbox-outline" style="height: 14px;">
+										<input type="checkbox" id="isshowlastyear">
+										<span></span>
+									</label>
+								</span>
+								<span class="color-script"><span class="color-panel bgc-gray2"></span>非末级</span>
+								<span class="color-script"><span class="color-panel bgc-white"></span>末级</span>
+								<!--<span class="color-script"><span class="color-panel bgc-sky"></span>辅助核算</span>-->
+								</span>
+							</div>
+						</div>
+						<!--报表副标题end-->
+						<!--报表表体begin-->
+						<div class="ufma-report-body">
+							<div class="ufma-report-top-bar">
+								<div class="btn-group">
+									<button class="btn btn-default btn-permission btn-print" data-toggle="tooltip" title="打印">
+                            <span class="glyphicon icon-print"></span>
+                        </button>
+									<button class="btn btn-default btn-permission btn-export" data-toggle="tooltip" title="导出">
+                            <span class="glyphicon icon-upload"></span>
+                        </button>
+								</div>
+							</div>
+
+							<div class="ufma-report-tabs">
+								<ul class="nav nav-tabs" id="tabAcce">
+									<li class="active">
+										<a href="javascript:;" data-status="O">全部</a>
+									</li>
+									<li>
+										<a href="javascript:;" data-status="A">资产类</a>
+									</li>
+									<li>
+										<a href="javascript:;" data-status="P">负债类</a>
+									</li>
+									<li>
+										<a href="javascript:;" data-status="C">收入类</a>
+									</li>
+									<li>
+										<a href="javascript:;" data-status="">支出类</a>
+									</li>
+									<li>
+										<a href="javascript:;" data-status="">权益类</a>
+									</li>
+								</ul>
+							</div>
+							<div id="reportTable"></div>
+						</div>
+						<!--报表表体end-->
+
+					</div>
+					<!--报表end-->
+
+				</div>
+				<div class="ufma-tool-bar no-print">
+					<div class="tool-bar-body bordered no-print">
+						<div class="ufma-tool-btns">
+							<button type="button" id="btnShiShuan" class="btn btn-sm btn-default btn-permission btn-trial-balancing">试算平衡</button>
+							<!--<button type="button" class="btn btn-sm btn-default btn-ajax btn-save btn-permission" id="btn-save">保存</button>
+							<button type="button" class="btn btn-sm btn-default btn-ajax btn-save-tmp btn-permission btn-moment-save" id="btn-save-tmp">暂存</button>-->
+							<!--btn-ajax类，在vouGuid还没刷新的时候就已经可以点击，造成vouGuid尚未更新-->
+							<button type="button" class="btn btn-sm btn-default btn-save btn-permission btn-ajax" id="btn-save">保存</button>
+							<button type="button" class="btn-ajax btn btn-sm btn-default btn-save-tmp btn-permission btn-moment-save" id="btn-save-tmp">暂存</button>
+						</div>
+						<div class="info">共0条</div>
+					</div>
+				</div>
+				<!--工作区 end-->
+			</div>
+		</div>
+		<script src="initialBal.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+	</body>
+	<style type="text/css">
+		th {
+			text-align: center !important;
+		}
+		.bottom0{
+			bottom:0px !important;
+		}
+		.workspace .ufma-tool-bar{
+			visibility: hidden  !important;
+		}
+		.uf-fix .ufma-tool-bar{
+			visibility: visible !important;
+		}
+		.ufma-datatable tbody tr.hover {
+		    background: #85d6ff;
+		}
+		.allshow{
+			display: block !important;
+		}
+	</style>
+
+</html>

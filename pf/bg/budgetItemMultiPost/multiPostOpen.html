@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>新增指标编制</title>
+	<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+	<script src="../../pub/boot.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+	<link rel="stylesheet" href="../../agla-trd/fileinput/fileinput.css" />
+	<script src="../../agla-trd/fileinput/fileinput.js" type="text/javascript" charset="utf-8"></script>
+	<script src="../../agla-trd/fileinput/zh.js" type="text/javascript" charset="utf-8"></script>
+  <link rel="stylesheet" href="../pub/bgPub.css?rev=@@hash" />
+  <link rel="stylesheet" href="../pub/common.css?rev=@@hash" />
+	<link rel="stylesheet" href="../pub/bgPubImpAttachment.css?rev=@@hash" />
+  <link rel="stylesheet" href="budgetItemMultiPost.css?rev=@@hash" />
+  <link rel="stylesheet" href="../pub/bgPubAuditModal.css?rev=@@hash" />
+	<style>
+		.uf-grid-table-edit {
+			width: 92%;
+		}
+	</style>
+</head>
+
+<body>
+	<div id="budgetItemMultiPostOpen" class="ufma-layout-updown">
+		<div class="ufma-layout-up">
+			<div class="container-fluid bgMultiModalMain">
+				<div id="pnl-tzzb">
+					<!--查询条件begin-->
+					<div class="uf-panel  margin-bottom-10">
+						<div class="uf-form-group-panel">
+							<div class="margin-bottom-10" style="height: 40px;">
+                <div style="float: left">
+                  <div class="form-ctrl">预算方案：</div>
+									<div class="form-ctrl">
+                    <div id="bg-multiModal-bgPlan" class="uf-combox" idField="chrId" textField="chrName" placeholder="请选择预算方案"></div>
+									</div>
+									<div class="form-ctrl">单据日期：</div>
+									<div class="form-ctrl">
+                    <div class="uf-datepicker bg-multiModal-topDiv bg-multiModal-topDiv-30right bg-multiModal-dtp" id="bg_multiModal_dtp"  style="background-color: white;"></div>
+									</div>
+									<div class="label-ctrl">单据号：</div>
+									<div class="form-ctrl">
+                    <input type="text" value="" class="form-control inputHeight" id="multiModal_billCode" readonly/>
+									</div>
+								</div>
+								<!--<div style="float: right">-->
+								<div style="float: right;width:155px;">
+									<!--修改附件的位置---zsj--bug74472-->
+									附单据
+									<!-- bug78324--zsj-->
+									<input id="btn-multiModal-fileCountInput" type="text" class="uf-form-control" style="width: 40px;text-align:center;" oninput="value=value.replace(/[^\d]/g,'')"
+									/>&nbsp;张
+									<button type="button" id="btn-multiModal-aboutFiles" class="btn btn-sm btn-default btn-attach bg-multiModal-rightTopDiv unallocate-BgItem-fileBtn"
+									 title="附件">
+										<span class=" icon-file"></span>
+									</button>
+								</div>
+							</div>
+						</div>
+					</div>
+          <div id="multiPostGrid" class="uf-datagrid" style="height: 300px;"></div>
+					<div class="u-msg-footer bgMultiModal-footer1">
+						<button type="button" id="btn-newRow" class="btn btn-sm btn-default bg-multiModal-tbl-addRow btn-permission btn-add">
+							<span class="glyphicon icon-plus btn-add"> &nbsp;新增表格行 </span>
+						</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="ufma-layout-down bordered-top">
+			<div class="text-right  margin-right-30 m10">
+        <div class="div-tbl-bottom-btn">
+          <button
+            type="button"
+            id="btn-modal-close"
+            class="btn btn-sm btn-default btn-cancel bg-multiModal-rightButton"
+            data-dismiss="modal"
+          >
+            取消
+          </button>
+        </div>
+        <div class="div-tbl-bottom-btn">
+          <button
+            type="button"
+            id="btn-save"
+            class="btn btn-sm btn-default btn-save bg-multiModal-rightButton btn-permission"
+          >
+            保存
+          </button>
+        </div>
+        <div class="div-tbl-bottom-btn">
+          <button
+            type="button"
+            id="btn-modal-saveAndNew"
+            class="btn btn-sm btn-primary btn-saveadd bg-multiModal-rightButton btn-permission"
+          >
+            保存并新增
+          </button>
+        </div>
+        <div class="div-tbl-bottom-btn">
+          <button
+            type="button"
+            id="btn-modal-imp"
+            class="btn btn-sm btn-default btn-import bg-multiModal-rightButton btn-permission"
+          >
+            导入
+          </button>
+        </div>
+			</div>
+		</div>
+	</div>
+	<script src="../pub/bg.parse.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+	<script src="../pub/bgPub.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+	<script src="../pub/bgPubImpAttachment.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+	<!-- <script src="budgetItemMultiPost.js?rev=@@hash" type="text/javascript" charset="utf-8"></script> -->
+	<script src="../pub/bgPubLog.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+  <script src="multiPostOpen.js?rev=@@hash"></script>
+  <script src="../pub/bgPubItemManager.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+  <script src="../pub/bgPubAuditModal.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+  <script src="../pub/bgPubLog.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+</body>
+
+</html>

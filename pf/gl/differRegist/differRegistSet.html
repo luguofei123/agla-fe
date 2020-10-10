@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>登记差异项</title>
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <script src="../../pub/boot.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+    <link rel="stylesheet" href="differRegistSet.css?rev=@@hash" />
+</head>
+
+<body>
+    <div class="ufma-layout-updown">
+        <div class="ufma-layout-up p15" style="padding-top: 5px;">
+			<!-- <p class="circular"><span class="yellowcircular"></span>凭证信息</p> -->
+			<ul class="nav nav-tabs" style="margin-bottom: 3px;">
+				<li class="active">
+					<a href="javascript:;" data-class="vou">凭证信息</a>
+				</li>
+				<li>
+					<a href="javascript:;" data-class="vouSummary">凭证汇总信息</a>
+				</li>
+			</ul>
+            <div class="vou">
+				<table class="ufma-table voutabss table-bordered">
+					<thead>
+						<tr>
+							<th colspan = 3>财务会计</th>
+							<th colspan = 3>预算会计</th>
+						</tr>
+						<tr>
+							<th>会计科目</th>
+							<th>借方金额</th>
+							<th>贷方金额</th>
+							<th>会计科目</th>
+							<th>借方金额</th>
+							<th>贷方金额</th>
+						</tr>
+					</thead>
+					<tbody>
+						
+					</tbody>
+				</table>
+            	<table class="ufma-table voutab table-bordered">
+					<thead>
+						<tr>
+							<th colspan = 3>财务会计</th>
+							<th colspan = 3>预算会计</th>
+						</tr>
+						<tr>
+							<th>会计科目</th>
+							<th>借方金额</th>
+							<th>贷方金额</th>
+							<th>会计科目</th>
+							<th>借方金额</th>
+							<th>贷方金额</th>
+						</tr>
+					</thead>
+					<tbody>
+
+					</tbody>
+            	</table>
+			</div>
+			<div class="vouSummary" style="display:none;">
+				<table class="ufma-table vouSummarytabss table-bordered">
+					<thead>
+						<tr>
+							<th colspan = 3>财务会计</th>
+							<th colspan = 3>预算会计</th>
+						</tr>
+						<tr>
+							<th>会计科目</th>
+							<th>借方金额</th>
+							<th>贷方金额</th>
+							<th>会计科目</th>
+							<th>借方金额</th>
+							<th>贷方金额</th>
+						</tr>
+					</thead>
+					<tbody>
+						
+					</tbody>
+				</table>
+            	<table class="ufma-table vouSummarytab table-bordered">
+					<thead>
+						<tr>
+							<th colspan = 3>财务会计</th>
+							<th colspan = 3>预算会计</th>
+						</tr>
+						<tr>
+							<th>会计科目</th>
+							<th>借方金额</th>
+							<th>贷方金额</th>
+							<th>会计科目</th>
+							<th>借方金额</th>
+							<th>贷方金额</th>
+						</tr>
+					</thead>
+					<tbody>
+
+					</tbody>
+            	</table>
+            </div>
+        	<p class="circular"><span class="yellowcircular"></span>差异情况</p>
+       		<div class="balAmt">
+            	<table class="ufma-table balAmttab table-bordered">
+            		<tr>
+            			<td class="title csys"></td>
+            			<td class="csysje"></td>
+            			<td class="title">收入差异已分配金额</td>
+            			<td class="sryje"></td>
+            			<td class="title">收入差异待分配金额</td>
+            			<td class="srdje"></td>
+            		</tr>
+            		<tr>
+            			<td class="title yzcf"></td>
+            			<td class="yzcfje"></td>
+            			<td class="title">支出差异已分配金额</td>
+            			<td class="zcyje"></td>
+            			<td class="title">支出差异待分配金额</td>
+            			<td class="zcdje"></td>
+					</tr>
+					<tr>
+						<td class="title cydfp">差异项待分配金额</td>
+						<td class="cydje"></td>
+						<td class="title cyyfp">重要事项差异已分配金额</td>
+						<td class="cyyje"></td>
+						<td class="title cyqt">其他差异已分配金额</td>
+						<td class="cyqtje"></td>
+					</tr>
+            	</table>
+       		</div>
+       		<div class="differAcc">
+            	<table class="ufma-table differAcctab table-bordered">
+            		<tr>
+            			<th>结余与盈余差异项</th>
+            			<th>差异金额</th>
+            		</tr>
+            		
+            	</table>
+			</div>
+			<!-- <div class="balAmtal">
+            	<table class="ufma-table balAmtaltab table-bordered">
+					
+				</table>
+			</div> -->
+        </div>
+    </div>
+    <div class="ufma-layout-down bordered-top">
+    	<div class="text-right margin-right-30">
+	        <div class="btn-group">
+	            <button type="button" class="btn btn-sm btn-primary" id="btn-matching">自动匹配</button>
+	        </div>
+	        <div class="btn-group">
+	            <button type="button" class="btn btn-sm btn-default" id="btn-save">保存</button>
+	        </div>
+	        <div class="btn-group">
+	            <button type="button" class="btn btn-sm btn-default" id="btnClose">取消</button>
+	        </div>
+    	</div>
+    </div>
+    <script src="differRegistSet.js" type="text/javascript " charset="utf-8 "></script>
+
+</body>
+
+</html>

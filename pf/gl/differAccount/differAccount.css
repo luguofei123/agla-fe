@@ -1,0 +1,33 @@
+.form-horizontal .form-group .control-element {
+	width: 160px;
+}
+
+.form-horizontal .form-group .control-label {
+	width: 80px;
+	text-align: right;
+	margin-right: 5px;
+}
+.rpt-method-tip{
+	float: right;
+	margin-top: 8px;
+}
+.ufma-layout-slider-sm.ufma-layout-fixed-slider-left>.ufma-layout-content {
+	margin-left: 316px!important;
+}
+.ufma-tool-bar .tool-bar-body {
+    margin-left: -1px!important;
+    margin-right: -3px!important;
+}
+.rpt-table-sub-tip{float:left;height: 30px;line-height: 40px;}
+.rpt-table-sub-tip2{color:#999;margin-left:24px;}
+.rpt-table-sub-tip2 i{font-style: normal;}
+
+table.dataTable tbody tr.selected-high-light {
+	background-color: #ECF6FD;
+}
+table.ufma-table.dataTable tr.selected-high-light {
+	background-color: #ECF6FD;
+}
+table.dataTable tbody .tr{
+	text-align: right;
+}

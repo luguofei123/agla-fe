@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+  		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>单据方案</title>
+  		<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+		<script src="../../pub/boot.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+		<link rel="stylesheet" type="text/css" href="../lpCommon/lpCommon.css?rev=@@hash"/>
+		<link rel="stylesheet" type="text/css" href="billSchemeList.css?rev=@@hash"/>
+		<style type="text/css">
+			.lp-query-box-li .lp-query-li {
+				margin-left: 30px;
+			}
+		</style>
+	</head>
+<body id="billScheme">
+<!--整个容器 begin-->
+<div id="billDefinition" class="billDefinitionAgency container-fluid ufma-container">
+	<input type="text" id="schemeNameVisible" style="display: none" value="1">
+	<!--工作区 begin-->
+	<div id="showclickbillDefinition"></div>
+	<div id = "open-formula-editor" style="display: none"></div>
+	<div id="open-accItemType-editor" style="display: none"></div>
+	<div class="workspace">
+		<!--单据定义工作区 begin-->
+    	<div class="lp-workspace">
+    		<!--标题位 begin-->
+    		<div class="lp-selete-box bordered-bottom">
+    			<!--标题 begin-->
+    			<div class="lp-title">单据方案</div>
+    			<!--标题 end-->
+				<div class="ufma-treecombox ufma-combox-agency" id="bdAgency2" style="visibility:visible;margin-left: 30px"></div>
+				
+				<!--按钮 begin-->
+				<!-- <div class="lp-method-tip" style="width: 185px;"> -->
+					<div class="lp-method-tip" style="right: 10px;">
+					<div class="btn-group">
+						<!-- <input type="button" class="disable" value="插件按钮"> -->
+						<button type="button" id="bdAdd" class=" btn-radius btn btn-sm btn-primary btn-add btn-permission" style="margin-right: 8px;">新增</button>
+						<button type="button" id="btnExport" class=" btn btn-sm btn-radius btn-default btn-export btn-permission" style="margin-right: 8px;">导出</button>
+						<button type="button" id="btnImport" class=" btn btn-sm btn-radius btn-default btn-export btn-permission" style="margin-right: 8px;">导入</button>
+						<!-- <button type="button" id="btn-drag" class="btn btn-sm btn-default btn-drag disable_open" style="margin-left:5px">启用拖拽排序</button>
+						<input type="button" class="disable hidden" value="插件按钮"> -->
+					</div> 
+				</div>
+				<!--按钮 end-->
+    		</div>
+    		<!--标题位 end-->
+    		
+    		<!--查询 begin-->
+			<div class="lp-box lp-query-box">
+				<!--查询条件 begin-->
+				<div class="lp-query-box-left">
+					<!--上半部显示 begin-->
+					<ul class="lp-query-box-top">
+						<!--第二行 begin-->
+						<li class="lp-query-box-li clearfix" style="position: relative">
+							<!--方案名称 begin-->
+							<div class="lp-query-li schemeName-box-outter1" style="width: 260px;margin-left: 0">
+								<label class="lp-query-li-cont-title">方案名称：</label>
+								<div class="lp-query-li-cont">
+									<div id="schemne-name" class="uf-combox" style="width: 180px">
+									</div>
+									<!--<input type="text" name="schemeName" id="schemeName" class="bordered-input padding-3" style="width: 180px">-->
+								</div>
+							</div>
+							<div class="lp-query-li schemeName-box-outter2 hidden" style="width: 260px;margin-left: 0">
+								<label class="lp-query-li-cont-title">方案名称：</label>
+								<div class="lp-query-li-cont schemeName-box">
+									<input type="text" name="schemeName" id="schemeName" value="全部" class="bordered-input padding-3" style="width: 180px">
+									<b></b>
+									<ul class="schemeName-list hidden">
+										<li>全部</li>
+									</ul>
+								</div>
+							</div>
+							<!--方案名称 end-->
+							<!--数据源 begin-->
+							<div class="lp-query-li" style="width: 272px">
+								<label class="lp-query-li-cont-title">数据源类型：</label>
+								<div class="lp-query-li-cont">
+									<!--<div id="source-btn" class="lp-query-btn-cont">-->
+										<!--&lt;!&ndash; 数据源 开始位置 &ndash;&gt;-->
+
+									<!--</div>-->
+									<div id="source-btn" class="uf-combox" style="width: 180px">
+									</div>
+								</div>
+							</div>
+							<!--数据源 end-->
+							<!--来源子系统 begin-->
+							<div class="lp-query-li" style="width: 272px">
+								<label class="lp-query-li-cont-title">来源子系统：</label>
+								<div class="lp-query-li-cont">
+									<!--<div id="son-system-btns" class="lp-query-btn-cont">-->
+									<!--&lt;!&ndash; 数据源 开始位置 &ndash;&gt;-->
+
+									<!--</div>-->
+									<div id="son-system-btns" class="uf-combox" style="width: 180px">
+									</div>
+								</div>
+							</div>
+							<!--来源子系统 end-->
+							<span class="tip-more"><i>更多</i><span class="glyphicon icon-angle-bottom"></span></span>
+							<button class="btn btn-primary btn-query btn-permission" id="search-btn" style="margin-top: 10px;float: right;right:0">查询</button>
+						</li>
+						<li class="lp-query-box-li-bottom lp-query-box-li clearfix" style="display: none;">
+							<div class="lp-query-li" style="width: 272px;margin-left: 0" >
+								<label class="lp-query-li-cont-title">模版名称：</label>
+								<div class="lp-query-li-cont">
+									<input class="bordered-input padding-3 input-height" type="text" id="vouTmpName" style="width: 180px">
+								</div>
+							</div>
+							<div class="lp-query-li" style="width: 272px;margin-left:60px">
+								<label class="lp-query-li-cont-title">描述：</label>
+								<div class="lp-query-li-cont">
+									<input class="bordered-input padding-3 input-height" type="text" id="schemeDescribe" style="width: 180px">
+								</div>
+							</div>
+						</li>
+						<!--第二行 end-->
+					</ul>
+					<!--上半部显示 end-->
+				</div>
+				<!--查询条件 end-->
+			</div>
+			<!--查询 end-->
+			
+			<!--单据模板区域 begin  模板标志颜色（#64DDA0 #FFD249 #63BEFF #FFA0A0 #D19DEF）-->
+			<ul class="model-box list-unstyled">
+				<!--单据类型对应目标单据模板 开始位置-->
+			</ul>
+			<!--单据模板区域  end-->
+    	</div>
+    	<!--单据定义工作区 end-->
+	</div>
+	<!--工作区 end-->
+</div>
+<div id="ModalBg" style="display: none"></div>
+<!--整个容器 end-->
+<script src="Tdrag.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+<script src="billSchemeList.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+</body>
+</html>

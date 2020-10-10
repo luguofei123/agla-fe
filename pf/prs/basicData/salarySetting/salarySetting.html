@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>工资项显示设置</title>
+  <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport" />
+  <script src="../../../pub/boot.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+  <link rel="stylesheet" type="text/css" href="salarySetting.css?rev=@@hash" />
+  <link rel="stylesheet" type="text/css" href="../../common/common.css?rev=@@hash" />
+</head>
+
+<body>
+  <!--整个容器 begin-->
+  <div id="level-salary-grade" class="container-fluid ufma-container">
+    <div class="workspace">
+      <div class="prs-workspace">
+        <div class="ufma-portlet" style="padding-bottom: 0;">
+          <div class="portlet-title">
+            <div class="caption">
+              <span class="caption-subject font-dark uppercase">工资项显示设置</span>
+            </div>
+            <!-- <div class="agencycom">
+                <div id='agencyCode' name="agencyCode" class="ufma-treecombox ufma-combox-agency" icon="icon-unit" url="/ma/sys/eleAgency/getAgencyTree"
+                    valueField="id" textField="codeName" readOnly=false  placeholder="请选择单位">
+                </div>
+            </div> -->
+            <div class="actions">
+              <div>
+                <!-- <button id="btnQuery" type="button" class="btn btn-sm btn-default btn-query btn-permission">
+                  查询
+                </button> -->
+                <button id="btn-save-salary-set" type="button" class="btn btn-sm btn-primary btn-save btn-permission">
+                  保存
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="table-sub">
+          <div class="table-sub-action clearfix">
+            <!-- <div id="dtToolbar" class="btn-group fr">
+              <a class="table-sub-btn self-print-btn btn-print btn-permission"><i class="glyphicon icon-print"></i></a>
+              <a class="table-sub-btn self-export-btn btn-export btn-permission"><i class="glyphicon icon-upload"></i></a>
+            </div> -->
+          </div>
+        </div>
+        <table id="salary-set-table" class="ufma-table dataTable uf-rpt-table" style="border-left: 1px solid #dcdcdc;border-right: 1px solid #dcdcdc;">
+          <thead>
+            <tr>
+              <th class="center">工资项代码</th>
+              <th class="center">工资项目</th>
+              <th class="center">工资项目性质</th>
+              <th class="center">工资数据来源</th>
+              <th class="center">显示顺序</th>
+              <th class="center">个人端是否显示</th>
+              <th class="center">短信是否显示</th>
+              <th class="center">操作</th>
+            </tr>
+          </thead>
+          <tbody>
+
+          </tbody>
+        </table>
+      </div>
+
+    </div>
+  </div>
+  <script src="../../common/common.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+  <script src="salarySetting.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+</body>
+
+</html>

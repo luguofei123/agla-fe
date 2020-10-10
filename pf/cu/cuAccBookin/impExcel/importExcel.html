@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>银行对账单-导入excel</title>
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <script src="../../../pub/boot.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+    <link rel="stylesheet" href="../cuAccBookin.css?rev=@@hash" />
+</head>
+
+<body>
+    <div class="ufma-layout-updown" id="importExcel">
+        <div class="ufma-layout-up">
+            <span id="info" style="top:20px;position: fixed;"></span>
+            <div class="container-fluid">
+                <!--导入方式begin-->
+                <div class="import-type">
+
+                    <div id="form-uploadTab" class="panel-collapse collapse in">
+                        <div class="panel-body">
+                            <div class="radio-title">
+                                <label class="mt-radio mt-radio-outline margin-right-8">
+                                    <input class="" type="radio" name="impType" value="2" checked> Excel
+                                    <span></span>
+                                </label>
+                                <div class="file-upload-box-text mt-radio mt-radio-outline margin-right-8">
+                                    <div class="file-upload-tip"></div>
+                                    <div class="file-upload-title" style="display: none;">
+                                        <span class="fileLong"></span> &nbsp;&nbsp;
+                                        <i class="icon icon-close"></i>
+                                    </div>
+                                </div>
+                                <div class="file-upload-box-btn" style="width:90px;overflow: hidden;margin-top: -7px;">
+                                    <button class="btn btn-primary" id="chooseFile">选择文件</button>
+                                    <form id="excelFileFrom" enctype="multipart/form-data">
+                                        <input id="sheetCode" name="sheetCode" type="hidden">
+                                        <input id="sheetName" name="sheetName" type="hidden">
+                                        <input id="colStart" name="startLine" type="hidden">
+                                        <input id="colEnd" name="endLine" type="hidden">
+                                        <input id="impScheGuid" name="impScheGuid" type="hidden">
+                                        <input id="excelFile" name="file" type="file" class="file-upload-input" style="bottom: 0px;top: 0px;">
+                                    </form>
+                                </div>
+                            </div>
+                            <div class="uf-dashed-hr"></div>
+                            <div class="radio-body">
+                                <div class="radio-body2">
+
+                                    <form class="form-horizontal">
+                                        <div class="row" style="margin-left:-26px;">
+
+                                            <div class="col-xs-6">
+                                                <div class="form-group">
+                                                    <label class="control-label em4">工作表：</label>
+                                                    <div class="control-element">
+                                                        <!-- <input type="text" name="" id="" class="form-control w200"> -->
+                                                        <div id="sheetList" class="uf-combox w200"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-xs-6">
+                                                <div class="form-group" style="margin: 0 !important;">
+                                                    <label class="control-label">数据行：</label>
+                                                    <div class="control-element">
+                                                        <!-- <input type="text" name="" id="" class="form-control w70 ib"> -->
+                                                        <div id="startList" class="uf-combox w70 ib"></div>
+                                                        至
+                                                        <!-- <input type="text" name="" id=""class="form-control w70 ib"> -->
+                                                        <div id="endList" class="uf-combox w70 ib"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-xs-12">
+                                                <div class="form-group">
+                                                    <label class="control-label em4">导入方案：</label>
+                                                    <div class="control-element">
+                                                        <div id="formatList" class="uf-combox w200"></div>
+                                                    </div>
+                                                    &nbsp;&nbsp;
+                                                    <button class="showSet btn btn-default  btn-setting">设置</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                                <!-- Excel end -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--导入方式end-->
+
+                <div class="showBox">
+                    <!--预览begin-->
+                    <div class="showBox" >
+                        <div id="form-showTab" class="panel-collapse collapse in">
+                            <div>
+                                <div class="tab-content" style="width:100%;overflow-x:auto;">
+                                    <table id="showTable" class="ufma-table uf-rpt-table">
+                                    </table>
+                                </div>
+                                <div class="setTip tc" style="display:none;">
+                                    <span class="uf-gray">还未添加导入方案，需先设置才能预览</span>
+                                    <span class="uf-primary ml20 cp showSet showSetBtn">设置</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--预览end-->
+                </div>
+            </div>
+        </div>
+        <div class="ufma-layout-down bordered-top">
+            <div class="text-right  margin-right-30">
+                <button type="button" class="btn btn-primary btn-import btn-ajax">导入
+                </button>
+                <button type="button" class="btn btn-default btn-close">取消</button>
+            </div>
+        </div>
+    </div>
+    <script src="importExcel.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+</body>
+
+</html>

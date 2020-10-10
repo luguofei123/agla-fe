@@ -1,0 +1,809 @@
+@border-color:#1B65B9;
+@border-box-color:#CECECE;
+@btn-border-radius:2px;
+@background-color:#1B65B9;
+@succ-background-color:#67C23A;
+@audit-background-color : #E6A23C;
+@error-background-color:#F56C6C;
+@background-write-color:#fff;
+@btn-background-hover-color:#3174C0;
+@border-hover-color:#3CA0F6;
+@background-title-color: #e7f3fc;
+@foot-hover-color:#1B65B9;
+@label-foot-color:#303133;
+@foot-color:#fff;
+@table-color:#F0F2F5;
+@table-hover-color:#ECF6FD;
+@table-odd-color:#F8F9FA;
+@select-hover-color:#E6F4FD;
+@search-query-box-color:#F0F2F5;
+@search-query-box--border-color:#D2EAFB;
+@check-color:#008ff0;
+@evenBackground: #F9F9F9;
+@single-border-color : #CECECE;
+@title-font-size:16px;
+@font-size:14px;
+@font-second-size:12px;
+@font-family:'微软雅黑';
+@font-text-color:#303133;
+@font-second-color:#777;
+@font-disabled-color:#909399;
+@font-weight:normal;
+@font-weight-bold:normal;
+@font-weight-content:300;
+@focus-input-ouline:#3787FF;
+@table-th-height:39px;
+@table-multi-th-height:24px;
+@table-td-height:39px;
+@table-grid-td-height:40px;
+@table-edit-td-height:38px;
+@table-th-size:14px;
+@table-td-size:14px;
+@input-height: 30px;
+@uf-combox-height : 30px;
+@datepicker-height : 30px;
+// 可编辑表格高度要比其他少1px
+@uf-grid-height : 39px;
+@panel-border-radius:2px;
+@panel-head-background:#fff;
+@panel-head-border:#d9d9d9;
+@panel-head-height:38px;
+@nav-background:#f7f7f7;
+@nav-border-radius:0px;
+@nav-border-hover:1px solid #ddd;
+@nav-border-bottom-hover:0px solid #ddd;
+@nav-border-top-hover:1px solid #ddd;
+@nav-border-bottom-active:1px solid #fff;
+@nav-border-top-active:2px solid #1B65B9;
+@nav-hover-color:#1B65B9;
+@nav-color:#303133;
+@nav-background-hover:#fff;
+@vou-select-hover-color:rgba(0,102,255,0.2);
+@paginate-font-size:12px;
+//滚动条
+@scrollbar-w : 4px;
+@scrollbar-h : 4px;
+//表格选中背景颜色
+@tbl-sel-color : #DEE9F5;
+//公共样式
+*::selection {
+    background:@select-hover-color !important;
+}
+::selection {
+    background: @select-hover-color !important;
+}
+:focus {
+    outline-color:@focus-input-ouline;
+}
+.uf-combox-input:focus { // CWYXM-16090: 单据方案input框获取焦点样式
+    outline: none;
+}
+.ufma-textboxlist-input, .ufma-combox-input,.uf-combox-input{
+    font-family: @font-family !important;
+}
+//表格间距与行高
+.uf-grid-head>.uf-grid-head-view>.uf-grid-table>tbody>tr>td, .uf-grid-head>.uf-grid-head-lock>.uf-grid-table>tbody>tr>td{
+    height: @table-edit-td-height;
+    font-size: @table-td-size !important;
+}
+.uf-grid-body td{
+    height: @table-grid-td-height;
+    font-size: @table-td-size !important;
+}
+.uf-grid-table td{
+    padding: 0px 8px 0px;
+}
+// .uf-grid-table-edit .uf-form-control, .uf-grid-table-edit .uf-buttonedit-border, .uf-grid-table-edit .uf-combox-border, .uf-grid-table-edit .uf-buttonedit, .uf-grid-table-edit .uf-combox, .uf-grid-table-edit .uf-treecombox, .uf-grid-table-edit .uf-datepicker{
+//     font-size: @table-td-size !important;
+// }
+.uf-grid-table-edit .uf-combox-input,.uf-grid-table-edit .uf-datepicker input{
+    height: 100%;
+}
+.curRate-tab thead tr th{
+    height: @table-th-height ;
+}
+.curRate-tab tbody tr td{
+    height: @table-td-height ;
+}
+.ufma-datatable tr th{
+    height: @table-th-height ;
+}
+.ufma-datatable tr td{
+    height: @table-td-height ;
+}
+table.ufma-table.dataTable th, .ufma-table th{
+    height: @table-th-height ;
+    font-size: @table-th-size !important;
+}
+table.ufma-table.dataTable td, .ufma-table td{
+    padding: 0px 8px 0px!important;
+    height: @table-td-height ;
+    font-weight: @font-weight !important;
+    font-size: @table-td-size !important;
+}
+table.ufma-table.dataTable.mult-header th, .ufma-table.mult-header th{
+    height: @table-multi-th-height ;
+    font-size: @table-th-size !important;
+}
+.uf-rpt-table.ufma-table.dataTable th{
+    height: @table-th-height ;
+    font-size: @table-th-size !important;
+    text-align: center;
+}
+//按钮圆角
+.ufma-shopping-trolley.right {
+	border-radius: @btn-border-radius 0 0 @btn-border-radius;
+}
+coaAcc-shopping-trolley {
+	border-radius: 0 @btn-border-radius @btn-border-radius 0;
+}
+.rightFixedBtn{
+    border-radius:@btn-border-radius 0 0 @btn-border-radius;
+}
+.btn,.dt-button,.btn-voucher,.u-button,.btn-voucher-lang{
+    border-radius:@btn-border-radius !important;
+}
+.label.label-radio{
+    border-radius:@btn-border-radius !important;
+    color:@font-text-color !important;
+}
+.btn-group > .btn:first-child:not(:last-child):not(.dropdown-toggle){
+    border-top-right-radius: 0 !important;
+    border-bottom-right-radius: 0 !important;
+}
+.btn-group > .btn:last-child:not(:first-child), .btn-group > .dropdown-toggle:not(:first-child){
+    border-top-left-radius: 0 !important;
+    border-bottom-left-radius: 0 !important;
+}
+.btn-group > .btn:not(:first-child):not(:last-child):not(.dropdown-toggle){
+  border-radius: 0 !important;
+}
+//字体颜色设置和字体宽度
+html,body{
+    font-size: @font-size;
+    font-family:@font-family;
+    font-weight: @font-weight ;
+    color: @font-text-color ;
+}
+.uf-grid-table-edit input[type="text"] { // CWYXM-16090: 单据方案可编辑表格input文字大小
+    font-size: @font-size;
+}
+.uf-grid-table-edit .uf-textarea-input {
+    font-size: @font-size;
+}
+input, a, textarea, span, th, td ,.btn{
+    font-family: @font-family;
+}
+//弹窗confirm确认框 字体加粗 guohx  20200608
+.u-msg-dialog .u-msg-content {
+    font-weight: @font-weight-bold  !important;
+}
+.u-msg-dialog .u-msg-content .ufma-panel{
+    font-weight: @font-weight !important;
+}
+.second-color{
+    color: @font-second-color !important;
+}
+.disabled-color{
+    color: @font-disabled-color !important;
+}
+.ufma-report .ufma-report-caption .unit,.color-script{
+    color: @font-second-color !important;
+}
+.lable{
+    color:@foot-color;
+}
+.select2-container--default .select2-selection--single .select2-selection__rendered{
+    color:@font-second-size !important;
+}
+.ufma-card .ufma-card-footer .btn-label {
+    color:@font-text-color !important;
+}
+a{
+    color:@foot-hover-color;
+}
+a:hover{
+    color:@foot-hover-color;
+}
+.ufma-datatable tr.locked td.cell-edit .cell-label{
+    color: @font-disabled-color !important;
+}
+.uf-tooltip{
+    font-weight: @font-weight;
+}
+.u-msg-dialog h4{
+    font-weight: @font-weight;
+    color: @font-text-color;
+}
+td.dataTables_empty i{
+    color: @font-disabled-color !important;
+}
+.u-msg-dialog .u-msg-content {
+    color: @font-second-color;
+}
+.uf-combox-input,.uf-datepicker input{
+    font-size:@font-size !important;
+}
+.btn,.btn-group .dt-button,.u-button,.btn-voucher-lang{
+    font-size:@font-size;
+}
+.label ,label{
+    font-size:@font-size ;
+    font-weight: @font-weight ;
+}
+.ztree *{
+    font-size:@font-size !important;
+    font-family:@font-family ;
+}
+.ufmaTree.ztree * {
+    font-family:@font-family ;
+}
+.ufma-tool-bar .tool-bar-body .info {
+    font-size: @font-second-size;
+}
+.ufma-tool-bar .tool-bar-body .info label{
+    font-size: @font-second-size;
+}
+.ufmaTree.ztree li a{
+    font-size:@font-size !important;
+}
+.font-dark {
+	color: @font-text-color !important;
+}
+.uf-form-control ,.form-control{
+    color: @font-text-color !important;
+}
+.uf-timeline li .uf-timeline-content {
+    color: @font-disabled-color !important;
+}
+.ufma-card .ufma-card-body {
+    color: @font-disabled-color !important;
+}
+.table-sub-info {
+    color: @font-disabled-color !important;
+}
+.rpt-table-sub-tip1,.rpt-table-sub-tip2,.rpt-table-sub-tip3,.rpt-table-sub-tip4{
+    color: @font-disabled-color !important;
+}
+.model-body .model-icon a {
+    color: @font-text-color !important;
+}
+.ufma-table,.dataTable,.ufma-datatable{
+    min-width: 100% ;
+}
+//背景色和边框色
+option::selection{
+    background: @select-hover-color !important;
+}
+.btn:focus,.dt-button:focus,.btn-voucher:focus{
+	outline:none !important;
+}
+table.ufma-table.dataTable tr:nth-child(even){
+    background: @evenBackground ;
+}
+.label.label-radio:hover{
+    background: @check-color !important;
+    color: @foot-color !important;
+}
+.btn-primary{
+    background: @background-color!important;
+    color: @foot-color !important;
+    border-color: @border-color !important;
+}
+.btn-voucher:hover, .btn-voucher:focus, .btn-voucher.focus, .btn-voucher:active, .btn-voucher.active {
+    background:@btn-background-hover-color !important;
+    color:@foot-color  !important;
+    border-color: @border-color !important;
+}
+.btn-primary:hover, .btn-primary:focus, .btn-primary.focus, .btn-primary:active, .btn-primary.active, .open>.dropdown-toggle.btn-primary {
+    background:@btn-background-hover-color !important;
+    color:@foot-color  !important;
+    border-color: @border-hover-color !important;
+}
+.btn-default:hover, .btn-default:focus, .btn-default.focus, .btn-default:active, .btn-default.active, .open>.dropdown-toggle.btn-default {
+    background:@background-color !important;
+    color:@foot-color  !important;
+    border-color: @border-color !important;
+}
+.dt-buttons .dt-button:focus:not(.disabled), .dt-buttons .dt-button:hover:not(.disabled){
+    background:@btn-background-hover-color !important;
+    color:@foot-color  !important;
+    border-color: @border-color !important;
+}
+.pagination > li > a, .pagination > li > span{
+    color:@foot-hover-color  !important;
+}
+.pagination > .active > a, .pagination > .active > span, .pagination > .active > a:hover, .pagination > .active > span:hover, .pagination > .active > a:focus, .pagination > .active > span:focus{
+    background:@background-color !important;
+    color:@foot-color  !important;
+    border-color: @border-color !important;
+}
+// 分页
+.ufma-table-paginate .vbNumPage:hover a{
+    background:@background-color !important;
+    color:@foot-color  !important;
+    border-color: @border-color !important;
+}
+.ufma-table-paginate .vbNextPage:hover a,.ufma-table-paginate .vbPrevPage:hover a{
+    background:@background-color !important;
+    color:@foot-color  !important;
+    border-color: @border-color !important;
+}
+.ufma-table-paginate .pull-left{
+    font-size: @paginate-font-size !important;
+}
+.ufma-table-paginate .pagination-sm>li>a{
+    font-size: @paginate-font-size !important;
+}
+.pagination-sm > li > a, .pagination-sm > li > span {
+    font-size: @paginate-font-size !important;
+}
+.dataTables_paginate .paginate_button.current, .dataTables_wrapper .dataTables_paginate .paginate_button.current:hover, .dataTables_wrapper .dataTables_paginate .paginate_button:not(.disabled):hover{
+    background:@background-color !important;
+    color:@foot-color  !important;
+    border-color: @border-color !important;
+}
+table.ufma-table.dataTable th{
+    background-color:@table-color;
+}
+table.ufma-table th{
+    background-color:@table-color !important;
+}
+.ufma-datatable thead tr{
+    background-color:@table-color;
+}
+.label.label-more,.bgPub-div-btn-more{
+    color:@foot-hover-color !important;
+}
+.label.label-radio.selected{ 
+    background:@background-color !important;
+    color:@foot-color  !important;
+    border-color: @border-color !important;
+}
+.search-query-box-less{
+    background:@search-query-box-color !important;
+    border-color: @search-query-box--border-color !important;
+}
+.mt-checkbox:hover>input:not([disabled]):checked~span, .mt-checkbox>input:checked~span{
+    border-color:@check-color !important;
+    background:@check-color !important;
+}
+.mt-radio:hover>input:not([disabled]):checked~span, .mt-radio>input:checked~span{
+    border-color:@check-color !important;
+}
+.mt-radio>span:after{
+    background:@check-color !important;
+}
+table.ufma-table.dataTable tbody tr.selected-high-light{
+    background:@table-hover-color;
+}
+table.ufma-table.dataTable tbody tr:not(.locked):hover{
+    background:@table-hover-color;
+}
+.ufmaTree.ztree li a.curSelectedNode{
+    background:@select-hover-color !important;
+    border-color:@select-hover-color !important;
+}
+.common-jump-link:hover, table.ufma-table.dataTable tbody td .common-jump-link:hover, table .common-jump-link:hover{
+    color:@background-color;
+}
+.ufma-shopping-trolley{
+    background:@background-color !important;
+    color:@foot-color  !important;
+    border-color: @border-color !important;
+}
+.uf-combox-list-item.selected,.uf-combox-list-item:hover{
+    background:@select-hover-color !important;
+}
+.uf-datepicker-dropdown td.active.day span, .uf-datepicker-dropdown td.active.year, .uf-datepicker-dropdown td.day:not(.old):hover span{
+    background:@background-color !important;
+}
+.uf-datepicker-dropdown td span.active{
+    background:@background-color !important;
+}
+.rpt-funnelTitle-span2:hover{
+   color:@foot-hover-color !important;
+}
+.ufma-combox2.hover .ufma-combox-inputLi{
+    color:@foot-hover-color !important;
+}
+.ufma-combox-list .ufma-combox-list-item:hover,.ufma-combox-list .ufma-combox-list-item.selected{
+    background:@select-hover-color !important;
+}
+td span.turn-vou:hover {
+    color:@foot-hover-color !important;
+    text-decoration:underline;
+    cursor:pointer;
+}
+.form-control:focus{
+    border-color: @border-color !important;
+}
+table.ufma-table.dataTable tr td .btn:hover{
+    color:@foot-hover-color !important;
+}
+.userData-result dl dd.result-active{background:@background-color !important;}
+.panel.ufma-panel.ufma-panel-primary {
+	background:@background-title-color !important;
+}
+.uf-tip-menu li:hover, .uf-tip-menu li.selected{
+    background:@select-hover-color !important;
+}
+rpt-acc-nav ul li:hover {
+    border-color: @border-color !important;
+    color:@foot-hover-color !important;
+}
+.ufma-shopp-right .ufma-shopp-inner{
+    border-color: @border-color !important;
+}
+.uf-line-title-font{
+    border-color: @border-color !important;
+}
+.uf-datagrid .uf-grid-viewport{
+    background-color:@table-color !important;
+}
+.progress-bar{
+    background-color:@background-color !important;
+}
+.uf-grid-table tr:hover{
+    background: @table-hover-color !important;
+}
+.ufma-card:hover{
+    border-top-color: @border-color !important;
+}
+.ufma-card:hover .ufma-card-header{
+    border-color: @border-color !important;
+}
+.coaAcc-shopping-trolley{
+    background-color:@background-color !important;
+    border-color: @border-color !important;
+}
+.anchorAuto-color{
+    background-color:@background-color !important;
+}
+.anchorAuto-no:hover a{
+    color: @foot-color !important;
+}
+.anchorAuto-no:hover{
+	background-color:@background-color !important;
+}
+.ufma-datatable tbody tr.hover{
+    background-color:@table-hover-color !important;
+}
+.edit-row-data:hover{
+    color: @foot-hover-color !important;
+}
+.ufma-timeline li.actived .ufma-timeline-line{
+    border-color: @border-color !important;
+}
+.ufma-timeline li.actived .ufma-timeline-icon{
+    background: @background-color!important;
+    color: @foot-color !important;
+    border-color: @border-color !important;
+}
+.ufma-timeline li.actived .ufma-timeline-content {
+	color: @foot-hover-color !important;
+}
+.uf-primary {
+	color: @foot-hover-color !important;
+}
+#hjbl .activeleft {
+    color: @foot-hover-color !important;
+}
+#hs .activeleft {
+    color: @foot-hover-color !important;
+}
+//各个页面特殊样式处理
+.rpt-colList span:hover{color: @foot-hover-color !important;}
+.table-hover > tbody > tr:hover{
+    background-color:@table-hover-color !important;
+}
+.rightFixedBtn{
+    background: @background-color !important;
+}
+.oddColor{
+    background-color: @table-odd-color !important;
+}
+.rpt-acc-nav ul li:hover {
+    border: 1px solid @border-color !important;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.15);
+}
+.rpt-acc-nav ul li:hover i {
+    color: @foot-hover-color !important;
+}
+
+.rpt-acc-nav ul li:hover span {
+    color: @foot-hover-color !important;
+}
+.file-drop-zone-title span {
+    color: @foot-hover-color !important;
+}
+.file-drop-zone-title p {
+    color: @foot-hover-color !important;
+}
+agency-icon {background-color: @background-color !important;}
+.model-body .agency-icon,.target-body .agency-icon{background-color: @background-color !important;}
+.hover-blue-hover{background-color: @background-color !important;}
+.target-body .target-icon a:hover {
+    color: @foot-hover-color !important;
+}
+.model-body .model-icon a:hover {
+    color: @foot-hover-color !important;
+}
+#djxm .actives {
+    color:  @foot-hover-color !important;
+    background: @btn-background-hover-color !important;
+}
+#ys .activeleft {
+    color:  @foot-hover-color !important;
+}
+
+//兼容各个模块上的公共样式类
+.rpt-query-box,.lp-query-box,.vou-query-box,.bgPub-div-findMsg,.uf-portlet>.portlet-body,.ufma-portlet>.portlet-body{
+    background:@search-query-box-color !important;
+    border-color:@border-box-color!important;
+}
+.vou-title,.rpt-title,.lp-title,.portlet-title .caption,#pzlrbt,.caption .caption-main,.uf-title{
+    border-bottom-color: @border-color !important;
+    font-size: @title-font-size !important;
+    font-family:@font-family !important;
+}
+.ufma-portlet>.portlet-title>.caption>.caption-subject{
+    font-size: @title-font-size !important;
+    font-family:@font-family !important;
+}
+.timeLine {
+    border-top-color: @border-color !important;
+}
+.but-box li {
+    color: @foot-hover-color !important;
+    border-color: @border-color !important;
+}
+.timeLine li {
+    border-color: @border-color !important;
+    background: @background-color!important;
+}
+.timeLine dl {
+    border-color: @border-color !important;
+    background: @background-write-color !important;
+}
+.lp-query-box .tip-more{color: @foot-hover-color !important;}
+.cancle-gen,.check-log,.preview-vou,.check-vou{
+    color: @foot-hover-color !important;
+}
+table.ufma-table.dataTable tbody td a:hover{
+    color: @foot-hover-color !important;
+}
+.table-part table.ufma-table.dataTable tbody td a {
+    color: @foot-hover-color !important;
+}
+table.ufma-table.dataTable tbody td a{
+    color: @font-text-color;
+}
+.link-ele-box-right i{color:@foot-hover-color !important;}
+#dep-staff-info .de-box-top .de-actions span {
+    color: @foot-hover-color !important;
+}
+.dep-staff-info .info-title {
+    color: @foot-hover-color !important;
+    border-bottom: 1px solid @border-color !important;
+    border-left: 8px solid @border-color !important;
+}
+.link-ele-box-right span{color:@foot-hover-color !important;}
+.ma-query-box-right i{color:@foot-hover-color !important;}
+//系统选项特殊样式
+.left-switch-box a.choose{
+    background: @background-color!important;
+    color: @foot-color !important;
+}
+.rule-chrValue label.btn:hover, #busRule .rule-chrValue label.btn.active{
+    background: @background-color!important;
+    color: @foot-color !important;
+    border-color: @border-color !important;
+}
+//凭证部分特殊样式
+// .voucher-head{
+//     background:@background-color !important;
+// }
+.voucherrighthead .active{
+    border-color:@border-color !important;
+    color: @border-color !important;
+}
+.AccoTree .clik1:hover,.AssTree .ycbodys .dianji1:hover,.ycbodys .fzhsadd{
+    background:@vou-select-hover-color !important;
+}
+.AccoTree .selected{
+    background:@vou-select-hover-color !important;
+}
+.btn-voucher-hover,.voucher-beizhu-by-queren{
+    background:@background-color !important;
+    color:@foot-color !important;
+    border-color: @border-color !important;
+}
+.btn-prevvoucher,.btn-nextvoucher{
+    border-radius: @btn-border-radius !important;
+}
+#mbqr,#mbclose{
+    background: @background-color!important;
+    color: @foot-color !important;
+    border-radius:@btn-border-radius !important;
+}
+.voucher .voucher-head{
+    background-color:@table-color;
+}
+.xuanzhongcy{
+    background-color:@background-color !important;
+}
+.voucher-beizhu-biaoti span,.voucher-history-biaoti span{
+    border-left-color:@border-color !important;
+}
+.voucher-beizhu-zhankai,.voucher-history-zhankai{
+    color:@foot-hover-color !important;
+}
+.voucherkjxs p{
+    color: @font-second-color !important;
+}
+.accountingye,.accountingmx ,.accountingyw,.vouopenbtndetailbycenter {
+    color: @font-disabled-color !important;
+}
+.voucher-body .voucherindex{
+    color: @font-disabled-color !important;
+}
+.addtroracca p:hover{    
+    background-color: #CADFFF !important;
+    color: #0066ff !important;
+}
+.attach-img-byte,.attach-img-sub,.attach-noData p ,.attach-show-li-add span {
+    color: @font-disabled-color !important;
+}
+.datetimepicker table tr td.active:active, .datetimepicker table tr td.active:hover:active, .datetimepicker table tr td.active.disabled:active, .datetimepicker table tr td.active.disabled:hover:active, .datetimepicker table tr td.active.active, .datetimepicker table tr td.active:hover.active, .datetimepicker table tr td.active.disabled.active, .datetimepicker table tr td.active.disabled:hover.active{
+    background-image: none;
+    background:@background-color !important;
+}
+//期末结账样式
+#coleft .cblue{
+    color:@foot-hover-color !important;
+}
+#coleft .actives .shows{
+    background:@background-color !important;
+}
+#coleft .cblue .shows{
+    background:@background-color !important;
+}
+#coleft .actives .triangle{
+    border-color:transparent transparent transparent @background-color !important;
+}
+// input高度
+.form-horizontal .form-group .form-control {
+	height: @input-height !important;
+}
+.searchHide {
+	height: @input-height !important;
+}
+.input-height{
+    height: @input-height !important;
+}
+.ufma-form-group-box .form-group .form-control {
+    height: @input-height !important;
+}
+.rpt-query-li-selete .rpt-p-search-key{
+    height: @input-height !important;
+}
+.rpt-input-group .form-control {
+    height: @input-height !important;
+}
+//日期高度
+.uf-datepicker {
+	height: @datepicker-height !important;
+}
+.uf-datepicker input {
+	height: @datepicker-height !important;
+}
+//折叠区域的圆角与高度
+.panel{
+    border-radius: @panel-border-radius;
+    border-color: @panel-head-border;
+}
+.panel-heading{
+    border-top-left-radius: @panel-border-radius;
+    border-top-right-radius: @panel-border-radius;
+    background:@panel-head-background;
+}
+.panel.ufma-panel>.panel-collapse{
+    border-color: @panel-head-border;
+}
+.panel.ufma-panel>.panel-heading{
+    height:@panel-head-height !important;
+    line-height: @panel-head-height;
+}
+//新UI导航条样式
+.nav-tabs > li a{
+    // background: @nav-background;
+    color: @nav-color;
+    // border:@nav-border-hover;
+    // border-radius: @nav-border-radius;
+    // border-bottom: @nav-border-bottom-hover;
+    // border-top:@nav-border-top-hover;
+}
+// .nav-tabs > li > a:hover, .nav-tabs > li > a:focus{
+//     color:@nav-hover-color;
+//     border:@nav-border-hover;
+//     background-color: @nav-background-hover;
+//     border-bottom: @nav-border-bottom-hover;
+//     border-top:@nav-border-top-hover;
+// }
+// .nav-tabs > li.active > a, .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus{
+//     color:@nav-hover-color;
+//     border:@nav-border-hover;
+//     background-color: @nav-background-hover;
+//     border-bottom: @nav-border-bottom-active;
+//     border-top:@nav-border-top-active;
+// }
+// .nav-tabs li.active a{
+//     color:@nav-hover-color !important;
+//     border: @nav-border-hover;
+//     border-bottom: @nav-border-bottom-active;
+//     border-top:@nav-border-top-active;
+// }
+// 下拉框高度
+.uf-combox .uf-combox-border {
+	height: @uf-combox-height !important;
+}
+.uf-grid-table-edit .uf-combox .uf-combox-border {
+	height: @uf-grid-height !important;
+}
+.form-control {
+    height: @uf-combox-height !important;
+}
+select {
+    height: @uf-combox-height !important;
+    border-radius: @panel-border-radius;
+}
+.ufma-textboxlist-border,
+.ufma-combox-border {
+	height: @uf-combox-height !important;
+}
+.select2-container .select2-selection--single {
+    height: @uf-combox-height !important;
+}
+.uf-textboxlist-border {
+    height: @uf-combox-height !important;
+}
+//青海医保专属  guohx  20200921 
+// 成功按钮类型
+.btn-group .btn-add{
+    background: @succ-background-color!important;
+    color: @foot-color !important;
+    border-color: @succ-background-color !important;
+}
+// 错误按钮类型
+button.btn-delete{
+    background: @error-background-color!important;
+    color: @foot-color !important;
+    border-color: @error-background-color !important;
+}
+//提示按钮类型
+button.btn-audit{
+    background: @audit-background-color!important;
+    color: @foot-color !important;
+    border-color: @audit-background-color !important;
+}
+// 滚动条样式
+*::-webkit-scrollbar {
+	width: @scrollbar-w !important;
+	height: @scrollbar-h !important;
+}
+table.ufma-table.dataTable tr.selected td {
+	background-color: @tbl-sel-color;
+}
+.uf-grid-table-edit .uf-form-control,
+.uf-grid-table-edit .uf-buttonedit-border,
+.uf-grid-table-edit .uf-combox-border,
+.uf-grid-table-edit .uf-buttonedit,
+.uf-grid-table-edit .uf-combox,
+.uf-grid-table-edit .uf-treecombox,
+.uf-grid-table-edit .uf-datepicker {
+	height: @uf-grid-height !important;
+}
+.bordered {
+	border: 1px solid @single-border-color!important;
+}

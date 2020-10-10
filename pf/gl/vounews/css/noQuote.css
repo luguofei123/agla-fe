@@ -1,0 +1,152 @@
+* {
+	box-sizing: content-box;
+}
+
+p {
+	margin: 0 0 0px;
+}
+
+.btn-file input[type="file"] {
+	position: absolute;
+	top: 0;
+	right: 0;
+	min-width: 100%;
+	min-height: 100%;
+	text-align: right;
+	opacity: 0;
+	background: none repeat scroll 0 0 transparent;
+	cursor: inherit;
+	display: none;
+}
+
+.form-control {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	height: 30px;
+}
+
+body {
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	line-height: none;
+}
+
+.file-preview-image {
+	width: 100%;
+	height: auto;
+}
+
+.krajee-default.file-preview-frame .kv-file-content {
+	height: 108px;
+	line-height: 108px;
+	width: auto;
+	max-width: 100%;
+}
+
+.kv-file-content {
+	width: 160px;
+	height: 160px;
+}
+
+.file-drop-zone {
+	border-radius: 4px;
+	margin: 0;
+	padding: 4px 0 20px 4px;
+	height: 312px;
+	overflow-y: auto;
+}
+
+.file-drop-zone .kv-file-zoom {
+	display: none !important;
+}
+
+.file-footer-caption1 {
+	float: left;
+	max-width: 90px;
+}
+
+.krajee-default.file-preview-frame {
+	width: 158px;
+	height: 150px;
+	border: 1px solid #dfe6ec;
+	border-radius: 4px;
+	margin: 16px 0 0 16px;
+	padding: 10px;
+	float: left;
+}
+
+.krajee-default.file-preview-frame .kv-file-content img {
+	height: auto !important;
+	max-height: 100%;
+	max-width: 100%
+}
+
+.modal-dialog {
+	margin-top: 150px;
+}
+
+.kv-zoom-actions .btn-header-toggle {
+	visibility: hidden;
+}
+
+.kv-zoom-actions .btn-fullscreen {
+	visibility: hidden;
+}
+
+.kv-zoom-actions .btn-borderless {
+	visibility: hidden;
+}
+
+#mobangjz {
+	display: none;
+}
+
+.despctsearchModal{
+	position: fixed;
+	z-index: 200;
+	width: 440px;
+	background: #fff;
+	top: 0px;
+	border: 1px solid #D9D9D9;
+	padding: 6px 8px;
+	border-radius: 4px;
+	display: none;
+	font-size: 12px;
+}
+.despctsearchModal .titlebody{
+	display: inline-block;
+	margin-bottom: 10px;
+	margin-left: 16px;
+}
+.despctsearchModal .title{
+	display: inline-block;
+	margin-bottom: 10px;
+	font-weight: bold;
+}
+.icon-close{
+	position: absolute;
+	right: 5px;
+	top: 5px;
+	cursor: pointer;
+}
+.despctsearchModal .form-group .control-label {
+    text-align: right;
+    padding-left: 0!important;
+    padding-right: 0;
+    font-weight: 400!important;
+    padding-top: 4px;
+    display: inline-block;
+    width: 6em;
+}
+.despctsearchModal .control-element .btn{
+	margin-top: -4px;
+	font-size: 12px;
+}
+.despctsearchModal .form-group .form-control {
+    box-shadow: none;
+    height: 30px;
+    padding: 4px 8px;
+    margin: 0;
+    display: inline-block;
+    width: 200px;
+}

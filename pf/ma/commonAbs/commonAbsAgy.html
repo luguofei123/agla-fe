@@ -1,0 +1,182 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>常用摘要</title>
+	<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+	<script src="../../pub/boot.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+	<link rel="stylesheet" href="../maCommon/maCommon.css?rev=@@hash" />
+</head>
+
+<body data-code="agy">
+	<div id="expFunc" class="container-fluid ufma-container">
+		<!--工作区 begin-->
+		<div class="workspace">
+			<!--工作区顶部 begin-->
+			<div class="workspace-top">
+				<div class="container-fluid">
+					<div class="ufma-portlet">
+						<div class="portlet-title">
+							<div class="caption">
+								<span class="caption-subject font-dark uppercase">常用摘要</span>
+							</div>
+							<div class="agencycom">
+								<div id='cbAgency' name="agencyCode" class="ufma-treecombox ufma-combox-agency" icon="icon-unit" valueField="id" textField="codeName"
+								 readOnly=false placeholder="请选择单位"></div>
+							</div>
+							<div class="agencycom">
+								<div id='cbAcct' class="ufma-treecombox ufma-combox-acct"></div>
+							</div>
+							<div class="actions">
+								<div class="btn-group">
+									<button type="button" class="btn btn-sm btn-primary btn-permission btn-add">新增</button>
+								</div>
+							</div>
+						</div>
+						<div class="portlet-body form-horizontal bordered">
+							<div id="query-tj" class="form-body">
+								<div class="form-row">
+									<div class="form-group label-group">
+										<div class="control-label">系统：</div>
+										<div class="control-element">
+											<select class="form-control" name="system" id="sysSearch">
+												<option value="">全部</option>
+												<option value="GL">账务处理</option>
+												<option value="CU">出纳管理</option>
+											</select>
+										</div>
+									</div>
+									<div class="clearfix"></div>
+								</div>
+
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!--工作区中部 begin-->
+			<div class="workspace-center">
+				<div class="container-fluid">
+					<div class="table-sub clearfix">
+
+						<div class="table-sub-action pull-right">
+							<div class="iframeBtnsSearch" id="index-search">
+								<input type="text" class="searchHide focusOff bordered" placeholder="请输入要搜索的关键词">
+								<input type="hidden" class="searchValueHide">
+								<button class="btn btn-default btn-sm btn-search" id="searchHideBtn">
+									<i class="glyphicon icon-search"></i>
+								</button>
+							</div>
+							<div class="btn-group" id="printTableData">
+							</div>
+						</div>
+
+					</div>
+					<div class="tab-content">
+						<table id="expfunc-data" tool-bar="#expfunc-tool-bar" class="ufma-table uf-rpt-table">
+							<!--<thead>
+								<tr>
+									<th style="width:20px;">
+										<label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
+											<input type="checkbox" class="group-checkable" data-set="#data-table .checkboxes" />
+											<span></span>
+										</label>
+									</th>
+									<th> 常用摘要编码</th>
+									<th> 常用摘要名称</th>
+									<th> 助记码</th>
+									<th> 系统</th>
+									<th> 操作</th>
+								</tr>
+							</thead>
+							<tbody>
+							</tbody>-->
+						</table>
+					</div>
+				</div>
+			</div>
+			<!--工作区底 begin-->
+			<div id="expfunc-tool-bar" class="ufma-tool-bar">
+				<div class="tool-bar-body">
+					<div class="ufma-tool-btns" style="margin-left: 37px;">
+						<label class="mt-checkbox mt-checkbox-outline margin-right-8">
+							<input class="datatable-group-checkable" type="checkbox" name="test" value="1"> 全选
+							<span></span>
+						</label>
+						<button type="button" class="btn btn-sm btn-default btn-permission btn-delete">删除</button>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!--编辑常用摘要begin-->
+		<div id="expfunc-edt" class="ufma-modal">
+			<div class="u-msg-title">
+				<h4>新增常用摘要</h4>
+			</div>
+			<div class="u-msg-content" style="position:relative">
+				<div class="container-fluid">
+					<div class="ufma-layout ufma-layout-slider-sm ufma-layout-fixed-slider ufma-layout-fixed-slider-right">
+						<div class="ufma-layout-content" style="margin-right: 0px;">
+							<form id="form-expfunc" class="form-horizontal">
+								<div class="form-group required">
+									<label class="control-label em8">常用摘要编码：</label>
+									<div class="control-element">
+										<input type="text" name="descCode" id="expFunc-chrCode" class="form-control w180">
+									</div>
+								</div>
+								<div class="form-group required">
+									<label class="control-label em8">常用摘要名称：</label>
+									<div class="control-element">
+										<input type="text" name="descName" id="expFunc-chrName" class="form-control w180">
+										</span>
+									</div>
+								</div>
+								<div class="form-group">
+									<label class="control-label em8">助记码：</label>
+									<div class="control-element">
+										<input type="text" name="assCode" id="assCode" class="form-control w180">
+										</span>
+									</div>
+								</div>
+								<div class="form-group ">
+									<label class="control-label em8">系统：</label>
+									<div class="control-element">
+										<label class="mt-checkbox mt-checkbox-single mt-checkbox-outline coaAcc-right">
+											<input type="checkbox" name="system" id="GL" value="GL" />账务处理
+											<span></span>
+										</label>
+										<label class="mt-checkbox mt-checkbox-single mt-checkbox-outline coaAcc-right">
+											<input type="checkbox" class="" name="system" id="CU" value="CU" />出纳管理
+											<span></span>
+										</label>
+									</div>
+								</div>
+								<!-- <div id="hideModel">
+									<div class="form-group" style="margin-left: 17px;">
+										<label class="control-label em8">科目名称：</label>
+										<div class="control-element">
+											<div id='accoCode' name="accoCode" class="ufma-treecombox  w180" ></div>
+										</div>
+									</div>
+								</div> -->
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="u-msg-footer">
+
+				<button type="button" class="btn btn-sm btn-primary btn-permission btn-saveadd btn-ajax">保存并新增</button>
+				<button type="button" class="btn btn-sm btn-default btn-permission btn-save btn-ajax"> 保存</button>
+				<button type="button" class="btn btn-sm btn-default btn-close"> 取消</button>
+			</div>
+		</div>
+	</div>
+	<script src="../maCommon/maCommon.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+	<script src="commonAbs.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+</body>
+
+</html>

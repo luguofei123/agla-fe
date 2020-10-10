@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>新增指标分解</title>
+		<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+		<script src="../../pub/boot.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+		<link rel="stylesheet" href="../../agla-trd/fileinput/fileinput.css" />
+		<script src="../../agla-trd/fileinput/fileinput.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../../agla-trd/fileinput/zh.js" type="text/javascript" charset="utf-8"></script>
+    <link rel="stylesheet" href="../pub/bgPub.css?rev=@@hash" />
+    <link rel="stylesheet" href="../pub/common.css?rev=@@hash" />
+		<link rel="stylesheet" href="../pub/bgPubImpAttachment.css?rev=@@hash" />
+		<link rel="stylesheet" href="../budgetItemDecompose/budgetItemDecompose.css?rev=@@hash" />
+	</head>
+
+	<body>
+		<div id="budgetItemDecomposeAdd" class="ufma-layout-updown ">
+			<div class="ufma-layout-up div-scroll">
+				<div class="margin-left-15 margin-right-15">
+					<!--<div id="pnl-xzzb" class=" ">
+						<!--查询条件begin- 
+						<!--查询条件end 
+						<div id="select-data" class="uf-datagrid" style=""></div>
+					</div>-->
+					<div id="pnl-tzzb" class="">
+						<div class="uf-panel  margin-bottom-10">
+							<div class="uf-form-group-panel">
+								<div class="margin-bottom-10" style="height: 40px;">
+									<div style="float: left">
+										<div class="form-ctrl">单据日期：</div>
+										<div class="form-ctrl">
+											<div id="createDate3" class="uf-datepicker inline-block"></div>
+										</div>
+										<div class="label-ctrl">单据号：</div>
+										<div class="form-ctrl">
+											<input id="billCode" type="text" class="uf-form-control" disabled="true" placeholder="保存单据时自动编号" />
+										</div>
+									</div>
+									<!--<div style="float: right">-->
+									<!--修改附件的位置---zsj--bug74472-->
+									<div style="float: right;width:154px;">
+										附单据
+										<!-- bug78324--zsj-->
+										<input id="billFJ" type="text" class="uf-form-control" style="width: 40px;text-align:center" oninput="value=value.replace(/[^\d]/g,'')" />&nbsp;张
+										<button type="button" id="btnUploadFile" class="btn btn-sm btn-default btn-attach bg-multiModal-rightTopDiv unallocate-BgItem-fileBtn" title="附件">
+										<span class=" icon-file"></span>
+									</button>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!--查询条件end-->
+						<div class="zbtz-data-border">
+							<span class="zbtz-data-font" style="padding:5px 0px 5px 2px;"> 待分解指标 </span>&nbsp;&nbsp;
+							<span class="zbtz-data-font" style="margin-left: 10px;padding:5px 0px 5px 2px;font-size:13px;color:#108EE9;"> 可分解金额：</span>
+							<span id="decomposableAmt" class="zbtz-data-font" style="padding:5px 0px 5px 2px;font-size:13px;color:#108EE9;">0.00 </span>
+						</div>
+						<div id="zbtz-data-editor" class="uf-datagrid"></div>
+						<div class="uf-panel  margin-bottom-10 margin-top-10">
+							<div id="searchPlanPnl1" class="uf-form-group-panel">
+								<table>
+									<tr>
+										<td class="label-ctrl">预算方案：</td>
+										<td class="form-ctrl">
+											<div id="cbBgPlan1" class="uf-combox" idField="chrId" textField="chrName" placeholder="请选择预算方案"></div>
+										</td>
+										<td class="label-ctrl">合计金额：</td>
+										<td class="form-ctrl" id="billHJJE">0.00</td>
+									</tr>
+								</table>
+							</div>
+						</div>
+						<div id="decompose-data" class="uf-datagrid" style="height: 90px"></div>
+						<div class="u-msg-footer bgMultiModal-footer1 btn-add">
+							<button type="button" id="btn-newRow-decompose" class="btn btn-sm btn-default bg-multiModal-tbl-addRow hide">
+							<span class="glyphicon icon-plus btn-add"> &nbsp;新增表格行 </span>
+						</button>
+						</div>
+					</div>
+					<div id="pnl-end" class="hide text-center">
+						<div class="inline-block" style="margin-top: 135px;">
+							<div style="padding-left: 30px; position: relative;">
+								<span class="icon icon-check-circle ufma-green" style="font-size: 24px; position: absolute; top: 0px; left: 0px;"></span>恭喜您，指标分解完成！
+							</div>
+						</div>
+					</div>
+				</div>
+				<div id="viewlog" class="uf-datagrid-detail">
+					<div id="zblog-data" class="uf-datagrid" style="height: auto;"></div>
+				</div>
+			</div>
+			<div class="ufma-layout-down bordered-top">
+				<div class="text-right  margin-right-30">
+					<button type="button" class="btn btn-sm btn-primary btn-save" id="btn-save">保存</button>
+					<button type="button" class="btn btn-sm btn-default" id="btn-close">关闭</button>
+				</div>
+			</div>
+		</div>
+		<!-- <script src="../../pub/js/uf.core.min.js?rev=@@hash"></script> -->
+		<script src="../pub/bgPub.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+		<script src="../pub/bg.parse.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+		<script src="../pub/bgPubItemManager.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+		<script src="../pub/bgPubImpAttachment.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+		<script src="optDecompose.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+		<script src="../pub/bgPubLog.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+	</body>
+
+</html>

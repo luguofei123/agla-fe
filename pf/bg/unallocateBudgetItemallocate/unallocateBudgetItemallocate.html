@@ -1,0 +1,81 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>待分配指标分配</title>
+		<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">	
+		<script src="../../pub/boot.js?rev=@@hash"></script>
+	</head>
+
+	<body style="overflow:hidden;">
+		<div class="container-fluid ufma-container">
+			<div class="workspace padding-15">
+				<!--工作区顶部 begin-->
+				<div class="workspace-top">
+					<div class="uf-portlet">
+						<div class="portlet-title">
+							<div class="caption">
+								<span class="caption-main">待分配指标分配</span>	
+
+								<span>
+									<div class="uf-treecombox ufma-combox-agency" id="cbAgency" name="agencyCode" idField='id' textField='name' pIdField='pId' readonly='true' icon='icon-unit' theme='label' autocomplete="on" placeholder="请选择单位"> </div>
+								</span>
+																
+							</div>
+							<div class="actions">
+									<div class="btn-group">
+										<button type="button" class="btn btn-sm btn-primary btn-new">新增</button>
+									</div>
+							</div>
+						</div>
+
+						<div class="portlet-body bordered">
+							
+							<div id="searchPlanPnl" class="uf-form-group-panel">
+								<div class="actions">
+									<span class="label-more btn-more-item hide">更多<b></b></span>
+									<button class="btn btn-primary" id="btnQry">查询</button>
+								</div>
+								<table>							
+								<tr>
+									<td class="label-ctrl">
+										预算方案：
+									</td>
+									<td class="form-ctrl">
+										<div id="cbBgPlan" class="uf-combox" idField="chrId" textField="chrName" placeholder="请选择预算方案" style=" width: 300px;"></div>
+									</td>
+									<td class="label-ctrl">单据日期：</td><td class="form-ctrl"><div id="createDateBegin" class="uf-datepicker inline-block"></div><span> 至 </span></span><div id="createDateEnd" class="uf-datepicker inline-block"></div></td>
+								</tr>				
+								</table>
+							</div>
+						</div>
+					</div>
+
+				</div>
+				<div class="workspace-center">
+					<ul class="nav nav-tabs" id="tabStatus">
+						<li class="active">
+							<a href="javascript:;" data-status="1">未审核</a>
+						</li>
+						<li>
+							<a href="javascript:;" data-status="3">已审核</a>
+						</li>
+						<li>
+							<a href="javascript:;" data-status="">全部</a>
+						</li>
+					</ul>
+					
+					<div id="zbtz-data-caption" class="uf-datagrid-caption">共 <span id="billNum">0</span> 张单据    金额：<span id="billHJJE">0.00</span></div>
+					<div id="zbtz-data" class="uf-datagrid" style="min-height:300px;"></div>
+				</div>
+			</div>
+		</div>
+		<div id="viewlog" class="uf-datagrid-detail">
+			<div id="zblog-data" class="uf-datagrid" style="height:auto;"></div>
+		</div>		
+		<script src="../pub/bg.parse.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+		<script src="unallocateBudgetItemallocate.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+	</body>
+
+</html>

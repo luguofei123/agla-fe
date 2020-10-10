@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>凭证重排</title>
+		<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+		<script src="../../pub/boot.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+	</head>
+
+	<body>
+		<div class="ufma-layout-updown">
+			<div class="ufma-layout-up">
+				<div class="container-fluid ufma-container">
+					<!--工作区 begin-->
+					<div class="workspace">
+						<!--工作区顶部 begin-->
+						<div class="workspace-top padding-top-8">
+							<div class="container-fluid">
+								<div class="ufma-portlet">
+									<div class="portlet-body form-horizontal bordered">
+										<div class="form-body" id="query-tj">
+											<div class="form-group label-group">
+												<div class="fl" style="width:220px;"><span>会计期间：</span><span id="sortPeriod" class="uf-datepicker" style="width:120px;"></span></div>
+												<div class="control-label">凭证类型：</div>
+												<div id="vouType" class="control-element"></div>
+											</div>
+											<div class="form-group label-group" style="margin-top: 10px;">
+												<div class="control-label">重排依据：</div>
+												<div class="control-element sortBydiv">
+													<a name="sortBy" value="vouDate" class="label label-radio selected">按日期</a>
+													<a name="sortBy" value="vouNo" class="label label-radio ">按凭证号</a>
+													<a name="sortBy" value="vouSource" class="label label-radio">凭证来源</a>
+													<a name="sortBy" value="inputorName" class="label label-radio">制单人</a>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!--工作区中部 begin-->
+						<div class="workspace-center">
+							<div class="container-fluid">
+								<table id="sortGrid" class="ufma-datatable">
+									<thead>
+										<tr>
+											<th>重排后凭证号</th>
+											<th>原凭证号</th>
+											<th>凭证日期</th>
+											<th>摘要</th>
+											<th class="je">金额</th>
+											<!-- <th>财务金额</th>
+											<th>预算金额</th> -->
+											<th>制单人</th>
+											<th>凭证来源</th>
+											<th>操作</th>
+										</tr>
+									</thead>
+									<tbody></tbody>
+								</table>
+							</div>
+						</div>
+
+					</div>
+				</div>
+			</div>
+			<div class="ufma-layout-down bordered-top">
+				<div class="text-right margin-right-30">
+					<a class="btn btn-sm btn-primary  btn-save" id="btn-save"> 保存</a>
+					<a class="btn btn-sm btn-default btn-close"> 取消</a>
+				</div>
+			</div>
+		</div>
+		<script src="sortVoucher.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+	</body>
+	<style type="text/css">
+		#sortGrid td{
+			overflow: hidden;
+			text-overflow: ellipsis;
+			white-space: nowrap;
+			max-width: 150px;
+   			padding: 0px;
+  			padding-left: 4px;
+		}
+		#sortGrid th{
+			background: #EEF1F6 !important;
+			text-align: center;
+		}
+		#sortGrid .sorttd{
+  			padding-left: 0px;
+			max-width: 100px;
+		}
+		.container-fluid{
+			width: 100%;
+			overflow: auto;
+		}
+		.nobor{
+			border: 0px;
+			display: inline-block;
+			height: 100%;
+			width: 100%;
+			padding-left: 4px;
+		}
+	</style>
+</html>

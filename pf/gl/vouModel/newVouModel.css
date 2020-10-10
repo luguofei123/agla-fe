@@ -1,0 +1,197 @@
+.bg-table-sub{
+    float: left;
+    position: relative;
+    width: 100%;
+  }
+  .bg-table-sub-action{
+    position: absolute;
+    right: 0px ;
+    top: 2px;
+  }
+  .bgtestborder{
+    border: 1px black solid;
+  }
+  .bgMultiModalMain{
+    padding: 8px 20px 0px 20px !important;
+  }
+  .bg-div-height-space-12{
+    min-height: 12px;
+  }
+  .bg-div-margin-top-bottom-8{
+    margin-top: 8px;
+    margin-bottom: 8px;
+  }
+  .bg-multiModal-content{
+    position: relative;
+    float: left;
+    width: 100%;
+  }
+  .bg-multiModal-rightButton{
+    float: right;
+    margin-left: 8px;
+  }
+  .bg-multiModal-leftButton{
+    float: left;
+    margin-right: 8px;
+  }
+  .bg-multiModal-topDiv{
+    position: relative;
+    float: left;
+    height: 30px;
+  }
+  .bg-multiModal-rightTopDiv{
+    position: relative;
+    float: right;
+    height: 30px;
+  }
+  .bg-multiModal-topDiv-30right{
+    margin-right: 30px;
+  }
+  .bg-multiModal-topDiv-60right{
+    margin-right: 60px;
+  }
+  .bg-multiModal-dtp{
+    width: 125px;
+  }
+  .bg-multiModal-bgplan{
+    width: 210px;
+  }
+  .bg-multiModal-fileCount{
+    width: 33px;
+  }
+  .bg-multiModal-fileBtn{
+    width: 45px;
+  }
+  .bgMultiModalForm .inputHeight{
+    height: 30px !important;
+  }
+  .bgMultiModal-footer1{
+    height: 50px;
+    border: 0px !important;
+    position: relative;
+  }
+  .bgMultiModal-footer2{
+    height: 62px;
+  }
+  .bg-multiModal-tbl-addRow{
+    position: absolute;
+    left: 430px;
+    top: 10px;
+    width: 200px;
+    height: 30px;
+  }
+  .bgMultiModal-footer1 span{
+    position: relative;
+    width: 30px;
+    left: -35px;
+  }
+  .bgMultiModal-tbl{
+      /**transform : translateY(-8px);**/
+  }
+  .bgMultiModal-tbl tr td{
+      border : 1px #DFE6EC solid !important;
+  }
+  .bgMultiModal-tbl thead th{
+      border : 1px #DFE6EC solid !important;
+      text-align : center !important;
+  }
+  .bgMultiModal-tbl-pnl{
+      width : 100% !important;
+  }
+  .bgMultiModal-tbl-Height{
+  
+  }
+  .bg-mainTableFooterDiv{
+    position: relative;
+    float: left;
+    width: 100%;
+  }
+  .bg-mainTableFooterDiv .rightDiv{
+    position: relative;
+    float: right;
+  }
+  .bg-mainTableFooterDiv .leftDiv{
+    position: relative;
+    float: left;
+  }
+  .bg-multi-floatLeft-1{
+    position: relative;
+    float: left;
+    margin: 4px 4px 0 0;
+  }
+  .bg-top-4{
+    top : 4px;
+  }
+  .bg-top-8{
+    top : 8px;
+  }
+  .bg-top-12{
+    top : 12px;
+  }
+  .billRow-a{
+    height: 35px;
+  }
+  .zbtz-data-border{
+      border-top:1px solid #DFE6EC;
+      border-right:1px solid #DFE6EC;
+      border-left:1px solid #DFE6EC;
+      height: 38px;
+      margin-top: 12px;
+  }
+  .zbtz-data-font{
+      color: #333333;
+      letter-spacing: 0.58px;
+      line-height:38px; 
+      text-align:center;
+      padding-left:16px
+  }
+  #decompose-data{
+      height:auto !important;
+  }
+   .uf-grid-headerCell  {
+      font-weight: bold;
+   }
+    .container-fluid{
+       padding-left:0px;
+       padding-right:0px;
+   }
+   .billtop-color{
+       color:black !important;
+   }
+   #decompose-dataBody{
+       height: 170px!important;
+   }
+   #select-data .tooltip{
+       z-index : 1000px;
+       top:10px;
+   }
+  .div-scroll{
+      overflow-x:hidden;
+   }
+.m10 {
+    margin: 10px;
+}
+
+.tc {
+    text-align: center;
+}
+.tab-content{
+	margin-top:6px;
+}
+.heng-table-title {
+  display: inline-block;
+  position: relative;
+  height: 145px;
+  float: left;
+  border: 1px solid #DFE6EC;
+  border-right-width: 0px;
+  width: 4%;
+  padding-top: 28px;
+  border-bottom-left-radius: 3px;
+  border-top-left-radius: 3px;
+}
+.heng-table-title p{
+  font-weight:bold;
+  margin-bottom: 4px;
+  text-align: center;
+}

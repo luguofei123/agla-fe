@@ -1,0 +1,55 @@
+.control-label {
+    width: 100px;
+    text-align: right;
+}
+.rpt-funnelBoxList {
+    background-color: #fff;
+    width: 142px;
+    right: 0;
+    border: 1px solid #d9d9d9;
+    padding: 5px;
+    width: 300px;
+}
+.rpt-funnelBoxList p {
+    cursor: pointer;
+    float: left;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 134px;
+}
+.month-element select {
+    border-radius: 4px;
+    padding: 2px;
+}
+#btn-set {
+    cursor: pointer;
+}
+.blue{
+    color:#108ee9
+}
+.plus-box-l label,.plus-box-r label,.reduce-box-l label,.reduce-box-r label{
+    width: 180px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.plus-box-l,.plus-box-r,.reduce-box-l,.reduce-box-r{
+    border: 1px solid #d9d9d9;
+    width: 200px;
+    height: 400px;
+    overflow: auto;
+    padding: 10px;
+}
+.plus-reduce-title{
+    margin: 10px 0;
+}
+.opt-btn {
+    width: 100px;
+    height: 400px;
+    padding-top:160px ;
+    padding-left: 15px;
+}
+.opt-btn .btn{
+    margin-bottom: 10px;
+}

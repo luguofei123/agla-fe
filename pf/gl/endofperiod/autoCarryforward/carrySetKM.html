@@ -1,0 +1,71 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+  		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>新增科目对应关系</title>
+  		<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+		<script src="../../../pub/boot.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+	</head>
+<body>
+<div class="ufma-layout-updown">
+	<div class="ufma-layout-up">
+		<div class="container-fluid">
+			<div class="ufma-form-group-box nowrap">
+				<ul class='ufma-list-col clearfix padding-left-8 nowrap'>
+					<li class="ufma-list-col-item margin-left-0 margin-right-0" >
+						<div class="form-group inline-block margin-left-0">
+							<label class="control-label">转出科目：</label>
+							<div class="control-element w180">
+								<div id='cbAccoOut' name="accoCode" class="ufma-treecombox w180" placeholder="请选择转出科目"></div>
+							</div>
+                        </div>
+					</li>
+					<li class="ufma-list-col-item margin-left-0 margin-right-0" >
+						<div class="form-group inline-block margin-left-0">
+							<label class="control-label">金额：</label>
+							<div class="control-element">
+								<div id='cbAccoDir' name="transCon" class="ufma-combox" style="width:60px;"></div>
+							</div>
+                        </div>											
+					</li>
+					<li class="ufma-list-col-item margin-left-0 margin-right-0" >
+						<div class="form-group inline-block margin-left-0">
+							<div class="control-element">
+								<input id="descpt" class="form-control" placeholder="请录入摘要"/>
+							</div>
+                        </div>											
+					</li>
+					<li class="ufma-list-col-item margin-left-0 margin-right-0" >
+						<div class="form-group inline-block margin-left-0">
+							<label class="control-label">转入科目：</label>
+							<div class="control-element w180">
+								<div id='cbAccoIn' name="accoCode" class="ufma-treecombox w180" placeholder="请选择转入科目"></div>
+							</div>
+                        </div>
+					</li>
+					<li class="ufma-list-col-item margin-left-0 margin-right-0" >
+						<div class="form-group inline-block margin-left-0 margin-right-0">
+							<label class="control-label">比例：</label>
+							<div class="control-element" style="width:60px;">
+								<input id="proportion" class="form-control" value="100"/>
+							</div>
+                        </div>											
+					</li>					
+				</ul>
+			</div>
+			<div class="form-horizontal bordered-gray margin-left-8 margin-right-8 padding-top-8 margin-bottom-15" id="fzitems">
+			
+			</div>
+		</div>		
+	</div>
+	<div class="ufma-layout-down bordered-top">	
+		<div class="text-right margin-right-30">
+			<button type="button" class="btn btn-sm btn-primary" id="btn-ok">确定</button>
+			<button type="button" class="btn btn-sm btn-default" id="btn-cancel">取消</button>
+		 </div>
+	</div>
+</div>
+<script src="carrySetKM.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+</body>
+</html>

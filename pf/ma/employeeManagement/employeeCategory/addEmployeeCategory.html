@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>新增/修改人员类别</title>
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <script src="../../../pub/boot.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+    <link rel="stylesheet" type="text/css" href="../../common/common.css?rev=@@hash"/>
+    <link rel="stylesheet" type="text/css" href="employeeCategory.css?rev=@@hash"/>
+</head>
+<body>
+<!--整个容器 begin-->
+<div class="ufma-layout-updown">
+    <div class="ufma-layout-up">
+        <div class="container-fluid">
+            <form id="frmQuery" class="form-horizontal" style="margin-top: 10px">
+                <div class="form-row">
+                    <div class="form-group required">
+                        <label class="control-label">类别代码：</label>
+                        <div class="control-element">
+                            <input id="classCode" type="text" name="classCode" class="form-control" style="width: 200px" autocomplete="off">
+                        </div>
+                    </div>
+                    <div class="form-group required">
+                    <label class="control-label">类别名称：</label>
+                    <div class="control-element">
+                        <input id="className" type="text" name="className" class="form-control" style="width: 200px" autocomplete="off">
+                    </div>
+                </div>
+                    <div class="clearfix"></div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label class="control-label">排序号：</label>
+                        <div class="control-element" style="vertical-align: top">
+                            <input type="text" name="ordIndex" class="form-control" maxlength="200"
+                                   style="width: 200px" autocomplete="off" onKeyUp="value=value.replace(/[^\d+-]/g,'')"
+                                   placeholder="请输入数字">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label">是否启用：</label>
+                        <div class="control-element" style="vertical-align: top">
+                            <div class="btn-group" data-toggle="buttons">
+                                <label class="btn btn-default active">
+                                    <input type="radio" class="toggle" name="isUsed" value="Y" checked="" autocomplete="off"> 是 </label>
+                                <label class="btn btn-default">
+                                    <input type="radio" class="toggle" name="isUsed" value="N" autocomplete="off"> 否 </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label">系统预置：</label>
+                        <div class="control-element" style="vertical-align: top">
+                            <div class="btn-group" data-toggle="buttons">
+                                <label class="btn btn-default" disabled="disabled">
+                                    <input type="radio" class="toggle" name="isSys" value="Y" checked="" autocomplete="off"> 是 </label>
+                                <label class="btn btn-default active" disabled="disabled"> 
+                                    <input type="radio" class="toggle" name="isSys" value="N" autocomplete="off"> 否 </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label class="control-label">备注：</label>
+                        <div class="control-element" style="vertical-align: top">
+                            <textarea id="remark" type="text" name="remark" class="form-control" style="width: 896px;height: 48px" autocomplete="off"></textarea>
+                        </div>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+            </form>
+            <div class="select-property clearfix">
+                <div class="sel-box-outter selectabled fl">
+                    <div class="sel-title fl control-label">可选属性：</div>
+                    <div class=" fl">
+                        <div class="sel-box fl newArr"></div>
+                        <div><label class="mt-checkbox mt-checkbox-outline checkAll mt10"><input type="checkbox" data-code="*">全选<span></span></label></div>
+                    </div>
+                </div>
+                <div class="btn-opt fl">
+                    <button class="btn btn-default add"><span class="glyphicon icon-angle-double-right"></span>添加</button>
+                    <button class="btn btn-default del"><span class="glyphicon icon-angle-double-left"></span>删除</button>
+                    <!--<button class="btn btn-default up"><span class="glyphicon icon-arrow-top"></span>上移</button>-->
+                    <!--<button class="btn btn-default down"><span class="glyphicon icon-arrow-bottom"></span>下移</button>-->
+                </div>
+                <div class="sel-box-outter selected fl">
+                    <div class="sel-title fl control-label">已选属性：</div>
+                    <div class=" fl">
+                        <div class="sel-box fl useArr"></div>
+                        <div><label class="mt-checkbox mt-checkbox-outline checkAll mt10"><input type="checkbox" data-code="*">全选<span></span></label></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="ufma-layout-down bordered-top">
+        <div class="text-right margin-right-30">
+            <button type="button" class="btn btn-sm btn-primary" id="btn-sure">确定</button>
+            <button type="button" class="btn btn-sm btn-default btn-close" id="btn-close">关闭</button>
+        </div>
+    </div>
+</div>
+<script src="../../common/common.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+<script src="addEmployeeCategory.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+</body>
+</html>

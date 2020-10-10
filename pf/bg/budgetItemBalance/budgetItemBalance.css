@@ -1,0 +1,338 @@
+.rpt-funnelBox {
+	position: absolute;
+	z-index: 9999;
+	background: #fff;
+	border: 1px solid #eee;
+	padding: 10px 8px;
+	box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.50);
+	border-radius: 4px;
+}
+
+.rpt-funnelBox p {
+	margin-bottom: 0;
+	float: left;
+	width: 120px;
+}
+
+.rpt-funnelBoxList {
+	display: none;
+	top: 42px;
+	right: 4px;
+	height: auto
+}
+
+.rpt-funnelBoxList:before {
+	content: '';
+	display: inline-block;
+	border-left: 10px solid transparent;
+	border-right: 10px solid transparent;
+	border-bottom: 10px solid #d9d9d9;
+	position: absolute;
+	top: -10px;
+	right: 16px;
+}
+
+.rpt-funnelBoxList:after {
+	content: '';
+	display: inline-block;
+	border-left: 9px solid transparent;
+	border-right: 9px solid transparent;
+	border-bottom: 9px solid #fff;
+	position: absolute;
+	top: -9px;
+	right: 17px;
+}
+
+.rpt-colList {
+	text-align: left;
+}
+
+#colListTable tbody {
+	min-width: 220px;
+	display: block;
+	height: 300px;
+	overflow-y: auto;
+}
+
+.rpt-colList label {
+	font-weight: normal;
+	margin-bottom: 8px;
+}
+
+.rpt-funnelBoxList .rpt-colBtn {
+	text-align: right;
+}
+
+.rpt-table-sub-action {
+	float: right;
+	height: 30px;
+}
+
+.rpt-table-sub-action .btn {
+	height: 30px;
+	/* float: right; */
+}
+
+.commonShowPan {
+	max-width: 130px;
+	min-width: 110px;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	overflow: hidden;
+}
+
+.bgtestborder {
+	border: 1px black solid;
+}
+
+.bgMultiModalMain {
+	padding: 8px 20px 0px 20px !important;
+}
+
+.bg-div-height-space-12 {
+	min-height: 12px;
+}
+
+.bg-div-margin-top-bottom-8 {
+	margin-top: 8px;
+	margin-bottom: 8px;
+}
+
+.bg-multiModal-content {
+	position: relative;
+	float: left;
+	width: 100%;
+}
+
+.bg-multiModal-rightButton {
+	float: right;
+	margin-left: 8px;
+}
+
+.bg-multiModal-leftButton {
+	float: left;
+	margin-right: 8px;
+}
+
+.bg-multiModal-topDiv {
+	position: relative;
+	float: left;
+	height: 30px;
+}
+
+.bg-multiModal-rightTopDiv {
+	position: relative;
+	float: right;
+	height: 30px;
+}
+
+.bg-multiModal-topDiv-30right {
+	margin-right: 30px;
+}
+
+.bg-multiModal-topDiv-60right {
+	margin-right: 60px;
+}
+
+.bg-multiModal-dtp {
+	width: 125px;
+}
+
+.bg-multiModal-bgplan {
+	width: 210px;
+}
+
+.bg-multiModal-fileCount {
+	width: 33px;
+}
+
+.bg-multiModal-fileBtn {
+	width: 45px;
+}
+
+.bgMultiModalForm .inputHeight {
+	height: 30px !important;
+}
+
+.bgMultiModal-footer1 {
+	height: 50px;
+	border: 0px !important;
+	position: relative;
+}
+
+.bgMultiModal-footer2 {
+	height: 62px;
+}
+
+.bg-multiModal-tbl-addRow {
+	position: absolute;
+	left: 430px;
+	top: 10px;
+	width: 200px;
+	height: 30px;
+}
+
+.bgMultiModal-footer1 span {
+	position: relative;
+	width: 30px;
+	left: -35px;
+}
+
+.bgMultiModal-tbl tr td {
+	border: 1px #DFE6EC solid !important;
+}
+
+.bgMultiModal-tbl thead th {
+	border: 1px #DFE6EC solid !important;
+	text-align: center !important;
+}
+
+.bgMultiModal-tbl-pnl {
+	width: 100% !important;
+}
+
+.bgMultiModal-tbl-Height {}
+
+.bg-mainTableFooterDiv {
+	position: relative;
+	float: left;
+	width: 100%;
+}
+
+.bg-mainTableFooterDiv .rightDiv {
+	position: relative;
+	float: right;
+}
+
+.bg-mainTableFooterDiv .leftDiv {
+	position: relative;
+	float: left;
+}
+
+.bg-multi-floatLeft-1 {
+	position: relative;
+	float: left;
+	margin: 4px 4px 0 0;
+}
+
+.bg-top-4 {
+	top: 4px;
+}
+
+.bg-top-8 {
+	top: 8px;
+}
+
+.bg-top-12 {
+	top: 12px;
+}
+
+.billRow-a {
+	height: 35px;
+}
+
+.uf-datagrid th td {
+	white-space: nowrap;
+}
+
+.uf-grid-headerCell {
+	font-weight: bold;
+}
+
+.container-fluid {
+	padding-left: 0px;
+	padding-right: 0px;
+}
+
+.ufma-tool-bar {
+	padding-top: 8px !important;
+	margin-top: -1px !important;
+}
+
+.rpt-table-sub-action {
+	float: right;
+	height: 30px;
+}
+.amt-input {
+	width: 128px;
+	float: left;
+}
+
+/*bug75659--【财务云8.0 农业部】需要选项控制，项目、支出功能分类等可以隐藏编码，只显示名称--zsj*/
+
+.switchStylexs p {
+	width: 100%;
+	height: 30px;
+	line-height: 30px;
+	font-size: 12px;
+	float: left;
+	text-align: left;
+}
+
+.switchStylexs p .kj {
+	float: right;
+	width: 50px;
+	text-align: right;
+}
+
+.switchStylexs {
+	width: 200px;
+	padding: 0px 10px;
+	display: none;
+}
+
+.label-ctrl-date {
+	position: absolute;
+	right: 440px;
+	margin-top: 4px;
+}
+
+.form-ctrl-date {
+	position: absolute;
+	right: 178px;
+}
+
+/*CWYXM-10913指标调剂编辑页面、预算执行情况表，摘要列应限制最大宽度--zsj
+ */
+.commonShow {
+	max-width: 250px;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	overflow: hidden;
+}
+.orderClass {
+    /* width: 5px; */
+    /* right:5px; 
+    top:15px; */
+    height: 0;
+    float: right;
+    margin-top: -9px;
+    /* cursor: pointer; */
+}
+.orderAsc {
+    padding: 0px;
+    width: 0px;
+    height:0px;
+    line-height:0px;
+    font-size:0;
+    border-width: 5px;
+    border-color: transparent transparent #dcdcdc transparent;
+    outline: none;
+}
+.orderActive {
+    border-color: transparent transparent #888888 transparent;
+}
+.orderDesc {
+    padding: 0px;
+    width: 0px;
+    height:0px;
+    line-height:0px;
+    font-size:0;
+    border-width: 5px;
+    border-color: #888888 transparent transparent transparent;
+    margin-top: 2px;
+    float: right;
+    outline: none;
+    cursor: pointer;
+    vertical-align: top;
+}

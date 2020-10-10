@@ -1,0 +1,87 @@
+﻿<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>新年度初始化-系统级</title>
+		<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+		<script>
+			var bAgency = false;//单位级和系统级区分
+		</script>			
+		<script src="../../../pub/boot.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+	</head>
+
+	<body>
+		<div class="container-fluid ufma-container">
+			<div class="workspace">
+				<!--工作区顶部 begin-->
+				<div class="workspace-top">
+					<div class="container-fluid">
+						<div class="ufma-portlet">
+							<div class="portlet-title">
+								<div class="caption">
+									<span class="caption-subject font-dark uppercase">生成新年度基础资料</span>
+								</div>
+							</div>
+
+							<div class="portlet-body form-horizontal bordered">
+								
+								<div class="form-group label-group inline-block" style="min-width:300px;">
+									<div class="control-label">状态：</div>
+									<div class="control-element">
+										<a name="status" value="all" class="label label-radio selected">全部</a>
+										<a name="status" value="hasGen" class="label label-radio">已生成</a>
+										<a name="status" value="unGen" class="label label-radio">未生成</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="workspace-center">
+					<div class="container-fluid">
+						
+							<h4 class="text-center font-size20" id="pageCaption">生成2018年度系统级基础资料</h4>
+							<div class="">
+								<table id="tblTransNewYear" class="ufma-table dataTable bordered-gray">
+									<thead><tr>
+										<th style="width:30px;padding-left:9px;"><label class="mt-checkbox mt-checkbox-outline margin-right-8">
+												<input class="datatable-group-checkable" type="checkbox" name="transitem" value="1">&nbsp; 
+												<span></span>
+											</label>
+										</th>
+																		
+										<th style="width:200px;">基础资料</th><th style="width:80px;">状态</th><th style="width:160px;">新年度是否已有数据</th>
+	
+										<th style="width:160px;">数据生成方式<span class="icon icon-replace margin-left-8 hand" value="cover" id="TriggerDataType"></span></th>
+										<th style="width:160px;">同时下发数据<span class="icon icon-replace margin-left-8 hand" value="Y" id="TriggerDataDown"></span></th>
+										<th style="text-align:center;">操作</th>
+									</tr></thead>
+									<tbody id="tblTransNewYearBase">
+										
+									</tbody>
+								</table>
+
+							</div>
+						
+					</div>
+				</div>
+				<div class="ufma-tool-bar">
+					<div class="tool-bar-body bordered-gray">
+						<div class="ufma-tool-btns">
+							<label class="mt-checkbox mt-checkbox-outline margin-right-8">
+										<input class="datatable-group-checkable" type="checkbox" name="transitem" value="1">全选 
+										<span></span>
+							</label>
+							<a class="btn btn-sm btn-default" id="btn-transSys">生成</a>
+						</div>
+						
+					</div>
+				</div>
+			</div>
+		</div>
+		<script src="newYear.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+	</body>
+
+</html>

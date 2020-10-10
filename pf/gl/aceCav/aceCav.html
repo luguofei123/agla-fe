@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>应付款核销</title>
+		<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+		<script src="../../pub/boot.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+		<link rel="stylesheet" href="aceCav.css?rev=@@hash" />
+	</head>
+
+	<body>
+		<div id="aceCav" class="container-fluid ufma-container">
+			<!--工作区 begin-->
+			<div class="workspace">
+				<!--工作区顶部 begin-->
+				<div class="workspace-top">
+					<div class="container-fluid">
+						<div class="ufma-portlet">
+							<div class="portlet-title">
+								<div class="caption">
+									<span class="caption-subject font-dark uppercase">应付款核销</span>
+								</div>
+								<div class="inline-block absolute margin-left-15" style="margin-top: 10px">
+									<ul class='ufma-list-col clearfix padding-left-8'>
+										<li class="ufma-list-col-item">
+											<div id='cbAgency' class="uf-treecombox ufma-combox-agency"></div>
+										</li>
+										<li class="ufma-list-col-item">
+											<div id='cbAcct' class="uf-combox ufma-combox-acct"></div>
+										</li>
+									</ul>
+								</div>
+							</div>
+							<div class="portlet-body form-horizontal bordered">
+								<div class="rpt-box rpt-query-box ">
+									<div class="rpt-query-box-left">
+										<form id="frmQuery" class="form-horizontal">
+											<div class="form-row">
+												<div class="form-group" style="margin-right: 8px;">
+													<label class="control-label">会计科目：</label>
+													<div class="control-element">
+														<div id='cbAcco' name="cbAcco" class="uf-treecombox ufma-combox-acco" style="width:215px;"></div>
+													</div>
+												</div>
+												<div class="form-group" style="width: 370px;position: relative">
+													<div style="display: inline-block">
+														<button class="btn btn-default" id="colAction" data-type="01" style="padding: 4px 11px">
+															<span class="text">往来单位</span>
+															<span class="glyphicon icon-angle-bottom"></span>
+														</button>
+														<div class="rpt-funnel rpt-funnelBox rpt-funnelBoxList" style="position: absolute;display: none">
+															<div id="colList" class="rpt-colList">
+																<span data-type="01">往来单位</span>
+																<span data-type="02">个人</span>
+															</div>
+														</div>
+													</div>
+													<div class="control-element">
+														<div id='cbCurrent' name="cbCurrent" class="ufma-textboxlist"></div>
+													</div>
+												</div>
+												<div class="form-group">
+													<div class="control-label">
+														<span>状态：</span>
+													</div>
+													<div class="btn-group radio-group" data-toggle="buttons">
+														<label class="btn btn-default btn-sm noComp active">
+															<input type="radio" class="toggle" name="isComp" value="N">
+															未核销
+														</label>
+														<label class="btn btn-default btn-sm comp">
+															<input type="radio" class="toggle" name="isComp" value="Y">
+															已核销
+														</label>
+													</div>
+													<!-- <div class="control-element noborder">
+														<button class="btn btn-primary noComp">未核销</button>
+													</div>
+													<div class="control-element noborder">
+														<button class="btn btn-default comp" style="margin-left: 10px">已核销</button>
+													</div> -->
+												</div>
+												<div class="clearfix"></div>
+											</div>
+										</form>
+										<form id="queryMore" class="form-horizontal none m10">
+											<!--第二行-->
+											<div class="form-row" style="margin-bottom: 10px;margin-left:-11px;">
+												<!-- bug80009--zsj--经雪蕊姐确认：1、将查询条件：“核销金额”改完“金额”；2、搜索的范围，在借贷方金额列的值中搜索-->
+												<div class="form-group" style="margin-right: 8px;">
+													<label class="control-label">金额：</label>
+													<div class="control-element" style="width:100px;">
+														<input id="startStadAmt" type="text" name="startStadAmt" class="form-control">
+													</div>
+													<span class="split">-</span>
+													<div class="control-element" style="width:100px;">
+														<input id="endStadAmt" type="text" name="endStadAmt" class="form-control">
+													</div>
+												</div>
+												<div class="form-group">
+													<label class="control-label auto" style="margin-left: 28px;">摘要：</label>
+													<div class="control-element">
+														<input id="remark" type="text" name="remark" class="form-control" style="width: 200px">
+													</div>
+												</div>
+												<div class="clearfix"></div>
+											</div>
+										</form>
+									</div>
+									<div class="rpt-query-box-right">
+										<label class="label label-more" data-target="#queryMore">更多<i class="glyphicon icon-angle-bottom"></i></label>
+										<div class="rpt-query-btn">
+											<button class="btn btn-primary btn-query btn-permission" id="query_table">查询</button>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!--工作区中部 begin-->
+					<div class="workspace-center" style="padding: 0 15px">
+						<!--表格 begin -->
+						<div class="rpt-box rpt-table-box pr">
+							<div class="rpt-table-title">
+								应付款核销
+							</div>
+							<div id="dtToolbar" class="btn-group" style="position:absolute;right:15px;bottom:10px;">
+							</div>
+						</div>
+						<div class="rpt-table-tab">
+							<table class="ufma-table  uf-rpt-table" tool-bar="#tool-bar" id="gridGOV" style="width:100%;"></table>
+						</div>
+					</div>
+					<!--工作区中部 end-->
+					<!--工作区底部 begin -->
+					<div id="tool-bar" class="ufma-tool-bar  info-top" style="width:100%;padding-right: 30px;">
+						<div class="tool-bar-body" style="width:100%;height: 90px;">
+							<div class="form-row" style="width: 100%;height: 44px;border-bottom: 1px solid #d9d9d9;padding:0 15px;line-height: 42px;">
+								<div class="from-group fl" style="width: 200px;">
+									<span>借方合计：</span>
+									<b id="sumJ">0</b>
+								</div>
+								<div class="from-group fl" style="width: 200px;">
+									<span>贷方合计：</span>
+									<b id="sumD">0</b>
+								</div>
+								<div class="from-group fl" style="width: 200px;">
+									<span>差额：</span>
+									<b id="sumC">0</b>
+								</div>
+							</div>
+							<div class="ufma-tool-btns" style="margin-top:6px;clear: both;">
+								<label class="mt-checkbox mt-checkbox-outline margin-right-8 compAllLa">
+                        <input type="checkbox" class="datatable-group-checkable" id="all"/> 全选
+                        <span></span>
+                    </label>
+								<button type="button" class="btn btn-sm btn-primary btn-permission btn-hx" id="allCom">自动核销
+                    </button>
+								<a href="javascript:;"><span class="icon-setting"></span></a>
+								<button type="button" class="btn btn-sm btn-default btn-permission btn-sdhx" id="someCom">手动核销
+                    </button>
+								<button type="button" class="btn btn-sm btn-default btn-permission btn-cancle-hx" id="noCom">取消核销
+                    </button>
+							</div>
+						</div>
+					</div>
+					<!--工作区底部 end-->
+
+				</div>
+			</div>
+			<!--<script src="../maCommon/maCommon.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>-->
+			<script src="aceCav.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+
+	</body>
+
+</html>

@@ -1,0 +1,57 @@
+.padding-3{padding: 3px;}
+#vouBoxRedVoucher .container-fluid{
+	padding-top: 16px;
+	padding-left: 40px;
+}
+.ufma-layout-down{
+	position: fixed;
+	bottom: 0;
+}
+
+#vouBoxRedVoucher ul.list-unstyled{
+	margin: 0;
+}
+
+#vouBoxRedVoucher .tips{
+	margin-bottom: 16px;
+}
+#vouBoxRedVoucher .tips-icon{
+	border-radius: 50%;
+	width: 40px;
+	line-height: 36px;
+	border: 2px solid #108EE9;
+	color: #108EE9;
+	font-size: 22px;
+	text-align: center;
+}
+#vouBoxRedVoucher .tips p{
+	line-height: 40px;
+	margin: 0;
+	margin-left: 8px;
+}
+
+#vouBoxRedVoucher .setVouType{
+	margin-bottom: 8px;
+}
+#vouBoxRedVoucher label{
+	margin: 0;
+	font-weight: normal;
+	line-height: 30px;
+}
+#vouBoxRedVoucher input,
+#vouBoxRedVoucher select{
+	border-radius: 4px;
+	height: 30px;
+	line-height: 28px;
+	min-width: 160px;
+}
+
+.setVouDate div.pull-left{
+	position: relative;
+}
+
+.setVouDate i.icon-calendar{
+	position: absolute;
+	right: 6px;
+	top: 8px;
+}

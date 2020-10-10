@@ -1,0 +1,83 @@
+.budgetItemTwoSidesAdjustMain {
+	padding: 8px 20px 0px 20px !important;
+	color: #333!important;
+}
+
+
+/******************************************************************/
+
+.budgetItemTwoSidesAdjust-modal-title {
+	height: 70px;
+	text-align: center;
+}
+
+.budgetItemTwoSidesAdjust-modal-title .fill {
+	width: 5%;
+	height: 100%;
+	float: left;
+}
+
+.budgetItemTwoSidesAdjust-modal-title .message {
+	width: 30%;
+	height: 100%;
+	float: left;
+}
+
+.tabController {
+	width: 100%;
+	position: relative;
+	float: left;
+}
+
+.budgetItemTwoSidesAdjust-footer2 {
+	height: 62px;
+}
+
+.budgetItemTwoSidesAdjust-width-125 {
+	width: 125px;
+}
+
+.budgetItemTwoSidesAdjust-width-45 {
+	width: 45px;
+}
+
+.budgetItemTwoSidesAdjust-margin-10 {
+	margin-left: 10px;
+}
+
+.NAVSELECT {
+	background: #FFFFFF!important;
+}
+
+.uf-datepicker {
+	background-color: white !important;
+}
+
+.ufma-portlet>.portlet-title {
+	position: relative;
+}
+
+.ufma-portlet>.portlet-title>.actions {
+	position: absolute;
+	right: 0;
+	top: 0;
+}
+
+.commonShow {
+	max-width: 150px;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	overflow: hidden;
+}
+
+
+/*CWYXM-11414 --指标调剂列表，未进行自适应全屏显示--zsj*/
+
+/* #mainTable-twoSidesAdjItem_wrapper .dataTables_scrollHeadInner,
+.dataTables_scrollHeadInner .dataTable,
+#mainTable-twoSidesAdjItem_wrapper .ufma-table.bgpub-datatable-tbl.no-footer.dataTable {
+	width: 100% !important;
+} */
+.active {
+	background: #FFFFFF !important;
+}

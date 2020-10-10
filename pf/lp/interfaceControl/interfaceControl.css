@@ -1,0 +1,23 @@
+ul li {
+    list-style: none;
+    margin-top:20px
+}
+
+ul li:nth-child(1){
+    margin-top:10px
+}
+ul {
+    padding: 0
+}
+.li-name {
+   text-align: right;
+   overflow: hidden;
+   white-space: nowrap;
+   text-overflow: ellipsis
+}
+.control-div{
+    border: 1px solid #D2EAFB ;
+    background-color: #ECF6FD ;
+    margin-top: 16px;
+    border-radius: 4px;
+}

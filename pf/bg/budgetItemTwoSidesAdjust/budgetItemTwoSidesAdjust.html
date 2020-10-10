@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>指标调剂</title>
+    <meta
+      content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
+      name="viewport"
+    />
+    <script
+      src="../../pub/boot.js?rev=@@hash"
+      type="text/javascript"
+      charset="utf-8"
+    ></script>
+    <link rel="stylesheet" href="../../agla-trd/fileinput/fileinput.css" />
+    <script
+      src="../../agla-trd/fileinput/fileinput.js"
+      type="text/javascript"
+      charset="utf-8"
+    ></script>
+    <script
+      src="../../agla-trd/fileinput/zh.js"
+      type="text/javascript"
+      charset="utf-8"
+    ></script>
+    <link rel="stylesheet" href="../pub/bgPub.css?rev=@@hash" />
+    <link rel="stylesheet" href="../pub/common.css?rev=@@hash" />
+    <link rel="stylesheet" href="../pub/bgPubImpAttachment.css?rev=@@hash" />
+    <link rel="stylesheet" href="../pub/bgPubAuditModal.css?rev=@@hash" />
+    <link rel="stylesheet" href="../pub/bgPubWait.css?rev=@@hash" />
+    <link rel="stylesheet" href="../pub/bgPubLog.css?rev=@@hash" />
+    <link rel="stylesheet" href="../pub/bgPubProgress1.css?rev=@@hash" />
+    <link rel="stylesheet" href="budgetItemTwoSidesAdjust.css?rev=@@hash" />
+    <style>
+      .ufma-datatable tr th {
+        text-align: center !important;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="budgetItemTwoSidesAdjust" class="container-fluid ufma-container">
+      <!--工作区 begin-->
+      <div class="workspace bordered" style="height: 516px;">
+        <!--工作区顶部 begin-->
+        <div class="workspace-top">
+          <!-- 左右间距增加 -->
+          <div class="container-fluid">
+            <!-- 上对齐，增加下间距 -->
+            <div class="ufma-portlet" style="padding-bottom: 0px;">
+              <div class="portlet-title">
+                <div class="caption">
+                  <span class="caption-subject font-dark uppercase"
+                    >指标调剂</span
+                  >
+                </div>
+                <div id="cbb-agency-twoSidesAdjItem"></div>
+                <!-- 右侧新增按钮 -->
+                <div class="actions">
+                  <div class="btn-group">
+                    <button
+                      type="button"
+                      id="btn-add-twoSidesAdjItem"
+                      class="btn btn-sm btn-primary btn-add btn-permission"
+                    >
+                      新增
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!--工作区中部 begin-->
+        <div class="workspace-center">
+          <div class="container-fluid">
+            <!-- 头部更多的显示 -->
+            <div
+              id="bgMoreMsgPnl-twoSidesAdjItem"
+              class="bgpub-bgnormal-postion-1"
+            ></div>
+            <div
+              class="bgpub-bgnormal-postion-1 bgpub-div-height-space-12"
+            ></div>
+            <!-- 未审核、审核、全部  的标签 -->
+            <div class="bgpub-bgnormal-postion-1">
+              <!--标签 begin-->
+              <ul class="nav nav-tabs">
+                <li class="active NAVSELECT">
+                  <a href="javascript:;" data-status="O">未审核</a>
+                </li>
+                <li><a href="javascript:;" data-status="A">已审核</a></li>
+                <li><a href="javascript:;" data-status="T">全部</a></li>
+              </ul>
+              <!--标签 end-->
+              <!--右侧操作按钮 begin-->
+              <div class="bgpub-bgnormal-absolute-right">
+                <div class="iframeBtnsSearch hide">
+                  <input
+                    type="text"
+                    class="searchHide focusOff bordered"
+                    placeholder="请输入要搜索的关键词"
+                  />
+                  <input type="hidden" class="searchValueHide" />
+                  <button
+                    class="btn btn-default btn-sm btn-search"
+                    id="searchHideBtn"
+                  >
+                    <i class="glyphicon icon-search"></i>
+                  </button>
+                </div>
+                <!-- 
+避免样式错乱，等 打印可用 后放入btn-group
+                   <button
+                    class="btn btn-default btn-print btn-permission bgtooltip hide"
+                    data-toggle="tooltip"
+                    title="打印"
+                    id="budgetItemTwoSidesAdjust-print"
+                  >
+                    <span class="glyphicon icon-print"></span>
+                  </button>
+                 -->
+                <div class="btn-group">
+                  <!--<button class="btn btn-default btn-export btn-permission bgtooltip" data-toggle="tooltip"
+									title="导出"
+									id="budgetItemTwoSidesAdjust-exp">
+									<span class="glyphicon icon-upload"></span>
+								</button>-->
+                  <button
+                    id="export"
+                    class="btn btn-default btn-export btn-permission bgtooltip"
+                    data-toggle="tooltip"
+                    title="导出"
+                    style="
+                      border-bottom-left-radius: 4px;
+                      border-top-left-radius: 4px;
+                    "
+                  >
+                    <span class="glyphicon icon-upload"></span>
+                  </button>
+                </div>
+              </div>
+              <!--右侧操作按钮 end-->
+            </div>
+            <!-- 表格 -->
+            <div
+              id="mainTableDiv-twoSidesAdjItem"
+              class="bgpub-bgnormal-postion-1 btn-query btn-permission"
+            >
+              <table
+                id="mainTable-twoSidesAdjItem"
+                class="ufma-table dataTable bgpub-datatable-tbl"
+              ></table>
+            </div>
+            <!-- <div class="bgpub-div-fixBottom-1" id="fixDiv-twoSidesAdjItem">
+              <div class="bgpub-bgnormal-postion-1 btn-query btn-permission">
+                <!-- 单据数量和指标金额的信息显示  
+                <div
+                  id="tableTotalShow-twoSidesAdjItem"
+                  class="bgpub-bgnormal-postion-1 mt8 mb3"
+                >
+                  <span>共&nbsp;</span
+                  ><span id="span-billsCount-twoSidesAdjItem">0</span
+                  ><span>&nbsp;张单据&nbsp;&nbsp;&nbsp; 指标金额：&nbsp;</span
+                  ><span id="span-billsTotalMoney-twoSidesAdjItem">0.00</span>
+                </div>
+              </div>
+              <div class="bgpub-bgnormal-postion-1">
+                <div class="bgpub-normal-floatLeft-1">
+                  <label
+                    class="mt-checkbox mt-checkbox-single mt-checkbox-outline bgpub-top-4"
+                  >
+                    <input
+                      id="input-seleAll-twoSidesAdjItem"
+                      type="checkbox"
+                      class="checkboxes"
+                      value=""
+                    />
+                    &nbsp; 全选 <span></span>
+                  </label>
+                </div>
+                <div class="bgpub-normal-floatLeft-1">
+                  <button
+                    type="button"
+                    id="btn-del-twoSidesAdjItem"
+                    class="btn btn-sm btn-default btn-delete btn-permission bgpub-normal-leftButton-1"
+                  >
+                    删除
+                  </button>
+                </div>
+                <div class="bgpub-normal-floatLeft-1">
+                  <button
+                    type="button"
+                    id="btn-check-twoSidesAdjItem"
+                    class="btn btn-sm btn-default btn-audit btn-permission bgpub-normal-leftButton-1"
+                  >
+                    审核
+                  </button>
+                </div>
+                <div class="bgpub-normal-floatLeft-1">
+                  <button
+                    type="button"
+                    id="btn-un-check-twoSidesAdjItem"
+                    class="btn btn-sm btn-default hide btn-un-audit btn-permission bgpub-normal-leftButton-1"
+                  >
+                    销审
+                  </button>
+                </div>
+              </div>
+            </div> -->
+          </div>
+        </div>
+
+        <!--工作区底 begin-->
+        <div class="workspace-bottom">
+          <div class="container-fluid">
+            <div class="bgpub-div-fixBottom-1" id="fixDiv-twoSidesAdjItem">
+              <div class="bgpub-bgnormal-postion-1 btn-query btn-permission">
+                <!-- 单据数量和指标金额的信息显示 -->
+                <div
+                  id="tableTotalShow-twoSidesAdjItem"
+                  class="bgpub-bgnormal-postion-1 mt8 mb3"
+                  style="border-bottom: 1px solid #d9d9d9;"
+                >
+                  <span>共&nbsp;</span
+                  ><span id="span-billsCount-twoSidesAdjItem">0</span
+                  ><span>&nbsp;张单据&nbsp;&nbsp;&nbsp; 指标金额：&nbsp;</span
+                  ><span id="span-billsTotalMoney-twoSidesAdjItem">0.00</span>
+                </div>
+              </div>
+              <div class="bgpub-bgnormal-postion-1">
+                <div class="bgpub-normal-floatLeft-1">
+                  <label
+                    class="mt-checkbox mt-checkbox-single mt-checkbox-outline bgpub-top-4"
+                  >
+                    <input
+                      id="input-seleAll-twoSidesAdjItem"
+                      type="checkbox"
+                      class="checkboxes"
+                      value=""
+                    />
+                    &nbsp; 全选 <span></span>
+                  </label>
+                </div>
+                <div class="bgpub-normal-floatLeft-1">
+                  <button
+                    type="button"
+                    id="btn-del-twoSidesAdjItem"
+                    class="btn btn-sm btn-default btn-delete btn-permission bgpub-normal-leftButton-1"
+                  >
+                    删除
+                  </button>
+                </div>
+                <div class="bgpub-normal-floatLeft-1">
+                  <button
+                    type="button"
+                    id="btn-check-twoSidesAdjItem"
+                    class="btn btn-sm btn-default btn-audit btn-permission bgpub-normal-leftButton-1"
+                  >
+                    审核
+                  </button>
+                </div>
+                <div class="bgpub-normal-floatLeft-1">
+                  <button
+                    type="button"
+                    id="btn-un-check-twoSidesAdjItem"
+                    class="btn btn-sm btn-default hide btn-un-audit btn-permission bgpub-normal-leftButton-1"
+                  >
+                    销审
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!--[新增]-模态框 弹出层-->
+      <div id="twoSidesAdjItem-add" z-index="-1" class="ufma-modal">
+        <div class="u-msg-title">
+          <h4>指标调剂编辑</h4>
+        </div>
+        <div
+          class="u-msg-content budgetItemTwoSidesAdjustMain"
+          id="twoSidesAdjItem-BgItem-content"
+        >
+          <!-- 进度条 -->
+          <div
+            class="ufma-layout ufma-layout-slider-sm ufma-layout-fixed-slider ufma-layout-fixed-slider-right budgetItemTwoSidesAdjust-modal-title"
+            id="progress-twoSidesAdjItem"
+          ></div>
+
+          <div class="tabController step1" pageindex="1">
+            <!-- 预算方案 -->
+            <div id="twoSidesAdjItem_modal_step1_morePnl"></div>
+            <!-- 指标表格 -->
+            <div class="step1-table">
+              <table
+                id="twoSidesAdjItemTable_Modal_out"
+                class="ufma-table bgpub-datatable-tbl"
+              ></table>
+            </div>
+          </div>
+
+          <div class="tabController step2" pageindex="2">
+            <!-- 预算方案 -->
+            <div id="twoSidesAdjItem_modal_step2_morePnl"></div>
+            <!-- 指标表格 -->
+            <div class="step1-table">
+              <table
+                id="twoSidesAdjItemTable_Modal_in"
+                class="ufma-table bgpub-datatable-tbl"
+              ></table>
+            </div>
+          </div>
+
+          <div class="tabController step3" pageindex="3">
+            <div
+              class="bgpub-bgnormal-postion-1 bgpub-div-height-space-35"
+              id="sheet3_top"
+            >
+              <h5 class="bgPub-tabSheet-topDiv">申请人: &nbsp;</h5>
+              <h5
+                class="bgPub-tabSheet-topDiv bgPub-tabSheet-topDiv-30right"
+                id="twoSidesAdjModal_makeOper"
+              ></h5>
+
+              <h5 class="bgPub-tabSheet-topDiv">单据日期: &nbsp;</h5>
+              <div
+                class="control-element bgPub-tabSheet-topDiv bgPub-tabSheet-topDiv-30right budgetItemTwoSidesAdjust-width-125"
+              >
+                <div
+                  class="uf-datepicker bgPub-div-bgDateTime"
+                  id="bg_twoSidesAdjModal_dtp"
+                ></div>
+              </div>
+              <h5 class="bgPub-tabSheet-topDiv">单据号: &nbsp;</h5>
+              <div
+                class="control-element bgPub-tabSheet-topDiv bgPub-tabSheet-topDiv-30right"
+              >
+                <input
+                  type="text"
+                  value="AAA00001"
+                  class="form-control inputHeight"
+                  id="twoSidesAdjModal_billCode"
+                  readonly="readOnly"
+                />
+              </div>
+              <button
+                type="button"
+                id="btn-twoSidesAdjModal-aboutFiles"
+                class="btn btn-sm btn-default btn-attach btn-permission bgPub-tabSheet-rightTopDiv budgetItemTwoSidesAdjust-width-45"
+                title="附件"
+              >
+                <span class="icon-file"></span>
+              </button>
+              <h5 class="bgPub-tabSheet-rightTopDiv">
+                &nbsp;张&nbsp;&nbsp;&nbsp;
+              </h5>
+              <div
+                class="control-element bgPub-tabSheet-rightTopDiv bgPub-fileCount-width"
+              >
+                <!--<input type="text" value="0" class="form-control inputHeight bgPub-fileCount-width"
+								id="bgInput-fileCount-twoSidesAdjLower" readonly/>-->
+                <input
+                  type="text"
+                  value="0"
+                  class="form-control inputHeight bgPub-fileCount-width"
+                  id="bgInput-fileCount-twoSidesAdjLower"
+                  oninput="value=value.replace(/[^\d]/g,'')"
+                /><!-- bug78324--zsj-->
+              </div>
+              <h5 class="bgPub-tabSheet-rightTopDiv">附单据&nbsp;</h5>
+            </div>
+            <div
+              class="bgpub-bgnormal-postion-2 bgPub-autoScrollXY"
+              id="sheet3_body"
+              style="width: 1050px;"
+            >
+              <div
+                class="bgpub-bgnormal-postion-1 bgpub-div-height-space-35 bgPub-border"
+              >
+                <h5>&nbsp;调出指标</h5>
+              </div>
+              <div
+                class="bgpub-bgnormal-postion-1"
+                style="width: 1050px; overflow-x: scroll;"
+              >
+                <div id="table_outItems_selected" class="uf-datagrid"></div>
+              </div>
+              <div class="bgpub-bgnormal-postion-1 bgpub-div-height-space-35">
+                <h5 class="bgPub-tabSheet-topDiv">调出合计: &nbsp;</h5>
+                <h5
+                  class="bgPub-tabSheet-topDiv bgPub-tabSheet-topDiv-30right bgPub-textColor-green"
+                  id="twosidesAdj_outSumMoney"
+                  v="0"
+                >
+                  0
+                </h5>
+                <h5 class="bgPub-tabSheet-topDiv">调入合计: &nbsp;</h5>
+                <h5
+                  class="bgPub-tabSheet-topDiv bgPub-tabSheet-topDiv-30right bgPub-textColor-blue"
+                  id="twosidesAdj_inSumMoney"
+                  v="0"
+                >
+                  0
+                </h5>
+                <h5 class="bgPub-tabSheet-topDiv">差额: &nbsp;</h5>
+                <h5
+                  class="bgPub-tabSheet-topDiv bgPub-tabSheet-topDiv-30right bgPub-textColor-red"
+                  id="twosidesAdj_balanceMoney"
+                  v="0"
+                >
+                  0
+                </h5>
+              </div>
+              <div
+                class="bgpub-bgnormal-postion-1 bgpub-div-height-space-35 bgPub-border"
+              >
+                <h5>&nbsp;调入指标</h5>
+              </div>
+              <div
+                class="bgpub-bgnormal-postion-1"
+                style="width: 1050px; overflow-x: scroll;"
+              >
+                <div id="table_inItems_selected" class="uf-datagrid"></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="tabController step4" pageindex="4">
+            <div
+              class="inline-block"
+              style="margin-top: 135px; margin-left: 440px;"
+            >
+              <div style="padding-left: 30px; position: relative;">
+                <span
+                  class="icon icon-check-circle ufma-green"
+                  style="
+                    font-size: 24px;
+                    position: absolute;
+                    top: 0px;
+                    left: 0px;
+                  "
+                ></span
+                >恭喜您，指标调剂完成！
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="u-msg-footer budgetItemTwoSidesAdjust-footer2">
+          <div class="div-tbl-bottom-btn">
+            <button
+              type="button"
+              id="btn-modal-close"
+              class="btn btn-sm btn-default btn-cancel bgpub-normal-rightButton-1"
+              data-dismiss="modal"
+            >
+              取消
+            </button>
+          </div>
+
+          <div class="div-tbl-bottom-btn">
+            <button
+              type="button"
+              id="btn-modal-pre"
+              class="btn btn-sm btn-default btn-pre btn-permission bgpub-normal-rightButton-1"
+            >
+              上一步
+            </button>
+          </div>
+          <div class="div-tbl-bottom-btn">
+            <button
+              type="button"
+              id="btn-modal-save"
+              class="btn btn-sm btn-default btn-primary btn-save btn-permission bgpub-normal-rightButton-1"
+            >
+              保存
+            </button>
+          </div>
+          <div class="div-tbl-bottom-btn">
+            <button
+              type="button"
+              id="btnAudit"
+              class="btn btn-sm btn-default btn-audit btn-permission bgpub-normal-rightButton-1 hide"
+            >
+              审核
+            </button>
+          </div>
+          <div class="div-tbl-bottom-btn">
+            <button
+              type="button"
+              id="btnCancleAudit"
+              class="btn btn-sm btn-default btn-un-audit btn-permission bgpub-normal-rightButton-1 hide"
+            >
+              销审
+            </button>
+          </div>
+          <div class="div-tbl-bottom-btn">
+            <button
+              type="button"
+              id="btn-modal-next"
+              class="btn btn-sm btn-primary btn-next btn-permission bgpub-normal-rightButton-1"
+            >
+              下一步
+            </button>
+          </div>
+
+          <div class="div-tbl-bottom-btn">
+            <button
+              type="button"
+              id="btn-modal-continue"
+              class="btn btn-sm btn-default btn-continue btn-permission bgpub-normal-rightButton-1"
+            >
+              继续调剂
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script
+      src="../pub/bgPub.js?rev=@@hash"
+      type="text/javascript"
+      charset="utf-8"
+    ></script>
+    <script
+      src="../pub/bgPubImpAttachment.js?rev=@@hash"
+      type="text/javascript"
+      charset="utf-8"
+    ></script>
+    <script
+      src="../pub/bgPubAuditModal.js?rev=@@hash"
+      type="text/javascript"
+      charset="utf-8"
+    ></script>
+    <script
+      src="../pub/bgPubWait.js?rev=@@hash"
+      type="text/javascript"
+      charset="utf-8"
+    ></script>
+    <script
+      src="../pub/bgPubLog.js?rev=@@hash"
+      type="text/javascript"
+      charset="utf-8"
+    ></script>
+    <script
+      src="../pub/bgPubProgress1.js?rev=@@hash"
+      type="text/javascript"
+      charset="utf-8"
+    ></script>
+    <script
+      src="../pub/bgPubItemManager.js?rev=@@hash"
+      type="text/javascript"
+      charset="utf-8"
+    ></script>
+    <script
+      src="budgetItemTwoSidesAdjust.js?rev=@@hash"
+      type="text/javascript"
+      charset="utf-8"
+    ></script>
+  </body>
+</html>

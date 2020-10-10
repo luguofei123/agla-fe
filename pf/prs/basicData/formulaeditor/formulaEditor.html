@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>公式编辑器</title>
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <script src="../../../pub/boot.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+    <link rel="stylesheet" type="text/css" href="formulaEditor.css?rev=@@hash"/>
+    <style type="text/css">
+
+    </style>
+</head>
+
+<body>
+<div class="ufma-layout-updown">
+    <div class="ufma-layout-up">
+        <div class="container-fluid">
+            <!--<div id="FormulaEditor" style="width: 606px;height: 382px;padding:10px 0px 10px 0px;margin:0 auto;">-->
+            <div id="FormulaEditor clearfix">
+                <div class="fl" style="width: 590px;padding:10px 0px 10px 0px;">
+                    <textarea style="width: 98%;height: 300px;margin:0 10px;border-radius: 4px;" class="sqlControl"
+                              id="FormulaEditorVal"></textarea>
+                    <div class="FormulaEditorBtn" style="width:98%;height:28px;margin: 5px auto;">
+                        <button class="newbtn btn-default" data-code="+">+</button>
+                        <button class="newbtn btn-default" data-code="-">-</button>
+                        <button class="newbtn btn-default" data-code="*">*</button>
+                        <button class="newbtn btn-default" data-code="/">/</button>
+                        <button class="newbtn btn-default" data-code="(">(</button>
+                        <button class="newbtn btn-default" data-code=")">)</button>
+                        <button class="newbtn btn-default" data-code="=">=</button>
+                        <button class="newbtn btn-default" data-code="!=">!=</button>
+                        <button class="newbtn btn-default" data-code=">">></button>
+                        <button class="newbtn btn-default" data-code=">=">>=</button>
+                        <button class="newbtn btn-default" data-code="<"><</button>
+                        <button class="newbtn btn-default" data-code="<="><=</button>
+                        <button class="newbtn btn-default" data-code=",">,</button>
+                        <button class="newbtn btn-default" data-code=".">.</button>
+                        <button class="newbtn btn-default" data-code="如果" style="width: auto">如果</button>
+                        <button class="newbtn btn-default" data-code="那么" style="width: auto">那么</button>
+                        <button class="newbtn btn-default" data-code="并且" style="width: auto">并且</button>
+                        <button class="newbtn btn-default" data-code="或者" style="width: auto">或者</button>
+                        <!--<button class="newbtn btn-default" data-code="==">==</button>-->
+                    </div>
+                </div>
+                <div class="workspace-center fl" style="margin-left: 10px;margin-top: 10px">
+                    <ul class="nav nav-tabs">
+                        <li class="active" data-value="0">
+                            <a href="javascript:;" data-state="0">人员信息</a>
+                        </li>
+                        <li data-value="1">
+                            <a href="javascript:;" data-state="1">工资项目</a>
+                        </li>
+                        <li data-value="2">
+                            <a href="javascript:;" data-state="2">函数</a>
+                        </li>
+                    </ul>
+                    <div class="tab-content conOne clearfix">
+                        <div class="conOne-left fl" style="width: 120px;"></div>
+                        <div class="conOne-right fl">
+                        </div>
+                    </div>
+                    <div class="tab-content tab-content-click conTwo hidden"></div>
+                    <div class="tab-content tab-content-click conThree hidden"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="ufma-layout-down bordered-top">
+        <div class="text-right margin-right-30">
+            <button type="button" class="btn btn-sm btn-primary btn-save margin-bottom-5"
+                    id="btn-FormulaEditorsave">确定
+            </button>
+            <button type="button" class="btn btn-sm btn-primary btn-save margin-bottom-5"
+                    id="btn-FormulaEditorup">校验
+            </button>
+            <button type="button" class="btn btn-sm btn-default btn-save margin-bottom-5"
+                    id="btn-FormulaEditornone">清空
+            </button>
+            <button type="button" class="btn btn-sm btn-default btn-save margin-bottom-5"
+                    id="btn-close">关闭
+            </button>
+        </div>
+    </div>
+</div>
+<div id="scmodal" class="ufma-modal"></div>
+<script src="formulaEditorNew.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+</body>
+
+</html>

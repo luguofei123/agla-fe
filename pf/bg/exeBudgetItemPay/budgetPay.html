@@ -1,0 +1,92 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+  		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>新增可执行指标支付</title>
+  		<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+		<script src="../../pub/boot.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+    <link rel="stylesheet" href="../../agla-trd/fileinput/fileinput.css"/>
+    <script src="../../agla-trd/fileinput/fileinput.js" type="text/javascript" charset="utf-8"></script>
+    <script src="../../agla-trd/fileinput/zh.js" type="text/javascript" charset="utf-8"></script>
+    <link rel="stylesheet" href="../pub/bgPub.css?rev=@@hash"/>
+    <link rel="stylesheet" href="../pub/bgPubImpAttachment.css?rev=@@hash"/>
+	</head>
+<body>
+<div class="ufma-layout-updown">
+	<div class="ufma-layout-up" style="overflow:hidden;">
+		
+		<div id="tzdTimeline" class="uf-timeline margin-top-8" style="display:block;"></div>
+		<div class="margin-left-15 margin-right-15 margin-top-8">
+			<div id="pnl-xzzb" class="hide">
+				<!--查询条件begin-->
+				<div class="uf-panel uf-panel-primary bordered mb10">
+									
+					<div id="searchPlanPnl" class="uf-form-group-panel">
+						<div class="actions">
+							<span class="label-more btn-more-item hide">更多<b></b></span>
+							<button class="btn btn-primary btn-search">查询</button>
+						</div>
+						<table>							
+						<tr>
+							<td class="label-ctrl">
+								预算方案：
+							</td>
+							<td class="form-ctrl">
+								
+								<div id="cbBgPlan" class="uf-combox" idField="chrId" textField="chrName" placeholder="请选择预算方案"></div>
+							
+							</td>
+							<td class="label-ctrl">单据日期：</td><td class="form-ctrl"><div id="createDateBegin" class="uf-datepicker inline-block"></div><span> 至 </span></span><div id="createDateEnd" class="uf-datepicker inline-block"></div></td>
+						</tr>				
+						</table>
+					</div>
+				</div>
+				<!--查询条件end-->
+				<div id="select-data" class="uf-datagrid" style=""></div>
+			</div>			
+			<div id="pnl-tzzb" class="hide">
+				<!--查询条件begin-->
+				<div class="uf-panel uf-panel-primary bordered mb10">
+					<div class="uf-form-group-panel">
+						<table>							
+						<tr>
+							<td class="label-ctrl">单据日期：</td><td class="form-ctrl"><div id="billDate" class="uf-datepicker inline-block"></div></td>
+							<td class="label-ctrl">单据号：</td><td class="form-ctrl"><input id="billCode" type="text" class="uf-form-control" disabled="true" placeholder="保存单据时自动编号" /></td>
+							<!--<td class="label-ctrl">附单据</td><td class="form-ctrl"><input type="text" id="billFJ" class="uf-form-control" readonly style="width:40px;" />&nbsp;张</td>-->
+							<td class="label-ctrl">附单据</td><td class="form-ctrl"><input type="text" id="billFJ" class="uf-form-control" style="width:40px;" oninput="value=value.replace(/[^\d]/g,'')"/>&nbsp;张</td><!-- bug78324--zsj-->
+							<td style="width:60px;text-align:right;"><button class="btn btn-icon-only" id="btnUploadFile"><span class="icon-paperclip"></span></button></td>
+						</tr>				
+						</table>
+					</div>							
+				</div>
+				<!--查询条件end-->
+				<div id="zbtz-data-editor" class="uf-datagrid" style=""></div>	
+			</div>
+		
+			<div id="pnl-end" class="hide text-center">
+				<div class="inline-block" style="margin-top:65px;">
+					<div style="padding-left:30px;position:relative;"><span class="icon icon-check-circle ufma-green" style="font-size:24px;position:absolute;top:0px;left:0px;"></span>恭喜您，指标分配完成！</div>
+				</div>
+			</div>
+		</div>
+		<div id="viewlog" class="uf-datagrid-detail">
+			<div id="zblog-data" class="uf-datagrid" style="height:auto;"></div>
+		</div>
+	</div>
+	<div class="ufma-layout-down bordered-top">	
+		<div class="text-right margin-right-30">
+			<button type="button" class="btn btn-sm btn-default hide" id="btn-prev">上一步</button>
+			<button type="button" class="btn btn-sm btn-primary" id="btn-next">下一步</button>
+			<button type="button" class="btn btn-sm btn-primary hide" id="btn-save">保存</button>
+			<button type="button" class="btn btn-sm btn-primary hide" id="btn-continue">继续编单</button>
+			<button type="button" class="btn btn-sm btn-default" id="btn-close">关闭</button>
+		 </div>
+	</div>
+</div>
+<script src="../pub/bgPub.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+<script src="../pub/bgPubImpAttachment.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+<script src="../pub/bg.parse.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+<script src="budgetPay.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+</body>
+</html>

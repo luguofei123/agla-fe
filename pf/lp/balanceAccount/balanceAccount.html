@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>月末资产对账</title>
+		<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+		<script src="../../pub/boot.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+	</head>
+
+	<body>
+		<div class="container-fluid ufma-container">
+			<!--工作区 begin-->
+			<div class="workspace">
+				<!--工作区顶部 begin-->
+				<div class="workspace-top">
+					<div class="container-fluid">
+						<div class="ufma-portlet">
+							<div class="portlet-title">
+								<div class="caption">
+									<span class="caption-subject font-dark uppercase">月末资产对账</span>
+								</div>
+								<!--单位&账套选择 begin-->
+								<div class="inline-block absolute margin-left-15 margin-top-8">
+									<ul class='ufma-list-col clearfix padding-left-8'>
+										<li class="ufma-list-col-item">
+											<div id='cbAgency' name="agencyCode" class="uf-treecombox ufma-combox-agency"></div>
+										</li>
+										<li class="ufma-list-col-item">
+											<div id='cbAcct' class="uf-combox ufma-combox-acct"></div>
+										</li>
+									</ul>
+								</div>
+								<!--单位&账套选择 end-->
+								<!--<div class="actions">
+									<div class="btn-group">
+										<button id="btnBlance" type="button" class="btn btn-sm btn-primary btn-blance">对账</button>
+									</div>
+								</div>-->
+							</div>
+							<!--查询条件-->
+							<div class="portlet-body bordered pr">
+								<!--按钮-->
+								<div class="btn-group" style="position: absolute;right:15px;top:15px;">
+									<button id="btnQuery" type="button" class="btn btn-sm btn-primary btn-query btn-permission">对账</button>
+									<!-- -->
+								</div>
+								<form id="frmQuery" class="form-horizontal">
+									<div class="form-row">
+										<div class="form-group">
+											<label class="control-label">对账月份：</label>
+											<div class="control-element" style="width:120px;">
+												<div name="startDate" id="startDate" class="uf-datepicker" style="width:120px;"></div>
+											</div>
+											<span class="split">-</span>
+											<div class="control-element">
+												<div name="endDate" id="endDate" class="uf-datepicker" style="width:120px;"></div>
+											</div>
+										</div>
+										<div class="clearfix"></div>
+									</div>
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!--工作区中部 begin-->
+				<div class="workspace-center">
+					<div class="btn-body" style="height: 40px;">
+						<div class="iframeBtnsSearch fr" id="index-search" style="margin-right: 113px">
+							<input type="text" class="searchHide focusOff bordered" placeholder="请输入要搜索的关键词" style="right: 163px;">
+							<input type="hidden" class="searchValueHide">
+							<button class="btn btn-default btn-sm btn-permission btn-search" id="searchHideBtn">
+							<i class="glyphicon icon-search"></i>
+						</button>
+						</div>
+						<div class="rpt-box rpt-table-box pr">
+							<div id="dtToolbar" class="btn-group" style="position:absolute;right:15px;">
+							</div>
+						</div>
+					</div>
+					<div class="rpt-table-tab" style="padding: 0 15px;">
+						<table class="ufma-table uf-rpt-table" tool-bar="#tool-bar" id="balAcccountTab">
+							<thead>
+								<tr>
+									<th rowspan="2">资产分类</th>
+									<th colspan="3">本期资产</th>
+									<th colspan="3">本期折旧/摊销</th>
+								</tr>
+								<tr>
+									<th>资产账金额</th><!--assCurrentMoney;//资产本期金额-->
+									<th>会计账金额</th><!--finCurrentMoney;//账务本期金额-->
+									<th>对账结果</th>  <!--checkCurrent;-->
+									<th>资产账金额</th> <!--assDepreciatedMoney;//资产折旧金额-->
+									<th>会计账金额</th><!--finDepreciatedMoney;//账务折旧金额-->
+									<th>对账结果</th>  <!--checkDepreciated;-->
+								</tr>
+							</thead>
+						</table>
+					</div>
+				</div>
+				<div id="tool-bar" class="ufma-tool-bar">
+					<div class="tool-bar-body">
+					</div>
+				</div>
+			</div>
+		</div>
+		<script src="dm.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+		<script src="balanceAccount.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+	</body>
+
+</html>

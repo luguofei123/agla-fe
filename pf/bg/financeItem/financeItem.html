@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>财政指标</title>
+    <meta
+      content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
+      name="viewport"
+    />
+    <script
+      src="../../pub/boot.js?rev=@@hash"
+      type="text/javascript"
+      charset="utf-8"
+    ></script>
+    <link rel="stylesheet" href="../pub/common.css?rev=@@hash" />
+    <link rel="stylesheet" href="financeItem.css?rev=@@hash" />
+  </head>
+
+  <body>
+    <div id="financeItem" class="container-fluid ufma-container">
+      <div class="workspace">
+        <!--工作区顶部 begin-->
+        <div class="workspace-top">
+          <div class="container-fluid">
+            <div class="ufma-portlet" style="padding-bottom: 0px;">
+              <div class="portlet-title">
+                <div class="caption">
+                  <span class="caption-subject font-dark uppercase"
+                    >财政指标</span
+                  >
+                </div>
+                <div class="inline-block margin-left-15 margin-top-8">
+                  <ul class="ufma-list-col clearfix">
+                    <li class="ufma-list-col-item">
+                      <div
+                        id="cbAgency"
+                        name="agencyCode"
+                        class="uf-treecombox ufma-combox-agency"
+                      ></div>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!--工作区顶部 end-->
+
+        <div class="workspace-center" style="padding: 0 15px;">
+          <div class="btn-body" style="height: 40px;">
+            <div class="fl">
+              <table>
+                <tr>
+                  <td class="label-ctrl">财政指标：</td>
+                  <td class="form-ctrl">
+                    <div
+                      id="cbBgPlan"
+                      class="uf-combox"
+                      idField="chrId"
+                      textField="chrName"
+                      placeholder="请选择财政指标"
+                    ></div>
+                  </td>
+                  <td class="label-ctrl" style="padding-left: 20px;">
+                    当前指标编码：
+                  </td>
+                  <td class="form-ctrl" id="selBgItemCode"></td>
+                </tr>
+              </table>
+            </div>
+            <div
+              class="iframeBtnsSearch fr"
+              id="index-search"
+              style="margin-right: 47px;"
+            >
+              <input
+                type="text"
+                class="searchHide focusOff bordered"
+                placeholder="请输入要搜索的关键词"
+                style="right: 163px;"
+              />
+              <input type="hidden" class="searchValueHide" />
+              <button
+                class="btn btn-default btn-sm btn-search"
+                id="searchHideBtnCZ"
+              >
+                <i class="glyphicon icon-search"></i>
+              </button>
+            </div>
+            <div class="rpt-box rpt-table-box pr">
+              <div
+                id="dtToolbar"
+                class="btn-group"
+                style="position: absolute; right: 0px;"
+              ></div>
+            </div>
+          </div>
+          <!-- 表格begin -->
+          <div class="rpt-table-tab" style="border-right: 1px solid #d9d9d9;border-left: 1px solid #d9d9d9;">
+            <table class="ufma-table uf-rpt-table" id="gridGOV"></table>
+          </div>
+          <!-- 表格end -->
+          <div
+            id="searchPlanPnl1"
+            class="uf-form-group-panel"
+            style="margin-top: 10px; margin-bottom: 5px;"
+          >
+            <table>
+              <tr>
+                <td class="label-ctrl">单位指标：</td>
+                <td class="form-ctrl">
+                  <div
+                    id="agencyItems"
+                    class="uf-combox"
+                    idField="chrId"
+                    textField="chrName"
+                    placeholder="请选择预算方案"
+                  ></div>
+                </td>
+                <td class="label-ctrl" style="padding-left: 20px;">
+                  待分解金额：
+                </td>
+                <td class="form-ctrl" id="decomposableAmt">0.00</td>
+                <td class="label-ctrl" style="padding-left: 20px;">
+                  分解金额：
+                </td>
+                <td class="form-ctrl" id="billHJJE">0.00</td>
+              </tr>
+            </table>
+            <!--右侧操作按钮 begin-->
+            <div class="bg-table-sub-action pull-right">
+              <div class="iframeBtnsSearch" style="margin-left: -10px;">
+                <input
+                  id="btnsSearchContent"
+                  type="text"
+                  class="searchHide focusOff bordered"
+                  placeholder="请输入要搜索的关键词"
+                  style="right: 140px;"
+                />
+                <input type="hidden" class="searchValueHide" />
+                <button
+                  class="btn btn-default btn-sm btn-search"
+                  id="searchHideBtnDW"
+                >
+                  <i class="glyphicon icon-search"></i>
+                </button>
+              </div>
+              <div class="btn-group">
+                <button
+                  id="export"
+                  class="btn btn-default btn-export btn-permission bgtooltip"
+                  data-toggle="tooltip"
+                  title="导出"
+                  style="
+                    border-bottom-left-radius: 4px;
+                    border-top-left-radius: 4px;
+                  "
+                >
+                  <span class="glyphicon icon-upload"></span>
+                </button>
+
+                <button
+                  id="import"
+                  class="btn btn-default btn-import btn-permission"
+                  data-toggle="tooltip"
+                  data-original-title="导入"
+                  style="
+                    border-bottom-right-radius: 4px;
+                    border-top-right-radius: 4px;
+                  "
+                >
+                  <span class="glyphicon icon-download"></span>
+                </button>
+              </div>
+            </div>
+            <!--右侧操作按钮 end-->
+          </div>
+          <div id="decompose-data" class="uf-datagrid"></div>
+        </div>
+      </div>
+    </div>
+    <script
+      src="financeItem.js?rev=@@hash"
+      type="text/javascript"
+      charset="utf-8"
+    ></script>
+    <script
+      src="dm.js?rev=@@hash"
+      type="text/javascript"
+      charset="utf-8"
+    ></script>
+    <script
+      src="../pub/bgPub.js?rev=@@hash"
+      type="text/javascript"
+      charset="utf-8"
+    ></script>
+    <script
+      src="../pub/bgPubLog.js?rev=@@hash"
+      type="text/javascript"
+      charset="utf-8"
+    ></script>
+  </body>
+</html>

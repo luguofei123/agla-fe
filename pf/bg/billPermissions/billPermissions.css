@@ -1,0 +1,145 @@
+body {
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	height: 100%;
+}
+
+/* .dataTables_scrollHeadInner,
+.dataTables_scrollHeadInner .uf-rpt-table {
+	width: 100% !important;
+} */
+
+.btnGroupsCheck,
+.btnGroups {
+	width: 250px;
+	position: relative;
+	display: inline-block;
+	vertical-align: middle;
+}
+
+.btnGroupsCheckAA {
+	width: 189px;
+	position: relative;
+	display: inline-block;
+	vertical-align: middle;
+	float: right;
+	margin-top: -43px;
+	right: 0px;
+}
+
+.btn-bar {
+	position: fixed;
+	bottom: 103px;
+	width: 100%;
+	height: 50px;
+	text-align: center;
+}
+
+.main .tree-outer-box {
+	max-height: 255px;
+	height: 250px;
+	border: 1px #D9D9D9 solid;
+	border-radius: 4px;
+	padding: 10px 10px;
+	overflow: auto;
+}
+
+.search {
+	position: relative;
+	margin-bottom: 10px;
+}
+
+.search input {
+	height: 30px;
+	line-height: 30px;
+	border: 1px #D9D9D9 solid;
+	border-radius: 4px;
+	width: 100%;
+	padding: 0 45px 0 5px;
+	outline: none;
+}
+
+.search-btn {
+	display: inline-block;
+	position: absolute;
+	height: 30px;
+	width: 40px;
+	top: 0px;
+	right: 5px;
+	border-left: 1px #D9D9D9 solid;
+	padding-top: 8px;
+	text-align: center;
+}
+
+.uf-combox-popup {
+	height: 100px;
+}
+
+
+/*下发、选用的全选框样式*/
+
+.uf-selectAll {
+	margin-left: 25px
+}
+
+.uf-selectAll .mt-checkbox {
+	color: #333
+}
+
+.uf-selectAll .mt-checkbox>span {
+	width: 14px;
+	height: 14px;
+	top: 3px;
+}
+
+.uf-selectAll .mt-checkbox>span:after {
+	left: 4px;
+	width: 4px;
+	height: 7px;
+	border-width: 0 1px 1px 0;
+}
+
+.leftArea {
+	width: 280px;
+	margin-left: 10px;
+	height: 480px;
+	overflow-y: auto;
+	border: 1px solid #D9D9D9;
+}
+
+.rightArea {
+	width: 800px;
+	padding: 0 12px;
+	height: 500px;
+	overflow-y: auto;
+	float: right;
+	margin-top: -480px;
+}
+
+.commonShow {
+	max-width: 250px;
+	max-height: 40px;
+	/*white-space: nowrap;*/
+	text-overflow: ellipsis;
+	overflow: hidden;
+}
+
+.commonControl {
+	max-width: 7em;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	overflow: hidden;
+}
+
+#mainArea #carryOver_wrapper {
+	border-left: 1px solid #d9d9d9;
+	border-right: 1px solid #d9d9d9;
+}
+
+/* #carryOver.ufma-table.uf-rpt-table.dataTable.no-footer {
+	width: 100% !important;
+} */
+.form-group {
+  height: 30px;
+}

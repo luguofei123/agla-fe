@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>新增/编辑</title>
+    <meta
+      content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
+      name="viewport"
+    />
+    <script
+      src="../../pub/boot.js?rev=@@hash"
+      type="text/javascript"
+      charset="utf-8"
+    ></script>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="../common/common.css?rev=@@hash"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="incomeTaxItemSetting.css?rev=@@hash"
+    />
+  </head>
+  <body>
+    <!--整个容器 begin-->
+    <div id="add-income-tax-item" class="ufma-layout-updown income-tax-item">
+      <div class="ufma-layout-up">
+        <div class="container-fluid">
+          <form id="frmQuery" class="form-horizontal" style="margin-top: 10px">
+            <div class="form-row margin-top-20">
+              <div class="form-group required font-size-0">
+                <label
+                  class="control-label font-size-14 text-align-left data-label "
+                  >所得税项目名称：</label
+                >
+                <div class="control-element">
+                  <input
+                    id="name"
+                    type="text"
+                    name="name"
+                    class="form-control"
+                    maxlength="200"
+                    style="width: 200px"
+                    autocomplete="off"
+                  />
+                </div>
+              </div>
+              <div class="form-group margin-left-0 margin-top-10 font-size-0">
+                <label class="control-label font-size-14 data-label"
+                  >是否领导：</label
+                >
+                <div class="control-element font-size-14">
+                  <div class="btn-group radio-group" data-toggle="buttons">
+                    <label class="btn btn-default btn-sm active isUse">
+                      <input
+                        type="radio"
+                        class="toggle"
+                        name="isUse"
+                        value="1"
+                        checked
+                      />是
+                    </label>
+                    <label class="btn btn-default btn-sm isUse">
+                      <input
+                        type="radio"
+                        class="toggle"
+                        name="isUse"
+                        value="0"
+                      />否
+                    </label>
+                  </div>
+                </div>
+              </div>
+
+              <div class="clearfix"></div>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <div class="ufma-layout-down bordered-top">
+        <div class="text-right margin-right-30">
+          <button type="button" class="btn btn-sm btn-primary" id="btn-save">
+            保存
+          </button>
+          <button
+            type="button"
+            class="btn btn-sm btn-default btn-close"
+            id="btn-close"
+          >
+            关闭
+          </button>
+        </div>
+      </div>
+    </div>
+    <script
+      src="addIncomeTaxItem.js?rev=@@hash"
+      type="text/javascript"
+      charset="utf-8"
+    ></script>
+  </body>
+</html>

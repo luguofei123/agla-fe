@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>现金流量</title>
+		<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+		<script src="../../pub/boot.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+		<link rel="stylesheet" href="cashFlow.css?rev=@@hash" />
+		<style>
+			/* 强制和外面的 outDiv overflow一样*/
+			.dataTables_wrapper {
+	overflow: initial !important;
+	}
+		</style>
+	</head>
+
+	<body>
+		<div id="cashFlow" class="container-fluid ufma-container">
+			<!--工作区 begin-->
+			<div class="workspace">
+				<!--工作区顶部 begin-->
+				<div class="workspace-top">
+					<div class="container-fluid">
+						<div class="ufma-portlet">
+							<div class="portlet-title">
+								<div class="caption">
+									<span class="caption-subject font-dark uppercase">现金流量</span>
+								</div>
+								<div class="actions">
+									<div class="btn-group">
+										<button type="button" class="btn btn-sm btn-permission btn-primary btn-add">新增</button>
+									</div>
+								</div>
+							</div>
+							<div class="portlet-body form-horizontal bordered">
+								<div class="form-body" id="query-tj">
+									<div class="form-row">
+										<div class="form-group label-group" style="position: relative;">
+											<div class="control-label" style="position: absolute;left: 0;top: 0;">科目体系：</div>
+											<div id="kmtx-tj" class="control-element" style="margin-left: 70px">
+											</div>
+										</div>
+										<div class="clearfix"></div>
+									</div>
+									<div class="form-row">
+										<div class="form-group">
+											<div class="control-label">启用状态：</div>
+											<div class="control-element">
+												<a name="enabled" value="-1" class="label label-radio selected">全部</a>
+												<a name="enabled" value="1" class="label label-radio">启用</a>
+												<a name="enabled" value="0" class="label label-radio">停用</a>
+											</div>
+										</div>
+										<div class="form-group">
+											<div style="margin-left: 100px" class="control-label">流向：</div>
+											<div class="control-element">
+												<a name="inoutType" value="-1" class="label label-radio selected">全部</a>
+												<a name="inoutType" value="1" class="label label-radio">流入</a>
+												<a name="inoutType" value="0" class="label label-radio">流出</a>
+											</div>
+										</div>
+										<div class="clearfix"></div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!--工作区中部 begin-->
+				<div class="workspace-center">
+					<div class="container-fluid">
+						<div class="table-sub clearfix">
+							<div class="table-sub-info pull-left">
+								提示：为上下级公用，不允许新增、编辑和删除
+							</div>
+							<div class="table-sub-action pull-right">
+								<div class="iframeBtnsSearch">
+									<input type="text" class="searchHide focusOff bordered" placeholder="请输入要搜索的关键词">
+									<input type="hidden" class="searchValueHide">
+									<button class="btn btn-default btn-sm btn-search" id="searchHideBtn">
+                            <i class="glyphicon icon-search"></i>
+                        </button>
+								</div>
+								<div class="btn-group" id="printTableData">
+								</div>
+							</div>
+						</div>
+						<div id="expfunc-main" class="tab-content">
+							<table id="expfunc-data" tool-bar="#expfunc-tool-bar" class="ufma-table">
+								<thead>
+									<tr>
+										<th style="width:20px;">
+											<label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
+                                    <input type="checkbox" class="group-checkable" data-set="#data-table .checkboxes"/>
+                                    <span></span>
+                                </label>
+										</th>
+										<th> 现金流量编码</th>
+										<th> 现金流量名称</th>
+										<th> 状态</th>
+										<th>流向</th>
+										<th> 操作</th>
+									</tr>
+								</thead>
+								<tbody>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</div>
+				<!--表格工具条 begin-->
+				<div id="expfunc-tool-bar" class="ufma-tool-bar">
+					<div class="tool-bar-body">
+						<div class="ufma-tool-btns">
+							<label class="mt-checkbox mt-checkbox-outline margin-right-8">
+                        <input class="datatable-group-checkable" type="checkbox" name="test" value="1"> 全选
+                        <span></span>
+                    </label>
+							<button type="button" class="btn btn-sm btn-permission btn-default btn-del btn-delete">删除</button>
+							<button type="button" class="btn btn-sm btn-permission btn-default btn-active btn-start"> 启用</button>
+							<button type="button" class="btn btn-sm btn-permission btn-default btn-unactive btn-stop"> 停用</button>
+							<button type="button" class="btn btn-sm btn-permission btn-default btn-senddown" id="expFuncBtnDown"> 下发
+                    </button>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!--现金流量编辑 begin-->
+			<div id="expfunc-edt" class="ufma-modal">
+				<div class="u-msg-title">
+					<h4>现金流量编辑</h4>
+				</div>
+				<div class="u-msg-content">
+					<div class="container-fluid">
+						<div class="ufma-layout ufma-layout-slider-cm ufma-layout-fixed-slider ufma-layout-fixed-slider-right">
+							<div class="ufma-layout-content">
+								<div class="panel ufma-panel">
+									<div class="panel-heading">
+										<div class="caption">基本信息</div>
+										<div class="actions">
+											<a class="accsys-edit margin-right-8" id="btnAccSysBaseEdit"><span class="glyphicon icon-edit"></span></a>
+											<a data-toggle="collapse" href="#form-expfunc">
+												<span class="glyphicon icon-angle-bottom"></span>
+											</a>
+										</div>
+									</div>
+									<form id="form-expfunc" class="panel-collapse collapse in">
+										<div class="panel-body">
+											<div class="container-fluid form-horizontal">
+												<!-- <input type="hidden" id="accsys-coderule" name="codeRule" value="" />-->
+												<input type="hidden" id="chrId" name="chrId" value="" />
+												<input type="hidden" id="lastVer" name="lastVer" value="" />
+												<!-- <input type="hidden" id="chrFullname" name="chrFullname" value="" /> -->
+												<div class="row">
+													<div class="col-xs-6">
+														<div class="form-group required">
+															<label class="em6 control-label">现金流量编码：</label>
+															<div class="control-element w180">
+																<input type="text" name="chrCode" id="cashFlow-chrCode" data-required="1" class="form-control" aria-required="true" aria-invalid="false" aria-describedby="name-error"></span>
+																<label for="chrCode" class="control-label hide"></label>
+															</div>
+														</div>
+													</div>
+													<div class="col-xs-6">
+														<div class="form-group required">
+															<!--修改现金流量名称样式错乱问题-->
+															<label class="em6 control-label">现金流量名称：</label>
+															<div class="control-element w180" style="vertical-align: top;height:30px">
+																<input type="text" name="chrName" id="chrName" data-required="1" class="form-control" aria-required="true" aria-invalid="false" aria-describedby="name-error"></span>
+																<label for="chrName" class="control-label hide" style="width: 100%;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;text-align: left;"></label>
+																<label for="chrFullname" class="control-label hide"></label>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="row">
+													<div class="col-xs-6">
+														<div class="form-group">
+															<!--修改现金流量名称样式错乱问题-->
+															<label class="em6 control-label">助记码：</label>
+															<div class="control-element w180" style="vertical-align: top;height:30px">
+																<input type="text" name="assCode" id="assCode" data-required="1" class="form-control" aria-required="true" aria-invalid="false" aria-describedby="name-error" maxlength="42"></span>
+																<label for="assCode" class="control-label hide" style="width:200px;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;text-align: left;"></label>
+															</div>
+														</div>
+													</div>
+													<div class="col-xs-6">
+														<div class="form-group">
+															<label class="control-label em6">流向：</label>
+															<div class="control-element">
+																<div class="btn-group" data-toggle="buttons">
+																	<label class="btn btn-default active" id="inoutY">
+                                                                <input type="radio" class="toggle" name="inoutType" value="1" checked> 流入</label>
+																	<label class="btn btn-default"id="inoutN">
+                                                                <input type="radio" class="toggle" name="inoutType" value="0"> 流出</label>
+																</div>
+																<label for="inoutType" class="control-label hide"></label>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="row">
+													<div class="col-xs-6">
+														<div class="form-group">
+															<label class="control-label em6">增加下级：</label>
+															<div class="control-element">
+																<div class="btn-group" data-toggle="buttons">
+																	<label class="btn btn-default active" id="addSonY">
+                                                                <input type="radio" class="toggle" name="allowAddsub" value="1" checked> 允许</label>
+																	<label class="btn btn-default" id="addSonN">
+                                                                <input type="radio" class="toggle" name="allowAddsub" value="0"> 禁止</label>
+																</div>
+																<label for="allowAddsub" class="control-label hide"></label>
+															</div>
+														</div>
+													</div>
+													<div class="col-xs-6">
+														<div class="form-group">
+															<label class="control-label em6">启用状态：</label>
+															<div class="control-element">
+																<div class="btn-group" data-toggle="buttons">
+																	<label class="btn btn-default active" id="startY">
+                                                                <input type="radio" class="toggle" name="enabled" value="1" checked> 启用</label>
+																	<label class="btn btn-default" id="startN">
+                                                                <input type="radio" class="toggle" name="enabled" value="0"> 停用</label>
+																</div>
+																<label for="enabled" class="control-label hide"></label>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="row hide" id="accSysBaseBtnGroup">
+													<div class="col-xs-12 text-right margin-top-8">
+														<button type="button" class="btn btn-sm btn-primary btn-save">保存</button>
+														<button type="button" class="btn btn-sm btn-default btn-cancel">取消</button>
+													</div>
+												</div>
+											</div>
+										</div>
+									</form>
+								</div>
+								<div class="panel ufma-panel">
+									<div class="panel-heading">
+										<div class="caption">分配公式</div>
+										<div class="actions">
+											<a class="accsys-edit margin-right-8" id="btnAccSysKJYSEdit">
+												<span class="glyphicon icon-edit"></span></a>
+											<a data-toggle="collapse" href="#cashFlow-gsxx">
+												<span class="glyphicon icon-angle-bottom"></span>
+											</a>
+										</div>
+									</div>
+									<form id="cashFlow-gsxx" class="panel-collapse collapse in">
+										<div class="panel-body">
+											<table id="accSysKJYS" class="ufma-table dataTable table-edit bordered">
+												<thead>
+													<tr>
+														<th width="40"> 序号</th>
+														<th> 科目</th>
+														<th width="160"> 方向</th>
+													</tr>
+												</thead>
+												<tbody></tbody>
+											</table>
+											<div class="text-center padding-15">
+												<a class="btn btn-sm btn-default" id="accSysAddKJYS">
+													<span class="glyphicon icon-plus"></span>
+													<span class="margin-left-15">新增分配公式</span>
+												</a>
+											</div>
+											<div class="hide text-right margin-top-3" id="accSysKJYSBtnGroup">
+												<button type="button" class="btn btn-sm btn-primary btn-save">保存</button>
+												<button type="button" class="btn btn-sm btn-default btn-cancel">取消</button>
+											</div>
+										</div>
+									</form>
+								</div>
+							</div>
+							<div class="ufma-layout-slider right">
+								<div class="panel ufma-panel ufma-panel-primary">
+									<div class="panel-heading">
+										<div class="caption">科目体系</div>
+									</div>
+									<div class="panel-collapse collapse in">
+										<div class="panel-body">
+											<ul id="kmtx" class="list-inline list-inline-horizontal">
+												<li>新政府会计制度</li>
+											</ul>
+										</div>
+									</div>
+								</div>
+								<div class="panel ufma-panel ufma-panel-primary">
+									<div class="panel-heading">
+										<div class="caption">参考信息</div>
+									</div>
+									<div class="panel-collapse collapse in">
+										<div class="panel-body">
+											<div id="prompt" style="margin-bottom: 10px"></div>
+											<ul id="cashFlow-help" class="list-inline list-inline-horizontal">
+												<li style="padding: 0;">请输入现金流量编码获得参考信息</li>
+											</ul>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="u-msg-footer">
+					<button type="button" class="btn btn-sm btn-permission btn-primary btn-saveadd">保存并新增</button>
+					<button type="button" class="btn btn-sm btn-permission btn-default btn-save"> 保存</button>
+					<button type="button" class="btn btn-sm btn-permission btn-default btn-addlower hidden"> 增加下级</button>
+					<button type="button" class="btn btn-sm btn-permission btn-default btn-down hidden"> 下发</button>
+					<button type="button" class="btn btn-sm btn-default btn-close"> 取消</button>
+				</div>
+			</div>
+
+			<!--右侧下发栏 begin-->
+			<div class="ufma-shopping-trolley right" data-target='#dw-shopp' style="bottom:50%;"><i class="glyphicon icon-supplement"></i></div>
+			<div class="ufma-shopp ufma-shopp-right" id="dw-shopp">
+				<div class="ufma-shopp-inner">
+					<div class="ufma-shopp-header">
+						<span class="glyphicon icon-angle-double-right"></span>引用单位
+					</div>
+					<div class="ufma-shopp-content">
+						<table id="dw-used" class="ufma-table">
+							<thead>
+								<tr>
+									<th> 单位</th>
+									<th> 账套</th>
+									<th> 已用</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td> 用友网络股份有限公司</td>
+									<td> 5</td>
+								</tr>
+								<tr>
+									<td> 用友政务软件股份有限公司</td>
+									<td> 3</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script src="cashFlow.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+		<script src="../maCommon/maCommon.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+	</body>
+
+</html>

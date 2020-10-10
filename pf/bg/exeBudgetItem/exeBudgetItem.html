@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>可执行指标信息</title>
+		<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+		<script src="../../pub/boot.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+		<link rel="stylesheet" href="../../agla-trd/fileinput/fileinput.css" />
+		<script src="../../agla-trd/fileinput/fileinput.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../../agla-trd/fileinput/zh.js" type="text/javascript" charset="utf-8"></script>
+		<link rel="stylesheet" href="../pub/bgPub.css?rev=@@hash" />
+		<link rel="stylesheet" href="../pub/bgPubImpAttachment.css?rev=@@hash" />
+		<link rel="stylesheet" href="../pub/bgPubAuditModal.css?rev=@@hash" />
+		<link rel="stylesheet" href="../pub/bgPubWait.css?rev=@@hash" />
+		<link rel="stylesheet" href="../pub/bgPubLog.css?rev=@@hash" />
+		<link rel="stylesheet" href="../budgetItemMultiPost/budgetItemMultiPost.css?rev=@@hash" />
+		<link rel="stylesheet" href="exeBudgetItem.css?rev=@@hash" />
+	</head>
+
+	<body>
+		<div id="exeBudgetItem" class="container-fluid ufma-container">
+			<!--面包屑 begin-->
+			<!-- <div class="bread-box clearfix">
+    </div> -->
+
+			<!--工作区 begin-->
+			<div class="workspace bordered"> <!-- style="height: 516px;"-->
+				<!--工作区顶部 begin-->
+				<div class="workspace-top">
+					<!-- 左右间距增加 -->
+					<div class="container-fluid">
+						<!-- 上对齐，增加下间距 -->
+						<div class="ufma-portlet" style="padding-bottom: 0px;">
+							<div class="portlet-title">
+								<div class="caption">
+									<span class="caption-subject font-dark uppercase">可执行指标信息</span>
+								</div>
+								<div id="cbb-agency-exebgItem"></div>
+								<!-- 右侧新增按钮 -->
+								<div class="actions">
+									<div class="btn-group">
+										<button type="button" id="btn-add-exebgItem" class="btn btn-sm btn-primary btn-add ">新增
+                                </button>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!--工作区中部 begin-->
+				<div class="workspace-center">
+					<div class="container-fluid">
+						<!-- 头部更多的显示 -->
+						<div id="bgMoreMsgPnl-exebgItem" class="bg-table-sub"></div>
+						<div class="bg-table-sub bg-div-height-space-12"></div>
+						<!-- 未审核、审核、全部  的标签 -->
+						<div class="bg-table-sub">
+							<!--标签 begin-->
+							<ul class="nav nav-tabs">
+								<li class="active NAVSELECT">
+									<a href="javascript:;" data-status="O">未审核</a>
+								</li>
+								<li>
+									<a href="javascript:;" data-status="A">已审核</a>
+								</li>
+								<li>
+									<a href="javascript:;" data-status="T">全部</a>
+								</li>
+							</ul>
+							<!--标签 end-->
+							<!--右侧操作按钮 begin-->
+							<div class="bg-table-sub-action">
+								<div class="btn-group">
+									<button class="btn btn-default btn-print  " data-toggle="tooltip" title="" data-original-title="打印" id="exeBudgetItem-print">
+                                <span class="glyphicon icon-print"></span>
+                            </button>
+									<button class="btn btn-default btn-export " data-toggle="tooltip" title="" data-original-title="导出" id="exeBudgetItem-exp">
+                                <span class="glyphicon icon-upload"></span>
+                            </button>
+								</div>
+							</div>
+							<!--右侧操作按钮 end-->
+						</div>
+						<!-- 表格 -->
+						<div id="mainTableDiv-exebgItem" class="bg-table-sub">
+							<table id="mainTable-exebgItem" class="ufma-table dataTable bgMultiModal-tbl bgMultiModal-tbl-Height"></table>
+
+						</div>
+						<!-- 浮动在最底层的浮层 -->
+						<div class="bgpub-bgnormal-postion-1 bgpub-div-height-space-35 ">
+						</div>
+						<div class="bgpub-bgnormal-postion-1 bgpub-div-height-space-35 ">
+						</div>
+						<div class="div-fixBottom-1" id="fixDiv-exebgItem">
+							<div class="bgpub-bgnormal-postion-1">
+								<!-- 单据数量和指标金额的信息显示 -->
+								<div id="tableTotalShow-exebgItem" class="bg-table-sub bg-div-margin-top-bottom-8 ufma-gray">
+									<span>共&nbsp;</span><span id="span-billsCount-exebgItem">0</span><span>&nbsp;张单据&nbsp;&nbsp;&nbsp;
+											指标金额：&nbsp;</span><span id="span-billsTotalMoney-exebgItem">0.00</span>
+								</div>
+							</div>
+							<div class="bgpub-bgnormal-postion-1">
+								<div class="bg-multi-floatLeft-1">
+									<label class="mt-checkbox mt-checkbox-single mt-checkbox-outline bg-top-4">
+                                <input id="input-seleAll-exebgItem" type="checkbox" class="checkboxes" value=""/> &nbsp;
+                                全选
+                                <span></span>
+                            </label>
+								</div>
+								<div class="bg-multi-floatLeft-1">
+									<button type="button" id="btn-del-exebgItem" class="btn btn-sm btn-default btn-delete  bg-multiModal-leftButton">删除
+                            </button>
+								</div>
+								<div class="bg-multi-floatLeft-1">
+									<button type="button" id="btn-check-exebgItem" class="btn btn-sm btn-default btn-audit  bg-multiModal-leftButton">审核
+                            </button>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!--工作区底 begin-->
+				<div class="workspace-bottom">
+					<div class="container-fluid">
+					</div>
+				</div>
+			</div>
+
+			<!--[新增]-模态框 弹出层-->
+			<div id="exeBudgetItem-add-exebgItem" z-index="-1" class="ufma-modal">
+				<div class="u-msg-title">
+					<h4>新增指标编制</h4>
+				</div>
+				<div class="u-msg-content bgMultiModalMain" id="bg-multiModal-content-exebgItem">
+					<!-- 顶部 -->
+					<div id="bg-multiModal-content-top-exebgItem" class="bg-multiModal-content">
+						<form class="form-horizontal form bgMultiModalForm" submit="#">
+							<h5 class="bg-multiModal-topDiv">预算方案: &nbsp;</h5>
+							<div class="uf-combox bg-multiModal-topDiv bg-multiModal-topDiv-30right bg-multiModal-bgplan" id="bg-multiModal-bgPlan-exebgItem">
+							</div>
+							<h5 class="bg-multiModal-topDiv">单据日期: &nbsp;</h5>
+							<div class="uf-datepicker bg-multiModal-topDiv bg-multiModal-topDiv-30right bg-multiModal-dtp" id="bg-multiModal-dtp-exebgItem">
+							</div>
+							<h5 class="bg-multiModal-topDiv">单据号: &nbsp;</h5>
+							<div class="control-element bg-multiModal-topDiv bg-multiModal-topDiv-30right ">
+								<input type="text" value="AAA00001" class="form-control inputHeight" id="multiModal-billCode-exebgItem" readonly="readOnly" />
+							</div>
+
+							<button type="button" id="btn-multiModal-aboutFiles-exebgItem" class="btn btn-sm btn-default btn-attach bg-multiModal-rightTopDiv unallocate-BgItem-fileBtn" title="附件">
+                        <span class=" icon-file"></span>
+                    </button>
+							<h5 class="bg-multiModal-rightTopDiv">&nbsp;张&nbsp;&nbsp;&nbsp;</h5>
+							<div class="control-element bg-multiModal-rightTopDiv bgPub-fileCount-width">
+								<input type="text" value="0" class="form-control inputHeight" id="bgInput-fileCount-exebgItem" oninput="value=value.replace(/[^\d]/g,'')" />
+								<!-- bug78324--zsj-->
+							</div>
+							<h5 class="bg-multiModal-rightTopDiv">附单据&nbsp;</h5>
+
+						</form>
+					</div>
+
+					<!-- 主体表格 -->
+					<div id="bg-multiModal-content-body-exebgItem" class="bg-multiModal-content bgMultiModal-tbl-pnl">
+						<table id="bgMultiModalTable-exebgItem" class="ufma-table bgMultiModal-tbl bgMultiModal-tbl-Height">
+						</table>
+					</div>
+				</div>
+				<div class="u-msg-footer bgMultiModal-footer1">
+					<button type="button" id="btn-newRow-exebgItem" class="btn btn-sm btn-default bg-multiModal-tbl-addRow">
+                <span class="glyphicon icon-plus"> &nbsp;新增表格行 </span>
+            </button>
+				</div>
+				<div class="u-msg-footer bgMultiModal-footer2">
+					<div class="div-tbl-bottom-btn">
+						<button type="button" id="btn-modal-imp-exebgItem" class="btn btn-sm btn-default btn-import  bg-multiModal-rightButton">导入
+                </button>
+					</div>
+					<div class="div-tbl-bottom-btn">
+						<button type="button" id="btn-modal-saveAndNew-exebgItem" class="btn btn-sm btn-primary btn-addSave  bg-multiModal-rightButton">保存并新增
+                </button>
+					</div>
+					<div class="div-tbl-bottom-btn">
+						<button type="button" id="btn-modal-save-exebgItem" class="btn btn-sm btn-default btn-save  bg-multiModal-rightButton">保存
+                </button>
+					</div>
+					<div class="div-tbl-bottom-btn">
+						<button type="button" id="btn-modal-close-exebgItem" class="btn btn-sm btn-default btn-cancel  bg-multiModal-rightButton" data-dismiss="modal">取消
+                </button>
+					</div>
+				</div>
+			</div>
+
+		</div>
+
+		<script src="../pub/bgPub.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+		<script src="../pub/bgPubImpAttachment.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+		<script src="../pub/bgPubAuditModal.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+		<script src="../pub/bgPubWait.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+		<script src="../pub/bgPubLog.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+		<script src="exeBudgetItem.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+	</body>
+
+</html>

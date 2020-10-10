@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>辅助关联关系</title>
+		<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+		<script src="../../pub/boot.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+		<!-- <script src="http://192.168.0.2:8081/rap.plugin.js?projectId=1" type="text/javascript"></script> -->
+		<link rel="stylesheet" href="accItemLink.css?rev=@@hash" />
+		<style>
+			.none {
+				display: block;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div id="accItemLink" class="container-fluid ufma-container no-print">
+			<!--工作区 begin-->
+			<div class="workspace">
+				<!--工作区顶部 begin-->
+				<div class="workspace-top">
+					<div class="container-fluid">
+						<div class="ufma-portlet">
+							<div class="portlet-title">
+								<div class="caption">
+									<span class="caption-subject font-dark uppercase">辅助关联关系</span>
+								</div>
+								<div class="agencycom">
+									<div id="cbAgency" class="ufma-treecombox ufma-combox-agency"></div>
+								</div>
+								<div class="portlet-body form-horizontal " style="display: inline-block;">
+									<div class="form-body">
+										<div class="form-group">
+											<div class="agencycom" style=" float: right;">
+												<div id='cbAcct' class="ufma-treecombox ufma-combox-acct"></div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="actions">
+									<div>
+										<button type="button" id="btn-import" class="btn btn-sm btn-default btn-import btn-permission">取数</button>
+										<button type="button" id="saveTable" class="btn btn-sm btn-primary btn-save btn-permission">保存</button>
+									</div>
+								</div>
+							</div>
+							<div class="link-ele-box portlet-body form-horizontal bordered">
+								<div class="link-ele-box-left">
+									<div class="link-ele-box-left-l">主要素：</div>
+									<div class="link-ele-box-left-r" style="margin-top: -5px">
+									</div>
+								</div>
+								<div class="link-ele-box-right" id="moreQuery">
+									<i>更多</i>&nbsp;<span class="glyphicon icon-angle-bottom"></span>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!--工作区顶部 end-->
+
+				<!--工作区中部 begin-->
+				<div class="workspace-center">
+					<div class="container-fluid">
+						<!--按钮组begin-->
+						<div class="table-sub uf-box">
+							<div id="navTabBox" class="table-sub-info uf-bf1" style="padding-left:15px;">
+								<ul class="nav nav-tabs" id="itemTab" style="margin-left:0px;"></ul>
+							</div>
+							<div class="iframeBtnsSearch" id="index-search" style="margin-top: 5px;">
+								<input type="text" class="searchHide focusOff bordered" placeholder="请输入要搜索的关键词"
+									style="right: 163px; width: 160px; display: inline-block;" autocomplete="off">
+								<input type="hidden" class="searchValueHide">
+								<button class="btn btn-default btn-sm btn-search" id="searchHideBtn">
+									<i class="glyphicon icon-search"></i>
+								</button>
+							</div>
+							<div class="table-sub-action pl10 mt5" style="width: 88px">
+								<div id="tabBtn" class="btn-group none">
+									<button class="btn btn-default" id="leftMove" style="padding:4px 8px;"><i class="icon-angle-left"></i></button>
+									<button class="btn btn-default" id="rightMove" style="padding:4px 8px;"><i class="icon-angle-right"></i></button>
+								</div>
+								<!--<div class="iframeBtnsSearch">
+							<input type="text" class="searchHide focusOff bordered" placeholder="请输入要搜索的关键词">
+							<button class="btn btn-default btn-sm btn-search btn-permission" id="searchHideBtn"><span class='glyphicon icon-search'></span></button>
+						</div>-->
+
+								<button class="btn btn-default btn-print btn-permission" data-toggle="tooltip" title="打印" style="display: none;">
+							<span class="glyphicon icon-print"></span>
+						</button>
+							</div>
+						</div>
+						<!--表格begin-->
+						<div class="tab-content container-fluid" style="border:0;overflow:auto;min-height:336px;clear: both;">
+							<!--<div id="fztable" class="table-discoloration"></div>
+                    -->
+							<div id="fztable" class="tab-content uf-datagrid" style="min-height:300px;height:auto ;overflow-y:auto">
+
+							</div>
+							<!--<div class="noData">
+                    	<img src="../../images/noData.png" />
+                    	<br />
+                    	<i>目前还没有你要查询的数据</i>
+                    </div>-->
+							<div class="ufma-form-group-box">
+								<div class="text-center padding-15">
+									<a class="btn btn-sm btn-default btn-add" id="accSysAdd"><span class="glyphicon icon-add"></span><span class="margin-left-15">新增辅助项关联关系</span></a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!--工作区中部 end-->
+
+				<!--工作区底部 begin-->
+				<!-- <div class="workspace-bottom"> -->
+				<div id="rpt-tool-bar" class="ufma-tool-bar no-print">
+					<div class="tool-bar-body">
+						<div class="ufma-tool-btns">
+							<label class="link-all-check mt-checkbox mt-checkbox-outline margin-right-8">
+                            <input class="" type="checkbox"> 全选
+                            <span></span>
+                        </label>
+							<button type="button" id="link-select-del" class="btn btn-sm btn-default btn-delete btn-permission">删除</button>
+						</div>
+						<div class="info">
+							共 <span class="link-table-count">0</span> 项
+						</div>
+					</div>
+				</div>
+				<!-- </div> -->
+				<!--工作区底部 end-->
+			</div>
+			<!--工作区 end-->
+			<div id="tableprint" class="ufma-modal">
+				<div class="u-msg-title">
+					<h4>打印模板选择</h4>
+				</div>
+				<div class="u-msg-content">
+					<div class="container-fluid margin-left-15 margin-right-15">
+						<ul class="list-unstyled">
+							<li class="tips clearfix">
+								<div class="tips-icon pull-left">
+									<span class="glyphicon icon-point"></span>
+								</div>
+								<p class="pull-left">请选择打印模板！</p>
+							</li>
+							<!--<li class="setVouType clearfix">
+                        <label class="pull-left" for="" style="width: 100px;text-align: right;margin-bottom: 8px;">凭证类型：</label>
+                        <div class="pull-left">
+                            <select name="" class="bordered-input padding-3" id="rptStyle">
+
+                            </select>
+                        </div>
+                    </li>-->
+							<li class="setVouTypecy clearfix">
+								<label class="pull-left" for="" style="width: 100px;text-align: right;margin-bottom: 8px;">财务凭证类型：</label>
+								<div class="pull-left">
+									<select name="" class="bordered-input padding-3" id="rptTemplate">
+									</select>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="u-msg-footer">
+					<div class="text-right  margin-right-30">
+						<button type="button" class="btn btn-sm btn-primary btn-save" id="btn-tableprintsave">保存</button>
+						<button type="button" class="btn btn-sm btn-default btn-qx" id="btn-tableprintqx">取消</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script src="accItemLink.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+	</body>
+
+</html>

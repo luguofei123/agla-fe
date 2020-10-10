@@ -1,0 +1,447 @@
+/*editPage begin*/
+
+
+.table-sub {
+    position: relative;
+}
+
+.ufma-report-top-bar {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+}
+
+.coaAcc-layout-up {
+    width: 1106px;
+    height: calc(100% - 60px);
+    padding: 23.5px 48px 0 48px;
+}
+
+.coaAcc-container {
+    padding: 0px;
+    width: 1010px;
+}
+
+#coaAccEdit .btn-group label {
+    width: 41px;
+    height: 28px;
+    padding: 3px;
+    font-size: 12px;
+    line-height: 18px;
+}
+
+#coaAccEdit .form-group {
+    padding: 5px;
+}
+
+.coaAcc-assist {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    max-width: 550px;
+}
+
+#coaAccEdit .w210 {
+    width: 195px !important;
+}
+
+#coaAccEdit .accitemTypeClass {
+    width: 180px !important;
+}
+
+#coaAccEdit .coaAcc-drCr {
+    width: 60px !important;
+}
+
+/*购物车图标*/
+
+.coaAcc-shopping-trolley {
+    position: absolute;
+    z-index: 2005;
+    border: 1px #108ee9 solid;
+    background-color: #108ee9;
+    width: 45px;
+    height: 45px;
+    display: flex;
+    justify-content: center;
+    align-items: Center;
+    top: 4%;
+    right: 0;
+    border-radius: 0 4px 4px 0;
+}
+
+.coaAcc-shopping-trolley i {
+    font-size: 22px;
+    color: #FFF;
+}
+
+/*购物车显示*/
+
+.coaAcc-shopp {
+    position: absolute;
+    z-index: 2005;
+    height: 100%;
+    
+    width: 295px;
+    left: -250px;
+    top: 0px;
+    overflow: hidden;
+}
+.shopp-left{
+	position: relative;
+	width: 250px;
+	border-top: 1px solid #D9D9D9;
+    border-right: 2px solid #108EE9;	
+    overflow-y: auto;
+    height: 100%;
+    background-color: #FFFFFF;
+}
+#coaAccSearchKey.form-control {
+    width: 195px !important;
+}
+
+.coaAcc-shopp-header {
+    height: 50px;
+    border-bottom: 1px solid #D9D9D9;
+    padding: 10px;
+}
+
+.coaAcc-shopp-content {
+    padding: 7px;
+}
+
+#coaAccEdit .ufma-layout-content {
+    overflow: visible;
+    width: 710px;
+}
+
+#coaAccEdit .coaAcc-layout-slider {
+    width: 276px;
+    padding-left: 0px;
+}
+
+#coaAccEdit .row {
+    margin-right: -16px;
+    margin-left: -16px;
+}
+#coaAccEdit .coaAccMoveText{
+    padding-left: 5px;
+}
+
+
+
+.panel.ufma-panel>.panel-heading {
+    height: 38px;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+#form-mainInfoTab .panel-body {
+    padding: 5px !important;
+}
+
+#form-moneyInfoTab .panel-body {
+    padding: 5px !important;
+}
+
+.form-control {
+    width: 200px;
+}
+
+.coaAcc-right {
+    margin-right: 22px;
+}
+
+.coaAacc-warn {
+    height: 39px;
+    background: rgba(255, 191, 0, 0.10) !important;
+    border: 1px solid #FFBF00 !important;
+    border-radius: 4px;
+}
+
+.coaAacc-warn-title {
+    font-size: 12px !important;
+    color: #333333;
+}
+
+.coaAacc-warn-title span {
+    position: absolute;
+    left: 21px;
+    top: 14px;
+}
+
+.coaAcc-warn-caption {
+    padding-left: 20px;
+    padding-top: 1px;
+}
+
+.coaAcc-ul {
+    list-style: none;
+    margin-left: -28px;
+}
+
+.coaAcc-ul li label {
+    font-weight: normal;
+}
+
+.coaAcc-ul li span {
+    color: #333333;
+}
+
+.coaAcc-panelbody {
+    padding: 4px !important;
+}
+
+.coaAcc-personnum span {
+    color: #108EE9;
+    line-height: 17px;
+}
+
+.coaAcc-assistname {
+    color: #000000;
+    line-height: 20px;
+}
+
+/**可编辑列表项*/
+
+.ufma-textboxlist-border,
+.ufma-combox-border {
+    position: relative;
+    background: #fff;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
+    padding: 4px 8px;
+    width: 99%;
+    cursor: text;
+    height: 30px;
+}
+
+table.ufma-table.dataTable tbody tr:not(.locked):hover {
+    border-collapse: collapse;
+    background-color: #FFFFFF !important;
+}
+
+table.ufma-table.dataTable tr:nth-child(even) {
+    background-color: #FFFFFF !important
+}
+
+#coaAccAssist thead tr th {
+    border-right: 1px solid #d9d9d9;
+    font-weight: normal;
+    color: #333333;
+    letter-spacing: 0;
+}
+
+#coaAccAssist tbody tr td {
+    border-right: 1px solid #d9d9d9;
+}
+
+#coaAccIllegal thead tr th {
+    border-right: 1px solid #d9d9d9;
+    font-weight: normal;
+    color: #333333;
+    letter-spacing: 0;
+}
+
+#coaAccIllegal tbody tr td {
+    border-right: 1px solid #d9d9d9;
+}
+
+/*新增样式 20170621*/
+
+.coaAcc-num-count {
+    display: inline-block;
+    height: 30px;
+    overflow: hidden;
+    border: 1px solid #d9d9d9;
+    border-radius: 4px;
+}
+
+.coaAcc-num-count span {
+    display: inline-block;
+    height: 30px;
+    width: 24px;
+    text-align: center;
+    line-height: 30px;
+}
+
+.coaAcc-num-count span.coaAcc-num-disabled {
+    cursor: default;
+    background: #f2f2f2;
+    color: #d9d9d9;
+}
+
+.coaAcc-num-count span.coaAcc-num-action {
+    cursor: pointer;
+}
+
+.coaAcc-num-count input {
+    display: inline-block;
+    height: 30px;
+    width: 41px;
+    text-align: center;
+    outline: none;
+    border: none;
+    border-left: 1px solid #d9d9d9;
+    border-right: 1px solid #d9d9d9;
+}
+
+.accitemTypeClass label.mt-radio {
+    display: inline-block;
+    position: relative;
+    padding-left: 24px;
+    margin-bottom: 0;
+    cursor: pointer;
+    font-size: 13px;
+    height: 22px;
+    font-weight: 400;
+    margin-top: 2px;
+}
+
+.accitemTypeClass label.mt-radio span {
+    width: 14px;
+    height: 14px;
+    margin-top: 1px;
+    margin-left: 4px;
+    background-color: #FFF;
+    BORDER: 1px solid #D9D9D9;
+}
+
+.accitemTypeClass label>span:after {
+    left: 3px;
+    top: 3px;
+    height: 6px;
+    width: 6px;
+    border-radius: 100%;
+    background: #008ff0;
+}
+
+table.ufma-table tbody tr.mouseOver,
+table.ufma-table tbody tr.mouseOver .form-control,
+table.ufma-table tbody tr.mouseOver:nth-child(even) {
+    background-color: #FFF !important;
+}
+
+div.input-group {
+    float: none !important
+}
+
+.coaAccMoveBox {
+    width: 422px;
+    z-index: 99999;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-left: -211px;
+    margin-top: -105px;
+    background-color: #fff;
+    border-radius: 5px;
+}
+.coaAccMoveBox #coaAccMoveTitl{
+    padding-left: 20px;
+    position: relative;
+    height: 50px;
+    font-size: 16px;
+    border-bottom: 1px solid #d9d9d9;
+    line-height: 50px;
+}
+.coaAccMoveBox #coaAccMoveTitl span{
+    position: absolute;
+    right: 18px;
+    top: 12px;
+    color: #999999;
+    font-size: 20px;
+    width: 20px;
+    height: 20px;
+    line-height: 20px;
+    text-align: center;
+    cursor: pointer;
+
+}
+#coaAccMoveContent {
+    border-top: 1px solid #e9e9e9;
+    height: 60px;
+    padding-right: 20px;
+}
+
+#coaAccMoveContent button {
+    float: right;
+    margin-top: 15px;
+    margin-right: 10px;
+}
+
+#coaAccMove {
+    width: 100%;
+    margin: 0 auto;
+    position: relative;
+    padding-top: 25px;
+}
+
+#coaAccMove .coaAccMoveTitle {
+    padding: 0 20px 0 60px;
+    line-height: 24px;
+}
+#coaAccMove .coaAccMoveTitle span{
+    line-height: 43px;
+}
+#coaAccMove .waing {
+    position: absolute;
+    left: 20px;
+    top: 30px;
+    background-color: #FFBF00;
+    width: 24px;
+    height: 24px;
+    text-align: center;
+    line-height: 24px;
+    color: #fff;
+    border-radius: 50%;
+}
+
+#coaAccEdit .coacctitle {
+    text-indent: 2em;
+    line-height: 60px;
+    margin: 0 0 0;
+}
+#coaAccEdit .mask{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 9998;
+    left: 0;
+    top: 0;
+    background-color: rgba(0, 0, 0, .3);
+}
+#coaAccEdit .coaccipt {
+    text-indent: 6em;
+    line-height: 29px;
+}
+
+#coaAccEdit .coaccipt input {
+    width: 190px;
+    height: 30px;
+    border: 1px solid #D9D9D9;
+    border-radius: 4px;
+}
+
+#coaAccEdit .coaccbtn {
+    height: 70px;
+    border-top: 1px solid #D9D9D9;
+    padding-right: 20px;
+    margin-top: 56px;
+}
+
+#coaAccEdit .coaccbtn button {
+    float: right;
+    margin-top: 20px;
+    margin-right: 10px;
+}
+/*.coaAccEditBom{
+    margin-top:15px;
+}*/
+.panel-heading .caption{
+	margin-left: 8px;
+}
+.ufma-layout-down {
+    z-index: 3;
+}

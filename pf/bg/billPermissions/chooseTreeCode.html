@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>设置指标权限</title>
+		<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+		<script src="../../pub/boot.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+		<link rel="stylesheet" href="billPermissions.css?rev=@@hash" />
+		<style type="text/css">
+			.main .tree-outer-box {
+				max-height: 340px;
+				height: 340px;
+				border: 1px #D9D9D9 solid;
+				border-radius: 4px;
+				padding: 10px 10px;
+				overflow: auto;
+			}
+			
+			.search {
+				position: relative;
+				margin-bottom: 10px;
+			}
+			
+			.search input {
+				height: 30px;
+				line-height: 30px;
+				border: 1px #D9D9D9 solid;
+				border-radius: 4px;
+				width: 280px;
+				padding: 0 45px 0 5px;
+				outline: none;
+			}
+			
+			.search-btn {
+				display: inline-block;
+				position: absolute;
+				height: 30px;
+				width: 40px;
+				top: 0px;
+				right: 242px;
+				border-left: 1px #D9D9D9 solid;
+				padding-top: 8px;
+				text-align: center;
+			}
+			
+			.uf-combox-popup {
+				height: 100px;
+			}
+			/*下发、选用的全选框样式*/
+			
+			.uf-selectAll {
+				margin-left: 25px
+			}
+			
+			.uf-selectAll .mt-checkbox {
+				color: #333
+			}
+			
+			.uf-selectAll .mt-checkbox>span {
+				width: 14px;
+				height: 14px;
+				top: 3px;
+			}
+			
+			.uf-selectAll .mt-checkbox>span:after {
+				left: 4px;
+				width: 4px;
+				height: 7px;
+				border-width: 0 1px 1px 0;
+			}
+		</style>
+	</head>
+
+	<body>
+
+		<div class="ufma-layout-updown" id="coaAccRelationship">
+			<div class="ufma-layout-up" style="padding:15px 30px;">
+				<div class="main">
+					<div class="search">
+						<input id="searchText" type="text">
+						<span id="btnSearch" class="search-btn icon-search"></span>
+						<div style="width: 122px;margin-left: 355px;margin-top: -25px;">
+							<label class="mt-checkbox mt-checkbox-outline">
+								<input type="checkbox" checked="" id="notShowZero">可查看指标金额
+								<span></span>
+						    </label>
+						</div>
+					</div>
+					<div class="tree-outer-box">
+						<ul id="accoTree" class="ztree ufmaTree"></ul>
+					</div>
+				</div>
+			</div>
+			<div class="ufma-layout-down bordered-top">
+				<!--经侯总确认前端无需加“全部”节点，故将加“全选”--zsj-->
+				<div class="uf-selectAll" style="margin-left:30px;float: left;">
+					<label class="rpt-check rpt-checkAll mt-checkbox mt-checkbox-outline">
+				            <input name="isAll" type="checkbox">全选<span></span>
+				        </label>
+				</div>
+				<div style="margin-left: 426px;">
+					<button type="button" class="btn btn-sm btn-primary" id="btnOk">确定</button>
+					<button type="button" class="btn btn-sm btn-default" id="btnCancel">取消</button>
+				</div>
+			</div>
+		</div>
+		<script src="chooseTreeCode.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+	</body>
+
+</html>

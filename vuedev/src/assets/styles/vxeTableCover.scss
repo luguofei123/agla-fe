@@ -1,0 +1,48 @@
+.vxe-table {
+    color: #333;
+}
+.vxe-table.size--mini .vxe-header--column .vxe-cell{
+    font-size: 14px;
+}
+.vxe-table .vxe-body--column.col-active {
+    background-color: #108ee9;
+    color: #fff;
+}
+/**
+ * @description: 2020-07-16 sunch 修改表格tooltip的显示层级，以免被modal遮罩
+ */
+.vxe-table--tooltip-wrapper {
+    z-index: 999999 !important;
+}
+/**
+ * @description: 2020-07-17 sunch 修改表格select的显示层级
+ */
+.vxe-default-select {
+    width: 100% !important;
+    z-index: 999999 !important;
+    border: 0 !important;
+    height: 24px !important;
+}
+.vxe-table.size--mini .vxe-default-input{
+    width:100%;
+    height: 100%;
+    border: 0;
+    outline: none;
+    background: transparent;
+}
+.vxe-table.size--mini .vxe-input{
+    position: relative;
+}
+.vxe-select:not(.is--disabled) > .vxe-input .vxe-input--inner{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    border: 0;
+    outline: none;
+    background: transparent;
+}
+.vxe-table--tooltip-wrapper.theme--dark {
+    color: #333;
+}

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>新增/修改工资类别</title>
+    <meta
+      content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
+      name="viewport"
+    />
+    <script
+      src="../../../pub/boot.js?rev=@@hash"
+      type="text/javascript"
+      charset="utf-8"
+    ></script>
+    <script
+      src="../../common/common.js?rev=@@hash"
+      type="text/javascript"
+      charset="utf-8"
+    ></script>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="../../common/common.css?rev=@@hash"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="systemSalaryCategory.css?rev=@@hash"
+    />
+  </head>
+  <body>
+    <!--整个容器 begin-->
+    <div id="add-system-salary-category" class="ufma-layout-updown">
+      <div class="ufma-layout-up">
+        <div class="container-fluid">
+          <form id="frmQuery" class="form-horizontal" style="margin-top: 10px">
+            <div class="form-row">
+              <div class="form-group required">
+                <label class="control-label">工资类别代码：</label>
+                <div class="control-element">
+                  <input
+                    id="prtypeCode"
+                    type="text"
+                    name="prtypeCode"
+                    class="form-control"
+                    maxlength="200"
+                    style="width: 200px"
+                    autocomplete="off"
+                  />
+                </div>
+              </div>
+              <div class="form-group required">
+                <label class="control-label">工资类别名称：</label>
+                <div class="control-element">
+                  <input
+                    id="prtypeName"
+                    type="text"
+                    name="prtypeName"
+                    class="form-control"
+                    style="width: 200px"
+                    autocomplete="off"
+                  />
+                </div>
+              </div>
+              <div class="clearfix"></div>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <div class="ufma-layout-down bordered-top">
+        <div class="text-right margin-right-30">
+          <button type="button" class="btn btn-sm btn-primary" id="btn-saveadd">
+            保存并新增
+          </button>
+          <button type="button" class="btn btn-sm btn-primary" id="btn-save">
+            保存
+          </button>
+          <button
+            type="button"
+            class="btn btn-sm btn-default btn-close"
+            id="btn-close"
+          >
+            关闭
+          </button>
+        </div>
+      </div>
+    </div>
+    <script
+      src="addSystemSalaryCategory.js?rev=@@hash"
+      type="text/javascript"
+      charset="utf-8"
+    ></script>
+  </body>
+</html>

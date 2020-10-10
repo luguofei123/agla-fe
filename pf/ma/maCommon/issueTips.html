@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>下发提示</title>
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <script src="../../pub/boot.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+    <style>
+        .table-row{
+            border:1px solid #d9d9d9;
+            border-top: none;
+        }
+        .tHead{
+            list-style: none;
+            border:1px solid #d9d9d9;
+            padding-left: 0;
+            margin-bottom: 0;
+        }
+        .tHead li {
+            float: left;
+            height: 36px;
+            line-height: 36px;
+            background-color:#EEF1F6;
+        }
+        .table-row .block{
+            float: left;
+        }
+        .tc{
+            text-align: center;
+        }
+        .borderR{
+            border-right: 1px solid #d9d9d9;
+        }
+        .borderL {
+            border-left: 1px solid #d9d9d9;
+        }
+        .head-agency-code,.agencyCode,.head-acctCode-code,.acctCode {
+            width: 160px;
+            /*height: 30px;
+            line-height: 30px;*/
+        }
+        .head-status,.statuss,.statuss div {
+            width: 40px;
+        }
+        .head-acco-code,.accoCode {
+            width: 200px;
+        }
+        .head-reason, .reason {
+            width: 438px;
+        }
+        .accoCode div,.reason div, .statuss div{
+            border-bottom: 1px solid #d9d9d9;
+            height: 30px;
+            line-height: 30px;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+        }
+        .accoCode div:last-child,.reason div:last-child, .statuss div:last-child{
+            border-bottom: none;
+        }
+    </style>
+
+</head>
+
+<body id="issueTips" style="overflow: hidden">
+<div class="ufma-layout-updown temp-updown">
+    <div class="ufma-layout-up temp-up">
+        <div class="container-fluid margin-left-15 margin-right-15" style="padding-top: 20px">
+            <div class="content">
+
+            </div>
+            <!--<table id="tipTable" tool-bar="#tool-bar" class="ufma-table uf-rpt-table">-->
+                <!--<thead>-->
+                    <!--<tr>-->
+                        <!--<th rowspan="2">单位代码</th>-->
+                        <!--<th>科目代码</th>-->
+                        <!--<th>状态</th>-->
+                        <!--<th>原因</th>-->
+                    <!--</tr>-->
+                <!--</thead>-->
+            <!--</table>-->
+        </div>
+    </div>
+
+    <div class="ufma-layout-down bordered-top">
+        <div class="text-right margin-right-30">
+            <button type="button" class="btn btn-sm btn-primary" id="btn-close">关闭</button>
+        </div>
+    </div>
+</div>
+
+<script src="issueTips.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+</body>
+
+</html>

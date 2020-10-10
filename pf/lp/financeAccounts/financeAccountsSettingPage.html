@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>设置</title>
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <script src="../../pub/boot.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+    <style type="text/css">
+        .uf-combox-list-item span {
+            color: #ff3b30;
+        }
+
+        #tgDetailtablecomboxENU_CODE_popup {
+            height: 58px!important;
+        }
+
+        .uf-buttonedit .uf-buttonedit-input {
+            padding-top: 4px;
+            padding-bottom: 4px;
+        }
+
+        .uf-grid-table-edit .uf-form-control,
+        .uf-grid-table-edit .uf-buttonedit-border,
+        .uf-grid-table-edit .uf-combox-border,
+        .uf-grid-table-edit .uf-buttonedit,
+        .uf-grid-table-edit .uf-combox,
+        .uf-grid-table-edit .uf-treecombox,
+        .uf-grid-table-edit .uf-datepicker {
+            height: 28px;
+        }
+
+        .uf-grid-table-edit #tgAccounttablebuttoneditgsName {
+            border-right: 1px solid #d9d9d9;
+        }
+
+        .uf-grid-table-edit input[type="text"] {
+            width: 95%;
+        }
+    </style>
+</head>
+
+<body id="templateGeneration" style="overflow: hidden">
+<!--<div class="tem-title">-->
+<!--凭证模版-->
+<!--<span class="close-model glyphicon icon-close"></span>-->
+<!--</div>-->
+<div class="ufma-layout-updown temp-updown">
+    <div class="ufma-layout-up temp-up">
+        <div class="container-fluid margin-left-15 margin-right-15">
+            <div class="clearfix" style="margin-top: 16px;">
+                    <div class="form-group form-inline">
+                        <label class="control-label auto">报表任务：</label>
+<!--                        <div class="control-element">-->
+                        <div id="selectTask" class="uf-combox" name="selectTask" style="width:200px"> </div>
+<!--                        </div>-->
+                        <label class="control-label auto margin-left-8">报表：</label>
+                        <div id="selectRpt" class="uf-combox" name="selectRpt" style="width:200px"> </div>
+                    </div>
+                    <div class="form-group form-inline">
+                        <label class="control-label auto">中间表名：</label>
+                        <input id="dbName" class="bordered-input padding-3" style="width: 200px" />
+                        <label class="control-label auto">久其报表代码：</label>
+                        <input id="rptCodeJQ" class="bordered-input padding-3" style="width: 200px" />
+                        <label class="control-label auto">久其报表类型：</label>
+                        <input id="rptTypeJQ" class="bordered-input padding-3" style="width: 200px" />
+                    </div>
+            </div>
+            <!-- 分录明细 begin -->
+            <div class="panel ufma-panel" style="margin-top: 20px;">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <div class="caption" style="line-height: 34px">字段对应关系</div>
+                        <div class="actions" style="margin-top:10px">
+                            <a data-toggle="collapse" href="#tgDetail">
+                                <span class="glyphicon icon-angle-bottom"></span>
+                            </a>
+                        </div>
+                    </h4>
+                </div>
+
+                <div id="tgDetail" class="panel-collapse collapse in" style="margin-bottom: 40px">
+                    <div class="panel-body">
+                        <div class="container-fluid form-horizontal">
+                            <div id="tgDetailtable" class="tab-content" style="height: auto !important;"></div>
+                        </div>
+                    </div>
+                    <div class="panel-foot" style="width: 100%;">
+                        <button class="btn btn-default" id="tgDetailbutton" style="width:100px;margin:15px auto;display: block;">
+                            <span class="icon-add" style="margin-right: 8px;margin-bottom: 20px"></span>新增行
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="ufma-layout-down bordered-top">
+        <div class="text-right margin-right-30">
+            <button type="button" class="btn btn-sm btn-primary  btn-save" id="btn_save_close">保存并关闭</button>
+            <button type="button" class="btn btn-sm btn-primary  btn-save" id="btn_save">保存</button>
+            <button type="button" class="btn btn-sm btn-default" id="btn-qx">取消</button>
+        </div>
+    </div>
+</div>
+<div id="scmodal" class="ufma-modal"></div>
+
+<script src="financeAccountsSettingPage.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+</body>
+
+</html>

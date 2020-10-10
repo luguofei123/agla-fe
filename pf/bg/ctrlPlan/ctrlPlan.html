@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>控制方案</title>
+    <meta
+      content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
+      name="viewport"
+    />
+    <script
+      src="../../pub/boot.js?rev=@@hash"
+      type="text/javascript"
+      charset="utf-8"
+    ></script>
+    <link rel="stylesheet" href="ctrlPlan.css?rev=@@hash" />
+  </head>
+
+  <body>
+    <div id="crtlPlan" class="container-fluid ufma-container">
+      <!--工作区顶部 begin-->
+      <div class="workspace bordered" style="min-height: 550px;">
+        <div class="container-fluid">
+          <div class="uf-portlet">
+            <div class="portlet-title">
+              <div class="caption">
+                <span class="caption-subject font-dark uppercase caption-main"
+                  >控制方案</span
+                >
+                <div
+                  class="uf-treecombox ufma-combox-agency"
+                  id="cbAgency"
+                  name="agencyCode"
+                  idField="id"
+                  textField="codeName"
+                  pIdField="pId"
+                  icon="icon-unit"
+                  theme="label"
+                  autocomplete="on"
+                  placeholder="请选择单位"
+                ></div>
+              </div>
+
+              <div class="actions" style="margin-top: 4px;">
+                <div class="btn-group">
+                  <button
+                    type="button"
+                    id="btn-add"
+                    class="btn btn-sm btn-add btn-primary btn-permission"
+                    data-toggle="modal"
+                  >
+                    新增
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div
+              class="top-toolbar container-fluid ufma-portlet"
+              style="margin-bottom: -15px;"
+            >
+              <div
+                class="row portlet-title ele-bordered-none crtlPlanCount"
+                id="crtlplan-count"
+              ></div>
+            </div>
+          </div>
+          <div
+            class="portlet-body form-horizontal"
+            style="background-color: #fff !important;"
+          >
+            <div
+              class="container-fluid"
+              class="row crtlPlan"
+              id="crtlplan-cards"
+            ></div>
+          </div>
+          <!--工作区中部 end-->
+          <!-- 编辑预算方案begin -->
+          <div id="crtlplan-edt" class="ufma-modal">
+            <div class="u-msg-title">
+              <h4>控制方案设置</h4>
+            </div>
+            <div class="u-msg-content">
+              <div
+                class="ufma-layout ufma-layout-slider-xm ufma-layout-fixed-slider ufma-layout-fixed-slider-right"
+              >
+                <div class="ufma-layout-content" style="width: 786px;">
+                  <!--基本信息begin-->
+                  <div class="panel ufma-panel">
+                    <div class="panel-heading">
+                      <h4 class="panel-title" style="padding-top: 10px;">
+                        <div class="caption">基本信息</div>
+                        <div class="actions" style="padding-top: 10px;">
+                          <a
+                            class="accsys-edit btn-edit btn-permission margin-right-8"
+                            id="btnCrtlPlanBaseEdit"
+                          >
+                            <span class="glyphicon icon-edit"></span>
+                          </a>
+                          <a data-toggle="collapse" href="#crtlplan-base">
+                            <span class="glyphicon icon-angle-bottom"></span>
+                          </a>
+                        </div>
+                      </h4>
+                    </div>
+                    <form id="crtlplan-base" class="panel-collapse collapse in">
+                      <div class="panel-body">
+                        <div class="container-fluid form-horizontal">
+                          <input type="hidden" name="chrId" value="" />
+                          <input type="hidden" name="chrCode" value="" />
+                          <div class="row">
+                            <div class="col-xs-8">
+                              <div class="form-group required">
+                                <label class="control-label disabled em6"
+                                  >方案名称：</label
+                                >
+                                <div class="control-element">
+                                  <input
+                                    type="text"
+                                    name="chrName"
+                                    id="chrName"
+                                    maxlength="200"
+                                    class="form-control"
+                                  />
+                                  <label
+                                    for="chrName"
+                                    class="control-label hide"
+                                  ></label>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="col-xs-4">
+                              <div class="form-group">
+                                <label class="control-label em4"
+                                  >控制方式：</label
+                                >
+                                <div class="control-element" id="bgCtrlType">
+                                  <select
+                                    class="form-control"
+                                    name="bgCtrlType"
+                                  >
+                                    <option value="0">禁止</option>
+                                    <option value="1">预警</option>
+                                    <option value="2">不控制</option>
+                                  </select>
+                                  <label
+                                    for="bgCtrlType"
+                                    class="control-label hide"
+                                  ></label>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="row">
+                            <div class="col-xs-4">
+                              <div class="form-group">
+                                <label class="control-label em6"
+                                  >控制百分比：</label
+                                >
+                                <div
+                                  class="control-element"
+                                  style="width: 80px;"
+                                  id="bgCtrlRatio"
+                                >
+                                  <input
+                                    id="ctrlRatio"
+                                    type="text"
+                                    name="bgCtrlRatio"
+                                    class="form-control"
+                                    value="100"
+                                  />
+                                  <label
+                                    for="bgCtrlRatio"
+                                    class="control-label hide"
+                                  ></label>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="col-xs-4">
+                              <div class="form-group">
+                                <label class="control-label em6"
+                                  >预警百分比：</label
+                                >
+                                <div
+                                  class="control-element"
+                                  style="width: 80px;"
+                                  id="bgWarnRatio"
+                                >
+                                  <input
+                                    id="warnRatio"
+                                    type="text"
+                                    name="bgWarnRatio"
+                                    class="form-control"
+                                    value="100"
+                                  />
+                                  <label
+                                    for="bgWarnRatio"
+                                    class="control-label hide"
+                                  ></label>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="col-xs-4">
+                              <div class="form-group">
+                                <label class="control-label em4"
+                                  >启用状态：</label
+                                >
+                                <div class="control-element">
+                                  <div class="btn-group" data-toggle="buttons">
+                                    <label class="btn btn-default active">
+                                      <input
+                                        type="radio"
+                                        class="toggle"
+                                        name="enabled"
+                                        value="1"
+                                      />
+                                      启用
+                                    </label>
+                                    <label class="btn btn-default">
+                                      <input
+                                        type="radio"
+                                        class="toggle"
+                                        name="enabled"
+                                        value="0"
+                                      />
+                                      停用
+                                    </label>
+                                  </div>
+                                  <label
+                                    for="enabled"
+                                    class="control-label hide"
+                                  ></label>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="row">
+                            <div class="col-xs-12">
+                              <div class="form-group">
+                                <label class="control-label em6 fl"
+                                  >方案描述：</label
+                                >
+                                <div class="control-element">
+                                  <textarea
+                                    rows="3"
+                                    cols="20"
+                                    name="summary"
+                                    maxlength="200"
+                                    class="form-control budget-fams"
+                                    style="width: 504px;"
+                                  ></textarea>
+                                  <label
+                                    for="summary"
+                                    class="control-label hide"
+                                  ></label>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="row hide" id="crtlPlanBaseBtnGroup">
+                            <div class="col-xs-12 text-right margin-top-8">
+                              <button
+                                type="button"
+                                class="btn btn-sm btn-primary btn-save btn-ajax btn-permission"
+                              >
+                                保存
+                              </button>
+                              <button
+                                type="button"
+                                class="btn btn-sm btn-default btn-cancel"
+                              >
+                                取消
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </form>
+                  </div>
+                  <div class="panel ufma-panel">
+                    <div class="panel-heading">
+                      <h4 class="panel-title" style="padding-top: 10px;">
+                        <div class="caption">控制要素</div>
+                        <div class="actions" style="padding-top: 10px;">
+                          <a
+                            class="accsys-edit btn-edit btn-permission margin-right-8"
+                            id="btnUseCtrlItemsEdit"
+                          >
+                            <span class="glyphicon icon-edit"></span>
+                          </a>
+                          <a
+                            data-toggle="collapse"
+                            id="btnUseCtrlItemsStop"
+                            href="#crtlplan-items"
+                          >
+                            <span class="glyphicon icon-angle-bottom"></span>
+                          </a>
+                        </div>
+                      </h4>
+                    </div>
+
+                    <form
+                      id="crtlplan-items"
+                      class="panel-collapse collapse in"
+                    >
+                      <div class="panel-body">
+                        <div class="container-fluid form-horizontal">
+                          <div class="row">
+                            <div class="col-xs-5">
+                              <div class="form-group">
+                                <div class="items-box-left">
+                                  <p class="tilte-font">可选控制要素</p>
+                                  <div
+                                    class="items-list bordered"
+                                    id="items-option"
+                                    style="
+                                      height: 240px;
+                                      width: 280px;
+                                      overflow: auto;
+                                    "
+                                  >
+                                    <ul
+                                      class="items-list-ul items-list-ul-l"
+                                      id="ctrl-items"
+                                      style="
+                                        padding-left: 24px;
+                                        padding-top: 16px;
+                                      "
+                                    ></ul>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="col-xs-2">
+                              <div class="form-group">
+                                <div
+                                  class="items-box-center"
+                                  style="
+                                    height: 180px;
+                                    text-align: center;
+                                    margin-top: 120px;
+                                  "
+                                >
+                                  <div>
+                                    <a
+                                      id="items-setRight"
+                                      class="btn btn-icon-only btn-default"
+                                      style="margin-bottom: 8px;"
+                                    >
+                                      <span
+                                        class="glyphicon icon-angle-double-right"
+                                      ></span>
+                                    </a>
+                                  </div>
+                                  <div>
+                                    <a
+                                      id="items-setLeft"
+                                      class="btn btn-icon-only btn-default"
+                                    >
+                                      <span
+                                        class="glyphicon icon-angle-double-left"
+                                      ></span>
+                                    </a>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="col-xs-5">
+                              <div class="form-group">
+                                <div class="items-box-right">
+                                  <p class="tilte-font">已选控制要素</p>
+                                  <div
+                                    class="items-list bordered"
+                                    id="items-selected"
+                                    style="
+                                      height: 240px;
+                                      width: 280px;
+                                      overflow: auto;
+                                    "
+                                  >
+                                    <ul
+                                      class="items-list-ul items-list-ul-r"
+                                      id="items-selected-ul"
+                                      style="
+                                        padding-left: 24px;
+                                        padding-top: 16px;
+                                      "
+                                    ></ul>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </form>
+                    <div
+                      class="hide panel-collapse collapse in"
+                      id="items-allShow"
+                      style="height: 40px;"
+                    >
+                      <div
+                        style="
+                          float: left;
+                          padding-left: 16px;
+                          padding-top: 11px;
+                        "
+                      >
+                        已选控制要素：
+                      </div>
+                    </div>
+                  </div>
+                  <div class="panel ufma-panel">
+                    <div class="panel-heading">
+                      <h4 class="panel-title" style="padding-top: 10px;">
+                        <div class="caption">使用预算方案</div>
+                        <div class="actions" style="padding-top: 10px;">
+                          <a
+                            data-toggle="collapse"
+                            id="btnUseBudgetPlansStop"
+                            href="#crtlplan-budgetplan"
+                          >
+                            <span class="glyphicon icon-angle-bottom"></span>
+                          </a>
+                        </div>
+                      </h4>
+                    </div>
+                    <form
+                      id="crtlplan-budgetplan"
+                      class="panel-collapse collapse in"
+                    >
+                      <div class="panel-body">
+                        <div class="container-fluid form-horizontal">
+                          <div class="row">
+                            <div class="col-xs-5">
+                              <div class="form-group">
+                                <div class="budgetplan-box-left">
+                                  <p class="tilte-font">可选预算方案</p>
+                                  <div
+                                    class="budgetplan-list bordered"
+                                    id="budgetplan-option"
+                                    style="
+                                      height: 240px;
+                                      width: 280px;
+                                      overflow: auto;
+                                    "
+                                  >
+                                    <ul
+                                      class="budgetplan-list-ul budgetplan-list-ul-l"
+                                      id="ctrl-crtlplan"
+                                      style="
+                                        padding-left: 24px;
+                                        padding-top: 16px;
+                                      "
+                                    ></ul>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="col-xs-2">
+                              <div class="form-group">
+                                <div
+                                  class="budgetplan-box-center"
+                                  style="
+                                    height: 180px;
+                                    text-align: center;
+                                    margin-top: 120px;
+                                  "
+                                >
+                                  <div>
+                                    <a
+                                      id="budgetplan-setRight"
+                                      class="btn btn-icon-only btn-default"
+                                      style="margin-bottom: 8px;"
+                                    >
+                                      <span
+                                        class="glyphicon icon-angle-double-right"
+                                      ></span>
+                                    </a>
+                                  </div>
+                                  <div>
+                                    <a
+                                      id="budgetplan-setLeft"
+                                      class="btn btn-icon-only btn-default"
+                                    >
+                                      <span
+                                        class="glyphicon icon-angle-double-left"
+                                      ></span>
+                                    </a>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="col-xs-5">
+                              <div class="form-group">
+                                <div class="budgetplan-box-right">
+                                  <p class="tilte-font">已选预算方案</p>
+                                  <div
+                                    class="budgetplan-list bordered"
+                                    id="budgetplan-selected"
+                                    style="
+                                      height: 240px;
+                                      width: 280px;
+                                      overflow: auto;
+                                    "
+                                  >
+                                    <ul
+                                      class="budgetplan-list-ul budgetplan-list-ul-r"
+                                      id="budgetplan-selected-ul"
+                                      style="
+                                        padding-left: 24px;
+                                        padding-top: 16px;
+                                      "
+                                    ></ul>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="row hide" id="budgetplanBtnGroup">
+                            <div class="col-xs-12 text-right margin-top-8">
+                              <button
+                                type="button"
+                                class="btn btn-sm btn-primary btn-save btn-ajax btn-permission"
+                              >
+                                保存
+                              </button>
+                              <button
+                                type="button"
+                                class="btn btn-sm btn-default btn-cancel"
+                              >
+                                取消
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </form>
+                    <div
+                      class="hide panel-collapse collapse in"
+                      id="budgetplans-allShow"
+                      style="height: 40px;"
+                    >
+                      <div
+                        style="
+                          float: left;
+                          padding-left: 16px;
+                          padding-top: 11px;
+                        "
+                      >
+                        已选预算方案：
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="ufma-layout-slider right" style="width: 250px;">
+                  <!--标准科目表begin-->
+                  <div class="panel ufma-panel ufma-panel-primary">
+                    <div class="panel-heading">
+                      <h4 class="panel-title">
+                        <div class="caption" style="padding-top: 10px;">
+                          控制方案
+                        </div>
+                      </h4>
+                    </div>
+                    <div class="panel-collapse collapse in">
+                      <div class="panel-body">
+                        <div
+                          class="container-fluid form-horizontal"
+                          id="accSysLabelCards"
+                        >
+                          <div class="row">
+                            <div
+                              class="col-xs-12 text-center"
+                              id="crtlplan-other"
+                            ></div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!--标准科目表end-->
+                  <!--常用操作begin-->
+                  <div class="panel ufma-panel ufma-panel-primary">
+                    <div class="panel-heading">
+                      <h4 class="panel-title">
+                        <div class="caption" style="padding-top: 10px;">
+                          常用功能
+                        </div>
+                      </h4>
+                    </div>
+                    <div class="panel-collapse collapse in">
+                      <div class="panel-body">
+                        <div class="container-fluid form-horizontal">
+                          <div class="row">
+                            <div class="col-xs-12 text-center">
+                              <a
+                                class="label-a label-a-self ysfa"
+                                style="
+                                  cursor: pointer;
+                                  text-decoration: underline;
+                                "
+                                data-href="/pf/bg/budgetPlan/budgetPlan.html"
+                                data-title="预算方案"
+                                name=""
+                                value=""
+                                >预算方案</a
+                              >
+                            </div>
+                            <div class="col-xs-12 text-center">
+                              <a
+                                class="label-a label-a-self yszc"
+                                style="
+                                  cursor: pointer;
+                                  text-decoration: underline;
+                                "
+                                data-href="/pf/bg/budgetAccoSet/budgetAccoSet.html"
+                                data-title="预算支出控制设置"
+                                name=""
+                                value=""
+                                >预算支出控制设置</a
+                              >
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!--常用操作end-->
+                </div>
+              </div>
+            </div>
+
+            <div class="modal-footer add-footer">
+              <button
+                type="button"
+                class="btn btn-sm btn-primary btn-saveadd btn-ajax btn-permission"
+                id="crtlPlanSaveAdd"
+              >
+                保存并新增
+              </button>
+              <button
+                type="button"
+                class="btn btn-sm btn-default btn-save btn-ajax btn-permission"
+                id="crtlPlanSaveAll"
+              >
+                保存
+              </button>
+              <button
+                type="button"
+                class="btn btn-sm btn-default btn-cancel"
+                id="crtlPlanCancelAll"
+              >
+                取消
+              </button>
+              <button
+                type="button"
+                class="btn btn-sm btn-default btn-close hide"
+                id="crtlPlanCloseAll"
+              >
+                关闭
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script
+      src="../pub/bg.parse.js?rev=@@hash"
+      type="text/javascript"
+      charset="utf-8"
+    ></script>
+    <script
+      src="../pub/bgPub.js?rev=@@hash"
+      type="text/javascript"
+      charset="utf-8"
+    ></script>
+    <script
+      src="ctrlPlan.js?rev=@@hash"
+      type="text/javascript"
+      charset="utf-8"
+    ></script>
+  </body>
+</html>

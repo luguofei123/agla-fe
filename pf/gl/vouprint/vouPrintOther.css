@@ -1,0 +1,224 @@
+.padding-3{padding: 3px;}
+.max-w-210{max-width: 210px;}
+/* .workspace{margin-top: 8px;} */
+.vou-workspace{margin:0 15px;}
+.vou-box{padding:8px 0 0 0;}
+
+.vou-selete-box{height:46px;line-height: 46px;}
+.vou-title{float:left;height:46px;line-height: 46px;border-bottom: 3px solid #108EE9;font-size:16px;}
+
+.vou-selete-list{float: left;height:46px;line-height: 46px;margin-left: -16px;margin-bottom: 0;}
+.vou-selete-list-li{display: inline-block;margin-right: 32px;}
+
+.vou-method-tip{float: right;position: relative;height: 46px;}
+.vou-method-tip .btn-group{margin-top: 8px;}
+
+.vou-query-box{padding-left:8px;background: #ECF6FD;border: 1px solid #D2EAFB; margin-top: 10px;}
+#vouPrint .vou-query-box-pos{
+	position: relative; 
+	padding-right:0;
+	padding-bottom: 8px;
+}
+#vouPrint .line-box{
+	padding-right: 24px;
+}
+.vou-query-box-left{width:100%; padding-right: 100px;}
+.vou-query-box-right{position:absolute;right:16px;top:10px;width:80px;text-align:right;}
+#vouPrint .vou-query-box-right{
+	width: 100px;
+}
+#vouPrint .vou-query-btn-cont .btn{
+	padding:0 12px!important;
+	height:26px;
+	line-height: 24px;
+	margin: 2px 4px 2px 0;
+}
+#vouPrint .vou-query-btn-cont .btn.btn-default{
+	background-color: transparent;
+	border: 1px solid transparent;
+}
+
+/*鏃堕棿杞�*/
+#vouPrint #month-line{
+	padding-left: 16px;
+}
+#vouPrint #month-line .gray-line{
+	height: 8px;
+	width: 100%;
+	background-color: #F2F2F2 ;
+	border: 1px solid #D9D9D9;
+	border-radius: 4px;
+	position: relative;
+}
+#vouPrint #month-line .blue-line{
+	width: 100%;
+	position: absolute;
+	left: 0;
+	top: 0;
+}
+#vouPrint #month-line .blue-one{
+	cursor: pointer;
+	float: left;
+	width: 8.33%;
+	height: 6px;
+	background-color: transparent;
+	border-radius: 3px;
+	/*visibility: hidden;*/
+}
+#vouPrint #month-line .blue-one.choose{
+	/*visibility: visible;*/
+	background-color: #108EE9;
+}
+#vouPrint #month-line .month-text{
+	line-height: 20px;
+	margin-top: 4px;
+}
+#vouPrint #month-line .month-one{
+	float: left;
+	width: 8.33%;
+	text-align: center;
+}
+#vouPrint #month-line .month-one a{
+	color: #999999;
+	text-decoration: none;
+}
+#vouPrint #month-line .month-one.choose a{
+	color: #333333;
+}
+
+#vouPrint .vou-query-li-cont .mt-checkbox{
+	font-weight: normal;
+	margin-left: 8px;
+}
+
+.vou-query-box-left .vou-query-box-top,
+.vou-query-box-left .vou-query-box-bottom{list-style: none;margin-left:-40px;margin-bottom: 0;}
+
+/*.vou-query-box-left .vou-query-box-li{margin-top: 10px;min-height: 30px;}*/
+.vou-query-box-left .vou-query-box-li:first-child{margin-top:-10px;}
+
+.vou-query-box-li .vou-query-li{float: left; min-height: 30px; margin-top: 10px;}
+.vou-query-box-li .vou-query-li-cont-title{text-align:right;font-weight: normal;float: left;width:70px;height:30px;line-height: 30px; margin-right: 8px; margin-bottom: 0;}
+#vouPrint .vou-query-box-li .vou-query-li-cont-title{
+	width:86px;
+}
+.vou-query-box-li .vou-query-li-cont{float: left; min-width: 240px;}
+#vouPrint .vou-query-li-cont{
+	min-width: 390px;
+}
+#vouPrint .vou-query-btn-cont{
+	height: 30px;
+}
+#vouPrint .vou-query-btn-cont a.label{
+	line-height: 16px;
+}
+
+#vouPrint .vou-query-box input,
+#vouPrint .vou-query-box select{
+	border-radius: 4px;
+}
+#vouPrint #vpVouTypeCode,
+#vouPrint #vpStartVouNo,
+#vouPrint #vpEndVouNo{
+	width: 60px;
+	height: 30px;
+}
+#vouPrint #vpInputor{
+	min-width: 210px;
+	height: 30px;
+}
+
+.vou-table-box{}
+#vouPrint .vou-table-box{
+	position: relative;
+	/* padding-right: 276px; */
+	padding-top: 10px;
+}
+
+/*琛ㄦ牸鎺т欢*/
+.vou-table-tab{margin-top: 10px;border:1px solid #d9d9d9;}
+#vouPrint .vou-table-tab{
+	margin-top: 0;
+}
+.vou-table-tab table{border-bottom:1px solid #d9d9d9!important;}
+.vou-table-tab thead th{text-align: center;height:36px;padding:0!important;text-overflow: ellipsis;white-space: nowrap;}
+#vouPrint .vou-table-tab thead th.nowrap{
+	padding-left: 5px!important;
+}
+#vouPrint-data td.dataTables_empty:hover{
+	background-color: #FFFFFF;
+}
+.vou-table-tab th,.vou-table-tab td{border-right: 1px solid #d9d9d9;}
+.vou-table-tab tr th:last-child,.vou-table-tab tr td:last-child{border-right: 0px solid #d9d9d9;}
+.vou-table-tab td span{}
+.vou-table-tab td.money-style{
+	text-align: right;
+}
+.vou-table-tab th.check-style{
+	text-align: left;
+	width: 37px;
+	padding: 0;
+}
+/*.vou-table-tab td span:hover{color: #108EE9;text-decoration: underline;cursor: pointer;}*/
+td.tdNum{text-align:right;}
+td.dataTables_empty{text-align:center;padding:65px 0!important;}
+td.dataTables_empty img{width:116px;}
+td.dataTables_empty i{display:inline-block;margin-top:10px;font-style:normal;color:#999;}
+
+#vouPrint .vou-table-tab tfoot td{
+	padding: 3px 5px;
+}
+
+#vouPrint .vou-table-info{
+	padding-top: 10px;
+	position: absolute;
+	top: 0;
+	right: 0;
+	z-index: 2017;
+	width: 261px;
+}
+#vouPrint .vou-info-item{
+	border: 1px solid #D9D9D9;
+	margin-bottom: 10px;
+	background-color: #FFFFFF;
+}
+#vouPrint .vou-info-item .vou-info-title{
+	font-size: 16px;
+	line-height: 36px;
+	border-bottom: 1px solid #D9D9D9;
+	padding: 0 10px;
+	margin: 0;
+}
+#vouPrint .vou-info-item .vou-info-content{
+	padding: 8px 15px;
+}
+#vouPrint .vou-info-item .vou-info-content dl{
+	margin-bottom: 0;
+}
+#vouPrint .vou-info-item dl dt{
+	width: 70px;
+	font-weight: normal;
+	line-height: 20px!important;
+}
+#vouPrint .vou-info-item dl dd{
+	margin-left: 70px;
+	line-height: 20px!important;
+}
+#vouPrint .vou-info-item dl dd ul{
+	margin-bottom: 0;
+}
+#vouPrint .vou-info-item.info-print dl dt{
+	width: 98px;
+}
+#vouPrint .vou-info-item.info-print dl dd{
+	margin-left: 98px;
+}
+/* #vouPrint #vouPrint-tool-bar{
+	background-color: transparent;
+	padding: 0;
+	left: 0;
+}
+*/
+/* #vouPrint .ufma-tool-bar{
+	padding-right: 277px;
+}  */

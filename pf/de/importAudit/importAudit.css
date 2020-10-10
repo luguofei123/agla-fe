@@ -1,0 +1,89 @@
+#excelFileFrom .form-group{width:310px;margin:20px 0 0 0}
+#excelFileFrom .control-label{width:100px;text-align: right;float:left}
+#excelFileFrom .control-element{width:200px;float:left}
+
+.file-upload-box {
+    padding: 0 50px;
+    margin: 16px 0;
+    height: 62px;
+    line-height: 62px;
+}
+
+.file-upload-box-text {
+    float: left;
+    width: 500px;
+}
+
+.file-upload-box-btn {
+	
+    display: inline-block;
+    width: 88px;
+    position: relative;
+}
+
+.file-upload-box-btn button {
+    border-radius: 0 4px 4px 0;
+}
+
+.file-upload-input {
+    width: 88px;
+    height: 30px;
+    overflow: hidden;
+    position: absolute;
+    top: 16px;
+    font-size: 100px;
+    opacity: 0;
+    filter: alpha(opacity=0);
+    cursor: pointer;
+}
+
+.file-upload-tip {
+    color: #999;
+    border: 1px #d9d9d9 solid;
+    border-radius: 4px;
+    padding-left: 5px;
+}
+
+.file-upload-title {
+    border: 1px #d9d9d9 solid;
+    padding-left: 5px;
+    border-radius: 4px;
+}
+
+.file-upload-title i {
+    color: #999;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+.file-upload-box {
+    float: left;
+    margin: 0;
+    border: none;
+    height: auto;
+    line-height: normal;
+    padding: 0;
+}
+
+.file-upload-box-text {
+    height: 30px;
+    border-radius: 2px;
+    line-height: 30px;
+    margin-right: -2px;
+    background-color: #fff;
+}
+
+.file-upload-input {
+    top: 0;
+}
+
+.btn {
+
+    padding: 5px 15px;
+
+}
+.file-upload-tip, .file-upload-title {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}

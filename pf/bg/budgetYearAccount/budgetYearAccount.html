@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>指标年结</title>
+    <meta
+      content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
+      name="viewport"
+    />
+    <script
+      src="../../pub/boot.js?rev=@@hash"
+      type="text/javascript"
+      charset="utf-8"
+    ></script>
+    <link rel="stylesheet" href="../pub/bgPub.css?rev=@@hash" />
+    <link rel="stylesheet" href="../pub/common.css?rev=@@hash" />
+    <link rel="stylesheet" href="budgetYearAccount.css?rev=@@hash" />
+  </head>
+
+  <body>
+    <div class="container-fluid ufma-container">
+      <div class="workspace" style="padding: 6px 15px 15px;">
+        <!--工作区顶部 begin-->
+        <div class="workspace-top">
+          <div class="uf-portlet">
+            <div class="portlet-title">
+              <div class="caption">
+                <span class="caption-main">指标年结</span>
+                <span>
+                  <div
+                    class="uf-treecombox ufma-combox-agency"
+                    id="cbAgency"
+                    name="agencyCode"
+                    idField="id"
+                    textField="codeName"
+                    pIdField="pId"
+                    readonly="true"
+                    icon="icon-unit"
+                    theme="label"
+                    autocomplete="on"
+                    placeholder="请选择单位"
+                  ></div>
+                </span>
+              </div>
+            </div>
+            <div id="onePage" class="hide">
+              <p id="agencyText"></p>
+              <p id="statusText" class="hide">未年结</p>
+              <p id="arginText" class="hide">已结转</p>
+              <button
+                id="beginEnd"
+                type="button"
+                class="btn btn-sm btn-primary btn-beginEnd"
+              ></button>
+            </div>
+            <div id="zdzzTimeline" class="hide"></div>
+          </div>
+        </div>
+        <!--工作区中部 begin-->
+        <div class="workspace-center">
+          <div id="dataCheckArea" class="hide">
+            <div id="checkProgress">
+              <p class="checkData">数据检查</p>
+              <div class="checkPro">
+                <div class="box">
+                  <div class="tbox">
+                    <div class="tiao" id="checkbar"></div>
+                    <div class="content"></div>
+                  </div>
+                </div>
+              </div>
+              <p class="showTip">正在检查中，请稍等······</p>
+            </div>
+            <div class="rpt-table-tab dataCheckTable">
+              <table
+                class="ufma-table uf-rpt-table"
+                checke-tool-bar="#tool-bar"
+                id="dataCheck"
+              ></table>
+            </div>
+            <div class="btn-bar">
+              <div class="btnGroupsCheck">
+                <button
+                  id="dataCheckNext"
+                  type="button"
+                  class="btn btn-sm btn-primary btn-next"
+                >
+                  下一步
+                </button>
+                <button
+                  id="dataCheckCancel"
+                  type="button"
+                  class="btn btn-sm btn-default btn-cancel"
+                >
+                  上一步
+                </button>
+                <button
+                  id="dataCheckAgain"
+                  type="button"
+                  class="btn btn-sm btn-default btn-again"
+                >
+                  重新检查
+                </button>
+              </div>
+            </div>
+          </div>
+          <div id="carryOverArea" class="hide">
+             <!--<div class="planArea bg-portlet uf-portlet">
+              <div class="portlet-body bordered planModel">
+                <div id="searchPlanPnl" class="uf-form-group-panel form-horizontal" >
+                    <div class="actions" style="right: 51px; top: 0px;">
+                            <label class="btn-more-item label label-more hide" style="margin-left: -64px;"><span>更多</span><i class="glyphicon icon-angle-bottom"></i></label>
+                            <button class="btn btn-primary btn-query btn-permission" id="btnQry">查询</button>
+                    </div>
+                    <table id="budgetQuery">  
+                        <tr class="notEmpty">
+                        <td class="label-ctrl">预算方案：</td>
+                        <td class="form-ctrl">
+                            <div id="cbBgPlan" name="cbBgPlan" class="uf-treecombox" style="width: 300px;"></div>
+                        </td>
+                        </tr>
+                        <tr class="notEmpty lastrow" style="height: 0px;">
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        </tr>
+                    </table>
+                </div> 
+              </div>
+            </div>-->
+            <div class="rpt-table-tab carryOverTable">
+              <table
+                class="ufma-table uf-rpt-table"
+                carry-tool-bar="#carry-tool-bar"
+                id="carryOver"
+              ></table>
+            </div>
+            <div class="btn-bar">
+              <div class="btnGroups">
+                <button
+                  id="carryOverNext"
+                  type="button"
+                  class="btn btn-sm btn-primary btn-next"
+                >
+                  年结
+                </button>
+                <button
+                  id="carryOverPre"
+                  type="button"
+                  class="btn btn-sm btn-default btn-prev"
+                >
+                  上一步
+                </button>
+                <button
+                  id="carryOverCancel"
+                  type="button"
+                  class="btn btn-sm btn-default btn-cancel"
+                >
+                  反年结
+                </button>
+                <!--	<button id="carryOverCancel" type="button" class="btn btn-sm btn-default btn-cancel">取消</button>-->
+              </div>
+            </div>
+          </div>
+          <div id="dealArea" class="hide">
+            <div class="beforeDealArea">
+              <div class="btnTab">待处理指标</div>
+              <div class="formGroup">
+                <table id="formBefore" class="tableGroup"></table>
+              </div>
+            </div>
+            <div class="runDealArea">
+              <div class="btnTab">正在处理</div>
+              <div id="formRunning">
+                <div class="progressBar">
+                  <div id="bar"></div>
+                  <div class="runContent"></div>
+                </div>
+              </div>
+            </div>
+            <div class="afterDealArea">
+              <div class="btnTab">已处理指标</div>
+              <div class="formGroup">
+                <table id="formAfter" class="tableGroup"></table>
+              </div>
+            </div>
+            <div class="btn-bar">
+              <div class="btnGroupStree">
+                <button
+                  id="dealSure"
+                  type="button"
+                  class="btn btn-sm btn-primary btn-sure"
+                >
+                  完成
+                </button>
+
+                <!--<button id="dealCancel" type="button" class="btn btn-sm btn-default btn-cancel">取消</button>-->
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--<div id="tool-bar" class="ufma-tool-bar hide">
+					<div class="tool-bar-body">
+					</div>
+				</div>
+				<div id="carry-tool-bar" class="ufma-tool-bar hide">
+					<div class="tool-bar-body">
+					</div>
+				</div>-->
+      </div>
+    </div>
+    <script
+      src="../pub/bg.parse.js?rev=@@hash"
+      type="text/javascript"
+      charset="utf-8"
+    ></script>
+    <script
+      src="../pub/bgPub.js?rev=@@hash"
+      type="text/javascript"
+      charset="utf-8"
+    ></script>
+    <script
+      src="budgetYearAccount.js?rev=@@hash"
+      type="text/javascript"
+      charset="utf-8"
+    ></script>
+    <script
+      src="dm.js?rev=@@hash"
+      type="text/javascript"
+      charset="utf-8"
+    ></script>
+  </body>
+</html>

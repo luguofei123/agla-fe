@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>预收账款核销</title>
+	<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+	<script src="../../pub/boot.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+	<link rel="stylesheet" href="depAccount.css" />
+</head>
+
+<body>
+	<div id="coaAccEdit" class="ufma-layout-updown">
+		<div class="ufma-layout-up">
+			<form id="frmBookIn" class="container-fluid form-horizontal form-padding" style="padding-bottom: 0px;">
+				<div class="form-row">
+					<div class="form-group m0 p0">
+						<label class="control-label auto">备查类型：</label>
+						<div class="control-element">
+							<input id="receivableType" type="text" class="form-control" readonly="true" style="width:190px;background-color:#F2F2F2;color:#cccccc">
+						</div>
+					</div>
+					<div class="clearfix"></div>
+				</div>
+				<div class="panel ufma-panel" style="width:840px;height:142px;margin:0;margin-bottom: 10px;">
+					<div class="panel-heading">
+						<div class="caption">备查信息</div>
+					</div>
+					<div class="panel-collapse collapse in">
+						<div class="panel-body" style="padding-left: 30px;padding-top: 16px;">
+							<div class="form-row">
+								<div class="form-group">
+									<label class="control-label">发生日期：</label>
+									<div class="control-element">
+										<div id="occurDate" name="occurDate" class="uf-datepicker" style="width:180px;"></div>
+									</div>
+								</div>
+								<div class="form-group" style="margin-left: 40px;">
+									<label class="control-label">往来单位：</label>
+									<div class="control-element">
+										<div id="currentCode" class="uf-treecombox w160" name="currentCode" idField="code" textField="codeName"
+											 leafRequire=true></div>
+									</div>
+								</div>
+								<div class="form-group">
+									<label class="control-label">票据类型：</label>
+									<div class="control-element">
+										<div id="billtypeCode" class="uf-treecombox" name="billtypeCode" idField="code" textField="codeName"
+											 leafRequire=true style="width:172px"></div>
+									</div>
+								</div>
+								<div class="clearfix"></div>
+							</div>
+							<div class="form-row">
+								<div class="form-group" style="margin-left: 14px;">
+									<label class="control-label">票据号：</label>
+									<div class="control-element">
+										<input type="text" name="billNo" class="form-control w160">
+									</div>
+								</div>
+								<div class="form-group">
+									<label class="control-label">预收金额：</label>
+									<div class="control-element">
+										<input id="depositMoney" type="text" name="depositMoney" class="form-control w160">
+									</div>
+								</div>
+								<div class="clearfix"></div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</form>
+			<form id="frmCancel" class="container-fluid form-horizontal " style="padding-left: 30px;">
+				<div class="panel ufma-panel" style="width:840px;height:138px;">
+					<div class="panel-heading">
+						<div class="caption">核销信息</div>
+					</div>
+					<div class="panel-collapse collapse in">
+						<div class="panel-body" style="padding:16px 30px;">
+
+							<div class="form-row">
+								<div class="form-group" style="margin-left: 0px;">
+									<label class="control-label">核销日期：</label>
+									<div class="control-element">
+										<div name="occurDate" id="occurDate" class="uf-datepicker" style="width:180px;"></div>
+									</div>
+								</div>
+								<div class="form-group" style="margin-left: 40px;">
+									<label class="control-label">核销金额：</label>
+									<div class="control-element">
+										<input id="money" type="text" name="money" class="form-control">
+									</div>
+								</div>
+								<div class="clearfix"></div>
+							</div>
+							<div class="form-row">
+								<div class="form-group p0" style="margin-left: 27px;">
+									<label class="control-label ">备注：</label>
+									<div class="control-element">
+										<input type="text" name="remark" class="form-control" style="width:432px;">
+									</div>
+								</div>
+								<div class="clearfix"></div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</form>
+
+		</div>
+		<div class="ufma-layout-down bordered-top">
+			<div class="text-right  margin-right-30">
+				<button type="button" class="btn btn-sm btn-primary btn-permission btn-save btn-ajax" id="btnSave">保存</button>
+				<button type="button" class="btn btn-sm btn-default" id="btnClose">取消</button>
+			</div>
+		</div>
+	</div>
+	<script src="dm.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+	<script src="cancel.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+</body>
+
+</html>

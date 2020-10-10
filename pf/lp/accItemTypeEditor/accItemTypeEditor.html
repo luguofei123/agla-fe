@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>辅助核算</title>
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <script src="../../pub/boot.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+    <link rel="stylesheet" type="text/css" href="accItemTypeEditor.css?rev=@@hash"/>
+    <style type="text/css">
+    .uf-grid-body td {
+        height: 30px;
+    }
+    .uf-grid-table-edit .uf-form-control,
+    .uf-grid-table-edit .uf-buttonedit-border,
+    .uf-grid-table-edit .uf-combox-border,
+    .uf-grid-table-edit .uf-buttonedit,
+    .uf-grid-table-edit .uf-combox,
+    .uf-grid-table-edit .uf-treecombox,
+    .uf-grid-table-edit .uf-datepicker {
+        height: 28px;
+    }
+    .uf-grid-table-edit .uf-combox .uf-combox-border {
+        height: 28px !important;
+    }
+    .uf-grid-table-edit input[type="text"] {
+        width: 95%;
+    }
+    </style>
+</head>
+
+<body>
+<div class="ufma-layout-updown">
+    <div class="ufma-layout-up">
+        <div class="container-fluid">
+            <div id="accItemTypeEditor" style="padding:10px 0px 10px 0px;margin:0 auto;">
+                <!-- 辅助核算 begin -->
+                <div class="panel ufma-panel" style="margin-top: 20px;">
+                    <div id="tgAccount" class="panel-collapse collapse in">
+                        <div class="panel-body">
+                            <div class="container-fluid form-horizontal">
+                                <div id="tgAccounttable" class="tab-content" style="height: auto !important;"></div>
+                            </div>
+                        </div>
+                        <div class="panel-foot" style="width: 100%;">
+                            <button class="btn btn-default" id="tgAccountbutton" style="width:100px;margin:15px auto;display: block;">
+                                <span class="icon-add" style="margin-right: 8px;"></span>新增行
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <!-- 辅助核算 end -->
+            </div>
+        </div>
+    </div>
+    <div class="ufma-layout-down bordered-top">
+        <div class="text-right margin-right-30">
+            <button type="button" class="btn btn-sm btn-primary btn-save margin-bottom-5"
+                    id="btn-FormulaEditorsave">确定
+            </button>
+        </div>
+    </div>
+</div>
+<script src="accItemTypeEditor.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+</body>
+
+</html>

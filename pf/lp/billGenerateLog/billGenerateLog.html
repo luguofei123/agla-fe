@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>业务日志</title>
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <script src="../../pub/boot.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+    <link rel="stylesheet" type="text/css" href="../lpCommon/lpCommon.css?rev=@@hash"/>
+    <link rel="stylesheet" type="text/css" href="billGenerateLog.css?rev=@@hash"/>
+</head>
+<body id="">
+<!--整个容器 begin-->
+<div id="billGenerateLog" class="container-fluid ufma-container">
+    <!--工作区 begin-->
+    <div id="pzlrtzdiv" style="display: none;"></div>
+    <div class="workspace">
+        <!--会计平台工作区 begin-->
+        <div class="lp-workspace" style="margin-bottom:0">
+            <!--标题位 begin-->
+            <div class="lp-selete-box bordered-bottom">
+                <!--标题 begin-->
+                <div class="lp-title">业务日志</div>
+                <!--标题 end-->
+                <div class="ufma-treecombox ufma-combox-agency" id="bdAgency2"
+                     style="visibility:visible;margin-left: 30px"></div>
+            </div>
+            <!--标题位 end-->
+            <!--查询 begin-->
+            <div class="lp-box lp-query-box">
+                <!--查询条件 begin-->
+                <div class="lp-query-box-left">
+                    <!--上半部显示 begin-->
+                    <ul class="lp-query-box-top">
+                        <!--第一行 begin-->
+                        <li class="lp-query-box-li clearfix padding-right-pos">
+                            <!--单据类型 begin-->
+                            <div class="lp-query-li col-md-4" style="padding-left: 0">
+                                <label class="lp-query-li-cont-title">单据方案：</label>
+                                <div class="lp-query-li-cont" style="padding-left: 4px">
+                                    <!--<div id="vgBillType" class="lp-query-btn-cont btn-with-ellipsis">-->
+                                    <!--&lt;!&ndash; 单据类型 开始位置 &ndash;&gt;-->
+                                    <!--</div>-->
+                                    <div id="vgBillType" class="uf-combox" style="width: 180px">
+                                    </div>
+                                </div>
+                            </div>
+                            <!--单据类型 end-->
+                            <div class="lp-query-li col-md-8">
+                                <label class="lp-query-li-cont-title">操作时间：</label>
+                                <div class="lp-query-li-cont">
+                                    <div id="vgTime" class="lp-query-btn-cont">
+                                        <button id="vgTimeYear" class="btn btn-default">本年</button>
+                                        <button id="vgTimeMonth" class="btn btn-primary">本期</button>
+                                        <button id="vgTimeDay" class="btn btn-default">今日</button>
+                                    </div>
+                                    <div class="query-date">
+                                        <div id="dateStart" name="dateStart" class="uf-datepicker" style="width:120px;display: inline-block"></div>
+                                        至
+                                        <div id="dateEnd" name="dateEnd" class="uf-datepicker" style="width:120px;display: inline-block"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <!--第一行 end-->
+                        <li class="lp-query-box-li more-condition-part clearfix padding-right-pos"
+                            style="display: none">
+                            <div>
+                                <div class="lp-query-li col-md-4" style="padding-left: 0">
+                                    <label class="lp-query-li-cont-title">操作类型：</label>
+                                    <div class="lp-query-li-cont">
+                                        <div id="optType" class="lp-query-btn-cont">
+                                            <!--<button class="btn btn-primary">单据接入</button>-->
+                                            <!--<button class="btn btn-default">单据作废</button>-->
+                                            <button class="btn btn-primary" data-id="01">凭证生成</button>
+                                            <button class="btn btn-default" data-id="03">单据接入</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="lp-query-li col-md-8">
+                                    <label class="lp-query-li-cont-title" style="width: 70px">操作人：</label>
+                                    <div class="lp-query-li-cont">
+                                        <div id="opt-person" class="lp-query-btn-cont">
+                                            <input type="text" id="opt-per-input" class="bordered-input padding-3 input-height"/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--<div>-->
+
+                            <!--</div>-->
+                        </li>
+                    </ul>
+                    <!--上半部显示 end-->
+                    <div class="lp-query-right-btn">
+                        <span class="tip-more"><i>更多</i><span class="glyphicon icon-angle-bottom"></span></span>
+                        <button class="btn btn-primary btn-query btn-permission" id="search-btn"
+                                style="margin-top:10px;vertical-align: baseline">查询
+                        </button>
+                    </div>
+                </div>
+                <!--查询条件 end-->
+            </div>
+            <!--查询 end-->
+            <div class="rpt-box rpt-table-box pr">
+                <div id="dtToolbar" class="btn-group" style="position: absolute;right: 10px">
+                </div>
+            </div>
+            <div class="table-part">
+                <table class="ufma-table uf-rpt-table" tool-bar="#tool-bar" id="showTable"></table>
+            </div>
+
+        </div>
+        <!--会计平台工作区 end-->
+        <div id="tool-bar" class="ufma-tool-bar">
+            <div class="tool-bar-body">
+                <!--toolbar-->
+                <!-- 分页相关 begin -->
+                <div class="ufma-table-paginate">
+                    <!-- 分页 开始位置 -->
+
+                </div>
+                <!-- 分页相关 end -->
+            </div>
+        </div>
+    </div>
+    <!--工作区 end-->
+    <div id="tableprint" class="ufma-modal">
+        <div class="u-msg-title">
+            <h4>打印模板选择</h4>
+        </div>
+        <div class="u-msg-content">
+            <div class="container-fluid margin-left-15 margin-right-15">
+                <ul class="list-unstyled">
+                    <li class="tips clearfix">
+                        <div class="tips-icon pull-left">
+                            <span class="glyphicon icon-point"></span>
+                        </div>
+                        <p class="pull-left">请选择打印模板！</p>
+                    </li>
+                    <!--<li class="setVouType clearfix">
+                        <label class="pull-left" for="" style="width: 100px;text-align: right;margin-bottom: 8px;">凭证类型：</label>
+                        <div class="pull-left">
+                            <select name="" class="bordered-input padding-3" id="rptStyle">
+
+                            </select>
+                        </div>
+                    </li>-->
+                    <li class="setVouTypecy clearfix">
+                        <label class="pull-left" for="" style="width: 100px;text-align: right;margin-bottom: 8px;">凭证类型：</label>
+                        <div class="pull-left">
+                            <select name="" class="bordered-input padding-3" id="rptTemplate">
+                            </select>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="u-msg-footer">
+            <div class="text-right  margin-right-30">
+                <button type="button" class="btn btn-sm btn-primary btn-save" id="btn-tableprintsave">保存</button>
+                <button type="button" class="btn btn-sm btn-default btn-qx" id="btn-tableprintqx">取消</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--整个容器 end-->
+<script src="../lpCommon/lpCommon.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+<script src="billGenerateLog.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+</body>
+</html>

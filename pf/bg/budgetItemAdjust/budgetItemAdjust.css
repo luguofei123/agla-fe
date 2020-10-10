@@ -1,0 +1,41 @@
+.bg-table-sub{
+  float: left;
+  position: relative;
+  width: 100%;
+}
+.bg-table-sub-action{
+  position: absolute;
+  right: 0px ;
+  top: 2px;
+}
+ .container-fluid{
+ 	padding-left:0px;
+ 	padding-right:0px;
+ }
+
+
+ .top-change-color{
+ 	border: 1px solid #ffffff!important;
+ 	background-color: #ffffff!important;
+ }
+  .uf-grid-headerCell  {
+    font-weight: bold;
+ }
+/*打印隐藏时导出按钮悬浮效果*/
+ #export:hover{
+ 	border-bottom-right-radius:4px;
+ 	border-top-right-radius:4px;
+ }
+ .commonShow {
+	max-width:250px;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	overflow: hidden;
+}
+/* .uf-grid-head .uf-grid-head-view{
+    width: 100% !important;
+} */
+/* CWYXM-18152 指标分解.指标调整界面打开加载不完全--zsj */
+.uf-timeline li {
+	min-width: 370px;
+}

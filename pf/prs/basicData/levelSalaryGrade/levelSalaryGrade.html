@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>级别工资档次</title>
+    <meta
+      content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
+      name="viewport"
+    />
+    <script
+      src="../../../pub/boot.js?rev=@@hash"
+      type="text/javascript"
+      charset="utf-8"
+    ></script>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="levelSalaryGrade.css?rev=@@hash"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="../../common/common.css?rev=@@hash"
+    />
+  </head>
+  <body>
+    <!--整个容器 begin-->
+    <div id="level-salary-grade" class="container-fluid ufma-container">
+      <div class="workspace">
+        <div class="prs-workspace">
+          <div class="ufma-portlet">
+            <div class="portlet-title">
+              <div class="caption">
+                <span class="caption-subject font-dark uppercase"
+                  >级别工资档次</span
+                >
+              </div>
+              <!-- <div class="agencycom">
+                  <div id='agencyCode' name="agencyCode" class="ufma-treecombox ufma-combox-agency" icon="icon-unit" url="/ma/sys/eleAgency/getAgencyTree"
+                      valueField="id" textField="codeName" readOnly=false  placeholder="请选择单位">
+                  </div>
+              </div> -->
+              <div class="actions">
+                <div>
+                  <button
+                    id="btn-save-level-salary-grade"
+                    type="button"
+                    class="btn btn-sm btn-primary btn-permission btn-save margin-right-10"
+                  >
+                    保存
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="table-sub">
+            <div class="table-sub-action clearfix">
+              <div id="dtToolbar" class="btn-group fr"></div>
+            </div>
+          </div>
+          <table
+            id="level-salary-grade-table"
+            tool-bar="#tool-bar"
+            class="ufma-table uf-rpt-table"
+          ></table>
+        </div>
+        <!-- <div id="tool-bar" class="ufma-tool-bar">
+          <div class="tool-bar-body">
+          </div>
+        </div> -->
+      </div>
+    </div>
+    <script
+      src="levelSalaryGrade.js?rev=@@hash"
+      type="text/javascript"
+      charset="utf-8"
+    ></script>
+  </body>
+</html>

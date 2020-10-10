@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>凭证打印</title>
+<meta
+	content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
+	name="viewport">
+<script src="../../pub/boot.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+<link rel="stylesheet" type="text/css" href="vouPrintOther.css?rev=@@hash" />
+</head>
+<body>
+	<!--整个容器 begin-->
+	<div id="vouPrint" class="container-fluid ufma-container">
+		<!--工作区 begin-->
+		<div class="workspace">
+			<!--凭证工作区 begin-->
+			<div class="vou-workspace">
+				<!--标题位 begin-->
+				<div class="vou-selete-box bordered-bottom">
+					<!--标题 begin-->
+					<div class="vou-title">凭证打印</div>
+					<!--标题 end-->
+
+					<!--单位&账套选择 begin-->
+					<ul class="vou-selete-list">
+						<li class="vou-selete-list-li">
+							<div id='cbAgency' name="agencyCode" class="ufma-treecombox ufma-combox-agency"></div>
+						</li>
+					</ul>
+					<!--单位&账套选择 end-->
+
+					<!--按钮 begin-->
+					<div class="vou-method-tip">
+						<!--<div class="btn-group pull-right" style="margin-left: 8px;">
+							<button class="btn btn-default btn-sm dropdown-toggle"
+								type="button" data-toggle="dropdown" aria-haspopup="true"
+								aria-expanded="false">
+								更多 <span class="caret"></span>
+							</button>
+							<ul class="dropdown-menu">
+								<li><a href="javascript:;" id="btn-printset"
+									class="btn-printset">打印设置</a></li>
+								<li><a href="javascript:;" id="btn-print-cover"
+									class="btn-print-cover">打印封面</a></li>
+							</ul>
+						</div>
+						<div class="btn-group pull-right" style="margin-left: 8px;">
+							<button type="button" id="btn-check-vou"
+								class="btn btn-sm btn-default btn-check-vou">凭证检查</button>
+						</div>
+						<div class="btn-group pull-right" style="margin-left: 8px;">
+							<button type="button" id="btn-direct-print"
+								class="btn btn-sm btn-default btn-direct-print">直接打印</button>
+						</div>
+						<div class="btn-group pull-right">
+							<button type="button" id="btn-print-preview"
+								class="btn btn-sm btn-primary btn-print-preview">打印预览</button>
+						</div>-->
+					</div>
+					<!--按钮 end-->
+				</div>
+				<!--标题位 end-->
+
+				<!--查询条件 begin-->
+				<div class="vou-box vou-query-box">
+					<!--第一行 begin-->
+					<div class="vou-query-box-li line-box">
+						<!--月份选择 begin-->
+						<div id="month-line" class="">
+							<div class="gray-line">
+								<ul class="list-unstyled blue-line">
+									<li class="blue-one choose"></li>
+									<li class="blue-one"></li>
+									<li class="blue-one"></li>
+									<li class="blue-one"></li>
+									<li class="blue-one"></li>
+									<li class="blue-one"></li>
+									<li class="blue-one"></li>
+									<li class="blue-one"></li>
+									<li class="blue-one"></li>
+									<li class="blue-one"></li>
+									<li class="blue-one"></li>
+									<li class="blue-one"></li>
+								</ul>
+							</div>
+							<ul class="list-unstyled month-text clearfix">
+								<li class="month-one choose"><a href="javascript:;"
+									data-fisPerd="1">1期间</a></li>
+								<li class="month-one"><a href="javascript:;"
+									data-fisPerd="2">2期间</a></li>
+								<li class="month-one"><a href="javascript:;"
+									data-fisPerd="3">3期间</a></li>
+								<li class="month-one"><a href="javascript:;"
+									data-fisPerd="4">4期间</a></li>
+								<li class="month-one"><a href="javascript:;"
+									data-fisPerd="5">5期间</a></li>
+								<li class="month-one"><a href="javascript:;"
+									data-fisPerd="6">6期间</a></li>
+								<li class="month-one"><a href="javascript:;"
+									data-fisPerd="7">7期间</a></li>
+								<li class="month-one"><a href="javascript:;"
+									data-fisPerd="8">8期间</a></li>
+								<li class="month-one"><a href="javascript:;"
+									data-fisPerd="9">9期间</a></li>
+								<li class="month-one"><a href="javascript:;"
+									data-fisPerd="10">10期间</a></li>
+								<li class="month-one"><a href="javascript:;"
+									data-fisPerd="11">11期间</a></li>
+								<li class="month-one"><a href="javascript:;"
+									data-fisPerd="12">12期间</a></li>
+							</ul>
+						</div>
+						<!--月份选择 end-->
+					</div>
+					<!--第一行 end-->
+					<div class="vou-query-box-pos">
+						<!--左侧 begin-->
+						<div class="vou-query-box-left">
+							<!--查询条件选择 begin-->
+							<ul class="vou-query-box-top">
+								<!--第二行 begin-->
+								<li class="vou-query-box-li clearfix">
+									<!--账套 begin-->
+									<div class="vou-query-li">
+										<label class="vou-query-li-cont-title">账套：</label>
+										<div class="vou-query-li-cont">
+											<div id="vpAcctCode" class="uf-textboxlist" style="min-width: 320px;"></div>
+										</div>
+									</div>
+									<!--账套 end-->
+									<!--凭证状态 begin-->
+									<div class="vou-query-li">
+											<label class="vou-query-li-cont-title">凭证状态：</label>
+											<div class="vou-query-li-cont">
+												<div id="vpVouStatus" class="vou-query-btn-cont">
+													<!-- 凭证状态按钮 开始位置 -->
+	
+												</div>
+											</div>
+										</div> <!--凭证状态 end--> 
+								</li>
+								<!--第二行 end-->
+
+								<!--第三行 begin-->
+								<li class="vou-query-box-li clearfix">
+									<!--凭证字号 begin-->
+									<!--<div class="vou-query-li">
+											<label class="vou-query-li-cont-title">凭证字号：</label>
+											<div class="vou-query-li-cont">
+												 <select id="vpVouTypeCode" class="bordered-input"></select> 
+												<input class="bordered-input padding-3" type="text"
+													id="vpStartVouNo" /> 至 <input
+													class="bordered-input padding-3" type="text" id="vpEndVouNo" />
+											</div>
+										</div>-->
+										<!--凭证字号 end-->
+										<!--制单人 begin-->
+										<div class="vou-query-li">
+											<label class="vou-query-li-cont-title">制单人：</label>
+											<div class="vou-query-li-cont">
+												<input class="bordered-input padding-3" type="text"
+													name="inputor" id="vpInputor" value="" /> <label
+													class="mt-checkbox mt-checkbox-outline"> <input
+													type="checkbox" id="vpShowOwn">当前用户 <span></span>
+												</label>
+											</div>
+										</div>
+										 <!--制单人 end-->
+								</li>
+								<!--第三行 end-->
+
+								<!--第四行 begin-->
+								<!-- <li class="vou-query-box-li clearfix"> -->
+									<!--凭证类型 begin-->
+									<!-- <div class="vou-query-li">
+										<label class="vou-query-li-cont-title">凭证类型：</label>
+										<div class="vou-query-li-cont">
+											<div id="vpVouTypeCodeBtn" class="vou-query-btn-cont">
+											</div>
+										</div>
+									</div> -->
+									<!--凭证类型 end-->
+									<!--会计体系 begin-->
+									<!-- <div class="vou-query-li">
+										<label class="vou-query-li-cont-title">会计体系：</label>
+										<div class="vou-query-li-cont">
+											<div id="vpAccaCode" class="vou-query-btn-cont">
+											</div>
+										</div>
+									</div> --> <!--会计体系 end--> 
+								<!-- </li> -->
+								<!--第四行 end-->
+							</ul>
+							<!--查询条件选择 end-->
+						</div>
+						<!--左侧 end-->
+
+						<!--右侧 begin-->
+						<div class="vou-query-box-right">
+							<div class="vou-query-btn">
+								<button id="btn-search" class="btn btn-primary btn-query">查询</button>
+							</div>
+						</div>
+						<!--右侧 end-->
+					</div>
+				</div>
+				<!--查询条件 end-->
+
+				<!--内容 begin-->
+				<div class="vou-box vou-table-box">
+					<!--表格部分 begin-->
+					<div class="vou-table-tab">
+						<table id="vouPrint-data" tool-bar="#vouPrint-tool-bar"
+							class="ufma-table dataTable fixed-table">
+							<thead>
+								<tr>
+									<th class="check-style nowrap"><label
+										class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
+											<input type="checkbox" class="group-checkable"
+											data-set="#data-table .checkboxes" />&nbsp; <span></span>
+									</label></th>
+									<th style="width: 100px;">日期</th>
+									<th style="width: 80px;">凭证字号</th>
+									<th class="ellipsis">账套</th>
+									<th class="ellipsis">摘要</th>
+									<th>金额</th>
+									<th class="ellipsis">制单人</th>
+									<th class="ellipsis">审核人</th>
+									<th class="ellipsis">记账人</th>
+									<th style="width: 72px;">打印次数</th>
+								</tr>
+							</thead>
+							<tfoot>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td>合计：</td>
+								<td><span class="amtSum nowrap"></span></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+							</tfoot>
+						</table>
+
+					</div>
+					<!--表格部分 end-->
+				</div>
+				<!--内容 end-->
+			</div>
+			<!--表格工具条 begin-->
+			<div id="vouPrint-tool-bar" class="ufma-tool-bar">
+				<div class="tool-bar-body">
+					<div class="ufma-tool-btns">
+						<label class="mt-checkbox mt-checkbox-outline margin-right-8">
+							<input type="checkbox" class="datatable-group-checkable" /> 全选 <span></span>
+						</label>
+						<button id="vou-print-preview" type="button" class="btn btn-sm btn-default btn-permission btn-print-preview">打印预览</button>
+					</div>
+				</div>
+			</div>
+			<!--表格工具条 end-->
+			<!--凭证工作区 end-->
+		</div>
+		<!--工作区 end-->
+	</div>
+	<!--整个容器 end-->
+	<script src="vouPrintOther.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+</body>
+</html>

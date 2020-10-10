@@ -1,0 +1,11 @@
+.control-label {
+    width: 100px;
+    text-align: right;
+}
+.list label{
+    display: block;
+}
+.list label i {
+    color: #108ee9;
+    padding-left: 6px;
+}

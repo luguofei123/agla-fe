@@ -1,0 +1,414 @@
+.bg-table-sub {
+  float: left;
+  position: relative;
+  width: 100%;
+}
+
+.bg-table-sub-action {
+  position: absolute;
+  right: 0px;
+  top: 2px;
+}
+
+.bgtestborder {
+  border: 1px black solid;
+}
+
+.bgMultiModalMain {
+  padding: 8px 20px 0px 20px !important;
+}
+
+.bg-div-height-space-12 {
+  min-height: 12px;
+}
+
+.bg-div-margin-top-bottom-8 {
+  margin-top: 8px;
+  margin-bottom: 8px;
+}
+
+.bg-multiModal-content {
+  position: relative;
+  float: left;
+  width: 100%;
+}
+
+.bg-multiModal-rightButton {
+  float: right;
+  margin-left: 8px;
+}
+
+.bg-multiModal-leftButton {
+  float: left;
+  margin-right: 8px;
+}
+
+.bg-multiModal-topDiv {
+  position: relative;
+  float: left;
+  height: 30px;
+}
+
+.bg-multiModal-rightTopDiv {
+  position: relative;
+  float: right;
+  height: 30px;
+}
+
+.bg-multiModal-topDiv-30right {
+  margin-right: 30px;
+}
+
+.bg-multiModal-topDiv-60right {
+  margin-right: 60px;
+}
+
+.bg-multiModal-dtp {
+  width: 125px;
+}
+
+.bg-multiModal-bgplan {
+  width: 210px;
+}
+
+.bg-multiModal-fileCount {
+  width: 33px;
+}
+
+.bg-multiModal-fileBtn {
+  width: 45px;
+}
+
+.bgMultiModalForm .inputHeight {
+  height: 30px !important;
+}
+
+.bgMultiModal-footer1 {
+  height: 50px;
+  border: 0px !important;
+  position: relative;
+}
+
+.bgMultiModal-footer2 {
+  height: 62px;
+}
+
+.bg-multiModal-tbl-addRow {
+  position: absolute;
+  left: 430px;
+  top: 10px;
+  width: 200px;
+  height: 30px;
+}
+
+.bgMultiModal-footer1 span {
+  position: relative;
+  width: 30px;
+  left: -35px;
+}
+
+.bgMultiModal-tbl {
+  /**transform : translateY(-8px);**/
+}
+
+.bgMultiModal-tbl tr td {
+  border: 1px #DFE6EC solid !important;
+}
+
+.bgMultiModal-tbl thead th {
+  border: 1px #DFE6EC solid !important;
+  text-align: center !important;
+}
+
+.bgMultiModal-tbl-pnl {
+  width: 100% !important;
+}
+
+.bgMultiModal-tbl-Height {}
+
+.bg-mainTableFooterDiv {
+  position: relative;
+  float: left;
+  width: 100%;
+}
+
+.bg-mainTableFooterDiv .rightDiv {
+  position: relative;
+  float: right;
+}
+
+.bg-mainTableFooterDiv .leftDiv {
+  position: relative;
+  float: left;
+}
+
+.bg-multi-floatLeft-1 {
+  position: relative;
+  float: left;
+  margin: 4px 4px 0 0;
+}
+
+.bg-top-4 {
+  top: 4px;
+}
+
+.bg-top-8 {
+  top: 8px;
+}
+
+.bg-top-12 {
+  top: 12px;
+}
+
+.billRow-a {
+  height: 35px;
+}
+
+.zbtz-data-border {
+  border-top: 1px solid #DFE6EC;
+  border-right: 1px solid #DFE6EC;
+  border-left: 1px solid #DFE6EC;
+  height: 38px;
+  margin-top: 12px;
+}
+
+.zbtz-data-font {
+
+  letter-spacing: 0.58px;
+  line-height: 38px;
+  text-align: center;
+  padding-left: 16px
+}
+
+#decompose-data {
+  height: auto !important;
+}
+
+.uf-grid-headerCell {
+  font-weight: bold;
+}
+
+.container-fluid {
+  padding-left: 0px;
+  padding-right: 0px;
+}
+
+.billtop-color {
+  color: black !important;
+}
+
+#decompose-dataBody {
+  height: 170px !important;
+}
+
+#select-data .tooltip {
+  z-index: 1000px;
+  top: 10px;
+}
+
+.div-scroll {
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.m10 {
+  margin: 10px;
+}
+
+.tc {
+  text-align: center;
+}
+
+.tab-content {
+  margin-top: 6px;
+}
+
+.heng-table-title {
+  display: inline-block;
+  position: relative;
+  height: 145px;
+  float: left;
+  border: 1px solid #DFE6EC;
+  border-right-width: 0px;
+  width: 4%;
+  padding-top: 28px;
+  border-bottom-left-radius: 3px;
+  border-top-left-radius: 3px;
+}
+
+.heng-table-title p {
+  font-weight: bold;
+  margin-bottom: 4px;
+  text-align: center;
+}
+
+.ma-input-group {
+  margin-bottom: 10px;
+}
+
+.ma-input-group .form-control {
+  height: 30px;
+}
+
+.ma-input-group .input-group-addon {
+  background: none;
+  padding: 6px 16px;
+  cursor: pointer;
+}
+
+.doc-ztree {
+  margin-left: 0px;
+}
+
+/*搜索按钮*/
+/* .iframeBtnsSearch{display: inline-block;overflow: hidden;vertical-align: middle;}
+.iframeBtnsSearch .btn{height:30px;}
+.searchHide{margin-right:-6px;width:0;height:30px;vertical-align: middle;border-radius:3px 0 0 3px;} */
+@-moz-document url-prefix() {
+  .searchHide {
+    margin-right: -8px;
+  }
+}
+
+/*树样式重写*/
+/* .ztree li span.button.remove{margin-left: 16px;background-position:0 0;background-image:url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAAOCAYAAAAfSC3RAAAAAXNSR0IArs4c6QAAATxJREFUKBW9UsFKw0AQnZndlBQPmlqESr34CV68e7SI4G8oiCDi1bOQ0K9QL36C6HeoFfEgSfVgBRPU3XGStGQTBG9ussx7M29md5hFcNZi9LJh2V4y8LzjBgR8I6Sd14Pu1cxPM5BbA2YAxGeqrfruBuQLw2bT1eJClNyJY7VwMktxZMHWFQkmqGIADPd6zvPXPz7TR6VoS1vvoZFQUSxhBl8j0mq7oEGUvGuCtfH+0m2l/B3JDa3yaaXWYyeMT6TIbp4ShMlxJ4oPCxzFR4Fst5R2iUVcliuo3Ce2J41+55gBe7l1V+1EN/AX/v/EWo8IbKW3YoYC5KdynsjymORzVi1Rt/DUEqV53AdvmHlTsW4NnZwClnMMk4mwAbVp1BQ0ucnsk9bYn57I54x4Y1JTFGqKaxzxerzXff4BQBFiVqM5/xUAAAAASUVORK5CYII=');} */
+
+/*表格样式*/
+/* .ac-table table .zs-check-style{text-align: center;width:20px!important;}
+.ac-table table .zs-action-style{text-align: center;width:80px!important;} */
+
+.model-name {
+  float: left;
+  margin-top: 20px;
+  margin-left: 20px;
+  margin-bottom: 20px;
+}
+
+.model-input {
+  float: left;
+  margin-top: 20px;
+  margin-left: 10px;
+  margin-bottom: 20px;
+}
+
+.w260 {
+  width: 260px;
+}
+
+.w282 {
+  width: 282px;
+}
+
+.w210 {
+  width: 210px;
+}
+
+.w420 {
+  width: 420px;
+}
+
+/* .bg-table-sub-action{
+	right: 0px ;
+	top: 2px;
+  }
+  .bg-table-sub{
+	float: left;
+	position: relative;
+	width: 100%;
+  } */
+.vou-selete-list {
+  float: left;
+  height: 46px;
+  line-height: 46px;
+  margin-left: -16px;
+  margin-bottom: 0;
+}
+
+.vou-selete-list-li {
+  display: inline-block;
+  margin-right: 32px;
+}
+
+/* .query-tj {
+    position: relative;
+} */
+.query-left {
+  width: 100%;
+}
+
+.query-right {
+  position: absolute;
+  right: 8px;
+  top: 8px;
+  text-align: right;
+}
+
+.query-left-ul {
+  list-style: none;
+  margin-left: -40px;
+  margin-bottom: 0;
+}
+
+.query-left-li {
+  position: relative;
+  padding-left: 110px;
+  margin-top: 10px;
+  min-height: 30px;
+}
+
+.query-left .query-left-li:first-child {
+  margin-top: 0px;
+}
+
+.query-inline-block {
+  display: inline-block;
+}
+
+.query-select {
+  width: 100%;
+  min-width: 745px;
+}
+
+.query-select-dzfa {
+  border-radius: 4px;
+  height: 30px;
+  width: 100%;
+}
+
+.portlet-body {
+  background-color: #ECF6FD;
+}
+
+.model-input-new {
+  height: 30px;
+}
+
+.margin-left-64 {
+  margin-left: 64px;
+}
+
+.margin-right-64 {
+  margin-right: 64px;
+}
+
+/*
+    删除下发button样式
+*/
+.bottom-button {
+
+  height: 40px;
+  text-align: right;
+
+}
+
+.ufma-layout-slider-sm.ufma-layout-fixed-slider-left>.ufma-layout-content {
+  margin-left: 316px !important;
+}
+
+.btn-size {
+  font-size: 18px !important;
+}
+
+table.table-thead-center td {
+  text-align: left;
+}

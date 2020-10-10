@@ -1,0 +1,740 @@
+#zezhao {
+	width: 100%;
+	height: 100%;
+	background: rgba(64,64,64,0.60);
+	z-index: 2000;
+	position: fixed;
+	left: 0;
+	top: 0;
+}
+
+#zezhao .yu {
+	/*width: 200px;*/
+	height: 100px;
+	padding-left: 20px;
+	padding-right: 20px;
+	position: fixed;
+	left: 50%;
+	top: 50%;
+	margin-left: -100px;
+	margin-top: -50px;
+	background: #fff;
+	line-height: 100px;
+	text-align: center;
+	border-radius: 4px;
+}
+
+#moban {
+	background: #FFFFFF;
+	box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.20);
+	border-radius: 4px;
+	width: 1090px;
+	height: 460px;
+	position: absolute;
+	left: 50%;
+	top: 10px;
+	margin-left: -545px;
+}
+.mobanbc{
+    width: 1090px !important;
+    height: 460px !important;
+    position: absolute;
+    left: 50%;
+	top: 10px;
+    margin-left: -545px !important;
+}
+.moban-head {
+	width: 100%;
+	height: 48px;
+	border-bottom: 1px solid #D9D9D9;
+}
+
+.moban-head p {
+	line-height: 48px;
+	margin-left: 16px;
+	float: left;
+}
+
+.moban-head span {
+	line-height: 48px;
+	margin-right: 16px;
+	float: right;
+	cursor: pointer;
+}
+
+.moban-body{
+	height: 348px;
+	overflow: auto;
+}
+.mbname {
+	width: 100%;
+	margin-top: 24px;
+	position: relative;
+}
+
+.mbname p {
+	display: inline-block;
+	margin-left: 30px;
+	line-height: 30px;
+}
+
+.mbname #mobanmc {
+	width: 202px;
+	height: 30px;
+	padding-left: 8px;
+	margin-left: 8px;
+	background: #FFFFFF;
+	border: 1px solid #D9D9D9;
+	border-radius: 4px;
+	display: inline-block;
+}
+
+.mbcheck {
+	width: 100%;
+	height: 165px;
+	margin-top: 16px;
+}
+
+.mbcheck p {
+    float: left;
+    line-height: 30px;
+    margin-left: 30px;
+}
+
+.mbcheck .kxys {
+	float: left;
+	width: 852px;
+	height: 163px;
+	margin-left: 8px;
+	border: 1px solid #D9D9D9;
+	border-radius: 4px;
+}
+
+.mbcheck .kxys .kxyskx {
+	width: 828px;
+	height: 105px;
+	border-bottom: 1px solid #D9D9D9;
+	overflow-y: scroll;
+	padding-left: 24px;
+	padding-top: 18px;
+}
+
+.kxyskx label {
+	/*width: 130px;*/
+	height: 36px;
+	float: left;
+	margin-left: 8px;
+	font-weight: normal;
+}
+
+.kxysall .allchecked {
+	width: 78px;
+	height: 20px;
+	line-height: 20px;
+	float: left;
+	margin-top: 10px;
+	margin-left: 24px;
+}
+
+.kxysall .allnochecked {
+	width: 78px;
+	height: 20px;
+	line-height: 20px;
+	float: left;
+	margin-top: 10px;
+}
+
+input[type='radio'] {
+	width: 20px;
+	height: 20px;
+	vertical-align: middle;
+	opacity: 0;
+}
+
+input[type='checkbox'] {
+	width: 18px;
+	height: 18px;
+	vertical-align: middle;
+	opacity: 0;
+}
+
+.input_style {
+	background: url('/pf/gl/vou/img/green.png') no-repeat;
+	width: 18px;
+	height: 18px;
+	display: inline-block;
+	border-radius: 4px;
+}
+
+.radio_bg {
+	background-position: -120px -2px;
+}
+
+.checkbox_bg {
+	background-position: 0 -2px;
+}
+
+.radio_bg_check {
+	background-position: -168px 0px;
+}
+
+.checkbox_bg_check {
+	background-position: -48px -2px;
+}
+
+.mbms {
+	width: 100%;
+	height: 85px;
+	margin-top: 16px;
+}
+
+.mbms p {
+	float: left;
+	margin-left: 30px;
+}
+
+.mbmstext {
+	width: 845px;
+	height: 83px;
+	resize: none;
+	padding-left: 8px;
+	border: 1px solid #D9D9D9;
+	border-radius: 4px;
+	margin-left: 8px;
+	overflow-y: scroll;
+}
+
+.mbgjz {
+	width: 100%;
+	/*height: 30px;*/
+	height: 48px;
+	margin-top: 18px;
+}
+
+.mbgjz p {
+	float: left;
+	margin-left: 94px;
+	line-height: 30px;
+}
+
+#mobangjz {
+	width: 420px;
+	height: 30px;
+	margin-left: 8px;
+	padding-left: 8px;
+	border: 1px solid #D9D9D9;
+	border-radius: 4px;
+}
+
+.mbgx {
+	width: 100%;
+	height: 20px;
+	margin-top: 16px;
+}
+
+.mbgx p {
+	float: left;
+	margin-left: 108px;
+	line-height: 20px;
+}
+
+.mbgxradio {
+	margin-left: 8px;
+	line-height: 20px;
+}
+
+.mbgxradio label {
+	line-height: 16px;
+	margin-left: 8px;
+	margin-right: 8px;
+	font-weight: normal;
+}
+
+.moban-foot {
+	width: 100%;
+	height: 62px;
+	position: absolute;
+	bottom: 0px;
+	border-top: 1px solid #d9d9d9;
+}
+
+#mbqr {
+	width: 62px;
+	height: 30px;
+	background: #108EE9;
+	border: 1px solid #108EE9;
+	border-radius: 4px;
+	line-height: 30px;
+	text-align: center;
+	color: #fff;
+	float: right;
+	margin-right: 16px;
+	margin-top: 16px;
+	cursor: pointer;
+}
+
+#mbclose {
+	width: 62px;
+	height: 30px;
+	background: #FFFFFF;
+	border: 1px solid #D9D9D9;
+	border-radius: 4px;
+	line-height: 30px;
+	text-align: center;
+	float: right;
+	margin-right: 8px;
+	margin-top: 16px;
+	cursor: pointer;
+}
+
+.srmbsearch {
+	/*width: 100%;*/
+	height: 30px;
+	margin-top: 25px;
+	margin-left: 313px;
+}
+
+#mobansearch {
+	width: 412px;
+	height: 30px;
+	background: #FFFFFF;
+	border: 1px solid #008FF0;
+	border-bottom-left-radius: 4px;
+	border-top-left-radius: 4px;
+	/*margin-left: 313px;*/
+	float: left;
+	padding-left: 8px;
+}
+
+.mbbtnsearch {
+	width: 45px;
+	height: 32px;
+	background: #008FF0;
+	border-radius: 0 4px 4px 0;
+	line-height: 32px;
+	text-align: center;
+	color: #fff;
+	font-size: 17px;
+	float: left;
+	cursor: pointer;
+	/*margin-left: 735px;
+	margin-top: -32px;*/
+}
+
+.srmbsearchtext {
+	/*width: 100%;*/
+	height: 19px;
+	margin-top: 8px;
+}
+
+.srmbsearchtext span {
+	float: left;
+	margin-left: 313px;
+}
+
+.srmbsearchtext a {
+	text-decoration: none;
+	float: left;
+	margin-right: 8px;
+	line-height: 19px;
+	cursor: pointer;
+}
+
+.mbtabheadall {
+	width: 1010px;
+	height: 35px;
+	margin: 0 auto;
+	border-bottom: 1px solid #108EE9;
+	float: left;
+	margin-left: 40px;
+}
+
+.mbtabhead {
+	padding: 8px 16px;
+	background: #fff;
+	border-top-left-radius: 4px;
+	border-top-right-radius: 4px;
+	float: left;
+	cursor: pointer;
+}
+
+.mbtabhead span {
+	padding: 0px 4px;
+	font-family: PingFangSC-Regular;
+	font-size: 12px;
+	color: #fff;
+	letter-spacing: 0;
+	border-radius: 4px;
+	background: #FFBF00;
+}
+
+.mbtabheadall .sed {
+	background: #108EE9;
+	color: #fff;
+}
+
+.mbtabheadall .sed span {
+	color: #FFBF00;
+	background: #fff;
+}
+
+.mbtabsx {
+	width: 1010px;
+	height: 19px;
+	margin: 0 auto;
+	margin-top: 8.5px;
+}
+
+.mbtabsx a {
+	float: left;
+	text-decoration: none;
+	margin-right: 24px;
+	cursor: pointer;
+}
+
+.mbtabbodyall {
+	width: 1030px;
+	/*height: 260px;*/
+	overflow-y: auto;
+	padding-left: 40px;
+	margin-top: 16px;
+	display: none;
+}
+
+.mbtabbody {
+	width: 240px;
+	height: 114px;
+	margin-right: 16px;
+	margin-bottom: 16px;
+	border-top: 3px solid #108EE9;
+	box-sizing: border-box;
+	float: left;
+	position: relative;
+	background: #FFFFFF;
+	box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.20);
+	border-radius: 4px;
+	cursor: pointer;
+}
+
+.mbtabbodyxz {
+	width: 240px;
+	height: 114px;
+	margin-right: 16px;
+	margin-bottom: 16px;
+	border-top: 3px solid #108EE9;
+	box-sizing: border-box;
+	float: left;
+	position: relative;
+	background: #FFFFFF;
+	box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.20);
+	border-radius: 4px;
+	cursor: pointer;
+}
+
+.mbtabbodyall .xz {
+	border: 1px dashed #D9D9D9;
+}
+
+.mbtabbodyall .xz span {
+	float: left;
+	width: 100%;
+	margin-top: 25px;
+	color: #999999;
+	font-size: 38px;
+	line-height: 50px;
+	text-align: center;
+}
+
+.mbtabbodyall .xz p {
+	margin-top: 8.4px;
+	text-align: center;
+	line-height: 18px;
+	cursor: pointer;
+}
+
+.mbtabbody-head {
+	float: left;
+	margin-left: 16px;
+	margin-top: 11px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	width: 165px;
+}
+
+.mbtabbody-lixin {
+	padding: 0px 8px;
+	font-size: 10px;
+	color: #FFBF00;
+	letter-spacing: 0;
+	border: 1px solid #FFBF00;
+	border-radius: 4px;
+	margin-right: 16px;
+	margin-top: 12px;
+	float: right;
+}
+
+.mbtabbody-zaiyao {
+	float: left;
+	position: absolute;
+	left: 16px;
+	top: 38px;
+	font-size: 12px;
+}
+
+.mbtabbody-jie {
+	float: left;
+	position: absolute;
+	left: 32px;
+	top: 62px;
+	font-size: 12px;
+}
+
+.mbtabbody-dai {
+	float: left;
+	position: absolute;
+	left: 40px;
+	top: 82px;
+	font-size: 12px;
+}
+
+.mbtabbody a {
+	text-decoration: none;
+}
+
+.mbtabbody .mbxiu {
+	position: absolute;
+	left: 180px;
+	top: 80px;
+	cursor: pointer;
+}
+
+.mbtabbody .mbdel {
+	position: absolute;
+	left: 210px;
+	top: 80px;
+	cursor: pointer;
+}
+
+.moban-footer {
+	float: left;
+	margin-top: 40px;
+	background: #FFFFFF;
+	font-size: 12px;
+	width: 100%;
+	line-height: 18px;
+	text-align: center;
+}
+
+.moban-footer .moban-footerp {
+	font-size: 12px;
+	line-height: 18px;
+}
+
+.srmbmobal {
+	position: absolute;
+	left: 0;
+	top: 49px;
+	width: 1090px;
+	height: 524px;
+	background: rgba(153, 153, 153, 0.3);
+	display: none;
+}
+
+.srmbmoballeft {
+	position: absolute;
+	left: 98px;
+	top: 222px;
+	font-size: 36px;
+	color: #fff;
+	text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+	cursor: pointer;
+}
+
+.srmbmobalright {
+	position: absolute;
+	right: 92px;
+	top: 222px;
+	font-size: 36px;
+	color: #fff;
+	text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+	cursor: pointer;
+}
+
+.srmbmobalbody {
+	width: 790px;
+	height: 458px;
+	position: absolute;
+	left: 149px;
+	top: 20px;
+	background: #FFFFFF;
+	box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.20);
+	border-radius: 4px;
+}
+
+.srmbmobalbodyleft {
+	width: 317px;
+	height: 354px;
+	position: absolute;
+	left: 59px;
+	top: 45px;
+	background: #FFFFFF;
+	border: 1px solid #D9D9D9;
+	box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.20);
+	border-radius: 4px;
+}
+
+.srmbmobalbody-head {
+	float: left;
+	position: absolute;
+	left: 415px;
+	top: 45px;
+	line-height: 21px;
+	font-size: 16px;
+}
+
+.srmbmobalbody-head-body {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	width: 207px;
+	float: left;
+}
+
+.srmbmobalbody-head-sx {
+	border: 1px solid #FFBF00;
+	border-radius: 4px;
+	font-size: 10px;
+	color: #FFBF00;
+	letter-spacing: 0;
+	padding: 1px 8px;
+	margin-left: 8px;
+}
+
+.srmbmobalbody-tgz {
+	position: absolute;
+	left: 415px;
+	top: 90px;
+}
+
+.srmbmobalbody-cs {
+	width: 317px;
+	position: absolute;
+	left: 415px;
+	top: 117px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	word-wrap: break-word;
+	height: 83px;
+}
+
+.srmbmobalbody-xz {
+	position: absolute;
+	left: 415px;
+	top: 214px;
+}
+
+.srmbmobalbody-new {
+	width: 193px;
+	height: 30px;
+	float: left;
+	position: absolute;
+	left: 416px;
+	top: 242px;
+	background: #FFFFFF;
+	border: 1px solid #D9D9D9;
+	border-radius: 4px;
+	line-height: 30px;
+	text-align: center;
+	text-decoration: none;
+	letter-spacing: 0.58px;
+	cursor: pointer;
+}
+
+.srmbmobalbody-old {
+	width: 193px;
+	height: 30px;
+	float: left;
+	position: absolute;
+	left: 416px;
+	top: 280px;
+	background: #FFFFFF;
+	border: 1px solid #D9D9D9;
+	border-radius: 4px;
+	line-height: 30px;
+	text-align: center;
+	text-decoration: none;
+	letter-spacing: 0.58px;
+	cursor: pointer;
+}
+
+.srmbmobalbody-newold {
+	width: 193px;
+	height: 30px;
+	float: left;
+	position: absolute;
+	left: 416px;
+	top: 318px;
+	background: #FFFFFF;
+	border: 1px solid #D9D9D9;
+	border-radius: 4px;
+	line-height: 30px;
+	text-align: center;
+	text-decoration: none;
+	letter-spacing: 0.58px;
+	cursor: pointer;
+}
+
+.srmbmobalbodyleft-cw {
+	width: 317px;
+	height: 172px;
+	margin-top: 16px;
+}
+
+.srmbmobalbodyleft-cwhead {
+	padding-left: 21px;
+	background: #E6F4FD;
+	line-height: 26px;
+}
+
+.srmbmobalbodyleft-yu {
+	width: 317px;
+	height: 172px;
+}
+
+.srmbmobalbodyleft-yuhead {
+	padding-left: 21px;
+	background: #E6F4FD;
+	line-height: 26px;
+}
+
+.srmbmobalbodyleft-zhai {
+	margin-top: 3px;
+	padding-left: 22px;
+	line-height: 19px;
+}
+
+.srmbmobalbodyleft-jie {
+	padding-left: 40px;
+	line-height: 26px;
+}
+
+.srmbmobalbodyleft-dai {
+	padding-left: 48px;
+	line-height: 26px;
+}
+
+.srmbmobalbodyclose {
+	position: absolute;
+	right: 16px;
+	top: 16px;
+	font-size: 16px;
+	cursor: pointer;
+}
+#moban .ufma-textboxlist-border, .ufma-combox-border{
+	padding:0px;
+}
+#moban .ufma-textboxlist-input, .ufma-combox-input{
+    height: 28px;
+    padding-left: 8px;
+}

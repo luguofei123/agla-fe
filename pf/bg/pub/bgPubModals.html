@@ -1,0 +1,376 @@
+﻿<script type="text/html" id="impXlsFileModal">
+    <div class="modal fade bs-example-modal-lg" id="{ml_id}" tabindex="-1" role="dialog" aria-labelledby="ml_lbl">
+        <div class="modal-dialog modal-xm" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <!--关闭按钮 -->
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <!-- 弹层的标题  -->
+                    <h5 class="modal-title" id="{ml_lbl}">选择要导入的文件</h5>
+                </div>
+                <div class="modal-body">
+                    <!--编辑区begin-->
+                    <div class="container-fluid">
+                        <div>
+                            要导入的文件:&nbsp;
+                            <input type="text" name="fileCap" id="{ml_filePath}" class="bgPub-lbl-xlsfile"
+                                   type="text" value="">&nbsp;
+                            <button type="button" id="{ml_btn_filePath}" class="btn btn-sm btn-default" style="margin-bottom: 2px;">
+                                <a class="btn btn-icon-only btn-sm" data-toggle="tooltip" action="unactive"
+                                   title="打开文件">
+                                    <span class="glyphicon icon-search findXlsFile"></span></a>
+                                <!--icon-search-->
+                                <span></span>
+                            </button>
+                            <form id="{ml_fileForm}" style="display:none">
+                                <input type="file" name="file" id="{ml_btn_filePath_inputBtn}" >
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-sm btn-default btn-save" id="{ml_btn_imp}">导入</button>
+                    <button type="button" class="btn btn-sm btn-default btn-cancel" id="{ml_btn_cancel}"
+                            data-dismiss="modal">取消
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</script>
+<script type="text/html" id="selfInputModal">
+    <div class="modal fade bs-example-modal-lg" id="{selfinput_id}" tabindex="-1" role="dialog" aria-labelledby="ml_lbl">
+        <div class="modal-dialog modal-xm" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <!--关闭按钮 -->
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <!-- 弹层的标题  -->
+                    <h5 class="modal-title" id="{selfinput_lbl}">AAAAAAAA</h5>
+                </div>
+                <div class="modal-body">
+                    <!--编辑区begin-->
+                    <div class="container-fluid">
+                        <div>
+                            <h5 class='bgpub-bgnormal-postion-2' id="{selfinput_cap}">BBBBBBBBB</h5>:&nbsp;
+                            <input type="text" name="fileCap" id="{selfinput_input}" class="bgPub-lbl-xlsfile"
+                                   type="text" value="">&nbsp;
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-sm btn-default btn-save" id="{selfinput_btn_ok}">确定</button>
+                    <button type="button" class="btn btn-sm btn-default btn-cancel" id="{selfinput_btn_cancel}"
+                            data-dismiss="modal">取消
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</script>
+<script type="text/html" id="_PNL_MoreByBgPlan_initPaintModal">
+    <div class="bgPub-div-findMsg uf-form-group-panel">
+        <!-- 左侧查询框 -->
+        <div class="bgPub-div-findMsg-left" id="{id_bgPub_div_find_Left}">
+            <form>
+                <table class="bgPub-bgPlanTbl" id="{id_bgPub_div_find_Left_tbl}">
+                    <tr class="bgPub-bgPlanTbl-tr">
+                        <td class="bgPub-bgPlanTbl-lbl">
+                            <div class="bgPub-bgPlanTbl-lbl-right"
+                                 id="{id_bgPub_div_find_Left_tbl_firstRow_bgPlanName}">预算方案:
+                            </div>
+                        </td>
+                        <td class="bgPub-bgPlanTbl-blank-8p"></td>
+                        <td class="bgPub-bgPlanTbl-input">
+                            <div id="{id_bgPub_div_find_Left_tbl_firstRow_cbbBgPlan}"
+                                 class="uf-combox" style="width:200px;"/>
+                        </td>
+                        <td class="bgPub-bgPlanTbl-lbl">
+                            <div class="bgPub-bgPlanTbl-lbl-right " id="{id_bgPub_div_find_Left_tbl_firstRow_eleName}">
+                                &nbsp;
+                            </div>
+                        </td>
+                        <td class="bgPub-bgPlanTbl-blank-8p"></td>
+                        <td id="{id_bgPub_div_find_Left_tbl_firstRow_eleValue}" value="">
+                            <div id="{id_bgPub_div_find_Left_tbl_firstRow_cbbEleName}"
+                                 class="ufma-treecombox ufma-combox-border bgHide"/>
+                        </td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+        <!-- 右侧按钮 -->
+        <div class="bgPub-div-findMsg-right" id="{id_bgPub_div_find_Right}">
+            <div class="bgPub-div-findMsg-right-subdiv">
+                <button type="button" id="{id_bgPub_div_find_Right_btn_find}" class="btn btn-sm btn-query btn-primary btn-permission" style="display: none;">查询</button>
+            </div>
+            <div class="bgPub-div-findMsg-right-subdiv bgPub-div-btn-more">
+                <label id="{id_bgPub_div_find_Right_btn_more}"  class="label label-more btn-more-item" style="display: none;right: 18px;margin-top: 3px;"><span>更多</span></label>
+                <!-- <span id="{id_bgPub_div_find_Right_btn_more}" class="label btn-more-item label-more" style="display: none;">
+                    更多
+                </span> -->
+                <div class="arrow glyphicon icon-angle-bottom" style="display: none;right: 16px;margin-top:6px;"></div>
+            </div>
+        </div>
+    </div>
+</script>
+<script type="text/html" id="bgPubWaitModal">
+    <div id='{waitId}' class='modal fade waitDiv' tabindex='-1' role='dialog' aria-hidden='true'>
+        <div class='waitcircle-outter'>
+            <div class='waitcircle-inner' id='angle0' index='0' curindex='0'></div>
+            <div class='waitcircle-inner' id='angle30' index='1' curindex='1'></div>
+            <div class='waitcircle-inner' id='angle60' index='2' curindex='2'></div>
+            <div class='waitcircle-inner' id='angle90' index='3' curindex='3'></div>
+            <div class='waitcircle-inner' id='angle120' index='4' curindex='4'></div>
+            <div class='waitcircle-inner' id='angle150' index='5' curindex='5'></div>
+            <div class='waitcircle-inner' id='angle180' index='6' curindex='6'></div>
+            <div class='waitcircle-inner' id='angle210' index='7' curindex='7'></div>
+            <div class='waitcircle-inner' id='angle240' index='8' curindex='8'></div>
+            <div class='waitcircle-inner' id='angle270' index='9' curindex='9'></div>
+            <div class='waitcircle-inner' id='angle300' index='10' curindex='10'></div>
+            <div class='waitcircle-inner' id='angle330' index='11' curindex='11'></div>
+        </div>
+    </div>
+</script>
+<script type="text/html" id="bgPubWaitModal2">
+    <div id="{waitId-second}" class="modal fade waitDiv" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="bgloadEffect">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+</script>
+
+<script type=text/html id=bgPubLogModal>
+    <div class="modal fade bs-example-modal-lg" id="{_div_logModalId}"
+         tabindex="-1" role="dialog" aria-labelledby="{caption}">
+        <div class="modal-dialog modal-xm" role="document">
+            <div class="modal-content bgLogModalBody" id="{_div_logModal_contentId}">
+                <div class="modal-header" id="{_div_logModal_content_headId}">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><!-- 关闭按钮 -->
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <h4 class="modal-title">{cp}</h4>    <!-- 弹层的标题  -->
+                </div>
+                <div class="modal-body bgLogModalBody" id="{_div_logModal_content_bodyId}">
+                    <!--编辑区begin-->
+                    <table id="{_tbl_logModal_Id}">
+
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</script>
+
+
+<script type="text/html" id="bgPubAttachHtml">
+    <div class="modal fade bs-example-modal-lg" id="{_div_modalId}"
+         tabindex="-1" role="dialog" aria-labelledby="{caption}">
+        <form id="{_form_Id}">
+            <input id="AAAtest" name="bgfile" type="file" multiple class="file" data-overwrite-initial="false"/>
+        </form>
+        <div class="modal-dialog modal-xm" role="document">
+            <div class="modal-content impAttachmentBody" id="{_div_modal_contentId}">
+                <div class="modal-header" id="{_div_modal_content_headId}">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><!-- 关闭按钮 -->
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <h4 class="modal-title">{cp}</h4>    <!-- 弹层的标题  -->
+                </div>
+                <div class="modal-body impAttachmentBody" id="{_div_modal_content_bodyId}">
+                    <!--编辑区begin-->
+                    <!--//这里添加头部的提示信息和编辑按钮-->
+                    <div class="impAttachmentSubDiv Atop">
+                        <div class="impAttachmentSubDiv impAttachment-leftFloat">
+                            <span> 共有附件 &nbsp;</span><span
+                                id="attachNum">0</span><span>&nbsp;张</span>
+                        </div>
+                        <!--
+
+                        <div class="impAttachmentSubDiv impAttachment-rightButton">
+                            <button type="button" class="btn btn-sm btn-default btn-save impAttachment-rightButton"
+                                    id="{_btn_edit}">编辑
+                            </button>
+                        </div>
+                    </div>-->
+                    <!--//这里添加附件框框-->
+                    <div class="impAttachmentSubDiv impAttachmentSubDiv-boxbody"
+                         id="{_div_modal_content_body_fileBoxId}">
+                    </div>
+                    <!--//这里添加底部的上传按钮和关闭按钮-->
+                    <div class="impAttachmentSubDiv Abottom">
+                        <div class="impAttachmentSubDiv bottomBatch">
+                            <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
+                                <input type="checkbox" class="checkboxes" value="" name="mainRowCheck"
+                                       id="{_chk_selAll}"/>&nbsp;全选
+                                <span></span>
+                            </label>
+                        </div>
+                        <div class="impAttachmentSubDiv bottomBatch bbutton">
+                            <button type="button" class="btn btn-sm btn-primary" id="{_btn_del}">删除</button>
+                        </div>
+                        <div class="impAttachmentSubDiv impAttachment-rightButton bottomBtn">
+                            <button type="button" class="btn btn-sm btn-primary impAttachment-rightButton"
+                                    id="{_btn_upload}">上传
+                            </button>
+                            <button type="button" class="btn btn-sm btn-default impAttachment-rightButton"
+                                    data-dismiss="modal" id="{_btn_cancel}">关闭
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</script>
+
+<script type="text/html" id="bgPubReportFindPnl">
+    <div class="bgpub-bgnormal-postion-1">
+        <div class="bgpub-bgnormal-postion-1 bgpub-div-height-space-35">
+            <h5 class="bgpub-bgnormal-postion-2 bgPub-tabSheet-topDiv-10right">查询方案></h5>
+            <div class="bgpub-bgnormal-postion-2" id="{listOfCase}"></div>
+            <button class="bgpub-normal-rightButton-1 bgPub-bgPlanTbl-blank-8" id="{morePlanBtn}" style="display: none;"></button>
+        </div>
+        <div class="bgpub-bgnormal-postion-1 bgPub-div-findMsg">
+            <div class="bgPub-div-findMsg-left2" id="{findMsgLeftDiv}" >
+                <form>
+                    <table class="bgPub-bgPlanTbl" id="{findTable}">
+                        <tr class="bgPub-bgPlanTbl-tr notEmpty firtrow">
+                            <td class="bgPub-bgPlanTbl-lbl">
+                                <div class="bgPub-bgPlanTbl-lbl-right ">预算方案 :</div>
+                                
+                            </td>
+                            <td class="bgPub-bgPlanTbl-blank-8p"></td>
+                            <td class="bgPub-bgPlanTbl-lbl-right">
+                                <div class="bgpub-bgnormal-postion-2 uf-combox" id="{bgPlanName}" style="top: 4px;width: 200px;"></div>
+                                <button class="btn btn-sm bgpub-normal-leftButton-1" style="height: 30px;margin-left: 58px;margin-top: 4px;" id="{caseSetBtn}">
+                                    <div class="bgpub-bgnormal-postion-2" style="left: -10px; top: -2px;">
+                                        <a class="btn btn-icon-only btn-sm" data-toggle="tooltip" action= "unactive" title="设置">
+                                        <span class="glyphicon icon-setting"></span></a>
+                                    </div>设置 
+                                </button>
+                                <div class="bgpub-bgnormal-postion-2 " style="width : 20px">&nbsp;</div>
+                                <div class="bgpub-bgnormal-postion-2 " style="width : 90px; top: 10px;">截止日期 :</div>
+                                <div class="bgpub-bgnormal-postion-2 " style="width : 20px">&nbsp;</div>
+                                <div class="bgpub-bgnormal-postion-2 uf-datepicker enddate" id="{lastDate}" style="top: 4px;"></div>
+                            </td> 
+                        </tr>
+                        <tr class="bgPub-bgPlanTbl-tr notEmpty lastrow" >
+                            <td class="bgPub-bgPlanTbl-lbl">
+                                <div class="bgPub-bgPlanTbl-lbl-right">金额 :</div>
+                            </td>
+                            <td class="bgPub-bgPlanTbl-blank-8p"></td>
+                            <td class="bgPub-bgPlanTbl-lbl-right">
+                                <div class="bgpub-bgnormal-postion-2 " style="width : 1px">&nbsp;</div>
+                                <div class="bgpub-bgnormal-postion-2 bgPub-width-25per bgPub-Padding-top4">
+                                    <input onblur= "if( ! /^[0-9]+(.[0-9]{2})?$/.test(this.value)){this.value='';}" class="bordered-input" type="text" id="{inputFrom}" style="width: 100%; border-radius: 3px; height: 30px;"/>
+                                </div>
+                                <h5 class="bgpub-bgnormal-postion-2">&nbsp;至&nbsp;</h5>
+                                <div class="bgpub-bgnormal-postion-2 bgPub-width-25per bgPub-Padding-top4">
+                                    <input onblur= "if( ! /^[0-9]+(.[0-9]{2})?$/.test(this.value)){this.value='';}" class="bordered-input" type="text" id="{inputTo}" style="width: 100%; border-radius: 3px; height: 30px"/>
+                                </div>
+                                <div class="bgpub-bgnormal-postion-2 " style="width : 20px">&nbsp;</div>
+                                <div class="bgpub-bgnormal-postion-2 " style="width : 150px; top: 10px;">
+                                    <label class="mt-checkbox mt-checkbox-outline"><input type="checkbox" checked="" id="isShowDec">显示分解调整金额<span></span></label></div>
+                            </td>
+                            <td class="bgPub-bgPlanTbl-lbl">
+                                <div class="bgPub-bgPlanTbl-lbl-right" >&nbsp;</div>
+                            </td>
+                            <td class="bgPub-bgPlanTbl-blank-8p"></td>
+                        </tr>
+                    </table>
+                </form>
+            </div>  <!--icon-setting -->
+            <div class="bgPub-div-findMsg-right2" id="{4}">
+                <div class="bgPub-div-findMsg-right-subdiv">
+                    <button type="button" id="{saveBtn}" class="btn btn-sm btn-default btn-save btn-permission bgpub-normal-rightButton-1">保存</button>
+                    <button type="button" id="{findBtn}" class="btn btn-sm btn-primary btn-query btn-permission bgpub-normal-rightButton-1">查询</button>
+                </div>
+                <div class="bgPub-div-findMsg-right-subdiv label-more">
+                    <button type="button" id="{moreConditionBtn}" class="btn btn-sm bgPub-div-btn-more " style="margin-right: 0px;right: 12px;">
+                        更多<b></b>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="ufma-modal" z-index="-1" id="{setCaseModalId}">
+        <div class="u-msg-title">
+            <h4>设置查询要素</h4>
+        </div>
+        <div class="u-msg-content budgetItemTwoSidesAdjustMain " style="padding: 8px 20px 0px 20px ">
+            <div class="bgpub-bgnormal-postion-2 bgPub-lineCenter bgPub-normal-backgroudColor" style="width: 90%;">
+                <div class="bgpub-bgnormal-postion-2 bgPub-lineCenter bgPubTableRowNumCol">
+                    <div class="bgpub-bgnormal-postion-2">
+                        <h5>设置方式：</h5>
+                    </div>
+                    <div class="bgpub-bgnormal-postion-2" style="top: 8px;">
+                        <label class="mt-radio mt-radio-outline"><input type="radio" name="eleIsPri" id="{setCaseByBgItem}" pageindex="1"><span></span>按要素设置</label>
+                    </div>
+                    <div class="bgpub-bgnormal-postion-2 " style="width : 64px">&nbsp;</div>
+                    <div class="bgpub-bgnormal-postion-2" style="top: 8px;">
+                        <label class="mt-radio mt-radio-outline"><input type="radio" name="eleIsPri" id="{setCaseByCtrl}"  pageindex="2"><span></span>按控制方案设置</label>
+                    </div>
+                </div>
+            </div>
+            <div class="tabController step1 bgpub-bgnormal-postion-2" pageindex="1">
+                <div class="bgpub-bgnormal-postion-2" style="width: 46%; padding: 10px 20px 10px 30px;">
+                    <div class="bgpub-bgnormal-postion-1">
+                        所有指标要素
+                    </div>
+                    <div class="bgpub-bgnormal-postion-1">
+                        <div class="bgpub-bgnormal-postion-1 bgPub-border bgPub-autoScrollY bgRptCaseItemChoise" id="{allBgItemList}">
+
+                        </div>
+                    </div>
+                </div>
+                <div class="bgpub-bgnormal-postion-2" style="width: 8%;">
+                    <div class="bgpub-bgnormal-postion-1 " style="height:120px"></div>
+                    <div class="bgpub-bgnormal-postion-1 ">
+                        <button type="button" id="{choiseItemBtn}"
+                                class="btn btn-sm btn-default "> &gt;
+                        </button>
+                    </div>
+                    <div class="bgpub-bgnormal-postion-1 " style="height:20px"></div>
+                    <div class="bgpub-bgnormal-postion-1 ">
+                        <button type="button" id="{disChoiseItemBtn}"
+                                class="btn btn-sm btn-default "> &lt;
+                        </button>
+                    </div>
+                </div>
+                <div class="bgpub-bgnormal-postion-2 " style="width: 46%; padding: 10px 30px 10px 20px;">
+                    <div class="bgpub-bgnormal-postion-1">
+                        已选指标要素
+                    </div>
+                    <div class="bgpub-bgnormal-postion-1 bgPub-border bgPub-autoScrollY bgRptCaseItemChoise" id="{choisedBgItemList}">
+
+                    </div>
+                </div>
+            </div>
+            <div class="tabController step2 bgpub-bgnormal-postion-2" pageindex="2">
+                <div class="bgpub-bgnormal-postion-2 bgPub-lineCenter" style="width: 90%; padding-top: 16px;" id="{bgCtrlListDiv}">
+
+                </div>
+            </div>
+        </div>
+        <div class="u-msg-footer " style="height: 62px;">
+            <button type="button" id="{btnModalClose}"
+                    class="btn btn-sm btn-default btn-cancel bgpub-normal-rightButton-1" data-dismiss="modal">取消
+            </button>
+            <button type="button" id="{btnModalOK}"
+                    class="btn btn-sm btn-default btn-next bgpub-normal-rightButton-1">确认
+            </button>
+        </div>
+    </div>
+</script>

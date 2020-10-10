@@ -1,0 +1,17 @@
+.control-label {
+    width: 100px;
+    text-align: right;
+}
+.addBankDocs .control-label{
+    width: 170px;
+}
+.list label{
+    display: block;
+}
+.list label i {
+    color: #108ee9;
+    padding-left: 6px;
+}
+.value-opts {
+    margin: 10px 0;
+}

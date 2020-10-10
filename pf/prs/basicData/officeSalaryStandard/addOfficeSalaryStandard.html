@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>新增/编辑</title>
+    <meta
+      content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
+      name="viewport"
+    />
+    <script
+      src="../../../pub/boot.js?rev=@@hash"
+      type="text/javascript"
+      charset="utf-8"
+    ></script>
+    <script
+      src="../../common/common.js?rev=@@hash"
+      type="text/javascript"
+      charset="utf-8"
+    ></script>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="../../common/common.css?rev=@@hash"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="officeSalaryStandard.css?rev=@@hash"
+    />
+  </head>
+  <body>
+    <!--整个容器 begin-->
+    <div
+      id="add-office-salary-standard"
+      class="ufma-layout-updown office-salary-standard"
+    >
+      <div class="ufma-layout-up">
+        <div class="container-fluid">
+          <form id="frmQuery" class="form-horizontal" style="margin-top: 10px">
+            <div class="form-row">
+              <div class="form-group required font-size-0">
+                <label
+                  class="control-label font-size-14 text-align-left data-label"
+                  >职务名称：</label
+                >
+                <div class="control-element">
+                  <input
+                    id="dutyName"
+                    type="text"
+                    name="dutyName"
+                    class="form-control"
+                    style="width: 200px"
+                    autocomplete="off"
+                  />
+                </div>
+              </div>
+              <div class="clearfix"></div>
+            </div>
+            <div class="form-row">
+              <div class="form-group font-size-0">
+                <label
+                  class="control-label font-size-14 text-align-left data-label"
+                  >领导职务金额：</label
+                >
+                <div class="control-element">
+                  <input
+                    id="leaderSalary"
+                    type="text"
+                    name="leaderSalary"
+                    class="form-control text-align-right"
+                    style="width: 200px"
+                    autocomplete="off"
+                    onKeyUp="value=value.replace(/[^\d+-.]/g,'')"
+                    placeholder="请输入数字"
+                  />
+                </div>
+              </div>
+              <div class="clearfix"></div>
+            </div>
+            <div class="form-row">
+              <div class="form-group font-size-0">
+                <label
+                  class="control-label font-size-14 text-align-left data-label"
+                  >非领导职务金额：</label
+                >
+                <div class="control-element">
+                  <input
+                    id="unleaderSalary"
+                    type="text"
+                    name="unleaderSalary"
+                    class="form-control text-align-right"
+                    style="width: 200px"
+                    autocomplete="off"
+                    onKeyUp="value=value.replace(/[^\d+-.]/g,'')"
+                    placeholder="请输入数字"
+                  />
+                </div>
+              </div>
+              <div class="clearfix"></div>
+            </div>
+            <div class="form-row">
+            <div class="form-group font-size-0">
+                <label class="control-label font-size-14 data-label"
+                  >是否启用：</label
+                >
+                <div class="control-element font-size-14">
+                  <div class="btn-group radio-group" data-toggle="buttons">
+                    <label class="btn btn-default btn-sm active isUsed">
+                      <input
+                        type="radio"
+                        class="toggle"
+                        name="isUsed"
+                        value="Y"
+                        checked
+                      />是
+                    </label>
+                    <label class="btn btn-default btn-sm isUsed">
+                      <input
+                        type="radio"
+                        class="toggle"
+                        name="isUsed"
+                        value="N"
+                      />否
+                    </label>
+                  </div>
+                </div>
+              </div>
+             <div class="clearfix"></div>
+             </div>
+            <div class="form-row">
+              <div class="form-group font-size-0">
+                <label
+                  class="control-label font-size-14 text-align-left data-label"
+                  >对应职级：</label
+                >
+
+                <div class="control-element">
+                  <div
+                    id="lowestLevel"
+                    class="uf-treecombox"
+                    idField="code"
+                    textField="codeName"
+                    leafRequire="true"
+                    name="lowestLevel"
+                    style="width:120px"
+                  ></div>
+                </div>
+                <span class="split font-size-14">至</span>
+                <div class="control-element" style="width:120px;">
+                  <div
+                    id="highLevel"
+                    class="uf-treecombox"
+                    idField="code"
+                    textField="codeName"
+                    leafRequire="true"
+                    name="highLevel"
+                    style="width:120px"
+                  ></div>
+                </div>
+              </div>
+              <div class="clearfix"></div>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <div class="ufma-layout-down bordered-top">
+        <div class="text-right margin-right-30">
+          <button type="button" class="btn btn-sm btn-primary" id="btn-saveadd">
+            保存并新增
+          </button>
+          <button type="button" class="btn btn-sm btn-primary" id="btn-save">
+            保存
+          </button>
+          <button
+            type="button"
+            class="btn btn-sm btn-default btn-close"
+            id="btn-close"
+          >
+            关闭
+          </button>
+        </div>
+      </div>
+    </div>
+    <script
+      src="addOfficeSalaryStandard.js?rev=@@hash"
+      type="text/javascript"
+      charset="utf-8"
+    ></script>
+  </body>
+</html>

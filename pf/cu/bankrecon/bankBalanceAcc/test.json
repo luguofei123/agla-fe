@@ -1,0 +1,19 @@
+{
+    "data":[
+        {
+            "chrId":"ADEFLHALDHFKAHDFKAHDSFKJ",
+            "journal":"单据日期",
+            "statement":"单据日期"
+        },
+        {
+            "chrId":"ADEFLHALDHFKAHDFKAHDSFKJ",
+            "journal":"票据号",
+            "statement":"票据号"
+        },
+        {
+            "chrId":"ADEFLHALDHFKAHDFKAHDSFKJ",
+            "journal":"关联好",
+            "statement":"关联号"
+        }
+    ]
+}

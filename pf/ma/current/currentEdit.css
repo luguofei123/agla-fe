@@ -1,0 +1,24 @@
+#currentEdit input[type="text"],
+#currentEdit select{
+	width:210px;
+}
+#currentEdit .panel-body .container-fluid{
+	padding:0;
+}
+.selectess{
+	display: block;
+    padding:6px 12px;
+    line-height: 1.42857143;
+    color: #555;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+}
+/* 选择账户按钮 */
+.btnSetAccount{
+	cursor: pointer;
+    width: 20px;
+    margin-top: -24px; 
+    float: right;
+}

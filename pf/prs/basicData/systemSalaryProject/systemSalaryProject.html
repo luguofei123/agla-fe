@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>系统工资项目</title>
+    <meta
+      content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
+      name="viewport"
+    />
+    <script
+      src="../../../pub/boot.js?rev=@@hash"
+      type="text/javascript"
+      charset="utf-8"
+    ></script>
+    <script
+      src="../../common/common.js?rev=@@hash"
+      type="text/javascript"
+      charset="utf-8"
+    ></script>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="systemSalaryProject.css?rev=@@hash"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="../../common/common.css?rev=@@hash"
+    />
+  </head>
+  <body>
+    <!--整个容器 begin-->
+    <div id="system-salary-project" class="container-fluid ufma-container">
+      <div class="workspace">
+        <div class="prs-workspace">
+          <div class="ufma-portlet">
+            <div class="portlet-title">
+              <div class="caption">
+                <span class="caption-subject font-dark uppercase"
+                  >系统工资项目</span
+                >
+              </div>
+              <div class="actions">
+                <div>
+                  <button
+                    id="btn-add-system-salary-project"
+                    type="button"
+                    class="btn btn-sm btn-primary btn-permission btn-add"
+                  >
+                    新增
+                  </button>
+                </div>
+              </div>
+            </div>
+            <!-- 查询条件 -->
+            <div class="portlet-body bordered pr">
+              <div class="query-box-left">
+                <form id="frmQuery" class="form-horizontal">
+                  <div class="form-row">
+                    <div
+                      class="form-group margin-left-40 font-size-0 col-xs-10 col-sm-5 col-md-5"
+                    >
+                      <label
+                        class="control-label font-size-14 text-align-left data-label"
+                        >工资项目编码：</label
+                      >
+                      <div class="control-element" style="width:180px;">
+                        <input
+                          id="pritemCode"
+                          type="text"
+                          name="pritemCode"
+                          class="form-control"
+                          maxlength="200"
+                          style="width: 180px"
+                          autocomplete="off"
+                        />
+                      </div>
+                    </div>
+                    <div
+                      class="form-group font-size-0 col-xs-10 col-sm-5 col-md-5"
+                    >
+                      <label
+                        class="control-label font-size-14 text-align-left data-label"
+                        >工资项目名称：</label
+                      >
+                      <div class="control-element" style="width:180px;">
+                        <input
+                          id="pritemName"
+                          type="text"
+                          name="pritemName"
+                          class="form-control"
+                          maxlength="200"
+                          style="width: 180px"
+                          autocomplete="off"
+                        />
+                      </div>
+                    </div>
+                    <div class="clearfix"></div>
+                  </div>
+                </form>
+              </div>
+              <div class="query-box-right">
+                <div class="query-btn">
+                  <button
+                    id="btnQuery"
+                    class="btn btn-primary btn-query btn-permission"
+                  >
+                    查询
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="table-sub">
+            <div class="table-sub-action clearfix">
+              <div id="dtToolbar" class="btn-group fr"></div>
+            </div>
+          </div>
+          <table
+            id="system-salary-project-table"
+            tool-bar="#tool-bar"
+            class="ufma-table uf-rpt-table"
+          ></table>
+        </div>
+        <div id="tool-bar" class="ufma-tool-bar">
+          <div class="tool-bar-body">
+            <div class="ufma-tool-btns">
+              <button
+                id="tool-bar-del"
+                type="button"
+                class="btn btn-default btn-delete btn-permission"
+              >
+                删除
+              </button>
+            </div>
+            <div class="ufma-tool-btns">
+              <button
+                id="tool-bar-sendown"
+                type="button"
+                class="btn btn-default btn-senddown btn-permission"
+              >
+                下发
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script
+      src="systemSalaryProject.js?rev=@@hash"
+      type="text/javascript"
+      charset="utf-8"
+    ></script>
+  </body>
+</html>

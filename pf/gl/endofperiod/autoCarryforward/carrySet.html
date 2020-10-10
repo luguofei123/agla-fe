@@ -1,0 +1,199 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+  		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>自动转账</title>
+  		<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+		<script src="../../../pub/boot.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+	</head>
+<body>
+<div class="ufma-layout-updown">
+	<div class="ufma-layout-up">
+		
+		<div id="zdzzTimeline" class="margin-top-8" style="display:block;"> </div>
+		
+		<div class="container-fluid margin-left-15 margin-right-15">
+			<div id="zdzj" class="hide">
+				<div class="form-horizontal">
+					<ul class='ufma-list-col clearfix'>
+						<li class="ufma-list-col-item hide" id="accsCtrol">
+							<div class="form-group padding-left-0 margin-left-0" >
+								<label class="control-label em4">科目体系：</label>
+								<div class="control-element w180">
+									<div id="cbAccs" class="ufma-combox w200"></div>
+								</div>
+							</div>
+						</li>
+						<li class="ufma-list-col-item">
+							<div class="form-group padding-left-0" style="margin-left:0!important;">
+								<label class="control-label em4">会计体系：</label>
+								<div class="control-element w200">
+									<div id="cbAccaType" class="form-control ufma-combox w200"></div>
+								</div>
+							</div>
+						</li>
+					</ul>				
+				</div>
+				<div id="kmdygx">
+					<table class="ufma-datatable">
+						<thead>
+							<tr><th width="20">序号</th><th>摘要</th><th>科目</th><th width="40">方向</th><th width="80">公式</th><th width="40">比例</th><th width="20">操作</th></tr>
+						</thead>
+						<tbody id="accoList">
+
+						</tbody>
+					</table>
+				</div>
+				<div class="ufma-form-group-box">
+					<div class="text-center padding-15">
+	                    <a class="btn btn-sm btn-default" id="addCarrySetKM"><span class="glyphicon icon-plus"></span><span class="margin-left-15">新增科目对应关系</span></a>
+	                </div>
+				</div>
+			</div>			
+			<div id="savemb" class="padding-top-15 hide">
+				<div class="container-fluid form-horizontal" style="padding:10px 80px 10px 40px">
+					<div class="row">
+						<div class="col-xs-6">
+							<div class="form-group">
+                                <label class="control-label em6">方案名称：</label>
+                                <div class="control-element w200">
+                                    <input class="form-control" id="scheName" name="scheName" maxlength="50"/>
+                                </div>
+                            </div>
+						</div>
+						<div class="col-xs-6">
+							<div class="form-group">
+                                <label class="control-label em6">方案类型：</label>
+                                <div class="control-element w200">
+									<div id="cbScheType" class="form-control ufma-combox w200"></div>
+                                </div>
+                            </div>
+						</div>
+						<div class="col-xs-6">
+							<div class="form-group">
+                                <label class="control-label em6">期间类型：</label>
+                                <div class="control-element w200">
+									<div id="cbvoukind" class="form-control ufma-combox w200"></div>
+                                </div>
+                            </div>
+						</div>
+						<div class="col-xs-6 iscbagery" style="display: none;">
+							<div class="form-group">
+                                <label class="control-label em6">凭证类型：</label>
+                                <div class="control-element w200">
+									<div id="cbVouType" class="form-control ufma-combox w200"></div>
+                                </div>
+                            </div>
+						</div>		
+						<div class="col-xs-6">
+							<div class="form-group">
+                                <label class="control-label em6">分录方向：</label>
+                                <div class="control-element w200">
+									<div id="cbEntryDir" class="form-control ufma-combox w200"></div>
+                                </div>
+                            </div>
+						</div>	
+						<div class="col-xs-6">
+							<div class="form-group">
+                                <label class="control-label em6">汇总方式：</label>
+                                <div class="control-element w200">
+									<div id="cbSumType" class="form-control ufma-combox w200"></div>
+                                </div>
+                            </div>
+						</div>		
+						<div class="col-xs-6">
+							<div class="form-group">
+                                <label class="control-label em6">标签：</label>
+                                <div class="control-element w200">
+                                    <input class="form-control" id="keyword" name="keyword" />
+                                </div>
+                            </div>
+						</div>	
+						<div class="col-xs-12">
+							<div class="form-group">
+								<label class="control-label fl em6">方案描述：</label>
+								<div class="control-element">
+                                    <textarea class="form-control" id="remark" name="remark" style="width:575px;height:60px;"></textarea>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		
+			<div id="setend" class="hide text-center">
+				<div class="inline-block" style="margin-top:65px;">
+					<div class="add-success" style="margin-bottom: 20px;"><span class="icon icon-check-circle ufma-green"
+						style="font-size: 25px; position: absolute; top: 127px; left: 335px;"></span> 恭喜您，新增方案成功!</div>
+					<div class="add-fail hidden">系统级数据修改失败，请使用复制功能，将系统级方案复制到单位级再修改</div>
+					<div class="text-center margin-top-30"><button type="button" class="btn btn-sm btn-default btn-permission btn-gen-vou" id="btnMakeVou">执行转账</button></div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div id="vouFisperdmodal" class="ufma-modal">
+			<div class="u-msg-title">
+				<h4>结转信息设置</h4>
+			</div>
+			<div class="u-msg-content">
+				<div class="container-fluid margin-left-15 margin-right-15">
+					<ul class="list-unstyled">
+						<!--提示 begin-->
+						<li class="tips clearfix">
+							<div class="tips-icon pull-left">
+								<span class="glyphicon icon-point"></span>
+							</div>
+							<p class="pull-left">请确认以下信息:</p>
+						</li>
+						<!--提示 end-->
+
+						<!--凭证类型 begin-->
+						<li class="clearfix fisperddiv" style="margin-bottom: 10px;">
+							<label class="control-label em6">结转期间：</label>
+							<div class="control-element" style="display: inline-block;">
+								<select class="form-control" id="vouFisperd" style="width: 250px;">
+									<option value='1'>第一期间</option>
+									<option value='2'>第二期间</option>
+									<option value='3'>第三期间</option>
+									<option value='4'>第四期间</option>
+									<option value='5'>第五期间</option>
+									<option value='6'>第六期间</option>
+									<option value='7'>第七期间</option>
+									<option value='8'>第八期间</option>
+									<option value='9'>第九期间</option>
+									<option value='10'>第十期间</option>
+									<option value='11'>第十一期间</option>
+									<option value='12'>第十二期间</option>
+								</select>
+							</div>
+						</li>
+						<li class="clearfix">
+							<label class="control-label em6">凭证类型：</label>
+							<div class="control-element" style="display: inline-block;">
+								<select class="form-control" id="vouTypeCodesel" style="width: 250px;">
+								</select>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class="u-msg-footer">
+				<div class="text-right">
+					<button type="button" class="btn btn-sm btn-primary btn-save" id="btn-vouFisperdqr">确定</button>
+					<button type="button" class="btn btn-sm btn-default btn-qx" id="btn-vouFisperdclose">取消</button>
+				</div>
+			</div>
+		</div>
+	<div class="ufma-layout-down bordered-top">	
+		<div class="text-right margin-right-30">
+			<button type="button" class="btn btn-sm btn-primary hide" id="btn-prev">上一步</button>
+			<button type="button" class="btn btn-sm btn-primary" id="btn-next">下一步</button>
+			<button type="button" class="btn btn-sm btn-primary hide btn-permission btn-save" id="btn-save">保存</button>
+			<button type="button" class="btn btn-sm btn-default" id="btn-cancel">关闭</button>
+		 </div>
+	</div>
+</div>
+<script src="carrySet.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+</body>
+</html>

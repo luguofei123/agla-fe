@@ -1,0 +1,138 @@
+// 主要按钮颜色配置
+@button-primary-text-font-size:14px;
+@button-primary-height:30px;
+// 主要按钮默认颜色
+@button-primary-background-color:#1B65B9;
+@button-primary-border-color:#1B65B9;
+@button-primary-text-color:#FFFFFF;
+// 主要按钮鼠标悬浮颜色
+@button-primary-hover-background-color:#3174C0;
+@button-primary-hover-border-color:#3174C0;
+@button-primary-hover-text-color:#FFFFFF;
+
+// 头部 图标颜色配置
+@icon-color:red;
+// 头部 标题颜色 输入框颜色
+@header-text-color:green;
+
+// vxe表格头部背景颜色
+@vxe-table-header-row-background: #F0F2F5;
+// 鼠标hover行颜色
+@vxe-table-body-tr-hover: #DEE9F5;
+// vxe 表格边框颜色 原色是#d9d9d9
+@vxe-table-border-color: #d9d9d9;
+
+
+
+// 头部 图标颜色配置
+.header-wrap .select-wrap .icon{
+    background: @icon-color!important;
+}
+// 头部 标题颜色
+.header-wrap .caption .title{
+    color:@header-text-color!important;
+}
+// 头部 输入框颜色
+.ufTreeSearchWrap input{
+    color:@header-text-color!important;
+}
+
+// 主要按钮颜色配置
+.ant-btn-primary{
+    height: @button-primary-height;
+    background: @button-primary-background-color;
+    border-color:@button-primary-border-color;
+    color:@button-primary-text-color;
+    font-size: @button-primary-text-font-size;
+}
+// 主要按钮颜色配置
+.ant-btn-primary:hover, .ant-btn-primary:focus{
+    height: @button-primary-height;
+    background: @button-primary-hover-background-color;
+    border-color:@button-primary-hover-border-color;
+    color:@button-primary-hover-text-color;
+    font-size: @button-primary-text-font-size;
+}
+// 日期图标颜色
+.ant-calendar-picker-icon{
+    color: @icon-color;
+}
+
+// vxe 表格头部背景颜色
+.vxe-header--row{
+    background: @vxe-table-header-row-background;
+}
+// vxe 表格hover行颜色
+.vxe-table .vxe-body--row.row--hover{
+    background: @vxe-table-body-tr-hover!important;
+}
+// vxe 表格边框颜色
+.vxe-table.t--border:not(.b--style-none) .vxe-header--column, 
+.vxe-table.t--border:not(.b--style-none) .vxe-body--column, 
+.vxe-table.t--border:not(.b--style-none) .vxe-footer--column {
+    background-image: -webkit-gradient(linear, left top, left bottom, from(@vxe-table-border-color), to(@vxe-table-border-color)), -webkit-gradient(linear, left top, left bottom, from(@vxe-table-border-color), to(@vxe-table-border-color));
+    background-image: linear-gradient(@vxe-table-border-color, @vxe-table-border-color), linear-gradient(@vxe-table-border-color, @vxe-table-border-color);
+}
+// vxe 表格外框边线 左 右 上 下
+.vxe-table .vxe-table--border-line:before{
+    border-left: 1px solid @vxe-table-border-color;
+}
+.vxe-table .vxe-table--border-line:after {
+    border-right: 1px solid @vxe-table-border-color;
+}
+.vxe-table:before {
+    border-top: 1px solid @vxe-table-border-color;
+}
+.vxe-table:after {
+    border-bottom: 1px solid @vxe-table-border-color;
+}
+.vxe-table .vxe-table--header-wrapper .vxe-table--repair{
+    border-bottom: 1px solid @vxe-table-border-color;
+}
+// // 过滤图标样式
+// .vxe-cell--filter .vxe-filter--btn{
+//     color:red;
+// }
+// .vxe-cell--filter .vxe-filter--btn:hover {
+//     color:pink;
+// }
+// // 排序图标样式
+// .vxe-table .vxe-cell--sort .vxe-sort--asc-btn,
+// .vxe-table .vxe-cell--sort .vxe-sort--desc-btn {
+//     color:yellow;
+// }
+// .vxe-table .vxe-cell--sort .vxe-sort--asc-btn:hover,
+// .vxe-table .vxe-cell--sort .vxe-sort--desc-btn:hover{
+//     color:pink;
+// }
+// .vxe-table .vxe-cell--sort .vxe-sort--asc-btn.sort--active,
+// .vxe-table .vxe-cell--sort .vxe-sort--desc-btn.sort--active{
+//     color:blue;
+// }
+// 分页边框颜色
+.pager{
+    // border: 1px solid @vxe-table-border-color!important;
+    // border-top:none!important;
+    // background-color: @vxe-table-header-row-background!important;
+    // .ant-btn{
+    //     color: yellow;
+    //     border: 1px solid red;
+    //     background: pink;
+    // }
+    .pageBtns.active{
+        background-color: #1B65B9!important;
+        color: #FFFFFF;
+        // border: 1px solid pink;
+    }
+    .pageBtns:hover{
+        background-color: #1B65B9!important;
+    }
+}
+// 日期按钮
+.dateBtn.active{
+    background-color: #1B65B9!important;
+}
+.ant-calendar-selected-day .ant-calendar-date{
+    background-color: #1B65B9!important;
+}
+

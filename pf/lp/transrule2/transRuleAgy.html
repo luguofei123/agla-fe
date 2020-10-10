@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+  		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>转换规则</title>
+  		<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+		<script src="../../pub/boot.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+		<link rel="stylesheet" type="text/css" href="../lpCommon/lpCommon.css?rev=@@hash"/>
+		<link rel="stylesheet" type="text/css" href="transRule.css?rev=@@hash"/>
+	</head>
+<body>
+<!--整个容器 begin-->
+<div id="transRule" class="container-fluid ufma-container">
+	<!--工作区 begin-->
+	<div class="workspace">
+		<!--转换规则工作区 begin-->
+    	<div class="lp-workspace">
+    		<!--标题位 begin-->
+    		<div class="lp-selete-box bordered-bottom">
+    			<!--标题 begin-->
+    			<div class="lp-title">转换规则</div>
+    			<!--标题 end-->
+    			
+    			<!--单位选择 begin-->
+				<ul class="lp-selete-list">
+					<li class="lp-selete-list-li">
+						<div id='cbAgency' name="agencyCode" class="ufma-treecombox ufma-combox-agency" icon="icon-unit" url="/lp/eleAgency/getAgencyTree" valueField="id" textField="name" placeholder="请选择单位"></div>
+					</li>
+				</ul>
+				<!--单位选择 end-->
+				
+				<!--按钮 begin-->
+				<div class="lp-method-tip">
+					<div class="btn-group pull-right">
+						<button type="button" id="crSave" class="btn btn-sm btn-primary btn-permission" style="margin-left: 8px;">保存</button>
+					</div> 
+				</div>
+				<!--按钮 end-->
+    		</div>
+    		<!--标题位 end-->
+    		
+    		<!--两列布局 begin-->
+    		<div class="lp-two-cols">
+    			<!--左边 begin-->
+    			<div class="lp-position-left">
+    				<ul class="list-unstyled left-list" id="crElement">
+    					<!--基础要素 开始位置-->
+    				</ul>
+    			</div>
+    			<!--左边 end-->
+    			
+    			<!--右边 begin-->
+    			<div class="lp-right">
+    				<!--查询 begin-->
+					<div class="lp-box lp-query-box">
+						<!--查询条件 begin-->
+						<div class="lp-query-box-left">
+							<!--上半部显示 begin-->
+							<ul class="lp-query-box-top">
+								<!--第一行 begin-->
+								<li class="lp-query-box-li clearfix padding-right-pos">
+									<!--单据类型 begin-->
+									<div class="lp-query-li">
+										<label class="lp-query-li-cont-title">单据类型：</label>
+										<div class="lp-query-li-cont">
+											<div class="lp-query-btn-cont" id="crBillType">
+												<!--单据类型  开始位置-->
+											</div>
+										</div>
+									</div>
+									<!--单据类型 end-->
+								</li>
+								<!--第一行 end-->
+								
+								<!--第二行 begin-->
+								<li class="lp-query-box-li clearfix padding-right-pos">
+									<!--对照规则 begin-->
+									<div class="lp-query-li">
+										<label class="lp-query-li-cont-title">对照规则：</label>
+										<div class="lp-query-li-cont">
+											<div class="lp-query-btn-cont" id="crRule">
+												<!--对照规则 开始位置-->
+											</div>
+											<div class="lp-query-btn-plus">
+												<div class="add-group pull-left">
+													<button class="btn btn-default pull-right btn-ajax add-btn" data-toggle="tooltip" title="添加">
+														<span class="glyphicon icon-plus"></span>
+													</button>
+													<input type="text" name="" id="" value="" placeholder="新增对照规则" class="bordered-input pull-right add-input" />
+												</div>
+												<button class="btn btn-default set-btn" data-toggle="tooltip" title="设置" style="margin-left: 4px;">
+													<span class="glyphicon icon-setting"></span>
+												</button>
+											</div>
+										</div>
+									</div>
+									<!--对照规则 end-->
+								</li>
+								<!--第二行 end-->
+							</ul>
+							<!--上半部显示 end-->
+						</div>
+						<!--查询条件 end-->
+					</div>
+					<!--查询 end-->
+					
+					<!--表格相关 begin-->
+					<div class="lp-box table-box">
+						<!--表格 begin-->
+						<div class="table-tab">
+							<table id="transRule-data" tool-bar="#transRule-tool-bar" class="ufma-table dataTable fixed-table">
+								<thead id="transRule-data-head"></thead>
+							</table>
+							
+							<!--增加行按钮 begin-->
+							<div class="add-row">
+								<button class="btn btn-default table-row-add">
+									<span class="glyphicon icon-add"></span>
+									新增行
+								</button>
+								<div class="add-tips" style="display: none;text-align: center;">
+									系统级对照规则，单位不允许修改
+								</div>
+							</div>
+							<!--增加行按钮 end-->
+						</div>
+						<!--表格 end-->
+						
+						<!--隐藏的加载表头的表格 begin-->
+						<table id="hide-table" style="display: none;"></table>
+						<!--隐藏的加载表头的表格 end-->
+					</div>
+					<!--表格相关 end-->
+    			</div>
+    			<!--右边 end-->
+    		</div>
+    		<!--两列布局 end-->
+    	</div>
+    	<!--转换规则工作区 end-->
+	</div>
+	<!--工作区 end-->
+</div>
+<!--整个容器 end-->
+<script src="transRule.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+</body>
+</html>

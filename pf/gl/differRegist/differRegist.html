@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>差异项补充登记</title>
+		<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+		<script src="../../pub/boot.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+		<link rel="stylesheet" href="differRegist.css?rev=@@hash" />
+	</head>
+
+	<body>
+		<div class="container-fluid ufma-container">
+			<div class="workspace">
+				<!--工作区顶部 begin-->
+				<div class="workspace-top">
+					<div class="container-fluid">
+						<div class="ufma-portlet">
+							<div class="portlet-title">
+								<div class="caption">
+									<span class="caption-subject font-dark uppercase">补充登记差异项</span>
+								</div>
+								<div class="inline-block  margin-left-15 margin-top-8">
+									<ul class='ufma-list-col clearfix padding-left-8'>
+										<li class="ufma-list-col-item">
+											<div id='cbAgency' name="agencyCode" class="ufma-treecombox ufma-combox-agency"></div>
+										</li>
+										<li class="ufma-list-col-item">
+											<div id='cbAcct' class="ufma-combox ufma-combox-acct"></div>
+										</li>
+									</ul>
+								</div>
+							</div>
+							<div class="portlet-body bordered pr bordered-bottom">
+								<div class="more" style="width:100%">
+									<form id="frmQuery" class="form-horizontal">
+										<div class="form-row">
+											<div class="form-group">
+												<label class="control-label " style="margin-left:16px;">期间：</label>
+												<div class="control-element pr10" style="padding-top:3px;">
+													<a name="period1" id="dateBn" class="label label-radio">本年</a>
+													<a name="period1" id="dateBq" class="label label-radio selected">本期</a>
+												</div>
+											</div>
+											<div class="form-group" style="width: 305px">
+												<div class="control-element" style="width: 116px">
+													<div name="startJouDate" id="startJouDate" class="uf-datepicker" style="width: 125px;">
+													</div>
+												</div>
+												<span class="split" style="margin: 5px 8px 5px 16px">至</span>
+												<div class="control-element">
+													<div name="endJouDate" id="endJouDate" class="uf-datepicker" style="width: 125px;">
+													</div>
+												</div>
+											</div>
+											<div class="clearfix"></div>
+										</div>
+									</form>
+								</div>
+								<div class="btn-group" style="position: absolute;right:15px;top:17px;">
+									<div class="cab-query-btn inline-block">
+										<button class="btn btn-default btn-differ">差异项明细汇总表</button>
+										<button class="btn btn-default btn-history btn-permission">历史凭证处理</button>
+										<button id="queryAll" class="btn btn-primary btn-search btn-permission">查询</button>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!--工作区顶部 end-->
+
+				<div class="workspace-center" style="padding: 0 15px">
+					<div class="btn-body" style="height: 40px;">
+						<!--<div class="iframeBtnsSearch fr" id="index-search" style="margin-right: 103px">
+						<input type="text" class="searchHide focusOff bordered" placeholder="请输入要搜索的关键词" style="right: 163px;">
+						<input type="hidden" class="searchValueHide">
+						<button class="btn btn-default btn-sm btn-permission btn-search" id="searchHideBtn">
+							<i class="glyphicon icon-search"></i>
+						</button>
+					</div>
+					<div class="rpt-box rpt-table-box pr">
+						<div id="dtToolbar" class="btn-group" style="position:absolute;right:0px;">
+						</div>
+					</div>-->
+						<ul class="nav nav-tabs">
+							<li class="active">
+								<a href="javascript:;" code="0">未登记</a>
+							</li>
+							<li>
+								<a href="javascript:;" code="1">已登记</a>
+							</li>
+							<li>
+								<a href="javascript:;" code="2">全部</a>
+							</li>
+						</ul>
+
+					</div>
+					<!-- 表格begin -->
+					<div class="rpt-table-tab">
+						<table class="ufma-table dataTable uf-rpt-table" tool-bar="#tool-bar" id="gridGOV">
+							<!-- <thead>
+								<tr role="row">
+									<th style="width:30px"></th>
+									<th>凭证来源</th>
+									<th>凭证字号</th>
+									<th>凭证日期</th>
+									<th>摘要</th>
+									<th>制单人</th>
+									<th>操作</th>
+								</tr>
+							</thead> -->
+						</table>
+					</div>
+					<!-- 表格end -->
+				</div>
+				<div id="tool-bar" class="ufma-tool-bar">
+					<div class="tool-bar-body">
+						<div class="ufma-tool-btns">
+							<label class="mt-checkbox mt-checkbox-outline margin-right-8">
+								<input type="checkbox" class="datatable-group-checkable" /> 全选 <span></span>
+							</label>
+							<button id="btn-register-check" type="button" class="btn btn-sm btn-default btn-register btn-permission">批量登记</button>
+							<button id="btn-register-del-check" type="button" class="btn btn-sm btn-default btn-register btn-permission" style="display: none;">取消登记</button>
+						</div>
+					</div>
+				</div>
+				<!--工作区底部 end-->
+			</div>
+			<div id="differdata" class="ufma-modal">
+				<div class="u-msg-title">
+					<h4>差异项明细</h4>
+				</div>
+				<div class="u-msg-content">
+					<div class="container-fluid margin-left-15 margin-right-15">
+						<table class="ufma-table navtabss table-bordered" id="differdataTable">
+							<thead>
+								<th>差异项</th>
+								<th style="width: 200px;">金额</th>
+							</thead>
+							<tbody></tbody>
+						</table>
+					</div>
+				</div>
+				<div class="u-msg-footer">
+					<div class="text-right">
+						<button type="button" class="btn btn-sm btn-default btn-export">导出EXCEL</button>
+						<button type="button" class="btn btn-sm btn-primary btn-save" id="btn-differ-close">关闭</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script src="differRegist.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+		<script src="dm.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+
+	</body>
+
+</html>

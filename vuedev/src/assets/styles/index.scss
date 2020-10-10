@@ -1,0 +1,364 @@
+@import 'variable.scss'; //自定义主题样式 变量
+@import 'vxeTableVariable.scss'; //vxeTable主题样式变量 覆盖
+@import 'vxe-table/styles/default.scss'; //node_modules中的文件，主要是以@import方式引入了所有vxe-table组件的sass样式
+@import 'vxeTableCover.scss'; //vxeTable覆盖的样式
+
+*{
+  margin: 0;
+  padding: 0;
+}
+body {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  font-family: Helvetica Neue, Helvetica, PingFang SC, Hiragino Sans GB, Microsoft YaHei, Arial, sans-serif;
+  background: #f0f2f4;
+}
+
+html {
+  box-sizing: border-box;
+}
+ul,ol,li{
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+textarea {
+  resize: none !important;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+div:focus{
+  outline: none;
+}
+
+a:focus,
+a:active {
+  outline: none;
+}
+
+a,
+a:focus,
+a:hover {
+  cursor: pointer;
+  color: inherit;
+  text-decoration: none;
+}
+
+// 清除浮动
+.clearfix {
+  &:after {
+    visibility: hidden;
+    display: block;
+    font-size: 0;
+    content: " ";
+    clear: both;
+    height: 0;
+  }
+}
+.fl {
+  float: left;
+}
+.fr{
+  float: right;
+}
+h1, h2, h3, h4, h5, h6 {
+  margin-top: 0;
+  margin-bottom: 0;
+  color: rgba(0, 0, 0, 0.85);
+  font-weight: 500;
+}
+// 边距
+.mr-5 {
+  margin-right: 5px;
+}
+.mt-5 {
+  margin-top: 5px;
+}
+.mt-8 {
+  margin-top: 8px;
+}
+.mt-10 {
+  margin-top: 10px;
+}
+.mt-20 {
+  margin-top: 20px;
+}
+.mt-30 {
+  margin-top: 30px;
+}
+.mb-5 {
+  margin-bottom: 5px;
+}
+.mb-10 {
+  margin-bottom: 10px;
+}
+.mb-20 {
+  margin-bottom: 20px;
+}
+.mb-30 {
+  margin-bottom: 30px;
+}
+.ml-5{
+  margin-left: 5px;
+}
+.ml-10{
+  margin-left: 10px;
+}
+.ml-15{
+  margin-left: 15px;
+}
+.ml-20{
+  margin-left: 20px;
+}
+.ml-30{
+  margin-left: 30px;
+}
+.mr-5{
+  margin-right: 5px;
+}
+.mr-8{
+  margin-right: 8px;
+}
+.mr-10 {
+  margin-right: 10px;
+}
+.mr-20 {
+  margin-right: 20px;
+}
+.mr-30 {
+  margin-right: 30px;
+}
+.pl-5{
+  padding-left: 5px;
+}
+.pl-10{
+  padding-left: 10px;
+}
+.pl-15{
+  padding-left: 15px;
+}
+.pl-20{
+  padding-left: 20px;
+}
+.pl-30{
+  padding-left: 30px;
+}
+.pr-5{
+  padding-right: 5px;
+}
+.pr-10{
+  padding-right: 10px;
+}
+.pr-15{
+  padding-right: 15px;
+}
+.pr-20{
+  padding-right: 20px;
+}
+.pr-30{
+  padding-right: 30px;
+}
+.mb-16 {
+  margin-bottom: 16px;
+}
+.p-16 {
+  padding: 16px 16px 0 16px;
+}
+.hover {
+  color: #108EE9;
+  cursor: pointer;
+}
+.clear {
+  clear: both;
+}
+.label{
+  display: inline-block;
+}
+.flex-center{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.flex-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.flex-start {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.flex-end {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.align-items-start {
+  align-items: flex-start;
+}
+.align-items-center {
+  align-items: center;
+}
+.align-items-end {
+  align-items: flex-end;
+}
+.tableHide{
+  visibility: hidden;
+  position: absolute;
+  top: -99999px;
+  left: -9999px;
+  z-index: -1;
+}
+.btn-permission{
+  display: none!important;
+}
+// 对齐方式
+.txt-r {
+  text-align: right;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+
+input[type="number"]{
+    -moz-appearance: textfield;
+}
+
+/*vxe-table toolbar*/
+.vxe-toolbar {
+  display: none; //sunch 2020-03-01 默认不显示表格工具条
+}
+
+/*滚动条整体部分*/
+.myscrollbar::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+/*滚动条的轨道*/
+.myscrollbar::-webkit-scrollbar-track {
+  background-color: #FFFFFF;
+}
+
+/*滚动条里面的小方块，能向上向下移动*/
+.myscrollbar::-webkit-scrollbar-thumb {
+  background-color: #bfbfbf;
+  border-radius: 5px;
+  border: 1px solid #F1F1F1;
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, .3);
+}
+
+.myscrollbar::-webkit-scrollbar-thumb:hover {
+  background-color: #A8A8A8;
+}
+
+.myscrollbar::-webkit-scrollbar-thumb:active {
+  background-color: #787878;
+}
+
+/*边角，即两个滚动条的交汇处*/
+.myscrollbar::-webkit-scrollbar-corner {
+  background-color: #FFFFFF;
+}
+
+/*滚动条整体部分*/
+.mytable-scrollbar div::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+/*滚动条的轨道*/
+.mytable-scrollbar div::-webkit-scrollbar-track {
+  background-color: #FFFFFF;
+}
+
+/*滚动条里面的小方块，能向上向下移动*/
+.mytable-scrollbar div::-webkit-scrollbar-thumb {
+  background-color: #bfbfbf;
+  border-radius: 5px;
+  border: 1px solid #F1F1F1;
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, .3);
+}
+
+.mytable-scrollbar div::-webkit-scrollbar-thumb:hover {
+  background-color: #A8A8A8;
+}
+
+.mytable-scrollbar div::-webkit-scrollbar-thumb:active {
+  background-color: #787878;
+}
+
+/*边角，即两个滚动条的交汇处*/
+.mytable-scrollbar div::-webkit-scrollbar-corner {
+  background-color: #FFFFFF;
+}
+
+.my-cell{
+  display: inline-block;
+  height: 26px;
+  width: 100%;
+  border: 0;
+  background-color: transparent;
+  outline: none;
+}
+
+// 表格表头的背景颜色 guohx 20200401
+// table.vxe-table--header th {
+// 	background-color: #EEF1F6;
+// }
+//去掉单位账套下拉框的border guohx 20200402
+// .header-wrap .select-item .ant-select-selection {
+//   border: none;
+// }
+
+.sub-tip{
+  color: #999;
+  margin-left: 24px;
+}
+.ant-tooltip-content{
+  .ant-tooltip-inner{
+    background-color: rgba(51, 51, 51, 0.8);
+  }
+}
+
+.ant-tooltip .ant-tooltip-content .ant-tooltip-arrow{
+  border-bottom-color: rgba(51, 51, 51, 0.8) ;
+}
+
+.myfade-enter-active, .myfade-leave-active {
+  transition: opacity .3s ease;
+}
+.myfade-enter, .myfade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+  opacity: 0;
+}
+/* 更多按钮样式*/
+.moreBtn{
+  color: $uf-link-color;
+}
+.moreDown{
+  transition: all .3s ease;
+  cursor: pointer;
+  margin-left: 2px;
+}
+.moreTop{
+  transform: rotate(180deg);
+}
+.jump-link{
+  color: $uf-table-link-color;
+  text-decoration: underline;
+  cursor: pointer;
+}
+.setCols:hover{
+  cursor: pointer;
+}

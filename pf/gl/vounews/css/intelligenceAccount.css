@@ -1,0 +1,240 @@
+ul, li {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.big-letter {
+    letter-spacing: 13px !important;
+}
+.intel-acc {
+    width: 60px;
+    float: right;
+    margin-right: 22%;
+    margin-top: 10px;
+    line-height: 26px;
+}
+.intel-acc-modal .modal-dialog {
+    width: 95%;
+    margin: 10px auto;
+}
+.intel-acc-modal .intel-scan {
+    width: 40px;
+    cursor: pointer;
+}
+.intel-acc-modal .scan-box {
+   	margin-top: -10px;
+    line-height: 30px;
+    display: inline-block;
+    margin-left:8px;
+}
+.intel-acc-modal .modal-body {
+    min-height: 400px;
+}
+.intel-acc-modal .tickets-list {
+    width: 30%;
+    margin-right: 2%;
+}
+.intel-acc-modal .tickets-list ul li {
+    margin-bottom: 20px;
+}
+.intel-acc-modal .tickets-list ul li.active {
+    background-color: #c3e3fb;
+}
+.intel-acc-modal .tickets-list .ticket {
+    border: 1px dashed #dcdcdc;
+    padding: 10px 15px;
+}
+.intel-acc-modal .tickets-list .ticket-head {
+    height: 50px;
+    line-height: 40px;
+}
+.intel-acc-modal .tickets-list .ticket-head .ticket-img {
+    width: 50px;
+    margin-top: 1%;
+}
+.intel-acc-modal .tickets-list .ticket-head .ticket-title {
+    margin-left: 15%;
+}
+.intel-acc-modal .tickets-list .ticket-head .select-ticket {
+    width: 15px;
+    height: 15px;
+    border: 1px solid #dcdcdc;
+    border-radius: 4px;
+    margin-top: 12px;
+    cursor: pointer;
+}
+.intel-acc-modal .tickets-list .ticket-head .select-ticket.is-selected {
+    border-color: transparent;
+    background-color: #108ee9;
+    position: relative;
+}
+.intel-acc-modal .tickets-list .ticket-head .select-ticket.is-selected:before {
+    content: '';
+    position: absolute;
+    border: 1px solid #fff;
+    width: 10px;
+    height: 4px;
+    top: 50%;
+    left: 50%;
+    border-color: transparent transparent #fff #fff;
+    transform: translate(-50%,-50%) rotate(-50deg);
+}
+.intel-acc-modal .tickets-list .ticket-body {
+    line-height: 30px;
+}
+.intel-acc-modal .tickets-list .ticket-body .eat-money {
+    margin-left: 15%;
+}
+.intel-acc-modal .tickets-list .ticket-body.train-plane p>span:first-child {
+    display: inline-block;
+    width: 60%;
+}
+.intel-acc-modal .ticket-des {
+    width: 68%;
+    display: none;
+}
+.intel-acc-modal .ticket-des img {
+    width: 100%;
+}
+.intel-acc-modal .ticket-des .certificate .table-title {
+    font-size: 16px;
+    font-weight: 700;
+}
+.intel-acc-modal .ticket-des .sub-des {
+    margin-bottom: 5px;
+}
+.intel-acc-modal .ticket-des .sub-des .text-dec {
+    padding: 0 5px;
+    border-bottom: 1px solid rgb(223,230,236);
+}
+.intel-acc-modal .ticket-des .sub-des .icon-paperclip {
+    border: 1px solid #dcdcdc;
+    border-radius: 2px;
+    padding: 2px 5px;
+}
+.intel-acc-modal .ticket-des .fhead .moneydw span {
+    width: 7.85%;
+}
+.intel-acc-modal .ticket-des .intel-acc-vou .voucher-head {
+    width: 100%;
+    top: 0;
+    left: 0;
+}
+.intel-acc-modal .ticket-des .intel-acc-vou .abstracthead {
+    width: 20%;
+}
+.intel-acc-modal .ticket-des .intel-acc-vou .accountinghead {
+    width: 22%;
+    left: 20%;
+}
+.intel-acc-modal .ticket-des .money-xs {
+    width: 100%;
+}
+.intel-acc-modal .ticket-des .money-sr {
+    width: 100%;
+}
+.intel-acc-modal .ticket-des .intel-acc-vou .jf {
+    width: 29%;
+    left: 42%;
+}
+.intel-acc-modal .ticket-des .intel-acc-vou .df {
+    width: 29%;
+    left: 71%;
+}
+.intel-acc-modal .ticket-des .voucher-body {
+    width: 100%;
+    left: 0px;
+    top: 0;
+}
+.intel-acc-modal .ticket-des .voucher-body .voucherjias {
+    width: 2%;
+    left: -3%;
+}
+.intel-acc-modal .ticket-des .voucher-body .voucherjians {
+    width: 5%;
+    left: 102%;
+}
+.intel-acc-modal .ticket-des .abstractinp {
+    width: 96%;
+}
+.intel-acc-modal .ticket-des .abstractinps {
+    width: 96%;
+}
+.intel-acc-modal .ticket-des .accountinginp {
+    width: 96%;
+}
+.intel-acc-modal .ticket-des .abstract {
+    width: 19.9%;
+    height: 49px;
+    position: absolute;
+    left: 0;
+}
+.intel-acc-modal .ticket-des .accounting {
+    width: 22.1%;
+    position: absolute;
+    left: 20%;
+}
+.intel-acc-modal .ticket-des .moneyj {
+    width: 29.05%;
+    position: absolute;
+    left: 41.95%;
+}
+.intel-acc-modal .ticket-des .moneyj .money-xsbg {
+    width: 91.7%;
+    position: absolute;
+    right: 0;
+    background: url('/pf/gl/vou/img/money_rp.png') no-repeat;
+    background-size: 99% 49px;
+}
+.intel-acc-modal .ticket-des .moneyd {
+    width: 29%;
+    position: absolute;
+    left: 71%;
+}
+.intel-acc-modal .ticket-des .moneyd .money-xsbg {
+    width: 92%;
+    position: absolute;
+    right: 0px;
+    background: url('/pf/gl/vou/img/money_rp.png') no-repeat;
+    background-size: 99% 49px;
+}
+.intel-acc-modal .ticket-des .heji {
+    width: 40.5%;
+    left: 0;
+}
+#intelAccModal .ufma-combox .ufma-combox-btn {
+    position: absolute;
+    top: 12px;
+    right: 20px !important;
+    cursor: default;
+}
+#intelltable th{    
+	height: 40px;
+    text-align: center;
+    background: #edf0f5;
+}
+#intelltable td{    
+	height: 40px;
+    text-align: center;
+    max-width: 150px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	padding: 0px 8px;
+}
+#intelltable{
+	border:1px solid #b1b1b1;
+}
+#bigintell{
+	width: 640px !important;
+	height: 360px !important;
+	margin: 0 auto;
+}
+.scanselect{
+    width: 200px;
+    padding: 10px;
+    border-radius: 8px;
+}
+.certificate{
+	margin-top: 16px;
+}

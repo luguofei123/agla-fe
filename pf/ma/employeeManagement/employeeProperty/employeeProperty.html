@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>人员属性</title>
+    <meta
+      content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
+      name="viewport"
+    />
+    <script
+      src="../../../pub/boot.js?rev=@@hash"
+      type="text/javascript"
+      charset="utf-8"
+    ></script>
+    <script
+      src="../../common/common.js?rev=@@hash"
+      type="text/javascript"
+      charset="utf-8"
+    ></script>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="../../common/common.css?rev=@@hash"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="employeeProperty.css?rev=@@hash"
+    />
+    <style>
+    .checkbox-center{
+      text-align: center !important;
+    }
+    </style>
+  </head>
+  <body>
+    <!--整个容器 begin-->
+    <div id="employee-property" class="container-fluid ufma-container">
+      <!--工作区 begin-->
+      <div class="workspace">
+        <!--工作区顶部 begin-->
+        <div class="prs-workspace">
+          <div class="ufma-portlet">
+            <div class="portlet-title">
+              <div class="caption">
+                <span class="caption-subject font-dark uppercase"
+                  >人员属性</span
+                >
+              </div>
+              <div class="actions">
+                <div>
+                  <button
+                    id="btn-add-employee-property"
+                    type="button"
+                    class="btn btn-sm btn-primary btn-permission btn-add"
+                  >
+                    新增
+                  </button>
+                </div>
+              </div>
+            </div>
+            <!--查询条件-->
+            <div class="portlet-body bordered pr">
+              <div class="query-box-left">
+                <form id="frmQuery" class="form-horizontal">
+                  <div class="form-row">
+                    <div class="form-group col-xs-10 col-sm-5 col-md-5">
+                      <label class="control-label data-label margin-left-30"
+                        >属性名称：</label
+                      >
+                      <div
+                        class="control-element margin-left-20"
+                        style="width:180px;"
+                      >
+                        <input
+                          id="propertyName"
+                          type="text"
+                          name="propertyName"
+                          class="form-control"
+                          style="width: 180px"
+                        />
+                      </div>
+                    </div>
+                    <div class="form-group col-xs-10 col-sm-5 col-md-5">
+                      <label class="control-label data-label">是否启用:</label>
+                      <span>
+                        <label
+                          class="mt-checkbox mt-checkbox-outline margin-right-20"
+                          ><input
+                            checked
+                            name="isUsed"
+                            type="checkbox"
+                            value="Y"/>是<span></span
+                        ></label>
+                        <label class="mt-checkbox mt-checkbox-outline"
+                          ><input
+                            checked
+                            name="isUsed"
+                            type="checkbox"
+                            value="N"/>否<span></span
+                        ></label>
+                      </span>
+                    </div>
+                    <div class="clearfix"></div>
+                  </div>
+                </form>
+                <form id="queryMore" class="form-horizontal none margin-top-10">
+                  <div class="form-row">
+                    <div class="form-group col-xs-10 col-sm-5 col-md-5">
+                      <label class="control-label data-label margin-left-30"
+                        >是否显示:</label
+                      >
+                      <span class="margin-left-20">
+                        <label
+                          class="mt-checkbox mt-checkbox-outline margin-right-20"
+                          ><input
+                            checked
+                            name="isVisible"
+                            type="checkbox"
+                            value="Y"/>是<span></span
+                        ></label>
+                        <label class="mt-checkbox mt-checkbox-outline"
+                          ><input
+                            checked
+                            name="isVisible"
+                            type="checkbox"
+                            value="N"/>否<span></span
+                        ></label>
+                      </span>
+                    </div>
+                    <div class="form-group col-xs-10 col-sm-5 col-md-5">
+                      <label class="control-label data-label">允许为空：</label>
+                      <span>
+                        <label
+                          class="mt-checkbox mt-checkbox-outline margin-right-20"
+                          ><input
+                            checked
+                            name="isEmpty"
+                            type="checkbox"
+                            value="Y"/>是<span></span
+                        ></label>
+                        <label class="mt-checkbox mt-checkbox-outline"
+                          ><input
+                            checked
+                            name="isEmpty"
+                            type="checkbox"
+                            value="N"/>否<span></span
+                        ></label>
+                      </span>
+                    </div>
+                    <div class="clearfix"></div>
+                  </div>
+                  <div class="form-row">
+                    <div class="form-group col-xs-10 col-sm-5 col-md-5">
+                      <label class="control-label data-label margin-left-30"
+                        >列表中显示：</label
+                      >
+                      <span class="margin-left-20">
+                        <label
+                          class="mt-checkbox mt-checkbox-outline margin-right-20"
+                          ><input
+                            checked
+                            name="isList"
+                            type="checkbox"
+                            value="Y"/>是<span></span
+                        ></label>
+                        <label class="mt-checkbox mt-checkbox-outline"
+                          ><input
+                            checked
+                            name="isList"
+                            type="checkbox"
+                            value="N"/>否<span></span
+                        ></label>
+                      </span>
+                    </div>
+                    <div class="form-group col-xs-10 col-sm-5 col-md-5">
+                      <label class="control-label data-label">过滤条件：</label>
+                      <span>
+                        <label
+                          class="mt-checkbox mt-checkbox-outline margin-right-20"
+                          ><input
+                            checked
+                            name="isCondition"
+                            type="checkbox"
+                            value="Y"/>是<span></span
+                        ></label>
+                        <label class="mt-checkbox mt-checkbox-outline"
+                          ><input
+                            checked
+                            name="isCondition"
+                            type="checkbox"
+                            value="N"/>否<span></span
+                        ></label>
+                      </span>
+                    </div>
+                    <div class="clearfix"></div>
+                  </div>
+                  <div class="form-row">
+                    <div class="form-group col-xs-10 col-sm-5 col-md-5">
+                      <label class="control-label data-label margin-left-30"
+                        >通讯录字段：</label
+                      >
+                      <span class="margin-left-20">
+                        <label
+                          class="mt-checkbox mt-checkbox-outline margin-right-20"
+                          ><input
+                            checked
+                            name="isPhonebook"
+                            type="checkbox"
+                            value="Y"/>是<span></span
+                        ></label>
+                        <label class="mt-checkbox mt-checkbox-outline"
+                          ><input
+                            checked
+                            name="isPhonebook"
+                            type="checkbox"
+                            value="N"/>否<span></span
+                        ></label>
+                      </span>
+                    </div>
+                    <div class="form-group col-xs-10 col-sm-5 col-md-5">
+                      <label class="control-label data-label">数据类型：</label>
+                      <div class="control-element">
+                        <div
+                          id="dataType"
+                          class="uf-treecombox"
+                          idField="code"
+                          textField="codeName"
+                          leafRequire="true"
+                          name="dataType"
+                          style="width:180px"
+                        ></div>
+                      </div>
+                    </div>
+                    <div class="clearfix"></div>
+                  </div>
+                </form>
+              </div>
+
+              <div class="query-box-right">
+                <label class="label label-more" data-target="#queryMore"
+                  >更多<i class="glyphicon icon-angle-bottom"></i
+                ></label>
+                <div class="query-btn">
+                  <button
+                    id="btnQuery"
+                    class="btn btn-primary btn-query btn-permission"
+                  >
+                    查询
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="table-sub">
+            <div class="table-sub-action clearfix">
+              <div
+                id="navdiv"
+                style="width: 90%;display: inline-block;overflow: hidden;"
+              >
+                <ul class="nav nav-tabs accnab"></ul>
+              </div>
+              <div class="btn-group" style="position: absolute;">
+                <button
+                  type="button"
+                  class="btn btn-sm btn-default"
+                  id="btn-left"
+                  style="padding: 3px 9px;display: none;"
+                >
+                  <span class="icon-angle-left"></span>
+                </button>
+                <button
+                  type="button"
+                  class="btn btn-sm btn-default"
+                  id="btn-right"
+                  style="padding: 3px 9px;display: none;"
+                >
+                  <span class="icon-angle-right"></span>
+                </button>
+              </div>
+              <div id="dtToolbar" class="btn-group fr"></div>
+            </div>
+          </div>
+
+          <table
+            id="employee-property-table"
+            tool-bar="#tool-bar"
+            class="ufma-table uf-rpt-table"
+          ></table>
+        </div>
+
+        <div id="tool-bar" class="ufma-tool-bar">
+          <div class="tool-bar-body">
+            <!--toolbar-->
+            <div class="ufma-tool-btns">
+              <button
+                id="delete-more"
+                type="button"
+                class="btn btn-sm btn-permission btn-default btn-delete none"
+              >
+                删除
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script
+      src="employeeProperty.js?rev=@@hash"
+      type="text/javascript"
+      charset="utf-8"
+    ></script>
+  </body>
+</html>

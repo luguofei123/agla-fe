@@ -1,0 +1,70 @@
+﻿<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>结余与盈余差异项</title>
+		<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+		<script src="../../pub/boot.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+		<link rel="stylesheet" href="../maCommon/maCommon.css?rev=@@hash" />
+
+	</head>
+
+	<body data-code="agy">
+		<div id="expFunc" class="container-fluid ufma-container">
+			<!--工作区 begin-->
+			<div class="workspace">
+				<!--工作区顶部 begin-->
+				<div class="workspace-top">
+					<div class="container-fluid">
+						<div class="ufma-portlet">
+							<div class="portlet-title">
+								<div class="caption">
+									<span class="caption-subject font-dark uppercase">结余与盈余差异项</span>
+								</div>
+								<!--单位&账套选择 begin-->
+								<div class="inline-block absolute margin-left-15 margin-top-8">
+									<ul class='ufma-list-col clearfix padding-left-8'>
+										<li class="ufma-list-col-item">
+											<!--<div id='cbAgency' name="agencyCode" class="uf-treecombox ufma-combox-agency"></div>-->
+											 <div id='cbAgency' name="agencyCode"
+				                                 class="ufma-treecombox ufma-combox-agency" icon="icon-unit"
+				                                 url="/ma/sys/eleAgency/getAgencyTree" valueField="id"
+				                                 textField="codeName" readonly="false" placeholder="请选择单位">
+				                            </div>
+										</li>
+										<li class="ufma-list-col-item">
+											<div id='cbAcct' class="uf-combox ufma-combox-acct"></div>
+										</li>
+									</ul>
+								</div>
+								<!--单位&账套选择 end-->
+							</div>
+
+						</div>
+					</div>
+				</div>
+				<!--工作区中部 begin-->
+				<div class="workspace-center">
+					<div class="container-fluid">
+						<table class="ufma-datatable umfma-table">
+							<thead>
+								<tr>
+									<th style="text-align:center;width:400px;">结余与盈余差异项</th>
+									<!--<th style="text-align:center;">对应会计科目</th>-->
+									<th style="text-align:center;width:100px;">方向</th>
+								</tr>
+							</thead>
+							<tbody id="seDifference">
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+			<ul class="none" id="seAccoTree"></ul>
+		</div>
+		<script src="sedifference.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+	</body>
+
+</html>

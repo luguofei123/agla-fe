@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>账套信息</title>
+		<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+		<script src="../../pub/boot.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+		<link rel="stylesheet" type="text/css" href="coAcc.css?rev=@@hash" />
+	</head>
+
+	<body datacode="agy">
+		<!--整个容器 begin-->
+		<div id='coAcc' class="container-fluid ufma-container">
+			<!--工作区 begin-->
+			<div class="workspace">
+				<!--工作区顶部 begin-->
+				<div class="workspace-top">
+					<div class="container-fluid">
+						<!--标题+查询 begin-->
+						<div class="ufma-portlet">
+							<!--标题 begin-->
+							<div class="portlet-title">
+								<div class="caption">
+									<span class="caption-subject font-dark uppercase">账套信息</span>
+								</div>
+								<!--单位选择 begin-->
+								<ul class='ufma-list-col clearfix padding-left-8 pull-left'>
+									<li class="ufma-list-col-item">
+										<div id='cbAgency' name="agencyCode" class="ufma-treecombox ufma-combox-agency"></div>
+									</li>
+								</ul>
+								<!--单位选择 end-->
+							</div>
+							<!--标题 end-->
+							<!--查询条件 begin-->
+							<div class="portlet-body form-horizontal bordered">
+								<div class="form-body">
+									<div class="form-row">
+										<div class="caEleAcc form-group label-group">
+											<div class="control-label">科目体系：</div>
+											<div class="control-element">
+												<!-- 科目体系按钮 开始位置 -->
+
+											</div>
+										</div>
+										<div class="clearfix"></div>
+									</div>
+									<div class="form-row">
+										<div class="caEnable form-group label-group pull-left">
+											<div class="control-label">状态：</div>
+											<div class="control-element" style="max-width: 100%;">
+												<a name="enabled" value="*" class="label label-radio selected">全部</a>
+												<a name="enabled" value="1" class="label label-radio">启用</a>
+												<a name="enabled" value="0" class="label label-radio">停用</a>
+											</div>
+										</div>
+										<div class="clearfix"></div>
+									</div>
+								</div>
+							</div>
+							<!--查询条件 end-->
+						</div>
+						<!--标题+查询 end-->
+					</div>
+				</div>
+				<!--工作区顶部 end-->
+				<!--工作区中部 begin-->
+				<div class="workspace-center">
+					<div class="container-fluid">
+						<!--按钮 begin-->
+						<div class="table-sub clearfix">
+							<!--右侧操作按钮 begin-->
+							<div class="table-sub-action pull-right">
+								<!--<form class="iframeBtnsSearch">
+                            <input type="text" class="searchHide focusOff bordered" placeholder="请输入要搜索的关键词">
+                            <button class="btn btn-default btn-sm btn-search" id="searchHideBtn">
+                                <i class="glyphicon icon-search"></i>
+                            </button>
+                        </form>
+                        <div class="btn-group">
+                            <button class="btn btn-default btn-print" data-toggle="tooltip" title="打印">
+                                <i class="glyphicon icon-print" aria-hidden="true"></i>
+                            </button>
+                            <button class="btn btn-default btn-export" data-toggle="tooltip" title="导出">
+                                <i class="glyphicon icon-upload" aria-hidden="true"></i>
+                            </button>
+                        </div>-->
+							</div>
+							<!--右侧操作按钮 end-->
+						</div>
+						<!--按钮 end-->
+
+						<!--表格 begin-->
+						<div class="table-tab">
+							<table id="coAccTable" class="ufma-table dataTable" width="100%">
+								<thead id="coAccThead">
+									<tr>
+										<th class="ca-check-style">
+											<label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
+                                    <input type="checkbox" id="caCheckAll"/>&nbsp;
+                                    <span></span>
+                                </label>
+										</th>
+										<th style="display: none;">隐藏字段</th>
+										<th>账套编码</th>
+										<th>账套名称</th>
+										<th>科目体系</th>
+										<th>科目数量</th>
+										<th>结账期间</th>
+										<th class="ca-enable-style">状态</th>
+										<th class="ca-action-style">操作</th>
+									</tr>
+								</thead>
+								<tbody>
+									<!--表格数据 开始位置-->
+
+								</tbody>
+							</table>
+						</div>
+						<!--表格 end-->
+					</div>
+				</div>
+				<!--工作区中部 end-->
+
+				<!--表底功能条 begin-->
+				<div id="caTable-tool-bar" class="ufma-tool-bar">
+					<div class="tool-bar-body">
+						<div class="ufma-tool-btns">
+							<!-- 批量操作按钮 开始位置 -->
+
+						</div>
+						<!-- 分页相关 begin -->
+						<div class="ufma-table-paginate pull-right">
+							<!-- 分页 开始位置 -->
+
+						</div>
+						<!-- 分页相关 end -->
+					</div>
+				</div>
+				<!--表底功能条 end-->
+			</div>
+			<!--工作区 end-->
+
+		</div>
+		<!--整个容器 end-->
+		<script src="coAcc.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+	</body>
+
+</html>

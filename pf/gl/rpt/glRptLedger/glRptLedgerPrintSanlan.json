@@ -1,0 +1,50 @@
+{
+    "data": {
+        "tableHead": {
+        },
+        "tableData": [
+            {
+                "setYear": "年",
+                "fisPerd": "月",
+                "descpt": "摘要",
+                "drAmt": "借方金额",
+                "crAmt": "贷方金额",
+                "balSign": "余额方向",
+                "balAmt": "余额金额",
+                "accoName": "会计科目"
+            },
+            {
+                  "setYear": "2017",
+                "fisPerd": "1",
+                "descpt": "期初余额",
+                "drAmt": "",
+                "crAmt": "",
+                "balSign": "借",
+                "balAmt": "100",
+                "accoName": "1001 库存现金"
+            },
+            {
+                  "setYear": "2017",
+                "fisPerd": "1",
+                "descpt": "本期发生额",
+                "drAmt": "200",
+                "crAmt": "",
+                "balSign": "借",
+                "balAmt": "300",
+                "accoName": "1001 库存现金"
+            },
+            {
+                  "setYear": "2017",
+                "fisPerd": "1",
+                "descpt": "本年累计发生额",
+                "drAmt": "",
+                "crAmt": "",
+                "balSign": "",
+                "balAmt": "200",
+                "accoName": "1001 库存现金"
+            }
+        ]
+    },
+    "flag": "success",
+    "msg": "总账取数成功"
+}

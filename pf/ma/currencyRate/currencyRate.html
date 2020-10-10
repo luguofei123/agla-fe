@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>币种汇率</title>
+		<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+		<script src="../../pub/boot.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+		<link rel="stylesheet" href="currencyRate.css?rev=@@hash" />
+	</head>
+
+	<body>
+		<div id="currencyRate" class="container-fluid ufma-container no-print">
+			<!--工作区 begin-->
+			<div class="workspace">
+				<!--工作区顶部 begin-->
+				<div class="workspace-top">
+					<div class="container-fluid">
+						<div class="ufma-portlet">
+							<div class="portlet-title">
+								<div class="caption">
+									<span class="caption-subject font-dark uppercase">币种汇率</span>
+								</div>
+								<div class="actions">
+									<div class="btn-group">
+										<button type="button" class="btn btn-sm btn-primary btn-add btn-permission">新增</button>
+									</div>
+								</div>
+							</div>
+							<div class="portlet-body form-horizontal bordered">
+								<div id="query-rate" class="form-body">
+									<div class="form-group label-group">
+										<div class="control-label">币种：</div>
+										<div class="control-element">
+											<!--<a name="enabled" value="" class="label label-radio selected">全部</a>
+                                    <a name="enabled" value="1" class="label label-radio">美元</a>
+                                   -->
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!--工作区中部 begin-->
+				<div class="workspace-center">
+					<div class="container-fluid">
+						<div class="table-sub clearfix">
+							<div class="table-sub-info pull-left">
+								提示：
+							</div>
+							<!--bug78798--zsj--经尹哥确认将打印和导出都隐藏起来		
+								<div class="table-sub-action pull-right">
+								<div class="btn-group">
+									<button class="btn btn-default btn-permission btn-print" data-toggle="tooltip" title="打印">
+                                <span class="glyphicon icon-print"></span>
+                            </button>
+									<button class="btn btn-default btn-permission btn-export" data-toggle="tooltip" title="导出">
+                                <span class="glyphicon icon-upload"></span>
+                            </button>
+								</div>
+
+							</div>-->
+						</div>
+						<div class="tab-head">
+							<table style="width:100%">
+								<thead>
+									<tr>
+										<th style="width:30px;">
+											<input type="checkbox" class="group-checkable">
+											<!-- <label class="mt-checkbox mt-checkbox-outline margin-right-8">
+		                            <input class="" type="checkbox" class="group-checkable">&nbsp;
+		                            <span></span>
+		                        </label> -->
+										</th>
+										<th class="curName">币种/目标币种</th>
+										<th>月份</th>
+										<th>直接汇率</th>
+										<th>间接汇率</th>
+										<th></th>
+									</tr>
+								</thead>
+							</table>
+						</div>
+						<div id="rateTab" class="curRate-div">
+
+						</div>
+					</div>
+				</div>
+
+				<div id="currencyRate-tool-bar" class="ufma-tool-bar">
+					<div class="tool-bar-body">
+						<div class="ufma-tool-btns">
+							<label style="display:inline !important;">
+                        <input type="checkbox" class="group-checkable" name="test" value="1"> 全选
+                        <span style="width:13px;height:13px;margin:3px;"></span>
+                    </label>
+							<!-- <label class="mt-checkbox mt-checkbox-outline margin-right-8">
+                        <input class="" type="checkbox" class="group-checkable" name="test" value="1"> 全选
+                        <span></span>
+                    </label> -->
+							<button type="button" class="btn btn-sm btn-default btn-del btn-delete btn-permission">删除</button>
+							<button type="button" class="btn btn-sm btn-default btn-downto btn-senddown btn-permission" id="currencyRateBtnDown"> 下发</button>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="ufma-shopping-trolley right" data-target='#dw-shopp' style="bottom:50%;"><i class="glyphicon icon-supplement"></i></div>
+			<div class="ufma-shopp ufma-shopp-right" id="dw-shopp">
+				<div class="ufma-shopp-inner">
+					<div class="ufma-shopp-header">
+						<span class="glyphicon icon-angle-double-right"></span>引用单位
+					</div>
+					<div class="ufma-shopp-content">
+						<table id="dw-used" class="ufma-table" style="width:300px;">
+
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script src="currencyRate.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+		<script src="../maCommon/maCommon.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+	</body>
+
+</html>

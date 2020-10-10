@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>指标权限管理</title>
+    <meta
+      content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
+      name="viewport"
+    />
+    <script
+      src="../../pub/boot.js?rev=@@hash"
+      type="text/javascript"
+      charset="utf-8"
+    ></script>
+    <link rel="stylesheet" href="../pub/bgPub.css?rev=@@hash" />
+    <link rel="stylesheet" href="../pub/common.css?rev=@@hash" />
+    <link rel="stylesheet" href="billPermissions.css?rev=@@hash" />
+  </head>
+
+  <body>
+    <div class="container-fluid ufma-container">
+      <div class="workspace" style="padding: 6px 15px 15px;">
+        <!--工作区顶部 begin-->
+        <div class="workspace-top">
+          <div class="uf-portlet">
+            <div class="portlet-title">
+              <div class="caption">
+                <span class="caption-main">指标权限管理</span>
+                <span>
+                  <div
+                    class="uf-treecombox ufma-combox-agency"
+                    id="cbAgency"
+                    name="agencyCode"
+                    idField="id"
+                    textField="codeName"
+                    pIdField="pId"
+                    readonly="true"
+                    icon="icon-unit"
+                    theme="label"
+                    autocomplete="on"
+                    placeholder="请选择单位"
+                  ></div>
+                </span>
+              </div>
+              <div class="actions">
+                <button
+                  id="btnAdd"
+                  type="button"
+                  class="btn btn-sm btn-primary btn-permission btn-add"
+                >
+                  新增
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--工作区中部 begin-->
+        <div class="workspace-center">
+          <div class="rpt-table-tab" id="mainArea">
+            <table class="ufma-table uf-rpt-table" id="carryOver">
+              <tr>
+                <th rowspan="2">权限名称</th>
+                <th rowspan="2">权限类别</th>
+                <th rowspan="2">授权对象</th>
+                <th colspan="4">权限内容</th>
+                <th rowspan="2" style="width: 40px;">操作</th>
+              </tr>
+              <tr>
+                <th parent-title="权限内容">指标编码</th>
+                <th parent-title="权限内容">部门</th>
+                <th parent-title="权限内容">项目</th>
+                <th
+                  parent-title="权限内容"
+                  style="border-right: 1px solid #d9d9d9;"
+                >
+                  部门经济分类
+                </th>
+              </tr>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script
+      src="../pub/bg.parse.js?rev=@@hash"
+      type="text/javascript"
+      charset="utf-8"
+    ></script>
+    <script
+      src="../pub/bgPub.js?rev=@@hash"
+      type="text/javascript"
+      charset="utf-8"
+    ></script>
+    <script
+      src="billPermissionShow.js?rev=@@hash"
+      type="text/javascript"
+      charset="utf-8"
+    ></script>
+  </body>
+</html>

@@ -1,0 +1,77 @@
+/* 
+【财务云】检查所有表格界面，默认列宽需要按如下描述指定。
+
+日期列--BGdateClass：10个字符的宽度，2020-01-12；年月日分开的，需要按4、2、2的宽度结合标题宽度指定；居中
+
+摘要列--BGThirtyLen：最多30个字的宽度，30个字内的宽度自适应，超过30个字，光标移动需有气泡提示；居左
+
+要素编码类--BGasscodeClass：自适应，最大42个字的字符，按数据库最大；居左
+
+要素名称类--BGThirtyLen：最多30个字的宽度，30个字内的宽度自适应，超过30个字，光标移动需有气泡提示；居左
+
+状态列--BGstatusClass：根据数据状态的所有值，给一个默认宽度；居中
+
+方向列--BGdirectionClass：根据方向的值给默认宽度；居中
+
+金额列--BGmoneyClass：账表查询类的金额列，默认20个字符的宽度（万亿），两位小数（汇率除外），千分位显示，居右 ；
+
+频次类--BGpcClass：附件张数，次数等，默认4个字符的宽度，自适应宽度，居右；
+
+人名类--BGTenLen：默认4个汉字宽度，自适应宽度，最大显示10个汉字，光标移动有气泡提示，居左；
+
+勾选类--BGcheckClass：复选框列，以复选框的宽度为准，不能变宽；
+
+操作列--BGoptClass：按按钮的个数自适应；居中；
+
+备注、文本输入类以表格展示时的列--BGThirtyLen：最多30个字的宽度，30个字内的宽度自适应，超过30个字，光标移动需有气泡提示；居左
+
+可拖动列宽的界面，拖动后的列宽如果有记忆，则按记忆的列宽展示；
+ */
+ /* 等宽字体设置 */
+code {
+  padding: 0 !important;
+  font-size: 14px !important;
+  color: #333 !important;
+  background-color: transparent !important;
+  border-radius: 0px !important;
+  font-family: "微软雅黑" !important;
+ }
+ /* 日期 */
+ .BGdateClass {
+  max-width: 101px;
+}
+/* 摘要、要素名称、备注、文本输入类以表格展示时的列 */
+.BGThirtyLen {
+  max-width: 420px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+/* 要素编码类 */
+.BGasscodeClass {
+  max-width: 336px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+/* 金额列 */
+.BGmoneyClass {
+  max-width: 159px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+/* 人名类、单据类型 */
+.BGTenLen {
+  max-width: 140px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+/* 状态列 */
+.BGstatusClass {
+  max-width: 120px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}

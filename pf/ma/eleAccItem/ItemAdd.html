@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>选择启用要素</title>
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <link src="eleAccItem.css?rev=@@hash" rel="stylesheet" type="text/css">
+    <script src="../../pub/boot.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+</head>
+<body>
+    <div class="ufma-layout-updown">
+        <div class="ufma-layout-up" style="height:calc(100% - 60px);">
+            <div class="container-fluid margin-left-15 margin-right-15 margin-top-10">
+                <div class="container-fluid">
+                    <div class="table-sub clearfix">
+                    </div>
+                </div>
+                <div class="container-fluid margin-right-15 margin-top-10">
+                    <table id="reportData" class="ufma-table">
+                        <thead>
+                            <tr>
+                                <th style="width:20px;"><label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
+                                <input type="checkbox" class="group-checkable" data-set="#data-table.checkboxes" /> <span></span> </label></th>
+                                <th>要素名称</th>
+                                <th>编码规则</th>
+                                <th>控制方式</th>
+                            </tr>
+                        </thead>
+                    </table>
+
+                </div>
+            </div>
+        </div>
+        <div class="ufma-layout-down bordered-top ">
+            <div class="text-right margin-right-30 ">
+                <button type="button" class="btn btn-sm btn-permission btn-primary btn-start" id="btn-start">启用</button>
+                <button type="button" class="btn btn-sm btn-default btn-close"> 取消</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="ItemAdd.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+</body>
+
+</html>

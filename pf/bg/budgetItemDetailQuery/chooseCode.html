@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>指标台账编码选择</title>
+		<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+		<script src="../../pub/boot.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+		<link rel="stylesheet" href="../../agla-trd/fileinput/fileinput.css?rev=@@hash" />
+		<script src="../../agla-trd/fileinput/fileinput.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+    <script src="../../agla-trd/fileinput/zh.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+    <link rel="stylesheet" href="../pub/common.css?rev=@@hash" />
+		<link rel="stylesheet" href="budgetItemDetailQuery.css?rev=@@hash" />
+	</head>
+
+	<body>
+		<div class="ufma-layout-updown">
+			<div class="ufma-layout-up">
+				<div class="container-fluid">
+					<div class="ufma-portlet">
+						<div class="portlet-body bordered pr inPlan" style="margin-top:10px;padding:11px;margin-bottom: 10px;">
+							<div class="btn-group" style="position: absolute;right:15px;top:15px;">
+								<label class="label label-more" data-target="#queryMore" style="right:34px;">更多
+									<i class="glyphicon icon-angle-bottom"></i>
+								</label>
+								<button id="btnQuery" type="button" class="btn btn-sm btn-primary btn-query " style="border-top-left-radius:4px;border-bottom-left-radius:4px;">查询</button>
+							</div>
+							<form id="frmQuery" class="form-horizontal" style="margin-left: 10px;">
+								<div class="form-row inline-block" style="margin-left: 2em;margin-bottom:0px;">
+									<div class="form-group">
+										<label class="control-label auto">预算方案：</label>
+										<div id="cbBgPlan" class="uf-combox" idField="chrId" textField="chrName" placeholder="请选择预算方案" style="width:204px;"></div>
+									</div>
+									<div class="form-group"style="margin-left: 47px;">
+										<label class="control-label auto" style="margin-left:28px;">单据日期：</label>
+										<div class="control-element" style="width:100px;">
+											<div id="dateStart" name="dateStart" class="uf-datepicker" style="width:100px;"></div>
+										</div>
+										<span class="split" style="margin-left: 18px;">至</span>
+										<div class="control-element"style="margin-left: -1px;">
+											<div id="dateEnd" name="dateEnd" class="uf-datepicker" style="width:100px;"></div>
+										</div>
+									</div>
+									<div class="clearfix"></div>
+								</div>
+							</form>
+							<form id="queryMore" class="form-horizontal none mt10" name="form0">
+								<div class="moreMessage">
+									<div class="form-row" style="width:800px;margin-top:-7px;"><!--max-height: 100px;overflow-y: auto;---经赵雪蕊确认去掉预算方案部分的滚动条-->
+										<div id="planItemMore"></div>
+										<div class="clearfix"></div>
+									</div>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+				<div class="rpt-table-tab" style="padding: 0 15px;">
+					<table class="ufma-table uf-rpt-table" id="inTable"></table>
+				</div>
+			</div>
+			<div class="ufma-layout-down bordered-top">
+				<div class="text-right margin-right-30">
+					<button type="button" class="btn btn-sm btn-primary  btn-save" id="btnSave">确定</button>
+					<button type="button" class="btn btn-sm btn-default" id="btnClose"> 取消</button>
+				</div>
+			</div>
+		</div>
+
+		<script src="../pub/bgPub.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+		<script src="../pub/bg.parse.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+		<script src="chooseCode.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+	</body>
+
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>期初余额-试算平衡</title>
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <script src="../../../pub/boot.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+</head>
+<body>
+<div class="ufma-layout-updown">
+	<div class="ufma-layout-up">
+		<div class="container-fluid margin-left-15 margin-right-15">
+			
+			<div class="alert alert-success" role="alert">试算平衡！</div>
+			<div class="alert alert-warning hide" role="alert">试算不平衡！<span id="defAmt" style="color:red;"></span></div>
+			<div class="">
+				<strong>财务会计平衡公式：</strong>资产类=负债类+净资产类
+			</div>
+			<div id="reportData" class="table-discoloration margin-bottom-10"></div>
+			<div class="budgetCaption mt15">
+				<strong>预算会计平衡公式：</strong>预算收入-预算支出=预算结余
+			</div>
+			<div id="reportDataBudget" class="table-discoloration mb15"></div>
+		
+		</div>
+	</div>
+	<div class="ufma-layout-down bordered-top">	
+		<div class="text-right margin-right-30">
+			 <button type="button" class="btn btn-sm btn-primary" id="btn-save">保存期初余额</button>
+			 <button type="button" class="btn btn-sm btn-default" id="btn-cancel"> 取消</button>
+		 </div>
+	</div>
+</div>
+<script src="shisuan.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+</body>
+</html>

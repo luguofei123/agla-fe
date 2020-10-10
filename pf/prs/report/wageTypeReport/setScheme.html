@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>设置查询方案</title>
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <script src="../../../pub/boot.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+    <link rel="stylesheet" type="text/css" href="../../common/common.css?rev=@@hash"/>
+    <link rel="stylesheet" type="text/css" href="wageTypeReport.css?rev=@@hash"/>
+</head>
+<body>
+<!--整个容器 begin-->
+<div class="ufma-layout-updown">
+    <div class="ufma-layout-up">
+        <div class="container-fluid">
+            <div class="form-horizontal" style="margin: 10px 0">
+                <div class="form-row">
+                    <div class="form-group required">
+                        <label class="control-label" style="width: 70px">方案名称：</label>
+                        <div class="control-element">
+                            <input type="text" name="schemeName" class="form-control" maxlength="200" style="width: 200px" autocomplete="off">
+                        </div>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+            <div>
+                <div style="margin-bottom: 10px">方案列表</div>
+                <div class="schemeName-list fl" style="width: 380px">
+                    <table id="nameTable" class="tableCommonStyle ufma-table" tool-bar="#rpt-tool-bar">
+                    </table>
+                    <button class="btn btn-default add-row" id="addScheme" style="width:100px;margin:15px auto;display: block;"><span class="icon-add" style="margin-right: 8px;"></span>新增方案
+                    </button>
+                </div>
+                <div class="scheme-detail fl" style="width: 670px;padding-left: 20px">
+                    <table id="nameTableDetail" class="tableCommonStyle ufma-table" tool-bar="#rpt-tool-bar">
+                    </table>
+                    <button class="btn btn-default add-row" id="addSchemeDetail" style="width:100px;margin:15px auto;display: block;"><span class="icon-add" style="margin-right: 8px;"></span>新增行
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="ufma-layout-down bordered-top">
+        <div class="text-right margin-right-30">
+            <button type="button" class="btn btn-sm btn-default" id="btn-saveAs">另存为新方案</button>
+            <button type="button" class="btn btn-sm btn-primary" id="btn-sure">保存</button>
+            <button type="button" class="btn btn-sm btn-default btn-close" id="btn-close">关闭</button>
+        </div>
+    </div>
+</div>
+<script src="setScheme.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+</body>
+</html>

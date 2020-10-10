@@ -1,0 +1,339 @@
+#abstract-container{
+	min-width: 200px;
+    max-width: 500px;
+    max-height: 230px;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    z-index: 900;
+    box-shadow: none;
+    font-weight: initial;
+    background: #fff;
+    border: 1px solid #D9D9D9;
+    display: none;
+    box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.20);
+    position: fixed;
+    display: none;
+}
+.AccoTree {
+	min-width: 200px;
+    max-height: 230px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    z-index: 900;
+    box-shadow: none;
+    font-weight: initial;
+    background: #fff;
+    max-width: 650px;
+    box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.20);
+    border: 1px solid #D9D9D9;
+    position: fixed;
+    display: none;
+}
+.AccoTree li {
+	height: 30px;
+	min-width: 257px;
+	max-width: 660px;
+	line-height: 30px;
+	text-align: left;
+	padding-left: 10px;
+	position: relative;
+}
+.AccoTree li p {
+	float: left;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	padding-right:20px;
+	width: 100%;
+	height: 30px;
+}
+
+.AccoTree li p .ACCO_CODE {
+	padding-left: 20px;
+	display: inline-block;
+}
+.AccoTree li p .ACCO_NAME {
+	display: inline-block;
+}
+.AccoTree li .fu {
+}
+.AccoTree .clik1:hover {
+	background: #ACDBF5;
+}
+.AccoTree .PopListBoxItem{
+	display: block !important;
+}
+.AccoTree .fu {
+	width: 26px;
+	height: 16px;
+	background: #FFBF00;
+	border: 0 solid #FFBF00;
+	border-radius: 4px;
+	font-size: 10px;
+	color: #FFFFFF;
+	letter-spacing: 0.42px;
+	position: absolute;
+	text-align: center;
+	line-height: 16px;
+	margin-top: 7px;
+	z-index: 20;
+	right: 20px;
+}
+
+.AccoTree .allnoshow{
+	display: none !important;
+}
+.AccoTree .leave1 p {
+	margin-left: 16px;
+}
+
+.AccoTree .leave2 p {
+	margin-left: 32px;
+}
+
+.AccoTree .leave3 p {
+	margin-left: 48px;
+}
+
+.AccoTree .leave4 p {
+	margin-left: 64px;
+}
+
+.AccoTree .leave5 p {
+	margin-left: 80px;
+}
+
+.AccoTree .leave6 p {
+	margin-left: 96px;
+}
+
+.AccoTree .leave7 p {
+	margin-left: 112px;
+}
+.AccoTree .leave8 p {
+	margin-left: 128px;
+}
+.AccoTree .leave9 p {
+	margin-left: 144px;
+}
+.AccoTree .leave10 p {
+	margin-left: 160px;
+}
+
+.clik0 .fu {
+	display: none;
+}
+
+.clik1 {
+	cursor: pointer;
+}
+
+.clik1 p .code {
+	padding-left: 20px;
+}
+
+.clik0 p .code {
+	padding-left: 20px;
+}
+
+.clik0 p {
+	background: url("/pf/gl/vou/img/xial.png") no-repeat;
+	background-position: -3px 8px;
+}
+
+.clik0 .sq {
+	background: url("/pf/gl/vou/img/xiasq.png") no-repeat;
+	background-position: 0px 4px;
+}
+.fuhs0 .fu {
+	display: none;
+}
+.AccoTree .bukedian{
+	height: 30px;
+	min-width: 257px;
+	max-width: 660px;
+	line-height: 30px;
+	text-align: left;
+	padding-left: 10px;
+	position: relative;
+	display: none;
+}
+.AccoTree .xzkjkm{
+	height: 33px;
+	min-width: 257px;
+	max-width: 660px;
+	line-height: 33px;
+	text-align: center;
+	background:#E6F4FD;
+	padding-left: 10px;
+	position: relative;
+	display: none;
+	cursor: pointer;
+}
+.AccoTree .xzkjkm a{
+	text-decoration: none;
+}
+.ycbodys .fzhsadd{
+	padding-left: 8px;
+	cursor: pointer;
+	text-align: center;
+	background:#E6F4FD;
+	float: left;
+	min-width: 100%;
+}
+.leftpzzt {
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    z-index: 20;
+    text-align: center;
+    background: #FF7100;
+    border-radius: 4px;
+    color: #fff;
+    font-size: 10px;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    cursor: pointer;
+    padding: 2px 8px;
+}
+.leftws{
+	background: #e5f8f2;
+	color:#00C285
+}
+.leftzf{
+	background: rgb(249, 226, 224);
+	color:rgb(238, 64, 51)
+}
+.leftwg{
+	background: rgb(255, 245, 219);
+	color:rgb(255, 192, 23)
+}
+.ycbodys .PopListBoxItem{
+	display:inline-block !important;
+}
+.AssTree .ycbodys {
+	min-width: 400px !important;
+    max-width: 600px;
+    min-height: 100px;
+    max-height: 400px;
+    overflow-y: scroll;
+	overflow-x: scroll;
+	z-index: 100;
+	background: #fff;
+	border: 1px solid #D9D9D9;
+	display: none;
+	position: absolute;
+	box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.20);
+}
+
+.AssTree .ycbodys li {
+	/*width: 100%;*/
+	height: 21px;
+	line-height: 21px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	display: none;
+	min-width: 100%;
+	float: left;
+}
+
+.AssTree .ycbodys .fzlv0 {
+	padding-left: 4px;
+}
+
+.AssTree .ycbodys .fzlv1 {
+	padding-left: 8px;
+}
+
+.AssTree .ycbodys .fzlv2 {
+	padding-left: 12px;
+}
+
+.AssTree .ycbodys .fzlv3 {
+	padding-left: 16px;
+}
+
+.AssTree .ycbodys .fzlv4 {
+	padding-left: 20px;
+}
+
+.AssTree .ycbodys .fzlv5 {
+	padding-left: 24px;
+}
+
+.AssTree .ycbodys .fzlv6 {
+	padding-left: 28px;
+}
+
+.AssTree .ycbodys .fzlv7 {
+	padding-left: 32px;
+}
+
+.AssTree .ycbodys .dianji1 {
+	cursor: pointer;
+}
+
+.AssTree .ycbodys .dianji0 {
+	cursor: pointer;
+}
+.AssTree .ycbodys li .code {
+	line-height: 21px;
+	margin-left: 10px;
+	max-width: 100px;
+}
+
+.AssTree .ycbodys .dianji1 p{
+	padding-left: 8px;
+	display: inline-block;
+}
+
+.AssTree .ycbodys .dianji0 p{
+	background: url('/pf/gl/vou/img/xial.png') no-repeat -2px 2px;
+	padding-left: 8px;
+	display: inline-block;
+}
+
+.AssTree .ycbodys .dianji0 p.sq{
+	background: url('/pf/gl/vou/img/xiasq.png') no-repeat 0px 0px;
+	padding-left: 8px;
+}
+
+.AssTree .ycbodys li .name {
+	max-width: 300px;
+	line-height: 21px;
+	margin-left: 10px;
+	overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.AssTree .ycbodys .dianji1:hover {
+	background: #ACDBF5;
+}
+
+.voucher-yc-bg .voucher-yc-bo:nth-of-type(1) .AssTree .ycbodys {
+	top: 50px;
+}
+
+.voucher-yc-bg .voucher-yc-bo:nth-of-type(2) .AssTree .ycbodys {
+	top: 50px;
+}
+
+.voucher-yc-bg .voucher-yc-bo:nth-of-type(3) .AssTree .ycbodys {
+	top: 50px;
+}
+
+.AssTree .ycbodys {
+	bottom: 32px;
+}
+.AssTree .ycbodys .allnoshow{
+	display: none !important;
+}
+.ycbodys .noallass,.ycbodys .noallassno {
+    padding-left: 8px;
+    cursor: pointer;
+    text-align: center;
+    background: #E6F4FD;
+    display: inline-block !important;
+}

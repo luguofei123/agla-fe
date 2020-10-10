@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>指标调整</title>
+    <meta
+      content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
+      name="viewport"
+    />
+    <script
+      src="../../pub/boot.js?rev=@@hash"
+      type="text/javascript"
+      charset="utf-8"
+    ></script>
+    <link rel="stylesheet" href="../../agla-trd/fileinput/fileinput.css" />
+    <script
+      src="../../agla-trd/fileinput/fileinput.js"
+      type="text/javascript"
+      charset="utf-8"
+    ></script>
+    <script
+      src="../../agla-trd/fileinput/zh.js"
+      type="text/javascript"
+      charset="utf-8"
+    ></script>
+    <link rel="stylesheet" href="../pub/common.css?rev=@@hash" />
+    <link rel="stylesheet" href="../pub/bgPubImpAttachment.css?rev=@@hash" />
+    <link
+      rel="stylesheet"
+      href="../budgetItemAdjust/budgetItemAdjust.css?rev=@@hash"
+    />
+  </head>
+
+  <body>
+    <div class="ufma-layout-updown" id="budgetEditor">
+      <div class="ufma-layout-up" style="overflow: hidden;">
+        <div
+          id="tzdTimeline"
+          class="uf-timeline margin-top-8"
+          style="display: block;"
+        ></div>
+        <div class="margin-left-15 margin-right-15">
+          <div id="pnl-tzzb" class="uf-portlet">
+            <!--查询条件begin-->
+            <div
+              class="uf-panel uf-panel-primary bordered margin-bottom-10 margin-top-10 portlet-body"
+            >
+              <div class="uf-form-group-panel">
+                <div
+                  class="margin-bottom-10"
+                  style="height: 40px; margin-top: 20px;"
+                >
+                  <div style="float: left;">
+                    <div class="form-ctrl">单据日期：</div>
+                    <div class="form-ctrl">
+                      <div
+                        id="billDate"
+                        class="uf-datepicker inline-block"
+                      ></div>
+                    </div>
+                    <div class="label-ctrl">单据号：</div>
+                    <div class="form-ctrl">
+                      <input
+                        id="billCode"
+                        type="text"
+                        class="uf-form-control"
+                        disabled="true"
+                        placeholder="保存单据时自动编号"
+                      />
+                    </div>
+                  </div>
+                  <div style="float: right;">
+                    附单据<input
+                      id="billFJ"
+                      type="text"
+                      class="uf-form-control"
+                      style="width: 40px; text-align: center;"
+                      oninput="value=value.replace(/[^\d]/g,'')"
+                    />&nbsp;张
+                    <!-- bug78324--zsj-->
+                    <button
+                      type="button"
+                      id="btnUploadFile"
+                      class="btn btn-sm btn-default btn-attach bg-multiModal-rightTopDiv unallocate-BgItem-fileBtn"
+                      title="附件"
+                    >
+                      <span class="icon-file"></span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!--查询条件end-->
+            <div
+              id="zbtz-data-editor"
+              class="uf-datagrid"
+              style="margin-top: 10px;"
+            ></div>
+          </div>
+          <div id="pnl-end" class="hide text-center">
+            <div class="inline-block" style="margin-top: 135px;">
+              <div style="padding-left: 30px; position: relative;">
+                <span
+                  class="icon icon-check-circle ufma-green"
+                  style="
+                    font-size: 24px;
+                    position: absolute;
+                    top: 0px;
+                    left: 0px;
+                  "
+                ></span
+                >恭喜您，指标调整完成！
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="viewlog" class="uf-datagrid-detail">
+          <div id="zblog-data" class="uf-datagrid" style="height: auto;"></div>
+        </div>
+      </div>
+      <div class="ufma-layout-down bordered-top">
+        <div class="text-right margin-right-30">
+          <button
+            type="button"
+            class="btn btn-sm btn-primary btn-save"
+            id="btn-save"
+          >
+            保存
+          </button>
+          <button
+            type="button"
+            class="btn btn-sm btn-default btn-close"
+            id="btn-close"
+          >
+            关闭
+          </button>
+        </div>
+      </div>
+    </div>
+    <script
+      src="../pub/bg.parse.js?rev=@@hash"
+      type="text/javascript"
+      charset="utf-8"
+    ></script>
+    <script
+      src="optAdjust.js?rev=@@hash"
+      type="text/javascript"
+      charset="utf-8"
+    ></script>
+    <script
+      src="../pub/bgPub.js?rev=@@hash"
+      type="text/javascript"
+      charset="utf-8"
+    ></script>
+    <script
+      src="../pub/bgPubLog.js?rev=@@hash"
+      type="text/javascript"
+      charset="utf-8"
+    ></script>
+    <script
+      src="../pub/bgPubImpAttachment.js?rev=@@hash"
+      type="text/javascript"
+      charset="utf-8"
+    ></script>
+  </body>
+</html>

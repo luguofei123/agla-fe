@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>新增自定义人员属性</title>
+    <meta
+      content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
+      name="viewport"
+    />
+    <script
+      src="../../../pub/boot.js?rev=@@hash"
+      type="text/javascript"
+      charset="utf-8"
+    ></script>
+    <script
+      src="../../common/common.js?rev=@@hash"
+      type="text/javascript"
+      charset="utf-8"
+    ></script>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="../../common/common.css?rev=@@hash"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="employeeProperty.css?rev=@@hash"
+    />
+  </head>
+  <body>
+    <!--整个容器 begin-->
+    <div class="ufma-layout-updown employee-property">
+      <div class="ufma-layout-up">
+        <div class="container-fluid">
+          <form id="frmQuery" class="form-horizontal margin-top-10">
+            <div class="form-row">
+              <div
+                class="form-group required font-size-0 col-xs-10 col-sm-5 col-md-5"
+              >
+                <label
+                  class="control-label font-size-14 text-align-left data-label"
+                  >属性代码：</label
+                >
+                <div class="control-element" style="width:180px;">
+                  <input
+                    id="propertyCode"
+                    type="text"
+                    name="propertyCode"
+                    class="form-control"
+                    maxlength="200"
+                    style="width: 180px"
+                    autocomplete="off"
+                    disabled
+                  />
+                </div>
+              </div>
+              <div
+                class="form-group required font-size-0 col-xs-10 col-sm-5 col-md-5"
+              >
+                <label
+                  class="control-label data-label font-size-14 text-align-left"
+                  >属性名称：</label
+                >
+                <div class="control-element" style="width:180px;">
+                  <input
+                    id="propertyName"
+                    type="text"
+                    name="propertyName"
+                    class="form-control"
+                    style="width: 180px"
+                    autocomplete="off"
+                  />
+                </div>
+              </div>
+              <div class="clearfix"></div>
+            </div>
+            <div class="form-row">
+              <div class="form-group font-size-0 col-xs-10 col-sm-5 col-md-5">
+                <label class="control-label font-size-14 data-label"
+                  >是否启用：</label
+                >
+                <div class="control-element font-size-14">
+                  <div class="btn-group radio-group" data-toggle="buttons">
+                    <label class="btn btn-default btn-sm active isUsed">
+                      <input
+                        type="radio"
+                        class="toggle"
+                        name="isUsed"
+                        value="Y"
+                        checked
+                      />是
+                    </label>
+                    <label class="btn btn-default btn-sm isUsed">
+                      <input
+                        type="radio"
+                        class="toggle"
+                        name="isUsed"
+                        value="N"
+                      />否
+                    </label>
+                  </div>
+                </div>
+              </div>
+              <div class="form-group font-size-0 col-xs-10 col-sm-5 col-md-5">
+                <label class="control-label font-size-14 data-label"
+                  >是否显示：</label
+                >
+                <div class="control-element font-size-14">
+                  <div class="btn-group radio-group" data-toggle="buttons">
+                    <label class="btn btn-default btn-sm active isVisible">
+                      <input
+                        type="radio"
+                        class="toggle"
+                        name="isVisible"
+                        value="Y"
+                        checked
+                      />是
+                    </label>
+                    <label class="btn btn-default btn-sm isVisible">
+                      <input
+                        type="radio"
+                        class="toggle"
+                        name="isVisible"
+                        value="N"
+                      />否
+                    </label>
+                  </div>
+                </div>
+              </div>
+              <div class="clearfix"></div>
+            </div>
+            <div class="form-row">
+              <div class="form-group font-size-0 col-xs-10 col-sm-5 col-md-5">
+                <label class="control-label font-size-14 data-label"
+                  >允许为空：</label
+                >
+                <div class="control-element font-size-14">
+                  <div class="btn-group radio-group" data-toggle="buttons">
+                    <label class="btn btn-default btn-sm active isEmpty">
+                      <input
+                        type="radio"
+                        class="toggle"
+                        name="isEmpty"
+                        value="Y"
+                        checked
+                      />是
+                    </label>
+                    <label class="btn btn-default btn-sm isEmpty">
+                      <input
+                        type="radio"
+                        class="toggle"
+                        name="isEmpty"
+                        value="N"
+                      />否
+                    </label>
+                  </div>
+                </div>
+              </div>
+              <div class="form-group font-size-0 col-xs-10 col-sm-5 col-md-5">
+                <label class="control-label font-size-14 data-label"
+                  >列表中显示：</label
+                >
+                <div class="control-element font-size-14">
+                  <div class="btn-group radio-group" data-toggle="buttons">
+                    <label class="btn btn-default btn-sm active isList">
+                      <input
+                        type="radio"
+                        class="toggle"
+                        name="isList"
+                        value="Y"
+                        checked
+                      />是
+                    </label>
+                    <label class="btn btn-default btn-sm isList">
+                      <input
+                        type="radio"
+                        class="toggle"
+                        name="isList"
+                        value="N"
+                      />否
+                    </label>
+                  </div>
+                </div>
+              </div>
+              <div class="clearfix"></div>
+            </div>
+            <div class="form-row">
+              <div class="form-group font-size-0 col-xs-10 col-sm-5 col-md-5">
+                <label class="control-label font-size-14 data-label"
+                  >过滤条件：</label
+                >
+                <div class="control-element font-size-14">
+                  <div class="btn-group radio-group" data-toggle="buttons">
+                    <label class="btn btn-default btn-sm active isCondition">
+                      <input
+                        type="radio"
+                        class="toggle"
+                        name="isCondition"
+                        value="Y"
+                        checked
+                      />是
+                    </label>
+                    <label class="btn btn-default btn-sm isCondition">
+                      <input
+                        type="radio"
+                        class="toggle"
+                        name="isCondition"
+                        value="N"
+                      />否
+                    </label>
+                  </div>
+                </div>
+              </div>
+              <div class="form-group font-size-0 col-xs-10 col-sm-5 col-md-5">
+                <label class="control-label font-size-14 data-label"
+                  >通讯录字段：</label
+                >
+                <div class="control-element font-size-14">
+                  <div class="btn-group radio-group" data-toggle="buttons">
+                    <label class="btn btn-default btn-sm active isPhonebook">
+                      <input
+                        type="radio"
+                        class="toggle"
+                        name="isPhonebook"
+                        value="Y"
+                        checked
+                      />是
+                    </label>
+                    <label class="btn btn-default btn-sm isPhonebook">
+                      <input
+                        type="radio"
+                        class="toggle"
+                        name="isPhonebook"
+                        value="N"
+                      />否
+                    </label>
+                  </div>
+                </div>
+              </div>
+              <div class="clearfix"></div>
+            </div>
+            <div class="form-row">
+              <div
+                class="form-group required font-size-0 col-xs-10 col-sm-5 col-md-5"
+              >
+                <label class="control-label data-label font-size-14"
+                  >数据类型：</label
+                >
+                <div class="control-element font-size-14">
+                  <div
+                    id="dataType"
+                    class="uf-treecombox"
+                    idField="code"
+                    textField="codeName"
+                    leafRequire="true"
+                    name="dataType"
+                    style="width:180px"
+                  ></div>
+                </div>
+              </div>
+              <div class="form-group col-xs-10 col-sm-5 col-md-5">
+                <label class="control-label data-label fl">值集：</label>
+                <div class="control-element">
+                  <div
+                    id="valsetId"
+                    class="uf-treecombox"
+                    idField="code"
+                    textField="codeName"
+                    leafRequire="true"
+                    name="valsetId"
+                    style="width:180px"
+                  ></div>
+                </div>
+              </div>
+              <div class="clearfix"></div>
+            </div>
+            <div class="form-row">
+              <div class="form-group font-size-0 col-xs-10 col-sm-5 col-md-5">
+                <label
+                  class="control-label data-label font-size-14 text-align-left"
+                  >引用类：</label
+                >
+                <div class="control-element font-size-14">
+                  <input
+                    id="defValue"
+                    type="text"
+                    name="defValue"
+                    class="form-control"
+                    style="width: 180px"
+                    autocomplete="off"
+                    disabled
+                  />
+                </div>
+              </div>
+              <div class="form-group font-size-0 col-xs-10 col-sm-5 col-md-5">
+                <label class="control-label font-size-14 data-label"
+                  >属性类别：</label
+                >
+                <div class="control-element font-size-14">
+                  <div class="btn-group radio-group" data-toggle="buttons">
+                    <label disabled class="btn btn-default btn-sm isSys">
+                      <input
+                        type="radio"
+                        class="toggle"
+                        name="isSys"
+                        value="Y"
+                      />预置
+                    </label>
+                    <label disabled class="btn btn-default btn-sm active isSys">
+                      <input
+                        type="radio"
+                        class="toggle"
+                        name="isSys"
+                        value="N"
+                        checked
+                      />自定义
+                    </label>
+                  </div>
+                </div>
+              </div>
+              <div class="clearfix"></div>
+            </div>
+            <div class="clearfix"></div>
+          </form>
+        </div>
+      </div>
+
+      <div class="ufma-layout-down bordered-top">
+        <div class="text-right margin-right-30">
+          <button
+            type="button"
+            class="btn btn-sm btn-primary btn-save"
+            id="btn-save"
+          >
+            保存
+          </button>
+          <button
+            type="button"
+            class="btn btn-sm btn-default btn-close"
+            id="btn-close"
+          >
+            关闭
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <script
+      src="addEmployeeProperty.js?rev=@@hash"
+      type="text/javascript"
+      charset="utf-8"
+    ></script>
+  </body>
+</html>

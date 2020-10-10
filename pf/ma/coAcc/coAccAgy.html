@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>账套信息</title>
+	<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+	<script src="../../pub/boot.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+	<link rel="stylesheet" type="text/css" href="coAcc.css?rev=@@hash" />
+</head>
+
+<body datacode="agy">
+	<!--整个容器 begin-->
+	<div id='coAccagy' class="container-fluid ufma-container">
+		<!--工作区 begin-->
+		<div class="workspace">
+			<!--工作区顶部 begin-->
+			<div class="workspace-top">
+				<div class="container-fluid">
+					<div class="ufma-portlet">
+						<div class="portlet-title">
+							<div class="caption">
+								<span class="caption-subject font-dark uppercase">账套信息</span>
+							</div>
+							<ul class='ufma-list-col clearfix padding-left-8 pull-left' style="margin-top: 8px;">
+								<li class="ufma-list-col-item">
+									<div id='cbAgency' name="agencyCode" class="ufma-treecombox ufma-combox-agency"></div>
+								</li>
+							</ul>
+							<div class="actions">
+								<div class="btn-group">
+									<button type="button" class="btn btn-sm btn-save btn-primary btn-permission" id="btn-save">保存</button>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!--工作区顶部 end-->
+			<!--工作区中部 begin-->
+			<div class="workspace-center">
+				<div class="container-fluid">
+					<div class="table-sub">
+						<div id="navdiv" style="width: 90%;margin-left: 1%;display: inline-block;overflow: hidden;">
+							<ul class="nav nav-tabs accnab">
+							</ul>
+						</div>
+						<div class="btn-group" style="position: absolute;">
+							<button type="button" class="btn btn-sm btn-default" id="btn-left" style="padding: 3px 9px;display: none;">
+								<span class="icon-angle-left"></span>
+							</button>
+							<button type="button" class="btn btn-sm btn-default" id="btn-right" style="padding: 3px 9px;display: none;">
+								<span class="icon-angle-right"></span>
+							</button>
+						</div>
+						<div class="form-horizontal">
+							<input type="hidden" name="chrCId" id="caChrId" value="" data-enabled="1">
+							<div class="form-group">
+								<label class="control-label em6">账套编码：</label>
+								<div class="control-element">
+									<input type="text" name="chrCode" disabled="disabled" id="caEditChrCode" class="form-control w300">
+								</div>
+							</div>
+							<div class="form-group">
+								<label class="control-label em6">账套名称：</label>
+								<div class="control-element">
+									<input type="text" name="chrName" disabled="disabled" id="caEditChrName" class="form-control w300">
+								</div>
+							</div>
+							<div class="form-group">
+								<label class="control-label em6">财务负责人：</label>
+								<div class="control-element">
+									<input type="text" name="fiLeader" id="caFiLeader" class="form-control w300" placeholder="请输入财务负责人">
+								</div>
+							</div>
+							<div class="form-group" id="agencyType">
+								<label class="control-label em6">单位类型：</label>
+								<div class="control-element">
+									<select class="form-control w300" name="" disabled="disabled" id="agencyTypecode" require-all=1>
+									</select>
+								</div>
+							</div>
+							<div class="form-group" id="caEditEleAcc">
+								<label class="control-label em6">科目体系：</label>
+								<div class="control-element">
+									<select class="form-control w300" name="" disabled="disabled" id="caEditEleAcCode" require-all=1>
+									</select>
+								</div>
+							</div>
+							<div class="form-group" id="caEditEleAccNum">
+								<label class="control-label em6">科目数量：</label>
+								<div class="control-element w300">
+									<span style="line-height: 30px;">890</span>
+								</div>
+							</div>
+							<div class="form-group" id="taxpayerType">
+								<label class="control-label em6">纳税人类型：</label>
+								<div class="control-element">
+										<select class="form-control w300" name="" id="taxpayerTypecode" require-all=1>
+									</select>
+								</div>
+							</div>
+							<div class="form-group" id="isCashFlowAccount">
+								<label class="control-label em6">现金流量核算：</label>
+								<div class="control-element w300">
+									<!--CWYXM-11754 --系统管理-账套管理-账套信息是否勾选核算现金流量与基础资料-账套管理的现金流量核算状态应是一致的--zsj-->
+									<div class="btn-group btn-group-sm" data-toggle="buttons">
+										<label class="btn btn-sm btn-default isCashFlowAccountY" disabled="true">
+											<input type="radio" name="isParallel" id="isCashFlowAccount">是
+										</label>
+										<label class="btn btn-sm btn-default active isCashFlowAccountN" disabled="true">
+											<input type="radio" name="isParallel" checked="true" id="isCashFlowAccounts">否
+										</label>
+									</div>
+								</div>
+							</div>
+							<div class="form-group" id="caIsParallel">
+								<label class="control-label em6">平行记账模式：</label>
+								<div class="control-element w300">
+									<div class="btn-group btn-group-sm" data-toggle="buttons">
+										<label class="btn btn-sm btn-default" disabled="true">
+											<input type="radio" name="isParallel" id="isParallel">是
+										</label>
+										<label class="btn btn-sm btn-default active" disabled="true">
+											<input type="radio" name="isParallel" checked="true" id="isParallels">否
+										</label>
+									</div>
+									<label class="mt-radio coaAcc-right ispx">
+										<input type="radio" name="isDoubleVou" disabled="disabled" id="isDoubleVou" checked="true" />单凭证
+										<span></span>
+									</label>
+									<label class="mt-radio coaAcc-right ispx">
+										<input type="radio" name="isDoubleVou" disabled="disabled" id="isDoubleVous" />双凭证
+										<span></span>
+									</label>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="OftenUrl">
+					<div class="ashtitle">
+						<div class="ashyelltitle">
+							<span></span>常用功能</div>
+					</div>
+					<div class="ashbody">
+						<span data-title="会计科目"  data-href="/pf/ma/coaAcc/coaAccAgy.html?menuid=0db80478-4d25-4251-8ed0-3d085a7091a8">会计科目</span>
+						<span data-title="凭证类型"  data-href="/pf/ma/vouType/vouTypeAgy.html?menuid=4607a0d6-b12b-40ff-95df-1d5161589821">凭证类型</span>
+						<span data-title="辅助核算"  data-href="/pf/ma/eleAccItem/eleAccItemAgy.html?menuid=b2444b68-be3a-493a-895e-f9fd17599a56">辅助核算</span>
+						<span data-title="凭证模板"  data-href="/pf/gl/vouModel/vouModelAgy.html?menuid=c11d05b2-5a3a-4aa2-b80b-0f1821c6b814">凭证模板</span>
+						<span data-title="期初科目余额"  data-href="/pf/gl/beginofperiod/initialBal/initialBal.html?menuid=3b92db28-1947-4153-817b-82f1b17b699f">科目期初</span>
+						<span data-title="现金流量"  data-href="/pf/ma/cashFlow/cashFlowAgy.html?menuid=708ba6b8-134b-4af5-a4a7-79ebdef7a4ec">现金流量</span>
+					</div>
+				</div>
+				<div class="Oftenhistory">
+					<div class="ashtitle">
+						<div class="ashyelltitle">
+							<span></span>财务负责人</div>
+					</div>
+					<div class="ashbody">
+						<div class="voucher-history-by" style="height: auto;">
+							<!--<p class="voucher-history-by-nr" namess=""><span class="voucher-history-by-time">2018-08-09 14:45:34 </span><span class="jeiduan"></span><span class="voucher-history-by-pz">财务系统管理员 对  0001号凭证进行了 新增</span></p>
+								<p class="voucher-history-by-nr" namess=""><span class="voucher-history-by-time">2018-08-10 16:05:21 </span><span class="jeiduan"></span><span class="voucher-history-by-pz">财务系统管理员 对  0001号凭证进行了 审核</span></p>
+								<p class="voucher-history-by-nr" namess=""><span class="voucher-history-by-time">2018-08-10 16:05:23 </span><span class="jeiduan"></span><span class="voucher-history-by-pz">财务系统管理员 对  0001号凭证进行了 记账</span></p>-->
+						</div>
+					</div>
+				</div>
+			</div>
+			<!--工作区中部 end-->
+		</div>
+		<!--工作区 end-->
+	</div>
+	<!--整个容器 end-->
+	<script src="coAccAgy.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+	<script src="../maCommon/maCommon.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+</body>
+<style type="text/css">
+	.form-group {
+		display: inline-block;
+	}
+</style>
+
+</html>

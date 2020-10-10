@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>自动转账设置</title>
+		<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+		<script>
+			var bAgency = false; //单位级和系统级区分
+		</script>
+		<script src="../../../pub/boot.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+	</head>
+
+	<body>
+		<div class="container-fluid ufma-container">
+			<div class="workspace">
+				<!--工作区顶部 begin-->
+				<div class="workspace-top">
+					<div class="container-fluid">
+						<div class="ufma-portlet">
+							<div class="portlet-title">
+								<div class="caption">
+									<span class="caption-subject font-dark uppercase">自动转账设置</span>
+								</div>
+								<div class="actions">
+									<div class="btn-group">
+										<button type="button" class="btn btn-sm btn-primary btn-permission btn-add" id="btn-new">新增</button>
+									</div>
+									<div class="btn-group">
+										<button type="button" class="btn btn-sm btn-default btn-lowsend" id="btn-lowsend">下发</button>
+									</div>
+									<div class="btn-group">
+										<button type="button" class="btn btn-sm btn-default btn-permission btn-upload" id="btn-upload">导出</button>
+									</div>
+									<div class="btn-group">
+										<form id="upmodaldata" enctype="multipart/form-data" style="display:none;">
+											<input name="agencyCode" type="input" id="agencyCodes" style="display: none;">
+											<input name="acctCode" type="input" id="acctCodes" style="display: none;">
+											<input name="setYear" type="input" id="setYears" style="display: none;">
+											<input name="rgCode" type="input" id="rgCodes" style="display: none;">
+											<input name="file" type="file" id="upmodal" style="display: none;">
+										</form>
+										<button type="button" class="btn btn-sm btn-default btn-permission btn-import" id="btn-import">导入</button>
+									</div>
+								</div>
+							</div>
+
+							<div class="portlet-body form-horizontal bordered">
+								<div class="form-group label-group fl margin-right-15">
+									<div class="control-label">科目体系：</div>
+									<div class="control-element" id="accsList">
+										<div id="cbAccs" class="uf-combox w210"></div>
+
+									</div>
+								</div>
+								<div class="form-group label-group fl margin-right-15">
+									<div class="control-label">方案类型：</div>
+									<div class="control-element" id="scheType">
+										<a name="scheType" value="-1" class="label label-radio selected">全部</a>
+									</div>
+								</div>
+								<div class="form-group label-group inline-block" style="min-width:300px;display: none;">
+									<div class="control-label">期间类型：</div>
+									<div class="control-element">
+										<a name="fajb" value="*" class="label label-radio selected">全部</a>
+										<a name="fajb" value="NJ" class="label label-radio">年结</a>
+										<a name="fajb" value="YJ" class="label label-radio">月结</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="workspace-center">
+					<div class="container-fluid">
+						<div class="table-sub clearfix">
+							<div class="table-sub-info pull-left" style="display: none !important;">
+								<span id="totalNum"></span>&nbsp;&nbsp;&nbsp;&nbsp;
+							</div>
+							<div class="table-sub-action pull-right" style="display: none;">
+								<div id="cardType" class="btn-group" data-toggle="buttons">
+									<label class="btn btn-default btn-card " data-toggle="tooltip" title="卡片式">
+										<input type="radio" class="toggle" value="1" ><i class="icon icon-large-ul" aria-hidden="true"></i>
+									</label> 
+									<label class="btn btn-default btn-table active" data-toggle="tooltip" title="列表">
+										<input type="radio" class="toggle" value="-1"checked><i class="icon icon-navicon" aria-hidden="true"></i>
+									</label>
+								</div>
+							</div>
+						</div>
+
+						<div class="ufma-nav-fixed">
+							<div class="ufma-nav-fixed-body" id="pinyinNav">
+
+							</div>
+						</div>
+
+						<div class="padding-right-8" id="carryCard">
+						</div>
+					</div>
+				</div>
+			</div>
+			<div id="Agencymodal" class="ufma-modal">
+				<div class="u-msg-title">
+					<h4>方案下发</h4>
+				</div>
+				<div class="u-msg-content">
+					<div class="container-fluid margin-left-15 margin-right-15">
+						<ul class="list-unstyled">
+							<!--提示 begin-->
+							<li class="tips clearfix">
+								<div class="tips-icon pull-left">
+									<span class="glyphicon icon-point"></span>
+								</div>
+								<p class="pull-left">请勾选需要下发的单位</p>
+							</li>
+							<!--提示 end-->
+	
+							<!--凭证类型 begin-->
+							<li class="setVouType clearfix">
+								<label class="pull-left" for="" style="width: 100px;text-align: right;margin-bottom: 8px;">下发单位：</label>
+								<div class="pull-left">
+									<div id='cbAgencylowsend' name="agencyCode" class="ufma-treecombox ufma-combox-agency"></div>
+								</div>
+							</li>
+							
+							<!--凭证类型 end-->
+						</ul>
+					</div>
+				</div>
+				<div class="u-msg-footer">
+					<div class="text-right">
+						<button type="button" class="btn btn-sm btn-primary btn-save disabled" id="btn-lowsendsave">保存</button>
+						<button type="button" class="btn btn-sm btn-default btn-qx" id="btn-lowsendqx">取消</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script src="autoCarryforward.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+	</body>
+
+</html>

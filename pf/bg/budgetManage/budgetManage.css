@@ -1,0 +1,396 @@
+.bg-table-sub {
+	float: left;
+	position: relative;
+	width: 100%;
+}
+
+.bgtestborder {
+	border: 1px black solid;
+}
+
+.bgMultiModalMain {
+	padding: 8px 20px 0px 20px !important;
+}
+
+.bg-div-height-space-12 {
+	min-height: 12px;
+}
+
+.bg-div-margin-top-bottom-8 {
+	margin-top: 8px;
+	margin-bottom: 8px;
+}
+
+.bg-multiModal-content {
+	position: relative;
+	float: left;
+	width: 100%;
+}
+
+.bg-multiModal-rightButton {
+	float: right;
+	margin-left: 8px;
+}
+
+.bg-multiModal-leftButton {
+	float: left;
+	margin-right: 8px;
+}
+
+.bg-multiModal-topDiv {
+	position: relative;
+	float: left;
+	height: 30px;
+}
+
+.bg-multiModal-rightTopDiv {
+	position: relative;
+	float: right;
+	height: 30px;
+}
+
+.bg-multiModal-topDiv-30right {
+	margin-right: 30px;
+}
+
+.bg-multiModal-topDiv-60right {
+	margin-right: 60px;
+}
+
+.bg-multiModal-dtp {
+	width: 125px;
+}
+
+.bg-multiModal-bgplan {
+	width: 210px;
+}
+
+.bg-multiModal-fileCount {
+	width: 33px;
+}
+
+.bg-multiModal-fileBtn {
+	width: 45px;
+}
+
+.bgMultiModalForm .inputHeight {
+	height: 30px !important;
+}
+
+.bgMultiModal-footer1 {
+	height: 50px;
+	border: 0px !important;
+	position: relative;
+}
+
+.bgMultiModal-footer2 {
+  height: 62px;
+  /* position: absolute; */
+  width: 200px;
+  margin: 0 auto;
+}
+
+.bg-multiModal-tbl-addRow {
+	position: absolute;
+	left: 430px;
+	top: 10px;
+	width: 200px;
+  height: 30px;
+  margin-top: 10px;
+}
+.bgMultiModal-footer2 .bg-addRow {
+	/* position: absolute;
+	left: 230px; */
+	margin-top: 10px;
+	width: 200px;
+	height: 30px;
+}
+.bgMultiModal-footer1 span {
+	position: relative;
+	width: 30px;
+	left: -35px;
+}
+
+.bgMultiModal-tbl {
+	/**transform : translateY(-8px);**/
+}
+
+.bgMultiModal-tbl tr td {
+	border: 1px #DFE6EC solid !important;
+}
+
+.bgMultiModal-tbl thead th {
+	border: 1px #DFE6EC solid !important;
+	text-align: center !important;
+}
+
+.bgMultiModal-tbl-pnl {
+	width: 100% !important;
+}
+
+.bgMultiModal-tbl-Height {}
+
+.bg-mainTableFooterDiv {
+	position: relative;
+	float: left;
+	width: 100%;
+}
+
+.bg-mainTableFooterDiv .rightDiv {
+	position: relative;
+	float: right;
+}
+
+.bg-mainTableFooterDiv .leftDiv {
+	position: relative;
+	float: left;
+}
+
+.bg-multi-floatLeft-1 {
+	position: relative;
+	float: left;
+	margin: 4px 4px 0 0;
+}
+
+.bg-top-4 {
+	top: 4px;
+}
+
+.bg-top-8 {
+	top: 8px;
+}
+
+.bg-top-12 {
+	top: 12px;
+}
+
+.billRow-a {
+	height: 35px;
+}
+
+.zbtz-data-border {
+	border-top: 1px solid #DFE6EC;
+	border-right: 1px solid #DFE6EC;
+	border-left: 1px solid #DFE6EC;
+	height: 38px;
+	margin-top: 12px;
+}
+
+.zbtz-data-font {
+
+	letter-spacing: 0.58px;
+	line-height: 38px;
+	text-align: center;
+	padding-left: 16px
+}
+
+#decompose-data {
+	height: auto !important;
+}
+
+.uf-grid-headerCell {
+	font-weight: bold;
+}
+
+.container-fluid {
+	padding-left: 0px;
+	padding-right: 0px;
+}
+
+.billtop-color {
+	color: black !important;
+}
+
+#decompose-dataBody {
+	height: 170px !important;
+}
+
+#select-data .tooltip {
+	z-index: 1000px;
+	top: 10px;
+}
+
+.div-scroll {
+	overflow-x: hidden;
+	overflow-y: auto;
+}
+
+
+/*打印隐藏时导出按钮悬浮效果*/
+
+#export:hover {
+	border-bottom-right-radius: 4px;
+	border-top-right-radius: 4px;
+}
+
+#zbfj-data .dataTables_scrollHeadInner,
+.dataTables_scrollHeadInner .dataTable {
+	width: 100% !important;
+}
+
+.control-bar {
+	z-index: 1001;
+	display: block;
+	background-color: #fff;
+	padding: 0px 1px;
+	user-select: none;
+	-webkit-box-sizing: border-box;
+	width: 100%;
+}
+
+.tool-bar-body {
+	position: relative;
+	border: 1px #d9d9d9 solid;
+	height: 40px;
+	padding-top: 4px;
+	margin-left: 14px;
+	margin-right: 14px;
+	user-select: none;
+}
+
+.rpt-funnelBtn {
+	font-size: 15px;
+	cursor: pointer;
+}
+
+.rpt-funnelBox {
+	position: absolute;
+	z-index: 9999;
+	background: #fff;
+	border: 1px solid #eee;
+	padding: 10px 8px;
+	box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.50);
+	border-radius: 4px;
+}
+
+.rpt-funnelBox p {
+	margin-bottom: 0;
+	float: left;
+	width: 180px;
+}
+
+.rpt-funnelBoxList {
+	display: none;
+	top: 42px;
+	right: 4px;
+	height: auto
+}
+
+.rpt-funnelBoxList:before {
+	content: '';
+	display: inline-block;
+	border-left: 10px solid transparent;
+	border-right: 10px solid transparent;
+	border-bottom: 10px solid #d9d9d9;
+	position: absolute;
+	top: -10px;
+	right: 16px;
+}
+
+.rpt-funnelBoxList:after {
+	content: '';
+	display: inline-block;
+	border-left: 9px solid transparent;
+	border-right: 9px solid transparent;
+	border-bottom: 9px solid #fff;
+	position: absolute;
+	top: -9px;
+	right: 17px;
+}
+
+.rpt-colList {
+	text-align: left;
+	/*min-width: 220px;
+	max-height:300px;
+	overflow:auto;*/
+}
+
+#colListTable tbody {
+	min-width: 220px;
+	display: block;
+	height: 300px;
+	overflow-y: auto;
+}
+
+.rpt-colList label {
+	font-weight: normal;
+	margin-bottom: 8px;
+}
+
+.rpt-funnelBoxList .rpt-colBtn {
+	text-align: right;
+}
+
+.rpt-table-sub-action {
+	float: right;
+	height: 30px;
+}
+
+.rpt-table-sub-action .btn {
+	height: 30px;
+	/* float: right; */
+}
+
+.commonShow {
+	max-width: 200px;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	overflow: hidden;
+}
+
+.commonShowPan {
+	max-width: 130px;
+	min-width: 110px;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	overflow: hidden;
+}
+
+#addCol {
+	margin-left: 156px;
+}
+
+.selectTr {
+	background-color: #D2EAFB;
+}
+
+
+/* #mangerTable_wrapper .dataTables_scroll .dataTables_scrollHead .dataTables_scrollHeadInner,
+#mangerTable_wrapper .dataTables_scroll .dataTables_scrollBody {
+	width: 100% !important;
+} */
+
+
+/* #mangerTable_wrapper .dataTables_scroll .dataTables_scrollHead th.sorting_disabled.opts.nowrap,
+#mangerTable_wrapper .dataTables_scroll .dataTables_scrollBody td.opts.nowrap {
+	min-width: 40px !important;
+} */
+/* #mangerTable_wrapper .dataTables_scroll .dataTables_scrollHead th.sorting_disabled.opts.nowrap {
+	min-width: 90px !important;
+} */
+.num0 {
+	min-width: 50px !important
+}
+
+.num2 {
+	min-width: 76px !important
+}
+
+.num3 {
+	min-width: 99px !important
+}
+
+.num4 {
+	min-width: 132px !important
+}
+
+.num5 {
+	min-width: 167px !important
+}
+
+.num6 {
+	min-width: 242px !important
+}
+.num7 {
+	min-width: 340px !important
+}

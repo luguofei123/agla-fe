@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<title>人员批量调级</title>
+<meta
+	content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
+	name="viewport" />
+<script src="../../../pub/boot.js?rev=@@hash" type="text/javascript"
+	charset="utf-8"></script>
+<script src="../../../agla-trd/fileinput/fileinput.js"></script>
+<script src="../../../agla-trd/fileinput/zh.js"></script>
+<script src="../../common/common.js?rev=@@hash" type="text/javascript"
+	charset="utf-8"></script>
+<link rel="stylesheet" href="../../../agla-trd/fileinput/fileinput.css">
+<link rel="stylesheet" type="text/css"
+	href="../../common/common.css?rev=@@hash" />
+<link rel="stylesheet" type="text/css"
+	href="departBudget.css?rev=@@hash" />
+	<link rel="stylesheet" type="text/css" href="depStaffInformation.css?rev=@@hash" />
+</head>
+<body>
+	<!--整个容器 begin-->
+	<div id="salary-project" class="ufma-layout-updown salary-project dep-staff-info">
+		<div class="ufma-layout-up">
+			<div class="container-fluid">
+				<form id="frmQuery" class="form-horizontal" style="margin-top: 10px">
+				<div class="info-title margin-bottom-10">职务等级调整</div>
+						<div class="form-group">
+							<!-- 缺少样式 
+							<label class="mt-radio mt-radio-outline"
+							</label>
+							-->
+							<input type="radio" name="posiLevelIncrease" value="Upgrade">
+							<label
+								class="control-label control-label font-size-14 text-align-left data-label">批量增加一级
+							</label>
+						</div>
+						<div class="form-group required font-size-0">
+							<input type="radio" name="posiLevelIncrease">
+							<label
+								class="control-label control-label font-size-14 text-align-left data-label">批量调整至等级：</label>
+							<div class="control-element">
+								<div id="posiLevel" class="uf-treecombox" leafRequire="true" name="posiLevel"
+									style="width: 200px"></div>
+							</div>
+						</div>
+						<div class="info-title margin-bottom-10">级别等级调整</div>
+						<div class="form-group">
+							<!-- 缺少样式 
+							<label class="mt-radio mt-radio-outline"
+							</label>
+							-->
+							<input type="radio" name="posiCodeIncrease" value="Upgrade">
+							<label
+								class="control-label control-label font-size-14 text-align-left data-label">批量增加一级
+							</label>
+						</div>
+						<div class="form-group required font-size-0">
+							<input type="radio" name="posiCodeIncrease">
+							<label
+								class="control-label control-label font-size-14 text-align-left data-label">批量调整至等级：</label>
+							<div class="control-element">
+								<div id="posiCode" class="uf-treecombox" leafRequire="true" name="posiCode"
+									style="width: 200px"></div>
+							</div>
+						</div>
+						<div class="clearfix"></div>
+					</div>
+				</form>
+			</div>
+		</div>
+
+		<div class="ufma-layout-down bordered-top">
+			<div class="text-right margin-right-30">
+				<button type="button" class="btn btn-sm btn-primary" id="btn-save">
+					保存</button>
+				<button type="button" class="btn btn-sm btn-default btn-close"
+					id="btn-close">关闭</button>
+			</div>
+		</div>
+	</div>
+
+	<script src="departBudget.js?rev=@@hash" type="text/javascript"
+		charset="utf-8"></script>
+</body>
+</html>

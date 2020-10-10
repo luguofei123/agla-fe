@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+  		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>账簿打印-级次设置</title>
+  		<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+		<script src="../../pub/boot.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+		<link rel="stylesheet" type="text/css" href="rptPrintPrintSet.css?rev=@@hash"/>
+	</head>
+	<body id="rptPrintPrintSet">
+		<div class="ufma-layout-updown">
+            <div class="ufma-layout-up">
+            	<div class="container-fluid margin-left-15 margin-right-15">
+            		<table id="rpps-data" class="ufma-table dataTable">
+    					<thead>
+    						<tr>
+    							<th rowspan="2">辅助项</th>
+    							<th rowspan="2">编码规则</th>
+    							<th rowspan="2">打印代码</th>
+    							<th rowspan="2">打印名称</th>
+    							<th rowspan="2">打印全称</th>
+    							<th colspan="11">汇总打印级次</th>
+    						</tr>
+    						<tr>
+    							<th>明细</th>
+    							<th>一</th>
+    							<th>二</th>
+    							<th>三</th>
+    							<th>四</th>
+    							<th>五</th>
+    							<th>六</th>
+    							<th>七</th>
+    							<th>八</th>
+    							<th>九</th>
+    							<th>十</th>
+    						</tr>
+    					</thead>
+    					<tbody></tbody>
+    				</table>
+            	</div>
+            </div>
+            
+            <div class="ufma-layout-down bordered-top">	
+				<div class="text-right margin-right-30">
+					<button type="button" class="btn btn-sm btn-primary btn-confirm" id="btn-confirm">确定</button>
+					<button type="button" class="btn btn-sm btn-default btn-qx" id="btn-qx">取消</button>
+				</div>
+			</div>
+		</div>
+		
+		<script src="rptPrintPrintSet.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+	</body>
+</html>

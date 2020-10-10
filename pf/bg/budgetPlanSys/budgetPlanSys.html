@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>预算方案</title>
+	<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+	<script src="../../pub/boot.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+	<link rel="stylesheet" href="budgetPlanSys.css?rev=@@hash" />
+</head>
+
+<body>
+	<div id="budgetPlanSys" class="container-fluid ufma-container">
+		<!--面包屑 begin-->
+		<!-- <div class="bread-box clearfix">
+		<div class="bread-label pull-left">当前所在位置：</div>
+		<ol class="breadcrumb pull-left">
+			<li><a href="#">指标系统</a></li>
+			<li class="active">预算方案</li>
+		</ol>
+	</div> -->
+		<!--面包屑 end-->
+		<!--工作区顶部 begin-->
+		<div class="workspace bordered">
+			<div class="container-fluid">
+				<div class="ufma-portlet">
+					<div class="portlet-title">
+						<div class="caption">
+							<span class="caption-subject font-dark uppercase">预算方案</span>
+						</div>
+						<ul class='ufma-list-col clearfix padding-left-8 pull-left padding-top-8'>
+							<li class="ufma-list-col-item">
+								<div id='cbAgency' class="ufma-treecombox ufma-combox-agency" icon="icon-unit" url="/bg/sysdata/getAgencyList" valueField="id"
+								 textField="name" placeholder="请选择单位"></div>
+							</li>
+						</ul>
+						<div class="actions">
+							<div class="btn-group">
+								<button type="button" id="btn-add" class="btn btn-sm btn-add btn-primary btn-permission" data-toggle="modal">新增</button>
+							</div>
+						</div>
+					</div>
+
+
+					<!--工作区顶部 end-->
+
+					<!--工作区中部 begin-->
+					<div class="top-toolbar container-fluid ufma-portlet" style="margin-bottom: -15px;">
+						<div class="row portlet-title ele-bordered-none budgetPlanCount" id="budgetPlanSys-count">
+
+						</div>
+					</div>
+
+				</div>
+				<div class="portlet-body form-horizontal" style="background-color:#fff !important;">
+					<div class="container-fluid" class="row budgetPlanSys " id="budgetPlanSys-cards"></div>
+				</div>
+				<!--工作区中部 end-->
+				<!-- 编辑预算方案begin -->
+				<div id="budgetPlanSys-edt" class="ufma-modal" aria-labelledby="budgetPlanAddLabel">
+					<div class="u-msg-title">
+						<h4>预算方案设置</h4>
+					</div>
+					<div class="u-msg-content">
+						<div class="ufma-layout ufma-layout-slider-xm ufma-layout-fixed-slider ">
+							<div class="ufma-layout-content">
+								<!--基本信息begin-->
+								<div class="panel ufma-panel">
+									<div class="panel-heading">
+										<h4 class="panel-title" style="padding-top: 10px;">
+											<div class="caption">基本信息</div>
+											<div class="actions" style="padding-top: 10px;">
+												<a class="budgetPlanSys-edit btn-edit btn-permission margin-right-8" id="btnBudgetPlanBaseEdit">
+													<span class="glyphicon icon-edit"></span>
+												</a>
+												<a data-toggle="collapse" href="#budgetPlanSys-base">
+													<span class="glyphicon icon-angle-bottom"></span>
+												</a>
+											</div>
+										</h4>
+									</div>
+									<form id="budgetPlanSys-base" class="panel-collapse collapse in">
+
+										<div class="panel-body">
+											<div class="container-fluid form-horizontal">
+												<input type="hidden" name="chrId" value="" />
+												<input type="hidden" name="chrCode" value="" />
+												<div class="row">
+													<div class="col-xs-8">
+														<div class="form-group">
+															<label class="control-label em6 ">方案名称：</label>
+															<div class="control-element " style="width:400px">
+																<input type="text" name="chrName" id="chrName" maxlength="200" class="form-control">
+																<input type="text" value="" class=" none">
+																<label for="chrName" class="control-label hide"></label>
+															</div>
+														</div>
+													</div>
+													<div class="col-xs-4">
+														<div class="form-group">
+															<label class="control-label">预算类型：</label>
+															<div class="control-element w120">
+																<select class="form-control" name="expBgTypeName">
+																	<option value="财政预算">财政预算</option>
+																	<option value="单位预算">单位预算</option>
+																	<option value="采购预算">采购预算</option>
+																	<option value="重点经费预算">重点经费预算</option>
+																</select>
+																<label for="expBgTypeName" class="control-label hide"></label>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="row">
+													<div class="col-xs-4">
+														<div class="form-group">
+															<label class="control-label em6">收支预算：</label>
+															<div class="control-element">
+																<div class="btn-group" data-toggle="buttons">
+																	<label class="btn btn-default active">
+																		<input type="radio" class="toggle" name="bgTypeName" value="支出预算">支出 </label>
+																	<label class="btn btn-default  ">
+																		<input type="radio" class="toggle" name="bgTypeName" value="收入预算">收入 </label>
+																</div>
+																<label for="bgTypeName" class="control-label hide"></label>
+															</div>
+														</div>
+													</div>
+													<div class="col-xs-4" style="margin-left: 6px;">
+														<div class="form-group">
+															<label class="control-label">启用状态：</label>
+															<div class="control-element">
+																<div class="btn-group" data-toggle="buttons">
+																	<label class="btn btn-default active">
+																		<input type="radio" class="toggle" name="enabled" value="是"> 启用 </label>
+																	<label class="btn btn-default">
+																		<input type="radio" class="toggle" name="enabled" value="否"> 停用 </label>
+																</div>
+																<label for="enabled" class="control-label hide"></label>
+															</div>
+														</div>
+                                                    </div>
+													<div class="col-xs-4" style="margin-left: -33px;">
+														<div class="form-group">
+															<label class="control-label em6">来文文号：</label>
+															<div class="control-element">
+																<div class="btn-group" data-toggle="buttons">
+																	<label class="btn btn-default ">
+																		<input type="radio" class="toggle" name="isComeDocNum" value="是"> 启用 </label>
+																	<label class="btn btn-default active">
+																		<input type="radio" class="toggle" name="isComeDocNum" value="否"> 停用 </label>
+																</div>
+																<label for="isComeDocNum" class="control-label hide"></label>
+															</div>
+														</div>
+													</div> 
+												</div>
+												<div class="row">
+													<div class="col-xs-4">
+														<div class="form-group">
+															<label class="control-label em6">发文文号：</label>
+															<div class="control-element">
+																<div class="btn-group" data-toggle="buttons">
+																	<label class="btn btn-default ">
+																		<input type="radio" class="toggle" name="isSendDocNum" value="是"> 启用 </label>
+																	<label class="btn btn-default active">
+																		<input type="radio" class="toggle" name="isSendDocNum" value="否"> 停用 </label>
+																</div>
+																<label for="isSendDocNum" class="control-label hide"></label>
+															</div>
+														</div>
+                          </div>
+                          <div class="col-xs-4"  style="margin-left: -6px;">
+                              <div class="form-group">
+                                <label class="control-label"
+                                  >财政指标ID：</label
+                                >
+                                <div class="control-element">
+                                  <div class="btn-group" data-toggle="buttons">
+                                    <label class="btn btn-default">
+                                      <input
+                                        type="radio"
+                                        class="toggle"
+                                        name="isFinancialBudget"
+                                        value="1"
+                                      />
+                                      启用
+                                    </label>
+                                    <label class="btn btn-default active">
+                                      <input
+                                        type="radio"
+                                        class="toggle"
+                                        name="isFinancialBudget"
+                                        value="0"
+                                      />
+                                      停用
+                                    </label>
+                                  </div>
+                                  <label
+                                    for="isFinancialBudget"
+                                    class="control-label hide"
+                                  ></label>
+                                </div>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="row">
+
+                        </div>
+												<div class="row">
+													<div class="col-xs-12">
+														<div class="form-group">
+															<label class="control-label em6 fl">方案描述：</label>
+															<div class="control-element ">
+																<textarea rows="3" cols="20" name="summary" maxlength="200" class="form-control budget-fams"></textarea>
+																<label for="summary" class="control-label hide" style="text-align: left;width: 750px;"></label>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="row hide" id="budgetPlanBaseBtnGroup">
+													<div class="col-xs-12 text-right margin-top-8">
+														<button type="button" class="btn btn-sm btn-primary btn-save btn-ajax btn-permission">保存</button>
+														<button type="button" class="btn btn-sm btn-default btn-cancel ">取消</button>
+													</div>
+												</div>
+											</div>
+										</div>
+									</form>
+
+								</div>
+								<!-- 要素信息begin -->
+								<div class="panel ufma-panel">
+									<div class="panel-heading">
+										<h4 class="panel-title" style="padding-top: 10px;">
+											<div class="caption">要素信息</div>
+											<div class="actions" style="padding-top: 10px;">
+												<a class="budgetPlanSys-edit btn-edit btn-permission margin-right-8" id="btnBudgetPlanYSXXEdit">
+													<span class="glyphicon icon-edit"></span>
+												</a>
+												<a data-toggle="collapse" href="#budgetPlanSys-ysxx">
+													<span class="glyphicon icon-angle-bottom"></span>
+												</a>
+											</div>
+										</h4>
+									</div>
+									<form id="budgetPlanSys-ysxx" class="panel-collapse collapse in">
+										<div class="panel-body tab-content">
+											<table id="budgetPlanYSXX" class="ufma-table dataTable table-edit ">
+												<thead>
+													<tr>
+														<th class="text-center "> 要素编码 </th>
+														<th class="text-center"> 要素名称 </th>
+														<th class="text-center"> 使用 </th>
+														<th class="text-center"> 主要素 </th>
+														<th class="text-center"> 编制级次 </th>
+														<th class="text-center"> 操作 </th>
+													</tr>
+                        </thead>
+                        <tbody></tbody>
+											</table>
+											<div class=" text-right margin-top-8" id="budgetPlanYSXXBtnGroup">
+												<button type="button" class="btn btn-sm btn-primary btn-save btn-ajax btn-permission">保存</button>
+												<button type="button" class="btn btn-sm btn-default btn-cancel ">取消</button>
+											</div>
+										</div>
+									</form>
+								</div>
+								<!-- 要素信息end -->
+                  <!-- 文本说明项begin -->
+                  <div class="panel ufma-panel">
+                    <div class="panel-heading">
+                      <h4 class="panel-title" style="padding-top: 10px;">
+                        <div class="caption">文本说明项</div>
+                        <div class="actions" style="padding-top: 10px;">
+                          <a
+                            class="budgetplan-edit btn-edit margin-right-8"
+                            id="btnPlanTextEdit"
+                            ><span class="glyphicon icon-edit"></span
+                          ></a>
+                          <a data-toggle="collapse" href="#budgetplan-text"
+                            ><span class="glyphicon icon-angle-bottom"></span
+                          ></a>
+                        </div>
+                      </h4>
+                    </div>
+                    <form
+                      id="budgetplan-text"
+                      class="panel-collapse collapse in"
+                    >
+                      <div class="panel-body tab-content">
+                        <table
+                          id="budgetPlanText"
+                          class="ufma-table dataTable table-edit"
+                        >
+                          <thead>
+                            <tr>
+                              <th class="text-center">说明项编码</th>
+                              <th class="text-center">说明项名称</th>
+                              <th class="text-center">使用</th>
+                              <th class="text-center">操作</th>
+                            </tr>
+                          </thead>
+                          <tbody></tbody>
+                        </table>
+                        <div
+                          class="text-right margin-top-8"
+                          id="budgetPlanTextBtnGroup"
+                        >
+                          <button
+                            type="button"
+                            class="btn btn-sm btn-primary btn-save btn-ajax btn-permission"
+                          >
+                            保存
+                          </button>
+                          <button
+                            type="button"
+                            class="btn btn-sm btn-default btn-cancel"
+                          >
+                            取消
+                          </button>
+                        </div>
+                      </div>
+                    </form>
+                  </div>
+								<!-- 编辑预算方案end -->
+								<!--工作区底部 begin-->
+
+
+							</div>
+							<!--工作区底 end-->
+
+
+							<!--工作区 end-->
+
+							<!--编辑功能分类begin-->
+							<div class="modal fade bs-example-modal-lg" id="budgetPlanSys-edt" tabindex="-1" role="dialog" aria-labelledby="budgetPlanAddLabel">
+								<div class="modal-dialog modal-xm" role="document">
+									<div class="modal-content">
+										<div class="modal-header add-header">
+											<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+												<span aria-hidden="true">&times;</span>
+											</button>
+											<h5 class="modal-title" id="budgetPlanAddLabel">预算方案设置</h5>
+										</div>
+										<div class="modal-body add-body">
+											<!--编辑区begin-->
+											<div class="container-fluid">
+												<div class="row">
+													<div class="col-xs-1"></div>
+													<div class="col-xs-10">
+														<form id="form-budgetPlanSys" class="form-horizontal">
+															<div class="form-group margin-bottom-15 hidden">
+																<label class="col-sm-3 control-label">chrId：</label>
+																<div class="col-sm-6">
+																	<input type="text" name="chrId" id="chrId" class="form-control">
+																</div>
+																<div class="col-sm-3"></div>
+															</div>
+															<div class="form-group margin-bottom-15">
+																<label class="col-sm-3 control-label">基本信息：</label>
+																<div class="col-sm-6">
+																	<input type="text" name="chrName" id="chrName" class="form-control">
+																</div>
+																<div class="col-sm-3"></div>
+															</div>
+															<div class="form-group margin-bottom-15 margin-bottom-15">
+																<label class="col-sm-3 control-label">预算信息：</label>
+																<div class="col-sm-6">
+																	<input type="text" name="chrCode" id="chrCode" class="form-control">
+																	</span>
+																</div>
+																<div class="col-sm-3"></div>
+															</div>
+
+															<div class="form-group margin-bottom-15 margin-bottom-15">
+																<label class="col-sm-3 control-label">备注：</label>
+																<div class="col-sm-9">
+																	<textarea class="form-control" rows="3" name="remark" id="remark"></textarea>
+																</div>
+															</div>
+														</form>
+													</div>
+													<div class="col-xs-1"></div>
+
+												</div>
+											</div>
+
+											<!--编辑区end-->
+										</div>
+
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="modal-footer add-footer">
+						<button type="button" class="btn btn-sm btn-primary btn-saveadd btn-ajax btn-permission" id="budgetPlanSaveAdd">保存并新增</button>
+						<button type="button" class="btn btn-sm btn-default btn-save btn-ajax btn-permission" id="budgetPlanSaveAll">保存</button>
+						<button type="button" class="btn btn-sm btn-default btn-senddown btn-permission" id="budgetPlanSenddown">下发</button>
+						<button type="button" class="btn btn-sm btn-default btn-cancel " id="budgetPlanCancelAll">取消</button>
+						<button type="button" class="btn btn-sm btn-default btn-close hide " id="budgetPlanCloseAll">关闭</button>
+					</div>
+					<!--编辑功能分类begin-->
+				</div>
+				<div class="container-fluid">
+					<div class="row budgetPlanSys "></div>
+				</div>
+			</div>
+		</div>
+
+	</div>
+	<script src="../pub/bgPub.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+	<script src="budgetPlanSys.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+</body>
+
+</html>

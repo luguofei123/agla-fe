@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>审计数据导出</title>
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    
+    <script src="../../pub/boot.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+	<!--<script src="http://10.10.65.126:8080/pf/pub/boot.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>-->
+	<link rel="stylesheet" href="rptCommonBidaSelf_new.css?rev=@@hash" />
+	<link rel="stylesheet" href="rptCommon_new.css?rev=@@hash" />
+	<style type="text/css">
+		.de-common-plate .de-common-title {
+			font-weight: bold;
+			margin-bottom: 16px;
+			margin-top: 16px;
+		}
+		.de-common-plate{
+			padding: 0px 0px 20px;
+			border-top: 1px solid #d9d9d9;
+		}
+		.de-common-contnet{
+			padding-left: 60px;
+		}
+		.de-common-contnet .form-group .control-label{
+			width: 100px;
+			text-align: right;
+		}
+		.de-common-contnet .de-common-tips{
+			padding-left: 16px;
+		}
+		.form-horizontal .form-group.required .startRequired:not(.disabled)::after {
+			content: '';
+			color: red;
+			position: absolute;
+			top: 7px;
+			right: -16px;
+		}
+	</style>
+</head>
+<body id="glRptBal" class="glRptVousummary" style="overflow-x:hidden;">
+<div class="container-fluid ufma-container">
+	<div class="workspace">
+    	<div class="rpt-workspace">
+			<div class="rpt-selete-box bordered-bottom" style="margin-top:-8px;">
+				<div class="rpt-title">审计数据导出</div>
+				<div class="rpt-method-tip">
+					<button id="expXmlFile" class="btn btn-primary" style="margin-top:10px">导出</button>
+				</div>
+				<div class="rpt-clear"></div>
+			</div>
+			<div class="rpt-acc-box">
+				<div class="rpt-acc-box-left">
+					<div class="rpt-atree-box-head-top">
+						<div style="font-weight: bold;padding-left: 10px;padding-bottom: 10px">科目表代码：</div>
+						<div id="domId" class="uf-combox uf-combox-wd"></div>
+					</div>
+					<div class="rpt-atree-box-head">
+						<div class="input-group rpt-input-group">
+							<input type="text" id="key" value="" class="form-control empty" placeholder="请输入搜索关键词">
+							<span class="input-group-addon"><span class='glyphicon icon-search'></span></span>
+						</div>
+					</div>
+					<div class="rpt-atree-box-body">
+						<ul id="atree" class="ufmaTree ztree atree-ztree" style="margin: -5px 0px 0 -5px;"></ul>
+					</div>
+				</div>
+				<div class="rpt-acc-box-right">
+					<div class="rpt-box">
+						<form id="frmQuery" class="form-horizontal">
+							<div class="de-common-plate" style="border-top: none">
+								<div class="de-common-title" style="margin-top: 0">单位基础信息</div>
+								<div class="de-common-contnet">
+									<div class="form-row clearfix">
+										<div class="form-group">
+											<label class="control-label">行政区划代码：</label>
+											<div class="control-element">
+												<input type="text" name="XZQH" id="XZQH" class="form-control" value="" style="width: 160px">
+											</div>
+											<span class="de-common-tips">6位数字，前两位省自治区直辖市；中间两位地区自治州；后两位市县地区</span>
+										</div>
+									</div>
+									<div class="form-row clearfix">
+										<div class="form-group required">
+											<label class="control-label">组织机构代码：</label>
+											<div class="control-element">
+												<input type="text" name="zzjgdm" id="zzjgdm" class="form-control" value="" style="width: 160px">
+											</div>
+											<span class="de-common-tips">9位数字，大写字母组成</span>
+										</div>
+									</div>
+									<div class="form-row clearfix">
+										<div class="form-group">
+											<label class="control-label">所属行业名称：</label>
+											<div class="control-element">
+												<input type="text" name="SSHY" id="SSHY" class="form-control" value="" style="width: 160px">
+											</div>
+											<span class="de-common-tips">形如A010010001（分四级，第一级大写字母，第二级2位数字，第三级3位数据，第四级4位数字）</span>
+										</div>
+									</div>
+									<div class="form-row clearfix">
+										<div class="form-group required">
+											<label class="control-label">单位类型：</label>
+											<div class="control-element">
+												<div id="DWLX" name="DWLX" class="uf-combox" style="width: 160px"></div>
+											</div>
+										</div>
+									</div>
+									<div class="form-row clearfix">
+										<div class="form-group required">
+											<label class="control-label">预算管理级次：</label>
+											<div class="control-element">
+												<div id="YSGLJC" name="YSGLJC" class="uf-combox" style="width: 160px"></div>
+											</div>
+										</div>
+									</div>
+									<div class="form-row clearfix">
+										<div class="form-group required">
+											<label class="control-label">经费来源：</label>
+											<div class="control-element">
+												<div id="JFLY" name="JFLY" class="uf-combox" style="width: 160px"></div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="de-common-plate">
+								<div class="de-common-title">数据期间范围</div>
+								<div class="de-common-contnet">
+									<div class="form-row clearfix">
+									<div class="form-group required">
+										<label class="control-label">导出会计年度：</label>
+										<div class="control-element" style="width:160px;">
+											<div id="svFiscalYear" name="svFiscalYear" class="uf-combox"></div>
+										</div>
+									</div>
+									<div class="form-group clearfix required">
+										<label class="control-label required">期间范围：</label>
+										<div class="control-element startRequired" style="width:160px;">
+											<div id="expmonthfrom" name="expmonthfrom" class="uf-combox"></div>
+										</div>
+										<span class="split">-</span>
+										<div class="control-element" style="width:160px;">
+											<div id="expmonthto" name="expmonthto" class="uf-combox"></div>
+										</div>
+									</div>
+								</div>
+								</div>
+							</div>
+							<div class="de-common-plate hidden">
+								<div class="de-common-title">导出数据范围</div>
+								<div class="de-common-contnet">
+									<div class="form-row clearfix">
+									<div class="form-group required">
+										<label class="rpt-check mt-checkbox mt-checkbox-outline">
+											<input name="all" type="checkbox" value="all" checked>全选<span></span>
+										</label>
+										<label class="rpt-check mt-checkbox mt-checkbox-outline">
+											<input name="GL" type="checkbox" value="GL" checked>总账<span></span>
+										</label>
+									</div>
+								</div>
+								</div>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<script src="rptCommonSum.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+<script src="exportAuditData.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+</body>
+</html>

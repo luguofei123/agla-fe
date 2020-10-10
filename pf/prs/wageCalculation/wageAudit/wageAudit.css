@@ -1,0 +1,82 @@
+.control-label {
+    width: 100px;
+    text-align: right;
+}
+.rpt-funnelBoxList {
+    background-color: #fff;
+    width: 142px;
+    right: 0;
+    border: 1px solid #d9d9d9;
+    padding: 5px;
+    width: 550px;
+}
+.rpt-funnelBoxList p {
+    cursor: pointer;
+    float: left;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 134px;
+}
+.wageItems label{
+    margin-left: 10px;
+}
+.edit-row-data {
+    color: #108ee9;
+}
+.edit-row-data:hover{
+    text-decoration: underline;
+}
+
+/**替换弹窗**/
+.panel-heading + .panel-body{
+    padding-top: 15px;
+}
+/**/
+#prTypes label {
+    margin-right: 10px;
+}
+.btn-query-box {
+    position: relative;
+    display: inline;
+}
+#query-condition .control-element {
+    vertical-align: top;
+}
+#query-condition .form-group{
+    margin-left: 0;
+}
+.btn-query-box .rpt-funnelBoxList{
+    top: 44px;
+    -webkit-box-shadow:0 0 10px rgba(169,169,169, .8);
+    -moz-box-shadow:0 0 10px rgba(169,169,169, .8);
+    box-shadow:0 0 10px rgba(169,169,169, .8);
+}
+.ufma-table td.tdNum {
+    text-align: right
+}
+.prTypes-box {
+    position: relative;
+    width: 100%;
+    white-space: nowrap;
+}
+#prTypes {
+    overflow: hidden;
+    width: 100%;
+}
+#prTypes label {
+    display: block;
+    float: left;
+}
+.prTypes-hide {
+    position: absolute;
+    background-color:#fff; 
+    left: 0px;
+    z-index: 1;
+    top: 8px;
+}
+.prTypes-hide label {
+    margin-right:10px;
+    float: left;
+    display: block;
+}

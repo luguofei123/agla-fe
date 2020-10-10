@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>入账设置-应收票据</title>
+		<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+		<script src="../../../pub/boot.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+		<style>
+		.uf-buttonedit{width:395px}
+		.uf-buttonedit .uf-buttonedit-input{width:100%}
+		</style>
+	</head>
+
+	<body>
+		<div id="coaAccEdit" class="ufma-layout-updown">
+			<div class="ufma-layout-up">
+				<form id="frmBookBfr" class="container-fluid form-horizontal" style="padding:15px 30px 0px;">
+					<div class="form-row">
+						<div class="form-group m0 p0">
+							<label class="control-label">登记业务凭证模板：</label>
+                            <div class="uf-buttonedit" typeCode="01" id="dj" autocomplete="on" placeholder=""> </div> 
+						</div>
+						<div class="clearfix"></div>
+                    </div>
+                    <div class="form-row">
+						<div class="form-group m0 p0">
+							<label class="control-label">收款业务凭证模板：</label>
+                            <div class="uf-buttonedit" typeCode="04" id="sk" autocomplete="on" placeholder=""> </div> 
+						</div>
+						<div class="clearfix"></div>
+                    </div>
+                    <div class="form-row">
+						<div class="form-group m0 p0">
+							<label class="control-label">贴现业务凭证模板：</label>
+                            <div class="uf-buttonedit" typeCode="03" id="tx" autocomplete="on" placeholder=""> </div> 
+						</div>
+						<div class="clearfix"></div>
+                    </div>
+                    <div class="form-row">
+						<div class="form-group m0 p0">
+							<label class="control-label">背书业务凭证模板：</label>
+                            <div class="uf-buttonedit" typeCode="02" id="bs" autocomplete="on" placeholder=""> </div> 
+						</div>
+						<div class="clearfix"></div>
+                    </div>
+                    <div class="form-row">
+						<div class="form-group m0 p0">
+							<label class="control-label">退票业务凭证模板：</label>
+                            <div class="uf-buttonedit" typeCode="06" id="tp" autocomplete="on" placeholder=""> </div> 
+						</div>
+						<div class="clearfix"></div>
+					</div>
+				</form>
+
+			</div>
+			<div class="ufma-layout-down bordered-top">
+				<div class="text-right margin-right-30">
+					<button type="button" class="btn btn-sm btn-default btn-primary btn-save state-edit btn-ajax" id="btnSave">确定</button>
+					<button type="button" class="btn btn-sm btn-default" id="btnClose"> 取消</button>
+				</div>
+			</div>
+		</div>
+		<script src="RZnotice.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+	</body>
+
+</html>

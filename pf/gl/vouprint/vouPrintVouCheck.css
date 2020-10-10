@@ -1,0 +1,57 @@
+#vouPrintVouCheck .ufma-layout-up{
+	/*padding-top: 10px;*/
+	/*height: 372px;*/
+	/*padding-bottom: 10px;*/
+}
+#vouPrintVouCheck h5.title{
+	font-size:16px;
+	font-weight:bold;
+	line-height:20px;
+	padding:24px 0 8px 0;
+	text-align:center;
+	margin:0;
+}
+
+#vouPrintVouCheck #vpvcTable th,
+#vouPrintVouCheck #vpvcTable td{
+	border: 1px solid #D9D9D9;
+}
+#vouPrintVouCheck #vpvcTable tr{
+	background-color: #FFFFFF;
+}
+#vouPrintVouCheck #vpvcTable tr.data-sum{
+	background-color: #E6F4FD;
+}
+#vouPrintVouCheck #vpvcTable .list-info{
+	position: relative;
+}
+#vouPrintVouCheck #vpvcTable .list-info .info{
+	line-height: 20px;
+	margin-bottom: 8px;
+}
+#vouPrintVouCheck #vpvcTable .list-info .list-unstyled{
+	margin-bottom: 0;
+}
+#vouPrintVouCheck #vpvcTable .list-info .dl-horizontal{
+	margin-bottom: 0;
+	display: none;
+}
+#vouPrintVouCheck #vpvcTable .list-info dt{
+	width: 50px;
+	text-align: left;
+	font-weight: normal;
+}
+#vouPrintVouCheck #vpvcTable .list-info dd{
+	margin-left: 50px;
+	line-height: 20px;
+}
+#vouPrintVouCheck #vpvcTable .list-info .reordering{
+	position: absolute;
+	right: 16px;
+	bottom: 10px;
+	font-size: 14px;
+	line-height: 20px;
+	color: #108EE9;
+	text-decoration: none;
+	display: none;
+}

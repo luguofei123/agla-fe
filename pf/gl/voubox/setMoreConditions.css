@@ -1,0 +1,128 @@
+.condition-con {
+	padding: 10px 40px 0;
+}
+
+.tab-content-box {
+	border: 1px solid #D9D9D9;
+	border-top: none;
+	border-radius: 4px;
+	margin-top: -2px;
+	position: relative;
+	min-height: 302px;
+	padding: 16px 0;
+}
+#vbAcco .ufma-combox-border{
+	border: 1px #d9d9d9 solid !important;
+}
+.rpt-pzzh-input {
+	width: 60px;
+	height: 30px;
+	padding: 3px;
+	vertical-align: bottom;
+}
+.btn-default{
+	border: none;
+}
+#btnClose,#btn-del{
+	border: 1px solid #ccc;
+}
+form input {
+	border-radius: 4px;
+}
+
+#rptPzzhSelect {
+	width: 60px;
+	min-width: 60px;
+}
+
+#rptPzzhSelect .uf-combox-inputLi {
+	padding: 0 2px;
+}
+
+#rptPzzhSelect .uf-combox-btn {
+	width: 14px;
+}
+
+#rptPzzhSelect .uf-combox-btn b:before {
+	right: 3px;
+}
+
+#rptPzzhSelect .uf-combox-btn b:after {
+	right: 5px;
+}
+
+.control-label {
+	width: 100px;
+	text-align: right;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+
+.form-horizontal .form-row .form-group .control-element {
+	width: 270px;
+}
+.rpt-hzfs-check label {
+	margin-right: 4px;
+}
+
+.rpt-pzzt-check label {
+	margin-right: 10px;
+}
+
+.rpt-pzzt-print button,
+.rpt-drcr-check button {
+	margin-right: 10px;
+}
+
+.frmQuery2 .form-group {
+	float: left;
+}
+
+#baseTree {
+	min-width: 240px;
+	height: 180px;
+	overflow: auto;
+	position: absolute;
+	top: -179px;
+	/*left: 80px;*/
+	background-color: #fff;
+	z-index: 20000;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	display: none;
+}
+
+.accoCondition .control-element {
+	position: relative;
+}
+
+.control-label {
+	vertical-align: sub;
+}
+
+.money-condition {
+	width: 111px
+}
+
+.form-horizontal .form-row .form-group:first-child .money-condition-group,
+.form-horizontal .form-row .form-group .money-condition-group {
+	width: 111px
+}
+
+#vbstartTotalAmt,
+#vbendTotalAmt,
+#vbStartStadAmt,
+#vbEndStadAmt,
+#vbassStartAmt,
+#vbassEndAmt {
+	width: 94px;
+	height: 30px;
+}
+
+#vbVouTypeCode,
+#vbStartVouNo,
+#vbEndVouNo {
+	width: 60px;
+	height: 30px;
+}

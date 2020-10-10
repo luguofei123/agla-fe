@@ -1,0 +1,180 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>单位日记账</title>
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <script src="../../../pub/boot.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+    <style>
+ 	   .icon-calendar{
+			display:none!important;
+		}
+    </style>
+</head>
+<style type="text/css">
+	table.table-thead-center td{text-align:left;}
+	td.tr{text-align:right!important;}
+	td,th{border-collapse:collapse;}
+	.dataTables_wrapper.no-footer .dataTables_scrollBody{border-bottom:0;}
+/*列筛选样式*/ 
+.funnelModal{position: fixed;z-index: 99999;}  
+.funnelArrow{}
+.funnelArrow:before{content:'';display:inline-block;border-left: 10px solid transparent;border-right: 10px solid transparent;border-bottom: 10px solid #d9d9d9;position: absolute;top:0;left:45px;}
+.funnelArrow:after{content:'';display:inline-block;border-left: 9px solid transparent;border-right: 9px solid transparent;border-bottom: 9px solid #fff;position: absolute;top:2px;left:46px;}
+.funnelBox{min-width: 300px;max-width: 345px;background:#fff;border:1px solid #eee;padding:10px 8px;box-shadow: 0 0 4px 0 rgba(0,0,0,0.50);border-radius:4px;margin-top:10px;}
+.funnelBox p{margin-bottom: 0;}
+.funnelTitle{height: 20px;line-height: 20px;font-weight: normal;}
+.funnelTitle span{dispaly:inline-block;}
+.funnelTitle-span1{float: left;}
+.funnelTitle-span2{float: right;margin-right:4px;}
+.funnelTitle-span2:hover{cursor:pointer;color:#108ee9;text-decoration:underline;}
+.funnelCont{text-align: left;margin-top: 8px;}
+.funnelCont .txtCont{width:210px;}
+.funnelCont input{height:30px;line-height:30px;border-radius: 4px;font-weight: normal;padding: 0 4px;}
+.funnelCont button{margin-left:5px;}
+.funnelCont .numCont{width:120px;}
+.funnelCont span{margin:0 3px;font-weight: normal;}
+</style>
+<body>
+<div id="agencyJournal" class="container-fluid ufma-container">
+    <!--工作区 begin-->
+    <div class="workspace">
+        <!--工作区顶部 begin-->
+        <div class="workspace-top">
+            <div class="container-fluid">
+                <div class="ufma-portlet">
+                    <div class="portlet-title">
+                        <div class="caption">
+                            <span class="caption-subject font-dark uppercase">单位日记账</span>
+                        </div>
+                        <div class="agencycom">
+                            <div id='cbAgency' name="agencyCode" class="ufma-treecombox ufma-combox-agency"></div>
+                        </div>
+                        <div class="actions">
+                            <div class="btn-group">
+                                <button class="btn btn-primary btn-permission btn-gen btn-ajax">提取</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="portlet-body bordered">
+                        <div id="" class="uf-form-group-panel">
+							<div class="actions">
+								<button class="btn btn-default btn-permission btn-query btn-ajax">查询</button>
+							</div>
+							<table class="form-body">							
+								<tbody>
+									<tr>
+										<td class="label-ctrl em4">
+											对账方案：
+										</td>
+										<td class="form-ctrl">
+											<div id="accScheList" class="uf-combox w210"></div>
+											<div class="inline-block" id="setAccSche">
+												<span class="icon icon-setting btn-permission btn-setup btn-ajax f18 vm uf-primary cp"></span>
+			                                </div>
+										</td>
+										<td class="label-ctrl">期间：</td>
+										<td class="form-ctrl">
+											<div class="inline-block" id="qijian1">
+			                                    <a name="enabled" id="dateBn" class="label label-radio selected" code="1">本年</a>
+			                                    <a name="enabled" id="dateBq" class="label label-radio" code="2">本期</a>
+			                                    <a name="enabled" id="dateJr" class="label label-radio" code="3">今日</a>
+			                                </div>
+											<div id="dateStart" class="uf-datepicker" style="display: inline-block;">
+												<input type="text" class="prefix">
+												<span class="icon icon-calendar"></span>
+											</div>
+											<span> 至  </span>
+											<div id="dateEnd" class="uf-datepicker" style="display: inline-block;">
+												<input type="text" class="prefix">
+												<span class="icon icon-calendar"></span>
+											</div>
+										</td>
+									</tr>				
+								</tbody>
+							</table>
+						</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--工作区中部 begin-->
+        <div class="workspace-center">
+            <div class="container-fluid">
+            	<h3 class="m10 tc">单位日记账</h3>
+                <div class="table-sub clearfix">
+                    <div class="table-sub-info pull-left"></div>
+                    <div class="table-sub-action pull-right">
+                        <div class="iframeBtnsSearch" id="index-search">
+							<input type="text" class="searchHide focusOff bordered" placeholder="请输入要搜索的关键词">
+							<input type="hidden" class="searchValueHide">
+							<button class="btn btn-default btn-sm btn-permission btn-search" id="searchHideBtn">
+								<i class="glyphicon icon-search"></i>
+							</button>
+						</div>
+						<div class="btn-group" id="printTableData">
+						</div>
+                    </div>
+                </div>
+                <!--表格begin-->
+                <div class="tab-content" style="width:100%;overflow-x:auto;">
+                    <table id="agencyDataTable" class="ufma-table table-thead-center"  tool-bar="#journal-tool-bar"></table>
+                </div>
+            </div>
+        </div>
+        <!--工作区底 begin-->
+        <div id="journal-tool-bar" class="ufma-tool-bar">
+            <div class="tool-bar-body">
+                <div class="ufma-tool-btns">
+                    <!-- <button type="button" class="btn btn-sm btn-default btn-permission btn-delete">删除</button> -->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--提取单位日记账 modal start-->
+<div id="genBox" class="ufma-modal">
+	<div class="u-msg-title">
+		<h4>提取单位日记账</h4>
+	</div>
+	<div class="u-msg-content">
+		<form class="form-horizontal">
+			<div class="form-group">
+				<label class="control-label em4">对账方案：</label>
+				<div class="control-element">
+					<div id="accScheList2" class="uf-combox w210"></div>
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="control-label em4">期间：</label>
+				<div class="control-element">
+					<div class="inline-block" id="qijian2">
+                        <a name="enabled" id="dateBn2" class="label label-radio selected" code="1">本年</a>
+                        <a name="enabled" id="dateBq2" class="label label-radio" code="2">本期</a>
+                        <a name="enabled" id="dateJr2" class="label label-radio" code="3">今日</a>
+                    </div>
+					<div id="dateStart2" class="uf-datepicker" style="display:inline-block">
+						<input type="text" class="prefix">
+						<span class="icon icon-calendar"></span>
+					</div>
+					<span> 至  </span>
+					<div id="dateEnd2" class="uf-datepicker" style="display:inline-block">
+						<input type="text" class="prefix">
+						<span class="icon icon-calendar"></span>
+					</div>
+				</div>
+            </div>
+		</form>
+	</div>
+	<div class="u-msg-footer">
+		<button id="sureGenBox" type="button" class="btn btn-primary">确定</button>
+		<button type="button" class="btn btn-default btn-close">取消</button>
+	</div>
+</div>	
+<!--提取单位日记账 modal end-->
+<script src="../../rpt/rptCommon/rptCommon.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+<script src="agencyJournal.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+</body>
+</html>

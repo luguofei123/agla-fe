@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>指标台账个人版</title>
+		<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+		<script src="../../pub/boot.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+    <link rel="stylesheet" href="../pub/bgPub.css?rev=@@hash" />
+    <link rel="stylesheet" href="../pub/common.css?rev=@@hash" />
+		<link rel="stylesheet" href="budgetItemDetailQueryPersion.css?rev=@@hash" />
+		<style type="text/css">
+			table.ufma-table.dataTable tr th {
+				height: 36px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="container-fluid ufma-container" style="height:auto">
+			<div class="workspace" style="padding:6px 15px 15px">
+				<!--工作区顶部 begin-->
+				<div class="workspace-top">
+					<div class="uf-portlet">
+						<div class="portlet-title">
+							<div class="caption">
+								<span class="caption-main">指标台账个人版</span>
+								<span>
+									<div class="uf-treecombox ufma-combox-agency" id="cbAgency" name="agencyCode" idField='id' textField='codeName' pIdField='pId' readonly='true' icon='icon-unit' theme='label' autocomplete="on" placeholder="请选择单位"> </div>
+								</span>
+							</div>
+							<div class="actions">
+								<div class="btn-group">
+									<!--CWYXM-12238--预算执行情况表和���总分析表，查询条件处界面优化--zsj-->
+									<!--bug75659--需要选项控制，项目、支出功能分类等可以隐藏编码，只显示名称--zsj-->
+									<div class="fzxName hide">
+										<button type="button" title="切换样式" id="btnSwitch" class="btn btn-sm btn-default btn-switch switchStyle" style="position: absolute;right:51px;height: 30px;border: 1px solid #DFE6EC;margin-top:1px;">
+								         <span class="icon-select " style="font-size: 20px;"></span>
+							            </button>
+										<div class="switchStylexs" id="rptTableList">
+											<div class="voucherjcjt"></div>
+											<p id="vouisfullname"   class="second-color" style="width: 100%;margin-bottom: 5px;margin-top: 5px;">
+												<span>显示编码</span>
+												<span class="kj">
+										<label class="mt-radio">
+											<input type="radio" name="Model" id="showTrue" checked="true"/>&nbsp;
+											<span></span>
+												</label>是
+												</span>
+												<span class="kj">
+										<label class="mt-radio">
+											<input type="radio" name="Model" id="showFalse"/>&nbsp;
+											<span></span>
+												</label>否
+												</span>
+											</p>
+										</div>
+									</div>
+									<button id="showMethodTip" class="btn btn-primary glyphicon icon-file" style="border-top-left-radius:4px;border-bottom-left-radius:4px;"></button>
+								</div>
+								<div id="rptPlanList" style="display: none;">
+								</div>
+							</div>
+						</div>
+						<div class="portlet-body bordered">
+							<div id="searchPlanPnl" class="uf-form-group-panel">
+								<div class="actions" style="right: -24px;">
+									<label class="label label-more" data-target="#queryMore" style="margin-left: -155px; color:#008FF0;"><span>更多</span><i class="glyphicon icon-angle-bottom"></i></label>
+									<button class="btn btn-primary btn-query btn-permission" id="btnQry" style="margin-left:-83px;">查询</button>
+									<button id="btnSave" class="btn btn-default  btn-save" style="width:56px;padding:4px 12px;margin-left: 1px;margin-right: 25px;">保存</button>
+								</div>
+								<form id="frmQuery" class="form-horizontal">
+									<div class="form-row">
+										<div class="form-group" style="margin-left:42px;">
+											<label class="control-label auto">预算方案：</label>
+											<div id="cbBgPlan" class="uf-combox" idField="chrId" textField="chrName" placeholder="请选择预算方案" style="width:300px;"></div>
+										</div>
+										<!--<div class="form-group" style="margin-left:62px;width:400px">
+											<label class="control-label auto" style="float:left">指标编码：</label>
+											<input type="text" name="bgItemCode" id="bgItemCode" placeholder="请选择指标编码" class="form-control" style="width:300px;height:30px;float:left">
+										</div>-->
+										<div class="clearfix"></div>
+									</div>
+								</form>
+								<form id="queryMore" class="form-horizontal none" name="form0" style="margin-top: 10px;">
+									<div class="form-row">
+										<div class="form-group" style="margin-left:42px;">
+											<label class="control-label auto">指标状态：</label>
+											<div class="control-element rpt-query-li-selete">
+												<div id="targetState" class="uf-combox" idField="id" textField="name" placeholder="请选择指标状态" style="width:300px;"></div>
+											</div>
+										</div>
+										<div class="form-group" style="margin-left:62px;" id="timeId">
+											<label class="control-label auto">录入日期：</label>
+											<div id="startDate" class="uf-datepicker inline-block" style="width:160px;"></div>
+											至
+											<div id="endDate" class="uf-datepicker inline-block" style="width:160px;"></div>
+										</div>
+										<div class="clearfix"></div>
+									</div>
+
+									<div class="moreMessage">
+										<div class="form-row" style="width:1000px;margin-top:-7px;">
+											<div id="planItemMore"></div>
+											<div class="clearfix"></div>
+                    </div>
+                  </div>
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!--工作区中部 begin-->
+        <div class="workspace-center" style="margin-top:2px;">
+          <div class="bg-table-sub">
+            <!--右侧操作按钮 begin-->
+            <div class="rpt-table-sub-action" style="margin-bottom: 10px;">
+              <div class="iframeBtnsSearch">
+                <input type="text" class="searchHide focusOff bordered-input" placeholder="请输入要搜索的关键词">
+                <button class="btn btn-default btn-sm btn-search" id="searchHideBtn">
+                <span class='glyphicon icon-search'></span>
+              </button>
+              </div>
+              <div class="btn-group" id="dtToolbar">
+              </div>
+              <!--<div style="position: relative;display: inline-block;vertical-align: middle;">
+              <button class="btn btn-default" id="colAction">
+                  <span class="glyphicon icon-list-all"></span>
+                  <span class="glyphicon icon-angle-bottom"></span>
+                </button>
+              <div class="rpt-funnel rpt-funnelBox rpt-funnelBoxList">
+                <div id="colList" class="rpt-colList">
+                </div>
+                <button id="addCol" class="btn btn-primary">确定</button>
+              </div>
+            </div>-->
+              <div style="position: relative;display: inline-block;vertical-align: middle;">
+                <button class="btn btn-default" id="colAction"><span class="glyphicon icon-list-all"></span><span class="glyphicon icon-angle-bottom"></span></button>
+                <div class="rpt-funnel rpt-funnelBox rpt-funnelBoxList">
+                  <div id="colList" class="rpt-colList">
+                    <table id="colListTable">
+                      <thead>
+                        <tr>
+                          <th style="width: 30px;min-width: 30px;" class="hide">序号</th>
+                          <th style="width: 30px;min-width: 30px;" class="hide">
+                            <label class="mt-checkbox mt-checkbox-outline margin-right-8">
+                              <input class="checkAll" type="checkbox" name="" id=""> 
+                              <span></span>
+                            </label>
+                          </th>
+                          <th style="width: 50px;min-width: 50px;" class="hide">列名</th>
+                        </tr>
+                      </thead>
+                        <!-- CWYXM-18450 指标台账,预算执行情况表,记忆列没勾选但是界面全部显示了,再次勾选记忆列点击确定界面处于一直加载状态,具体见截图--zsj--由jquery升级导致 -->
+                      <tbody></tbody>
+                    </table>
+                  </div>
+                  <button id="addCol" class="btn btn-primary">确定</button>
+                </div>
+              </div>
+            </div>
+            <!--右侧操作按钮 end-->
+
+            <!-- 表格 -->
+            <div class="rpt-table-tab">
+              <table class="ufma-table uf-rpt-table" tool-bar="#tool-bar" id="queryTable">
+              </table>
+            </div>
+
+            <!-- 单据数量和指标金额的信息显示 -->
+            <!--	<div id="tableTotalShow" class="bgpub-bgnormal-postion-1 margin-5" style="width:400px">
+            <span>共&nbsp;</span>
+            <span id="billsCount">0</span>
+            <span>&nbsp;张单据&nbsp;&nbsp;&nbsp; 指标金额：&nbsp;
+            </span>
+            <span id="billsTotalMoney">0.00</span>
+          </div>-->
+          </div>
+        </div>
+        <!--工作区底 begin-->
+        <!-- CWYXM-18872 --指标明细账,点击更多后界面乱了,具体见截图--zsj -->
+        <div id="tool-bar" class="ufma-tool-bar" style="margin-left: -15px;padding: 0px 1px;">
+          <div class="tool-bar-body">
+          </div>
+        </div>
+			</div>
+		</div>
+
+			<script src="../pub/bgPub.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+			<script src="budgetItemDetailQueryPersion.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+			<script src="../pub/bg.parse.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+			<script src="dm.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+			<script src="../pub/bgPubReportFindPnl.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+	</body>
+
+</html>

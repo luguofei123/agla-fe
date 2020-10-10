@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>往来单位-操作</title>
+		<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+		<script src="../../pub/boot.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+		<link rel="stylesheet" type="text/css" href="currentEdit.css?rev=@@hash" />
+	</head>
+
+	<body id="currentEdit">
+		<div class="ufma-layout-updown">
+			<div class="ufma-layout-up" style="padding-top: 10px;height:calc(100% - 60px)">
+				<div class="container-fluid">
+					<div class="ufma-layout ufma-layout-slider-xm ufma-layout-fixed-slider ufma-layout-fixed-slider-right">
+						<form id="currentForm" class="ufma-layout-content">
+							<input type="hidden" name="chrId" id="chrId" value="">
+							<input type="hidden" name="lastVer" id="lastVer" value="">
+							<!-- 基本信息 begin -->
+							<div class="panel ufma-panel">
+								<div class="panel-heading">
+									<div class="caption">基本信息</div>
+									<div class="actions">
+										<a data-toggle="collapse" href="#jbxx">
+											<span class="glyphicon icon-angle-bottom"></span>
+										</a>
+									</div>
+								</div>
+
+								<div id="jbxx" class="panel-collapse collapse in">
+									<div class="panel-body">
+										<div class="container-fluid form-horizontal">
+											<div class="form-horizontal">
+												<div class="form-group required">
+													<label class="col-sm-2 control-label">单位编码：</label>
+													<div class="col-sm-4">
+														<div class="control-element">
+															<input type="text" name="chrCode" id="chrCode" class="form-control">
+														</div>
+													</div>
+
+													<label class="col-sm-2 control-label">单位名称：</label>
+													<div class="col-sm-4">
+														<div class="control-element">
+															<input type="text" name="chrName" id="cEditChrName" class="form-control">
+														</div>
+													</div>
+												</div>
+												<div class="form-row"style="margin-bottom: 30px;">
+
+													<div class="form-group"style="margin-left: 59px;">
+														<label class="control-label">单位性质：</label>
+														<!--col-sm-2 -->
+														<!--<div class="col-sm-4">-->
+														<div class="control-element" style="margin-left: -4px;">
+															<select class="selectess" name="companyKind" id="cEditCompanyKind" require-all=1>
+
+																<!-- 1行政2事业3企业4其他 -->
+																<option value="0"></option>
+																<option value="1">行政单位</option>
+																<option value="2">事业单位</option>
+																<option value="3">企业</option>
+																<option value="4">其他</option>
+															</select>
+
+														</div>
+														<!--</div>-->
+													</div>
+													<div class="form-group required"style="margin-left: 30px;">
+														<label class="control-label">单位属性：</label>
+														<!--col-sm-2 -->
+														<!--<div class="col-sm-4">-->
+														<div class="control-element"style="margin-left: -3px;">
+															<select class="selectess" name="companyattribute" id="cEditCompanyattribute" require-all=1>
+																<!-- 1行政2事业3企业4其他 -->
+																<option value="0"></option>
+																<option value="1">行政单位</option>
+																<option value="2">事业单位</option>
+																<option value="3">企业</option>
+																<option value="4">其他</option>
+															</select>
+
+														</div>
+														<!--</div>-->
+
+													</div>
+												</div>
+												<div class="form-group">
+													<label class="col-sm-2 control-label">启用状态：</label>
+													<div class="col-sm-4">
+														<div class="control-element">
+															<div id="cEnabled" class="btn-group" data-toggle="buttons">
+																<label class="btn btn-default active">
+																<input type="radio" class="toggle" name="enabled" value="1" checked> 启用 </label>
+																<label class="btn btn-default">
+																<input type="radio" class="toggle" name="enabled" value="0"> 停用 </label>
+															</div>
+														</div>
+													</div>
+
+													<label class="col-sm-2 control-label">增加下级：</label>
+													<div class="col-sm-4">
+														<div class="control-element">
+															<div id="cAllowAddsub" class="btn-group" data-toggle="buttons">
+																<label class="btn btn-default active">
+																<input type="radio" class="toggle" name="allowAddsub" value="1" checked> 允许 </label>
+																<label class="btn btn-default">
+																<input type="radio" class="toggle" name="allowAddsub" value="0"> 禁止 </label>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="form-group">
+													<label class="col-sm-2 control-label">往来关系：</label>
+													<div class="col-sm-4">
+														<div class="control-element" style="margin-top: 5px;">
+															<label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
+				               							    	<input name="isCustomer" type="checkbox" class="datatable-group-checkable"/>
+				               							    	<span></span>
+				               							    	客户
+			               							    	</label>
+															<label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
+				               							    	<input name="isSupplier" type="checkbox" class="datatable-group-checkable"/>
+				               							    	<span></span>
+				               							    	供应商
+			               							    	</label>
+														</div>
+													</div>
+													<label class="col-sm-2 control-label">行政区划：</label>
+													<div class="col-sm-4">
+														<div class="control-element">
+															<div id='agency-distCode' name="distCode" class="uf-treecombox w210"></div>
+														</div>
+													</div>
+												</div>
+												<div class="form-group">
+													<label class="col-sm-2 control-label">助记码：</label>
+													<div class="col-sm-4">
+														<div class="control-element">
+															<input type="text" name="assCode" id="assCode" class="form-control" maxlength="42">
+														</div>
+													</div>
+												</div>
+												<div class="form-group margin-bottom-15  field1" style="display:none">
+													<label class="control-label em6"></label>
+													<div class="control-element">
+														<div id='field1' name="field1" data-code="" class="ufma-treecombox" valueField="id" textField="name"></div>
+													</div>
+												</div>
+
+												<div class="form-group margin-bottom-15 field2" style="display:none">
+													<label class="control-label em6"></label>
+													<div class="control-element">
+														<div id='field2' name="field2" data-code="" class="ufma-treecombox" valueField="id" textField="name"></div>
+													</div>
+												</div>
+
+												<div class="form-group margin-bottom-15  field3" style="display:none">
+													<label class="control-label em6"></label>
+													<div class="control-element">
+														<div id='field3' name="field3" data-code="" class="ufma-treecombox" valueField="id" textField="name"></div>
+													</div>
+												</div>
+
+												<div class="form-group margin-bottom-15  field4" style="display:none">
+													<label class="control-label em6"></label>
+													<div class="control-element">
+														<div id='field4' name="field4" data-code="" class="ufma-treecombox" valueField="id" textField="name"></div>
+													</div>
+												</div>
+
+												<div class="form-group margin-bottom-15  field5" style="display:none">
+													<label class="control-label em6"></label>
+													<div class="control-element">
+														<div id='field5' name="field5" data-code="" class="ufma-treecombox" valueField="id" textField="name"></div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<!-- 基本信息 end -->
+
+							<!-- 通信信息 begin -->
+							<div class="panel ufma-panel">
+								<div class="panel-heading">
+									<div class="caption">通信信息</div>
+									<div class="actions">
+										<a data-toggle="collapse" href="#txxx">
+											<span class="glyphicon icon-angle-bottom"></span>
+										</a>
+									</div>
+								</div>
+
+								<div id="txxx" class="panel-collapse collapse in">
+									<div class="panel-body">
+										<div class="container-fluid form-horizontal">
+											<div class="form-horizontal">
+												<div class="form-group">
+													<label class="col-sm-2 control-label">联系人：</label>
+													<div class="col-sm-4">
+														<div class="control-element">
+															<input type="text" name="contact" id="cEditContact" class="form-control" maxlength="42">
+														</div>
+													</div>
+
+													<label class="col-sm-2 control-label">电话：</label>
+													<div class="col-sm-4">
+														<div class="control-element">
+															<input type="text" name="phoneNum" id="cEditPhoneNum" class="form-control" maxlength="42">
+														</div>
+													</div>
+												</div>
+
+												<div class="form-group">
+													<label class="col-sm-2 control-label">邮箱：</label>
+													<div class="col-sm-4">
+														<div class="control-element">
+															<input type="text" name="email" id="cEditEmail" class="form-control" maxlength="42">
+														</div>
+													</div>
+
+													<label class="col-sm-2 control-label">传真：</label>
+													<div class="col-sm-4">
+														<div class="control-element">
+															<input type="text" name="fax" id="cEditFax" class="form-control" maxlength="42">
+														</div>
+													</div>
+												</div>
+
+												<div class="form-group">
+													<label class="col-sm-2 control-label">联系地址：</label>
+													<div class="col-sm-10">
+														<div class="control-element">
+															<input type="text" name="commAddr" id="cEditCommAddr" class="form-control" maxlength="200">
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<!-- 通信信息 end -->
+
+							<!-- 营业信息 begin -->
+							<div class="panel ufma-panel">
+								<div class="panel-heading">
+									<div class="caption">营业信息</div>
+									<div class="actions">
+										<a data-toggle="collapse" href="#yyxx">
+											<span class="glyphicon icon-angle-bottom"></span>
+										</a>
+									</div>
+								</div>
+
+								<div id="yyxx" class="panel-collapse collapse in">
+									<div class="panel-body">
+										<div class="container-fluid form-horizontal">
+											<div class="form-horizontal">
+												<div class="form-group">
+													<label class="col-sm-2 control-label">开户银行：</label>
+													<div class="col-sm-4">
+														<div class="control-element">
+															<input type="text" name="bank" id="cEditBank" class="form-control" maxlength="200">
+														</div>
+													</div>
+
+													<label class="col-sm-2 control-label">银行账号：</label>
+													<div class="col-sm-4">
+														<div class="control-element">
+															<input type="text" name="bankAcc" id="cEditBankAcc" class="form-control" maxlength="42">
+														</div>
+													</div>
+												</div>
+
+												<div class="form-group">
+													<label class="col-sm-2 control-label">法人代表：</label>
+													<div class="col-sm-4">
+														<div class="control-element">
+															<input type="text" name="corpRepr" id="cEditCorpRepr" class="form-control" maxlength="42">
+														</div>
+													</div>
+
+													<label class="col-sm-2 control-label">营业证号：</label>
+													<div class="col-sm-4">
+														<div class="control-element">
+															<input type="text" name="businessCardNo" id="cEditBusinessCardNo" class="form-control" maxlength="200">
+														</div>
+													</div>
+												</div>
+
+												<div class="form-group">
+													<label class="col-sm-2 control-label">营业税号：</label>
+													<div class="col-sm-4">
+														<div class="control-element">
+															<input type="text" name="businessTaxNo" id="cEditBusinessTaxNo" class="form-control" maxlength="200">
+														</div>
+													</div>
+
+													<label class="col-sm-2 control-label">经营范围：</label>
+													<div class="col-sm-4">
+														<div class="control-element">
+															<input type="text" name="businessSco" id="cEditBusinessSco" class="form-control" maxlength="300">
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<!-- 营业信息 end -->
+							<!--账户信息：新增需求--begin--zsj-->
+							<div class="panel ufma-panel">
+								<div class="panel-heading">
+									<div class="caption">账户信息</div>
+									<div class="actions">
+										<a data-toggle="collapse" href="#accoMsg">
+											<span class="glyphicon icon-angle-bottom"></span>
+										</a>
+									</div>
+								</div>
+
+								<form id="accoMsg" class="panel-collapse collapse in">
+									<div class="panel-body" style="overflow-x: scroll;">
+										<table id="currentAccoTab" class="ufma-table dataTable table-edit bordered uf-rpt-table">
+											<thead>
+												<tr>
+													<th style="min-width: 30px;">序号</th>
+													<th style="min-width: 100px;">银行账户</th>
+													<th style="min-width: 185px;">账户名称</th>
+													<th style="min-width: 185px;">银行类别</th>
+													<th style="min-width: 185px;">开户行</th>
+													<th style="min-width: 200px;">网点行号</th>
+													<th style="min-width: 200px;">省份</th>
+													<th style="min-width: 200px;">城市</th>
+													<th style="min-width: 200px;">人行联行号</th>
+													<th style="min-width: 30px;">操作</th>
+												</tr>
+											</thead>
+											<tbody></tbody>
+										</table>
+										<div class="text-center padding-15">
+											<a class="btn btn-sm btn-default" id="currentAccoMsg">
+												<span class="glyphicon icon-add"></span>
+												<span class="margin-left-15">新增账户信息</span>
+											</a>
+										</div>
+									</div>
+
+								</form>
+							</div>
+
+							<!-- 账户信息 end -->
+						</form>
+
+						<!--右侧 begin-->
+						<div class="ufma-layout-slider right">
+							<div class="panel ufma-panel ufma-panel-primary">
+								<div class="panel-heading">
+									<div class="caption">参考信息</div>
+								</div>
+								<div class="panel-collapse collapse in">
+									<div class="panel-body">
+										<div id="prompt" style="margin-bottom: 10px"></div>
+										<ul id="current-help" class="project-ul list-unstyled" id="project-ul">
+											<li>请输入往来单位编码获得参考信息</li>
+											<!--<li>2016-1-12~2017-2-10  张三</li>
+											<li>2017–2-10至今  张三丰</li>-->
+										</ul>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!--右侧 end-->
+					</div>
+				</div>
+			</div>
+
+			<div class="ufma-layout-down bordered-top">
+				<div class="text-right margin-right-30">
+					<button type="button" class="btn btn-sm btn-primary btn-permission btn-saveadd" id="btn-save-add">保存并新增</button>
+					<button type="button" class="btn btn-sm btn-default btn-permission btn-save" id="btn-save">保存</button>
+					<button type="button" class="btn btn-sm btn-default btn-permission btn-addlower hidden" id="btn-addlower">增加下级</button>
+					<button type="button" class="btn btn-sm btn-default btn-permission btn-senddown hidden" id="btn-senddown">下发</button>
+					<button type="button" class="btn btn-sm btn-default btn-cancel" id="btn-cancel">取消</button>
+				</div>
+			</div>
+		</div>
+
+		<script src="../maCommon/maCommon.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+		<script src="currentEdit.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+	</body>
+
+</html>

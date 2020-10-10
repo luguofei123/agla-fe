@@ -1,0 +1,170 @@
+.ztree {
+	overflow: visible;
+}
+.ztree *{
+    font-family: "宋体";
+}
+.ztree li{
+	line-height: 18px;
+}
+.ztree li a {
+    background-color: transparent;
+    color: #333;
+    cursor: pointer;
+    display: inline-block;
+    height: 18px;
+    height:18px\9;
+    margin: 0;
+    padding: 1px 3px 0 0;
+    text-decoration: none;
+    vertical-align: top;
+}
+.ztree li a:hover{
+	text-decoration: none;
+    background-color: #fff !important;
+}
+.ztree li a.curSelectedNode {
+    color: black;
+    height: 18px;
+    opacity: 0.8;
+    padding-top: 0;
+    display:inline-block\0;
+    height:18px\0;
+}
+.ztree li a.focusNode{
+    background-color: #fff;
+    color:#333;
+}
+/*.ztree li a.curSelectedNode span:first-child + span {
+    color: #333333;
+}*/
+.ztree li span.button.ico_close:after {
+    color: #3881d8;
+    content: "" !important;
+    font-family: "";
+}
+.ztree li span.button.ico_open:after {
+    color: #3881d8;
+    content: "" !important;
+    font-family: "" !important;
+}
+.ztree li span.button.switch {
+    height: 18px;
+    width: 18px;
+}
+.ztree li span.button.root_close {
+	background-image: url("./images/zTreeStandard.png") !important;
+    background-position: -74px -54px !important;
+}
+.ztree li span.button.root_close:after {
+    content: "" !important;
+    font-family: "" !important;
+}
+.ztree li span.button.roots_close {
+    background-image: url("./images/zTreeStandard.png") !important;
+    background-position: -74px -54px !important;
+}
+.ztree li span.button.roots_close:after {
+    content: "" !important;
+    font-family: "" !important;
+}
+.ztree li span.button.root_open {
+    background-position: -92px -54px;
+}
+.ztree li span.button.roots_open:after {
+    color: #ccc;
+    content: "" !important;
+    font-family: "" !important;
+}
+.ztree li span.button.roots_open {
+    background-image: url("./images/zTreeStandard.png") !important;
+    background-position: -92px 0 !important;
+}
+.ztree li span.button.center_close:after {
+    content: "" !important;
+    font-family: "" !important;
+}
+
+.ztree li span.button.switch.noline_close:after {
+	content: none;
+}
+.ztree li span.button.switch.noline_close {
+	background-attachment: scroll;
+    background-color: transparent;
+    background-image: url("./images/zTreeStandard.png") !important;
+    background-position: -74px -55px !important;
+    background-repeat: no-repeat;
+    border: 0 none;
+    cursor: pointer;
+    display: inline-block;
+    height: 16px;
+    line-height: 0;
+    margin: 0;
+    outline: medium none;
+    vertical-align: middle;
+    width: 16px;
+}
+.ztree li span.button.switch.noline_open:after {
+	content: none;
+}
+.ztree li span.button.switch.noline_open {
+	background-attachment: scroll;
+    background-color: transparent;
+    background-image: url("./images/zTreeStandard.png");
+    background-position: -92px -56px !important;
+    background-repeat: no-repeat;
+    border: 0 none;
+    cursor: pointer;
+    display: inline-block;
+    height: 16px;
+    line-height: 0;
+    margin: 0;
+    outline: medium none;
+    vertical-align: middle;
+    width: 16px;
+}
+.ztree li span.button.switch.noline_close {
+
+}
+.ztree li span.button.center_close, .ztree li span.button.bottom_close {
+    background-image: url("./images/zTreeStandard.png") !important;
+    background-position: -74px -54px !important;
+}
+.ztree li span.button.center_open:after, .ztree li span.button.bottom_open:after {
+    color: #ccc;
+    content: "" !important;
+    font-family: "" !important;
+}
+.ztree li span.button.center_open, .ztree li span.button.bottom_open {
+    background-image: url("./images/zTreeStandard.png") !important;
+    background-position: -92px -54px !important;
+    line-height: 18px;
+}
+.ztree li span.button.ico_close {
+    background: url(./images/home.gif) no-repeat !important;
+    margin:0 2px;
+    vertical-align: top;
+}
+.ztree li span.button.ico_open {
+    background: url(./images/home.gif) no-repeat !important;
+    margin:0 2px;
+    vertical-align: top;
+}
+.ztree li span.button.ico_docu {
+    background: url(./images/bm.gif) no-repeat 0 2px;
+    margin:0 2px;
+    vertical-align: top;
+}
+.ztree li span.button.ico_docu:after {
+    color: #3881d8;
+    content: "" !important;
+    font-family: "" !important;
+}
+.ztree li span.button.bottom_close:after {
+    content: "" !important;
+    font-family: "" !important;
+}
+.ztree li span.button.chk {
+    vertical-align: top;
+    margin-top: 3px;
+}

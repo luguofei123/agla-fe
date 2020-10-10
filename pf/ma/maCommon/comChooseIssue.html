@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>选用</title>
+		<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+		<script src="../../pub/boot.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+	</head>
+
+	<body>
+		<div class="ufma-layout-updown">
+			<div class="ufma-layout-up"><!-- style="height: 330px !important;overflow-y: scroll;"-->
+				<div class="table-sub clearfix" style="margin-top: 10px;margin-bottom: 10px;margin-right: 15px;">
+					<div class="table-sub-action pull-right">
+						<div class="iframeBtnsSearch" id="choose-search">
+							<input type="text" class="searchHide focusOff bordered" placeholder="请输入要搜索的关键词">
+							<input type="hidden" class="searchValueHide">
+							<button class="btn btn-default btn-sm btn-search" id="searchHideChooseBtn">
+							<i class="glyphicon icon-search"></i>
+						</button>
+						</div>
+					</div>
+				</div>
+				<div class="rpt-table-tab" style="padding: 0 15px;height: 287px;overflow-y: scroll;">
+					<table class="ufma-table uf-rpt-table" tool-bar="#comChoose-tool-bar" id="tableChoose"></table>
+				</div>
+				<div id="comChoose-tool-bar" class="ufma-tool-bar"style="width:962px;">
+				<div class="tool-bar-body" style="width:962px;">
+				</div>
+			</div>
+			</div>
+			<div class="ufma-layout-down bordered-top">
+				<div class="text-right margin-right-30">
+					<button type="button" class="btn btn-sm btn-primary btn-agyChoose">选用</button>
+					<button type="button" class="btn btn-sm btn-default btn-close" id="btnClose"> 取消</button>
+				</div>
+			</div>
+		</div>
+		<script src="comChooseIssue.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+		<script src="maCommon.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+	</body>
+
+</html>

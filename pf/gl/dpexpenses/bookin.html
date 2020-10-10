@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>待摊费用登记</title>
+		<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+		<script src="../../pub/boot.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+		<link rel="stylesheet" href="dpexpenses.css" />
+	</head>
+
+	<body>
+		<div id="coaAccEdit" class="ufma-layout-updown">
+			<div class="ufma-layout-up">
+				<form id="frmBookIn" class="container-fluid form-horizontal" style="padding:15px 30px 30px;">
+					<div class="form-row">
+						<div class="form-group m0 p0 required">
+							<label class="control-label auto">摊销类型：</label>
+							<div class="control-element" style="width:120px">
+								<div id="apportionType" name="apportionType" class="uf-combox" idField="ENU_CODE" textField="ENU_NAME" style="width:120px"> </div>
+							</div>
+						</div>
+						
+						<div class="clearfix"></div>
+					</div>
+					<div class="panel ufma-panel" style="width:620px;height:220px;margin:0;">
+						<div class="panel-heading">
+
+							<div class="caption">摊销信息</div>
+
+						</div>
+						<div class="panel-collapse collapse in">
+							<div class="panel-body" style="padding:16px 16px;">
+								<div class="form-row">
+									<div class="form-group required">
+										<label class="control-label">费用类型：</label>
+										<div class="control-element">
+											<div id="fylxCode" class="uf-treecombox"  idField="code" textField="codeName" name="fylxCode" style="width:190px"> </div>
+										</div>
+									</div>
+									<div class="form-group required">
+										<label class="control-label">发生日期：</label>
+										<div class="control-element">
+											<div name="occurDate" id="occurDate" class="uf-datepicker" style="width:210px;"></div>
+										</div>
+									</div>
+									<div class="clearfix"></div>
+								</div>
+								<div class="form-row">
+									<div class="form-group required">
+										<label class="control-label">开始日期：</label>
+										<div class="control-element">
+											<div name="startDate" id="startDate" class="uf-datepicker" style="width:210px;"></div>
+										</div>
+									</div>
+									<div class="form-group required">
+										<label class="control-label">到期日期：</label>
+										<div class="control-element">
+											<div name="endDate" id="endDate" class="uf-datepicker" style="width:210px;"></div>
+										</div>
+									</div>
+									<div class="clearfix"></div>
+								</div>
+								<div class="form-row">
+									<div class="form-group required">
+										<label class="control-label">摊销金额：</label>
+										<div class="control-element">
+											<input id="apportionMoney" type="text" name="apportionMoney" class="form-control">
+										</div>
+									</div>
+									<div class="form-group required">
+										<label class="control-label">摊销期：</label>
+										<div class="control-element">
+											<input type="text" id="apportionPeriod" name="apportionPeriod" class="form-control">
+										</div>
+									</div>
+									<div class="clearfix"></div>
+								</div>
+								<div class="form-row">
+									<div class="form-group">
+										<label class="control-label">票据号：</label>
+										<div class="control-element">
+											<input type="text" name="billNo" class="form-control">
+										</div>
+									</div>
+
+									<div class="clearfix"></div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="form-row padding-top-15">
+
+						<div class="form-group p0 margin-left-15">
+							<label class="control-label" style="">备注：</label>
+							<div class="control-element" style="vertical-align:top">
+								<textarea name="remark" class="form-control" style="width:490px;height:50px;"></textarea>
+							</div>
+						</div>
+						<div class="clearfix"></div>
+					</div>
+				</form>
+
+			</div>
+			<div class="ufma-layout-down bordered-top">
+				<div class="text-right margin-right-30">
+					<button type="button" class="btn btn-sm btn-primary btn-permission btn-saveadd state-edit" id="coaAccSaveAddAll">保存并新增</button>
+					<button type="button" class="btn btn-sm btn-default btn-permission btn-save state-edit btn-ajax" id="btnSave">保存</button>
+					<button type="button" class="btn btn-sm btn-default" id="btnClose"> 关闭</button>
+				</div>
+			</div>
+		</div>
+		<script src="dm.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+		<script src="bookin.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+	</body>
+
+</html>

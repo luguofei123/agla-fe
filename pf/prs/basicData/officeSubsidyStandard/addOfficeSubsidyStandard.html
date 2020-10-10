@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>新增/编辑</title>
+    <meta
+      content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
+      name="viewport"
+    />
+    <script
+      src="../../../pub/boot.js?rev=@@hash"
+      type="text/javascript"
+      charset="utf-8"
+    ></script>
+    <script
+      src="../../common/common.js?rev=@@hash"
+      type="text/javascript"
+      charset="utf-8"
+    ></script>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="../../common/common.css?rev=@@hash"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="officeSubsidyStandard.css?rev=@@hash"
+    />
+  </head>
+  <body>
+    <!--整个容器 begin-->
+    <div
+      id="add-office-subsidy-standard"
+      class="ufma-layout-updown office-subsidy-standard"
+    >
+      <div class="ufma-layout-up">
+        <div class="container-fluid">
+          <form id="frmQuery" class="form-horizontal" style="margin-top: 10px">
+            <div class="form-row">
+              <div
+                class="form-group required font-size-0 col-xs-10 col-sm-5 col-md-5"
+              >
+                <label
+                  class="control-label font-size-14 text-align-left data-label "
+                  >补贴项目名称：</label
+                >
+                <div class="control-element">
+                  <input
+                    id="prsubsName"
+                    type="text"
+                    name="prsubsName"
+                    class="form-control"
+                    maxlength="200"
+                    style="width: 200px"
+                    autocomplete="off"
+                  />
+                </div>
+              </div>
+              <div class="form-group font-size-0 col-xs-10 col-sm-5 col-md-5">
+                <label
+                  class="control-label font-size-14 text-align-left data-label"
+                  >是否启用：</label
+                >
+                <div class="control-element font-size-14">
+                  <div class="btn-group radio-group" data-toggle="buttons">
+                    <label class="btn btn-default btn-sm active isUsed">
+                      <input
+                        type="radio"
+                        class="toggle"
+                        name="isUsed"
+                        value="Y"
+                        checked
+                      />是
+                    </label>
+                    <label class="btn btn-default btn-sm isUsed">
+                      <input
+                        type="radio"
+                        class="toggle"
+                        name="isUsed"
+                        value="N"
+                      />否
+                    </label>
+                  </div>
+                </div>
+              </div>
+              <div class="clearfix"></div>
+            </div>
+            <div class="clearfix"></div>
+          </form>
+          <div class="margin-top-10">
+            <ul class="nav nav-tabs">
+              <li class="active" data-value="0">
+                <a href="javascript:;" data-state="0">职务对应</a>
+              </li>
+              <li data-value="1">
+                <a href="javascript:;" data-state="1">工资类别对应</a>
+              </li>
+            </ul>
+            <div class="nav-content">
+              <table
+                id="prsDutyGradeTable"
+                tool-bar="#tool-bar"
+                class="ufma-table uf-rpt-table"
+              ></table>
+            </div>
+            <div class="nav-content hidden">
+              <div class="btn-group margin-top-5 margin-bottom-5">
+                <button
+                  type="button"
+                  class="btn btn-sm btn-default btn-add margin-right-10 btn-add-row"
+                >
+                  增加
+                </button>
+                <button
+                  type="button"
+                  class="btn btn-sm btn-default btn-delete btn-del-row"
+                >
+                  删除
+                </button>
+              </div>
+              <table
+                id="typeItemTable"
+                tool-bar="#tool-bar"
+                class="ufma-table uf-rpt-table"
+              ></table>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="ufma-layout-down bordered-top">
+        <div class="text-right margin-right-30">
+          <button type="button" class="btn btn-sm btn-primary" id="btn-saveadd">
+            保存并新增
+          </button>
+          <button type="button" class="btn btn-sm btn-primary" id="btn-save">
+            保存
+          </button>
+          <button
+            type="button"
+            class="btn btn-sm btn-default btn-close"
+            id="btn-close"
+          >
+            关闭
+          </button>
+        </div>
+      </div>
+    </div>
+    <script
+      src="addOfficeSubsidyStandard.js?rev=@@hash"
+      type="text/javascript"
+      charset="utf-8"
+    ></script>
+  </body>
+</html>

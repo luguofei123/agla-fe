@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+  		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>编号规则</title>
+  		<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+		<script src="../../pub/boot.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+		<link rel="stylesheet" href="codeRuleSet.css?rev=@@hash"/>
+	</head>
+<body>
+<div id="crtlPlan"  class="container-fluid ufma-container">
+	<!--面包屑 begin-->
+	<!-- <div class="bread-box clearfix">
+		<div class="bread-label pull-left">当前所在位置：</div>
+		<ol class="breadcrumb pull-left">
+			<li><a href="#">指标系统</a></li>
+			<li class="active">控制方案</li>
+		</ol>
+	</div> -->
+	<!--面包屑 end-->
+	<!--工作区顶部 begin-->
+	<div class="workspace bordered">
+		<div class="container-fluid">
+			<div class="ufma-portlet">
+				<div class="portlet-title">
+					<div class="caption">
+						<span class="caption-subject font-dark uppercase">编号规则</span>	
+					</div>	
+									
+					<div class="actions">
+						<div class="btn-group">
+							<button type="button" id="btn-add" class="btn btn-sm btn-primary" data-toggle="modal" >新增</button>
+						</div>
+					</div>
+				</div>
+				
+			
+			<div class="top-toolbar container-fluid ufma-portlet" style="margin-bottom: -15px;">
+				<div class="row portlet-title ele-bordered-none crtlPlanCount" id="crtlplan-count">
+					
+				</div>
+			</div>
+			
+			</div>
+			<div class="portlet-body form-horizontal" style="background-color:#fff !important;">
+                    <div class="container-fluid"  class="row crtlPlan " id="crtlplan-cards"></div>
+            </div>
+		<!--工作区中部 end-->
+		<!-- 编辑预算方案begin -->
+		<div id="crtlplan-edt" class="ufma-modal">
+			<div class="u-msg-title">
+                <h4>编号规则设置</h4>
+            </div>
+            <div class="u-msg-content">
+           		 <div class="ufma-layout ufma-layout-slider-xm ufma-layout-fixed-slider ufma-layout-fixed-slider-right">
+				
+					<div>
+                        <!--基本信息begin-->
+                        <div class="panel ufma-panel">
+							<div class="panel-heading">
+                                <h4 class="panel-title">
+	                                <div class="caption">基本信息</div>
+									<div class="actions">
+	                                    <a class="accsys-edit margin-right-8" id="btnCrtlPlanBaseEdit"><span class="glyphicon icon-edit"></span></a>
+										<a  data-toggle="collapse"  href="#crtlplan-base"><span class="glyphicon icon-angle-bottom"></span></a>
+									</div>
+								</h4>
+							</div>
+								<form id="crtlplan-base" class="panel-collapse collapse in">
+								
+                                    <div class="panel-body">
+                                        <div class="container-fluid form-horizontal">
+                                            <input type="hidden" name="chrId" value=""/>
+                                            <input type="hidden" name="chrCode" value=""/>
+                                            <div class="row">
+												<div class="col-xs-6">
+													<div class="form-group">
+														<label class="control-label em6 ">规则名称：</label>
+														<div class="control-element " >
+															<input type="text" name="chrName" class="form-control">
+                                                            <label for="chrName" class="control-label hide"></label>
+														</div>
+													</div>
+												</div>
+												<div class="col-xs-6">
+													<div class="form-group">
+														<label class="control-label em6">适用单据：</label>
+														<div class="control-element w180">
+															<select class="form-control" name="busBillId" id="codeRuleBillType">
+															</select>
+															<label for="busBillId" class="control-label hide"></label>
+														</div>
+													</div>
+												</div>
+											</div>	
+
+										</div>
+									</div>
+								</form>
+								 
+						</div>
+						 <div class="panel ufma-panel">
+							<div class="panel-heading">
+                                <h4 class="panel-title">
+	                                <div class="caption">规则要素</div>
+									<div class="actions">
+	                                    <a class="accsys-edit margin-right-8" id="btnUseCtrlItemsEdit"><span class="glyphicon icon-edit"></span></a>
+										<a  data-toggle="collapse" id="btnUseCtrlItemsStop" href="#crtlplan-items"><span class="glyphicon icon-angle-bottom"></span></a>
+									</div>
+								</h4>
+							</div>
+							
+								<form id="crtlplan-items" class="panel-collapse collapse in">
+								
+                                    <div class="panel-body" >
+                                        <div class="container-fluid form-horizontal">
+                                            <div class="row">
+												<div class="col-xs-4" >
+													 <div class="form-group">
+														 <div class="items-box-left" >
+															<p class="tilte-font">可选规则</p>
+															<div class="items-list bordered" id="items-option" style="height:240px;overflow:auto;" >
+																<ul class="items-list-ul items-list-ul-l" id="ctrl-items" style="padding-left:24px;padding-top: 16px;">
+																</ul>
+															</div>
+														</div> 
+													</div> 
+												</div>
+												<div class="col-xs-1">
+													<div class="form-group" >
+														<div class="items-box-center"  style="height:180px; text-align:center ;margin-top:120px ">
+															<div>
+																<a id="items-setRight" class="btn btn-icon-only btn-default" style="margin-bottom:8px">
+																	<span class="glyphicon icon-angle-double-right"></span>
+																</a>
+															</div>
+															<div>
+																<a id="items-setLeft" class="btn btn-icon-only btn-default">
+																	<span class="glyphicon icon-angle-double-left"></span>
+																</a>
+															</div>
+													
+														</div>
+													</div>
+												</div>
+												<div class="col-xs-7">
+													<div class="form-group">
+														<div class="items-box-right">
+															<p class="tilte-font">已选规则</p>
+															<div class="items-list bordered" id="items-selected" style="height:240px;overflow:auto;">
+																	<table id="items-selected-table"  class="ufma-table bgItemTbl" style="width:100%">
+																		<thead>
+																            <tr id="trId">
+																                <td></td>
+																            </tr>
+																        </thead>
+																        <tbody>
+																        </tbody>
+																	</table>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>	
+											
+											
+											<div class="row hide" id="crtlItemsBtnGroup">
+												<div class="col-xs-12 text-right margin-top-8">
+                                                    <button type="button" class="btn btn-sm btn-primary btn-save">保存</button>
+                                                    <button type="button" class="btn btn-sm btn-default btn-cancel">取消</button>
+                                                </div>
+                                            </div>
+										</div>
+									</div>
+								</form>
+						<div class="hide panel-collapse collapse in" id="items-allShow" style="height:40px;">
+							<div style="float:left;padding-left: 16px;padding-top: 11px;" >已选控制要素：</div>
+						</div>
+						</div>
+	
+					</div>
+			
+			 	</div>
+				
+			</div>
+					
+			<div class="modal-footer add-footer">
+					<button type="button" class="btn btn-sm btn-primary add-saveadd" id="crtlPlanSaveAdd">保存并新增</button>				
+					<button type="button" class="btn btn-sm btn-default btn-save" id="crtlPlanSaveAll">保存</button>
+                    <button type="button" class="btn btn-sm btn-default btn-close" id="crtlPlanCancelAll">取消</button>
+                    <button type="button" class="btn btn-sm btn-default btn-close hide" id="crtlPlanCloseAll">关闭</button>
+			</div>
+		</div>
+		</div>
+	
+	</div>
+	</div>
+ <script src="../pub/bgPub.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+ <script src="codeRuleSet.js?rev=@@hash" type="text/javascript" charset="utf-8"></script> 
+</body>
+</html>

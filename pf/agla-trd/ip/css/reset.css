@@ -1,0 +1,31 @@
+@charset "utf-8";
+/* CSS Document */
+*{margin:0;padding:0;outline:none;}
+html,body{font:normal 14px/1.5 'arial', 'Tahoma','simsun','微软雅黑';color:#333;}
+ul,ol{list-style-type:none;margin:0;}
+a{text-decoration:none;blr:expression(this.onFocus=this.blur());color:#333;}
+a:hover{text-decoration:none;} a:focus{text-decoration:none;}li:focus{outline:none;}fieldset,img{border:0}q,blockquote{quotes:"" ""}q:before,q:after,blockquote:before,blockquote:after{content:""}
+a:active{ text-decoration:none;color: #333;}a:visited{ text-decoration:none;color: #333;}
+del{text-decoration:line-through}ins{text-decoration:underline}sup{vertical-align:super;}sub{vertical-align:sub;}cite,em,dfn{font-style:normal;}
+table{border-collapse:collapse;border-spacing:0;
+width: 100%;
+}
+caption,th,td{font-weight:normal;text-align:left;}input,textarea,select,button{font-size:100%;font-family:inherit;margin:0;padding:0;}label,button{cursor:pointer}
+textarea{resize:none;border:1px solid #ececec;}button,input,select,textarea{font-size:100%;}
+article,aside,canvas,details,figcaption,figure,footer,header,hgroup,menu,nav,section,summary{margin:0;padding:0;display:block;border:0;font-size:100%;}
+img{border:none; display: inline-block;}
+/*  form Styles  */
+.fl{float: left;}
+.fr{float: right;}
+
+/*撑开父容器*/
+.clearfix:after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+}
+.clearfix {
+    zoom:1; /*针对IE*/
+}

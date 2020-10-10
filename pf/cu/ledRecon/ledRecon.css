@@ -1,0 +1,90 @@
+
+.ufma-tool-bar{margin-top:-1px}
+.form-padding{
+	padding-top: 16px;
+    padding-bottom: 24px;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+.gray{
+	background-color:#F2F2F2!important;
+	color:#cccccc;
+}
+.form-horizontal .form-row{
+	margin-bottom: 10px;
+}
+.form-row:nth-last-child(1){
+	margin-bottom: 0;
+}
+.form-horizontal .form-row .form-group {
+	float: left;
+	display: inline-block;
+	padding: 0;
+	margin:0 0 0 30px;
+}
+.form-horizontal .form-row .form-group:first-child{
+	margin-left: 0;
+}
+.form-horizontal .form-group .control-element {
+	width: 160px;
+}
+.form-horizontal .form-group .control-label {
+	width: 80px;
+	text-align: right;
+	margin-right: 5px;
+	display: inline-grid;
+}
+.form-horizontal .form-group .control-label.auto {
+	width: auto;
+}
+.form-horizontal .form-group .split {
+	/*float: left;*/
+	display: inline-block;
+	margin: 5px;
+}
+.query-title{
+	margin-left: 20px;
+	float: left;
+	margin-top: 5px;
+}
+.table-info{
+	line-height: 30px;
+	margin-left: 30px;
+}
+.table-sub{
+	position:relative;
+	margin-top: 10px;
+	margin-left: 16px;
+}
+.table-li-info{
+	line-height: 30px;
+}
+.title-pointer {
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    margin-bottom: 4px;
+    background-color: #FFBF00
+}
+.portlet-body {
+	background-color: #ECF6FD;
+	padding: 5px;
+	margin: 5px;
+	clear: both;
+}
+#gridGL td{
+	min-height: 30px;
+	line-height: 24px; 
+	border: 1px solid #D9D9D9;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+#gridCU td{
+	min-height: 30px;
+	line-height: 24px; 
+	border: 1px solid #D9D9D9;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}

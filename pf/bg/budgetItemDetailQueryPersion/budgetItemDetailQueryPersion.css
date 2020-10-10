@@ -1,0 +1,115 @@
+.rpt-funnelBox {
+		position: absolute;
+		z-index: 9999;
+		background: #fff;
+		border: 1px solid #eee;
+		padding: 10px 8px;
+		box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.50);
+		border-radius: 4px;
+	}
+
+	.rpt-funnelBox p {
+		margin-bottom: 0;
+		float: left;
+		width: 120px;
+	}
+
+	.rpt-funnelBoxList {
+		display: none;
+		top: 42px;
+		right: 4px;
+		height: auto
+	}
+
+	.rpt-funnelBoxList:before {
+		content: '';
+		display: inline-block;
+		border-left: 10px solid transparent;
+		border-right: 10px solid transparent;
+		border-bottom: 10px solid #d9d9d9;
+		position: absolute;
+		top: -10px;
+		right: 16px;
+	}
+
+	.rpt-funnelBoxList:after {
+		content: '';
+		display: inline-block;
+		border-left: 9px solid transparent;
+		border-right: 9px solid transparent;
+		border-bottom: 9px solid #fff;
+		position: absolute;
+		top: -9px;
+		right: 17px;
+	}
+
+	.rpt-colList {
+		text-align: left;
+	}
+
+	#colListTable tbody {
+		min-width: 220px;
+		display: block;
+		height: 300px;
+		overflow-y: auto;
+	}
+
+	.rpt-colList label {
+		font-weight: normal;
+		margin-bottom: 8px;
+	}
+
+	.rpt-funnelBoxList .rpt-colBtn {
+		text-align: right;
+	}
+
+	.rpt-table-sub-action {
+		float: right;
+		height: 30px;
+	}
+
+	.rpt-table-sub-action .btn {
+		height: 30px;
+		/* float: right; */
+	}
+    .commonShowPan {
+        max-width: 130px;
+        min-width: 110px;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+    }
+	/*bug75659--【财务云8.0 农业部】需要选项控制，项目、支出功能分类等可以隐藏编码，只显示名称--zsj*/
+
+	.switchStylexs p {
+		width: 100%;
+		height: 30px;
+		line-height: 30px;
+		font-size: 12px;
+		float: left;
+		text-align: left;
+	}
+
+	.switchStylexs p .kj {
+		float: right;
+		width: 50px;
+		text-align: right;
+	}
+
+	.switchStylexs {
+		width: 200px;
+		padding: 0px 10px;
+		display: none;
+    }
+    .commonShow {
+        max-width: 200px;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+    }
+    .commonShowLab {
+        max-width: 7em;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+    }

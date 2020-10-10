@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>银行代发文件</title>
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <script src="../../../pub/boot.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+    <link rel="stylesheet" type="text/css" href="bankSubstituting.css?rev=@@hash" />
+    <link rel="stylesheet" type="text/css" href="../../common/common.css?rev=@@hash" />
+    <style>
+        .tooltip .tooltip-inner {
+            padding: 6px;
+        }
+
+        .btn-default {
+            border: none;
+            background: none;
+        }
+
+        #departmentCode_popup {
+            max-width: 400px!important;
+            width: 400px!important;
+        }
+    </style>
+</head>
+
+<body>
+    <!--整个容器 begin-->
+    <div id="value-set" class="container-fluid ufma-container">
+        <div class="workspace">
+            <div class="prs-workspace">
+                <div class="ufma-portlet">
+                    <div class="uf-selete-box bordered-bottom">
+                        <div class="uf-title">银行代发文件</div>
+                        <div class="method-tip clearfix">
+                            <div class="btn-group fr title-btns-group" style="line-height: 32px">
+                                <div style="margin-left:4px;position:relative;display:inline-block;">
+                                    <button class="btn btn-primary btn-bank-doc btn-permission" id="colAction">生成银行代发文件</button>
+                                    <div class="rpt-funnel rpt-funnelBox rpt-funnelBoxList hidden" style="position: absolute;z-index: 100">
+                                        <div id="colList" class="rpt-colList clearfix">
+                                            <button class="btn btn-default" value="txt" style="margin-left:0">.txt格式</button>
+                                            <button class="btn btn-default" value="csv">.csv格式</button>
+                                            <button class="btn btn-default" value="xls">.xls格式</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="portlet-body bordered clearfix">
+                        <div class="query-box-left fl" style="width:80%">
+                            <form id="frmQuery" class="form-horizontal">
+                                <div class="form-row">
+                                    <div class="form-group" style="position:relative">
+                                        <!-- <label class="control-label">工资类别：</label> -->
+                                        <div class="control-element wageItems">
+
+                                        </div>
+                                        <!-- <div class="wage-items-hide">
+                                        
+                                    </div> -->
+                                    </div>
+                                    <div class="clearfix"></div>
+                                </div>
+                            </form>
+                            <form id="queryMore" class="form-horizontal none">
+                                <div class="form-row" style="margin-top: 10px">
+                                    <div class="form-group">
+                                        <label class="control-label" style="width:52px">部门：</label>
+                                        <div class="control-element">
+                                            <!-- <div id="departmentCode" name="departmentCode" class="uf-textboxlist" disabled="true" autocomplete="on" style="width:262px"></div> -->
+                                            <div id="departmentCode" name="departmentCode" class="ufma-textboxlist" style="width:262px;"></div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-label" style="width: 162px">银行代发文件格式：</label>
+                                        <div class="control-element">
+                                            <div id="prsrtlCode" name="prsrtlCode" class="uf-combox" style="width: 200px">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="clearfix"></div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label class="control-label" style="width:52px">状态：</label>
+                                        <div class="control-element status" style="width: 300px;border: none">
+                                            <button class="btn btn-primary select-item" value="1">未结账当月数据</button>
+                                            <button class="btn btn-default select-item" value="2">已结账历史数据</button>
+                                        </div>
+                                    </div>
+                                    <div class="form-group" style="width: 122px;height: 32px;padding-top: 3px">
+                                        <div class="control-element month-element hidden" style="width:48px;">
+                                            <!--<div id="startMonth" name="startMonth" class="uf-combox">-->
+                                            <!--</div>-->
+                                            <select id="startMonth" name="startMonth">
+                                            </select>
+                                        </div>
+                                        <span class="split month-element hidden">-</span>
+                                        <div class="control-element month-element hidden" style="width:48px;">
+                                            <!--<div id="endMonth" id="endMonth" class="uf-combox">-->
+                                            <!--</div>-->
+                                            <select id="endMonth" name="endMonth"></select>
+                                        </div>
+                                    </div>
+                                    <!-- <div class="form-group">
+                                    <label class="control-label" style="width: 154px">员工姓名：</label>
+                                    <div class="control-element">
+                                        <input id="employeeName" type="text" name="employeeName" class="form-control" maxlength="200"
+                                               style="width: 200px" autocomplete="off">
+                                    </div>
+                                </div> -->
+                                    <div class="clearfix"></div>
+                                </div>
+                            </form>
+                        </div>
+
+                        <div class="query-box-right fr">
+                            <label class="label label-more-self fr" data-target="#queryMore">更多
+                                <i class="glyphicon icon-angle-bottom"></i>
+                            </label>
+                            <div class="query-btn fr" style="margin-left: 30px">
+                                <button id="btnQuery" class="btn btn-primary btn-query btn-permission">查询</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="table-sub">
+                    <div class="table-sub-action clearfix">
+                        <div id="dtToolbar" class="btn-group fr">
+                        </div>
+                    </div>
+                </div>
+                <table id="mainTable" tool-bar="#tool-bar" class="ufma-table uf-rpt-table">
+                </table>
+            </div>
+            <div id="tool-bar" class="ufma-tool-bar">
+                <div class="tool-bar-body">
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="../../common/common.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+    <script src="bankSubstituting.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+</body>
+
+</html>

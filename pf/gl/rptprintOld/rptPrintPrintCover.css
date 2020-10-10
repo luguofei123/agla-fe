@@ -1,0 +1,61 @@
+#rptPrintPrintCover .ufma-layout-up{
+	/*padding-top: 10px;*/
+	/*height: 436px;*//*ufma.open方法设置的高度减去64px*/
+	/*padding-bottom: 10px;*/
+}
+
+#rptPrintPrintCover .container-fluid{
+	padding: 0!important;
+	margin: 0!important;
+}
+#rptPrintPrintCover .cover-box{
+	width: 100%;
+	margin: 0 auto;
+	padding-bottom: 18px;
+}
+
+#rptPrintPrintCover .cover-box h5{
+	font-size: 20px;
+	line-height: 26px;
+	margin: 18px 0 14px;
+	text-align: center;
+}
+
+#rptPrintPrintCover .cover-box form{
+	padding: 0 32px 0 32px;
+}
+
+#rptPrintPrintCover table{
+	margin-bottom: 0!important;
+}
+#rptPrintPrintCover table td{
+	padding: 5px 40px 5px 8px;
+	line-height: 30px;
+}
+
+#rptPrintPrintCover table input{
+	border: none;
+	border-bottom: 1px solid transparent;
+	outline: none;
+	line-height: 29px;
+	height: 30px;
+	padding-bottom: 0;
+}
+
+#rppcAgencyName,
+#rppcRptName{
+	width: 210px;
+	text-align: left;
+}
+#rppcSetYear{
+	width: 50px;
+	text-align: left;
+}
+.binding{
+	width: 20px;
+	text-align: center;
+}
+.page{
+	width: 50px;
+	text-align: center;
+}

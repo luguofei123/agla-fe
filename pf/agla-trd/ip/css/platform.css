@@ -1,0 +1,230 @@
+/*
+ * 此css包括按钮、表格、输入框等样式与财政平台2.0统一
+*/
+* {
+	margin: 0;
+	padding: 0;
+	outline: none;
+}
+/*
+*基于bootstrap的输入框样式修改
+*/
+
+input.form-control,
+select.form-control {
+	border-radius: 0;
+	/*height: 25px;*/
+	padding: 3px 12px;
+	box-shade: 0px;
+	-webkit-box-shadow: none;
+}
+input.form-control:focus {
+	box-shade: 0px;
+	-webkit-box-shadow: none;
+}
+.input-group-addon {
+	padding: 3px 8px;
+}
+/*
+*按钮样式
+*/
+.btn {
+	border-radius: 0;
+    border: 1px solid #d9e9f6;
+    line-height: 14px;
+    padding: 8px 20px;
+    cursor: pointer;
+    font-size: 14px;
+    font-family: Microsoft YaHei;
+    color: #499bed;
+}
+.btn-primary {
+	background: #f2f9ff;
+}
+.btn-primary:hover,
+.btn-primary:focus {
+	background: #fff;
+    border: 1px solid #d9e9f6;
+    color: #363636;
+}
+.btn-primary[disabled] {
+	background: #f2f9ff;
+	border: 1px solid #d9e9f6;
+    color: #d9e9f6;
+}
+.btn-default {
+	color: #333;
+	background: #fff;
+	border: 1px solid #ccc;
+}
+.btn-default:hover {
+	background: #adadad;
+}
+.btn-danger {
+	color: #fff;
+    background-color: #d9534f;
+    border-color: #ac2925;
+}
+.btn-danger:hover {
+	background: #c9302c;
+}
+/*
+ * 对iuap的grid样式修改与财政2.0统一
+*/
+.u-grid-header-th{
+	height: 1.75em;
+	background:#b4dcff;
+	text-align: center;
+}
+.u-grid-header-link{
+	border-right: #95cdff 1px solid;
+    border-bottom: 0px solid #e5e5e5;
+	height: 2.0em;
+    line-height: 2.0em;
+}
+.u-grid-header-th>div:hover{
+	background:none;
+}
+.u-grid td{
+	height: 25px;
+    line-height: 25px;
+	border-top: 0px #e5e5e5 solid;
+    border-left: 0px #e5e5e5 solid;
+    border-right: 1px #e5e5e5 solid;
+}
+
+.u-grid tr:hover{
+	background:rgb(210,236,255);
+}
+
+.u-grid-content-sel-row {
+	background-color: #f4f8b6 !important;
+	border-right: 1px solid #ccc
+}
+.u-grid-move-bg{
+	border-right:1px solid #ccc;
+}
+.u-grid-content-focus-row {
+    background-color: #f4f8b6 !important;
+}
+.u-grid-checkbox-outline{
+	display: inline-block;
+}
+
+.u-grid-header-multi-select{
+	padding: 0 0 0 0.9em;
+}
+.u-grid-content-multiSelect{
+	padding: 0 0 0 0.9em;
+	border-right:1px solid #ccc;
+	height: 26px;
+	line-height: 1.75em;
+}
+.u-grid-checkbox-outline{
+	top: 7px;
+}
+.u-grid-content-num{
+	height: 26px;
+	font-size: 12px;
+	border-right: 1px solid #ccc;
+}
+.u-grid-header-num{
+	border-right: 1px solid #95cdff;
+}
+
+.u-grid-header-multi-select{
+	left:40px;
+}
+
+.u-grid-header-left{
+	width: 40px !important;
+	background: #b4dcff;
+	z-index: 1000;
+}
+.u-grid-header-multi-select{
+	z-index: 9999;
+    border-right: 1px solid #95cdff;
+    border-left: 1px solid #95cdff;
+}
+
+
+/*
+*标签页样式
+*/
+.nav-tabs > li > a {
+	line-height: 1.028571;
+	border-radius: 0;
+}
+
+/*
+*分页样式修改
+*/
+.u-pagination > .active > a,
+.u-pagination > .active > span,
+.u-pagination > .active > a:hover,
+.u-pagination > .active > span:hover,
+.u-pagination > .active > a:focus,
+.u-pagination > .active > span:focus {
+    z-index: 2;
+    cursor: default;
+    background-color: rgb(180, 220, 255);
+    border-color: rgb(221, 221, 221);
+    color: #333;
+}
+/*
+ *树组件样式修改
+*/
+.ztree li span.button.ico_close {
+    background: url(../changeTree/images/platformTreeClose.png) no-repeat !important;
+    margin:0 2px;
+    vertical-align: top;
+}
+.ztree li span.button.ico_open {
+    background: url(../changeTree/images/platformTreeOpen.png) no-repeat !important;
+    margin:0 2px;
+    vertical-align: top;
+}
+.ztree li span.button.ico_docu {
+    background: url(../changeTree/images/platformChild.png) no-repeat 0 2px;
+    margin:0 2px;
+    vertical-align: top;
+}
+/*html demo框架样式*/
+.row{
+	margin-left:0;
+	margin-right:0;
+}
+.ztree{
+	margin:2px;
+}
+.wrapper{
+	padding: 0 10px;
+}
+.header{
+	padding-bottom:10px;
+}
+.contain{
+	margin-top:10px;
+	min-height:400px;
+	overflow:auto;
+}
+.left-content{
+	min-height:524px;
+	border:1px #e5e5e5 solid;
+	overflow:auto;
+}
+/*
+ * tabs 页签的样式
+ */
+.nav-tabs li a{
+	color: #499BED;
+}
+.nav-tabs li.active a{
+	font-weight: bold;
+	color: #499BED;
+}
+.nav-tabs > li.active > a, 
+.nav-tabs > li.active > a:hover, 
+.nav-tabs > li.active > a:focus{
+	color: #499BED;
+}

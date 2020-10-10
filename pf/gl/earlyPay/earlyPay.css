@@ -1,0 +1,44 @@
+li{
+    list-style: none;
+}
+.btn-body{
+    height: 44px;
+}
+/*调整按钮组的高度
+ * .btn-body button{
+    margin-top: 10px;
+}*/
+.ufma-table th{
+    text-align: center;
+}
+ 
+.rpt-query-box{position: relative;} 
+.rpt-query-box-left{width:100%;}
+.rpt-query-box-right{position:absolute;right:15px;top:15px;width:200px;text-align:right;margin-top:-15px;}
+.rpt-query-btn .rpt-tip-more{margin-right: 4px;color:#008FF0;cursor: pointer;}
+.rpt-query-btn .rpt-tip-more i{font-style: normal;}
+.rpt-query-btn .rpt-tip-more span{margin-left: 2px;}
+.rpt-query-btn .btn-default{margin-left: 4px;}
+.label-more{margin-left:70px;}
+.rpt-query-box-left{list-style: none;margin:0px 0px 0px;padding:0px;margin-bottom: 0;}
+
+.rpt-query-box-left .rpt-query-box-li{position: relative;padding-left:100px;margin-top: 10px;}
+
+.rpt-funnelBoxList{display:none;top:39px;left:1px;}
+.rpt-funnelBoxList:before{content:'';display:inline-block;border-left: 10px solid transparent;border-right: 10px solid transparent;border-bottom: 10px solid #d9d9d9;position: absolute;top:-10px;right:23px;}
+.rpt-funnelBoxList:after{content:'';display:inline-block;border-left: 9px solid transparent;border-right: 9px solid transparent;border-bottom: 9px solid #fff;position: absolute;top:-9px;right:25px;}
+.rpt-colList{text-align: left;min-width: 51px;}
+.rpt-colList label{font-weight: normal;margin-bottom: 8px;}
+.rpt-colList span {display: block;line-height: 24px;cursor: pointer;text-align: center}
+.rpt-colList span:hover{color: #49a9ee}
+.rpt-funnelBoxList .rpt-colBtn{text-align: right;}
+.rpt-funnelBox {
+    position: absolute;
+    z-index: 9999;
+    top: 37px;
+    background: #fff;
+    border: 1px solid #eee;
+    padding: 10px 8px;
+    box-shadow: 0 0 4px 0 rgba(0,0,0,0.50);
+    border-radius: 4px;
+}

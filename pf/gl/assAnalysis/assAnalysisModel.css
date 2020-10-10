@@ -1,0 +1,69 @@
+.ufma-layout-up{
+    padding: 0px 15px 0px;
+}
+.ufma-table{
+	width: 100%;
+}
+.ufma-table th{
+	text-align: center;
+    background: #EEF1F6;
+}
+.ufma-table .cond{
+	width:200px;
+}
+.ufma-table .uf-combox-border{
+	border: 0px;
+}
+.ufma-table .searchasstd{
+    padding: 0px;
+    margin: 0px;
+}
+.ufma-table .searchass{
+    width: 100%;
+    position: relative;
+    padding: 0px;
+    margin: 0px;
+    height: 30px;
+}
+.ufma-table .searchass input{
+    width: 100%;
+    position: absolute;
+    height: 100%;
+    border: 0px;
+    box-sizing: border-box;
+    padding-right: 30px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+.ufma-table .searchtitle{
+    width:90px;
+}
+.ufma-table .searchass span{
+    position: absolute;
+    right: 5px;
+    top: 7px;
+	font-size: 16px;
+	cursor: pointer;
+}
+.ufma-table .selecttd{
+	width: 90px;
+}
+.ufma-table .assIsshow{
+	width: 100%;
+	border:0px;
+}
+.formlabel{
+    display: inline-block;
+    margin-top: 0px;
+    width: 100px;
+    height: 30px;
+    float: left;
+}
+.dlb{
+    display: inline-block;
+    margin-top: 20px;
+}
+.mt-checkbox{
+    width: 120px;
+}

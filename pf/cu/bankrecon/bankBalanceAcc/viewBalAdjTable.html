@@ -1,0 +1,158 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>余额调节表</title>
+	<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+	<script src="../../../pub/boot.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+	<link rel="stylesheet" type="text/css" href="viewBalAdjTable.css?rev=@@hash">
+	<link rel="stylesheet" type="text/css" href="../rptCommon/rptCommon.css?rev=@@hash"> </head>
+
+<body id="bankReconciliation" style="overflow-x:hidden">
+	<div class="ufma-layout-updown">
+		<input type="hidden" value="GL_RPT_BAL" data-name="bankReconciliation" class="rptType" />
+		<!--工作区 begin-->
+		<div class="ufma-layout-up">
+
+			<!-- 工作区中部 begin -->
+			<div class="container-fluid bgMultiModalMain">
+				<div class="container-fluid" style="height: 400px; overflow-y: auto;">
+					<h3 class="m10 tc">余额调节表</h3>
+					<div style="position:relative;" class="table-sub clearfix">
+						<div class="table-sub-info pull-left">开户行及账号：</div>
+						<div id="bankInfo" class="table-sub-info pull-left"></div>
+						<div class="table-sub-info pull-left" style="padding-left: 365px;">期间：
+							<span id="period">2017-09</span>
+						</div>
+					</div>
+					<div id="glRecon" class="margin-top-10">
+						<table class="ufma-table dateTable pull-left glReconTable">
+							<!--表头begin-->
+							<thead>
+								<tr role="row">
+									<th colspan="3" rowspan="1" style="width:37%" class="headInfo">项目</th>
+									<th colspan="1" rowspan="1" style="width:13%" class="headInfo">余额</th>
+									<th colspan="3" rowspan="1" style="width:37%" class="headInfo">项目</th>
+									<th colspan="1" rowspan="1" style="width:13%" class="headInfo">余额</th>
+								</tr>
+								<tr role="row">
+									<th colspan="3" rowspan="1" class="headInfo">单位银行存款日记账余额</th>
+									<th colspan="1" rowspan="1" class="showMoney"></th>
+									<th colspan="3" rowspan="1" class="headInfo">银行对账单余额</th>
+									<th colspan="1" rowspan="1" class="showMoney"></th>
+								</tr>
+								<tr role="row">
+									<th colspan="3" rowspan="1" class="headInfo">加：银行已收、单位未收款</th>
+									<th colspan="1" rowspan="1">
+										<hr/>
+									</th>
+									<th colspan="3" rowspan="1" class="headInfo">加：单位已收、银行未收款</th>
+									<th colspan="1" rowspan="1">
+										<hr/>
+									</th>
+								</tr>
+								<tr role="row">
+									<th colspan="1" rowspan="1" class="headInfo">单据日期</th>
+									<th colspan="2" rowspan="1" class="headInfo">单据摘要</th>
+									<th colspan="1" rowspan="1">
+										<hr/>
+									</th>
+									<th colspan="1" rowspan="1" class="headInfo">登账日期</th>
+									<th colspan="1" rowspan="1" class="headInfo">编号</th>
+									<th colspan="1" rowspan="1" class="headInfo">摘要</th>
+									<th colspan="1" rowspan="1">
+										<hr/>
+									</th>
+								</tr>
+							</thead>
+							<!--表中数据begin-->
+							<tbody>
+								<tr height="37px">
+									<td colspan="1" rowspan="1" class="tc nowrap"></td>
+									<td colspan="2" rowspan="1"></td>
+									<td colspan="1" rowspan="1"></td>
+									<td colspan="1" rowspan="1" class="tc nowrap"></td>
+									<td colspan="1" rowspan="1" class="tc nowrap"></td>
+									<td colspan="1" rowspan="1"></td>
+									<td colspan="1" rowspan="1"></td>
+								</tr>
+							</tbody>
+							<!--表格中间头部begin-->
+							<thead>
+								<tr role="row">
+									<th colspan="3" rowspan="1" class="headInfo">小计</th>
+									<th colspan="1" rowspan="1" class="showMoney"></th>
+									<th colspan="3" rowspan="1" class="headInfo">小计</th>
+									<th colspan="1" rowspan="1" class="showMoney"></th>
+								</tr>
+								<tr role="row">
+									<th colspan="3" rowspan="1" class="headInfo">减：银行已付、单位未付款</th>
+									<th colspan="1" rowspan="1">
+										<hr/>
+									</th>
+									<th colspan="3" rowspan="1" class="headInfo">减：单位已付、银行未付款</th>
+									<th colspan="1" rowspan="1">
+										<hr/>
+									</th>
+								</tr>
+								<tr role="row">
+									<th colspan="1" rowspan="1" class="headInfo">单据日期</th>
+									<th colspan="2" rowspan="1" class="headInfo">单据摘要</th>
+									<th colspan="1" rowspan="1">
+										<hr/>
+									</th>
+									<th colspan="1" rowspan="1" class="headInfo">登账日期</th>
+									<th colspan="1" rowspan="1" class="headInfo">编号</th>
+									<th colspan="1" rowspan="1" class="headInfo">摘要</th>
+									<th colspan="1" rowspan="1">
+										<hr/>
+									</th>
+								</tr>
+							</thead>
+							<!--中间固定下的数据begin-->
+							<tbody>
+								<tr height="37px" role="row">
+									<td colspan="1" rowspan="1" class="tc nowrap"></td>
+									<td colspan="2" rowspan="1"></td>
+									<td colspan="1" rowspan="1"></td>
+									<td colspan="1" rowspan="1" class="tc nowrap"></td>
+									<td colspan="1" rowspan="1" class="tc nowrap"></td>
+									<td colspan="1" rowspan="1"></td>
+									<td colspan="1" rowspan="1"></td>
+								</tr>
+							</tbody>
+							<!--表底begin-->
+							<thead>
+								<tr role="row">
+									<th colspan="3" rowspan="1" class="headInfo">小计</th>
+									<th colspan="1" rowspan="1" class="showMoney"></th>
+									<th colspan="3" rowspan="1" class="headInfo">小计</th>
+									<th colspan="1" rowspan="1" class="showMoney"></th>
+								</tr>
+								<tr role="row">
+									<th colspan="3" rowspan="1" class="headInfo">调节后的存款余额</th>
+									<th colspan="1" rowspan="1" class="showMoney"></th>
+									<th colspan="3" rowspan="1" class="headInfo">调节后的存款余额</th>
+									<th colspan="1" rowspan="1" class="showMoney"></th>
+								</tr>
+							</thead>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="ufma-layout-down bordered-top">
+		<div class="text-right margin-right-30">
+			<button type="button" class="btn btn-sm btn-primary btn-save btn-permission" id="btn-save">保存</button>
+			<button type="button" class="btn btn-sm btn-default" id="btn-close">取消</button>
+		</div>
+	</div>
+	</div>
+	<script src="../rptCommon/rptCommon.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+	<script src="viewBalAdjTable.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+</body>
+
+</html>

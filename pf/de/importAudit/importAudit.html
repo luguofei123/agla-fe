@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>国标2010审计数据导入</title>
+		<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+		<script src="../../pub/boot.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+		<!--<script src="http://10.10.65.126:8080/pf/pub/boot.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>-->
+		<link rel="stylesheet" href="importAudit.css?rev=@@hash" />
+	</head>
+
+	<body>
+		<div class="container-fluid ufma-container">
+			<!--工作区 begin-->
+			<div class="workspace">
+				<!--工作区顶部 begin-->
+				<div class="workspace-top">
+					<div class="container-fluid">
+						<div class="ufma-portlet">
+							<div class="portlet-title">
+								<div class="caption">
+									<span class="caption-subject font-dark uppercase">国标2010审计数据导入</span>
+								</div>
+							</div>
+
+							<!--查询条件-->
+							<div class="portlet-body pr" style="background:#fff">
+								<div class="form-horizontal">
+									<div class="form-row">
+
+										<div class="form-group" style="width:690px;float: none;">
+
+											<div class="control-element" style="width:586px">
+												<div class="file-upload-box">
+													<div class="file-upload-box-text">
+														<div class="file-upload-tip">点击按钮选择导入文件，文件大小请控制在2M之内
+														</div>
+														<div class="file-upload-title" style="display: none;">
+															<span></span> &nbsp;&nbsp;
+															<!--<i class="icon icon-close"></i>-->
+														</div>
+													</div>
+													<div class="file-upload-box-btn">
+														<button class="btn btn-primary">选择文件</button>
+														<form id="excelFileFrom" enctype="multipart/form-data">
+															<input type="hidden" id="impFileHidden" name="impFileHidden"/>
+															<input id="impFile" name="file" type="file" class="file-upload-input" accept="application/zip,application/xml" />
+															<input type="hidden" id="dataType" name="dataType" />
+															<!--<input type="hidden" id="setYear" name="setYear" />-->
+															<input type="hidden" id="rgCode" name="rgCode" />
+														</form>
+										
+													</div>
+													<div style="margin:20px 0px 0px 5px">
+														<label>数据范围：</label>
+														<label class="mt-checkbox mt-checkbox-single mt-checkbox-outline mr5"> <input type="checkbox" class="datatable-group-checkable" value="QCBAL" checked />期初余额<span></span> </label>
+														<!--<label class="mt-checkbox mt-checkbox-single mt-checkbox-outline mr5"> <input type="checkbox" class="datatable-group-checkable" value="RCBAL"/>日常余额<span></span> </label>-->
+														<label class="mt-checkbox mt-checkbox-single mt-checkbox-outline mr5"> <input type="checkbox" class="datatable-group-checkable" value="VOU"/>会计凭证<span></span></label>
+														<label class="mt-checkbox mt-checkbox-single mt-checkbox-outline mr5"> <input type="checkbox" class="datatable-group-checkable" value="BASE"/>公共档案<span></span> </label>
+
+														<button id="importBtn" type="button" class="btn btn-sm btn-primary fr" style="margin-top:-5px;width:88px;">导入</button>
+													</div>
+													<div style="clear: both;"></div>
+												</div>
+											</div>
+										</div>
+
+									</div>
+								</div>
+
+							</div>
+						</div>
+					</div>
+				</div>
+				<!--工作区中部 begin-->
+				<div class="workspace-center">
+
+				</div>
+
+			</div>
+		</div>
+		<script src="importAudit.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+	</body>
+
+</html>

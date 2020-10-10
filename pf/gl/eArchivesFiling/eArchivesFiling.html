@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>电子档案归档</title>
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport" />
+    <script src="../../pub/boot.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+    <script>
+      if (!window.Promise) {
+        document.write('<script src="promise-polyfill.js"><\/script><script>ES6Promise.polyfill()<\/script>')
+      }
+    </script>
+    <link rel="stylesheet" href="../rpt/rptCommon/rptCommon_new.css?rev=@@hash" />
+    <style>
+      .arrow-down {
+        display: 'inline-block';
+        top: 0;
+        height: 28px;
+        position: absolute;
+        right: 0;
+        transition: all 0.3s ease;
+      }
+
+      .open {
+        transform: rotate(180deg);
+      }
+
+      .mt-checkbox {
+        min-width: 100px;
+      }
+      .tablehide {
+        display: none;
+      }
+      .progressModalWrap {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 999999999;
+        background: rgba(0, 0, 0, 0.5);
+      }
+      .progressModal {
+        padding: 10px 15px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background: #fff;
+        border-radius: 5px;
+      }
+      .modalTitle {
+        font-size: 16px;
+        font-weight: bold;
+        color: #333;
+      }
+      .progressBarWrap {
+        width: 900px;
+      }
+      .left{
+          float: left;
+      }
+      .right {
+          float: right;
+      }
+      .progressBar {
+        width: 750px;
+        height: 8px;
+        background: #eee;
+        border-radius: 4px;
+      }
+      .progressBarActive {
+        width: 0;
+        height: 8px;
+        border-radius: 4px;
+        background: #49a9ee;
+      }
+      .clearfix:after {
+        content: '.';
+        display: block;
+        height: 0;
+        visibility: hidden;
+        clear: both;
+      }
+      .clearfix {
+        *zoom: 1;
+      }
+      .modalRow {
+        margin-top: 10px;
+      }
+      .filingDetail {
+        width: 100%;
+        margin-top: 10px;
+        font-weight: bold;
+        box-sizing: border-box;
+        padding: 10px;
+        height: 150px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        overflow-y: scroll;
+      }
+      .filingDetail p{
+        color: #555;
+        font-size: 12px;
+        margin-bottom: 5px;
+      }
+      .modalRow span {
+        display: inline-block;
+      }
+      .btnWrap {
+        padding-top: 15px;
+        text-align: center;
+      }
+      .progressBarLabel{
+          width: 90px
+      }
+      .subTotal{
+          width: 180px;
+      }
+    </style>
+  </head>
+
+  <body style="overflow-x:hidden;">
+    <div class="container-fluid ufma-container">
+      <!--工作区 begin-->
+      <div class="workspace">
+        <!--账表工作区 begin-->
+        <div class="rpt-workspace">
+          <div class="rpt-selete-box bordered-bottom" style="margin-top:-8px;">
+            <div class="rpt-title">电子档案归档</div>
+            <ul class="rpt-selete-list">
+              <li class="rpt-selete-list-li">
+                <div id="cbAgency" class="ufma-treecombox ufma-combox-agency"></div>
+              </li>
+              <li class="rpt-selete-list-li">
+                <div id="cbAcct" class="ufma-combox ufma-combox-acct"></div>
+              </li>
+            </ul>
+            <div class="rpt-clear"></div>
+          </div>
+
+          <div class="rpt-box rpt-query-box">
+            <div class="rpt-query-box-left">
+              <form id="frmQuery" class="form-horizontal">
+                <div class="form-row">
+                  <div class="form-group">
+                    <label class="control-label auto">期间：</label>
+                    <div class="control-element pr10">
+                      <a name="period" id="dateBn" class="label label-radio">本年</a>
+                      <a name="period" id="dateBq" class="label label-radio selected">本期</a>
+                      <!-- <a name="period" id="dateJr" class="label label-radio">今日</a> -->
+                    </div>
+                    <div class="control-element" style="width:120px;">
+                      <div id="dateStart" class="uf-datepicker" style="width:120px;"></div>
+                    </div>
+                    <span class="split">-</span>
+                    <div class="control-element">
+                      <div id="dateEnd" class="uf-datepicker" style="width:120px;"></div>
+                    </div>
+                  </div>
+                  <div class="clearfix"></div>
+                </div>
+                <div class="form-row">
+                  <div class="form-group">
+                    <label class="control-label auto">归档内容：</label>
+                  </div>
+                  <div class="rpt-query-li-check" style="float: left;">
+                    <div>
+                      <label class="mt-checkbox mt-checkbox-outline"><input type="checkbox" name="allcheck" id="isAll" value="isAll"/>全选<span></span></label>
+                    </div>
+                    <div>
+                      <!-- <label class="mt-checkbox mt-checkbox-outline"><input type="checkbox" name="archiveopt" id="isGG" value="isGG"/>公共档案<span></span></label>
+                      <label class="mt-checkbox mt-checkbox-outline"><input type="checkbox" name="archiveopt" id="isGlXml" value="isGlXml"/>总账类XML<span></span></label>
+                      <label class="mt-checkbox mt-checkbox-outline"><input type="checkbox" name="archiveopt" id="isVou" value="isVou"/>凭证及附件<span></span></label> -->
+                      <label class="mt-checkbox mt-checkbox-outline"><input type="checkbox" name="archiveopt" id="isLedger" value="isLedger" checked/>总账<span></span></label>
+                      <label class="mt-checkbox mt-checkbox-outline"><input type="checkbox" name="archiveopt" id="isJournal" value="isJournal" checked/>明细账<span></span></label>
+                      <label class="mt-checkbox mt-checkbox-outline"><input type="checkbox" name="archiveopt" id="isBal" value="isBal" checked/>余额表<span></span></label>
+                      <label class="mt-checkbox mt-checkbox-outline"><input type="checkbox" name="archiveopt" value="isColumnar" id="isColumnar"/>多栏账<span></span></label>
+                      <label class="mt-checkbox mt-checkbox-outline"><input type="checkbox" name="archiveopt" id="isBook" value="isBook"/>日记账<span></span></label>
+                      <label class="mt-checkbox mt-checkbox-outline"><input type="checkbox" name="archiveopt" id="isDaily" value="isDaily"/>序时账<span></span></label>
+                    </div>
+                    <div>
+                      <label class="mt-checkbox mt-checkbox-outline"><input type="checkbox" name="archiveopt" id="isTiaojie" value=""/>余额调节表<span></span></label>
+                      <span style="line-height: 30px">报表任务：</span>
+                      <div id="rmisTreeCombox" class="ufma-textboxlist"></div>
+                      <!-- <label class="mt-checkbox mt-checkbox-outline"><input type="checkbox" name="archiveopt" id="isSurplus" value="isSurplus"/>差异项明细账<span></span></label> -->
+                      <!-- <label class="mt-checkbox mt-checkbox-outline"><input type="checkbox" name="archiveopt" id="isAnalyze" value="isAnalyze"/>辅助分析表<span></span></label> -->
+                      <!-- <label class="mt-checkbox mt-checkbox-outline"><input type="checkbox" name="archiveopt" id="balanceSheet" value="balanceSheet"/>资产负债表<span></span></label> -->
+                    </div>
+                    <div>
+                    </div>
+                  </div>
+                  <div class="clearfix"></div>
+                </div>
+              </form>
+            </div>
+            <div class="rpt-query-box-right">
+              <div class="rpt-query-btn">
+                <button id="eArchivesFiling" class="btn btn-primary btn-filing btn-permission">归档</button>
+                <button id="eArchivesQuery" class="btn btn-default btn-query btn-permission">查询</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="rpt-box rpt-table-box">
+            <div class="rpt-table-sub">
+              <div class="rpt-table-sub-action">
+                <div class="btn-group" id="printTableData"></div>
+              </div>
+              <div class="rpt-clear"></div>
+            </div>
+            <!-- <div class="rpt-table-title" style="height: auto;padding:0 15px;">
+					<span class="rpt-table-title-show">
+						现金流量统计表
+					</span>
+				</div> -->
+            <div class="rpt-table-tab">
+              <table id="eArchivesFilingTable" class="ufma-table" style="width:100%;border-left:1px solid rgb(217, 217, 217);border-right:1px solid rgb(217, 217, 217)" tool-bar="#tool-bar">
+                <thead></thead>
+              </table>
+            </div>
+          </div>
+        </div>
+        <!--账表工作区 end-->
+
+        <!--工作区底 begin-->
+        <div id="tool-bar" class="ufma-tool-bar">
+          <div class="tool-bar-body"></div>
+        </div>
+        <!--工作区底 end-->
+      </div>
+      <!--工作区 end-->
+
+      <!-- 归档进度模态窗口 begin -->
+      <div class="progressModalWrap tablehide">
+        <div class="progressModal">
+            <div class="modalTitle">归档进度</div>
+          <div class="progressBarWrap mt10">
+            <div class="left">
+              <div class="progressBarLabel left">总进度：</div>
+              <div class="progressBar left mt5">
+                <div class="progressBarActive" id="progressBar"></div>
+              </div>
+              <div class="clearfix"></div>
+            </div>
+            <div class="right" id="percent">0%</div>
+            <div class="clearfix"></div>
+          </div>
+          <div class="modalRow">
+            <div class="left">当前期间：<span id="qj"></span>月</div>
+            <div class="right">期间总数：共<span id="qjTotal"></span>个月</div>
+            <div class="clearfix"></div>
+          </div>
+          <div class="progressBarWrap mt10">
+            <div class="left">
+              <div class="progressBarLabel left">期间内进度：</div>
+              <div class="progressBar left mt5">
+                <div class="progressBarActive" id="subProgressBar"></div>
+              </div>
+              <div class="clearfix"></div>
+            </div>
+            <div class="right" id="subpercent">0%</div>
+            <div class="clearfix"></div>
+          </div>
+          <div class="modalRow">
+            <div class="left">当前归档位置：<span id="current"></span></div>
+            <div class="subTotal right"><span class="left">当前归档内容总数：</span><span class="right" id="currentTotal"></span><div class="clearfix"></div></div>
+            <div class="clearfix"></div>
+          </div>
+          <div id="filingDetail" class="filingDetail"></div>
+          <div class="btnWrap">
+            <button class="btn btn-primary" id="progressModalClose">关闭</button>
+          </div>
+        </div>
+      </div>
+      <!-- 归档进度模态窗口 end -->
+    </div>
+    <script src="eArchivesFiling.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+  </body>
+</html>

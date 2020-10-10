@@ -1,0 +1,38 @@
+.rpt-query-li-cont-title span{
+	white-space:nowrap;
+	text-overflow:ellipsis;
+	overflow:hidden;
+	width:90px;
+}
+.rpt-query-li-cont-title span:hover{
+	text-overflow:inherit;
+	overflow:visible;
+}
+.rpt-acc-box-right {
+	width: 100%;
+}
+.rpt-acc-box {
+	position: relative;
+	padding-left: 252px;
+	min-height: 625px;
+	overflow: hidden;
+	margin-top: 12px;
+}
+.rpt-query-date {
+	display: inline-block;
+	position: relative;
+	padding-left: 102px;
+	width: 525px;
+}
+.rpt-query-date .rpt-query-li-cont-title {
+	width: 100px;
+}
+.rpt-query-box-left .rpt-query-box-top, .rpt-query-box-left .rpt-query-box-center, .rpt-query-box-left .rpt-query-box-bottom{
+	margin-left: -62px;
+}
+.br4{
+	border-radius: 4px;
+}
+.br4:hover{
+	border-radius: 4px;
+}

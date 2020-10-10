@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>保存格式</title>
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <script src="../../../pub/boot.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+    <link rel="stylesheet" href="glRptColumnar.css?rev=@@hash" />
+    <link rel="stylesheet" href="../rptCommon/rptCommon_new.css?rev=@@hash" />
+</head>
+<body id="styleModel">
+    <div class="ufma-layout-updown" style="border-top: 1px solid #d9d9d9;">
+        <div class="ufma-layout-up">
+            <form id="frmBookIn" class="form-horizontal" style="padding:24px 10px;">
+                <!--第一行-->
+                <div class="form-row">
+                    <div class="form-group required" style="width: 330px;">
+                        <label class="control-label auto" style="width: 130px;">多栏账格式名称：</label>
+                        <div class="control-element" style="width:190px;">
+                            <input id="formName" type="text" name="formName" class="form-control">
+                        </div>
+                    </div>
+                    <div class="form-group required" style="width: 320px;">
+                        <label class="control-label" style="width: 100px;">展开项：</label>
+                        <div class="control-element">
+                            <div id='extendItems' name="glBookType" class="uf-treecombox ufma-combox-billType " style="width: 190px;"></div>
+                        </div>
+                    </div>
+                    <div class="clearfix "></div>
+                </div>
+
+                <!--第二行-->
+                <div class="form-row ">
+                    <div id="" class="form-group" style="width: 700px;">
+                        <label class="control-label auto" style="width: 130px;">借方展开项：</label>
+                        <div class="control-element rpt-query-li-selete">
+                            <div class="rpt-p-search-key" id="DrItems" style="width:506px;">
+                                <input id="" type="text" name="lDrItemCodes" class="form-control" readonly>
+                                <span class="search-btn icon icon-writeoff"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="clearfix "></div>
+                </div>
+                <!--第三行-->
+                <div class="form-row ">
+                    <div id="" class="form-group" style="width: 700px;">
+                        <label class="control-label auto" style="width: 130px;">贷方展开项：</label>
+                        <div class="control-element rpt-query-li-selete">
+                            <div class="rpt-p-search-key" id="CrItems" style="width:506px;">
+                                <input id="" type="text" name="lCrItemCodes" class="form-control" readonly>
+                                <span class="search-btn icon icon-writeoff"></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="clearfix "></div>
+                </div>
+                <!-- 显示“其他”列 该功能暂时不做 隐藏 -->
+                <!--第四行-->
+                <!-- <div class="form-row ">
+                    <div class="form-group" style="width: 330px;">
+                        <label class="mt-checkbox mt-checkbox-outline" style="margin-top:5px;margin-left:134px;">
+                            <input type="checkbox" checked="" id="isShowDec">显示“其他”列
+                            <span></span>
+                        </label>
+                    </div>
+                    <div class="clearfix "></div>
+                </div> -->
+            </form>
+
+        </div>
+    </div>
+    <div class="ufma-layout-down bordered-top">
+        <div class="text-right  margin-right-30">
+            <button type="button" class="btn btn-sm btn-default btn-permission btn-save btn-ajax hide" id="btnAddStyle">另存为新格式</button>
+            <button type="button" class="btn btn-sm btn-default btn-permission btn-save btn-ajax" id="btnSaveStyle">保存</button>
+            <button type="button" class="btn btn-sm btn-default btn-permission btn-delete btn-ajax" id="btnDelete">删除</button>
+            <button type="button" class="btn btn-sm btn-default" id="btnQuit">取消</button>
+        </div>
+    </div>
+    </div>
+    <script src="styleModel.js" type="text/javascript" charset="utf-8"></script>
+</body>
+
+</html>

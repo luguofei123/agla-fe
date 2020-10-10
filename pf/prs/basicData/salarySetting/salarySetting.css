@@ -1,0 +1,95 @@
+/* 主页面 */
+select {
+  border: 0;
+  outline: none;
+  background-color: transparent;
+}
+
+#level-salary-grade .prs-workspace {
+  margin: 0 15px;
+  margin-bottom: -10px;
+}
+
+.uselect {
+  width: 100px;
+  height: 24px;
+  padding-left: 10px;
+  text-align: center;
+  text-align-last: center;
+}
+
+option {
+  text-align: center;
+}
+
+.center {
+  text-align: center;
+}
+
+/* 主页面 */
+
+#salary-project .prs-workspace {
+  margin: 0 15px;
+  margin-bottom: -10px;
+}
+
+#salary-project .query-box-right {
+  position: absolute;
+  right: 10px;
+  top: 14px;
+}
+
+#salary-project .query-box-right label,
+#salary-project .query-box-right .query-btn {
+  float: left;
+}
+
+#salary-project .query-box-right label {
+  margin-right: 26px;
+}
+
+#salary-project .query-box-right .query-btn button:first-child {
+  margin-right: 5px;
+}
+
+#salary-project .data-label,
+.salary-project .data-label {
+  width: 115px;
+  text-align: left !important;
+}
+
+#add-salary-project .form-group {
+  margin-left: 20px;
+  margin-bottom: 10px;
+}
+
+.table-sub-btn {
+  float: left;
+}
+
+.self-print-btn {
+  border-radius: 4px 0px 0px 4px;
+  border: 1px solid #ccc;
+  padding: 4px 16px;
+  text-align: center;
+  background-color: #fff;
+  color: #333;
+}
+
+.self-export-btn {
+  border-radius: 0px 4px 4px 0px;
+  border: 1px solid #ccc;
+  border-left-width: 0;
+  padding: 4px 16px;
+  text-align: center;
+  background-color: #fff;
+  color: #333;
+}
+
+.self-print-btn:hover,
+.self-export-btn:hover {
+  outline: none;
+  background-color: #108ee9;
+  border-color: #108ee9;
+  color: #fff;
+}

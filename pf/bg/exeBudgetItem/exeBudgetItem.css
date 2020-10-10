@@ -1,0 +1,12 @@
+.div-fixBottom-1{
+  position: fixed;
+  bottom: 0px;
+  height: 90px;
+  width : 100%;
+}
+/*
+ * CWYXM-8421 指标编制列表，未全屏适配，右侧有空白--zsj
+ */
+#mainTableDiv-exebgItem_wrapper .dataTables_scrollHeadInner,.dataTables_scrollHeadInner .dataTable,#mainTableDiv-exebgItem{
+	width:100% !important;
+}

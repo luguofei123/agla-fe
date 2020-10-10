@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>常用摘要</title>
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <script src="../../pub/boot.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+    <link rel="stylesheet" href="common.css"/>
+</head>
+
+<body>
+<div id="receivalbe-account" class="container-fluid ufma-container">
+    <!--工作区 begin-->
+    <div class="workspace">
+        <!--工作区顶部 begin-->
+        <div class="workspace-top">
+            <div class="container-fluid">
+                <div class="ufma-portlet">
+                    <div class="portlet-title pr">
+                        <div class="caption">
+                            <span class="caption-subject font-dark uppercase">常用摘要</span>
+                        </div>
+                        <!--单位&账套选择 begin-->
+                        <div class="inline-block absolute margin-left-15 margin-top-8">
+                            <ul class='ufma-list-col clearfix padding-left-8'>
+                                <li class="ufma-list-col-item">
+                                    <div id='cbAgency' name="agencyCode" class="uf-treecombox ufma-combox-agency"></div>
+                                </li>
+                                <li class="ufma-list-col-item">
+                                    <div id='cbAcct' class="uf-combox ufma-combox-acct"></div>
+                                </li>
+                            </ul>
+                        </div>
+                        <!--单位&账套选择 end-->
+                        <div class="rpt-method-tip">
+                            <div id="rptPlanList" style="display: none;">
+                            </div>
+                        </div>
+                        <div class="clearfix"></div>
+                    </div>
+
+                    <!--查询条件-->
+                    <div class="portlet-body bordered pr">
+                        <!--按钮-->
+                        <!--<div class="btn-group" style="position: absolute;right:15px;top:15px;">-->
+                            <!--<button id="btnQuery" type="button" class="btn btn-sm btn-primary btn-permission">查询-->
+                            <!--</button>-->
+                        <!--</div>-->
+                        <div class="rpt-query-box-left">
+                            <form id="frmQuery" class="form-horizontal">
+                                <div class="form-row">
+                                    <div class="form-group accoCondition">
+                                        <label class="control-label auto">摘要：</label>
+                                        <div class="control-element">
+                                            <input id="descName1" type="text" name="descName" class="form-control"
+                                                   style="width: 256px">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-label">制单人：</label>
+                                        <input class="bordered-input padding-3" type="text" name="vbInputor" id="vbInputor" value="" />
+										<label class="mt-checkbox mt-checkbox-outline">
+											<input type="checkbox" id="vbShowOwn">当前用户
+											<span></span>
+										</label>
+										&nbsp;&nbsp;&nbsp;&nbsp;
+										<button id="btnQuery" class="btn btn-primary btn-query btn-permission">查询</button>
+                                    </div>
+                                    <div class="clearfix"></div>
+                                </div>
+                            </form>
+                        </div>
+
+                        <div class="rpt-query-box-right">
+                            <div class="rpt-query-btn">
+                                <button id="btn-add" class="btn btn-primary btn-add btn-permission">新增</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--工作区中部 begin-->
+        <div class="workspace-center">
+            <div class="rpt-box rpt-table-box pr">
+                <div class="rpt-table-title">
+                    常用摘要
+                </div>
+                <div id="dtToolbar" class="btn-group" style="position:absolute;right:15px;bottom:10px;">
+                </div>
+            </div>
+            <div class="rpt-table-tab" style="padding: 0 15px;">
+                <table class="ufma-table uf-rpt-table" tool-bar="#tool-bar" id="gridNotes"></table>
+            </div>
+        </div>
+
+        <div id="tool-bar" class="ufma-tool-bar">
+				<div class="tool-bar-body">
+					<div class="ufma-tool-btns">
+						<label class="mt-checkbox mt-checkbox-outline margin-right-8" style="margin-bottom: 0;">
+						<input class="checkboxes" onchange="checkAll(this)" type="checkbox" name="test" value="1"> 全选<span></span></label>
+						<button id="vb-delete-more" type="button" class="btn btn-sm btn-default btn-downto btn-delete btn-permission">删除</button>
+					</div>
+				</div>
+			</div>
+    </div>
+    
+    
+    <!--modal begin-->
+	<div class="modal fade bs-example-modal-lg" id="vouDesc-edt" tabindex="-1" role="dialog" aria-labelledby="vouDescAddLabel">
+		<div class="modal-dialog modal-xm" role="document">
+			<div class="modal-content">
+				<div class="modal-header add-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                  </button>
+					<h5 class="modal-title" id="vouDescAddLabel">新增常用摘要</h5>
+				</div>
+				<div class="modal-body add-body">
+					<!--编辑区begin-->
+					<div class="container-fluid">
+						<div class="row">
+							<div class="col-xs-1"></div>
+							<div class="col-xs-12">
+								<form id="form" class="form-horizontal">
+									<div class="form-group  hidden">
+										<label class="col-sm-3 control-label">descptGuid：</label>
+										<div class="col-sm-5">
+											<input type="text" name="descptGuid" id="descptGuid" class="form-control">
+										</div>
+										<div class="col-sm-4"></div>
+									</div>
+									<div class="form-group required">
+										<label class="col-sm-3 control-label">摘要：</label>
+										<div class="col-sm-5 control-element">
+											<input type="text" name="descName" id="descName" class="form-control"></span>
+										</div>
+										<div class="col-sm-4"></div>
+									</div>
+								</form>
+							</div>
+							<div class="col-xs-1"></div>
+						</div>
+					</div>
+				</div>
+				<div class="modal-footer add-footer">
+					<button type="button" class="btn btn-sm btn-permission btn-default btn-save" id="btn-save">保存</button>
+					<button type="button" class="btn btn-sm btn-default add-close" id="btn-close">取消</button>
+				</div>
+			</div>
+		</div>
+	</div>
+    
+    
+</div>
+<script src="dm.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+<script src="vouDescList.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+</body>
+
+</html>

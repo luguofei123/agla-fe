@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<title>批量设置</title>
+<meta
+	content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
+	name="viewport" />
+<script src="../../../pub/boot.js?rev=@@hash" type="text/javascript"
+	charset="utf-8"></script>
+<script src="../../../agla-trd/fileinput/fileinput.js"></script>
+<script src="../../../agla-trd/fileinput/zh.js"></script>
+<script src="../../common/common.js?rev=@@hash" type="text/javascript"
+	charset="utf-8"></script>
+<link rel="stylesheet" href="../../../agla-trd/fileinput/fileinput.css">
+<link rel="stylesheet" type="text/css"
+	href="../../common/common.css?rev=@@hash" />
+<link rel="stylesheet" type="text/css"
+	href="departBudget.css?rev=@@hash" />
+</head>
+<body>
+	<!--整个容器 begin-->
+	<div id="add-salary-project" class="ufma-layout-updown salary-project">
+		<div class="ufma-layout-up">
+			<div class="container-fluid">
+				<form id="frmQuery" class="form-horizontal" style="margin-top: 10px">
+					<div class="form-row">
+						<div class="form-group required font-size-0">
+							<label
+								class="control-label control-label font-size-14 text-align-left data-label">工资类别：</label>
+							<div class="control-element">
+								<div id="prsType" class="uf-treecombox" leafRequire="true" name="prsType"
+									style="width: 200px"></div>
+							</div>
+						</div>
+						<div class="form-group required font-size-0">
+							<label
+								class="control-label control-label font-size-14 text-align-left data-label">银行代发文件格式：</label>
+							<div class="control-element">
+								<div id="bankAcc" class="uf-treecombox" leafRequire="true" name="bankAcc"
+									style="width: 200px"></div>
+							</div>
+						</div>
+						<div class="form-group font-size-0">
+							<label
+								class="control-label control-label font-size-14 text-align-left data-label">其他银行代发文件格式：</label>
+							<div class="control-element">
+								<div id="bankAccOther" class="uf-treecombox" name="bankAccOther"
+									style="width: 200px"></div>
+							</div>
+						</div>
+						<div class="clearfix"></div>
+					</div>
+				</form>
+			</div>
+		</div>
+
+		<div class="ufma-layout-down bordered-top">
+			<div class="text-right margin-right-30">
+				<button type="button" class="btn btn-sm btn-primary" id="btn-save">
+					保存</button>
+				<button type="button" class="btn btn-sm btn-default btn-close"
+					id="btn-close">关闭</button>
+			</div>
+		</div>
+	</div>
+
+	<script src="departBudget.js?rev=@@hash" type="text/javascript"
+		charset="utf-8"></script>
+</body>
+</html>

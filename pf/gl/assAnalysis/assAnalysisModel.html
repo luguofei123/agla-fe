@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>查询方案设置</title>
+		<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+		<script src="../../pub/boot.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+		<link rel="stylesheet" type="text/css" href="assAnalysisModel.css?rev=@@hash" />
+		
+	</head>
+
+	<body id="assAnalysisModal">
+		<div id="set-more-conditions" class="ufma-layout-updown">
+			<input type="hidden" value="GL_ASS_ANALYSIS" data-name="assAnalysis" class="rptType" />
+			<div class="ufma-layout-up">
+				<form class="form-horizontal rpt-method-form">
+						<div class="form-group" style="display: inline-block">
+							<label class="control-label">名称：</label>
+							<div class="control-element">
+								<input id="methodName" data-code="" type="text" class="form-control" style="width: 300px;">
+							</div>
+						</div>
+						<div class="form-group fananradio" style="display: inline-block">
+							<label class="mt-radio mt-radio-outline margin-right-8 rpt-radio-span">
+								<input class="" type="radio" name="prjScope" value="1" checked> 私有方案
+								<span></span>
+							</label>
+							<label class="mt-radio mt-radio-outline margin-right-8 rpt-radio-span">
+								<input class="" type="radio" name="prjScope" value="2"> 本单位共享
+								<span></span>
+							</label>
+							<label class="mt-radio mt-radio-outline margin-right-8 rpt-radio-span">
+								<input class="" type="radio" name="prjScope" value="3"> 全系统共享
+								<span></span>
+							</label>
+						</div>
+					</form>
+				<table class="ufma-table table-bordered">
+					<thead>
+						<tr>
+								<th>查询项</th>
+								<th>辅助项</th>
+								<th>查询范围</th>
+								<th>表外显示</th>
+						</tr>
+					</thead>
+					<tbody>
+							<tr>
+								<td class="searchtitle">横向</td>
+								<td class="row"><div id="accList1" class="uf-combox accList"></div></td>
+								<td class="searchasstd">
+									<div class="searchass">
+										<input type="text" readonly>
+										<span data-ass="accList1" class="search-btn icon icon-writeoff"></span>
+									</div>
+								</td>
+								<td></td>
+							</tr>
+							<tr>
+								<td class="searchtitle">纵向</td>
+								<td class="col"><div id="accList2" class="uf-combox accList"></div></td>
+								<td class="searchasstd">
+									<div class="searchass">
+										<input type="text" readonly>
+										<span data-ass="accList2" class="search-btn icon icon-writeoff"></span>
+									</div>
+								</td>
+								<td></td>
+							</tr>
+							<tr>
+								<td>查询条件</td>
+								<td class="cond"><div id="accList3" class="uf-combox accList"></div></td>
+								<td class="searchasstd">
+									<div class="searchass">
+										<input type="text" readonly>
+										<span data-ass="accList3" class="search-btn icon icon-writeoff"></span>
+									</div>
+								</td>
+								<td class="selecttd"></td>
+							</tr>
+							<tr>
+								<td>查询条件</td>
+								<td class="cond"><div id="accList4" class="uf-combox accList"></div></td>
+								<td class="searchasstd">
+									<div class="searchass">
+										<input type="text" readonly>
+										<span data-ass="accList4" class="search-btn icon icon-writeoff"></span>
+									</div>
+								</td>
+								<td class="selecttd"></td>
+							</tr>
+							<tr>
+								<td>查询条件</td>
+								<td class="cond"><div id="accList5" class="uf-combox accList"></div></td>
+								<td class="searchasstd">
+									<div class="searchass">
+										<input type="text" readonly>
+										<span data-ass="accList5" class="search-btn icon icon-writeoff"></span>
+									</div>
+								</td>
+								<td class="selecttd"></td>
+							</tr>
+							<tr>
+								<td>查询条件</td>
+								<td class="cond"><div id="accList6" class="uf-combox accList"></div></td>
+								<td class="searchasstd">
+									<div class="searchass">
+										<input type="text" readonly>
+										<span data-ass="accList6" class="search-btn icon icon-writeoff"></span>
+									</div>
+								</td>
+								<td class="selecttd"></td>
+							</tr>
+							<tr>
+								<td>查询条件</td>
+								<td class="cond"><div id="accList7" class="uf-combox accList"></div></td>
+								<td class="searchasstd">
+									<div class="searchass">
+										<input type="text" readonly>
+										<span data-ass="accList7" class="search-btn icon icon-writeoff"></span>
+									</div>
+								</td>
+								<td class="selecttd"></td>
+							</tr>
+					</tbody>
+				</table>
+				<div class="forms" style="margin-bottom: 50px;">
+					<div class="form-group dlb" style="width: 100%;">
+						<label class="control-label formlabel">分析项：</label>
+						<div class="control-element" style="display: inline-block;">
+							<label class="mt-checkbox mt-checkbox-outline">
+								<input data-code="IS_SHOW_BEGAMTDR" data-name="期初借方余额" type="checkbox" class="asschecks">期初借方余额
+								<span></span>
+							</label>
+							<label class="mt-checkbox mt-checkbox-outline" style="width: 100px;">
+								<input data-code="IS_SHOW_CURDR" data-name="借方发生额" type="checkbox" checked="true" class="asschecks">借方发生额
+								<span></span>
+							</label>
+							<label class="mt-checkbox mt-checkbox-outline" style="width: 85px;">
+								<input data-code="IS_SHOW_TOTALDR" data-name="借方累计" type="checkbox" class="asschecks">借方累计
+								<span></span>
+							</label>
+							<label class="mt-checkbox mt-checkbox-outline">
+								<input data-code="IS_SHOW_ENDAMTDR" data-name="期末借方余额" type="checkbox" class="asschecks">期末借方余额
+								<span></span>
+							</label>
+							<div style="height: 10px"></div>
+							<label class="mt-checkbox mt-checkbox-outline">
+								<input data-code="IS_SHOW_BEGAMTCR" data-name="期初贷方余额" type="checkbox" class="asschecks">期初贷方余额
+								<span></span>
+							</label>
+							<label class="mt-checkbox mt-checkbox-outline" style="width: 100px;">
+								<input data-code="IS_SHOW_CURCR" data-name="贷方发生额" type="checkbox" checked="true" class="asschecks">贷方发生额
+								<span></span>
+							</label>
+							<label class="mt-checkbox mt-checkbox-outline" style="width: 85px;">
+								<input data-code="IS_SHOW_TOTALCR" data-name="贷方累计" type="checkbox" class="asschecks">贷方累计
+								<span></span>
+							</label>
+							<label class="mt-checkbox mt-checkbox-outline">
+								<input data-code="IS_SHOW_ENDAMTCR" data-name="期末贷方余额" type="checkbox" class="asschecks">期末贷方余额
+								<span></span>
+							</label>
+						</div>
+					</div>
+					<div></div>
+					<div class="form-group" style="margin-left: 100px;margin-top: 25px">
+						<div class="control-element">
+							<label class="mt-checkbox mt-checkbox-outline">
+								<input data-code="IS_INCLUDE_UNPOST" data-name="含未记账凭证" type="checkbox" checked="true" class="asscheck">含未记账凭证
+								<span></span>
+							</label>
+							<!-- <label class="mt-checkbox mt-checkbox-outline">
+								<input data-code="IS_INCLUDE_JZ" data-name="含结转凭证" type="checkbox" class="asscheck">含结转凭证
+								<span></span>
+							</label> -->
+							<label class="mt-checkbox mt-checkbox-outline">
+								<input data-code="IS_INCLUDE_NJ" data-name="含年结转凭证" type="checkbox" checked="true" class="asscheck">含年结转凭证
+								<span></span>
+							</label>
+							<label class="mt-checkbox mt-checkbox-outline">
+								<input data-code="IS_INCLUDE_YJ" data-name="含月结转凭证" type="checkbox" checked="true" class="asscheck">含月结转凭证
+								<span></span>
+							</label>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="ufma-layout-down bordered-top">
+				<div class="text-right  margin-right-30">
+					<button id="btn-searchTable" type="button" class="btn btn-default">查询</button>
+					<button id="sureSaveMethod" type="button" class="btn btn-primary">保存</button>
+					<button id="saveAs" type="button" class="btn btn-default">另存为</button>
+					<button type="button" class="btn btn-sm btn-default" id="btnClose">取消</button>
+				</div>
+			</div>
+		</div>
+		<!-- <div id="saveMethod-box" class="ufma-modal">
+				<div class="u-msg-title">
+					<h4>保存查询方案</h4>
+				</div>
+				<div class="u-msg-content">
+					<form class="form-horizontal rpt-method-form">
+						<div class="form-group">
+							<label class="control-label">命名：</label>
+							<div class="control-element">
+								<input id="methodName" data-code="" type="text" class="form-control" style="width: 300px;">
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="mt-radio mt-radio-outline margin-right-8 rpt-radio-span">
+								<input class="" type="radio" name="prjScope" value="1" checked> 私有方案
+								<span></span>
+							</label>
+							<label class="mt-radio mt-radio-outline margin-right-8 rpt-radio-span">
+								<input class="" type="radio" name="prjScope" value="2"> 本单位共享
+								<span></span>
+							</label>
+							<label class="mt-radio mt-radio-outline margin-right-8 rpt-radio-span">
+								<input class="" type="radio" name="prjScope" value="3"> 全系统共享
+								<span></span>
+							</label>
+						</div>
+					</form>
+				</div>
+				<div class="u-msg-footer">
+					<button id="sureSaveMethod" type="button" class="btn btn-primary">保存</button>
+					<button id="saveAs" type="button" class="btn btn-default">另存为</button>
+					<button type="button" class="btn btn-default btn-close">取消</button>
+				</div>
+			</div> -->
+		<script src="../rpt/rptCommon/dm.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+		<script src="../rpt/rptCommon/rptCommon_new.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+		<script src="assAnalysisModel.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+	</body>
+
+</html>

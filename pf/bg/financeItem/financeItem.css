@@ -1,0 +1,295 @@
+.voutypeCode ul li {
+	list-style: none;
+	float: left;
+}
+
+.getDataBody {
+	margin-top: 20px;
+	margin-left: 16px;
+	margin-right: 16px;
+}
+
+#tool-bar {
+	padding-top: 1px !important;
+}
+
+.btn-getdata {
+	border-radius: 4px !important;
+}
+
+/*更多的触摸板*/
+.rpt-method-tip {
+	float: right;
+	position: relative;
+	height: 46px;
+}
+
+.rpt-method-tip #showMethodTip {
+	height: 30px;
+}
+
+.rpt-method-tip .btn {
+	float: right;
+}
+
+.rpt-method-tip .btn span {
+	margin-left: 0px;
+}
+
+.rpt-method-tip i {
+	display: none;
+	position: absolute;
+	top: 3px;
+	right: -2px;
+	width: 9px;
+	height: 9px;
+	border-radius: 50%;
+	background: #F04134;
+}
+
+.rpt-method-tip .rpt-share-method-box {
+	position: absolute;
+	z-index: 999;
+	top: 45px;
+	right: 0px;
+	max-height: 274px;
+	background: #fff;
+	border-radius: 4px;
+	box-shadow: 2px 2px 4px 2px rgba(0, 0, 0, 0.20);
+}
+
+.rpt-method-tip .rpt-share-method-box:before {
+	content: '';
+	display: inline-block;
+	border-left: 10px solid transparent;
+	border-right: 10px solid transparent;
+	border-bottom: 10px solid #d9d9d9;
+	position: absolute;
+	top: -10px;
+	right: 12px;
+}
+
+.rpt-method-tip .rpt-share-method-box:after {
+	content: '';
+	display: inline-block;
+	border-left: 9px solid transparent;
+	border-right: 9px solid transparent;
+	border-bottom: 9px solid #fff;
+	position: absolute;
+	top: -9px;
+	right: 14px;
+}
+
+.rpt-method-tip .rpt-share-method-box-top {
+	height: 50px;
+	padding: 8px 16px;
+	line-height: 17px;
+	font-size: 12px;
+	color: #999;
+}
+
+.rpt-method-tip .rpt-share-method-box-body {
+	padding: 0 16px;
+	overflow-y: auto;
+	max-height: 221px;
+}
+
+.rpt-method-tip .rpt-share-method-box-body ul {
+	margin-left: -40px;
+}
+
+.rpt-method-tip .rpt-share-method-box-body ul li {
+	list-style: none;
+	height: 37px;
+	line-height: 37px;
+	border-bottom: 1px solid #D9D9D9;
+}
+
+.rpt-method-tip .rpt-share-method-box-body ul li:last-child {
+	border-bottom: 0px solid #D9D9D9;
+}
+
+.rpt-method-tip .rpt-share-method-box-body ul li .btn {
+	font-size: 14px !important;
+	height: 26px;
+	margin-top: 5px;
+	color: #999;
+}
+
+.rpt-method-tip .rpt-share-method-box-body ul li span {
+	max-width: 170px;
+	display: inline-block;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+.rpt-method-list {
+	display: inline-block;
+	margin-bottom: 0;
+	margin-left: -32px;
+	line-height: 0;
+}
+
+/*width:100%;*/
+.rpt-method-list li {
+	height: 22px;
+	line-height: 20px;
+	display: inline-block;
+	margin-right: 8px;
+	padding: 0 8px;
+	margin-top: 9px;
+}
+
+.rpt-method-list span {
+	cursor: pointer;
+	color: #108EE9;
+}
+
+.rpt-method-list span:hover {}
+
+.rpt-method-list b {
+	display: inline-block;
+	width: 12px;
+	height: 12px;
+	margin-left: 4px;
+	cursor: pointer;
+	color: #108EE9;
+}
+
+li {
+	list-style: none;
+	z-index: 200;
+}
+
+#voutypeCode {
+	width: 74px;
+	border-radius: 4px;
+	padding-left: 16px;
+}
+
+#gridGOV .check-style {
+	text-align: center;
+}
+
+#panelUl li:hover {
+	cursor: pointer;
+	background: rgba(16, 142, 233, 0.20);
+}
+
+.under-line {
+	text-decoration: underline;
+}
+
+/* .fixedTable .mt-checkbox{
+	display: none !important;
+} */
+/*
+解决固定表头 勾选框错位问题
+*/
+/*短横虚线*/
+.uf-dashed-hr {
+	border-top: 1px dashed #d9d9d9;
+	margin-top: 5px;
+	height: 2px;
+	width: 100%;
+}
+
+.w70 {
+	width: 71px;
+}
+
+.w160 {
+	width: 160px;
+}
+
+/*自定义样式*/
+.uf-grid-head .uf-grid-head-lock,
+.uf-grid-body .uf-grid-body-lock {
+	border-right: #DFE6EC 0px solid;
+}
+
+.file-btn-box .btn:last-child {
+	border-left-color: #108ee9;
+}
+
+.file-btn-active {
+	color: #108ee9;
+	background-color: #fff;
+	border-color: #108ee9;
+}
+
+.file-upload-box-btn {
+	float: right;
+	width: 88px;
+	position: absolute;
+	right: 5px;
+	top: -5px;
+}
+
+.file-upload-input {
+	width: 88px;
+	height: 30px;
+	overflow: hidden;
+	position: absolute;
+	top: 16px;
+	font-size: 100px;
+	opacity: 0;
+	filter: alpha(opacity=0);
+	cursor: pointer;
+}
+
+.file-upload-tip {
+	color: #999;
+}
+
+.file-upload-title i {
+	color: #999;
+	font-size: 12px;
+	cursor: pointer;
+}
+
+.label-show {
+	font-weight: normal;
+	height: 19px;
+	line-height: 28px;
+}
+
+.panel.ufma-panel>.panel-heading {
+	height: 38px;
+	padding-left: 0;
+	padding-right: 0;
+}
+
+.import-type {
+	background-color: #ECF6FD;
+	border-top-width: 10px;
+	margin-top: 8px;
+}
+
+.uf-grid-table .uf-grid-headerCell {
+	font-weight: bold !important;
+}
+
+.uf-combox-popup {
+	max-height: 140px;
+}
+
+.sel-row-backcolor {
+	background-color: #D2EAFB !important;
+}
+
+/* #gridGOV_wrapper .dataTables_scrollHeadInner,
+.dataTables_scrollHeadInner .dataTable {
+	width: 100% !important;
+} */
+.commonShow {
+	max-width: 200px;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	overflow: hidden;
+}
+/* ZJGA820-1672 财政指标分解模块也希望增加点击表头自动排序功能--zsj */
+/* #gridGOV.ufma-table.uf-rpt-table.dataTable.no-footer,.dataTables_scrollHeadInner {
+	width: 100% !important;
+} */

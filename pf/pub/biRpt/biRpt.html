@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html id="biRptHtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+	<script src="../boot.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+	<script src="biRpt.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+</head>
+<body>
+	<div class="workspace-top">
+		<div class="container-fluid" style="margin-bottom:-21px;">
+			<div class="ufma-portlet">
+				<div class="portlet-title">
+					<div class="caption">
+						<span class="caption-subject font-dark uppercase">资产负债表</span>
+					</div>
+					<div class="agencycom">
+						<div id='cbAgency' name="agencyCode"
+							 class="ufma-treecombox ufma-combox-agency" icon="icon-unit"
+							 url="/ma/sys/eleAgency/getAgencyTree" valueField="id"
+							 textField="codeName" readonly="false" placeholder="请选择单位"></div>
+					</div>
+					<div class="agencycom">
+						<div id='cbAcct' name="accCode" class="ufma-treecombox ufma-combox-agency"
+							 valueField="acctCode" textField="acctName" placeholder="账套" icon="icon-book"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<iframe id="biRptContent" style="width:100%;height:100%;" src=""></iframe>
+	<!--<iframe id="biRptContent" style="width:100%;height:100%" src=""></iframe>
+	<script type="text/javascript">
+		var ipAPort="10.10.5.181:7003";
+		var logInfo="id=admin&pw=admin";
+		var residInfo="&resid="+ufma.GetQueryString("resid");
+		var baseUrl="http://"+ipAPort+"/bi/showreport.do?"+logInfo+residInfo;
+		$("#biRptContent").attr("src",baseUrl);
+		var pageheight = $("#biRptHtml").height()-4;
+		$("#biRptHtml").height(pageheight);
+	</script>-->
+</body>
+</html>

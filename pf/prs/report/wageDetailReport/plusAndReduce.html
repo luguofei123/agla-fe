@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>选择工资项目</title>
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <script src="../../../pub/boot.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+    <link rel="stylesheet" type="text/css" href="../../common/common.css?rev=@@hash"/>
+    <link rel="stylesheet" type="text/css" href="wageDetailReport.css?rev=@@hash"/>
+</head>
+<body>
+<!--整个容器 begin-->
+<div class="ufma-layout-updown">
+    <div class="ufma-layout-up">
+        <div class="container-fluid">
+            <div class="clearfix">
+                <div class="fl">
+                    <div class="plus-reduce-title">相加项</div>
+                    <div class="plus-box-l select-box fl">
+
+                    </div>
+                    <div class="opt-btn fl">
+                        <button class="btn btn-default addPlus"><span class="glyphicon icon-angle-double-right"></span>添加</button>
+                        <button class="btn btn-default delPlus"><span class="glyphicon icon-angle-double-left"></span>删除</button>
+                    </div>
+                    <div class="plus-box-r select-box fl">
+
+                    </div>
+                </div>
+                <div class="fl" style="margin-left: 20px">
+                    <div class="plus-reduce-title">相减项</div>
+                    <div class="reduce-box-l select-box fl"></div>
+                    <div class="opt-btn fl">
+                        <button class="btn btn-default addReduce"><span class="glyphicon icon-angle-double-right"></span>添加</button>
+                        <button class="btn btn-default delReduce"><span class="glyphicon icon-angle-double-left"></span>删除</button>
+                    </div>
+                    <div class="reduce-box-r select-box fl">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="ufma-layout-down bordered-top">
+        <div class="text-right margin-right-30">
+            <button type="button" class="btn btn-sm btn-primary" id="btn-sure">确定</button>
+            <button type="button" class="btn btn-sm btn-default btn-close" id="btn-close">关闭</button>
+        </div>
+    </div>
+</div>
+<script src="plusAndReduce.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+</body>
+</html>

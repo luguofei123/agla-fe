@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<link rel="icon" href="./favicon.ico">
+		<title></title>
+
+		<script src="http://10.4.41.21:8888/pf/pub/boot.js"></script>
+		<style>
+
+		</style>
+	</head>
+
+	<body>
+		<!--<a id="dlink" style="display: none;"></a>-->
+
+		<table id="tbHaederText" border="1" cellpadding="0" cellspacing="0" align="center" style="border-collapse: collapse; word-break: keep-all; border-color: Black;
+                        width: 100%;">
+			<tr align="center">
+				<td class="th" nowrap>
+					1-序号
+				</td>
+				<td class="th" nowrap>
+					2-物资分类
+				</td>
+				<td class="th" nowrap>
+					3-物资名称<span class="s_close" style='color: Red; cursor: pointer' onclick='ReTabColumn(this)' title='隐藏当前列'>×</span>
+				</td>
+				<td class="th" nowrap align='center'>
+					4-仓管名称<span class="s_close" style='color: Red; cursor: pointer' onclick='ReTabColumn(this)' title='隐藏当前列'>×</span>
+				</td>
+				<td class="th" nowrap align='center'>
+					5-销售名称<span class="s_close" style='color: Red; cursor: pointer' onclick='ReTabColumn(this)' title='隐藏当前列'>×</span>
+				</td>
+				<td class="th" nowrap align='center'>
+					6-采购名称<span class="s_close" style='color: Red; cursor: pointer' onclick='ReTabColumn(this)' title='隐藏当前列'>×</span>
+				</td>
+				<td class="th" nowrap>
+					7-规格型号
+				</td>
+				<td class="th" nowrap>
+					8-采购单号
+				</td>
+				<td class="th" nowrap>
+					9-送货数量
+				</td>
+				<td class="th" nowrap>
+					10-入库件数
+				</td>
+				<td class="th" nowrap>
+					11-单重
+				</td>
+				<td class="th" nowrap>
+					12-入库数量
+				</td>
+				<div id="pnl1">
+					<td class="th" nowrap>
+						13-采购指导价
+					</td>
+					<td class="th" nowrap>
+						14-税前单价
+					</td>
+					<td class="th" nowrap>
+						15-税前小计
+					</td>
+					<td class="th" nowrap>
+						16-税率(%)
+					</td>
+					<td class="th" nowrap>
+						17- 单个税额
+					</td>
+					<td class="th" nowrap>
+						18-税额小计
+					</td>
+					<td class="th" nowrap>
+						19-税后单价
+					</td>
+					<td class="th" nowrap>
+						20-税后小计
+					</td>
+				</div>
+				<td class="th" nowrap>
+					21-备注
+				</td>
+				<td class="th" nowrap>
+					22-生产定向客户
+				</td>
+				<td class="th" nowrap>
+					23-其下出库
+				</td>
+			</tr>
+			<tr>
+				<td class="td" align="center">
+					1-1
+				</td>
+				<td class="td" nowrap>
+					2-服务内容
+				</td>
+				<td class="td" nowrap>
+					3-弯头
+				</td>
+				<td class="td" nowrap>
+					4-仓管-弯头
+				</td>
+				<td class="td" nowrap>
+					5-销售-弯头
+				</td>
+				<td class="td" nowrap>
+					6-采购-弯头
+				</td>
+				<td class="td" nowrap>
+					7-&nbsp;
+				</td>
+				<td class="td" nowrap align="left">
+					8-&nbsp;
+				</td>
+				<td class="td" nowrap align="right">
+					9- 0
+				</td>
+				<td class="td" nowrap align="right">
+					10-0台
+				</td>
+				<td class="td" nowrap align="right">
+					11- 0台
+				</td>
+				<td class="td" nowrap align="right">
+					12-111.1 皮长/公里
+				</td>
+				<div id="rpList_ctl00_pnl2">
+					<td class="td" nowrap align="right">
+						13-¥0.00000
+					</td>
+					<td class="td" nowrap align="right">
+						14-¥0.00000
+					</td>
+					<td class="td" nowrap align="right">
+						15- ¥0.00
+					</td>
+					<td class="td" nowrap align="right">
+						16-3.00
+					</td>
+					<td class="td" nowrap align="right">
+						17- ¥0.00000
+					</td>
+					<td class="td" nowrap align="right">
+						18-¥0.00
+					</td>
+					<td class="td" nowrap align="right">
+						19-¥0.00000
+					</td>
+					<td class="td" nowrap align="right">
+						20- ¥0.00
+					</td>
+				</div>
+				<td class="td" nowrap align="left">
+					21-&nbsp;
+				</td>
+				<td class="td" nowrap align="left">
+					22- &nbsp;
+				</td>
+				<td class="td" nowrap align="right">
+					23- 0.00皮长/公里
+				</td>
+			</tr>
+			<tr>
+				<td class="td" id="tdheji" colspan="8" align="right">
+					1-8 合计(非页小计)：
+				</td>
+				<td class="td" align="right">
+					9- <span id="lbltrueamount">111</span>
+				</td>
+				<td class="td" colspan="2">
+					10-11 &nbsp;
+				</td>
+				<div id="pnl3">
+					<td class="td" align="right">
+						12- <span id="lblTotalMoney">¥0.00</span>
+					</td>
+					<td class="td" colspan="2">
+						13-14 &nbsp;
+					</td>
+					<td class="td" align="right">
+						15- <span id="lblshuie">¥0.00</span>
+					</td>
+					<td class="td">
+						16- &nbsp;
+					</td>
+					<td class="td" align="right">
+						17- <span id="lblallshuie">¥0.00</span>
+					</td>
+					<td class="td" colspan="2">
+						18-19 &nbsp;
+					</td>
+				</div>
+				<td class="td" align="right">
+					20-<span id="lblcktrueamount">0</span>
+				</td>
+				<td class="td" colspan="3">
+					21-23 &nbsp;
+				</td>
+			</tr>
+		</table>
+		<button id="exportExcel1">导出可见表格</button>
+		<button id="exportExcel2">导出动态表格</button>
+	</body>
+
+</html>
+<script>
+
+	$('#exportExcel1').click(function() {
+		uf.expTable({
+			title: '中国XXXXXXXX有限公司【XXXX单】',
+			topInfo: [
+				['入库单号：RKCODE20170217003', '入库仓库：原材料库', '入库类型：调拨入库'],
+				['入库日期：2017-02-17', '采购合同：2223']
+			],
+			exportTable: '#tbHaederText'
+		});
+	});
+
+	$('#exportExcel2').click(function() {
+		var data = [
+		{ id: '1', pid: '0', index: '1', codeName: '101 银行存款', depart: '测试部门', jjfl: '经济分类', currency: '美元', field1: '测试字段1', field2: '测试字段2', field3: '测试字段3', field4: '测试字段4', field5: '测试字段5', field6: '测试字段6', field7: '测试字段7' },
+		{ id: '11', pid: '1', index: '2', codeName: '101 银行存款', depart: '测试部门', jjfl: '经济分类', currency: '美元', field1: '测试字段1', field2: '测试字段2', field3: '测试字段3', field4: '测试字段4', field5: '测试字段5', field6: '测试字段6', field7: '测试字段7' },
+		{ id: '12', pid: '1', index: '3', codeName: '101 银行存款', depart: '测试部门', jjfl: '经济分类', currency: '美元', field1: '测试字段1', field2: '测试字段2', field3: '测试字段3', field4: '测试字段4', field5: '测试字段5', field6: '测试字段6', field7: '测试字段7' },
+		{ id: '13', pid: '1', index: '4', codeName: '101 银行存款', depart: '测试部门', jjfl: '经济分类', currency: '美元', field1: '测试字段1', field2: '测试字段2', field3: '测试字段3', field4: '测试字段4', field5: '测试字段5', field6: '测试字段6', field7: '测试字段7' },
+		{ id: '14', pid: '1', index: '5', codeName: '101 银行存款', depart: '测试部门', jjfl: '经济分类', currency: '美元', field1: '测试字段1', field2: '测试字段2', field3: '测试字段3', field4: '测试字段4', field5: '测试字段5', field6: '测试字段6', field7: '测试字段7' },
+		{ id: '2', pid: '0', index: '6', codeName: '101 银行存款', depart: '测试部门', jjfl: '经济分类', currency: '美元', field1: '测试字段1', field2: '测试字段2', field3: '测试字段3', field4: '测试字段4', field5: '测试字段5', field6: '测试字段6', field7: '测试字段7' },
+		{ id: '21', pid: '2', index: '7', codeName: '101 银行存款', depart: '测试部门', jjfl: '经济分类', currency: '美元', field1: '测试字段1', field2: '测试字段2', field3: '测试字段3', field4: '测试字段4', field5: '测试字段5', field6: '测试字段6', field7: '测试字段7' },
+		{ id: '22', pid: '2', index: '8', codeName: '101 银行存款', depart: '测试部门', jjfl: '经济分类', currency: '美元', field1: '测试字段1', field2: '测试字段2', field3: '测试字段3', field4: '测试字段4', field5: '测试字段5', field6: '测试字段6', field7: '测试字段7' },
+		{ id: '23', pid: '2', index: '9', codeName: '101 银行存款', depart: '测试部门', jjfl: '经济分类', currency: '美元', field1: '测试字段1', field2: '测试字段2', field3: '测试字段3', field4: '测试字段4', field5: '测试字段5', field6: '测试字段6', field7: '测试字段7' },
+		{ id: '24', pid: '2', index: '10', codeName: '101 银行存款', depart: '测试部门', jjfl: '经济分类', currency: '美元', field1: '测试字段1', field2: '测试字段2', field3: '测试字段3', field4: '测试字段4', field5: '测试字段5', field6: '测试字段6', field7: '测试字段7' },
+		{ id: '25', pid: '2', index: '11', codeName: '101 银行存款', depart: '测试部门', jjfl: '经济分类', currency: '美元', field1: '测试字段1', field2: '测试字段2', field3: '测试字段3', field4: '测试字段4', field5: '测试字段5', field6: '测试字段6', field7: '测试字段7' },
+		{ id: '26', pid: '2', index: '12', codeName: '101 银行存款', depart: '测试部门', jjfl: '经济分类', currency: '美元', field1: '测试字段1', field2: '测试字段2', field3: '测试字段3', field4: '测试字段4', field5: '测试字段5', field6: '测试字段6', field7: '测试字段7' }
+		];
+		var columns = [
+			[{
+					field: 'id',
+					name: '序号',
+					rowspan: 2,
+					width: 40,
+					headalign: 'center',
+					align: 'center'
+				},
+				{
+					field: 'codeName',
+					name: '科目名称',
+					rowspan: 2,
+					width: 200,
+					render: function(rowid, rowdata, data) {
+						if(rowdata.pid == '1') {
+							return '<span style="">' + data + '</span>';
+						} else {
+							return '<span style="">' + data + '</span>';
+						}
+
+					}
+				},
+				{
+					field: '',
+					name: '合并表头',
+					colspan: 3
+				}
+			],
+			[ //支持多表头
+
+				{
+					field: 'depart',
+					name: '部门',
+					width: 100
+				},
+				{
+					field: 'jjfl',
+					name: '经济分类',
+					width: 100
+				},
+				{
+					field: 'field1',
+					name: '字段1',
+					width: 100
+				}
+			]
+		];
+
+		uf.expTable({
+			title: '测试导出',
+			topInfo: [
+				['单位：北京用友政务软件有限公司', '日期：2018年10月15日']
+			],
+			data: data,
+			columns: columns,
+			//合并列
+			mergeColumns: function(rowdata) {
+				var merges = [];
+				if(rowdata.pid == 0) {
+					merges.push({
+						columnIndex: 2,
+						colSpan: 3,
+						text: '部门：' + rowdata.depart + '----科目：' + rowdata.codeName
+					}); //同一行可以合并多列
+				}
+				return merges
+			},
+			//合并行
+
+			mergeRows: function(prevRowdata, rowdata) {
+				var merges = [];
+				if(prevRowdata['id'] == rowdata['pid'] || prevRowdata['pid'] == rowdata['pid']) {
+					merges.push(1);
+				}
+
+				return merges
+			}
+		});
+	});
+</script>

@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+  		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>账簿打印</title>
+  		<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+		<script src="../../pub/boot.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+		<link rel="stylesheet" type="text/css" href="rptPrint.css?rev=@@hash"/>
+		<script language="javascript" src="../../pub/printpreview/zw-printUtils.js?rev=@@hash"></script>
+		<style type="text/css">
+		</style>
+	</head>
+<body>
+<!--整个容器 begin-->
+<div id="rptPrint" class="container-fluid ufma-container">
+	<!--工作区 begin-->
+	<div class="workspace">
+		<!--账簿工作区 begin-->
+    	<div class="rpt-workspace">
+    		<!--标题位 begin-->
+    		<div class="rpt-selete-box bordered-bottom">
+    			<!--标题 begin-->
+    			<div class="rpt-title">账簿打印</div>
+    			<!--标题 end-->
+    			
+    			<!--单位&账套选择 begin-->
+				<ul class="rpt-selete-list">
+					<li class="rpt-selete-list-li">
+						<!--<div id='cbAgency' name="agencyCode" class="ufma-treecombox ufma-combox-agency" icon="icon-unit" url="/gl/eleAgency/getAgencyTree" valueField="id" textField="name" placeholder="请选择单位"></div>-->
+						<div id='cbAgency' name="agencyCode" class="ufma-treecombox ufma-combox-agency"></div>
+					</li>
+					<li class="rpt-selete-list-li">
+						<div id='cbAcct' class="ufma-combox ufma-combox-acct"></div>
+					</li>
+				</ul>
+				<!--单位&账套选择 end-->
+				
+				<!--按钮 begin-->
+				<div class="rpt-method-tip">
+					<!--<div class="btn-group pull-right">
+						<button type="button" id="btn-print-catalog" style="margin-left: 8px;" class="btn btn-sm btn-default btn-permission btn-print">打印目录</button>
+					</div>-->
+					<!-- <div class="btn-group pull-right">
+						<button type="button" id="btn-export-excel" style="margin-left: 8px;" class="btn btn-sm btn-default btn-permission btn-export-excel">导出Excel</button>
+					</div>
+					<div class="btn-group pull-right">
+						<button type="button" id="btn-print-pdf" style="margin-left: 8px;" class="btn btn-sm btn-default btn-permission btn-print">打印</button>
+					</div>
+					<div class="btn-group pull-right">
+						<button type="button" id="btn-print-cover" style="margin-left: 8px;" class="btn btn-sm btn-default btn-permission btn-print-cover">打印封面</button>
+					</div>
+					<div class="btn-group pull-right">
+						<button type="button" id="btn-print-set" style="margin-left: 8px;" class="btn btn-sm btn-default btn-print-set">打印方案设置</button>
+					</div>
+					<div class="btn-group pull-right">
+						<button type="button" id="btn-print-yun" style="margin-left: 8px;" class="btn btn-sm btn-default btn-print-yun">云打印</button>
+					</div> -->
+					<!-- <div class="btn-group pull-right">
+						<button type="button" id="btn-print-set-sys" style="margin-left: 8px;" class="btn btn-sm btn-default btn-print-set-sys">系统级打印方案设置</button>
+					</div> -->
+				</div>
+				<!--按钮 end-->
+    		</div>
+    		<!--标题位 end-->
+    		
+    		<!--查询 begin-->
+			<div class="rpt-box rpt-query-box">
+				<!--左侧查询 begin-->
+				<div class="rpt-query-box-left">
+					<!--上半部显示 begin-->
+					<ul class="rpt-query-box-top">
+						<!--第一行 begin-->
+						<li class="rpt-query-box-li">
+							<!--期间 begin-->
+							<div class="rpt-query-li padding-left-24" style="width: 100%;">
+								<label class="rpt-query-li-cont-title">期间：</label>
+								<div class="rpt-query-li-cont">
+									<div class="rpt-query-btn-cont setTimes">
+										<button class="btn btn-default setTimeYear">本年</button>
+										<button class="btn btn-primary setTimeMonth">本期</button>
+									</div>
+									<div class="query-date">
+										<span class="date-box">
+											<!--<input class="bordered-input padding-3" type="text" id="startDate"/>
+											<i class="glyphicon icon-calendar"></i>-->
+											<!--<span id=""  class="bordered-input padding-3">-->
+											<span id="startDate" class="uf-datepicker" style="width:120px;"></span>
+										</span>
+										至
+										<span class="date-box">
+											<!--<input class="bordered-input padding-3" type="text" id="endDate"/>
+											<i class="glyphicon icon-calendar"></i>-->
+											<span id="endDate" class="uf-datepicker" style="width:120px;"></span>
+										</span>
+									</div>
+								</div>
+								<div class="pull-right" style="padding-right: 24px;">
+									<button class="btn btn-primary btn-query searchVou">查询</button>
+								</div>
+							</div>
+							<!--期间 end-->
+						</li>
+						<!--第一行 end-->
+						
+						<!--第二行 begin-->
+						<li class="rpt-query-box-li">
+							<!--账簿类型 begin-->
+							<div class="rpt-query-li padding-left-24">
+								<label class="rpt-query-li-cont-title">账簿类型：</label>
+								<div class="rpt-query-li-cont">
+									<select id="rptType" class="bordered-input">
+										<!-- 账簿类型 开始位置 -->
+										
+									</select>
+									<select id="rptStyle" class="bordered-input">
+										<!-- 账簿样式 开始位置 -->
+										
+									</select>
+								</div>
+							</div>
+							<!--账簿类型 end-->
+							
+							<!--模板 begin-->
+							<div class="rpt-query-li padding-left-24">
+								<label class="rpt-query-li-cont-title">打印方案：</label>
+								<div class="rpt-query-li-cont" style="min-width:220px;">
+									<select id="rptTemplate" class="bordered-input">
+										<!-- 模板 开始位置 -->
+										
+									</select>
+								</div>
+							</div>
+							<div class="rpt-query-li padding-left-24">
+								<label class="rpt-query-li-cont-title">起始页码：</label>
+								<div class="rpt-query-li-cont" style="min-width:100px;">
+									<input type="text" class="bordered-input" style="margin-top: 4px;width: 100px;" id="startNum">
+								</div>
+							</div>
+							
+							<!--模板 end-->
+						</li>
+						<!--第二行 end-->
+						
+						<!--第三行 begin-->
+						<li class="rpt-query-box-li" style="display: none;">
+							<!--币种 begin-->
+							<div class="rpt-query-li padding-left-24">
+								<!-- <div class="rpt-query-li-cont">
+									<label class="mt-checkbox mt-checkbox-outline">
+										<input type="radio" name="pagination" value="1" checked="checked">科目间连续编页码
+										<span></span>
+									</label>
+									<label class="mt-checkbox mt-checkbox-outline">
+										<input type="radio" name="pagination" value="0">科目间重新编页码
+										<span></span>
+									</label>
+								</div> -->
+							</div>
+							<!--币种 end-->
+						</li>
+						<!--第三行 end-->
+						
+						<!--第四行 begin-->
+						<!-- <li class="rpt-query-box-li">
+							<div class="rpt-query-li">
+								<label class="rpt-query-li-cont-title">其他：</label>
+								<div class="rpt-query-li-cont">
+									<label class="mt-checkbox mt-checkbox-outline">
+										<input type="checkbox" class="rptOption" name="isJustShowOccfisperd" value="IS_JUSTSHOW_OCCFISPERD">只显示有发生额的会计期间
+										<span></span>
+									</label>
+									<label class="mt-checkbox mt-checkbox-outline">
+										<input type="checkbox" class="rptOption" name="isIncludeUnpost" value="IS_INCLUDE_UNPOST">包含未记账凭证
+										<span></span>
+									</label>
+									<label class="mt-checkbox mt-checkbox-outline">
+										<input type="checkbox" name="isShowCode" id="">打印科目编码
+										<span></span>
+									</label>
+									<label class="mt-checkbox mt-checkbox-outline">
+										<input type="radio" name="isShowFullName" value="0" checked="checked" id="">打印科目名称
+										<span></span>
+									</label>
+									<label class="mt-checkbox mt-checkbox-outline">
+										<input type="radio" name="isShowFullName" value="1" id="">打印科目全称
+										<span></span>
+									</label>
+									<label class="mt-checkbox mt-checkbox-outline" id="isHaveAmtAndCur">
+										<input type="checkbox" name="isHaveAmtAndCur" value="1" id="isHaveAmtAndCurCheck">发生额及余额为零不打印
+										<span></span>
+									</label>
+								</div>
+							</div>
+						</li> -->
+						<!--第四行 end-->
+					</ul>
+					<!--上半部显示 end-->
+				</div>
+				<!--左侧查询 end-->
+			</div>
+			<!--查询 end-->
+			
+			<!--内容 begin-->
+    		<div class="rpt-box rpt-table-box">
+    			
+    			<!--表格 begin-->
+    			<div class="rpt-table-tab">
+    				<!--表格内容 begin-->
+    				<table id="rptPrint-data" tool-bar="#rptPrint-tool-bar" class="ufma-table dataTable">
+    					<thead>
+    					
+    					</thead>
+    					<tbody></tbody>
+    				</table>
+    				<!--表格内容 end-->
+    				
+    			</div>
+    			<!--表格 end-->
+    		</div>
+    		<!--内容 end-->
+    	</div>
+    	<!--账簿工作区 end-->
+    	
+    	<!--表格工具条 begin-->
+		<div id="rptPrint-tool-bar" class="ufma-tool-bar">
+            <div class="tool-bar-body">
+                <div class="ufma-tool-btns">
+                    <label class="mt-checkbox mt-checkbox-outline margin-right-8">
+                        <input type="checkbox" class="datatable-group-checkable"/> 全选
+                        <span></span>
+                    </label>
+        			<button type="button" id="btn-print-pdfs" style="margin-left: 8px;" class="btn btn-sm btn-default btn-permission btn-print">打印</button>
+               </div>
+            </div>
+        </div>
+        <!--表格工具条 end-->
+	</div>
+	<!--工作区 end-->
+</div>
+<!--整个容器 end-->
+<script src="rptPrint.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+</body>
+<style type="text/css">
+	select{
+		padding: 8px;
+	}
+</style>
+</html>

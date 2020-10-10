@@ -1,0 +1,39 @@
+.nowalp{
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+.btn-register-vou:hover{
+	color: #108EE9 !important;
+}
+.differmingxi:hover{
+	color: #108EE9 !important;
+}
+.navtabss .drcr{
+	max-width: 100px;
+}
+.navtabss{
+    table-layout: fixed;
+	width: 100%;
+}
+.navtabss th{
+	text-align: center;
+	background: #EEF1F6;
+}
+.navtabss .level1{
+	padding-left: 8px;
+	color: #333;
+	font-weight: bold;
+}
+.navtabss .level2{
+	padding-left: 24px;
+    color: #333;
+    font-weight: bold;
+}
+.navtabss .level3{
+	padding-left: 40px;
+}
+.navtabss .amt{
+	text-align: right;
+	width: 200px;
+}

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>电子档案设置</title>
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <script src="../../pub/boot.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+    <style>
+        ul li {
+            list-style: none;
+            margin-top: 20px
+        }
+
+        ul {
+            padding: 0
+        }
+
+        .li-name {
+            text-align: right;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            margin-top: 4px;
+        }
+        .col-md-3{
+            padding-right: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container-fluid ufma-container">
+
+        <!--工作区 begin-->
+        <div class="workspace">
+            <div class="workspace-top">
+                <div class="container-fluid">
+                    <div class="ufma-portlet">
+                        <div class="portlet-title">
+                            <div class="caption">
+                                <span class="caption-subject font-dark uppercase">电子档案设置</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="workspace-center">
+                <div class="container-fluid">
+                    <ul class="httpList">
+                        <li class="row">
+                            <div class="li-name col-md-3">FTP地址：</div>
+                            <div class="li-value col-md-9">
+                                <input type="text" id="address" class="bordered-input padding-3" style="width:100%"
+                                    value="">
+                            </div>
+                        </li>
+                        <li class="row">
+                            <div class="li-name col-md-3">FTP用户：</div>
+                            <div class="li-value col-md-9">
+                                <input type="text" id="user" name="URL" class="bordered-input padding-3" style="width:100%"
+                                    value="">
+                            </div>
+                        </li>
+                        <li class="row">
+                            <div class="li-name col-md-3">FTP密码：</div>
+                            <div class="li-value col-md-9">
+                                <input type="text" id="pwd" name="URL" class="bordered-input padding-3" style="width:100%"
+                                    value="">
+                            </div>
+                        </li>
+                        <li class="row">
+                            <div class="li-name col-md-3">电子档案归档状态查询接口：</div>
+                            <div class="li-value col-md-9">
+                                <input type="text" id="stateinterface" class="bordered-input padding-3" style="width:100%"
+                                    value="">
+                            </div>
+                        </li>
+                        <li class="row">
+                            <div class="li-name col-md-3">电子档案归档申请接口：</div>
+                            <div class="li-value col-md-9">
+                                <input type="text" id="applyinterface" class="bordered-input padding-3" style="width:100%"
+                                    value="">
+                            </div>
+                        </li>
+                    </ul>
+
+                    <div style="margin-top: 20px;">
+                        <div style="float: right;">
+                            <a href="javascript:;" class="btn btn-default btn-test btn-permission">测试配置</a>
+                            <a href="javascript:;" class="btn btn-primary btn-save btn-permission">保存</a>
+                        </div>
+                        <div class="clearfix"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--工作区 end-->
+
+    </div>
+    <script src="eArchivesSet.js" type="text/javascript" charset="utf-8"></script>
+</body>
+
+</html>

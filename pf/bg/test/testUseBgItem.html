@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>测试指标使用</title>
+    <meta
+            content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
+            name="viewport">
+
+    <script src="../../pub/boot.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+    <link rel="stylesheet" href="../../agla-trd/fileinput/fileinput.css"/>
+    <script src="../../agla-trd/fileinput/fileinput.js" type="text/javascript" charset="utf-8"></script>
+    <script src="../../agla-trd/fileinput/zh.js" type="text/javascript" charset="utf-8"></script>
+    <link rel="stylesheet" href="../pub/bgPub.css?rev=@@hash"/>
+    <link rel="stylesheet" href="../pub/bgPubImpAttachment.css?rev=@@hash"/>
+    <link rel="stylesheet" href="../pub/bgPubAuditModal.css?rev=@@hash"/>
+    <link rel="stylesheet" href="../pub/bgPubLog.css?rev=@@hash"/>
+    <link rel="stylesheet" href="testUseBgItem.css?rev=@@hash"/>
+</head>
+<body>
+    <div class="container">
+        <div class="bgpub-bgnormal-postion-1 bgpub-div-height-space-35" id="topPnl">
+            <!--<div class="bgpub-bgnormal-postion-2">
+                <span><input type="radio" id="rb_glquerybgitem"/>凭证-查询指标</span>
+            </div>
+            <div class="bgpub-bgnormal-postion-2">
+                <span><input type="radio" id="rb_glusebgitem"/>凭证-使用指标</span>
+            </div>-->
+        </div>
+        <div class="bgpub-bgnormal-postion-1">
+            <table class="bgpub-bgnormal-postion-1">
+                <tr class="notDel">
+                    <td class="rightC">访问指标类型：</td>
+                    <td class="leftC"><div id="httptype"></div></td>
+                </tr>
+                <tr class="notDel">
+                    <td class="rightC">单位：</td>
+                    <td class="leftC"><div id="q_agencyDiv"></div></td>
+                </tr>
+                <tr class="notDel">
+                    <td class="rightC">账套：</td>
+                    <td class="leftC"><div id="q_acctDiv"></div></td>
+                </tr>
+                <tr class="notDel">
+                    <td class="rightC">系统标记符：</td>
+                    <td class="leftC"><strong id="q_sysId">GL</strong></td>
+                </tr>
+                <tr class="notDel">
+                    <td class="rightC">会计科目：</td>
+                    <td class="leftC"><input type="text" id="accoCode" value="1001"  style="width: 300px;"/></td>
+                </tr>
+                <tr class="notDel">
+                    <td class="rightC">钱：</td>
+                    <td class="leftC"><input type="text" id="money" value="10000"  style="width: 300px;"/></td>
+                </tr>
+                <tr class="notDel" id="tr_busbillid">
+                    <td class="rightC">凭证GUID：</td>
+                    <td class="leftC"><input type="text" id="busbillid" value="ADBCE1243OALASEFEWQ" style="width: 300px;"/></td>
+                </tr>
+            </table>
+        </div>
+        <div class="tabController" pageindex="1" id="glquery">
+            <!-- 凭证查询指标 -->
+            <table class="bgpub-bgnormal-postion-1" id="tbl_query_params">
+
+            </table>
+            <div class="bgpub-bgnormal-postion-1">
+                <button type="button" class="btn btn-default bgpub-normal-leftButton-1" id="query_addEle">添加要素</button>
+                <button type="button" class="btn btn-default bgpub-normal-leftButton-1" id="query_delEle">清空要素</button>
+                <button type="button" class="btn btn-default btn-primary bgpub-normal-leftButton-1" id="getRst">查询结果</button>
+            </div>
+        </div>
+        <div class="tabController" pageindex="2" id="gluse">
+            <!-- 凭证使用指标 -->
+
+        </div>
+    </div>
+
+    <div id="modalShowRst" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content bgpub-bgnormal-postion-1">
+                <div class="modal-body bgpub-bgnormal-postion-1" >
+                    <div class="bgpub-bgnormal-postion-1" id="rstText" style="width: 560px; max-height: 400px; overflow: auto" >
+                    </div>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal -->
+    </div>
+    <script src="../pub/bgPub.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+    <script src="../pub/bgPubImpAttachment.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+    <script src="../pub/bgPubAuditModal.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+    <script src="../pub/bgPubLog.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+    <script src="../pub/bgPubItemManager.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+    <script src="testUseBgItem.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+</body>
+</html>

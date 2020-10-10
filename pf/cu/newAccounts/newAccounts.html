@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>生成新年度账</title>
+		<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+		<script src="../../pub/boot.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+		<link rel="stylesheet" href="newAccounts.css?rev=@@hash" />
+		<!--<script type="text/javascript" src="jquery.js"></script>-->
+
+	</head>
+
+	<body id= "newAccounts">
+		<div class="container-fluid ufma-container">
+			<div class="workspace" style="padding:6px 15px 15px;">
+				<!--工作区顶部 begin-->
+				<div class="workspace-top">
+					<div class="uf-portlet">
+						<div class="portlet-title">
+							<div class="caption">
+								<span class="caption-main">生成新年度账</span>
+							</div>
+							<div class="inline-block  margin-left-15 margin-top-8">
+								<ul class='ufma-list-col clearfix '>
+									<li class="ufma-list-col-item">
+										<div id='cbAgency' name="agencyCode" class="uf-treecombox ufma-combox-agency "></div>
+									</li>
+									<li class="ufma-list-col-item hide" id="acct">
+										<div id='cbAcct' class="uf-combox ufma-combox-acct"></div>
+									</li>
+								</ul>
+							</div>
+						</div>
+
+						<div id="zdzzTimeline" class="hide"> </div>
+					</div>
+				</div>
+				<!--工作区中部 begin-->
+				<div class="workspace-center">
+					<div id="onePage" class="hide">
+						<div class="rpt-table-tab">
+							<table class="ufma-table uf-rpt-table" tool-bar="#tool-bar" id="gridGOV"></table>
+						</div>
+						<!--<div class="btn-bar">
+						<div class="btnGroups">
+							<button id="beginEnd" type="button" class="btn btn-sm btn-primary btn-beginEnd btn-permission">开始结转余额</button>
+							<button id="carryItem" type="button" class="btn btn-sm btn-primary  btn-carryItems btn-permission">结转未达项</button>
+						</div>
+					</div>-->
+
+					</div>
+					<div id="dataCheckArea" class="hide">
+						<div class="rpt-table-tab dataCheckTable">
+							<table class="ufma-table uf-rpt-table" checke-tool-bar="" id="dataCheck"></table>
+						</div>
+						<div class="btn-bar">
+							<div class="btnGroupsCheck">
+								<button id="dataCheckNext" type="button" class="btn btn-sm btn-primary btn-next ">下一步</button>
+								<button id="dataCheckCancel" type="button" class="btn btn-sm btn-default btn-cancel ">上一步</button>
+							</div>
+						</div>
+					</div>
+					<div id="carryOverArea" class=" hide">
+						<div class="planArea bg-portlet">
+							<div>
+								<div id="searchPlanPnl" class="uf-form-group-panel form-horizontal">
+									<h1 style="text-align: center;    color: green;">新年度结转处理结束!</h1>
+								</div>
+							</div>
+						</div>
+						<div class="rpt-table-tab carryOverTable">
+							<table class="ufma-table uf-rpt-table" carry-tool-bar="#carry-tool-bar" id="carryOver"></table>
+						</div>
+						<div class="btn-bar">
+							<div class="btnGroups">
+								<button id="carryOverCancel" type="button" class="btn btn-sm btn-primary btn-cancel">完成</button>
+							</div>
+						</div>
+
+					</div>
+					<div id="carryItemsArea" class=" hide">
+						<div class="planArea bg-portlet">
+							<div>
+								<div class="uf-form-group-panel form-horizontal">
+									<h1 style="text-align: center;    color: green;">新年度结转处理结束!</h1>
+								</div>
+							</div>
+						</div>
+						<div class="rpt-table-tab carryItemsTable">
+							<table class="ufma-table uf-rpt-table" id="carryItems"></table>
+						</div>
+						<div class="btn-bar">
+							<div class="btnGroups">
+								<button id="carryItemsCancel" type="button" class="btn btn-sm btn-primary btn-cancel">完成</button>
+							</div>
+						</div>
+
+					</div>
+				</div>
+				<div id="tool-bar" class="ufma-tool-bar " style="left: 0px;">
+					<div class="tool-bar-body">
+						<div class="ufma-tool-btns fl"  style="margin-left: 14px;">
+							<label class="mt-checkbox mt-checkbox-outline margin-right-8">
+							<input class="checkAll" type="checkbox" name="" id="all"> 全选
+							<span></span>
+						</label>
+							<button id="beginEnd" type="button" class="btn btn-sm btn-primary btn-beginEnd btn-permission" style="margin-left:5px;">开始结转余额</button>
+							<button id="carryItem" type="button" class="btn btn-sm btn-primary  btn-carryItems btn-permission" style="margin-left:5px;">结转未达项</button>
+						</div>
+						<div class="ufma-table-paginate">
+							<!-- 分页 开始位置 -->
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script src="newAccounts.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+		<script src="dm.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+	</body>
+
+</html>

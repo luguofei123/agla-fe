@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>生成新年度账</title>
+		<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+		<script src="../../pub/boot.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+		<link rel="stylesheet" href="glYearInit.css?rev=@@hash" />
+	</head>
+
+	<body>
+		<div class="container-fluid ufma-container">
+			<!--工作区 begin-->
+			<div class="workspace">
+				<!--工作区顶部 begin-->
+				<div class="workspace-top">
+					<div class="container-fluid">
+						<div class="ufma-portlet">
+							<div class="portlet-title">
+								<div class="caption">
+									<span class="caption-subject font-dark uppercase">生成新年度账</span>
+								</div>
+								<!--单位&账套选择 begin-->
+								<div class="inline-block absolute margin-left-15 margin-top-8">
+									<ul class='ufma-list-col clearfix padding-left-8'>
+										<li class="ufma-list-col-item">
+											<div id='cbAgency' name="agencyCode" class="ufma-treecombox ufma-combox-agency"></div>
+										</li>
+										<li class="ufma-list-col-item">
+											<div id='cbAcct' class="ufma-treecombox ufma-combox-acct"></div>
+										</li>
+									</ul>
+								</div>
+								<!--单位&账套选择 end-->
+								<div id="onePage" class="hide">
+									<p id="agencyText"></p>
+									<div>
+										<p class="textNew">生成新年度账：</p>
+										<!--CWYXM-11364-生成新年度的状态改为提示下年度有没有期初科目余额--zsj-->
+										<p id="statusText" class="hide">下年有期初余额</p>
+										<p id="arginText" class="hide">下年无期初余额</p>
+									</div>
+									<div class="buttonGroups">
+										<button id="beginEnd" type="button" class="btn btn-sm btn-primary btn-beginEnd btn-permission">生成新年度账</button>
+										<button id="outentry" type="button" class="btn btn-sm btn-default btn-outentry btn-permission">结转未达项</button>
+									</div>
+								</div>
+								<div id="twoPage" class="hide">
+									<!--
+										1、选择“完全结转”则直接跳转到检查界面；若选择“根据科目对照关系进行结转”但没有点击行出现“辅助项”，那么直接按照“完全结转”进行结转
+										2、不点击行时不显示辅助核算项，点击选择辅助项后，2020科目、可结转金额可手动修改，一开始结转金额为空，2020科目默认选中科目表中对应的值
+                                                                              点结转时已勾选行的结转金额要 小于 等于原科目可结转金额
+									-->
+									<input id="allTurn" type="radio" name="turnType" value="1" checked="true">完全结转(新旧年度科目不做调整的情况下)
+									<br />
+									<input id="accoTurn" type="radio" name="turnType" value="2">根据科目对照关系进行结转(新年度科目有调整的情况下)
+									<div class="buttonGroups">
+										<button id="twoPagePrev" type="button" class="btn btn-sm btn-primary btn-prev ">上一步</button>
+										<button id="twoPageNext" type="button" class="btn btn-sm btn-default btn-next hide ">下一步</button>
+										<button id="toTurn" type="button" class="btn btn-sm btn-default btn-turn ">开始结转</button>
+									</div>
+
+								</div>
+
+							</div>
+						</div>
+					</div>
+				</div>
+				<!--工作区中部 begin-->
+				<div class="workspace-center">
+					<div id="zdzzTimeline" class="hide"> </div>
+					<div id="dataCheckArea" class="hide">
+						<div class="rpt-table-tab dataCheckTable">
+							<table class="ufma-table uf-rpt-table" id="dataCheck"></table>
+						</div>
+						<div class="btn-bar">
+							<div class="btnGroupsCheck">
+								<button id="dataCheckCancel" type="button" class="btn btn-sm btn-primary btn-prev ">上一步</button>
+								<button id="assCheckCancel" type="button" class="btn btn-sm btn-primary btn-prev hide ">上一步</button>
+								<button id="dataCheckNext" type="button" class="btn btn-sm btn-default btn-next ">下一步</button>
+								<button id="checkAgain" type="button" class="btn btn-sm btn-default btn-recheck ">重新检查</button>
+								<button id="exportExcel" type="button" class="btn btn-sm btn-default btn-export ">导出</button>
+							</div>
+						</div>
+					</div>
+					<div id="carryOverArea" class=" hide">
+						<div class="carryOverTable">
+							<div class="spanSquire hide" style="background: #ffbf00;width: 10px;height: 10px;margin-top:-8px;"></div>
+							<p class="setAcco hide">设置结转科目</p>
+							<div class="rpt-table-tab">
+								<table class="ufma-table uf-rpt-table" id="carryOver"></table>
+							</div>
+						</div>
+						<p class="setRemark hide">注：点击有"辅"字的单元格设置按辅助项进行余额结转</p>
+						<div class="hide" id="assOverTable">
+							<div style="background: #ffbf00;width: 10px;height: 10px;margin-top:4px;"></div>
+							<p class="setAssi">按辅助项结转</p>
+							<!--<div id='cbAss' class="uf-combox"></div>-->
+							<div class="btnTab">
+								<ul class="nav nav-tabs" id="tabAcce" style="margin-top:-37px;width:80%;margin-left:127px;">
+									<li class="active" id="nowTable">
+										<a href="javascript:;" setType="BGITEM" id="aAssistTable">当前年度</a>
+									</li>
+									<li id="nextArea">
+										<!-- class="hide"-->
+										<a href="javascript:;" setType="DEPARTMENT" id="aNextTable">下一年度</a>
+									</li>
+								</ul>
+							</div>
+							<div class="rpt-table-tab assistTab hide">
+								<table class="ufma-table uf-rpt-table" id="assistTable"></table>
+							</div>
+							<div class="rpt-table-tab nextTableArea hide">
+								<div id="nextTable" class="uf-datagrid"></div><!-- style="height:150px;"-->
+							</div>
+						</div>
+						<div class="btn-bar">
+							<div class="btnGroupsOver hide">
+								<button id="assOverCancel" type="button" class="btn btn-sm btn-primary btn-prev ">上一步</button>
+								<button id="accoOverBegin" type="button" class="btn btn-sm btn-default btn-again ">开始结转金额</button>
+								<button id="assOverBegin" type="button" class="btn btn-sm btn-default btn-again hide  hide">开始结转金额</button>
+							</div>
+						</div>
+					</div>
+					<div id="dealArea" class="hide">
+						<p class="endResult hide" id="oneResult">新年度账结转处理中...</p>
+						<p class="endResult hide" id="twoResult">新年度余额结转成功！</p>
+						<p class="endResult hide" id="threeResult">新年度余额结转中断！</p>
+						<div class="rpt-table-tab endTable">
+							<table class="ufma-table uf-rpt-table" id="turnEndTab"></table>
+						</div>
+						<div class="btn-bar">
+							<div class="btnGroupStree">
+								<button id="dealCancel" type="button" class="btn btn-sm btn-primary btn-prev">上一步</button>
+								<button id="dealSure" type="button" class="btn btn-sm btn-primary btn-sure ">完成</button>
+							</div>
+						</div>
+					</div>
+					<!--生成未达账项-->
+					<div id="outEntryArea" class="hide">
+						<div class="rpt-table-tab">
+							<table class="ufma-table uf-rpt-table" id="outEntryTab"></table>
+						</div>
+						<div class="btn-bar">
+							<div class="btnGroupStree">
+								<button id="outEntrySure" type="button" class="btn btn-sm btn-primary btn-sure ">完成</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script src="dm.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+		<script src="glYearInit.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+	</body>
+
+</html>

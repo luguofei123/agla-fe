@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>跨账簿业务处理</title>
+	<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+	<script src="../../pub/boot.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+	<link rel="stylesheet" href="crossBook.css?rev=@@hash" />
+</head>
+
+<body id="crossBook">
+	<div class="container-fluid ufma-container">
+		<div class="workspace">
+			<!--工作区顶部 begin-->
+			<div class="workspace-top">
+				<div class="container-fluid">
+					<div class="ufma-portlet">
+						<div class="portlet-title">
+							<div class="caption">
+								<span class="caption-subject font-dark uppercase">跨账簿业务处理</span>
+							</div>
+							<div class="inline-block  margin-left-15 margin-top-8">
+								<ul class='ufma-list-col clearfix '>
+									<li class="ufma-list-col-item">
+										<div id='cbAgency' name="agencyCode" class="uf-treecombox ufma-combox-agency "></div>
+									</li>
+									<li class="ufma-list-col-item">
+										<div id='Acct' class="uf-treecombox ufma-combox-acct"></div>
+									</li>
+								</ul>
+							</div>
+							<div class="actions">
+								<div class="btn-group" style="margin-left:-10px;">
+									<button type="button" id="btnSwitch" class="btn btn-sm btn-default switch-style" style="height: 30px; overflow: hidden; margin-top: 0px; margin-right: 12px; border-radius: 4px;">
+										<span class="icon-select " style="font-size: 20px;"></span>
+									</button>
+									<div class="switch-stylexs" id="switchStyle" style="overflow: hidden;">
+										<label class="mt-checkbox mt-checkbox-outline" style="width: 54%;">
+											<input type="checkbox" name="isMergerDr" value="">借方合并<span></span>
+										</label>
+										<label class="mt-checkbox mt-checkbox-outline">
+											<input type="checkbox" name="isMergerCr" value="">贷方合并<span></span>
+										</label>
+										<br />
+										<label class="mt-checkbox mt-checkbox-outline" style="width: 54%;">
+											<input type="checkbox" name="isMergerAcc" value="">辅助核算合并<span></span>
+										</label>
+										<label id="DescptAppend" class="mt-checkbox mt-checkbox-outline">
+											<input type="checkbox" name="isDescptAppend" value="">摘要累加<span></span>
+										</label>
+										<br />
+										<label class="mt-checkbox mt-checkbox-outline">
+											<input type="checkbox" name="onlyDescpt" value="">摘要相同时合并<span></span>
+										</label>
+									</div>
+								</div>
+								<div class="btn-group" style="margin-left:-10px;">
+									<button type="button" class="btn btn-sm btn-primary btn-getdata btn-permission btn-add " id="btnDaliy" style="margin-right: 8px;">登账</button>
+								</div>
+							</div>
+						</div>
+
+						<div class="portlet-body bordered pr bordered-bottom">
+							<div class="more" style="width:100%">
+								<form id="frmQuery" class="form-horizontal">
+									<div class="form-row">
+										<div class="form-group" style="margin-left:-15px;width: 282px;">
+											<label class="control-label " style="margin-left:16px;">登账日期：</label>
+											<div class="control-element pr10" style="padding-top:3px;">
+												<a name="period1" id="dateBn" class="label label-radio">本年</a>
+												<a name="period1" id="dateBq" class="label label-radio ">本期</a>
+												<a name="period1" id="dateJr" class="label label-radio selected">今日</a>
+											</div>
+										</div>
+										<div class="form-group" style="width: 305px">
+											<div class="control-element" style="width: 116px">
+												<div name="startJouDate" id="startJouDate" class="uf-datepicker" style="width: 125px;">
+												</div>
+											</div>
+											<span class="split" style="margin: 5px 8px 5px 16px">至</span>
+											<div class="control-element">
+												<div name="endJouDate" id="endJouDate" class="uf-datepicker" style="width: 125px;">
+												</div>
+											</div>
+										</div>
+										<div class="form-group">
+											<label class="control-label">金额：</label>
+											<div class="control-element" style="width:120px;">
+												<input id="minMoney" type="text" name="minMoney" class="form-control" maxlength="14">
+											</div>
+											<span class="split">至</span>
+											<div class="control-element" style="width:120px;">
+												<!--<input id="maxMoney" type="text" name="maxMoney" class="form-control">-->
+												<input id="maxMoney" type="text" name="maxMoney"  class="form-control" maxlength="14">
+												<!--修改输入框金额位数过大时报服务的异常的问题-->
+											</div>
+										</div>
+										<div class="clearfix"></div>
+									</div>
+								</form>
+								<form id="queryMore" class="form-horizontal mt10 hidden">
+									<!--第二行-->
+									<div class="form-row ">
+										<div class="form-group" style="width: 302px;">
+											<label class="control-label">凭证号：</label>
+											<select id="vouType" name="vouType" class="bordered-input" style="width: 72px;">
+												<!-- 凭证类型 开始位置 -->
+
+											</select>
+											<div class="control-element" style="width:60px;">
+												<input id="startVouNo" type="text" name="startVouNo" class="form-control">
+											</div>
+											<span class="split">至</span>
+											<div class="control-element" style="width:60px;">
+												<input id="endVouNo" type="text" name="endVouNo" class="form-control">
+											</div>
+										</div>
+										<div class="form-group" style="width: 360px;">
+											<label class="control-label">摘要：</label>
+											<div class="control-element">
+												<input type="text" name="summary" id="summary" class="form-control" style="width:262px;height:30px;">
+											</div>
+										</div>
+										<div class="form-group" style="width: 360px;margin-left:13px;">
+											<label class="control-label">经办人：</label>
+											<div class="control-element">
+												<input type="text" name="dealWith" id="dealWith" class="form-control" style="width:262px;height:30px;">
+											</div>
+										</div>
+										<div class="clearfix"></div>
+									</div>
+									<!--动态行-->
+								</form>
+							</div>
+							<div class="btn-group lp-query-box" style="position: absolute;right:15px;top:17px;">
+								<span id="show" class= "tip-more" style=" cursor: pointer;">更多
+									<i class="glyphicon icon-angle-bottom"></i>
+								</span>
+								<span class=" hidden tip-more" id="hide" style="cursor: pointer;">收起
+									<i class="glyphicon icon-angle-top"></i>
+								</span>
+								<div class="cab-query-btn inline-block">
+									<button id="queryAll" class="btn btn-primary btn-query btn-permission">查询</button>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!--工作区顶部 end-->
+
+			<div class="workspace-center" style="padding: 0 15px">
+				<div class="btn-body" style="height: 40px;">
+					<div class="iframeBtnsSearch fr" id="index-search" style="margin-right: 103px">
+						<input type="text" class="searchHide focusOff bordered" placeholder="请输入要搜索的关键词" style="right: 163px;">
+						<input type="hidden" class="searchValueHide">
+						<button class="btn btn-default btn-sm  btn-search" id="searchHideBtn">
+							<i class="glyphicon icon-search"></i>
+						</button>
+					</div>
+					<div class="rpt-box rpt-table-box pr">
+						<div id="dtToolbar" class="btn-group" style="position:absolute;right:0px;">
+						</div>
+					</div>
+
+				</div>
+				<!-- 表格begin -->
+				<div class="rpt-table-tab">
+					<table class="ufma-table uf-rpt-table" tool-bar="#tool-bar" id="gridGOV"></table>
+				</div>
+				<!-- 表格end -->
+			</div>
+			<!--工作区底部 begin -->
+			<div id="tool-bar" class="ufma-tool-bar">
+				<div class="tool-bar-body">
+					<div class="ufma-tool-btns" style="float: left;">
+						<label class="mt-checkbox mt-checkbox-outline margin-right-8">
+							<input class="checkAll" type="checkbox" name="" id="all"> 全选
+							<span></span>
+						</label>
+						<button type="button" class="btn btn-sm btn-default  btn-delete btn-permission" id="delete">删除</button>
+						<button type="button" class="btn btn-sm btn-default  btn-createVou  btn-permission" id="createVou">生成凭证</button>
+						<button type="button" class="btn btn-sm btn-default  btn-mergeCreateVou  btn-permission" id="mergeCreateVou">合并生成凭证</button>
+						<button type="button" class="btn btn-sm btn-default  btn-cancleVou  btn-permission" id="cancleVou">取消生成</button>
+					</div>
+					<div class="ufma-table-paginate">
+						<!-- 分页 开始位置 -->
+					</div>
+				</div>
+			</div>
+			<!--工作区底部 end-->
+		</div>
+	</div>
+	<script src="crossBook.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+	<script src="dm.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+
+</body>
+
+</html>

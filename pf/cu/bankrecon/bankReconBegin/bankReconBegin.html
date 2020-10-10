@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>银行对账初始装入</title>
+	<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+	<script src="../../../pub/boot.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+	<link rel="stylesheet" type="text/css" href="bankReconBegin.css?rev=@@hash">
+</head>
+
+<body>
+	<div id="bankReconBegin" class="container-fluid ufma-container">
+		<!--工作区 begin-->
+		<div class="workspace" style="padding-bottom: 68px;">
+			<!--工作区顶部 begin-->
+			<div class="workspace-top">
+				<div class="container-fluid">
+					<div class="ufma-portlet">
+						<div class="portlet-title">
+							<div class="caption">
+								<span class="caption-subject font-dark uppercase">银行对账初始装入</span>
+							</div>
+							<!--单位选择 begin-->
+							<div class="agencycom">
+								<div id='cbAgency' name="agencyCode" class="ufma-treecombox ufma-combox-agency"></div>
+							</div>
+							<!-- 单位选择 end -->
+						</div>
+						<div class="portlet-body bordered" style="padding: 16px;">
+							<div class="">
+								<table class="form-body">
+									<tbody>
+										<tr>
+											<td class="label-ctrl em4">
+												对账方案：
+											</td>
+											<td class="form-ctrl">
+												<div class="uf-combox w210" id="selectList">
+
+												</div>
+											</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!--工作区中部 begin-->
+			<div class="workspace-center">
+				<div class="tab-content">
+					<!--期初银行日记账 begin-->
+					<div id="bankBegin1" class="pull-left journalcls">
+						<div class="beginContainer">
+							<div class="beginTitle uf-line-title-font" style="float: left;">
+								<span>单位日记账期初未达项</span>
+							</div>
+							<div style=" float: right;" id="Journalid" data-href="agencyJournal.html?pageFrom=reconBegin" class="btn-query" data-title="期初单位日记账">
+								<a class="coaAcc-edit margin-right-8">
+									<span class="glyphicon icon-edit"></span>
+								</a>
+							</div>
+							<div style="clear:both"></div>
+							<div class="begincon">
+								<p>未达项
+									<span id="journalLsCount"></span> 条</p>
+								<p>
+									<i>未达日记账借方：
+										<span id="journalLsDr"></span>
+									</i>
+									<i>未达日记账贷方：
+										<span id="journalLsCr"></span>
+									</i>
+								</p>
+							</div>
+						</div>
+					</div>
+					<!--期初银行对账单 begin-->
+					<div id="reconBegin2" class="pull-right journalcls">
+						<div class="beginContainer">
+							<div class="beginTitle uf-line-title-font" style=" float: left;">
+								<span>银行对账单期初未达项 </span>
+							</div>
+							<div style=" float: right;" id="bankReconciliationid">
+								<a class="coaAcc-edit margin-right-8" id="">
+									<span class="glyphicon icon-edit"></span>
+								</a>
+							</div>
+							<div style="clear:both"></div>
+							<div class="begincon">
+								<p>未达项
+									<span id="statementLsCount"></span> 条</p>
+								<p>
+									<i>未达对账单借方：
+										<span id="statementLsDr"></span>
+									</i>
+									<i>未达对账单贷方：
+										<span id="statementLsCr"></span>
+									</i>
+								</p>
+							</div>
+
+						</div>
+					</div>
+				</div>
+				<div class="container-fluid">
+					<div class="tab-content">
+						<!--银行日记账期初余额 begin-->
+						<div id="bankBegin" class="pull-left">
+							<div class="beginContainer">
+								<div class="beginTitle uf-line-title-font">
+									<span>单位日记账期初账面余额</span>
+								</div>
+
+								<table class="ufma-table" id="bankBeginGrid">
+									<tr>
+										<td class="left">单位调整前余额</td>
+										<td class="right" style="color: #FFBF00;">
+											<input type="text" id="bankChangeInput" class="pull-right empty" placeholder=""> </td>
+									</tr>
+									<tr>
+										<td class="left">加：银行已收单位未收</td>
+										<td class="right empty">0.00</td>
+									</tr>
+									<tr>
+										<td class="left">减：银行已付单位未付</td>
+										<td class="right empty">0.00</td>
+									</tr>
+									<tr>
+										<td class="left">单位调整后余额</td>
+										<td class="right" id="changeAfter">0.00</td>
+									</tr>
+								</table>
+							</div>
+						</div>
+						<!--对账单期初余额 begin-->
+						<div id="reconBegin" class="pull-right ">
+							<div class="beginContainer">
+								<div class="beginTitle uf-line-title-font">
+									<span>银行对账单期初账面余额</span>
+								</div>
+								<table class="ufma-table" id="reconBeginGrid">
+									<tr>
+										<td class="left">银行调整前余额（手工录入）</td>
+										<td class="right" style="color: #FFBF00;">
+											<input type="text" id="reconChangeInput" class="pull-right empty" placeholder="" onfocus="this.select()"> </td>
+									</tr>
+									<tr>
+										<td class="left">加：单位已收银行未收</td>
+										<td class="right empty">0.00</td>
+									</tr>
+									<tr>
+										<td class="left">减：单位已付银行未付</td>
+										<td class="right empty">0.00</td>
+									</tr>
+									<tr>
+										<td class="left">银行调整后余额</td>
+										<td class="right" id="changeAfterOne">0.00</td>
+									</tr>
+								</table>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="containerfoot">
+					<div style="  text-align: center;     display: none;" class="errorcla">
+						<span class="icon-cross-circle" style=" display: inline-block;width: 50px;height: 50px;font-size: 50px;color: red;"></span>
+						<p>单位调整后余额和银行调整后余额不调平</p>
+					</div>
+					<div style="  text-align: center; display: none;" class="successcls">
+						<span class="icon-check-circle" style=" display: inline-block;width: 50px;height: 50px;font-size: 50px;color: #00A854;"></span>
+						<p class="successclsmsg"></p>
+					</div>
+				</div>
+			</div>
+			<!--工作区底部 begin-->
+			<div id="expfunc-tool-bar" class="ufma-tool-bar">
+				<div class="tool-bar-body">
+					<div class="ufma-tool-btns">
+						<button type="button" class="btn btn-sm btn-primary btn-permission btn-save"> 保存</button>
+						<button type="button" class="btn btn-sm btn-default btn-empty"> 清空</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script src="../rptCommon/rptCommon.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+	<script src="bankReconBegin.js?rev=@@hash" type="text/javascript" charset="utf-8"></script>
+</body>
+
+</html>
